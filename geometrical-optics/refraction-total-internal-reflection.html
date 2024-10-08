@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Refraction – Experimental Physics 3 Course on Optics and Quantum Mechanics</title>
+<title>Refraction and Total Internal Reflection – Experimental Physics 3 Course on Optics and Quantum Mechanics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -136,7 +136,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Geometrical Optics</li><li class="breadcrumb-item"><a href="../geometrical-optics/reflection.html">Lecture 1</a></li><li class="breadcrumb-item"><a href="../geometrical-optics/refraction-total-internal-reflection.html">Refraction &amp; Total Internal Reflection</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Geometrical Optics</li><li class="breadcrumb-item"><a href="../geometrical-optics/reflection.html">Lecture 1</a></li><li class="breadcrumb-item"><a href="../geometrical-optics/refraction-total-internal-reflection.html">Refraction</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -223,7 +223,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../geometrical-optics/refraction-total-internal-reflection.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Refraction &amp; Total Internal Reflection</span></a>
+ <span class="menu-text">Refraction</span></a>
   </div>
 </li>
       </ul>
@@ -280,11 +280,11 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#refraction" id="toc-refraction" class="nav-link active" data-scroll-target="#refraction"><span class="header-section-number">2.1</span> Refraction</a>
+  <li><a href="#refraction" id="toc-refraction" class="nav-link active" data-scroll-target="#refraction">Refraction</a>
   <ul class="collapse">
-  <li><a href="#refractive-index" id="toc-refractive-index" class="nav-link" data-scroll-target="#refractive-index"><span class="header-section-number">2.1.1</span> Refractive Index</a></li>
-  <li><a href="#snells-law" id="toc-snells-law" class="nav-link" data-scroll-target="#snells-law"><span class="header-section-number">2.1.2</span> Snells Law</a></li>
-  <li><a href="#total-internal-reflection" id="toc-total-internal-reflection" class="nav-link" data-scroll-target="#total-internal-reflection"><span class="header-section-number">2.1.3</span> Total Internal Reflection</a></li>
+  <li><a href="#refractive-index" id="toc-refractive-index" class="nav-link" data-scroll-target="#refractive-index">Refractive Index</a></li>
+  <li><a href="#snells-law" id="toc-snells-law" class="nav-link" data-scroll-target="#snells-law">Snells Law</a></li>
+  <li><a href="#total-internal-reflection" id="toc-total-internal-reflection" class="nav-link" data-scroll-target="#total-internal-reflection">Total Internal Reflection</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -292,9 +292,9 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Geometrical Optics</li><li class="breadcrumb-item"><a href="../geometrical-optics/reflection.html">Lecture 1</a></li><li class="breadcrumb-item"><a href="../geometrical-optics/refraction-total-internal-reflection.html">Refraction &amp; Total Internal Reflection</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Geometrical Optics</li><li class="breadcrumb-item"><a href="../geometrical-optics/reflection.html">Lecture 1</a></li><li class="breadcrumb-item"><a href="../geometrical-optics/refraction-total-internal-reflection.html">Refraction</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Refraction</h1>
+<h1 class="title">Refraction and Total Internal Reflection</h1>
 </div>
 
 
@@ -311,8 +311,8 @@ window.Quarto = {
 </header>
 
 
-<section id="refraction" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="refraction"><span class="header-section-number">2.1</span> Refraction</h2>
+<section id="refraction" class="level2">
+<h2 class="anchored" data-anchor-id="refraction">Refraction</h2>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -327,53 +327,25 @@ Historical Context of Refraction
 <div class="callout-body-container callout-body">
 <p>The understanding of refraction has evolved over centuries, with contributions from various cultures and scientific traditions. This timeline highlights key milestones in the discovery and formalization of refraction, showcasing how our comprehension of this fundamental optical phenomenon has deepened over time:</p>
 <ol type="1">
-<li>Ancient Greece (3rd century BCE):
-<ul>
-<li>Euclid noticed that a stick partially submerged in water appears bent.</li>
-<li>Archimedes studied the refraction of light in water.</li>
-</ul></li>
-<li>Ancient Rome (1st century CE):
-<ul>
-<li>Ptolemy conducted experiments on refraction and compiled tables of refraction angles for different media.</li>
-</ul></li>
-<li>Islamic Golden Age (10th-11th centuries):
-<ul>
-<li>Ibn Sahl (940-1000) discovered the law of refraction, describing it geometrically.</li>
-<li>Alhazen (965-1040) studied lenses and the human eye, contributing significantly to optics.</li>
-</ul></li>
-<li>Middle Ages:
-<ul>
-<li>Robert Grosseteste (1175-1253) and Roger Bacon (1214-1294) studied refraction and its application to lenses.</li>
-</ul></li>
-<li>Renaissance:
-<ul>
-<li>Thomas Harriot (1560-1621) rediscovered the law of refraction but didn’t publish his findings.</li>
-</ul></li>
-<li>17th Century:
-<ul>
-<li>Willebrord Snellius (1580-1626) derived the mathematical law of refraction (Snell’s law) around 1621.</li>
-<li>René Descartes (1596-1650) independently derived and published the law of refraction in 1637.</li>
-<li>Pierre de Fermat (1607-1665) derived the law of refraction using his principle of least time.</li>
-</ul></li>
-<li>19th Century:
-<ul>
-<li>Augustin-Jean Fresnel (1788-1827) developed the wave theory of light, explaining refraction in terms of changes in wave speed.</li>
-</ul></li>
-<li>20th Century:
-<ul>
-<li>The development of quantum mechanics provided a deeper understanding of the interaction between light and matter, further explaining the phenomenon of refraction.</li>
-</ul></li>
+<li><p><strong>Ancient Greece (3rd century BCE):</strong> Euclid noticed that a stick partially submerged in water appears bent. Archimedes studied the refraction of light in water.</p></li>
+<li><p><strong>Ancient Rome (1st century CE):</strong> Ptolemy conducted experiments on refraction and compiled tables of refraction angles for different media.</p></li>
+<li><p><strong>Islamic Golden Age (10th-11th centuries):</strong> Ibn Sahl (940-1000) discovered the law of refraction, describing it geometrically. Alhazen (965-1040) studied lenses and the human eye, contributing significantly to optics.</p></li>
+<li><p><strong>Middle Ages:</strong> Robert Grosseteste (1175-1253) and Roger Bacon (1214-1294) studied refraction and its application to lenses.</p></li>
+<li><p><strong>Renaissance:</strong> Thomas Harriot (1560-1621) rediscovered the law of refraction but didn’t publish his findings.</p></li>
+<li><p><strong>17th Century:</strong> Willebrord Snellius (1580-1626) derived the mathematical law of refraction (Snell’s law) around 1621. René Descartes (1596-1650) independently derived and published the law of refraction in 1637. Pierre de Fermat (1607-1665) derived the law of refraction using his principle of least time.</p></li>
+<li><p><strong>19th Century:</strong> Augustin-Jean Fresnel (1788-1827) developed the wave theory of light, explaining refraction in terms of changes in wave speed.</p></li>
+<li><p><strong>20th Century:</strong> The quantum mechanical understanding of light, which emerged in the early 20th century, significantly impacted our view of refraction. Max Planck’s work on black body radiation in 1900 and Albert Einstein’s explanation of the photoelectric effect in 1905 laid the groundwork for the quantum nature of light. This quantum perspective provided a complementary explanation to the wave theory, describing refraction in terms of photons interacting with the atoms in the medium. While this quantum view offers insights into certain aspects of refraction, it’s important to note that both the wave and particle descriptions of light are necessary for a complete understanding of optical phenomena.</p></li>
 </ol>
 </div>
 </div>
 </div>
 <p>The law of refraction is the second important law of geometrical optics. It relates the refractive index <span class="math inline">\(n_1\)</span> and angle of incidence <span class="math inline">\(\theta_1\)</span> on one side of an interface to the refractive index <span class="math inline">\(n_2\)</span> and angle of refraction <span class="math inline">\(\theta_2\)</span> on the other side. Both the law of reflection and the law of refraction can be derived from more fundamental principles such as Fermat’s principle of least time and are consistent with the conservation of energy. Their relation to momentum is more complex and involves considering the interaction of light with the medium at an atomic level. These laws provide a mathematical framework for predicting how light behaves when it encounters interfaces between different media, forming the basis for understanding a wide range of optical phenomena and the design of optical devices.</p>
-<section id="refractive-index" class="level3" data-number="2.1.1">
-<h3 data-number="2.1.1" class="anchored" data-anchor-id="refractive-index"><span class="header-section-number">2.1.1</span> Refractive Index</h3>
+<section id="refractive-index" class="level3">
+<h3 class="anchored" data-anchor-id="refractive-index">Refractive Index</h3>
 <p>The refractive index <span class="math inline">\(n\)</span> is a material constant representing the factor by which the speed of light is reduced in the medium compared to its speed in vacuum. For most natural materials and visible light, the refractive index is <span class="math inline">\(n \ge 1\)</span>, as light typically travels slower in media than in vacuum. However, in certain special cases—such as for X-rays in some materials or in engineered metamaterials—the refractive index can be less than 1 or even negative. Understanding these exotic cases requires a deeper exploration of the electromagnetic properties of materials and the origin of the refractive index, which we will address later.</p>
 </section>
-<section id="snells-law" class="level3" data-number="2.1.2">
-<h3 data-number="2.1.2" class="anchored" data-anchor-id="snells-law"><span class="header-section-number">2.1.2</span> Snells Law</h3>
+<section id="snells-law" class="level3">
+<h3 class="anchored" data-anchor-id="snells-law">Snells Law</h3>
 <p><img src="../assets/images/reflection/snell.png" class="img-fluid" style="width:59.0%" alt="Snell’s law."> <img src="../assets/images/reflection/refraction_law.png" class="img-fluid quarto-figure quarto-figure-center" style="width:40.0%"></p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -546,7 +518,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 <li>The angle of refraction is larger than the angle of incidence (<span class="math inline">\(\theta_2 &gt; \theta_1\)</span>)</li>
 </ul></li>
 </ol>
-<p>Figure <a href="#fig-snells-combinations" class="quarto-xref">2.1</a> illustrates these principles with three plots showing how the refracted angle changes with the incident angle for two common interface scenarios: glass-to-air and air-to-glass. These plots clearly demonstrate the different behaviors described above.</p>
+<p>Figure <a href="#fig-snells-combinations" class="quarto-xref">1</a> illustrates these principles with three plots showing how the refracted angle changes with the incident angle for two common interface scenarios: glass-to-air and air-to-glass. These plots clearly demonstrate the different behaviors described above.</p>
 <!--
 ![Snell's law for different combinations of refractive indices. The plots show the relationship between incident angle ($\theta_1$) and refracted angle ($\theta_2$) for three scenarios: (a) light passing from air to glass, (b) light passing from glass to air, and (c) a comparison of both cases. Note how the curves differ when light moves into a medium with higher refractive index versus a lower refractive index.](../assets/images/reflection/angles.png){#fig-snells-combinations width=60% fig-align="center"}
  -->
@@ -558,15 +530,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
 <img src="refraction-total-internal-reflection_files/figure-html/fig-snells-combinations-output-1.png" width="367" height="368" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-snells-combinations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.1— Snell’s law for different combinations of refractive indices. The plots show the relationship between incident angle (<span class="math inline">\(\theta_1\)</span>) and refracted angle (<span class="math inline">\(\theta_2\)</span>) for three scenarios: (a) light passing from air to glass, (b) light passing from glass to air, and (c) a comparison of both cases. Note how the curves differ when light moves into a medium with higher refractive index versus a lower refractive index.
+Figure&nbsp;1— Snell’s law for different combinations of refractive indices. The plots show the relationship between incident angle (<span class="math inline">\(\theta_1\)</span>) and refracted angle (<span class="math inline">\(\theta_2\)</span>) for three scenarios: (a) light passing from air to glass, (b) light passing from glass to air, and (c) a comparison of both cases. Note how the curves differ when light moves into a medium with higher refractive index versus a lower refractive index.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="total-internal-reflection" class="level3" data-number="2.1.3">
-<h3 data-number="2.1.3" class="anchored" data-anchor-id="total-internal-reflection"><span class="header-section-number">2.1.3</span> Total Internal Reflection</h3>
+<section id="total-internal-reflection" class="level3">
+<h3 class="anchored" data-anchor-id="total-internal-reflection">Total Internal Reflection</h3>
 <p>The above diagram reveals a special case occurring when <span class="math inline">\(n_1 &gt; n_2\)</span>. Under these conditions, we can increase the incident angle <span class="math inline">\(\theta_1\)</span> until the outgoing angle reaches <span class="math inline">\(\theta_2 = \frac{\pi}{2}\)</span>. At this point, the refracted ray would be traveling along the interface between the two media. For any incident angle <span class="math inline">\(\theta_1\)</span> larger than this critical angle, there is no refracted ray at all; instead, we observe only a reflected ray. This phenomenon, known as <strong>total internal reflection</strong>, occurs despite the fact that the material with refractive index <span class="math inline">\(n_2\)</span> is completely transparent.</p>
 <p>Let’s formalize this concept mathematically. Using Snell’s law and setting <span class="math inline">\(\theta_2 = \frac{\pi}{2}\)</span>, we obtain the equation for the critical angle <span class="math inline">\(\theta_c\)</span>:</p>
 <p><span class="math display">\[\theta_1 = \theta_c = \sin^{-1}\left(\frac{n_2}{n_1}\right)\]</span></p>
@@ -610,10 +582,23 @@ Total Internal Reflection
 <p>This difference in refractive indices is what allows total internal reflection to occur within the fiber.</p>
 <p><img src="../assets/images/reflection/fiber.png" id="fig-optical-fiber" class="img-fluid" style="width:59.0%" alt="Total internal reflection in an optical fiber and a glass rod."> <img src="../assets/images/reflection/tir_rod.png" class="img-fluid quarto-figure quarto-figure-center" style="width:40.0%"></p>
 <p>For light to propagate effectively through the fiber, it must enter at an angle that ensures total internal reflection at the core-cladding interface. This leads to the concept of the acceptance angle, <span class="math inline">\(\theta_a\)</span>, which is the maximum angle at which light can enter the fiber and still undergo total internal reflection.</p>
-<p>To characterize this acceptance angle, optical engineers use a parameter called the <strong>Numerical Aperture (NA)</strong>. The NA is defined as the sine of the maximum acceptance angle:</p>
+<p>To characterize this acceptance angle, optical engineers use a parameter called the <strong>Numerical Aperture (NA)</strong>.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Numerical Aperture
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The Numerical Aperture of a fiber is defined as the sine of the maximum acceptance angle:</p>
 <p><span class="math display">\[\begin{equation}
 NA = \sin(\theta_a) = \sqrt{n_1^2 - n_2^2}
 \end{equation}\]</span></p>
+</div>
+</div>
 <p>This equation relates the NA directly to the refractive indices of the core and cladding. The derivation of this formula involves applying Snell’s law at the air-fiber interface and at the core-cladding interface, then using the condition for total internal reflection.</p>
 <p>In practice, typical values for the refractive indices might be <span class="math inline">\(n_1 = 1.475\)</span> for the core and <span class="math inline">\(n_2 = 1.46\)</span> for the cladding. Plugging these into our equation:</p>
 <p><span class="math display">\[\begin{equation}
@@ -633,7 +618,7 @@ NA = \sqrt{1.475^2 - 1.46^2} \approx 0.2
 <img src="img/fibers.png" class="img-fluid figure-img" style="width:59.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-optical-fiber-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.2— Rendering of different optical fibers types (from left to right): Hollow core optical fiber, hollow core bragg fiber, photonic crystal fiber, conventional fiber
+Figure&nbsp;2— Rendering of different optical fibers types (from left to right): Hollow core optical fiber, hollow core bragg fiber, photonic crystal fiber, conventional fiber
 </figcaption>
 </figure>
 </div>
