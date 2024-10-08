@@ -22,7 +22,7 @@
   </url>
   <url>
     <loc>https://fcichos.github.io/Exp3_2024/index.html</loc>
-    <lastmod>2024-09-14T19:42:41.992Z</lastmod>
+    <lastmod>2024-10-08T06:52:38.440Z</lastmod>
   </url>
   <url>
     <loc>https://fcichos.github.io/Exp3_2024/geometrical-optics/optical-instruments.html</loc>
@@ -34,7 +34,7 @@
   </url>
   <url>
     <loc>https://fcichos.github.io/Exp3_2024/geometrical-optics/Optical Elements III.html</loc>
-    <lastmod>2024-10-07T20:05:34.759Z</lastmod>
+    <lastmod>2024-10-08T07:31:44.367Z</lastmod>
   </url>
   <url>
     <loc>https://fcichos.github.io/Exp3_2024/geometrical-optics/Magnifying Glass.html</loc>
@@ -53,40 +53,60 @@
     <lastmod>2024-09-14T20:34:24.658Z</lastmod>
   </url>
   <url>
-    <loc>https://fcichos.github.io/Exp3_2024/foundations-of-quantum-physics/matter-waves.html</loc>
-    <lastmod>2024-09-14T20:40:04.406Z</lastmod>
+    <loc>https://fcichos.github.io/Exp3_2024/course-info/schedule.html</loc>
+    <lastmod>2024-10-08T06:40:16.653Z</lastmod>
   </url>
   <url>
-    <loc>https://fcichos.github.io/Exp3_2024/foundations-of-quantum-physics/structure-of-matter.html</loc>
-    <lastmod>2024-09-14T20:39:43.670Z</lastmod>
+    <loc>https://fcichos.github.io/Exp3_2024/course-info/exam.html</loc>
+    <lastmod>2024-10-08T06:53:35.155Z</lastmod>
   </url>
   <url>
-    <loc>https://fcichos.github.io/Exp3_2024/wave-optics/index.html</loc>
-    <lastmod>2024-09-14T20:40:30.372Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fcichos.github.io/Exp3_2024/wave-optics/interference.html</loc>
-    <lastmod>2024-09-14T20:36:48.024Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fcichos.github.io/Exp3_2024/wave-optics/wave-equation.html</loc>
-    <lastmod>2024-09-14T19:45:20.063Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fcichos.github.io/Exp3_2024/wave-optics/huygens-principle.html</loc>
-    <lastmod>2024-09-14T20:37:06.634Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fcichos.github.io/Exp3_2024/foundations-of-quantum-physics/particle-properties-of-light.html</loc>
-    <lastmod>2024-09-14T20:39:26.941Z</lastmod>
+    <loc>https://fcichos.github.io/Exp3_2024/course-info/assignments.html</loc>
+    <lastmod>2024-10-08T06:41:20.636Z</lastmod>
   </url>
   <url>
     <loc>https://fcichos.github.io/Exp3_2024/foundations-of-quantum-physics/index.html</loc>
     <lastmod>2024-09-14T19:40:57.687Z</lastmod>
   </url>
   <url>
+    <loc>https://fcichos.github.io/Exp3_2024/foundations-of-quantum-physics/particle-properties-of-light.html</loc>
+    <lastmod>2024-09-14T20:39:26.941Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3_2024/wave-optics/huygens-principle.html</loc>
+    <lastmod>2024-09-14T20:37:06.634Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3_2024/wave-optics/wave-equation.html</loc>
+    <lastmod>2024-09-14T19:45:20.063Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3_2024/wave-optics/interference.html</loc>
+    <lastmod>2024-09-14T20:36:48.024Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3_2024/wave-optics/index.html</loc>
+    <lastmod>2024-09-14T20:40:30.372Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3_2024/foundations-of-quantum-physics/structure-of-matter.html</loc>
+    <lastmod>2024-09-14T20:39:43.670Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3_2024/foundations-of-quantum-physics/matter-waves.html</loc>
+    <lastmod>2024-09-14T20:40:04.406Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3_2024/course-info/intructors.html</loc>
+    <lastmod>2024-10-08T06:36:41.651Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3_2024/course-info/resources.html</loc>
+    <lastmod>2024-10-08T06:52:46.660Z</lastmod>
+  </url>
+  <url>
     <loc>https://fcichos.github.io/Exp3_2024/geometrical-optics/refraction-total-internal-reflection.html</loc>
-    <lastmod>2024-10-08T04:31:27.747Z</lastmod>
+    <lastmod>2024-10-08T04:37:11.284Z</lastmod>
   </url>
   <url>
     <loc>https://fcichos.github.io/Exp3_2024/geometrical-optics/reflection.html</loc>
@@ -94,7 +114,7 @@
   </url>
   <url>
     <loc>https://fcichos.github.io/Exp3_2024/geometrical-optics/index.html</loc>
-    <lastmod>2024-09-14T19:58:56.557Z</lastmod>
+    <lastmod>2024-10-08T06:58:00.873Z</lastmod>
   </url>
   <url>
     <loc>https://fcichos.github.io/Exp3_2024/geometrical-optics/Optical Instruments.html</loc>
@@ -106,7 +126,7 @@
   </url>
   <url>
     <loc>https://fcichos.github.io/Exp3_2024/geometrical-optics/Optical Elements II.html</loc>
-    <lastmod>2024-10-07T18:29:12.841Z</lastmod>
+    <lastmod>2024-10-08T07:10:03.315Z</lastmod>
   </url>
   <url>
     <loc>https://fcichos.github.io/Exp3_2024/geometrical-optics/Lens Systems and Optical Instruments.html</loc>
