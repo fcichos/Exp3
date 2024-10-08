@@ -583,40 +583,38 @@ window.Quarto = {
 
 <section id="refraction" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="refraction"><span class="header-section-number">2.1</span> Refraction</h2>
-<p>The law of refraction is the second important law of geometrical optics. It connects the refractive index <span class="math inline">\(n_1\)</span> at the incident side and the angle of incidence <span class="math inline">\(\theta_1\)</span> to the refractive index <span class="math inline">\(n_2\)</span> and the angle of refraction <span class="math inline">\(\theta_2\)</span> on the transmission side. It will later turn out, that both laws, the law of reflection and the law of refraction actually correspond to a conservation of momentum.</p>
+<p>The law of refraction is the second important law of geometrical optics. It relates the refractive index <span class="math inline">\(n_1\)</span> and angle of incidence <span class="math inline">\(\theta_1\)</span> on one side of an interface to the refractive index <span class="math inline">\(n_2\)</span> and angle of refraction <span class="math inline">\(\theta_2\)</span> on the other side. Both the law of reflection and the law of refraction can be derived from more fundamental principles such as Fermat’s principle of least time and are consistent with the conservation of energy. Their relation to momentum is more complex and involves considering the interaction of light with the medium at an atomic level. These laws provide a mathematical framework for predicting how light behaves when it encounters interfaces between different media, forming the basis for understanding a wide range of optical phenomena and the design of optical devices.</p>
 <section id="refractive-index" class="level3" data-number="2.1.1">
 <h3 data-number="2.1.1" class="anchored" data-anchor-id="refractive-index"><span class="header-section-number">2.1.1</span> Refractive Index</h3>
-<p>The refractive index <span class="math inline">\(n\)</span> is a material constant representing the factor by which the speed of light is slowed down in the medium. As the maximum speed is the speed of light in vacuum, the refractive index is typically a number <span class="math inline">\(n \ge 1\)</span>. Yet, it will turn out later, that the refractive index can be smaller than 1 or even negative. This, however, requires first to understand the origin of the refractive index.</p>
+<p>The refractive index <span class="math inline">\(n\)</span> is a material constant representing the factor by which the speed of light is reduced in the medium compared to its speed in vacuum. For most natural materials and visible light, the refractive index is <span class="math inline">\(n \ge 1\)</span>, as light typically travels slower in media than in vacuum. However, in certain special cases—such as for X-rays in some materials or in engineered metamaterials—the refractive index can be less than 1 or even negative. Understanding these exotic cases requires a deeper exploration of the electromagnetic properties of materials and the origin of the refractive index, which we will address later.</p>
 </section>
 <section id="snells-law" class="level3" data-number="2.1.2">
 <h3 data-number="2.1.2" class="anchored" data-anchor-id="snells-law"><span class="header-section-number">2.1.2</span> Snells Law</h3>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 100%">
-</colgroup>
-<thead>
-<tr class="header">
-<th><img src="../assets/images/reflection/snell.png" width="59%"> <img src="../assets/images/reflection/refraction_law.png" width="40%"></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Fig.:</strong> Snell’s law.</td>
-</tr>
-</tbody>
-</table>
-<div class="alert alert-info">
-<p><strong>Law of Reflection (Snells Law)</strong></p>
-<p>The law of refraction (Snell’s law) is given for the above sketch by</p>
-<p><span class="math display">\[\begin{equation}
-n_1 \sin(\theta_1)=n_2 \sin(\theta_2)
-\end{equation}\]</span></p>
+<p><img src="../assets/images/reflection/snell.png" class="img-fluid" style="width:59.0%" alt="Snell’s law."> <img src="../assets/images/reflection/refraction_law.png" class="img-fluid quarto-figure quarto-figure-center" style="width:40.0%"></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
+<div class="callout-title-container flex-fill">
+Law of Refraction (Snell’s Law)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The law of refraction (Snell’s law) is given for the above sketch by the equation:</p>
+<p><span class="math display">\[
+n_1 \sin(\theta_1)=n_2 \sin(\theta_2)
+\]</span></p>
+</div>
+</div>
+<p>You can explore the law of refraction using the interactive visualization below. The visualization shows a light ray incident on an interface between two media with different refractive indices. You can adjust the angle of incidence and the refractive index of the first medium to see how the angle of refraction changes according to Snell’s law.</p>
+<div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
 <div id="snells-law-viz"></div>
 <p><input type="range" id="angle-slider" min="0" max="90" value="45" step="1">
 Incident Angle: <span id="angle-value">45</span>°</p>
 <p><input type="range" id="index-slider" min="1.0" max="2.0" value="1.0" step="0.1">
 Refractive Index: <span id="index-value">1.0</span></p>
+</div>
 <script src="https://d3js.org/d3.v7.min.js"></script>
 
 <script>
@@ -624,12 +622,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
   // Set up the SVG
   const svg = d3.select("#snells-law-viz")
     .append("svg")
-    .attr("width", 400)
-    .attr("height", 400)
+    .attr("width", 350)
+    .attr("height", 350)
     .style("border", "1px solid #000000");
 
-  const width = 400;
-  const height = 400;
+  const width = 350;
+  const height = 350;
 
   // Define constants and initial values
   let  n1 = 1;
@@ -754,22 +752,37 @@ function updateViz(angle) {
   });
 });
 </script>
-<p>According to Snell’s law, there is a general behavior of the corresponding angles, which you might want to remember (see also Fig. above). Consider the following cases:</p>
-<p><span class="math inline">\(n_1&lt;n_2\)</span>: - refraction is towards the optical axis - <span class="math inline">\(\theta_2&lt;\theta_1\)</span></p>
-<p><span class="math inline">\(n_2&lt;n_1\)</span>: - refraction is away from the optical axis - <span class="math inline">\(\theta_1&lt;\theta_2\)</span></p>
-<p>The plot below shows this result in three plots with varying incident angle and two different refractive index combinations (glass/air, ait/glass).</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th><img src="../assets/images/reflection/angles.png" width="60%"></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Fig.:</strong> Snells law for different combinations of refractive indices.</td>
-</tr>
-</tbody>
-</table>
+<p>Snell’s law leads to some general patterns in the behavior of light rays at interfaces, which are worth remembering. Consider these two cases:</p>
+<ol type="1">
+<li>When light moves from a medium with lower refractive index to one with higher refractive index (<span class="math inline">\(n_1 &lt; n_2\)</span>):
+<ul>
+<li>The refracted ray bends towards the normal (optical axis)</li>
+<li>The angle of refraction is smaller than the angle of incidence (<span class="math inline">\(\theta_2 &lt; \theta_1\)</span>)</li>
+</ul></li>
+<li>When light moves from a medium with higher refractive index to one with lower refractive index (<span class="math inline">\(n_1 &gt; n_2\)</span>):
+<ul>
+<li>The refracted ray bends away from the normal (optical axis)</li>
+<li>The angle of refraction is larger than the angle of incidence (<span class="math inline">\(\theta_2 &gt; \theta_1\)</span>)</li>
+</ul></li>
+</ol>
+<p>Figure <a href="#fig-snells-combinations" class="quarto-xref">2.1</a> illustrates these principles with three plots showing how the refracted angle changes with the incident angle for two common interface scenarios: glass-to-air and air-to-glass. These plots clearly demonstrate the different behaviors described above.</p>
+<!--
+![Snell's law for different combinations of refractive indices. The plots show the relationship between incident angle ($\theta_1$) and refracted angle ($\theta_2$) for three scenarios: (a) light passing from air to glass, (b) light passing from glass to air, and (c) a comparison of both cases. Note how the curves differ when light moves into a medium with higher refractive index versus a lower refractive index.](../assets/images/reflection/angles.png){#fig-snells-combinations width=60% fig-align="center"}
+ -->
+<div id="cell-fig-snells-combinations" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display">
+<div id="fig-snells-combinations" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-snells-combinations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="refraction-total-internal-reflection_files/figure-html/fig-snells-combinations-output-1.png" width="367" height="368" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-snells-combinations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.1— Snell’s law for different combinations of refractive indices. The plots show the relationship between incident angle (<span class="math inline">\(\theta_1\)</span>) and refracted angle (<span class="math inline">\(\theta_2\)</span>) for three scenarios: (a) light passing from air to glass, (b) light passing from glass to air, and (c) a comparison of both cases. Note how the curves differ when light moves into a medium with higher refractive index versus a lower refractive index.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
 <section id="total-internal-reflection" class="level3" data-number="2.1.3">
 <h3 data-number="2.1.3" class="anchored" data-anchor-id="total-internal-reflection"><span class="header-section-number">2.1.3</span> Total Internal Reflection</h3>
@@ -777,61 +790,28 @@ function updateViz(angle) {
 <p>Let’s first formalize this. Using the Snell’s law. For <span class="math inline">\(\theta_2=\frac{\pi}{2}\)</span> we obtain</p>
 <p><span class="math display">\[\theta_1=\theta_c=\sin^{-1}\left (\frac{n_2}{n_1}\right )\]</span></p>
 <p>for the critical angle <span class="math inline">\(\theta_c\)</span>. As the <span class="math inline">\(\sin^{-1}()\)</span> requires an argument <span class="math inline">\(\le1\)</span>, this works only if we have <span class="math inline">\(n_2 &lt; n_1\)</span></p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 100%">
-</colgroup>
-<thead>
-<tr class="header">
-<th><img src="../assets/images/reflection/tir.png" width="50%"> <img src="../assets/images/reflection/tir_disk.png" width="49%"></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Fig.:</strong> Total internal reflection</td>
-</tr>
-</tbody>
-</table>
-<div class="alert alert-info">
-<p><strong>Total Internal Reflection</strong></p>
+<p><img src="../assets/images/reflection/tir.png" id="fig-total-internal-reflection" class="img-fluid" style="width:50.0%" alt="Total internal reflection."> <img src="../assets/images/reflection/tir_disk.png" class="img-fluid quarto-figure quarto-figure-center" style="width:49.0%"></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Total Internal Reflection
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Total internal reflection occurs when light is passing from higher refractive index to lower refractive index materials for incidence angle larger than a critical angle</p>
-<p><span class="math display">\[\begin{equation}
+<p><span class="math display">\[
 \theta_c=\sin^{-1}\left (\frac{n_2}{n_1}\right )
-\end{equation}\]</span></p>
+\]</span></p>
+</div>
 </div>
 <p>We can demonstrate total internal reflection very easily with a water basin, for example, where we couple in light from a laser from the side.</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 100%">
-</colgroup>
-<thead>
-<tr class="header">
-<th><img src="../assets/images/reflection/basin_tir.png" width="59%"> <img src="../assets/images/reflection/tir_basin.png" width="40%"></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Fig.:</strong> Total internal reflection at a water/air interface.</td>
-</tr>
-</tbody>
-</table>
+<p><img src="../assets/images/reflection/basin_tir.png" id="fig-water-air-interface" class="img-fluid" style="width:59.0%" alt="Total internal reflection at a water/air interface."> <img src="../assets/images/reflection/tir_basin.png" class="img-fluid quarto-figure quarto-figure-center" style="width:40.0%"></p>
 <p>But you could try that yourself also in the bath tub diving below the water surface.</p>
 <p><strong>Optical Fiber</strong> Total internal reflection is very important for guiding light in telecommunications, for example. There, glass wires with a diameter from a few to several 100 µm are used to transport light. The glass wire with a central core of refractive index <span class="math inline">\(n_1\)</span> is surrounded by a cladding layer of slightly lower refractive index <span class="math inline">\(n_2\)</span>. Light is then coupled into the fiber from one side. To obtain total internal reflection in this setting, the incident rays have to hit the front of the fiber at a maximum angle <span class="math inline">\(\theta_{a}\)</span></p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 100%">
-</colgroup>
-<thead>
-<tr class="header">
-<th><img src="../assets/images/reflection/fiber.png" width="59%"> <img src="../assets/images/reflection/tir_rod.png" width="40%"></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Fig.:</strong> Total internal reflection in an optical fiber and a glass rod.</td>
-</tr>
-</tbody>
-</table>
+<p><img src="../assets/images/reflection/fiber.png" id="fig-optical-fiber" class="img-fluid" style="width:59.0%" alt="Total internal reflection in an optical fiber and a glass rod."> <img src="../assets/images/reflection/tir_rod.png" class="img-fluid quarto-figure quarto-figure-center" style="width:40.0%"></p>
 <p>The angle <span class="math inline">\(\theta_{a}\)</span> can be easily calculated from Snells law. To characterize this opening angle one typically defines a new quantity called numerical aperature <span class="math inline">\(NA\)</span>, which is the sine of the opening angle <span class="math inline">\(\theta_a\)</span></p>
 <p><span class="math display">\[\begin{equation}
 NA=\sin(\theta_a)=\sqrt{n_1^2-n_2^{2}}
