@@ -172,7 +172,18 @@
     "href": "course-info/resources.html",
     "title": "Resources",
     "section": "",
-    "text": "The course will be mainly built on a number of excellent books on electrodynamics and optics as well as on the basics of quantum mechanics.\n\n\n\nDemtröder: Electrodynamics and Optics, Springer, 2019\nSaleh/Teich: Fundamentals of Photonics, Wiley, 2007\nJackson: Classical Electrodynamics, Wiley, 1998\nHecht: Optics, Pearson, 2016\n\n\n\n\n\nDemtröder: Atoms, Molecules and Photons, Springer, 2010\nHaken, Wolf: The Physics of Atoms and Quanta: Introduction to Experiments and Theory, Springer, 2005\nHarnwel, Livingood: Experimental Atomic Physics, McGraw-Hill Book Company, Inc, 1933",
+    "text": "This website makes use of the hypothes.is annotation service. You can use it to leave comments and feedback on the content of this website. To do so, you need to create a hypothes.is account. You can then highlight text on the website and leave comments. You can also reply to comments left by others and create your own nodes. We use this service for the first time, so please let us know if you like that.\nLink to the Hypothes.is group",
+    "crumbs": [
+      "Course Info",
+      "Resources"
+    ]
+  },
+  {
+    "objectID": "course-info/resources.html#comments-and-feedback",
+    "href": "course-info/resources.html#comments-and-feedback",
+    "title": "Resources",
+    "section": "",
+    "text": "This website makes use of the hypothes.is annotation service. You can use it to leave comments and feedback on the content of this website. To do so, you need to create a hypothes.is account. You can then highlight text on the website and leave comments. You can also reply to comments left by others and create your own nodes. We use this service for the first time, so please let us know if you like that.\nLink to the Hypothes.is group",
     "crumbs": [
       "Course Info",
       "Resources"
@@ -182,8 +193,8 @@
     "objectID": "course-info/resources.html#books",
     "href": "course-info/resources.html#books",
     "title": "Resources",
-    "section": "",
-    "text": "The course will be mainly built on a number of excellent books on electrodynamics and optics as well as on the basics of quantum mechanics.\n\n\n\nDemtröder: Electrodynamics and Optics, Springer, 2019\nSaleh/Teich: Fundamentals of Photonics, Wiley, 2007\nJackson: Classical Electrodynamics, Wiley, 1998\nHecht: Optics, Pearson, 2016\n\n\n\n\n\nDemtröder: Atoms, Molecules and Photons, Springer, 2010\nHaken, Wolf: The Physics of Atoms and Quanta: Introduction to Experiments and Theory, Springer, 2005\nHarnwel, Livingood: Experimental Atomic Physics, McGraw-Hill Book Company, Inc, 1933",
+    "section": "Books",
+    "text": "Books\nThe course will be mainly built on a number of excellent books on electrodynamics and optics as well as on the basics of quantum mechanics.\n\nOptics and Electrodynamics\n\nDemtröder: Electrodynamics and Optics, Springer, 2019\nSaleh/Teich: Fundamentals of Photonics, Wiley, 2007\nJackson: Classical Electrodynamics, Wiley, 1998\nHecht: Optics, Pearson, 2016\n\n\n\nQuantum Mechanics\n\nDemtröder: Atoms, Molecules and Photons, Springer, 2010\nHaken, Wolf: The Physics of Atoms and Quanta: Introduction to Experiments and Theory, Springer, 2005\nHarnwel, Livingood: Experimental Atomic Physics, McGraw-Hill Book Company, Inc, 1933",
     "crumbs": [
       "Course Info",
       "Resources"

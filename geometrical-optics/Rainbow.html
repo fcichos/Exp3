@@ -339,7 +339,7 @@ window.Quarto = {
 </header>
 
 
-<div id="0b71f0a7" class="cell" data-execution_count="1">
+<div id="35cdf7f5" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">## just for plotting later</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -387,16 +387,16 @@ window.Quarto = {
 <p>such that finally</p>
 <p><span class="math display">\[\phi=4\sin^{-1}\left (\frac{n_{\rm air}}{n_{\rm water}}\sin(\alpha) \right)-2\alpha\]</span></p>
 <p>So let us have a look at this dependence of the deflection angle as a function of the incidence angle.</p>
-<div id="b2ede4ab" class="cell" data-execution_count="2">
+<div id="c8bc7035" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>alpha<span class="op">=</span>np.linspace(<span class="dv">0</span>,np.pi<span class="op">/</span><span class="dv">2</span>,<span class="dv">10000</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>h2o<span class="op">=</span>pd.read_csv(<span class="st">"data/H2O.csv"</span>,delimiter<span class="op">=</span><span class="st">","</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>n<span class="op">=</span>np.interp(<span class="fl">0.500</span>,h2o.wl,h2o.n)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="711a88d7" class="cell" data-execution_count="3">
+<div id="985f8536" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> rainbow(alpha,n):</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span>(<span class="dv">4</span><span class="op">*</span>np.arcsin(np.sin(alpha)<span class="op">/</span>n)<span class="op">-</span><span class="dv">2</span><span class="op">*</span>alpha)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="73af133a" class="cell" data-execution_count="4">
+<div id="01c90a31" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>plt.plot(alpha<span class="op">*</span><span class="dv">180</span><span class="op">/</span>np.pi,rainbow(alpha,n)<span class="op">*</span><span class="dv">180</span><span class="op">/</span>np.pi)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="vs">r"incident angle $\alpha$ [°]"</span>)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="vs">r"deflection angle $\phi$ [°]"</span>)</span>
@@ -410,7 +410,7 @@ window.Quarto = {
 </div>
 </div>
 <p>The dependence seems to show a maximum deflection angle at an incidence angle of around <span class="math inline">\(\alpha=60^{\circ}\)</span>. This is an important finding, as the whole appearance of the rainbow depends on that.</p>
-<div id="5bc6e1bf" class="cell" data-execution_count="5">
+<div id="20ef9c6d" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Maximum deflection angle '</span>, np.<span class="bu">max</span>(rainbow(alpha,n)<span class="op">*</span><span class="dv">180</span><span class="op">/</span>np.pi))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Maximum deflection angle  41.78815648670841</code></pre>
@@ -420,7 +420,7 @@ window.Quarto = {
 <section id="color-of-the-rainbow" class="level3">
 <h3 class="anchored" data-anchor-id="color-of-the-rainbow">Color of the rainbow</h3>
 <p>The color of the rainbow is now the result of the fact that the maximum deflection angle depends on the color of the light due to the dispersion. Since we have a refraction, reflection and another refraction, the largest maximum deflection angle is observed for red light, while the smallest one appears for blue light. The diagrams below show this result, which is in general true for materials with normal dispersion.</p>
-<div id="5d5c12e8" class="cell" data-execution_count="6">
+<div id="8d0020f1" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>,<span class="dv">4</span>))</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">1</span>)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> wl <span class="kw">in</span> np.linspace(<span class="fl">0.400</span>,<span class="fl">0.700</span>,<span class="dv">100</span>): </span>
@@ -453,7 +453,7 @@ window.Quarto = {
 </div>
 <p>This order of the colors is actually true for all incident angles, which raises the question, why the rainbow is actually colored. The blue color of a certain incidence angle would actually overlap with the green color of a different incidence angle and the red color of an even different incidence angle. If you select a specific outgoing angle under which you observe the rainbow, let us say 41°, then you find under this observation angle all color and, therefore, should observe always white light.</p>
 <p>This is actually true if you look at the inside of a rainbow. You clearly recognize that inside the rainbow it is much brighter than outside. Yet when you reach the maximum angle of each color, you have a region, where even for larger angles for the incidence angles, the deflection angle does not change. Thus, if you assume you send in rays at constantly spaced incidence angles, you will have more rays with a deflection angle close to the maximum. The diagram below just counts the number of deflection angles in the different for each color and you clearly see that around the maximum deflection angles for each color you have a strong peak.</p>
-<div id="313a3094" class="cell" data-execution_count="7">
+<div id="40d023eb" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">5</span>,<span class="dv">6</span>))</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> wl <span class="kw">in</span> np.linspace(<span class="fl">0.400</span>,<span class="fl">0.700</span>,<span class="dv">4</span>): </span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    c<span class="op">=</span>wavelength_to_rgb(wl<span class="op">*</span><span class="dv">1000</span>, gamma<span class="op">=</span><span class="fl">0.8</span>)</span>
