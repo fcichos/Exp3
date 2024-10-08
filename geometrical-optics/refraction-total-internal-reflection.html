@@ -396,8 +396,10 @@ n_1 \sin(\theta_1)=n_2 \sin(\theta_2)
 <div id="snells-law-viz"></div>
 <p><input type="range" id="angle-slider" min="0" max="90" value="45" step="1">
 Incident Angle: <span id="angle-value">45</span>°</p>
-<p><input type="range" id="index-slider" min="1.0" max="2.0" value="1.0" step="0.1">
-Refractive Index: <span id="index-value">1.0</span></p>
+<p><input type="range" id="index1-slider" min="1.0" max="2.0" value="1.0" step="0.1">
+Refractive Index n₁: <span id="index1-value">1.0</span></p>
+<p><input type="range" id="index2-slider" min="1.0" max="2.0" value="1.5" step="0.1">
+Refractive Index n₂: <span id="index2-value">1.5</span></p>
 </div>
 <script src="https://d3js.org/d3.v7.min.js"></script>
 
@@ -414,8 +416,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
   const height = 350;
 
   // Define constants and initial values
-  let  n1 = 1;
-  const n2 = 1.5;
+  let n1 = 1.0;
+  let n2 = 1.5;
   let angle = 45;
 
   // Create a group for the visualization
@@ -428,8 +430,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     .attr("y1", 0)
     .attr("x2", width/2)
     .attr("y2", 0)
-    .attr("stroke", "black")
-
+    .attr("stroke", "black");
 
   g.append("line")
     .attr("x1", 0)
@@ -439,12 +440,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
     .attr("stroke", "black")
     .attr("stroke-dasharray", "5,5");
 
-  g.append("text")
+  const n2Label = g.append("text")
     .attr("x", 100)
-    .attr("y", -10)
-    .text(`n₂ = ${n2}`);
-
-
+    .attr("y", -10);
 
   const incidentRay = g.append("line")
     .attr("stroke", "red")
@@ -462,77 +460,76 @@ document.addEventListener('DOMContentLoaded', (event) => {
     .attr("x", 10)
     .attr("y", 20);
 
-  const refractedIndexLabel = g.append("text")
+  const n1Label = g.append("text")
     .attr("x", 100)
-    .attr("y", 20)
-    .text(`n₁ = ${n1}`);
+    .attr("y", 20);
 
-function updateViz(angle) {
+  function updateViz(angle, n1, n2) {
+    const theta1 = angle * Math.PI / 180; // Convert angle to radians
 
-  const theta1 = angle * Math.PI / 180; // Convert angle to radians
+    const thetaC = Math.asin(n2 / n1);
 
-  const thetaC = Math.asin(n2 / n1);
+    let theta2;
+    let isTotalInternalReflection = false;
 
-  let theta2;
-  let isTotalInternalReflection = false;
+    // Check for total internal reflection
+    if (theta1 > thetaC) {
+        theta2 = -theta1; // Reflect the angle
+        isTotalInternalReflection = true;
+    } else {
+        theta2 = Math.asin((n1 * Math.sin(theta1)) / n2);
+    }
 
-  // Check for total internal reflection
-  if (theta1 > thetaC) {
-      theta2 = -theta1; // Reflect the angle
-      isTotalInternalReflection = true;
-  } else {
-      theta2 = Math.asin((n1 * Math.sin(theta1)) / n2);
+    incidentRay
+      .attr("x1", 0)
+      .attr("y1", 0)
+      .attr("x2", -150 * Math.sin(theta1))
+      .attr("y2", 150 * Math.cos(theta1));
+
+    if (isTotalInternalReflection) {
+        refractedRay
+          .attr("x1", 0)
+          .attr("y1", 0)
+          .attr("x2", -150 * Math.sin(theta2))
+          .attr("y2", 150 * Math.cos(theta2));
+    } else {
+        refractedRay
+          .attr("x1", 0)
+          .attr("y1", 0)
+          .attr("x2", 150 * Math.sin(theta2))
+          .attr("y2", -150 * Math.cos(theta2));
+    }
+
+    n1Label.text(`n₁ = ${n1.toFixed(1)}`);
+    n2Label.text(`n₂ = ${n2.toFixed(1)}`);
+
+    incidentAngleLabel
+        .text(`θ₁ = ${((theta1 * 180) / Math.PI).toFixed(1)}°`)
+        .attr("transform", `translate(${-150}, 150)`);
+
+    refractedAngleLabel
+        .text(`θ₂ = ${(theta2 * 180 / Math.PI).toFixed(1)}°`)
+        .attr("transform", `translate(75,-175)`);
   }
 
-  incidentRay
-    .attr("x1", 0)
-    .attr("y1", 0)
-    .attr("x2", -150 * Math.sin(theta1))
-    .attr("y2", 150 * Math.cos(theta1));
-
-  if (isTotalInternalReflection) {
-
-      refractedRay
-        .attr("x1", 0)
-        .attr("y1", 0)
-        .attr("x2", -150 * Math.sin(theta2))
-        .attr("y2", 150 * Math.cos(theta2));
-  } else {
-
-      refractedRay
-        .attr("x1", 0)
-        .attr("y1", 0)
-        .attr("x2", 150 * Math.sin(theta2))
-        .attr("y2", -150 * Math.cos(theta2));
-  }
-
-  refractedIndexLabel
-      .text(`n₁ = ${n1}`)
-
-
-  incidentAngleLabel
-      .text(`θ₁ = ${((theta1 * 180) / Math.PI).toFixed(1)}°`)
-      .attr("transform", `translate(${-150}, 150)`);
-
-  refractedAngleLabel
-      .text(`θ₂ = ${(theta2 * 180 / Math.PI).toFixed(1)}°`)
-      .attr("transform", `translate(75,-175)`);
-}
-
-
-
-  updateViz(angle);
+  updateViz(angle, n1, n2);
 
   d3.select("#angle-slider").on("input", function() {
     angle = +this.value;
     d3.select("#angle-value").text(angle);
-    updateViz(angle);
+    updateViz(angle, n1, n2);
   });
 
-  d3.select("#index-slider").on("input", function() {
+  d3.select("#index1-slider").on("input", function() {
     n1 = +this.value;
-    d3.select("#index-value").text(n1);
-    updateViz(angle);
+    d3.select("#index1-value").text(n1.toFixed(1));
+    updateViz(angle, n1, n2);
+  });
+
+  d3.select("#index2-slider").on("input", function() {
+    n2 = +this.value;
+    d3.select("#index2-value").text(n2.toFixed(1));
+    updateViz(angle, n1, n2);
   });
 });
 </script>
