@@ -786,10 +786,12 @@ Figure&nbsp;2.1— Snell’s law for different combinations of refractive indice
 </section>
 <section id="total-internal-reflection" class="level3" data-number="2.1.3">
 <h3 data-number="2.1.3" class="anchored" data-anchor-id="total-internal-reflection"><span class="header-section-number">2.1.3</span> Total Internal Reflection</h3>
-<p>The above diagram reveals a special case occurring when <span class="math inline">\(n_1&gt;n_2\)</span>. Under these condition, one may change the incident angle <span class="math inline">\(\theta_1\)</span> such that the outgoing angle becomes <span class="math inline">\(\theta_2=\frac{\pi}{2}\)</span>. For any incident angle <span class="math inline">\(\theta_1\)</span> larger than this critical angle, the is no refracted ray anymore, but just a reflected ray. This is despite the fact that the material with <span class="math inline">\(n_2\)</span> is completely transparent. This phenomenon is called <strong>total internal reflection</strong> and it has several important applications.</p>
-<p>Let’s first formalize this. Using the Snell’s law. For <span class="math inline">\(\theta_2=\frac{\pi}{2}\)</span> we obtain</p>
-<p><span class="math display">\[\theta_1=\theta_c=\sin^{-1}\left (\frac{n_2}{n_1}\right )\]</span></p>
-<p>for the critical angle <span class="math inline">\(\theta_c\)</span>. As the <span class="math inline">\(\sin^{-1}()\)</span> requires an argument <span class="math inline">\(\le1\)</span>, this works only if we have <span class="math inline">\(n_2 &lt; n_1\)</span></p>
+<p>The above diagram reveals a special case occurring when <span class="math inline">\(n_1 &gt; n_2\)</span>. Under these conditions, we can increase the incident angle <span class="math inline">\(\theta_1\)</span> until the outgoing angle reaches <span class="math inline">\(\theta_2 = \frac{\pi}{2}\)</span>. At this point, the refracted ray would be traveling along the interface between the two media. For any incident angle <span class="math inline">\(\theta_1\)</span> larger than this critical angle, there is no refracted ray at all; instead, we observe only a reflected ray. This phenomenon, known as <strong>total internal reflection</strong>, occurs despite the fact that the material with refractive index <span class="math inline">\(n_2\)</span> is completely transparent.</p>
+<p>Let’s formalize this concept mathematically. Using Snell’s law and setting <span class="math inline">\(\theta_2 = \frac{\pi}{2}\)</span>, we obtain the equation for the critical angle <span class="math inline">\(\theta_c\)</span>:</p>
+<p><span class="math display">\[\theta_1 = \theta_c = \sin^{-1}\left(\frac{n_2}{n_1}\right)\]</span></p>
+<p>Note that the <span class="math inline">\(\sin^{-1}()\)</span> function requires an argument <span class="math inline">\(\le 1\)</span>, which is why this phenomenon only occurs when <span class="math inline">\(n_2 &lt; n_1\)</span>.</p>
+<p>It’s important to understand that during total internal reflection, all of the light energy is reflected back into the first medium, hence the term ‘total’. However, electromagnetic optics reveals an interesting subtlety: an evanescent wave penetrates a short distance into the second medium, though it doesn’t propagate energy across the boundary.</p>
+<p>When the incident angle exceeds the critical angle, Snell’s law as we’ve written it no longer applies. Instead, we observe perfect reflection, where the angle of reflection equals the angle of incidence, just as in regular reflection from a mirror. This reflection occurs without any loss of energy to the second medium, making it an extremely efficient process.</p>
 <p><img src="../assets/images/reflection/tir.png" id="fig-total-internal-reflection" class="img-fluid" style="width:50.0%" alt="Total internal reflection."> <img src="../assets/images/reflection/tir_disk.png" class="img-fluid quarto-figure quarto-figure-center" style="width:49.0%"></p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -810,13 +812,50 @@ Total Internal Reflection
 <p>We can demonstrate total internal reflection very easily with a water basin, for example, where we couple in light from a laser from the side.</p>
 <p><img src="../assets/images/reflection/basin_tir.png" id="fig-water-air-interface" class="img-fluid" style="width:59.0%" alt="Total internal reflection at a water/air interface."> <img src="../assets/images/reflection/tir_basin.png" class="img-fluid quarto-figure quarto-figure-center" style="width:40.0%"></p>
 <p>But you could try that yourself also in the bath tub diving below the water surface.</p>
-<p><strong>Optical Fiber</strong> Total internal reflection is very important for guiding light in telecommunications, for example. There, glass wires with a diameter from a few to several 100 µm are used to transport light. The glass wire with a central core of refractive index <span class="math inline">\(n_1\)</span> is surrounded by a cladding layer of slightly lower refractive index <span class="math inline">\(n_2\)</span>. Light is then coupled into the fiber from one side. To obtain total internal reflection in this setting, the incident rays have to hit the front of the fiber at a maximum angle <span class="math inline">\(\theta_{a}\)</span></p>
+<p>Total internal reflection has numerous practical applications:</p>
+<ol type="1">
+<li>Fiber optic communications: Light signals can travel long distances with minimal loss through optical fibers.</li>
+<li>Optical instruments: Prisms in binoculars and telescopes use total internal reflection to manipulate light paths.</li>
+<li>Gemstones: The sparkle of diamonds is enhanced by total internal reflection trapping light within the stone.</li>
+<li>Medical endoscopes: Total internal reflection helps guide light through flexible tubes for internal imaging.</li>
+</ol>
+<p><strong>Optical Fibers and Total Internal Reflection</strong></p>
+<p>Total internal reflection plays a crucial role in modern telecommunications, particularly in optical fibers, which are also part of many experimental setups. These fibers are essentially ultra-thin glass wires, ranging in diameter from a few micrometers to several hundred micrometers, designed to transport light over long distances with minimal loss.</p>
+<p>The structure of an optical fiber is key to its function:</p>
+<ol type="1">
+<li>Core: A central glass core with a refractive index <span class="math inline">\(n_1\)</span></li>
+<li>Cladding: A surrounding layer with a slightly lower refractive index <span class="math inline">\(n_2\)</span></li>
+</ol>
+<p>This difference in refractive indices is what allows total internal reflection to occur within the fiber.</p>
 <p><img src="../assets/images/reflection/fiber.png" id="fig-optical-fiber" class="img-fluid" style="width:59.0%" alt="Total internal reflection in an optical fiber and a glass rod."> <img src="../assets/images/reflection/tir_rod.png" class="img-fluid quarto-figure quarto-figure-center" style="width:40.0%"></p>
-<p>The angle <span class="math inline">\(\theta_{a}\)</span> can be easily calculated from Snells law. To characterize this opening angle one typically defines a new quantity called numerical aperature <span class="math inline">\(NA\)</span>, which is the sine of the opening angle <span class="math inline">\(\theta_a\)</span></p>
+<p>For light to propagate effectively through the fiber, it must enter at an angle that ensures total internal reflection at the core-cladding interface. This leads to the concept of the acceptance angle, <span class="math inline">\(\theta_a\)</span>, which is the maximum angle at which light can enter the fiber and still undergo total internal reflection.</p>
+<p>To characterize this acceptance angle, optical engineers use a parameter called the <strong>Numerical Aperture (NA)</strong>. The NA is defined as the sine of the maximum acceptance angle:</p>
 <p><span class="math display">\[\begin{equation}
-NA=\sin(\theta_a)=\sqrt{n_1^2-n_2^{2}}
+NA = \sin(\theta_a) = \sqrt{n_1^2 - n_2^2}
 \end{equation}\]</span></p>
-<p>Using typical values of the refractive indices <span class="math inline">\(n_1=1.475\)</span> and <span class="math inline">\(n_2=1.46\)</span> one obtains a numerical apeture of <span class="math inline">\(NA\approx 0.2\)</span>.</p>
+<p>This equation relates the NA directly to the refractive indices of the core and cladding. The derivation of this formula involves applying Snell’s law at the air-fiber interface and at the core-cladding interface, then using the condition for total internal reflection.</p>
+<p>In practice, typical values for the refractive indices might be <span class="math inline">\(n_1 = 1.475\)</span> for the core and <span class="math inline">\(n_2 = 1.46\)</span> for the cladding. Plugging these into our equation:</p>
+<p><span class="math display">\[\begin{equation}
+NA = \sqrt{1.475^2 - 1.46^2} \approx 0.2
+\end{equation}\]</span></p>
+<p>This means that light entering the fiber within a cone of about 11.5° (arcsin(0.2)) from the fiber’s axis will be transmitted through the fiber via total internal reflection.</p>
+<p>The NA is an important parameter in fiber optic design:</p>
+<ol type="1">
+<li>It determines the light-gathering ability of the fiber.</li>
+<li>It affects the fiber’s bandwidth and its susceptibility to certain types of signal distortion.</li>
+<li>It influences how easily the fiber can be coupled to light sources and other fibers.</li>
+</ol>
+<p>Optical fibers come in various types, each optimized for different applications. Some fibers are designed to transmit light over long distances with minimal loss, while others are engineered for specific wavelengths or to guide light in unusual ways. The figure below shows a few examples of optical fiber types.</p>
+<div id="fig-optical-fiber" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-optical-fiber-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/fibers.png" class="img-fluid figure-img" style="width:59.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-optical-fiber-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.2— Rendering of different optical fibers types (from left to right): Hollow core optical fiber, hollow core bragg fiber, photonic crystal fiber, conventional fiber
+</figcaption>
+</figure>
+</div>
 
 
 </section>
