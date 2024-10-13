@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Optical Instruments – Experimental Physics 3 Course on Optics and Quantum Mechanics</title>
+<title>Rainbow – Experimental Physics 3 Course on Optics and Quantum Mechanics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,6 +64,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../geometrical-optics/Optical Elements III.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -134,7 +169,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Optical Instruments</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../geometrical-optics/index.html">Geometrical Optics</a></li><li class="breadcrumb-item"><a href="../geometrical-optics/Optical Elements III.html">Lecture 3</a></li><li class="breadcrumb-item"><a href="../geometrical-optics/Rainbow.html">Rainbow</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -251,13 +286,13 @@ window.Quarto = {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
  <span class="menu-text">Lecture 3</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../geometrical-optics/Optical Elements III.html" class="sidebar-item-text sidebar-link">
@@ -266,7 +301,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../geometrical-optics/Rainbow.html" class="sidebar-item-text sidebar-link">
+  <a href="../geometrical-optics/Rainbow.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Rainbow</span></a>
   </div>
 </li>
@@ -279,15 +314,22 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#deflection-with-one-reflection" id="toc-deflection-with-one-reflection" class="nav-link active" data-scroll-target="#deflection-with-one-reflection">Deflection with one reflection</a></li>
+  <li><a href="#color-of-the-rainbow" id="toc-color-of-the-rainbow" class="nav-link" data-scroll-target="#color-of-the-rainbow">Color of the rainbow</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../geometrical-optics/index.html">Geometrical Optics</a></li><li class="breadcrumb-item"><a href="../geometrical-optics/Optical Elements III.html">Lecture 3</a></li><li class="breadcrumb-item"><a href="../geometrical-optics/Rainbow.html">Rainbow</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Optical Instruments</h1>
+<h1 class="title">Rainbow</h1>
 </div>
 
 
@@ -304,95 +346,166 @@ window.Quarto = {
 </header>
 
 
-<p>Optical instruments now combine a number of optical elements or even consist only out of a single one as in the case of the magnifying glass or the eye.</p>
-<section id="the-eye" class="level4">
-<h4 class="anchored" data-anchor-id="the-eye">The Eye</h4>
-<p>The human eye is certainly one of the most amazing biological sensorial systems, which consists of biologically grown optical elements including an aperture, an adaptive lens and a photodetector, which is connected to an intelligent neural network, that is amazingly accurate and fast in pattern recognition. Think of that for a moment, that this performance is given with a few 10 W power consumption and then turn around your laptop and check out its power consumption.</p>
-<p>The eye allows you to image objects at variable distance from you. The sketch below indicates some of its essential ingredients.</p>
+<div id="b5a00a49" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">## just for plotting later</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spectrumRGB <span class="im">import</span> wavelength_to_rgb</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>plt.rcParams.update({<span class="st">'font.size'</span>: <span class="dv">12</span>,</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>                     <span class="st">'axes.titlesize'</span>: <span class="dv">18</span>,</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>                     <span class="st">'axes.labelsize'</span>: <span class="dv">16</span>,</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>                     <span class="st">'axes.labelpad'</span>: <span class="dv">14</span>,</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>                     <span class="st">'lines.linewidth'</span>: <span class="dv">1</span>,</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>                     <span class="st">'lines.markersize'</span>: <span class="dv">10</span>,</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>                     <span class="st">'xtick.labelsize'</span> : <span class="dv">16</span>,</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>                     <span class="st">'ytick.labelsize'</span> : <span class="dv">16</span>,</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>                     <span class="st">'xtick.top'</span> : <span class="va">True</span>,</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>                     <span class="st">'xtick.direction'</span> : <span class="st">'in'</span>,</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>                     <span class="st">'ytick.right'</span> : <span class="va">True</span>,</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>                     <span class="st">'ytick.direction'</span> : <span class="st">'in'</span>,})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="deflection-with-one-reflection" class="level3">
+<h3 class="anchored" data-anchor-id="deflection-with-one-reflection">Deflection with one reflection</h3>
+<p>As the last topic of the optical elements we would like to have a look at a phenomenon, which has nothing to do with optical elements but is fun and just fits to the topic of dispersion. We will explore the rainbow and in addition a DIY version, the glassbow. To understand the rainbow we will have first a look at the reflection of rays from a single droplet.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th><img src="img/rainbow.png" width="40%"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Fig.:</strong> Reflection of rays in a single drop.</td>
+</tr>
+</tbody>
+</table>
+<p>In the sketch above a light ray of white light is entering the droplet under an angle <span class="math inline">\(\alpha\)</span> to the surface normal on the top. The ray is refracted and enters the droplet under an angle <span class="math inline">\(\beta\)</span> to the surface normal. The angle can be calculated from Snell’s law</p>
+<p><span class="math display">\[n_{\rm air}\sin(\alpha)=n_{\rm water}\sin(\beta).\]</span></p>
+<p>Inside the droplet, the ray is now hitting the water/air surface at the backside from which it gets reflected. There, the incident angle is also <span class="math inline">\(\beta\)</span> and the ray is reflected under an angle <span class="math inline">\(\beta\)</span> as well. At that point, most of the light will, however, exit the drop on the backside, so that only a small fraction is reflected and traveling further to hit a second time the water/air surface at the angle <span class="math inline">\(\beta\)</span>. The light refracted out at that point leaves the droplet under an angle <span class="math inline">\(\alpha\)</span> with the surface normal due to the reversiblity of the light path. We are, however, interested in the angle <span class="math inline">\(\phi\)</span> that the ray makes with the incident direction.</p>
+<p>This angle <span class="math inline">\(\phi\)</span> can be calculated from the above sketch to be</p>
+<p><span class="math display">\[\phi=4\beta-2\alpha.\]</span></p>
+<p>Since</p>
+<p><span class="math display">\[\beta=\sin^{-1}\left (\frac{n_{\rm air}}{n_{\rm water}}\sin(\alpha) \right)\]</span></p>
+<p>such that finally</p>
+<p><span class="math display">\[\phi=4\sin^{-1}\left (\frac{n_{\rm air}}{n_{\rm water}}\sin(\alpha) \right)-2\alpha\]</span></p>
+<p>So let us have a look at this dependence of the deflection angle as a function of the incidence angle.</p>
+<div id="49f1b206" class="cell" data-execution_count="4">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Rainbow_files/figure-html/cell-5-output-1.png" width="390" height="308" class="figure-img"></p>
+<figcaption>Caption</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The dependence seems to show a maximum deflection angle at an incidence angle of around <span class="math inline">\(\alpha=60^{\circ}\)</span>. This is an important finding, as the whole appearance of the rainbow depends on that.</p>
+<div id="64e6965a" class="cell" data-execution_count="5">
+<div class="cell-output cell-output-stdout">
+<pre><code>Maximum deflection angle  41.78815648670841</code></pre>
+</div>
+</div>
+</section>
+<section id="color-of-the-rainbow" class="level3">
+<h3 class="anchored" data-anchor-id="color-of-the-rainbow">Color of the rainbow</h3>
+<p>The color of the rainbow is now the result of the fact that the maximum deflection angle depends on the color of the light due to the dispersion. Since we have a refraction, reflection and another refraction, the largest maximum deflection angle is observed for red light, while the smallest one appears for blue light. The diagrams below show this result, which is in general true for materials with normal dispersion.</p>
+<div id="64688bfc" class="cell" data-execution_count="6">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Rainbow_files/figure-html/cell-7-output-1.png" width="752" height="369" class="figure-img"></p>
+<figcaption>Caption</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>This order of the colors is actually true for all incident angles, which raises the question, why the rainbow is actually colored. The blue color of a certain incidence angle would actually overlap with the green color of a different incidence angle and the red color of an even different incidence angle. If you select a specific outgoing angle under which you observe the rainbow, let us say 41°, then you find under this observation angle all color and, therefore, should observe always white light.</p>
+<p>This is actually true if you look at the inside of a rainbow. You clearly recognize that inside the rainbow it is much brighter than outside. Yet when you reach the maximum angle of each color, you have a region, where even for larger angles for the incidence angles, the deflection angle does not change. Thus, if you assume you send in rays at constantly spaced incidence angles, you will have more rays with a deflection angle close to the maximum. The diagram below just counts the number of deflection angles in the different for each color and you clearly see that around the maximum deflection angles for each color you have a strong peak.</p>
+<div id="d384ebc2" class="cell" data-execution_count="7">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Rainbow_files/figure-html/cell-8-output-1.png" width="490" height="530" class="figure-img"></p>
+<figcaption>Caption</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Thus, around each droplet on the sky, there is a cone of deflected light reflected back from the sun. On the outside of that cone is red light under an angle of almost <span class="math inline">\(42^{\circ}\)</span> while on the inside edge we find blue light and finally white light (see left image below). We just have to connect that to the observer now. This is shown in the right sketch. The rainbow, therefore, results from the fact that we look at different height at different edges of the cone.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 100%">
 </colgroup>
 <thead>
 <tr class="header">
-<th><img src="img/eye.jpeg" width="20%"> <img src="img/retina.png" width="20%"></th>
+<th><img src="img/cone.png" width="40%"> <img src="img/observation.png" width="40%"></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Fig.:</strong> Sketch of the ingredients of the human eye. Most important parts the lens, the glass body and the retina containing the bightness (rods) and color sensors (cones). A more detailed sketch is depicted on the right side, which shows the arrangement of rods and cones in the retina including their parallel connection. Their combined signal is ending the optical nerves guiding the signals to the brain.</td>
+<td><strong>Fig.:</strong> Deflection cones of different color on a single drop in a rainbow and rainbow as a result of the observation of the cones.</td>
 </tr>
 </tbody>
 </table>
-<p>Most important is the pupil resembling an adjustable aperture for adjusting the total light falling to the retina and the lens, connected to muscles to change the curvature of the lens and, thus, also the focal distance.</p>
-<p>The lens is connected to air on one side as the surrounding medium and to a vitreous humor (glass body) on the other side. So there is some asymmetry. The eye, therefore, has a front focal length of <span class="math inline">\(f_1=17\,{\rm mm}\)</span> and a back focal length of <span class="math inline">\(f_2=22\,{\rm mm}\)</span>. These values may vary by the individual but also by the distance of the object. For close objects the eye can accomodate its focal distance to <span class="math inline">\(f_1=14\,{\rm mm}\)</span> and <span class="math inline">\(f_2=19\,{\rm mm}\)</span>.</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th><img src="img/eye_focal_distance.png" width="40%"></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Fig.:</strong> Focal distances for the eye lens.</td>
-</tr>
-</tbody>
-</table>
-<p>Cones and rods are differently distributed around the fovea, which is the spot of the highest color sensitivity. The cone density peaks around this center, while the rod density is larger outside. Cones are the color sensitive objects, which gain their light sensitive from a dye molecules called <em>retinal</em> undergoing a conformational transition upon excitation with light. This triggers a cascasde of different chemical processes. Cones with three narrow excitation ranges allow our color vision (see Fig. below).</p>
+<section id="rainbow" class="level4">
+<h4 class="anchored" data-anchor-id="rainbow">Rainbow</h4>
+<p>The photos below show a rainbow, where you should see the enhanced white color in the center of the rainbow, the color order of the bow itself and the darker region outside. But there is also a second rainbow appearing on the outside.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 100%">
 </colgroup>
 <thead>
 <tr class="header">
-<th><img src="img/cone_and_rods.png" width="60%"></th>
+<th><img src="img/rainbow_full.JPG" width="100%"></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Fig.:</strong> Angular distribution of cones and rods around the fovea, electron micrograph of cones (large) and rods (small) as well as their color sensitivity.</td>
+<td><strong>Fig.:</strong> Double rainbow over the Grand Canyon. (c) Picture by Frank Cichos</td>
 </tr>
 </tbody>
 </table>
-<p>Under normal conditions, objects at infinite distance are imaged to the retina at the back focal distance <span class="math inline">\(f_2=22\, {\rm mm}\)</span>. However, the lens of the eye may have defects changing its refractive power. Often this leads to short-sightedness or far-sightedness. If you are short-sighted, the light from infinite distance is not focused to the retina but to some shorter distance inside the glass body. This may be corrected by a concave lens as displayed in the image below on the left side. If you are far-sighted, then the light is focused behind the retina if objects are ininitely distant away. To correct for that error, one needs a convex lens as displayed on the right side.</p>
+<p>This second outside rainbow has a reversed color order and is weaker than the inside rainbow. This secondary rainbow comes from a process involving two refractions and two reflections inside each drop.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 100%">
 </colgroup>
 <thead>
 <tr class="header">
-<th><img src="img/short_sighted.png" width="25%"> <img src="img/far_sighted.png" width="30%"></th>
+<th><img src="img/rainbow_gczoom.JPG" width="100%"></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Fig.:</strong> Short-sightedness (left) and far-sightedness (right) and their correction by additional lenses.</td>
+<td><strong>Fig.:</strong> Zoom into the rainbow over the Grand Canyon. (c) Picture by Frank Cichos</td>
 </tr>
 </tbody>
 </table>
-<p>In the normal relaxed state of the eye muscle, one can, therefore, observe objects up to a distance of <span class="math inline">\(s_0=25\, {\rm cm}\)</span> without additional accomodation of the eye lens. This distance, which varies from person to person, is standardized and called the <strong>range of clear visual sight</strong>. This range of clear visual sight allows to observe objects under an angle <span class="math inline">\(\epsilon\)</span>.</p>
+</section>
+<section id="glassbow" class="level4">
+<h4 class="anchored" data-anchor-id="glassbow">Glassbow</h4>
+<p>You can observe a beautiful rainbow at home if you just have a few glass beads. You can get these glass beeds from us. They have a diameter of about 200 µm. If you place them on a black background and use a flash lamp, you will observe a nice rainbow as Mr.&nbsp;Märcker did in the photo below. The main difference is the observation angle. Try to calculate the new observation angle for the refractive indices of glass.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 100%">
 </colgroup>
 <thead>
 <tr class="header">
-<th><img src="img/relaxed_eye.png" width="40%"></th>
+<th><img src="img/glassbow.JPG" width="100%"></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Fig.:</strong> Short-sightedness (left) and far-sightedness (right) and their correction by additional lenses.</td>
+<td><strong>Fig.:</strong> Reflection of rays in a single drop. (c) Picture by Axel Märcker.</td>
 </tr>
 </tbody>
 </table>
-<p>Instead of calculating the magnification of the following optical instruments from the object and image distances, we refer now to a different measure, which is the <strong>angular magnification</strong>. The angular magnification is given by</p>
-<p><span class="math display">\[
-V=\frac{\tan(\epsilon)}{\tan(\epsilon_0)}\approx \frac{\epsilon}{\epsilon_0}.
-\]</span></p>
-<p>This is a useful measure as the image size is not really accessible ;-).</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -488,7 +601,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/fcichos\.github\.io\/Exp3_2024\/");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
@@ -816,6 +929,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../geometrical-optics/Optical Elements III.html" class="pagination-link" aria-label="Optical Elements III">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Optical Elements III</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
 </div> <!-- /content -->
 
 
