@@ -30,6 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../geometrical-optics/refraction-total-internal-reflection.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -134,7 +135,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Optical Elements Part I</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Geometrical Optics</li><li class="breadcrumb-item"><a href="../geometrical-optics/Optical Elements I.html">Lecture 2</a></li><li class="breadcrumb-item"><a href="../geometrical-optics/Optical Elements I.html">Optical Elements I</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -196,7 +197,7 @@ window.Quarto = {
         <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../geometrical-optics/index.html" class="sidebar-item-text sidebar-link">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">Geometrical Optics</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -214,6 +215,12 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../geometrical-optics/reflection.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Reflection</span></a>
   </div>
@@ -222,6 +229,23 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="../geometrical-optics/refraction-total-internal-reflection.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Refraction</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Lecture 2</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Optical Elements I.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Optical Elements I</span></a>
   </div>
 </li>
       </ul>
@@ -249,7 +273,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Geometrical Optics</li><li class="breadcrumb-item"><a href="../geometrical-optics/Optical Elements I.html">Lecture 2</a></li><li class="breadcrumb-item"><a href="../geometrical-optics/Optical Elements I.html">Optical Elements I</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Optical Elements Part I</h1>
 </div>
@@ -364,11 +388,11 @@ Figure&nbsp;3: Reflection of a parallel ray incident at a height <span class="ma
 </div>
 <p>We may calculate the position of the point <span class="math inline">\(F\)</span>, e.g.&nbsp;the distance from the mirror surface point <span class="math inline">\(O\)</span>, by applying the law of reflection. If the spherical mirror surface has a radius <span class="math inline">\(R\)</span>, then the distance between the center of the sphere <span class="math inline">\(M\)</span> and the point <span class="math inline">\(F\)</span> is given by</p>
 <p><span class="math display">\[FM=\frac{R}{2\cos(\alpha)}\]</span></p>
-<p>Therefore, we can also calculate the distance of the mirror surafce from the point <span class="math inline">\(F\)</span>, which results in</p>
+<p>Therefore, we can also calculate the distance of the mirror surface from the point <span class="math inline">\(F\)</span>, which results in</p>
 <p><span class="math display">\[\begin{equation}
 OF=R\left (1-\frac{1}{2\cos(\alpha)}\right)=f
 \end{equation}\]</span></p>
-<p>This distance is the so-called focal length of the concave mirror <span class="math inline">\(f\)</span>. For small angle <span class="math inline">\(\alpha\)</span>, the above equation yields the so called paraxial limit (all angles are small and the rays are close to the optical axis). In this limit we find <span class="math inline">\(\cos(\alpha)\approx 1\)</span> and the focal length becomes <span class="math inline">\(f=R/2\)</span>. If we replace the cosine function by <span class="math inline">\(\cos(\alpha)=\sqrt{1-sin^2(\alpha)}\)</span> with <span class="math inline">\(\sin(\alpha)=h/R\)</span>, we find</p>
+<p>This distance is the so-called focal length of the concave mirror <span class="math inline">\(f\)</span>. For small angle <span class="math inline">\(\alpha\)</span>, the above equation yields the so called paraxial limit (all angles are small and the rays are close to the optical axis). In this limit we find <span class="math inline">\(\cos(\alpha)\approx 1\)</span> and the focal length becomes <span class="math inline">\(f=R/2\)</span>. If we replace the cosine function by <span class="math inline">\(\cos(\alpha)=\sqrt{1-\sin^2(\alpha)}\)</span> with <span class="math inline">\(\sin(\alpha)=h/R\)</span>, we find</p>
 <p><span class="math display">\[\begin{equation}
 f=R\left [ 1-\frac{R}{2\sqrt{R^2-h^2}}\right ]
 \end{equation}\]</span></p>
@@ -387,15 +411,13 @@ Figure&nbsp;4: Image formation on a concave mirror.
 <p>For this situation, we can write down immediately the following relations</p>
 <p><span class="math display">\[\delta=\alpha+\gamma\]</span></p>
 <p><span class="math display">\[\gamma+\beta=2\delta\]</span></p>
-<p>Further</p>
-<p><span class="math display">\[\tan(\gamma)=\frac{h}{g}\approx \gamma\]</span></p>
-<p>and</p>
-<p><span class="math display">\[\tan(\beta)=\frac{h}{b}\approx \beta\]</span></p>
-<p>and finally</p>
-<p><span class="math display">\[\sin(\delta)=\frac{h}{R}\approx \delta\]</span></p>
-<p>from which we obtain the imaging equation</p>
-<p><span class="math display">\[\frac{1}{g}+\frac{1}{b}\approx \frac{2}{R}\approx \frac{1}{f}\]</span></p>
-<p>This equation has some surprising property. It is completely independent of <span class="math inline">\(h\)</span> and <span class="math inline">\(\gamma\)</span>. That means all points in a plane at a distance <span class="math inline">\(g\)</span> are images into a plane at a distance <span class="math inline">\(b\)</span>. Both planes are therefore called conjugated planes.</p>
+<p>Further under the smallangle approximation (the paraxial approximation) we can write down</p>
+<p><span class="math display">\[\tan(\gamma) \approx \gamma = \frac{h}{g}\]</span> <span class="math display">\[\tan(\beta) \approx \beta = \frac{h}{b}\]</span> <span class="math display">\[\sin(\delta) \approx \delta = \frac{h}{R}\]</span></p>
+<p>from which we obtain</p>
+<p><span class="math display">\[\frac{h}{g}+\frac{h}{b}=2\frac{h}{R}\]</span></p>
+<p>and by divding by <span class="math inline">\(h\)</span> finally the imaging equation:</p>
+<p><span class="math display">\[\frac{1}{g}+\frac{1}{b}= \frac{2}{R}= \frac{1}{f}\]</span></p>
+<p>where we have used the focal length <span class="math inline">\(f=R/2\)</span>. This equation has some surprising property. It is completely independent of <span class="math inline">\(h\)</span> and <span class="math inline">\(\gamma\)</span>. That means all points in a plane at a distance <span class="math inline">\(g\)</span> are images into a plane at a distance <span class="math inline">\(b\)</span>. Both planes are therefore called conjugated planes.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -910,6 +932,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../geometrical-optics/refraction-total-internal-reflection.html" class="pagination-link" aria-label="Refraction">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Refraction</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
 </div> <!-- /content -->
 
 

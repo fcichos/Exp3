@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Course Schedule – Experimental Physics 3 Course on Optics and Quantum Mechanics</title>
+<title>na-derivation – Experimental Physics 3 Course on Optics and Quantum Mechanics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -73,6 +73,35 @@ ul.task-list li input[type="checkbox"] {
   });
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../assets/styles.css">
 </head>
@@ -105,7 +134,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Course Schedule</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -232,83 +261,38 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#lectures" id="toc-lectures" class="nav-link active" data-scroll-target="#lectures">Lectures</a></li>
-  <li><a href="#seminars" id="toc-seminars" class="nav-link" data-scroll-target="#seminars">Seminars</a>
-  <ul class="collapse">
-  <li><a href="#seminar-times" id="toc-seminar-times" class="nav-link" data-scroll-target="#seminar-times">Seminar Times</a></li>
-  </ul></li>
+  <li><a href="#derivation-of-numerical-aperture-for-optical-fibers" id="toc-derivation-of-numerical-aperture-for-optical-fibers" class="nav-link active" data-scroll-target="#derivation-of-numerical-aperture-for-optical-fibers">Derivation of Numerical Aperture for Optical Fibers</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Course Schedule</h1>
-</div>
 
 
 
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<section id="lectures" class="level1">
-<h1>Lectures</h1>
-<p>The course will be held in two weekly lectures, starting <strong>14.10.2024</strong> in person. The lectures will be held in the Large Lecture Hall (GHS) at the Linnéstr. 5. The course will be held in English.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Lecture Times
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>Monday 11:15 am – 12:45 pm GHS</li>
-<li>Thursday 11:15 am – 12:45 pm GHS</li>
-</ul>
-</div>
-</div>
-<p>The course and the material are available online on this website. You may come back to study whenever it is suitable for you. Please note that the lectures are a place to give feedback on your understanding he topics. No feedback means all is good.</p>
-</section>
-<section id="seminars" class="level1">
-<h1>Seminars</h1>
-<p>Seminars are an essential part of the course. They help you to understand the material better and to prepare for the final exam. Our experience shows that students who regularly work on the assignments have a better understanding of the material and are more successful in the final exam.</p>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Seminar Start
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>The seminars will start on October 22</strong> <strong>The solutions to the exercise sheets have to be handed in on Thursdays before the lecture.</strong></p>
-</div>
-</div>
-<section id="seminar-times" class="level2">
-<h2 class="anchored" data-anchor-id="seminar-times">Seminar Times</h2>
-<ul>
-<li>Tuesday 11:15 am – 12:45 pm, SR 224</li>
-<li>Thursday 16:15 am – 16:45 pm, ThHS :::</li>
-</ul>
-<p>The seminar will be held online by Diptabrata and Markus. Please also use the discussion forum to ask questions and leave comments.</p>
+<section id="derivation-of-numerical-aperture-for-optical-fibers" class="level2">
+<h2 class="anchored" data-anchor-id="derivation-of-numerical-aperture-for-optical-fibers">Derivation of Numerical Aperture for Optical Fibers</h2>
+<p>We start with Snell’s law at the core-cladding interface:</p>
+<p><span class="math display">\[n_1 \sin \theta_1 = n_2 \sin \theta_2\]</span></p>
+<p>where <span class="math inline">\(n_1\)</span> is the core refractive index and <span class="math inline">\(n_2\)</span> is the cladding refractive index.</p>
+<p>For total internal reflection, the critical angle <span class="math inline">\(\theta_c\)</span> occurs when <span class="math inline">\(\theta_2 = 90°\)</span>:</p>
+<p><span class="math display">\[n_1 \sin \theta_c = n_2 \sin 90° = n_2\]</span></p>
+<p>Thus, we can express the critical angle as:</p>
+<p><span class="math display">\[\sin \theta_c = \frac{n_2}{n_1}\]</span></p>
+<p>In the fiber, the maximum angle for total internal reflection is <span class="math inline">\((90° - \theta_c)\)</span>:</p>
+<p><span class="math display">\[\cos \theta_c = \sin(90° - \theta_c)\]</span></p>
+<p>Using the trigonometric identity <span class="math inline">\(\cos^2 \theta + \sin^2 \theta = 1\)</span>:</p>
+<p><span class="math display">\[\cos^2 \theta_c = 1 - \sin^2 \theta_c = 1 - \left(\frac{n_2}{n_1}\right)^2\]</span></p>
+<p>At the air-core interface, we apply Snell’s law again:</p>
+<p><span class="math display">\[\sin \theta_a = n_1 \sin(90° - \theta_c) = n_1 \cos \theta_c\]</span></p>
+<p>Substituting the result from step 5:</p>
+<p><span class="math display">\[\sin \theta_a = n_1 \sqrt{1 - \left(\frac{n_2}{n_1}\right)^2} = \sqrt{n_1^2 - n_2^2}\]</span></p>
+<p>This final result is the Numerical Aperture (NA):</p>
+<p><span class="math display">\[NA = \sin \theta_a = \sqrt{n_1^2 - n_2^2}\]</span></p>
+<p>This formula relates the maximum acceptance angle <span class="math inline">\(\theta_a\)</span> to the refractive indices of the core (<span class="math inline">\(n_1\)</span>) and cladding (<span class="math inline">\(n_2\)</span>). It’s a crucial parameter in fiber optics, determining the light-gathering ability and the range of angles over which the fiber can accept or emit light.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

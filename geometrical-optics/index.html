@@ -74,6 +74,35 @@ ul.task-list li input[type="checkbox"] {
   });
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../assets/styles.css">
 </head>
@@ -106,7 +135,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../geometrical-optics/index.html">Geometrical Optics</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Geometrical Optics</li><li class="breadcrumb-item"><a href="../geometrical-optics/index.html">Lecture 1</a></li><li class="breadcrumb-item"><a href="../geometrical-optics/index.html">Introduction</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -168,7 +197,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../geometrical-optics/index.html" class="sidebar-item-text sidebar-link active">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">Geometrical Optics</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -177,13 +206,19 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text">Lecture 1</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../geometrical-optics/reflection.html" class="sidebar-item-text sidebar-link">
@@ -194,6 +229,23 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="../geometrical-optics/refraction-total-internal-reflection.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Refraction</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 2</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Optical Elements I.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optical Elements I</span></a>
   </div>
 </li>
       </ul>
@@ -210,26 +262,17 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#geometrical-optics" id="toc-geometrical-optics" class="nav-link active" data-scroll-target="#geometrical-optics">Geometrical Optics</a>
-  <ul class="collapse">
-  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives"><strong>Learning Objectives</strong></a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives"><strong>Learning Objectives</strong></a></li>
   <li><a href="#topics-covered" id="toc-topics-covered" class="nav-link" data-scroll-target="#topics-covered"><strong>Topics Covered</strong></a></li>
   <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><strong>Introduction</strong></a></li>
-  <li><a href="#why-geometrical-optics-matters" id="toc-why-geometrical-optics-matters" class="nav-link" data-scroll-target="#why-geometrical-optics-matters"><strong>Why Geometrical Optics Matters</strong></a></li>
-  <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link" data-scroll-target="#prerequisites"><strong>Prerequisites</strong></a></li>
-  <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources"><strong>Additional Resources</strong></a></li>
-  <li><a href="#next-steps" id="toc-next-steps" class="nav-link" data-scroll-target="#next-steps"><strong>Next Steps</strong></a>
-  <ul class="collapse">
-  <li><a href="#key-components-explained" id="toc-key-components-explained" class="nav-link" data-scroll-target="#key-components-explained"><strong>Key Components Explained</strong></a></li>
-  </ul></li>
-  </ul></li>
+  <li><a href="#assumptions-of-geometrical-optics" id="toc-assumptions-of-geometrical-optics" class="nav-link" data-scroll-target="#assumptions-of-geometrical-optics">Assumptions of Geometrical Optics</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Geometrical Optics</li><li class="breadcrumb-item"><a href="../geometrical-optics/index.html">Lecture 1</a></li><li class="breadcrumb-item"><a href="../geometrical-optics/index.html">Introduction</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Geometrical Optics</h1>
 </div>
@@ -248,9 +291,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="geometrical-optics" class="level1">
-<h1>Geometrical Optics</h1>
-<p>Welcome to the <strong>Geometrical Optics</strong> section of the Experimental Physics course on Optics. In this section, we will explore the fundamental principles that govern how light behaves when it encounters different media and surfaces.</p>
+<p>In this section, we will explore the fundamental principles that govern how light behaves when it encounters different media and surfaces.</p>
 <section id="learning-objectives" class="level2">
 <h2 class="anchored" data-anchor-id="learning-objectives"><strong>Learning Objectives</strong></h2>
 <p>By the end of this section, you should be able to:</p>
@@ -267,65 +308,61 @@ ul.task-list li input[type="checkbox"] {
 <li><p><strong><a href="../geometrical-optics/reflection.html">Reflection</a></strong> Explore how light reflects off surfaces following the law of reflection.</p></li>
 <li><p><strong><a href="../geometrical-optics/refraction-total-internal-reflection.html">Refraction and Total Internal Reflection</a></strong> Understand how light bends when passing through different media and the conditions for total internal reflection.</p></li>
 <li><p><strong><a href="../geometrical-optics/Optical Elements I.html">Mirrors</a>,<a href="../geometrical-optics/Optical Elements II.html">Prisms</a> and <a href="../geometrical-optics/Optical Elements III.html">Lenses</a> </strong> Learn about various optical elements and how they form images.</p></li>
-<li><p><strong><a href="../geometrical-optics/optical-instruments.html">Optical Instruments</a></strong> Study devices like telescopes and microscopes that utilize mirrors and lenses.</p></li>
-<li><p><strong><a href="../geometrical-optics/dispersion.html">Dispersion</a></strong> Discover how different wavelengths of light refract differently, leading to phenomena like rainbows.</p></li>
-<li><p><strong><a href="../geometrical-optics/imaging-errors.html">Imaging Errors</a></strong> Examine common aberrations in optical systems and methods to correct them.</p></li>
+<li><p><strong>Optical Instruments</strong> Study devices like telescopes and microscopes that utilize mirrors and lenses.</p></li>
+<li><p><strong>Dispersion</strong> Discover how different wavelengths of light refract differently, leading to phenomena like rainbows.</p></li>
+<li><p><strong>Imaging Errors</strong> Examine common aberrations in optical systems and methods to correct them.</p></li>
 </ol>
 </section>
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction"><strong>Introduction</strong></h2>
-<p>Geometrical optics, also known as ray optics, simplifies the study of light by treating it as rays that travel in straight lines. This approximation is valid when the dimensions involved are much larger than the wavelength of light.</p>
-<div id="fig:geometrical-optics-intro" class="quarto-figure quarto-figure-center anchored">
+<p>Geometrical optics is an approximate description of light propagation in the limit of infinitely small wavelength, where all wave phenomena like diffraction can be neglected.</p>
+<div id="fig:geometrical-optics-intr" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="../assets/images/geometrical-optics-intro.png" class="img-fluid figure-img"></p>
-<figcaption>Light rays passing through a lens</figcaption>
+<p><img src="img/geometrical-optics-intro.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>Light rays passing through a lens system generated with <a href="https://benedikt-bitterli.me/tantalum/tantalum.html">Tantalum</a></figcaption>
 </figure>
 </div>
-<p><em>Figure <span class="citation" data-cites="fig:geometrical-optics-intro">@fig:geometrical-optics-intro</span>: Illustration of light rays refracting through a convex lens.</em></p>
 <p>Light interacts with materials in predictable ways, allowing us to design optical systems for imaging, magnification, and more.</p>
 </section>
-<section id="why-geometrical-optics-matters" class="level2">
-<h2 class="anchored" data-anchor-id="why-geometrical-optics-matters"><strong>Why Geometrical Optics Matters</strong></h2>
-<p>Understanding geometrical optics is crucial for:</p>
+<section id="assumptions-of-geometrical-optics" class="level2">
+<h2 class="anchored" data-anchor-id="assumptions-of-geometrical-optics">Assumptions of Geometrical Optics</h2>
+<p>Geometrical optics provides an approximate description of light behavior and is based on several key assumptions. These assumptions simplify the complex nature of light while still allowing for accurate predictions in many practical scenarios.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Core Assumptions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><strong>Light Sources and Detection:</strong>
 <ul>
-<li>Designing optical instruments like cameras, glasses, and microscopes.</li>
-<li>Developing technologies in fields such as astronomy, photography, and vision correction.</li>
-<li>Laying the groundwork for more advanced topics in wave optics and quantum optics.</li>
-</ul>
-</section>
-<section id="prerequisites" class="level2">
-<h2 class="anchored" data-anchor-id="prerequisites"><strong>Prerequisites</strong></h2>
-<p>Before diving into this section, it would be beneficial to:</p>
-<ul>
-<li>Review basic concepts of waves and light propagation.</li>
-<li>Be familiar with trigonometry and algebra for solving geometrical problems.</li>
-</ul>
-</section>
-<section id="additional-resources" class="level2">
-<h2 class="anchored" data-anchor-id="additional-resources"><strong>Additional Resources</strong></h2>
-<ul>
-<li><strong>Textbooks:</strong>
-<ul>
-<li><em>Optics</em> by Eugene Hecht</li>
-<li><em>Introduction to Modern Optics</em> by Grant R. Fowles</li>
+<li>Light rays emerge from a light source</li>
+<li>Light rays are detected by a detector</li>
 </ul></li>
-<li><strong>Online Tutorials:</strong>
+<li><strong>Light-Matter Interaction:</strong>
 <ul>
-<li><a href="https://www.khanacademy.org/science/physics/geometric-optics">Khan Academy: Geometric Optics</a></li>
+<li>Interaction is characterized by a refractive index <span class="math inline">\(n\)</span></li>
+<li>The speed of light in a medium is given by <span class="math inline">\(c=c_0/n\)</span>, where <span class="math inline">\(c_0\)</span> is the speed of light in vacuum</li>
 </ul></li>
-</ul>
-</section>
-<section id="next-steps" class="level2">
-<h2 class="anchored" data-anchor-id="next-steps"><strong>Next Steps</strong></h2>
-<p>Begin with the first topic: <strong><a href="../geometrical-optics/reflection.html">Reflection</a></strong>.</p>
-<hr>
-<section id="key-components-explained" class="level3">
-<h3 class="anchored" data-anchor-id="key-components-explained"><strong>Key Components Explained</strong></h3>
-<p><strong>1. Front Matter</strong></p>
+<li><strong>Light Propagation:</strong>
+<ul>
+<li>Light propagates in straight line paths (rays) in a homogeneous medium</li>
+<li>Light bends to a curved path in inhomogeneous media with varying refractive index <span class="math inline">\(n(\textbf{r})\)</span></li>
+</ul></li>
+<li><strong>Behavior at Interfaces:</strong>
+<ul>
+<li>Rays may be reflected and refracted at interfaces between media</li>
+</ul></li>
+</ol>
+<p>These assumptions form the foundation for understanding and predicting light behavior in the context of geometrical optics.</p>
+</div>
+</div>
 
 
-</section>
-</section>
 </section>
 
 </main> <!-- /main -->
