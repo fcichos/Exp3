@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Optical Instruments – Einführung in die Modellierung Physikalischer Prozesse</title>
+<title>Geometrical Optics – Einführung in die Modellierung Physikalischer Prozesse</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,6 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../geometrical-optics/reflection.html" rel="next">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -134,7 +135,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Optical Instruments</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Geometrical Optics</li><li class="breadcrumb-item"><a href="../geometrical-optics/introduction.html">Lecture 1</a></li><li class="breadcrumb-item"><a href="../geometrical-optics/introduction.html">Introduction</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -214,7 +215,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../geometrical-optics/introduction.html" class="sidebar-item-text sidebar-link">
+  <a href="../geometrical-optics/introduction.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Introduction</span></a>
   </div>
 </li>
@@ -256,15 +257,24 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives"><strong>Learning Objectives</strong></a></li>
+  <li><a href="#topics-covered" id="toc-topics-covered" class="nav-link" data-scroll-target="#topics-covered"><strong>Topics Covered</strong></a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><strong>Introduction</strong></a></li>
+  <li><a href="#assumptions-of-geometrical-optics" id="toc-assumptions-of-geometrical-optics" class="nav-link" data-scroll-target="#assumptions-of-geometrical-optics">Assumptions of Geometrical Optics</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Geometrical Optics</li><li class="breadcrumb-item"><a href="../geometrical-optics/introduction.html">Lecture 1</a></li><li class="breadcrumb-item"><a href="../geometrical-optics/introduction.html">Introduction</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Optical Instruments</h1>
+<h1 class="title">Geometrical Optics</h1>
 </div>
 
 
@@ -281,93 +291,76 @@ window.Quarto = {
 </header>
 
 
-<p>Optical instruments now combine a number of optical elements or even consist only out of a single one as in the case of the magnifying glass or the eye.</p>
-<section id="the-eye" class="level4">
-<h4 class="anchored" data-anchor-id="the-eye">The Eye</h4>
-<p>The human eye is certainly one of the most amazing biological sensorial systems, which consists of biologically grown optical elements including an aperture, an adaptive lens and a photodetector, which is connected to an intelligent neural network, that is amazingly accurate and fast in pattern recognition. Think of that for a moment, that this performance is given with a few 10 W power consumption and then turn around your laptop and check out its power consumption.</p>
-<p>The eye allows you to image objects at variable distance from you. The sketch below indicates some of its essential ingredients.</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 100%">
-</colgroup>
-<thead>
-<tr class="header">
-<th><img src="img/eye.jpeg" width="20%"> <img src="img/retina.png" width="20%"></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Fig.:</strong> Sketch of the ingredients of the human eye. Most important parts the lens, the glass body and the retina containing the bightness (rods) and color sensors (cones). A more detailed sketch is depicted on the right side, which shows the arrangement of rods and cones in the retina including their parallel connection. Their combined signal is ending the optical nerves guiding the signals to the brain.</td>
-</tr>
-</tbody>
-</table>
-<p>Most important is the pupil resembling an adjustable aperture for adjusting the total light falling to the retina and the lens, connected to muscles to change the curvature of the lens and, thus, also the focal distance.</p>
-<p>The lens is connected to air on one side as the surrounding medium and to a vitreous humor (glass body) on the other side. So there is some asymmetry. The eye, therefore, has a front focal length of <span class="math inline">\(f_1=17\,{\rm mm}\)</span> and a back focal length of <span class="math inline">\(f_2=22\,{\rm mm}\)</span>. These values may vary by the individual but also by the distance of the object. For close objects the eye can accomodate its focal distance to <span class="math inline">\(f_1=14\,{\rm mm}\)</span> and <span class="math inline">\(f_2=19\,{\rm mm}\)</span>.</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th><img src="img/eye_focal_distance.png" width="40%"></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Fig.:</strong> Focal distances for the eye lens.</td>
-</tr>
-</tbody>
-</table>
-<p>Cones and rods are differently distributed around the fovea, which is the spot of the highest color sensitivity. The cone density peaks around this center, while the rod density is larger outside. Cones are the color sensitive objects, which gain their light sensitive from a dye molecules called <em>retinal</em> undergoing a conformational transition upon excitation with light. This triggers a cascasde of different chemical processes. Cones with three narrow excitation ranges allow our color vision (see Fig. below).</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 100%">
-</colgroup>
-<thead>
-<tr class="header">
-<th><img src="img/cone_and_rods.png" width="60%"></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Fig.:</strong> Angular distribution of cones and rods around the fovea, electron micrograph of cones (large) and rods (small) as well as their color sensitivity.</td>
-</tr>
-</tbody>
-</table>
-<p>Under normal conditions, objects at infinite distance are imaged to the retina at the back focal distance <span class="math inline">\(f_2=22\, {\rm mm}\)</span>. However, the lens of the eye may have defects changing its refractive power. Often this leads to short-sightedness or far-sightedness. If you are short-sighted, the light from infinite distance is not focused to the retina but to some shorter distance inside the glass body. This may be corrected by a concave lens as displayed in the image below on the left side. If you are far-sighted, then the light is focused behind the retina if objects are ininitely distant away. To correct for that error, one needs a convex lens as displayed on the right side.</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 100%">
-</colgroup>
-<thead>
-<tr class="header">
-<th><img src="img/short_sighted.png" width="25%"> <img src="img/far_sighted.png" width="30%"></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Fig.:</strong> Short-sightedness (left) and far-sightedness (right) and their correction by additional lenses.</td>
-</tr>
-</tbody>
-</table>
-<p>In the normal relaxed state of the eye muscle, one can, therefore, observe objects up to a distance of <span class="math inline">\(s_0=25\, {\rm cm}\)</span> without additional accomodation of the eye lens. This distance, which varies from person to person, is standardized and called the <strong>range of clear visual sight</strong>. This range of clear visual sight allows to observe objects under an angle <span class="math inline">\(\epsilon\)</span>.</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 100%">
-</colgroup>
-<thead>
-<tr class="header">
-<th><img src="img/relaxed_eye.png" width="40%"></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Fig.:</strong> Short-sightedness (left) and far-sightedness (right) and their correction by additional lenses.</td>
-</tr>
-</tbody>
-</table>
-<p>Instead of calculating the magnification of the following optical instruments from the object and image distances, we refer now to a different measure, which is the <strong>angular magnification</strong>. The angular magnification is given by</p>
-<p><span class="math display">\[
-V=\frac{\tan(\epsilon)}{\tan(\epsilon_0)}\approx \frac{\epsilon}{\epsilon_0}.
-\]</span></p>
-<p>This is a useful measure as the image size is not really accessible ;-).</p>
+<p>In this section, we will explore the fundamental principles that govern how light behaves when it encounters different media and surfaces.</p>
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives"><strong>Learning Objectives</strong></h2>
+<p>By the end of this section, you should be able to:</p>
+<ul>
+<li>Understand and apply the laws of reflection and refraction.</li>
+<li>Analyze image formation by mirrors, lenses, and prisms.</li>
+<li>Describe the working principles of various optical instruments.</li>
+<li>Explain phenomena such as dispersion and imaging errors.</li>
+</ul>
+</section>
+<section id="topics-covered" class="level2">
+<h2 class="anchored" data-anchor-id="topics-covered"><strong>Topics Covered</strong></h2>
+<ol type="1">
+<li><p><strong><a href="../geometrical-optics/reflection.html">Reflection</a></strong> Explore how light reflects off surfaces following the law of reflection.</p></li>
+<li><p><strong><a href="../geometrical-optics/refraction-total-internal-reflection.html">Refraction and Total Internal Reflection</a></strong> Understand how light bends when passing through different media and the conditions for total internal reflection.</p></li>
+<li><p><strong><a href="../geometrical-optics/Optical Elements I.html">Mirrors</a>,<a href="../geometrical-optics/Optical Elements II.html">Prisms</a> and <a href="../geometrical-optics/Optical Elements III.html">Lenses</a> </strong> Learn about various optical elements and how they form images.</p></li>
+<li><p><strong>Optical Instruments</strong> Study devices like telescopes and microscopes that utilize mirrors and lenses.</p></li>
+<li><p><strong>Dispersion</strong> Discover how different wavelengths of light refract differently, leading to phenomena like rainbows.</p></li>
+<li><p><strong>Imaging Errors</strong> Examine common aberrations in optical systems and methods to correct them.</p></li>
+</ol>
+</section>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction"><strong>Introduction</strong></h2>
+<p>Geometrical optics is an approximate description of light propagation in the limit of infinitely small wavelength, where all wave phenomena like diffraction can be neglected.</p>
+<div id="fig:geometrical-optics-intr" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img/geometrical-optics-intro.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>Light rays passing through a lens system generated with <a href="https://benedikt-bitterli.me/tantalum/tantalum.html">Tantalum</a></figcaption>
+</figure>
+</div>
+<p>Light interacts with materials in predictable ways, allowing us to design optical systems for imaging, magnification, and more.</p>
+</section>
+<section id="assumptions-of-geometrical-optics" class="level2">
+<h2 class="anchored" data-anchor-id="assumptions-of-geometrical-optics">Assumptions of Geometrical Optics</h2>
+<p>Geometrical optics provides an approximate description of light behavior and is based on several key assumptions. These assumptions simplify the complex nature of light while still allowing for accurate predictions in many practical scenarios.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Core Assumptions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><strong>Light Sources and Detection:</strong>
+<ul>
+<li>Light rays emerge from a light source</li>
+<li>Light rays are detected by a detector</li>
+</ul></li>
+<li><strong>Light-Matter Interaction:</strong>
+<ul>
+<li>Interaction is characterized by a refractive index <span class="math inline">\(n\)</span></li>
+<li>The speed of light in a medium is given by <span class="math inline">\(c=c_0/n\)</span>, where <span class="math inline">\(c_0\)</span> is the speed of light in vacuum</li>
+</ul></li>
+<li><strong>Light Propagation:</strong>
+<ul>
+<li>Light propagates in straight line paths (rays) in a homogeneous medium</li>
+<li>Light bends to a curved path in inhomogeneous media with varying refractive index <span class="math inline">\(n(\textbf{r})\)</span></li>
+</ul></li>
+<li><strong>Behavior at Interfaces:</strong>
+<ul>
+<li>Rays may be reflected and refracted at interfaces between media</li>
+</ul></li>
+</ol>
+<p>These assumptions form the foundation for understanding and predicting light behavior in the context of geometrical optics.</p>
+</div>
+</div>
 
 
 </section>
@@ -793,6 +786,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../geometrical-optics/reflection.html" class="pagination-link" aria-label="Reflection">
+        <span class="nav-page-text">Reflection</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 
 
