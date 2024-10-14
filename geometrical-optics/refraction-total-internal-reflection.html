@@ -302,6 +302,7 @@ window.Quarto = {
   <li><a href="#refractive-index" id="toc-refractive-index" class="nav-link" data-scroll-target="#refractive-index">Refractive Index</a></li>
   <li><a href="#snells-law" id="toc-snells-law" class="nav-link" data-scroll-target="#snells-law">Snells Law</a></li>
   <li><a href="#total-internal-reflection" id="toc-total-internal-reflection" class="nav-link" data-scroll-target="#total-internal-reflection">Total Internal Reflection</a></li>
+  <li><a href="#fermats-principle-for-inhomogeneous-media" id="toc-fermats-principle-for-inhomogeneous-media" class="nav-link" data-scroll-target="#fermats-principle-for-inhomogeneous-media">Fermat’s Principle for Inhomogeneous Media</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -535,7 +536,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 <li>The angle of refraction is larger than the angle of incidence (<span class="math inline">\(\theta_2 &gt; \theta_1\)</span>)</li>
 </ul></li>
 </ol>
-<p>Figure <a href="#fig-snells-combinations" class="quarto-xref">1</a> illustrates these principles with three plots showing how the refracted angle changes with the incident angle for two common interface scenarios: glass-to-air and air-to-glass. These plots clearly demonstrate the different behaviors described above.</p>
+<p><a href="#fig-snells-combinations" class="quarto-xref">1</a> illustrates these principles with three plots showing how the refracted angle changes with the incident angle for two common interface scenarios: glass-to-air and air-to-glass. These plots clearly demonstrate the different behaviors described above.</p>
 <!--
 ![Snell's law for different combinations of refractive indices. The plots show the relationship between incident angle ($\theta_1$) and refracted angle ($\theta_2$) for three scenarios: (a) light passing from air to glass, (b) light passing from glass to air, and (c) a comparison of both cases. Note how the curves differ when light moves into a medium with higher refractive index versus a lower refractive index.](../assets/images/reflection/angles.png){#fig-snells-combinations width=60% fig-align="center"}
  -->
@@ -675,6 +676,144 @@ NA = \sqrt{1.475^2 - 1.46^2} \approx 0.2
 Figure&nbsp;2— Rendering of different optical fibers types (from left to right): Hollow core optical fiber, hollow core bragg fiber, photonic crystal fiber, conventional fiber
 </figcaption>
 </figure>
+</div>
+</section>
+<section id="fermats-principle-for-inhomogeneous-media" class="level3">
+<h3 class="anchored" data-anchor-id="fermats-principle-for-inhomogeneous-media">Fermat’s Principle for Inhomogeneous Media</h3>
+<p>While before we have considered Fermat’s principle for the special case of refraction and light propagation in a homogeneous medium, we can define a more general version of it correponding to the following situation also involving an inhomogeneous refractive index <span class="math inline">\(n(\vec{r})\)</span>.</p>
+<div id="fig-fermat-general" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fermat-general-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../assets/images/reflection/fermat_general.png" class="img-fluid figure-img" style="width:40.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fermat-general-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3— Sketch for a general description of Fermat’s principle
+</figcaption>
+</figure>
+</div>
+<p>For this general scenario of light traveling along a path, we can define an optical path length (OPL) as</p>
+<p><span class="math display">\[\begin{equation}
+\text{OPL} = \int\limits_{A}^{C} n(\mathbf{r}) \mathrm ds=0,
+\end{equation}\]</span></p>
+<p>with a varying refractive index <span class="math inline">\(n(\mathbf{r})\)</span>. Fermat’s Principle states that the actual path taken by the light makes the OPL stationary:</p>
+<p><span class="math display">\[
+\delta \left( \int_A^B n(\mathbf{r}) \, ds \right) = 0
+\]</span></p>
+<p>Using the calculus of variations, this leads to the Euler-Lagrange equation for the path of light. In Cartesian coordinates, if the path is parameterized by <span class="math inline">\(\mathbf{r}(s) = (x(s), y(s), z(s))\)</span>, the Euler-Lagrange equations become:</p>
+<p><span class="math display">\[
+\frac{d}{ds} \left( n \frac{d\mathbf{r}}{ds} \right) = \nabla n
+\]</span></p>
+<p>where <span class="math inline">\(\nabla n\)</span> is the gradient of the refractive index. This equation describes how the light ray bends in response to changes in the refractive index of the medium.</p>
+<p>Fermat’s Principle is a cornerstone of geometrical optics and has applications in designing optical systems, understanding mirages, and analyzing the behavior of light in various media.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Fermat’s Principle and Snells Law
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>We would like to apply Fermat’s principle to derive Snell’s law, which is a more lengthy calculation. To do this, we consider a light ray traveling from point <span class="math inline">\(A\)</span> in medium 1 (with refractive index <span class="math inline">\(n_1\)</span>) to point <span class="math inline">\(C\)</span> in medium 2 (with refractive index <span class="math inline">\(n_2\)</span>), crossing the interface at point <span class="math inline">\(B\)</span>. Let the coordinates of points <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, and <span class="math inline">\(C\)</span> be <span class="math inline">\((x_A, y_A)\)</span>, <span class="math inline">\((x_B, y_B)\)</span>, and <span class="math inline">\((x_C, y_C)\)</span>, respectively. Assume the interface between the two media is at <span class="math inline">\(y = y_B\)</span>. The optical path length (OPL) is given by:</p>
+<p><span class="math display">\[
+\delta \int_{A}^{C} n(\vec{r}) \, ds = 0,
+\]</span></p>
+<p>where <span class="math inline">\(n(\vec{r})\)</span> is the refractive index at position <span class="math inline">\(\vec{r}\)</span>, and <span class="math inline">\(ds\)</span> is an infinitesimal element of the path.</p>
+<section id="setup" class="level4">
+<h4 class="anchored" data-anchor-id="setup">Setup</h4>
+<p>Consider a light ray traveling from point <span class="math inline">\(A\)</span> in medium 1 (with refractive index <span class="math inline">\(n_1\)</span>) to point <span class="math inline">\(C\)</span> in medium 2 (with refractive index <span class="math inline">\(n_2\)</span>), crossing the interface at point <span class="math inline">\(B\)</span>. Let the coordinates of points <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, and <span class="math inline">\(C\)</span> be <span class="math inline">\((x_A, y_A)\)</span>, <span class="math inline">\((x_B, y_B)\)</span>, and <span class="math inline">\((x_C, y_C)\)</span>, respectively. Assume the interface between the two media is at <span class="math inline">\(y = y_B\)</span>.</p>
+</section>
+<section id="optical-path-length" class="level4">
+<h4 class="anchored" data-anchor-id="optical-path-length">Optical Path Length</h4>
+<p>The optical path length (OPL) is given by:</p>
+<p><span class="math display">\[
+\text{OPL} = n_1 \int_{A}^{B} ds_1 + n_2 \int_{B}^{C} ds_2,
+\]</span></p>
+<p>where <span class="math inline">\(ds_1\)</span> and <span class="math inline">\(ds_2\)</span> are the infinitesimal path lengths in media 1 and 2, respectively.</p>
+</section>
+<section id="path-lengths" class="level4">
+<h4 class="anchored" data-anchor-id="path-lengths">Path Lengths</h4>
+<p>The path lengths <span class="math inline">\(ds_1\)</span> and <span class="math inline">\(ds_2\)</span> can be expressed in terms of the coordinates:</p>
+<p><span class="math display">\[
+ds_1 = \sqrt{(dx_1)^2 + (dy_1)^2}, \quad ds_2 = \sqrt{(dx_2)^2 + (dy_2)^2}.
+\]</span></p>
+<p>Since the interface is at <span class="math inline">\(y = y_B\)</span>, we have <span class="math inline">\(dy_1 = y_B - y_A\)</span> and <span class="math inline">\(dy_2 = y_C - y_B\)</span>. The total optical path length is:</p>
+<p><span class="math display">\[
+\text{OPL} = n_1 \sqrt{(x_B - x_A)^2 + (y_B - y_A)^2} + n_2 \sqrt{(x_C - x_B)^2 + (y_C - y_B)^2}.
+\]</span></p>
+</section>
+<section id="applying-fermats-principle" class="level4">
+<h4 class="anchored" data-anchor-id="applying-fermats-principle">Applying Fermat’s Principle</h4>
+<p>To find the stationary path, we take the variation of the OPL with respect to <span class="math inline">\(x_B\)</span>:</p>
+<p><span class="math display">\[
+\delta \text{OPL} = \delta \left[ n_1 \sqrt{(x_B - x_A)^2 + (y_B - y_A)^2} + n_2 \sqrt{(x_C - x_B)^2 + (y_C - y_B)^2} \right] = 0.
+\]</span></p>
+<p>Taking the derivative with respect to <span class="math inline">\(x_B\)</span>:</p>
+<p><span class="math display">\[
+\frac{\partial}{\partial x_B} \left[ n_1 \sqrt{(x_B - x_A)^2 + (y_B - y_A)^2} + n_2 \sqrt{(x_C - x_B)^2 + (y_C - y_B)^2} \right] = 0.
+\]</span></p>
+</section>
+<section id="differentiating" class="level4">
+<h4 class="anchored" data-anchor-id="differentiating">Differentiating</h4>
+<p>Differentiating each term separately:</p>
+<p><span class="math display">\[
+n_1 \frac{\partial}{\partial x_B} \sqrt{(x_B - x_A)^2 + (y_B - y_A)^2} + n_2 \frac{\partial}{\partial x_B} \sqrt{(x_C - x_B)^2 + (y_C - y_B)^2} = 0.
+\]</span></p>
+<p>Using the chain rule:</p>
+<p><span class="math display">\[
+n_1 \frac{x_B - x_A}{\sqrt{(x_B - x_A)^2 + (y_B - y_A)^2}} + n_2 \frac{x_B - x_C}{\sqrt{(x_C - x_B)^2 + (y_C - y_B)^2}} = 0.
+\]</span></p>
+</section>
+<section id="simplifying" class="level4">
+<h4 class="anchored" data-anchor-id="simplifying">Simplifying</h4>
+<p>Let <span class="math inline">\(\theta_1\)</span> be the angle of incidence and <span class="math inline">\(\theta_2\)</span> be the angle of refraction. Then:</p>
+<p><span class="math display">\[
+\sin \theta_1 = \frac{x_B - x_A}{\sqrt{(x_B - x_A)^2 + (y_B - y_A)^2}}, \quad \sin \theta_2 = \frac{x_C - x_B}{\sqrt{(x_C - x_B)^2 + (y_C - y_B)^2}}.
+\]</span></p>
+<p>Substituting these into the equation:</p>
+<p><span class="math display">\[
+n_1 \sin \theta_1 + n_2 \sin \theta_2 = 0.
+\]</span></p>
+<p>Since <span class="math inline">\(\sin \theta_2\)</span> is in the opposite direction, we have:</p>
+<p><span class="math display">\[
+n_1 \sin \theta_1 = n_2 \sin \theta_2.
+\]</span></p>
+<p>This is Snell’s law, which describes the relationship between the angles of incidence and refraction when light passes from one medium to another.</p>
+</section>
+<section id="conclusion" class="level4">
+<h4 class="anchored" data-anchor-id="conclusion">Conclusion</h4>
+<p>By applying Fermat’s principle and taking the variation of the optical path length, we have derived Snell’s law:</p>
+<p><span class="math display">\[
+n_1 \sin \theta_1 = n_2 \sin \theta_2.
+\]</span></p>
+<p>This demonstrates how the principle of least time leads to the well-known law of refraction in optics.</p>
+</section>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example: Light in a Graded-Index Medium
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Consider a medium where the refractive index varies with height <span class="math inline">\(y\)</span> as <span class="math inline">\(n(y) = n_0 (1 + \alpha y)\)</span>. The path of light in such a medium can be found by solving the Euler-Lagrange equations derived from Fermat’s Principle.</p>
+<p>In this case, the differential equation governing the path <span class="math inline">\(y(x)\)</span> of the light ray is:</p>
+<p><span class="math display">\[
+\frac{d}{ds} \left( n(y) \frac{dy}{ds} \right) = \frac{dn}{dy}
+\]</span></p>
+<p>Substituting <span class="math inline">\(n(y) = n_0 (1 + \alpha y)\)</span> and solving this differential equation will give the trajectory of the light ray in the graded-index medium.</p>
+</div>
+</div>
 </div>
 
 
