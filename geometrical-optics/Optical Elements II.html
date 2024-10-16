@@ -371,8 +371,6 @@ Figure&nbsp;1: Refraction of rays on a prism.
 <!--
 
 
-
-
 ```{=html}
 <div id="prism-viz" align="middle"></div>
 <input type="range" id="angle-slider" min="0" max="90" value="30" step="0.1">
@@ -498,8 +496,6 @@ d3.select("#angle-slider")
 
 
 
-
-
 -->
 <section id="deflection-angle" class="level4">
 <h4 class="anchored" data-anchor-id="deflection-angle">Deflection angle</h4>
@@ -578,26 +574,21 @@ Minimum prism deflection
 <section id="dispersion" class="level4">
 <h4 class="anchored" data-anchor-id="dispersion">Dispersion</h4>
 <p>Very important applications now arise from the fact, that the refractive index is a material property, which depends on the color (frequency or wavelength) of light. We do not yet understand the origin of this dependence. The plots below show the wavelength dependence of three different glasses. You may find much more data on the refractive index of different materials in an <a href="https://refractiveindex.info/">online database</a>.</p>
-<div id="ecd6ec97" class="cell" data-cold-fold="true" data-execution_count="3">
+<div id="cell-fig-wavelength-dependence" class="cell" data-cold-fold="true" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>bk7<span class="op">=</span>pd.read_csv(<span class="st">"data/BK7.csv"</span>,delimiter<span class="op">=</span><span class="st">","</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>sf10<span class="op">=</span>pd.read_csv(<span class="st">"data/SF10.csv"</span>,delimiter<span class="op">=</span><span class="st">","</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>fk51a<span class="op">=</span>pd.read_csv(<span class="st">"data/FK51A.csv"</span>,delimiter<span class="op">=</span><span class="st">","</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<div id="cell-fig-wavelength-dependence" class="cell" data-cold-fold="true" data-execution_count="4">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">4</span>,<span class="dv">4</span>))</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>plt.plot(bk7.wl<span class="op">*</span><span class="dv">1000</span>,bk7.n,label<span class="op">=</span><span class="st">"BK7"</span>)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>plt.plot(sf10.wl<span class="op">*</span><span class="dv">1000</span>,sf10.n,label<span class="op">=</span><span class="st">"SF10"</span>)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>plt.plot(fk51a.wl<span class="op">*</span><span class="dv">1000</span>,fk51a.n,label<span class="op">=</span><span class="st">"FK51A"</span>)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="dv">300</span>,<span class="dv">900</span>)</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"wavelength [nm]"</span>)</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"refractive index n"</span>)</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>fk51a<span class="op">=</span>pd.read_csv(<span class="st">"data/FK51A.csv"</span>,delimiter<span class="op">=</span><span class="st">","</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">4</span>,<span class="dv">4</span>))</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>plt.plot(bk7.wl<span class="op">*</span><span class="dv">1000</span>,bk7.n,label<span class="op">=</span><span class="st">"BK7"</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>plt.plot(sf10.wl<span class="op">*</span><span class="dv">1000</span>,sf10.n,label<span class="op">=</span><span class="st">"SF10"</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>plt.plot(fk51a.wl<span class="op">*</span><span class="dv">1000</span>,fk51a.n,label<span class="op">=</span><span class="st">"FK51A"</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="dv">300</span>,<span class="dv">900</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"wavelength [nm]"</span>)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"refractive index n"</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div id="fig-wavelength-dependence" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
@@ -612,35 +603,34 @@ Figure&nbsp;3: Refractive index of different glasses as a function of the wavele
 </div>
 </div>
 </div>
-<div id="cell-fig-angle-dependence" class="cell" data-cold-fold="true" data-execution_count="5">
+<div id="cell-fig-angle-dependence" class="cell" data-cold-fold="true" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>bk7<span class="op">=</span>pd.read_csv(<span class="st">"data/BK7.csv"</span>,delimiter<span class="op">=</span><span class="st">","</span>)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>a_1<span class="op">=</span>np.linspace(<span class="fl">0.15</span>,np.pi<span class="op">/</span><span class="dv">2</span>,<span class="dv">100</span>)</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="fl">7.5</span>,<span class="dv">4</span>))</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">1</span>)</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> wl <span class="kw">in</span> np.linspace(<span class="fl">0.400</span>,<span class="fl">0.700</span>,<span class="dv">100</span>):</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    n1<span class="op">=</span>np.interp(wl<span class="op">*</span><span class="dv">1000</span>,bk7.wl,bk7.n)</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    c<span class="op">=</span>wavelength_to_rgb(wl, gamma<span class="op">=</span><span class="fl">0.8</span>)</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    plt.plot(a_1<span class="op">*</span><span class="dv">180</span><span class="op">/</span>np.pi,deflection(a_1,<span class="dv">45</span>,<span class="dv">1</span>,n1)<span class="op">*</span><span class="dv">180</span><span class="op">/</span>np.pi,color<span class="op">=</span>c)</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="vs">r"incindence angle $\alpha_1$ [°]"</span>)</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="vs">r"deflection angle $\delta$ [°]"</span>)</span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>)</span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> wl <span class="kw">in</span> np.linspace(<span class="fl">0.400</span>,<span class="fl">0.700</span>,<span class="dv">100</span>):</span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    n1<span class="op">=</span>np.interp(wl,bk7.wl,bk7.n)</span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>    c<span class="op">=</span>wavelength_to_rgb(wl<span class="op">*</span><span class="dv">1000</span>, gamma<span class="op">=</span><span class="fl">0.8</span>)</span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>    plt.plot(a_1<span class="op">*</span><span class="dv">180</span><span class="op">/</span>np.pi,deflection(a_1,<span class="dv">45</span>,<span class="dv">1</span>,n1)<span class="op">*</span><span class="dv">180</span><span class="op">/</span>np.pi,color<span class="op">=</span>c)</span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="vs">r"incindence angle $\alpha_1$ [°]"</span>)</span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="vs">r"deflection angle $\delta$ [°]"</span>)</span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="dv">30</span>,<span class="dv">45</span>)</span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="dv">25</span>,<span class="dv">30</span>)</span>
-<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>bk7<span class="op">=</span>pd.read_csv(<span class="st">"data/BK7.csv"</span>,delimiter<span class="op">=</span><span class="st">","</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>a_1<span class="op">=</span>np.linspace(<span class="fl">0.15</span>,np.pi<span class="op">/</span><span class="dv">2</span>,<span class="dv">100</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="fl">7.5</span>,<span class="dv">4</span>))</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">1</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> wl <span class="kw">in</span> np.linspace(<span class="fl">0.400</span>,<span class="fl">0.700</span>,<span class="dv">100</span>):</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    n1<span class="op">=</span>np.interp(wl<span class="op">*</span><span class="dv">1000</span>,bk7.wl,bk7.n)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    c<span class="op">=</span>wavelength_to_rgb(wl, gamma<span class="op">=</span><span class="fl">0.8</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    plt.plot(a_1<span class="op">*</span><span class="dv">180</span><span class="op">/</span>np.pi,deflection(a_1,<span class="dv">45</span>,<span class="dv">1</span>,n1)<span class="op">*</span><span class="dv">180</span><span class="op">/</span>np.pi,color<span class="op">=</span>c)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="vs">r"incindence angle $\alpha_1$ [°]"</span>)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="vs">r"deflection angle $\delta$ [°]"</span>)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>)</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> wl <span class="kw">in</span> np.linspace(<span class="fl">0.400</span>,<span class="fl">0.700</span>,<span class="dv">100</span>):</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    n1<span class="op">=</span>np.interp(wl,bk7.wl,bk7.n)</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    c<span class="op">=</span>wavelength_to_rgb(wl<span class="op">*</span><span class="dv">1000</span>, gamma<span class="op">=</span><span class="fl">0.8</span>)</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    plt.plot(a_1<span class="op">*</span><span class="dv">180</span><span class="op">/</span>np.pi,deflection(a_1,<span class="dv">45</span>,<span class="dv">1</span>,n1)<span class="op">*</span><span class="dv">180</span><span class="op">/</span>np.pi,color<span class="op">=</span>c)</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="vs">r"incindence angle $\alpha_1$ [°]"</span>)</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="vs">r"deflection angle $\delta$ [°]"</span>)</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="dv">30</span>,<span class="dv">45</span>)</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="dv">25</span>,<span class="dv">30</span>)</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div id="fig-angle-dependence" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -773,19 +763,19 @@ Figure&nbsp;8: Home made water prism.
 </figure>
 </div>
 <p>While the dependence of water’s refractive index on wavelength is relatively weak, it’s still sufficient to demonstrate the familiar colors of the rainbow. This phenomenon will be referenced later in our discussion.</p>
-<div id="cell-fig-water-n" class="cell" data-cold-fold="true" data-execution_count="6">
+<div id="cell-fig-water-n" class="cell" data-cold-fold="true" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>h2o<span class="op">=</span>pd.read_csv(<span class="st">"data/H2O.csv"</span>,delimiter<span class="op">=</span><span class="st">","</span>)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">4</span>))</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>plt.plot(h2o.wl<span class="op">*</span><span class="dv">1000</span>,h2o.n,label<span class="op">=</span><span class="vs">r"$H_2O$"</span>)</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="dv">300</span>,<span class="dv">900</span>)</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="fl">1.3</span>,<span class="fl">1.36</span>)</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"wavelength [nm]"</span>)</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"refractive index n"</span>)</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>h2o<span class="op">=</span>pd.read_csv(<span class="st">"data/H2O.csv"</span>,delimiter<span class="op">=</span><span class="st">","</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">4</span>))</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>plt.plot(h2o.wl<span class="op">*</span><span class="dv">1000</span>,h2o.n,label<span class="op">=</span><span class="vs">r"$H_2O$"</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="dv">300</span>,<span class="dv">900</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="fl">1.3</span>,<span class="fl">1.36</span>)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"wavelength [nm]"</span>)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"refractive index n"</span>)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div id="fig-water-n" class="quarto-float quarto-figure quarto-figure-center anchored">
