@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -337,8 +371,6 @@ Figure&nbsp;1: Refraction of rays on a prism.
 <!--
 
 
-
-
 ```{=html}
 <div id="prism-viz" align="middle"></div>
 <input type="range" id="angle-slider" min="0" max="90" value="30" step="0.1">
@@ -464,35 +496,35 @@ d3.select("#angle-slider")
 
 
 
-
-
-#### Deflection angle
-
-We can calculate the deflection angle $\delta$ from a number of considerations. First consider the following relations between the angles in the prism and Snell's law
-
-$$\beta_1=\sin^{-1}\left (\frac{n_0}{n_1}\sin(\alpha_1) \right)$$
-$$\beta_2=\gamma-\beta_1$$
-$$\alpha_2=\sin^{-1}\left (\frac{n_1}{n_0}\sin(\beta_2)\right )$$
-$$\theta_2=\alpha_2-\gamma$$
-
-where $\theta_2$ is the angle between the incident surface normal and the outgoing ray. The total deflection angle $\delta$ is then
-
-$$\delta =\alpha_1-\beta_1+\alpha_2-\beta_2$$
-
-or
-
-$$\delta =\alpha_1+\alpha_2-\gamma$$
-
-from which we obtain
-
-$$\delta=\alpha_1+\sin^{-1}\left (\frac{n_1}{n_0}\sin\left [\gamma-\sin^{-1}\left (\frac{n_0}{n_1}\sin(\alpha_1) \right)\right]\right )-\gamma$$
-
-as the deflection angle.
-
-
-
 -->
-<div id="cell-fig-refractive-indices" class="cell" data-execution_count="3">
+<section id="deflection-angle" class="level4">
+<h4 class="anchored" data-anchor-id="deflection-angle">Deflection angle</h4>
+<p>We can calculate the deflection angle <span class="math inline">\(\delta\)</span> from a number of considerations. First consider the following relations between the angles in the prism and Snell’s law</p>
+<p><span class="math display">\[\beta_1=\sin^{-1}\left (\frac{n_0}{n_1}\sin(\alpha_1) \right)\]</span> <span class="math display">\[\beta_2=\gamma-\beta_1\]</span> <span class="math display">\[\alpha_2=\sin^{-1}\left (\frac{n_1}{n_0}\sin(\beta_2)\right )\]</span> <span class="math display">\[\theta_2=\alpha_2-\gamma\]</span></p>
+<p>where <span class="math inline">\(\theta_2\)</span> is the angle between the incident surface normal and the outgoing ray. The total deflection angle <span class="math inline">\(\delta\)</span> is then</p>
+<p><span class="math display">\[\delta =\alpha_1-\beta_1+\alpha_2-\beta_2\]</span></p>
+<p>or</p>
+<p><span class="math display">\[\delta =\alpha_1+\alpha_2-\gamma\]</span></p>
+<p>from which we obtain</p>
+<p><span class="math display">\[\delta=\alpha_1+\sin^{-1}\left (\frac{n_1}{n_0}\sin\left [\gamma-\sin^{-1}\left (\frac{n_0}{n_1}\sin(\alpha_1) \right)\right]\right )-\gamma\]</span></p>
+<p>as the deflection angle.</p>
+<div id="cell-fig-refractive-indices" class="cell" data-cold-fold="true" data-execution_count="2">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> deflection(alpha_1,gamma,n0,n1):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    g<span class="op">=</span>gamma<span class="op">*</span>np.pi<span class="op">/</span><span class="dv">180</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span>(alpha_1<span class="op">+</span>np.arcsin(n1<span class="op">*</span>np.sin(g<span class="op">-</span>np.arcsin(n0<span class="op">*</span>np.sin(alpha_1)<span class="op">/</span>n1))))<span class="op">-</span>g</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>a_1<span class="op">=</span>np.linspace(<span class="fl">0.1</span>,np.pi<span class="op">/</span><span class="dv">2</span>,<span class="dv">100</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">4</span>,<span class="dv">4</span>))</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>plt.plot(a_1<span class="op">*</span><span class="dv">180</span><span class="op">/</span>np.pi,deflection(a_1,<span class="dv">45</span>,<span class="dv">1</span>,<span class="fl">1.5</span>)<span class="op">*</span><span class="dv">180</span><span class="op">/</span>np.pi,label<span class="op">=</span><span class="vs">r"$\gamma=45$ °"</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>plt.plot(a_1<span class="op">*</span><span class="dv">180</span><span class="op">/</span>np.pi,deflection(a_1,<span class="dv">30</span>,<span class="dv">1</span>,<span class="fl">1.5</span>)<span class="op">*</span><span class="dv">180</span><span class="op">/</span>np.pi,label<span class="op">=</span><span class="vs">r"$\gamma=30$ °"</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>plt.plot(a_1<span class="op">*</span><span class="dv">180</span><span class="op">/</span>np.pi,deflection(a_1,<span class="dv">10</span>,<span class="dv">1</span>,<span class="fl">1.5</span>)<span class="op">*</span><span class="dv">180</span><span class="op">/</span>np.pi,label<span class="op">=</span><span class="vs">r"$\gamma=10$ °"</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="vs">r"incindence angle $\alpha_1$ [°]"</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="vs">r"deflection angle $\delta$ [°]"</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-display">
 <div id="fig-refractive-indices" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
@@ -506,6 +538,7 @@ Figure&nbsp;2: Deflection angle as a function of the incidence angle for differe
 </div>
 </div>
 </div>
+</section>
 <section id="minimum-deflection-angle" class="level4">
 <h4 class="anchored" data-anchor-id="minimum-deflection-angle">Minimum deflection angle</h4>
 <p>If we now would like to know how the deflection angle changes with the incident angle <span class="math inline">\(\alpha_1\)</span>, we calculate the derivative of the deflection angle <span class="math inline">\(\delta\)</span> with respect to <span class="math inline">\(\alpha_1\)</span>, i.e.,</p>
@@ -541,7 +574,7 @@ Minimum prism deflection
 <section id="dispersion" class="level4">
 <h4 class="anchored" data-anchor-id="dispersion">Dispersion</h4>
 <p>Very important applications now arise from the fact, that the refractive index is a material property, which depends on the color (frequency or wavelength) of light. We do not yet understand the origin of this dependence. The plots below show the wavelength dependence of three different glasses. You may find much more data on the refractive index of different materials in an <a href="https://refractiveindex.info/">online database</a>.</p>
-<div id="cell-fig-wavelength-dependence" class="cell" data-execution_count="5">
+<div id="cell-fig-wavelength-dependence" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display">
 <div id="fig-wavelength-dependence" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
@@ -555,7 +588,7 @@ Figure&nbsp;3: Refractive index of different glasses as a function of the wavele
 </div>
 </div>
 </div>
-<div id="cell-fig-angle-dependence" class="cell" data-execution_count="7">
+<div id="cell-fig-angle-dependence" class="cell" data-execution_count="6">
 <div class="cell-output cell-output-display">
 <div id="fig-angle-dependence" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -687,7 +720,7 @@ Figure&nbsp;8: Home made water prism.
 </figure>
 </div>
 <p>While the dependence of water’s refractive index on wavelength is relatively weak, it’s still sufficient to demonstrate the familiar colors of the rainbow. This phenomenon will be referenced later in our discussion.</p>
-<div id="cell-fig-water-n" class="cell" data-execution_count="9">
+<div id="cell-fig-water-n" class="cell" data-execution_count="8">
 <div class="cell-output cell-output-display">
 <div id="fig-water-n" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
