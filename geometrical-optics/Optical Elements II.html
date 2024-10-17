@@ -611,8 +611,8 @@ Figure&nbsp;3: Refractive index of different glasses as a function of the wavele
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="fl">7.5</span>,<span class="dv">4</span>))</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">1</span>)</span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> wl <span class="kw">in</span> np.linspace(<span class="fl">0.400</span>,<span class="fl">0.700</span>,<span class="dv">100</span>):</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    n1<span class="op">=</span>np.interp(wl<span class="op">*</span><span class="dv">1000</span>,bk7.wl,bk7.n)</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    c<span class="op">=</span>wavelength_to_rgb(wl, gamma<span class="op">=</span><span class="fl">0.8</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    n1<span class="op">=</span>np.interp(wl,bk7.wl,bk7.n)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    c<span class="op">=</span>wavelength_to_rgb(wl<span class="op">*</span><span class="dv">1000</span>, gamma<span class="op">=</span><span class="fl">0.8</span>)</span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    plt.plot(a_1<span class="op">*</span><span class="dv">180</span><span class="op">/</span>np.pi,deflection(a_1,<span class="dv">45</span>,<span class="dv">1</span>,n1)<span class="op">*</span><span class="dv">180</span><span class="op">/</span>np.pi,color<span class="op">=</span>c)</span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="vs">r"incindence angle $\alpha_1$ [°]"</span>)</span>
