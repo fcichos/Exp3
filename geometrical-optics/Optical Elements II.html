@@ -326,7 +326,13 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#prism" id="toc-prism" class="nav-link active" data-scroll-target="#prism">Prism</a></li>
+  <li><a href="#prism" id="toc-prism" class="nav-link active" data-scroll-target="#prism">Prism</a>
+  <ul class="collapse">
+  <li><a href="#deflection-angle" id="toc-deflection-angle" class="nav-link" data-scroll-target="#deflection-angle">Deflection angle</a></li>
+  <li><a href="#minimum-deflection-angle" id="toc-minimum-deflection-angle" class="nav-link" data-scroll-target="#minimum-deflection-angle">Minimum deflection angle</a></li>
+  <li><a href="#dispersion" id="toc-dispersion" class="nav-link" data-scroll-target="#dispersion">Dispersion</a></li>
+  <li><a href="#prims-spectrograph" id="toc-prims-spectrograph" class="nav-link" data-scroll-target="#prims-spectrograph">Prims spectrograph</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -352,8 +358,8 @@ window.Quarto = {
 </header>
 
 
-<section id="prism" class="level3">
-<h3 class="anchored" data-anchor-id="prism">Prism</h3>
+<section id="prism" class="level2">
+<h2 class="anchored" data-anchor-id="prism">Prism</h2>
 <p>Prisms are wedge-shaped optical elements made of a transparent material, such as glass. A special form of such a prism is an isosceles prism with two sides of equal length. The two equal sides enclose an angle <span class="math inline">\(\gamma\)</span>, known as the apex angle of the prism. When light passes through this prism, it undergoes refraction twice.</p>
 <p>First, the incident angle <span class="math inline">\(\alpha_1\)</span> is changed into a refracted angle <span class="math inline">\(\beta_1\)</span> as the light enters the prism. This refracted ray then hits the second interface at an angle <span class="math inline">\(\beta_2\)</span>, leading to a second refraction as it exits the prism at an angle <span class="math inline">\(\alpha_2\)</span>.</p>
 <p>Of particular interest is the total deflection of the incident ray, which is measured by the angle <span class="math inline">\(\delta\)</span>. This deflection angle represents the difference between the final outgoing angle <span class="math inline">\(\alpha_2\)</span> and the initial incident angle <span class="math inline">\(\alpha_1\)</span>.</p>
@@ -369,6 +375,8 @@ Figure&nbsp;1: Refraction of rays on a prism.
 </figure>
 </div>
 <!--
+
+
 
 
 ```{=html}
@@ -496,9 +504,11 @@ d3.select("#angle-slider")
 
 
 
+
+
 -->
-<section id="deflection-angle" class="level4">
-<h4 class="anchored" data-anchor-id="deflection-angle">Deflection angle</h4>
+<section id="deflection-angle" class="level3">
+<h3 class="anchored" data-anchor-id="deflection-angle">Deflection angle</h3>
 <p>We can calculate the deflection angle <span class="math inline">\(\delta\)</span> from a number of considerations. First consider the following relations between the angles in the prism and Snell’s law</p>
 <p><span class="math display">\[\beta_1=\sin^{-1}\left (\frac{n_0}{n_1}\sin(\alpha_1) \right)\]</span> <span class="math display">\[\beta_2=\gamma-\beta_1\]</span> <span class="math display">\[\alpha_2=\sin^{-1}\left (\frac{n_1}{n_0}\sin(\beta_2)\right )\]</span> <span class="math display">\[\theta_2=\alpha_2-\gamma\]</span></p>
 <p>where <span class="math inline">\(\theta_2\)</span> is the angle between the incident surface normal and the outgoing ray. The total deflection angle <span class="math inline">\(\delta\)</span> is then</p>
@@ -539,8 +549,8 @@ Figure&nbsp;2: Deflection angle as a function of the incidence angle for differe
 </div>
 </div>
 </section>
-<section id="minimum-deflection-angle" class="level4">
-<h4 class="anchored" data-anchor-id="minimum-deflection-angle">Minimum deflection angle</h4>
+<section id="minimum-deflection-angle" class="level3">
+<h3 class="anchored" data-anchor-id="minimum-deflection-angle">Minimum deflection angle</h3>
 <p>If we now would like to know how the deflection angle changes with the incident angle <span class="math inline">\(\alpha_1\)</span>, we calculate the derivative of the deflection angle <span class="math inline">\(\delta\)</span> with respect to <span class="math inline">\(\alpha_1\)</span>, i.e.,</p>
 <p><span class="math display">\[\frac{\mathrm d\delta}{\mathrm d\alpha_1}=1+\frac{\mathrm d\alpha_2}{\mathrm d \alpha_1}.\]</span></p>
 <p>We are here especially interested in the case, where this change in deflection is reaching a minimum, i.e., <span class="math inline">\(\mathrm d\delta/\mathrm d\alpha_1 =0\)</span>. This readily yields</p>
@@ -571,8 +581,8 @@ Minimum prism deflection
 <p>In this case, we may also write down Snell’s law using <span class="math inline">\(\sin(\alpha)=n\sin(\beta)\)</span>, which results in</p>
 <p><span class="math display">\[\sin \left ( \frac{\delta_{\rm min}+\gamma}{2}\right )=n\sin\left (\frac{\gamma}{2}\right).\]</span></p>
 </section>
-<section id="dispersion" class="level4">
-<h4 class="anchored" data-anchor-id="dispersion">Dispersion</h4>
+<section id="dispersion" class="level3">
+<h3 class="anchored" data-anchor-id="dispersion">Dispersion</h3>
 <p>Very important applications now arise from the fact, that the refractive index is a material property, which depends on the color (frequency or wavelength) of light. We do not yet understand the origin of this dependence. The plots below show the wavelength dependence of three different glasses. You may find much more data on the refractive index of different materials in an <a href="https://refractiveindex.info/">online database</a>.</p>
 <div id="cell-fig-wavelength-dependence" class="cell" data-cold-fold="true" data-execution_count="3">
 <details class="code-fold">
@@ -706,8 +716,8 @@ Figure&nbsp;6: Deflection of different wavelengths of light in a prism with norm
 </figure>
 </div>
 </section>
-<section id="prims-spectrograph" class="level4">
-<h4 class="anchored" data-anchor-id="prims-spectrograph">Prims spectrograph</h4>
+<section id="prims-spectrograph" class="level3">
+<h3 class="anchored" data-anchor-id="prims-spectrograph">Prims spectrograph</h3>
 <p>This wavelength-dependent refraction is crucial as it forms the basis for spectroscopy, a powerful analytical technique that measures and records the intensity of light as a function of wavelength. Spectroscopy allows scientists to analyze the composition and properties of matter by examining its interaction with light across different wavelengths.</p>
 <div id="fig-prism-spectrometer" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure">
