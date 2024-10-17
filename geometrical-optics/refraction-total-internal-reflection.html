@@ -835,12 +835,35 @@ Example: Light in a Graded-Index Medium
 </div>
 <div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Consider a medium where the refractive index varies with height <span class="math inline">\(y\)</span> as <span class="math inline">\(n(y) = n_0 (1 + \alpha y)\)</span>. The path of light in such a medium can be found by solving the Euler-Lagrange equations derived from Fermat’s Principle.</p>
-<p>In this case, the differential equation governing the path <span class="math inline">\(y(x)\)</span> of the light ray is:</p>
+<p>Consider a medium where the refractive index varies with height <span class="math inline">\(y\)</span> as <span class="math inline">\(n(y) = n_0 (1 - \frac{\alpha^2}{2 n_0} y^2)\)</span>. The path of light in such a medium can be found by using Fermat’s principle in differential form:</p>
 <p><span class="math display">\[
-\frac{d}{ds} \left( n(y) \frac{dy}{ds} \right) = \frac{dn}{dy}
+\frac{d}{ds}\left (n(\textbf{r})\frac{d\textbf{r}}{ds}\right)=\nabla n(\textbf{r})
 \]</span></p>
-<p>Substituting <span class="math inline">\(n(y) = n_0 (1 + \alpha y)\)</span> and solving this differential equation will give the trajectory of the light ray in the graded-index medium.</p>
+<p>Typically, this requires to express the coordinates in terms of a parameter, such as <span class="math inline">\(x(s)\)</span> and <span class="math inline">\(y(s)\)</span>, and then solve the differential equation. The solution will give the path of light in the medium. This is difficult and commonly done numerically. In paraxial optics, when the light is propagating roughly in the direction of <span class="math inline">\(z\)</span>, the differential element <span class="math inline">\(ds\)</span> can be approximated as <span class="math inline">\(dz\)</span> since then</p>
+<p><span class="math display">\[
+ds=dz*\sqrt{1+(\frac{dy}{dz})^2+(\frac{dx}{dz})^2}\approx dz
+\]</span></p>
+<p>which yields</p>
+<p><span class="math display">\[
+\frac{d}{dz}(n\frac{dx}{dz})\approx \frac{dn}{dx}
+\]</span></p>
+<p>and</p>
+<p><span class="math display">\[
+\frac{d}{dz}\left (n\frac{dy}{dz}\right )\approx \frac{dn}{dy}
+\]</span></p>
+<p>This readily yields the path of light in a homogeneous medium, where <span class="math inline">\(n\)</span> is constant. In this case we have</p>
+<p><span class="math display">\[
+\frac{d^2 x}{dz^2}=\frac{d^2 y}{dz^2}=0
+\]</span></p>
+<p>which is true for a straight line. In a graded-index medium, the path of light can be found by solving the differential equation</p>
+<p><span class="math display">\[
+\frac{d^2 y}{dz^2}=-\alpha^2 y
+\]</span></p>
+<p>which is reminiscent of the equation of motion of a harmonic oscillator. The solution is therefore an oscillating function</p>
+<p><span class="math display">\[
+y(z)=y_0\cos(\alpha z)+\frac{\theta_0}{\alpha}\sin(\alpha z  )
+\]</span></p>
+<p>where the angle <span class="math inline">\(\theta_0\)</span> is the initial angle of the light ray with respect to the <span class="math inline">\(z\)</span> axis. This solution describes the path of light in a graded-index medium.</p>
 </div>
 </div>
 </div>
