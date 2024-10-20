@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Optical Elements Part II – Einführung in die Modellierung Physikalischer Prozesse</title>
+<title>Optical Elements Part II – Experimental Physics 3 Course on Optics and Quantum Mechanics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -150,7 +150,7 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
-    <span class="navbar-title">Einführung in die Modellierung Physikalischer Prozesse</span>
+    <span class="navbar-title">Experimental Physics 3 Course on Optics and Quantum Mechanics</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -521,6 +521,22 @@ d3.select("#angle-slider")
 <p><span class="math display">\[\delta=\alpha_1+\sin^{-1}\left (\frac{n_1}{n_0}\sin\left [\gamma-\sin^{-1}\left (\frac{n_0}{n_1}\sin(\alpha_1) \right)\right]\right )-\gamma\]</span></p>
 <p>as the deflection angle.</p>
 <div id="cell-fig-refractive-indices" class="cell" data-execution_count="2">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> deflection(alpha_1,gamma,n0,n1):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    g<span class="op">=</span>gamma<span class="op">*</span>np.pi<span class="op">/</span><span class="dv">180</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span>(alpha_1<span class="op">+</span>np.arcsin(n1<span class="op">*</span>np.sin(g<span class="op">-</span>np.arcsin(n0<span class="op">*</span>np.sin(alpha_1)<span class="op">/</span>n1))))<span class="op">-</span>g</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>a_1<span class="op">=</span>np.linspace(<span class="fl">0.1</span>,np.pi<span class="op">/</span><span class="dv">2</span>,<span class="dv">100</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">4</span>,<span class="dv">4</span>))</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>plt.plot(a_1<span class="op">*</span><span class="dv">180</span><span class="op">/</span>np.pi,deflection(a_1,<span class="dv">45</span>,<span class="dv">1</span>,<span class="fl">1.5</span>)<span class="op">*</span><span class="dv">180</span><span class="op">/</span>np.pi,label<span class="op">=</span><span class="vs">r"$\gamma=45$ °"</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>plt.plot(a_1<span class="op">*</span><span class="dv">180</span><span class="op">/</span>np.pi,deflection(a_1,<span class="dv">30</span>,<span class="dv">1</span>,<span class="fl">1.5</span>)<span class="op">*</span><span class="dv">180</span><span class="op">/</span>np.pi,label<span class="op">=</span><span class="vs">r"$\gamma=30$ °"</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>plt.plot(a_1<span class="op">*</span><span class="dv">180</span><span class="op">/</span>np.pi,deflection(a_1,<span class="dv">10</span>,<span class="dv">1</span>,<span class="fl">1.5</span>)<span class="op">*</span><span class="dv">180</span><span class="op">/</span>np.pi,label<span class="op">=</span><span class="vs">r"$\gamma=10$ °"</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="vs">r"incindence angle $\alpha_1$ [°]"</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="vs">r"deflection angle $\delta$ [°]"</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-display">
 <div id="fig-refractive-indices" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
@@ -573,18 +589,18 @@ Minimum prism deflection
 <div id="cell-fig-wavelength-dependence" class="cell" data-cold-fold="true" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>bk7<span class="op">=</span>pd.read_csv(<span class="st">"data/BK7.csv"</span>,delimiter<span class="op">=</span><span class="st">","</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>sf10<span class="op">=</span>pd.read_csv(<span class="st">"data/SF10.csv"</span>,delimiter<span class="op">=</span><span class="st">","</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>fk51a<span class="op">=</span>pd.read_csv(<span class="st">"data/FK51A.csv"</span>,delimiter<span class="op">=</span><span class="st">","</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">4</span>,<span class="dv">4</span>))</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>plt.plot(bk7.wl<span class="op">*</span><span class="dv">1000</span>,bk7.n,label<span class="op">=</span><span class="st">"BK7"</span>)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>plt.plot(sf10.wl<span class="op">*</span><span class="dv">1000</span>,sf10.n,label<span class="op">=</span><span class="st">"SF10"</span>)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>plt.plot(fk51a.wl<span class="op">*</span><span class="dv">1000</span>,fk51a.n,label<span class="op">=</span><span class="st">"FK51A"</span>)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="dv">300</span>,<span class="dv">900</span>)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"wavelength [nm]"</span>)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"refractive index n"</span>)</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>bk7<span class="op">=</span>pd.read_csv(<span class="st">"data/BK7.csv"</span>,delimiter<span class="op">=</span><span class="st">","</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>sf10<span class="op">=</span>pd.read_csv(<span class="st">"data/SF10.csv"</span>,delimiter<span class="op">=</span><span class="st">","</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>fk51a<span class="op">=</span>pd.read_csv(<span class="st">"data/FK51A.csv"</span>,delimiter<span class="op">=</span><span class="st">","</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">4</span>,<span class="dv">4</span>))</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>plt.plot(bk7.wl<span class="op">*</span><span class="dv">1000</span>,bk7.n,label<span class="op">=</span><span class="st">"BK7"</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>plt.plot(sf10.wl<span class="op">*</span><span class="dv">1000</span>,sf10.n,label<span class="op">=</span><span class="st">"SF10"</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>plt.plot(fk51a.wl<span class="op">*</span><span class="dv">1000</span>,fk51a.n,label<span class="op">=</span><span class="st">"FK51A"</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="dv">300</span>,<span class="dv">900</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"wavelength [nm]"</span>)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"refractive index n"</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div id="fig-wavelength-dependence" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
@@ -602,31 +618,31 @@ Figure&nbsp;3: Refractive index of different glasses as a function of the wavele
 <div id="cell-fig-angle-dependence" class="cell" data-cold-fold="true" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>bk7<span class="op">=</span>pd.read_csv(<span class="st">"data/BK7.csv"</span>,delimiter<span class="op">=</span><span class="st">","</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>a_1<span class="op">=</span>np.linspace(<span class="fl">0.15</span>,np.pi<span class="op">/</span><span class="dv">2</span>,<span class="dv">100</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="fl">7.5</span>,<span class="dv">4</span>))</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">1</span>)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> wl <span class="kw">in</span> np.linspace(<span class="fl">0.400</span>,<span class="fl">0.700</span>,<span class="dv">100</span>):</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    n1<span class="op">=</span>np.interp(wl,bk7.wl,bk7.n)</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    c<span class="op">=</span>wavelength_to_rgb(wl<span class="op">*</span><span class="dv">1000</span>, gamma<span class="op">=</span><span class="fl">0.8</span>)</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    plt.plot(a_1<span class="op">*</span><span class="dv">180</span><span class="op">/</span>np.pi,deflection(a_1,<span class="dv">45</span>,<span class="dv">1</span>,n1)<span class="op">*</span><span class="dv">180</span><span class="op">/</span>np.pi,color<span class="op">=</span>c)</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="vs">r"incindence angle $\alpha_1$ [°]"</span>)</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="vs">r"deflection angle $\delta$ [°]"</span>)</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>)</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> wl <span class="kw">in</span> np.linspace(<span class="fl">0.400</span>,<span class="fl">0.700</span>,<span class="dv">100</span>):</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    n1<span class="op">=</span>np.interp(wl,bk7.wl,bk7.n)</span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    c<span class="op">=</span>wavelength_to_rgb(wl<span class="op">*</span><span class="dv">1000</span>, gamma<span class="op">=</span><span class="fl">0.8</span>)</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    plt.plot(a_1<span class="op">*</span><span class="dv">180</span><span class="op">/</span>np.pi,deflection(a_1,<span class="dv">45</span>,<span class="dv">1</span>,n1)<span class="op">*</span><span class="dv">180</span><span class="op">/</span>np.pi,color<span class="op">=</span>c)</span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="vs">r"incindence angle $\alpha_1$ [°]"</span>)</span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="vs">r"deflection angle $\delta$ [°]"</span>)</span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="dv">30</span>,<span class="dv">45</span>)</span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="dv">25</span>,<span class="dv">30</span>)</span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>bk7<span class="op">=</span>pd.read_csv(<span class="st">"data/BK7.csv"</span>,delimiter<span class="op">=</span><span class="st">","</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>a_1<span class="op">=</span>np.linspace(<span class="fl">0.15</span>,np.pi<span class="op">/</span><span class="dv">2</span>,<span class="dv">100</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="fl">7.5</span>,<span class="dv">4</span>))</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">1</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> wl <span class="kw">in</span> np.linspace(<span class="fl">0.400</span>,<span class="fl">0.700</span>,<span class="dv">100</span>):</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    n1<span class="op">=</span>np.interp(wl,bk7.wl,bk7.n)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    c<span class="op">=</span>wavelength_to_rgb(wl<span class="op">*</span><span class="dv">1000</span>, gamma<span class="op">=</span><span class="fl">0.8</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    plt.plot(a_1<span class="op">*</span><span class="dv">180</span><span class="op">/</span>np.pi,deflection(a_1,<span class="dv">45</span>,<span class="dv">1</span>,n1)<span class="op">*</span><span class="dv">180</span><span class="op">/</span>np.pi,color<span class="op">=</span>c)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="vs">r"incindence angle $\alpha_1$ [°]"</span>)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="vs">r"deflection angle $\delta$ [°]"</span>)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>)</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> wl <span class="kw">in</span> np.linspace(<span class="fl">0.400</span>,<span class="fl">0.700</span>,<span class="dv">100</span>):</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    n1<span class="op">=</span>np.interp(wl,bk7.wl,bk7.n)</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    c<span class="op">=</span>wavelength_to_rgb(wl<span class="op">*</span><span class="dv">1000</span>, gamma<span class="op">=</span><span class="fl">0.8</span>)</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    plt.plot(a_1<span class="op">*</span><span class="dv">180</span><span class="op">/</span>np.pi,deflection(a_1,<span class="dv">45</span>,<span class="dv">1</span>,n1)<span class="op">*</span><span class="dv">180</span><span class="op">/</span>np.pi,color<span class="op">=</span>c)</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="vs">r"incindence angle $\alpha_1$ [°]"</span>)</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="vs">r"deflection angle $\delta$ [°]"</span>)</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="dv">30</span>,<span class="dv">45</span>)</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="dv">25</span>,<span class="dv">30</span>)</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div id="fig-angle-dependence" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -762,16 +778,16 @@ Figure&nbsp;8: Home made water prism.
 <div id="cell-fig-water-n" class="cell" data-cold-fold="true" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>h2o<span class="op">=</span>pd.read_csv(<span class="st">"data/H2O.csv"</span>,delimiter<span class="op">=</span><span class="st">","</span>)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">4</span>))</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>plt.plot(h2o.wl<span class="op">*</span><span class="dv">1000</span>,h2o.n,label<span class="op">=</span><span class="vs">r"$H_2O$"</span>)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="dv">300</span>,<span class="dv">900</span>)</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="fl">1.3</span>,<span class="fl">1.36</span>)</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"wavelength [nm]"</span>)</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"refractive index n"</span>)</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>h2o<span class="op">=</span>pd.read_csv(<span class="st">"data/H2O.csv"</span>,delimiter<span class="op">=</span><span class="st">","</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">4</span>))</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>plt.plot(h2o.wl<span class="op">*</span><span class="dv">1000</span>,h2o.n,label<span class="op">=</span><span class="vs">r"$H_2O$"</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="dv">300</span>,<span class="dv">900</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="fl">1.3</span>,<span class="fl">1.36</span>)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"wavelength [nm]"</span>)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"refractive index n"</span>)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div id="fig-water-n" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -799,25 +815,57 @@ Applications of prims
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Prisms are versatile optical components with a wide range of applications across various fields. Here are some common uses of prisms:</p>
-<ol type="1">
-<li><p><strong>Binoculars and Telescopes</strong>: Porro prisms in traditional binoculars and roof prisms in modern designs serve to correct image inversion and provide a compact form. These prisms enable a longer optical path within a shorter physical length, enhancing magnification while maintaining portability. This design is crucial for both binoculars and some telescopes, offering users powerful magnification in a handheld device.</p></li>
-<li><p><strong>Periscopes</strong>: Right-angle prisms are the key component in periscopes, redirecting light at 90-degree angles. This simple yet effective design allows viewers to see over obstacles or around corners, making periscopes invaluable in submarines and various military applications where direct line of sight is obstructed.</p></li>
-<li><p><strong>Beam Splitting</strong>: Cube beamsplitters play a vital role in dividing a single beam of light into two separate beams. This capability is essential in various scientific and medical applications, including interferometry, holography, and optical coherence tomography (OCT). The ability to split light beams precisely opens up numerous possibilities in research and diagnostics.</p></li>
-<li><p><strong>Beam Steering</strong>: Risley prisms, consisting of a pair of rotating wedge prisms, offer precise control over laser beam direction. This technology finds applications in laser scanning, target tracking, and adaptive optics. The ability to steer beams accurately is crucial in fields ranging from military applications to advanced scientific research.</p></li>
-<li><p><strong>Digital Projectors</strong>: Total Internal Reflection (TIR) prisms are a crucial component in Digital Light Processing (DLP) projectors. They direct light from the lamp to the Digital Micromirror Device (DMD) and then to the projection lens, enabling the high-quality image projection that DLP technology is known for.</p></li>
-<li><p><strong>Camera Systems</strong>: In Single-Lens Reflex (SLR) cameras, pentaprisms play a critical role in the viewfinder system. They flip the image from the lens to appear upright and correctly oriented in the viewfinder, allowing photographers to accurately compose their shots.</p></li>
-<li><p><strong>Laser Systems</strong>: Brewster prisms find use in laser systems for polarization and wavelength separation. Additionally, dispersing prisms can be employed for wavelength tuning in certain laser setups, providing precise control over the laser’s output characteristics.</p></li>
-<li><p><strong>Fiber Optic Communications</strong>: In the realm of telecommunications, prisms are utilized in some fiber optic connectors and switches. They help redirect light between fibers, playing a crucial role in maintaining signal integrity and enabling complex network architectures.</p></li>
-<li><p><strong>Solar Energy</strong>: Fresnel lenses, a specialized type of prism, are employed in concentrated solar power systems. These lenses focus sunlight efficiently, contributing to the development of more effective solar energy collection technologies.</p></li>
-<li><p><strong>Head-Up Displays (HUDs)</strong>: Prisms are an integral part of HUD systems in both automotive and aviation contexts. They project crucial information onto the windshield or a combiner glass, allowing drivers or pilots to access important data without taking their eyes off their primary viewpoint.</p></li>
-<li><p><strong>Microscopy</strong>: Nomarski prisms enhance the capabilities of differential interference contrast microscopy. They increase contrast in transparent specimens, enabling scientists to observe details that would be difficult or impossible to see with conventional microscopy techniques.</p></li>
-<li><p><strong>Optical Coherence Tomography (OCT)</strong>: In some OCT systems, prisms are employed for sample arm scanning and reference arm delay. This application of prisms contributes to the high-resolution imaging capabilities of OCT, which is particularly valuable in medical diagnostics, especially in ophthalmology.</p></li>
-</ol>
+<section id="binoculars-and-telescopes" class="level4">
+<h4 class="anchored" data-anchor-id="binoculars-and-telescopes">Binoculars and Telescopes:</h4>
+<p>Porro prisms in traditional binoculars and roof prisms in modern designs serve to correct image inversion and provide a compact form. These prisms enable a longer optical path within a shorter physical length, enhancing magnification while maintaining portability. This design is crucial for both binoculars and some telescopes, offering users powerful magnification in a handheld device.</p>
+</section>
+<section id="periscopes" class="level4">
+<h4 class="anchored" data-anchor-id="periscopes">Periscopes:</h4>
+<p>Right-angle prisms are the key component in periscopes, redirecting light at 90-degree angles. This simple yet effective design allows viewers to see over obstacles or around corners, making periscopes invaluable in submarines and various military applications where direct line of sight is obstructed.</p>
+</section>
+<section id="beam-splitting" class="level4">
+<h4 class="anchored" data-anchor-id="beam-splitting">Beam Splitting:</h4>
+<p>Cube beamsplitters play a vital role in dividing a single beam of light into two separate beams. This capability is essential in various scientific and medical applications, including interferometry, holography, and optical coherence tomography (OCT). The ability to split light beams precisely opens up numerous possibilities in research and diagnostics.</p>
+</section>
+<section id="beam-steering" class="level4">
+<h4 class="anchored" data-anchor-id="beam-steering">Beam Steering:</h4>
+<p>Risley prisms, consisting of a pair of rotating wedge prisms, offer precise control over laser beam direction. This technology finds applications in laser scanning, target tracking, and adaptive optics. The ability to steer beams accurately is crucial in fields ranging from military applications to advanced scientific research.</p>
+</section>
+<section id="digital-projectors" class="level4">
+<h4 class="anchored" data-anchor-id="digital-projectors">Digital Projectors:</h4>
+<p>Total Internal Reflection (TIR) prisms are a crucial component in Digital Light Processing (DLP) projectors. They direct light from the lamp to the Digital Micromirror Device (DMD) and then to the projection lens, enabling the high-quality image projection that DLP technology is known for.</p>
+</section>
+<section id="camera-systems" class="level4">
+<h4 class="anchored" data-anchor-id="camera-systems">Camera Systems:</h4>
+<p>In Single-Lens Reflex (SLR) cameras, pentaprisms play a critical role in the viewfinder system. They flip the image from the lens to appear upright and correctly oriented in the viewfinder, allowing photographers to accurately compose their shots.</p>
+</section>
+<section id="laser-systems" class="level4">
+<h4 class="anchored" data-anchor-id="laser-systems">Laser Systems:</h4>
+<p>Brewster prisms find use in laser systems for polarization and wavelength separation. Additionally, dispersing prisms can be employed for wavelength tuning in certain laser setups, providing precise control over the laser’s output characteristics.</p>
+</section>
+<section id="fiber-optic-communications" class="level4">
+<h4 class="anchored" data-anchor-id="fiber-optic-communications">Fiber Optic Communications:</h4>
+<p>In the realm of telecommunications, prisms are utilized in some fiber optic connectors and switches. They help redirect light between fibers, playing a crucial role in maintaining signal integrity and enabling complex network architectures.</p>
+</section>
+<section id="solar-energy" class="level4">
+<h4 class="anchored" data-anchor-id="solar-energy">Solar Energy:</h4>
+<p>Fresnel lenses, a specialized type of prism, are employed in concentrated solar power systems. These lenses focus sunlight efficiently, contributing to the development of more effective solar energy collection technologies.</p>
+</section>
+<section id="head-up-displays-huds" class="level4">
+<h4 class="anchored" data-anchor-id="head-up-displays-huds">Head-Up Displays (HUDs):</h4>
+<p>Prisms are an integral part of HUD systems in both automotive and aviation contexts. They project crucial information onto the windshield or a combiner glass, allowing drivers or pilots to access important data without taking their eyes off their primary viewpoint.</p>
+</section>
+<section id="microscopy" class="level4">
+<h4 class="anchored" data-anchor-id="microscopy">Microscopy:</h4>
+<p>Nomarski prisms enhance the capabilities of differential interference contrast microscopy. They increase contrast in transparent specimens, enabling scientists to observe details that would be difficult or impossible to see with conventional microscopy techniques.</p>
+</section>
+<section id="optical-coherence-tomography-oct" class="level4">
+<h4 class="anchored" data-anchor-id="optical-coherence-tomography-oct">Optical Coherence Tomography (OCT):</h4>
+<p>In some OCT systems, prisms are employed for sample arm scanning and reference arm delay. This application of prisms contributes to the high-resolution imaging capabilities of OCT, which is particularly valuable in medical diagnostics, especially in ophthalmology.</p>
+</section>
 </div>
 </div>
 </div>
-<p>Fermat’s principle, also known as the principle of least time, states that the path taken by light between two points is the path that can be traversed in the least time. This principle is typically used to derive the laws of reflection and refraction. However, the concept of a saddle point in the context of Fermat’s principle is less common but can be illustrated with a specific example.</p>
-<p>Consider a scenario where light travels from point A to point B, but there is a medium with varying refractive index in between. Let’s construct an example involving a gradient-index medium, where the refractive index changes continuously in space.</p>
 
 
 </section>

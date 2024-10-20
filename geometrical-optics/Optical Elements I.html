@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Optical Elements Part I – Einführung in die Modellierung Physikalischer Prozesse</title>
+<title>Optical Elements Part I – Experimental Physics 3 Course on Optics and Quantum Mechanics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -150,7 +150,7 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
-    <span class="navbar-title">Einführung in die Modellierung Physikalischer Prozesse</span>
+    <span class="navbar-title">Experimental Physics 3 Course on Optics and Quantum Mechanics</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -696,23 +696,38 @@ Parabolic Mirrors Focus Parallel Rays
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>We can demonstrate that a parabolic surface reflects all parallel rays to a single point using a simpler approach:</p>
-<ol type="1">
-<li><p><strong>Parabola Equation:</strong> Let’s start with a general parabola equation:</p>
+<section id="parabola-equation" class="level4">
+<h4 class="anchored" data-anchor-id="parabola-equation">Parabola Equation</h4>
+<p>Let’s start with a general parabola equation:</p>
 <p><span class="math display">\[y = ax^2\]</span></p>
-<p>where <span class="math inline">\(a\)</span> is a constant that determines the parabola’s shape.</p></li>
-<li><p><strong>Parallel Rays:</strong> Consider parallel rays coming in from the right, parallel to the x-axis. These can be represented by lines of constant <span class="math inline">\(x\)</span>:</p>
+<p>where <span class="math inline">\(a\)</span> is a constant that determines the parabola’s shape.</p>
+</section>
+<section id="parallel-rays" class="level4">
+<h4 class="anchored" data-anchor-id="parallel-rays">Parallel Rays</h4>
+<p>Consider parallel rays coming in from the right, parallel to the x-axis. These can be represented by lines of constant <span class="math inline">\(x\)</span>:</p>
 <p><span class="math display">\[x = k\]</span></p>
-<p>where <span class="math inline">\(k\)</span> is some constant.</p></li>
-<li><p><strong>Reflection Point:</strong> The point where a ray meets the parabola is <span class="math inline">\((k, ak^2)\)</span>.</p></li>
-<li><p><strong>Normal Line:</strong> The slope of the normal line at this point is:</p>
+<p>where <span class="math inline">\(k\)</span> is some constant.</p>
+<p>#### Reflection Point The point where a ray meets the parabola is <span class="math inline">\((k, ak^2)\)</span>.</p>
+</section>
+<section id="normal-line" class="level4">
+<h4 class="anchored" data-anchor-id="normal-line">Normal Line</h4>
+<p>The slope of the normal line at this point is:</p>
 <p><span class="math display">\[m_{normal} = -\frac{1}{2ak}\]</span></p>
-<p>(This comes from the fact that the normal is perpendicular to the tangent, and the slope of the tangent is <span class="math inline">\(\frac{dy}{dx} = 2ax\)</span>.)</p></li>
-<li><p><strong>Reflected Ray:</strong> According to the law of reflection, the reflected ray will have a slope that is the negative reciprocal of the normal:</p>
-<p><span class="math display">\[m_{reflected} = 2ak\]</span></p></li>
-<li><p><strong>Focus Point:</strong> If all rays converge to a single point <span class="math inline">\((0, p)\)</span>, then this point must satisfy the equation of the reflected ray:</p>
-<p><span class="math display">\[p - ak^2 = 2ak(0 - k)\]</span> <span class="math display">\[p = ak^2 - 2ak^2 = -ak^2\]</span></p></li>
-<li><p><strong>Determining <span class="math inline">\(a\)</span>:</strong> We found that <span class="math inline">\(p = -ak^2\)</span> must be true for all <span class="math inline">\(k\)</span>. This implies that <span class="math inline">\(p\)</span> and <span class="math inline">\(a\)</span> must have a specific relationship that doesn’t depend on <span class="math inline">\(k\)</span>. Let’s rearrange this equation:</p></li>
-</ol>
+<p>(This comes from the fact that the normal is perpendicular to the tangent, and the slope of the tangent is <span class="math inline">\(\frac{dy}{dx} = 2ax\)</span>.)</p>
+</section>
+<section id="reflected-ray" class="level4">
+<h4 class="anchored" data-anchor-id="reflected-ray">Reflected Ray</h4>
+<p>According to the law of reflection, the reflected ray will have a slope that is the negative reciprocal of the normal:</p>
+<p><span class="math display">\[m_{reflected} = 2ak\]</span></p>
+</section>
+<section id="focus-point" class="level4">
+<h4 class="anchored" data-anchor-id="focus-point">Focus Point</h4>
+<p>If all rays converge to a single point <span class="math inline">\((0, p)\)</span>, then this point must satisfy the equation of the reflected ray:</p>
+<p><span class="math display">\[p - ak^2 = 2ak(0 - k)\]</span> <span class="math display">\[p = ak^2 - 2ak^2 = -ak^2\]</span></p>
+</section>
+<section id="determining-a" class="level4">
+<h4 class="anchored" data-anchor-id="determining-a">Determining <span class="math inline">\(a\)</span></h4>
+<p>We found that <span class="math inline">\(p = -ak^2\)</span> must be true for all <span class="math inline">\(k\)</span>. This implies that <span class="math inline">\(p\)</span> and <span class="math inline">\(a\)</span> must have a specific relationship that doesn’t depend on <span class="math inline">\(k\)</span>. Let’s rearrange this equation:</p>
 <p><span class="math display">\[-\frac{p}{k^2} = a\]</span></p>
 <p>For this to be true for all <span class="math inline">\(k\)</span>, the left side must be constant. The only way for <span class="math inline">\(\frac{p}{k^2}\)</span> to be constant for all <span class="math inline">\(k\)</span> is if <span class="math inline">\(p\)</span> is proportional to <span class="math inline">\(k^2\)</span>. The simplest relationship that satisfies this is:</p>
 <p><span class="math display">\[p = \frac{1}{4a}\]</span></p>
@@ -731,36 +746,33 @@ Parabolic Mirrors Focus Parallel Rays
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>plt.axhline(y<span class="op">=</span><span class="dv">0</span>, color<span class="op">=</span><span class="st">'k'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, linewidth<span class="op">=</span><span class="fl">0.5</span>)</span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>plt.axvline(x<span class="op">=</span><span class="dv">0</span>, color<span class="op">=</span><span class="st">'k'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, linewidth<span class="op">=</span><span class="fl">0.5</span>)</span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the parabola</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>focal_length <span class="op">=</span> <span class="dv">2</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">100</span>)</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> x<span class="op">**</span><span class="dv">2</span> <span class="op">/</span> (<span class="dv">4</span> <span class="op">*</span> focal_length)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>focal_length <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">100</span>)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> x<span class="op">**</span><span class="dv">2</span> <span class="op">/</span> (<span class="dv">4</span> <span class="op">*</span> focal_length)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>plt.plot([<span class="dv">0</span>], [focal_length], <span class="st">'ro'</span>, markersize<span class="op">=</span><span class="dv">5</span>, label<span class="op">=</span><span class="st">'Focal Point'</span>)</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to plot reflected rays</span></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_reflected_ray(x0, y0):</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    plt.plot([x0, x0], [<span class="dv">5</span>, y0], <span class="st">'k-'</span>, linewidth<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    <span class="co">#plt.arrow(x0, 5, 0, y0-5, color='r', width=0.01, head_width=0.1, head_length=0.0)</span></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    m <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> (y0<span class="op">/</span>x0)  <span class="co"># Slope of reflected ray</span></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    x1 <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>    y1 <span class="op">=</span> focal_length</span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>    plt.plot([x0, x1], [y0, y1], <span class="st">'k-'</span>, linewidth<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> x0 <span class="kw">in</span> np.linspace(<span class="op">-</span><span class="fl">3.5</span>, <span class="fl">3.5</span>, <span class="dv">8</span>):</span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>    y0 <span class="op">=</span> x0<span class="op">**</span><span class="dv">2</span> <span class="op">/</span> (<span class="dv">4</span> <span class="op">*</span> focal_length)</span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>    plot_reflected_ray(x0, y0)</span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>plt.plot(x, y, <span class="st">'b-'</span>, linewidth<span class="op">=</span><span class="dv">3</span>, label<span class="op">=</span><span class="st">'Parabolic Mirror'</span>)</span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'x'</span>)</span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'y'</span>)</span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>, linestyle<span class="op">=</span><span class="st">':'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>plt.axis(<span class="st">'equal'</span>)</span>
-<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>plt.plot([<span class="dv">0</span>], [focal_length], <span class="st">'ro'</span>, markersize<span class="op">=</span><span class="dv">5</span>, label<span class="op">=</span><span class="st">'Focal Point'</span>)</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_reflected_ray(x0, y0):</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    plt.plot([x0, x0], [<span class="dv">5</span>, y0], <span class="st">'k-'</span>, linewidth<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    m <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> (y0<span class="op">/</span>x0)  <span class="co"># Slope of reflected ray</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    x1 <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    y1 <span class="op">=</span> focal_length</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    plt.plot([x0, x1], [y0, y1], <span class="st">'k-'</span>, linewidth<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> x0 <span class="kw">in</span> np.linspace(<span class="op">-</span><span class="fl">3.5</span>, <span class="fl">3.5</span>, <span class="dv">8</span>):</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>    y0 <span class="op">=</span> x0<span class="op">**</span><span class="dv">2</span> <span class="op">/</span> (<span class="dv">4</span> <span class="op">*</span> focal_length)</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>    plot_reflected_ray(x0, y0)</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>plt.plot(x, y, <span class="st">'b-'</span>, linewidth<span class="op">=</span><span class="dv">3</span>, label<span class="op">=</span><span class="st">'Parabolic Mirror'</span>)</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'x'</span>)</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'y'</span>)</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>, linestyle<span class="op">=</span><span class="st">':'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>plt.axis(<span class="st">'equal'</span>)</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div id="fig-parabolic-mirror" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -775,6 +787,75 @@ Figure&nbsp;7: Parabolic mirror reflecting parallel rays to focal point
 </div>
 </div>
 </div>
+</section>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Elliptical Mirrors and Fermat’s Principle
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>There is one interesting feature about elliptical mirrors: they can focus light from one focal point to the other. This is because the sum of the distances from any point on the ellipse to the two focal points is constant. This property is known as the <strong>ellipse’s geometric definition</strong> and you can try that at home with a piece of string and two pins.</p>
+<p>We can now apply Fermat’s principle to proof that the light reflected from the ellipse travels a path length that is a saddle point. This means that the path length is stationary with respect to small perturbations in the path. Assuming for example that light travels from one focal point by a different path that is reflected from a line which is tangent to the ellipse at the point of reflection, the path length would be longer at any other point than the initial reflection point.</p>
+<p>On the other side, if we reflect the ray on a surface that is a circle, which is intersecting the ellipse at the point of reflection, the path length would be shorter at any other point than the initial reflection point. This is a proof that the ellipse is a saddle point.</p>
+<div id="55e4f3b1" class="cell" data-execution_count="4">
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Optical Elements I_files/figure-html/cell-5-output-1.png" width="594" height="413" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="mathematical-description" class="level4">
+<h4 class="anchored" data-anchor-id="mathematical-description">Mathematical Description</h4>
+</section>
+<section id="ellipse-definition" class="level4">
+<h4 class="anchored" data-anchor-id="ellipse-definition">Ellipse Definition</h4>
+<p>Consider an ellipse with semi-major axis <span class="math inline">\(a\)</span> and semi-minor axis <span class="math inline">\(b\)</span>, defined by:</p>
+<p><span class="math display">\[\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1\]</span></p>
+<section id="focal-points" class="level5">
+<h5 class="anchored" data-anchor-id="focal-points">Focal Points</h5>
+<p>The focal points are located at <span class="math inline">\(F_1(-c, 0)\)</span> and <span class="math inline">\(F_2(c, 0)\)</span>, where:</p>
+<p><span class="math display">\[c^2 = a^2 - b^2\]</span></p>
+</section>
+<section id="path-length" class="level5">
+<h5 class="anchored" data-anchor-id="path-length">Path Length</h5>
+<p>Let <span class="math inline">\(P(x_0, y_0)\)</span> be a point on the ellipse. The total path length <span class="math inline">\(L\)</span> from <span class="math inline">\(F_1\)</span> to <span class="math inline">\(F_2\)</span> via <span class="math inline">\(P\)</span> is:</p>
+<p><span class="math display">\[L = |F_1P| + |PF_2| = \sqrt{(x_0+c)^2 + y_0^2} + \sqrt{(x_0-c)^2 + y_0^2}\]</span></p>
+</section>
+<section id="fermats-principle" class="level5">
+<h5 class="anchored" data-anchor-id="fermats-principle">Fermat’s Principle</h5>
+<p>The path length <span class="math inline">\(L\)</span> is stationary with respect to small perturbations in <span class="math inline">\(P\)</span>:</p>
+<p><span class="math display">\[\frac{\partial L}{\partial x_0} = 0 \quad \text{and} \quad \frac{\partial L}{\partial y_0} = 0 \quad \text{at the reflection point}\]</span></p>
+</section>
+<section id="tangent-line" class="level5">
+<h5 class="anchored" data-anchor-id="tangent-line">Tangent Line</h5>
+<p>The tangent line to the ellipse at <span class="math inline">\(P(x_0, y_0)\)</span> is given by:</p>
+<p><span class="math display">\[\frac{x_0x}{a^2} + \frac{y_0y}{b^2} = 1\]</span></p>
+<p>Let <span class="math inline">\(Q\)</span> be any point on this tangent line different from <span class="math inline">\(P\)</span>. The path <span class="math inline">\(F_1 \to Q \to F_2\)</span> is longer than <span class="math inline">\(F_1 \to P \to F_2\)</span>:</p>
+<p><span class="math display">\[|F_1Q| + |QF_2| &gt; |F_1P| + |PF_2|\]</span></p>
+</section>
+<section id="circle-of-curvature" class="level5">
+<h5 class="anchored" data-anchor-id="circle-of-curvature">Circle of Curvature</h5>
+<p>The radius of curvature <span class="math inline">\(R\)</span> at <span class="math inline">\(P\)</span> is:</p>
+<p><span class="math display">\[R = \frac{(a^2b^2)^{3/2}}{(b^2x_0^2 + a^2y_0^2)^{3/2}}\]</span></p>
+<p>The center of curvature <span class="math inline">\(C\)</span> is located at:</p>
+<p><span class="math display">\[C = P + R\cdot\mathbf{n}\]</span></p>
+<p>where <span class="math inline">\(\mathbf{n}\)</span> is the unit normal vector at <span class="math inline">\(P\)</span>.</p>
+<p>Let <span class="math inline">\(Q\)</span> be any point on this circle different from <span class="math inline">\(P\)</span>. The path <span class="math inline">\(F_1 \to Q \to F_2\)</span> is shorter than <span class="math inline">\(F_1 \to P \to F_2\)</span>:</p>
+<p><span class="math display">\[|F_1Q| + |QF_2| &lt; |F_1P| + |PF_2|\]</span></p>
+<p>As a consequence, the path length for the reflection on and ellipse between the two focal points must be a saddle point.</p>
+</section>
+</section>
 </div>
 </div>
 </div>
