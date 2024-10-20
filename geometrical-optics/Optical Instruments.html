@@ -314,7 +314,10 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#the-human-eye" id="toc-the-human-eye" class="nav-link active" data-scroll-target="#the-human-eye">The Human Eye</a></li>
+  <li><a href="#the-human-eye" id="toc-the-human-eye" class="nav-link active" data-scroll-target="#the-human-eye">The Human Eye</a>
+  <ul class="collapse">
+  <li><a href="#resolution-limit-of-the-eye" id="toc-resolution-limit-of-the-eye" class="nav-link" data-scroll-target="#resolution-limit-of-the-eye">Resolution Limit of the Eye</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -381,7 +384,9 @@ Figure&nbsp;1: Sketch of the ingredients of the human eye. Left: Most important 
 </figure>
 </div>
 <p>Most important is the pupil resembling an adjustable aperture for adjusting the total light falling to the retina and the lens, connected to muscles to change the curvature of the lens and, thus, also the focal distance. The pupil’s ability to dilate and constrict not only controls light entering the eye but also affects depth of field. In bright light, a constricted pupil increases depth of field, allowing a larger range of distances to be in focus simultaneously.</p>
-<p>The lens is connected to air on one side as the surrounding medium and to a vitreous humor (glass body) on the other side. So there is some asymmetry. The eye, therefore, has a front focal length of <span class="math inline">\(f_1=17\,{\rm mm}\)</span> and a back focal length of <span class="math inline">\(f_2=22\,{\rm mm}\)</span>. These values may vary by the individual but also by the distance of the object. For close objects the eye can accomodate its focal distance to <span class="math inline">\(f_1=14\,{\rm mm}\)</span> and <span class="math inline">\(f_2=19\,{\rm mm}\)</span>. The process of accommodation involves the ciliary muscles. When these muscles contract, they allow the lens to become more convex, increasing its refractive power for near vision. As we age, the lens becomes less flexible, leading to presbyopia, a condition where near focus becomes difficult.</p>
+<p>The lens is connected to air on one side as the surrounding medium and to a vitreous humor (glass body) on the other side. So there is some asymmetry. The eye, therefore, has a front focal length of <span class="math inline">\(f_1=17\,{\rm mm}\)</span> and a back focal length of <span class="math inline">\(f_2=22\,{\rm mm}\)</span>. These values may vary by the individual but also by the distance of the object. For close objects the eye can accomodate its focal distance to <span class="math inline">\(f_1=14\,{\rm mm}\)</span> and <span class="math inline">\(f_2=19\,{\rm mm}\)</span>. The refractive power of the eye, measured in diopters (D), is the reciprocal of the focal length in meters. For a relaxed eye with focal length f = 22 mm, the refractive power is:</p>
+<p><span class="math display">\[P = \frac{1}{f} = \frac{1}{0.022 \text{ m}} \approx 45.45 \text{ D}\]</span></p>
+<p>During accommodation, this power can increase to about 52 D. The process of accommodation involves the ciliary muscles. When these muscles contract, they allow the lens to become more convex, increasing its refractive power for near vision. As we age, the lens becomes less flexible, leading to presbyopia, a condition where near focus becomes difficult.</p>
 <div id="fig-eye-focal-distance" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-eye-focal-distance-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -404,6 +409,11 @@ Figure&nbsp;3: Angular distribution of cones and rods around the fovea, electron
 </figure>
 </div>
 <p>Visual acuity, often tested with an eye chart, measures the eye’s ability to resolve fine details. It’s typically expressed as a fraction, like 20/20 vision, where the numerator is the test distance and the denominator is the distance at which a person with normal acuity can read the same line.</p>
+<section id="resolution-limit-of-the-eye" class="level3">
+<h3 class="anchored" data-anchor-id="resolution-limit-of-the-eye">Resolution Limit of the Eye</h3>
+<p>The resolution of the eye is limited by diffraction and the spacing of photoreceptors. The minimum angle of resolution θ_min can be approximated by:</p>
+<p><span class="math display">\[\theta_{\text{min}} \approx \frac{1.22\lambda}{D}\]</span></p>
+<p>where λ is the wavelength of light and D is the diameter of the pupil. For a 3 mm pupil and 555 nm light (peak sensitivity), this gives a theoretical resolution of about 1 arc minute.</p>
 <p>Under normal conditions, objects at infinite distance are imaged to the retina at the back focal distance <span class="math inline">\(f_2=22\, {\rm mm}\)</span>. However, the lens of the eye may have defects changing its refractive power. The eye’s optical system isn’t perfect and can suffer from various aberrations. Astigmatism, for instance, occurs when the cornea or lens isn’t perfectly spherical, causing light to focus at multiple points rather than a single sharp point on the retina. Often this leads to short-sightedness or far-sightedness. If you are short-sighted, the light from infinite distance is not focused to the retina but to some shorter distance inside the glass body. This may be corrected by a concave lens as displayed in the image below on the left side. If you are far-sighted, then the light is focused behind the retina if objects are infinitely distant away. To correct for that error, one needs a convex lens as displayed on the right side.</p>
 <div id="fig-sight-correction" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure">
@@ -440,7 +450,12 @@ Figure&nbsp;4: Short-sightedness (left) and far-sightedness (right) and their co
 </figcaption>
 </figure>
 </div>
-<p>In the normal relaxed state of the eye muscle, one can, therefore, observe objects up to a distance of <span class="math inline">\(s_0=25\, {\rm cm}\)</span> without additional accommodation of the eye lens. This distance, which varies from person to person, is standardized and called the <strong>range of clear visual sight</strong>. This range of clear visual sight allows to observe objects under an angle <span class="math inline">\(\epsilon\)</span>.</p>
+<p>The refractive error R of the eye, in diopters, can be calculated as:</p>
+<p><span class="math display">\[R = \frac{1}{f_{\text{required}}} - \frac{1}{f_{\text{actual}}}\]</span></p>
+<p>where f_required is the focal length needed for perfect focus, and f_actual is the eye’s actual focal length. This quantifies the degree of correction needed for various eye defects.</p>
+<p>In the normal relaxed state of the eye muscle, one can, therefore, observe objects up to a distance of <span class="math inline">\(s_0=25\, {\rm cm}\)</span> without additional accommodation of the eye lens. This distance, which varies from person to person, is standardized and called the <strong>range of clear visual sight</strong>. This range of clear visual sight allows to observe objects under an angle <span class="math inline">\(\epsilon\)</span>. The angular size θ of an object of height h at a distance d is given by:</p>
+<p><span class="math display">\[\theta \approx \tan(\theta) = \frac{h}{d}\]</span></p>
+<p>This approximation holds for small angles, which is typically the case in vision.</p>
 <div id="fig-relaxed-eye" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-relaxed-eye-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -456,8 +471,12 @@ Figure&nbsp;5: Relaxed eye focusing on a distant object.
 V=\frac{\tan(\epsilon)}{\tan(\epsilon_0)}\approx \frac{\epsilon}{\epsilon_0}.
 \]</span></p>
 <p>This concept of angular magnification is crucial in understanding how optical instruments like telescopes and microscopes enhance our vision by effectively increasing the apparent size of objects. This is a useful measure as the image size is not really accessible ;-).</p>
+<p>For a simple magnifying glass with focal length f, when the object is placed at the focal point and the eye is close to the lens, the angular magnification is:</p>
+<p><span class="math display">\[V = \frac{s_0}{f}\]</span></p>
+<p>where s₀ is the near point of the eye (typically 25 cm).</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
