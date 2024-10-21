@@ -768,10 +768,7 @@ Fermat’s Principle and Snells Law
 \delta \int_{A}^{C} n(\vec{r}) \, ds = 0,
 \]</span></p>
 <p>where <span class="math inline">\(n(\vec{r})\)</span> is the refractive index at position <span class="math inline">\(\vec{r}\)</span>, and <span class="math inline">\(ds\)</span> is an infinitesimal element of the path.</p>
-<section id="setup" class="level4">
-<h4 class="anchored" data-anchor-id="setup">Setup</h4>
 <p>Consider a light ray traveling from point <span class="math inline">\(A\)</span> in medium 1 (with refractive index <span class="math inline">\(n_1\)</span>) to point <span class="math inline">\(C\)</span> in medium 2 (with refractive index <span class="math inline">\(n_2\)</span>), crossing the interface at point <span class="math inline">\(B\)</span>. Let the coordinates of points <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, and <span class="math inline">\(C\)</span> be <span class="math inline">\((x_A, y_A)\)</span>, <span class="math inline">\((x_B, y_B)\)</span>, and <span class="math inline">\((x_C, y_C)\)</span>, respectively. Assume the interface between the two media is at <span class="math inline">\(y = y_B\)</span>.</p>
-</section>
 <section id="optical-path-length" class="level4">
 <h4 class="anchored" data-anchor-id="optical-path-length">Optical Path Length</h4>
 <p>The optical path length (OPL) is given by:</p>
@@ -858,11 +855,11 @@ Example: Light in a Graded-Index Medium
 \]</span></p>
 <p>Typically, this requires to express the coordinates in terms of a parameter, such as <span class="math inline">\(x(s)\)</span> and <span class="math inline">\(y(s)\)</span>, and then solve the differential equation. The solution will give the path of light in the medium. This is difficult and commonly done numerically. In paraxial optics, when the light is propagating roughly in the direction of <span class="math inline">\(z\)</span>, the differential element <span class="math inline">\(ds\)</span> can be approximated as <span class="math inline">\(dz\)</span> since then</p>
 <p><span class="math display">\[
-ds=dz*\sqrt{1+(\frac{dy}{dz})^2+(\frac{dx}{dz})^2}\approx dz
+ds=dz\sqrt{1+\left (\frac{dy}{dz}\right )^2+\left (\frac{dx}{dz}\right)^2}\approx dz
 \]</span></p>
 <p>which yields</p>
 <p><span class="math display">\[
-\frac{d}{dz}(n\frac{dx}{dz})\approx \frac{dn}{dx}
+\frac{d}{dz}\left (n\frac{dx}{dz}\right)\approx \frac{dn}{dx}
 \]</span></p>
 <p>and</p>
 <p><span class="math display">\[
@@ -881,6 +878,50 @@ ds=dz*\sqrt{1+(\frac{dy}{dz})^2+(\frac{dx}{dz})^2}\approx dz
 y(z)=y_0\cos(\alpha z)+\frac{\theta_0}{\alpha}\sin(\alpha z  )
 \]</span></p>
 <p>where the angle <span class="math inline">\(\theta_0\)</span> is the initial angle of the light ray with respect to the <span class="math inline">\(z\)</span> axis. This solution describes the path of light in a graded-index medium.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Fermats’s Principle in Integral and Differential Form
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>We have described Fermat’t principle in an integral form specifiying the optical path length <span class="math inline">\(S\)</span> as</p>
+<p><span class="math display">\[
+OPL=\int n(\textbf{r})ds
+\]</span></p>
+<p>The path length <span class="math inline">\(ds\)</span> can be given in terms of two coordinates <span class="math inline">\(x_1\)</span> and <span class="math inline">\(x_2\)</span> parametrized by <span class="math inline">\(\lambda\)</span> such that</p>
+<p><span class="math display">\[
+ds=\sqrt{\dot{x}_1^{2}+\dot{x}_2^{2}}d\lambda
+\]</span></p>
+<p>where <span class="math inline">\(\dot{x}_1=\frac{dx_{1}}{d\lambda}\)</span>. We can therefore write Fermat’s principle as</p>
+<p><span class="math display">\[
+\delta OPL=\int\left[\left(\frac{\partial n}{\partial x_i} \delta x_i\right) \sqrt{\dot{x}_1^2+\dot{x}_2^2}+n \frac{1}{\sqrt{\dot{x}_1^2+\dot{x}_2^2}} \dot{x}_i \delta \dot{x}_i\right] d \lambda = 0
+\]</span></p>
+<p>Integrating by parts we obtain</p>
+<p><span class="math display">\[
+\delta OPL=\int\left[\left(\frac{\partial n}{\partial x_i}\right) \sqrt{\dot{x}_1{ }^2+\dot{x}_2{ }^2}-\frac{d}{d \lambda}\left(n \frac{1}{\sqrt{\dot{x}_1^2+\dot{x}_2^2}} \dot{x}_i\right)\right] \delta x_i d \lambda+\text { boundary terms }
+\]</span></p>
+<p>for which we choose the parameter <span class="math inline">\(\lambda\)</span> such that the boundary terms vanish.</p>
+<p><span class="math display">\[
+\lambda=s
+\]</span></p>
+<p>such that</p>
+<p><span class="math display">\[
+\sqrt{\dot{x}_1^2+\dot{x}_2^2}=1
+\]</span></p>
+<p>and finally leads to the Euler-Lagrange equation</p>
+<p><span class="math display">\[
+\left(\frac{\partial n}{\partial x_i}\right)-\frac{d}{d s}\left(n \dot{x}_i\right)=0
+\]</span></p>
+<p>which is the differential form of the Fermat’s principle.</p>
 </div>
 </div>
 </div>
