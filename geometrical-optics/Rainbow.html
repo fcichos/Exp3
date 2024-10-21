@@ -387,7 +387,7 @@ window.Quarto = {
 <p>such that finally</p>
 <p><span class="math display">\[\phi=4\sin^{-1}\left (\frac{n_{\rm air}}{n_{\rm water}}\sin(\alpha) \right)-2\alpha\]</span></p>
 <p>So let us have a look at this dependence of the deflection angle as a function of the incidence angle.</p>
-<div id="765b4e56" class="cell" data-execution_count="2">
+<div id="1688de8c" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>alpha<span class="op">=</span>np.linspace(<span class="dv">0</span>,np.pi<span class="op">/</span><span class="dv">2</span>,<span class="dv">10000</span>)</span>
@@ -413,7 +413,7 @@ window.Quarto = {
 </div>
 </div>
 <p>The dependence seems to show a maximum deflection angle at an incidence angle of around <span class="math inline">\(\alpha=60^{\circ}\)</span>. This is an important finding, as the whole appearance of the rainbow depends on that.</p>
-<div id="8c710a6e" class="cell" data-execution_count="3">
+<div id="150d3036" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-stdout">
 <pre><code>Maximum deflection angle  41.78815648670841</code></pre>
 </div>
@@ -422,7 +422,7 @@ window.Quarto = {
 <section id="color-of-the-rainbow" class="level3">
 <h3 class="anchored" data-anchor-id="color-of-the-rainbow">Color of the rainbow</h3>
 <p>The color of the rainbow is now the result of the fact that the maximum deflection angle depends on the color of the light due to the dispersion. Since we have a refraction, reflection and another refraction, the largest maximum deflection angle is observed for red light, while the smallest one appears for blue light. The diagrams below show this result, which is in general true for materials with normal dispersion.</p>
-<div id="7f67992d" class="cell" data-execution_count="4">
+<div id="297adb97" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">4</span>))</span>
@@ -459,7 +459,7 @@ window.Quarto = {
 </div>
 <p>This order of the colors is actually true for all incident angles, which raises the question, why the rainbow is actually colored. The blue color of a certain incidence angle would actually overlap with the green color of a different incidence angle and the red color of an even different incidence angle. If you select a specific outgoing angle under which you observe the rainbow, let us say 41°, then you find under this observation angle all color and, therefore, should observe always white light.</p>
 <p>This is actually true if you look at the inside of a rainbow. You clearly recognize that inside the rainbow it is much brighter than outside. Yet when you reach the maximum angle of each color, you have a region, where even for larger angles for the incidence angles, the deflection angle does not change. Thus, if you assume you send in rays at constantly spaced incidence angles, you will have more rays with a deflection angle close to the maximum. The diagram below just counts the number of deflection angles in the different for each color and you clearly see that around the maximum deflection angles for each color you have a strong peak.</p>
-<div id="5822c45f" class="cell" data-execution_count="5">
+<div id="347730d0" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">4</span>))</span>
@@ -560,15 +560,10 @@ Figure&nbsp;3: Zoom into the rainbow over the Grand Canyon.
 <div id="fig-glassbow" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-glassbow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/glassbow.JPG" class="img-fluid figure-img" style="width:100.0%"></p>
-<figcaption>Glassbow (c) Picture by Axel Märcker.</figcaption>
-</figure>
-</div>
+<img src="img/glassbow.JPG" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-glassbow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4: Reflection of rays in a single drop.
+Figure&nbsp;4: Glassbow created by the reflection of light from glass beads. (c) Picture by Axel Märcker.
 </figcaption>
 </figure>
 </div>
