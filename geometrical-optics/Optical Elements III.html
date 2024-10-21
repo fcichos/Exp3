@@ -393,7 +393,7 @@ Figure&nbsp;1: Refraction at a curved surface.
 <p>We define key relationships:</p>
 <p><span class="math display">\[\sin(\alpha)=\frac{y}{R}, \quad \tan(\theta_1)=\frac{y}{a}, \quad \tan(\theta_2)=\frac{y}{b}\]</span></p>
 <p>To simplify this, we employ the <strong>paraxial approximation</strong>, which assumes all angles are small. This allows us to use first-order approximations of trigonometric functions, effectively linearizing them:</p>
-<p><span class="math display">\[\sin(\theta) \approx \theta, \quad \tan(\theta) \approx \theta,\quad \cos(\theta)\approx 1\]</span></p>
+<p><span class="math display">\[\sin(\theta) \approx \theta+ O(\theta^{3}), \quad \tan(\theta) \approx \theta + O(\theta^{3}),\quad \cos(\theta)\approx 1 + O(\theta^{2})\]</span></p>
 <p>This approach, common in optics, significantly simplifies our calculations while maintaining accuracy for most practical scenarios involving lenses.</p>
 <p>With the help of these approximations we can write Snell’s law for the curved surface as</p>
 <p><span class="math display">\[n_1(\alpha+\theta_1)=n_2(\alpha-\theta_2).\]</span></p>
@@ -424,7 +424,7 @@ Paraxial Approximation
 <li>The error increases rapidly for larger angles, indicating the limitations of the paraxial approximation.</li>
 </ol>
 <p>In most optical systems, especially those involving lenses, the angles of incident and refracted rays are typically small enough for this approximation to be valid. However, it’s important to be aware of its limitations when dealing with wide-angle optical systems or scenarios where precision is critical.</p>
-<div id="cbbb36cc" class="cell" data-execution_count="2">
+<div id="4a68ee73" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -635,6 +635,24 @@ Bessel’s method to measure the focal length of a lens
 </div>
 </div>
 </div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Matrix Optics
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The above derived equations yield a linear relation between the input variables <span class="math inline">\(y\)</span> and <span class="math inline">\(\theta_1\)</span> and the output variables <span class="math inline">\(y'\)</span> and <span class="math inline">\(\theta_2\)</span>. The linear relation yields a great opportunity to express optical elements in terms of linear transformations (matrices). This is the basis of <strong>matrix optics</strong>. The matrix representation of a lens is given by</p>
+<p><span class="math display">\[\begin{pmatrix} y' \\ \theta_2 \end{pmatrix} = \begin{pmatrix} 1 &amp; 0 \\ -\frac{1}{f} &amp; 1 \end{pmatrix} \begin{pmatrix} y \\ \theta_1 \end{pmatrix}\]</span></p>
+<p>where the matrix is called the <strong>ABCD matrix</strong> of the lens. The matrix can be easily extended to a system of lenses by multiplying the matrices of the individual lenses. This is a very powerful tool to analyze complex optical systems.</p>
+</div>
+</div>
+</div>
 <section id="image-construction" class="level4">
 <h4 class="anchored" data-anchor-id="image-construction">Image Construction</h4>
 <p>Images of objects can be now constructed if we refer to rays which do not emerge from a position on the optical axis only. In this case, we consider three different rays (two are actually enough). If we use as in the case of a concave mirror a central and a parallel ray, we will find a position where all rays cross on the other side. The conversion of the rays is exactly the same as in the case of a spherical mirror. The relation between the position of the object and the image along the optical axis is described by the imaging equation.</p>
@@ -746,7 +764,7 @@ Figure&nbsp;6: Thick lens principal planes.
 </div>
 <p>As indicated in the sketch above, an incident ray which is not deflected can be extended to its intersection with the optical axis at a point, which is a distance <span class="math inline">\(h_1\)</span> behind the lens surface. This is the location for the first principle plane. The position of the second principle plane at a distance <span class="math inline">\(h_2\)</span> before the back surface is found for by reversing the ray path. According to that, both principle planes have a distance <span class="math inline">\(h=d-h_1+h_2\)</span> (mind the sign of the <span class="math inline">\(h\)</span>). Using some mathematical effort, one can show that the same imaging equation as for a thins lens can be used with a new definition of the focal length and taking into account that object and image distances refer to their principle planes.</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -755,7 +773,7 @@ Matrix Method for a Thick Lens
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>We would like to model the imaging properties of a thick lens using the matrix method. The lens is divided into three components:</p>
 <ol type="1">
