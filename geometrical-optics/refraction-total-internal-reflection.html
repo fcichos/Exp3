@@ -905,7 +905,41 @@ ds=\sqrt{\dot{x}_1^{2}+\dot{x}_2^{2}}d\lambda
 <p><span class="math display">\[
 \delta OPL=\int\left[\left(\frac{\partial n}{\partial x_i} \delta x_i\right) \sqrt{\dot{x}_1^2+\dot{x}_2^2}+n \frac{1}{\sqrt{\dot{x}_1^2+\dot{x}_2^2}} \dot{x}_i \delta \dot{x}_i\right] d \lambda = 0
 \]</span></p>
-<p>Integrating by parts we obtain</p>
+<p>To evaluate this integral we would like to integrate by parts. We can write the integrand as <span class="math display">\[
+u = n \frac{1}{\sqrt{\dot{x}_1^2+\dot{x}_2^2}} \dot{x}_i
+\]</span></p>
+<p>and</p>
+<p><span class="math display">\[
+dv = \delta \dot{x}_i d\lambda
+\]</span></p>
+<p>We can now calculate <span class="math inline">\(du\)</span> and <span class="math inline">\(v\)</span> and obtain</p>
+<p><span class="math display">\[
+du = \frac{d}{d\lambda}\left[n \frac{1}{\sqrt{\dot{x}_1^2+\dot{x}_2^2}} \dot{x}_i\right] d\lambda
+\]</span></p>
+<p>and</p>
+<p><span class="math display">\[
+v = \delta x_i
+\]</span></p>
+<p>With these expressions we can now apply the integration by parts formula <span class="math inline">\(\int u dv = uv - \int v du\)</span>, we get:</p>
+<p><span class="math display">\[
+\int n \frac{1}{\sqrt{\dot{x}_1^2+\dot{x}_2^2}} \dot{x}_i \delta \dot{x}_i d\lambda = \left[n \frac{1}{\sqrt{\dot{x}_1^2+\dot{x}_2^2}} \dot{x}_i \delta x_i\right]|_{\lambda_1}^{\lambda_2} - \int \delta x_i \frac{d}{d\lambda}\left[n \frac{1}{\sqrt{\dot{x}_1^2+\dot{x}_2^2}} \dot{x}_i\right] d\lambda
+\]</span></p>
+<p>This can be substituted back into the original equation to obtain</p>
+<p><span class="math display">\[
+\begin{align*}
+\delta OPL &amp;= \int \left[\left(\frac{\partial n}{\partial x_i} \delta x_i\right) \sqrt{\dot{x}_1^2+\dot{x}_2^2}\right] d\lambda \\
+&amp;+ \left[n \frac{1}{\sqrt{\dot{x}_1^2+\dot{x}_2^2}} \dot{x}_i \delta x_i\right]|_{\lambda_1}^{\lambda_2} \\
+&amp;- \int \delta x_i \frac{d}{d\lambda}\left[n \frac{1}{\sqrt{\dot{x}_1^2+\dot{x}_2^2}} \dot{x}_i\right] d\lambda = 0
+\end{align*}
+\]</span></p>
+<p>After rearranging the terms we get</p>
+<p><span class="math display">\[
+\begin{align*}
+\delta OPL &amp;= \int \left\{\frac{\partial n}{\partial x_i} \sqrt{\dot{x}_1^2+\dot{x}_2^2} - \frac{d}{d\lambda}\left[n \frac{1}{\sqrt{\dot{x}_1^2+\dot{x}_2^2}} \dot{x}_i\right]\right\} \delta x_i d\lambda \\
+&amp;+ \left[n \frac{1}{\sqrt{\dot{x}_1^2+\dot{x}_2^2}} \dot{x}_i \delta x_i\right]|_{\lambda_1}^{\lambda_2} = 0
+\end{align*}
+\]</span></p>
+<p>and therefore finally</p>
 <p><span class="math display">\[
 \delta OPL=\int\left[\left(\frac{\partial n}{\partial x_i}\right) \sqrt{\dot{x}_1{ }^2+\dot{x}_2{ }^2}-\frac{d}{d \lambda}\left(n \frac{1}{\sqrt{\dot{x}_1^2+\dot{x}_2^2}} \dot{x}_i\right)\right] \delta x_i d \lambda+\text { boundary terms }
 \]</span></p>
