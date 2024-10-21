@@ -424,7 +424,7 @@ Paraxial Approximation
 <li>The error increases rapidly for larger angles, indicating the limitations of the paraxial approximation.</li>
 </ol>
 <p>In most optical systems, especially those involving lenses, the angles of incident and refracted rays are typically small enough for this approximation to be valid. However, it’s important to be aware of its limitations when dealing with wide-angle optical systems or scenarios where precision is critical.</p>
-<div id="cf325767" class="cell" data-execution_count="2">
+<div id="00cb0f88" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -505,7 +505,7 @@ Imaging Equation for Spherical Refracting Surface
 </div>
 <div class="callout-body-container callout-body">
 <p>The sum of the inverse object and image distances equals the inverse focal length of the spherical refracting surface:</p>
-<p><span class="math display">\[\frac{n_1}{g}+\frac{n_2}{b}\approx\frac{n_2}{f}\]</span></p>
+<p><span class="math display">\[\frac{n_1}{a}+\frac{n_2}{b}\approx\frac{n_2}{f}\]</span></p>
 <p>where the focal length of the refracting surface is given by:</p>
 <p><span class="math display">\[f=\frac{n_2}{n_2-n_1}R\]</span></p>
 <p>in the paraxial approximation.</p>
@@ -622,9 +622,9 @@ Bessel’s method to measure the focal length of a lens
 <p>We can further calculate the distance between the two lens positions:</p>
 <p><span class="math display">\[d = a_1 - a_2 = b_2 - b_1\]</span></p>
 <p>and use the imaging equation to find the focal length:</p>
-<p><span class="math display">\[\frac{1}{f} = \frac{1}{a_1} + \frac{1}{b_1} = \frac{1}{a_2} + \frac{1}{a_2}\]</span></p>
+<p><span class="math display">\[\frac{1}{f} = \frac{1}{a_1} + \frac{1}{b_1} = \frac{1}{a_2} + \frac{1}{b_2}\]</span></p>
 <p>Substituting <span class="math inline">\(b_1 = D - a_1\)</span> and <span class="math inline">\(b_2 = D - a_2\)</span> we get further</p>
-<p><span class="math display">\[\frac{1}{f} = \frac{1}{u_1} + \frac{1}{D-u_1} = \frac{1}{u_2} + \frac{1}{D-u_2}\]</span></p>
+<p><span class="math display">\[\frac{1}{f} = \frac{1}{a_1} + \frac{1}{D-a_1} = \frac{1}{a_2} + \frac{1}{D-a_2}\]</span></p>
 <p>Both euqations can be solved by</p>
 <p><span class="math display">\[a_1 = \frac{D + d}{2} \quad \text{and} \quad a_2 = \frac{D - d}{2}\]</span></p>
 <p>If we substitute that back into the imaging equation we obtain</p>
@@ -732,7 +732,7 @@ Magnification of a Lens
 </section>
 </section>
 <section id="thick-lens" class="level3">
-<h3 class="anchored" data-anchor-id="thick-lens">Thick lens</h3>
+<h3 class="anchored">Thick lens</h3>
 <p>For a thin lens, the displacement of the beam in height (<span class="math inline">\(y,y^{\prime}\)</span>) due to the thickness has been neglected. That means that we can reduce all refracting action of the lens to a single plane, which we call a principle plane. This approximation is (independent of the paraxial approximation) not anymore true for lenses if the displacement <span class="math inline">\(\Delta\)</span> of the ray as in the image below cannot be neglected. Such lenses are called <strong>thick lenses</strong> and they do not have a single principle plane anymore. In fact, the principle plane splits up into two principle planes at a distance <span class="math inline">\(h\)</span>.</p>
 <div id="fig-thick-lens-planes" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
@@ -745,6 +745,59 @@ Figure&nbsp;6: Thick lens principal planes.
 </figure>
 </div>
 <p>As indicated in the sketch above, an incident ray which is not deflected can be extended to its intersection with the optical axis at a point, which is a distance <span class="math inline">\(h_1\)</span> behind the lens surface. This is the location for the first principle plane. The position of the second principle plane at a distance <span class="math inline">\(h_2\)</span> before the back surface is found for by reversing the ray path. According to that, both principle planes have a distance <span class="math inline">\(h=d-h_1+h_2\)</span> (mind the sign of the <span class="math inline">\(h\)</span>). Using some mathematical effort, one can show that the same imaging equation as for a thins lens can be used with a new definition of the focal length and taking into account that object and image distances refer to their principle planes.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Matrix Method for a Thick Lens
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>We would like to model the imaging properties of a thick lens using the matrix method. The lens is divided into three components:</p>
+<ol type="1">
+<li>A thin lens at the front surface</li>
+<li>A region of free space propagation through the lens material</li>
+<li>Another thin lens at the back surface</li>
+</ol>
+<p>The matrices for these components are:</p>
+<p><span class="math display">\[
+M_1 = \begin{bmatrix} 1 &amp; 0 \\ -1/f_1 &amp; 1 \end{bmatrix}, \quad
+M_2 = \begin{bmatrix} 1 &amp; d \\ 0 &amp; 1 \end{bmatrix}, \quad
+M_3 = \begin{bmatrix} 1 &amp; 0 \\ -1/f_2 &amp; 1 \end{bmatrix}
+\]</span></p>
+<p>Where - <span class="math inline">\(f_1\)</span> and <span class="math inline">\(f_2\)</span> are the focal lengths of the front and back surfaces, which are determined by the radii of curvature <span class="math inline">\(R_1\)</span> and <span class="math inline">\(R_2\)</span> of the surfaces - <span class="math inline">\(d\)</span> is the thickness of the lens, measured along the optical axis</p>
+<section id="derivation" class="level2">
+<h2 class="anchored" data-anchor-id="derivation">Derivation</h2>
+<p>For a lens with refractive index <span class="math inline">\(n\)</span> in air, the focal lengths of the surfaces are:</p>
+<p><span class="math display">\[\frac{1}{f_1} = \frac{n-1}{R_1}, \quad \frac{1}{f_2} = \frac{1-n}{R_2}\]</span></p>
+<p>Where <span class="math inline">\(R_1\)</span> and <span class="math inline">\(R_2\)</span> are the radii of curvature of the front and back surfaces.</p>
+<p>The total system matrix is then</p>
+<p><span class="math display">\[M_{total} = M_3 \cdot M_2 \cdot M_1\]</span></p>
+<p>After multiplication, the element in the lower left corner of the resulting matrix represents <span class="math inline">\(-1/f\)</span> for the entire lens system:</p>
+<p><span class="math display">\[-\frac{1}{f} = -\frac{1}{f_2} - \frac{1}{f_1} + \frac{d}{f_1f_2}\]</span></p>
+<p>Substituting the expressions for <span class="math inline">\(1/f_1\)</span> and <span class="math inline">\(1/f_2\)</span>:</p>
+<p><span class="math display">\[\frac{1}{f} = \frac{n-1}{R_1} + \frac{n-1}{R_2} - \frac{d(n-1)^2}{nR_1R_2}\]</span></p>
+<p>Factoring out <span class="math inline">\((n-1)\)</span>:</p>
+<p><span class="math display">\[\frac{1}{f} = (n-1)\left[\frac{1}{R_1} + \frac{1}{R_2} - \frac{(n-1)d}{nR_1R_2}\right]\]</span></p>
+<p>Rearranging slightly:</p>
+<p><span class="math display">\[\frac{1}{f} = (n-1)\left[\frac{1}{R_1} - \frac{1}{R_2} + \frac{(n-1)d}{nR_1R_2}\right]\]</span></p>
+<p>This is the Lensmaker’s equation for a thick lens.</p>
+<p>The construction of ray diagrams for thick lenses is similar to that for thin lenses, but the object and image distances are measured from the principal planes. The magnification is also calculated using the distances from the principal planes. <strong>Principal planes are where a thick lens can be treated as an equivalent thin lens. At these planes, the magnification is unity.</strong></p>
+<p><strong>Matrix Representation</strong> For a thin lens of focal length f, the matrix is:</p>
+<p><span class="math display">\[M_{thin} = \begin{bmatrix} 1 &amp; 0 \\ -1/f &amp; 1 \end{bmatrix}\]</span></p>
+<p><strong>Equivalent Thin Lens:</strong> We want our thick lens matrix to be equivalent to a thin lens sandwiched between two translations:</p>
+<p><span class="math display">\[\begin{bmatrix} 1 &amp; -H' \\ 0 &amp; 1 \end{bmatrix}
+   \begin{bmatrix} 1 &amp; 0 \\ -1/f &amp; 1 \end{bmatrix}
+   \begin{bmatrix} 1 &amp; H \\ 0 &amp; 1 \end{bmatrix}
+   = \begin{bmatrix} A &amp; B \\ C &amp; D \end{bmatrix}\]</span></p>
+</section>
+</div>
+</div>
+</div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
