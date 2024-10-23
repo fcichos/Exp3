@@ -170,7 +170,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../geometrical-optics/introduction.html">Geometrical Optics</a></li><li class="breadcrumb-item"><a href="../geometrical-optics/Optical Elements I.html">Lecture 2</a></li><li class="breadcrumb-item"><a href="../geometrical-optics/Optical Elements I.html">Optical Elements I</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../geometrical-optics/introduction.html">Geometrical Optics</a></li><li class="breadcrumb-item"><a href="../geometrical-optics/Optical Elements I.html">Lecture 2</a></li><li class="breadcrumb-item"><a href="../geometrical-optics/Optical Elements I.html">Optical Elements I - Mirrors</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -286,7 +286,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../geometrical-optics/Optical Elements I.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Optical Elements I</span></a>
+ <span class="menu-text">Optical Elements I - Mirrors</span></a>
   </div>
 </li>
       </ul>
@@ -303,13 +303,13 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../geometrical-optics/Optical Elements II.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Optical Elements II</span></a>
+ <span class="menu-text">Optical Elements II - Prims</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../geometrical-optics/Optical Elements III.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Optical Elements III</span></a>
+ <span class="menu-text">Optical Elements III - Lenses</span></a>
   </div>
 </li>
       </ul>
@@ -325,8 +325,14 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../geometrical-optics/Optical Instruments.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">The Human Eye</span></a>
+  <a href="../geometrical-optics/Eye.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optical Instruments- Eye</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Magnifying Glass.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optical Instruments- Magnifying Glass</span></a>
   </div>
 </li>
       </ul>
@@ -354,7 +360,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../geometrical-optics/introduction.html">Geometrical Optics</a></li><li class="breadcrumb-item"><a href="../geometrical-optics/Optical Elements I.html">Lecture 2</a></li><li class="breadcrumb-item"><a href="../geometrical-optics/Optical Elements I.html">Optical Elements I</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../geometrical-optics/introduction.html">Geometrical Optics</a></li><li class="breadcrumb-item"><a href="../geometrical-optics/Optical Elements I.html">Lecture 2</a></li><li class="breadcrumb-item"><a href="../geometrical-optics/Optical Elements I.html">Optical Elements I - Mirrors</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Optical Elements Part I</h1>
 </div>
@@ -712,47 +718,74 @@ Parabolic Mirrors Focus Parallel Rays
 </div>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>We can demonstrate that a parabolic surface reflects all parallel rays to a single point using a simpler approach:</p>
-<section id="parabola-equation" class="level4">
-<h4 class="anchored" data-anchor-id="parabola-equation">Parabola Equation</h4>
-<p>Let’s start with a general parabola equation:</p>
-<p><span class="math display">\[y = ax^2\]</span></p>
-<p>where <span class="math inline">\(a\)</span> is a constant that determines the parabola’s shape.</p>
+<p>We would like to show in the following, that a parabolic mirror is a shape which reflects all light rays parallel to the principal axis to a single point, the focus. This is a fundamental property of parabolic mirrors and is used in many optical systems, such as telescopes, satellite dishes, and car headlights.</p>
+<p>For this purpose, we would like to use Fermat’s principle. We examine a light ray originating from a point <span class="math inline">\(x,y_0\)</span> and travelling parallel to the principal axis. The light ray is reflected at a point <span class="math inline">\((x,y)\)</span> on the mirror and travels to the focus at <span class="math inline">\((0,p)\)</span>. The light path is therefore consisting out of two linear segments <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> for which we have to calculate the time of travel. The total duration of the light’s journey is then: <span class="math display">\[
+t = t_A + t_B
+\]</span></p>
+<p>where:</p>
+<ul>
+<li><span class="math inline">\(t_A\)</span> is the time taken to travel from <span class="math inline">\(x,y_0\)</span> to the mirror.</li>
+<li><span class="math inline">\(t_B\)</span> is the time taken to travel from <span class="math inline">\((x,y)\)</span> to <span class="math inline">\((0,p)\)</span>.</li>
+</ul>
+<section id="time-for-path-a" class="level4">
+<h4 class="anchored" data-anchor-id="time-for-path-a">Time for Path A</h4>
+<p>The distance covered in path A is equal to <span class="math inline">\(y_0 - y\)</span>, where <span class="math inline">\(y\)</span> represents the y-coordinate of the point where the ray meets the mirror. Consequently, the time taken for the light to traverse path A can be expressed as:</p>
+<p><span class="math display">\[
+t_A = \frac{y_0 - y}{c}
+\]</span></p>
+<p>In this equation, <span class="math inline">\(c\)</span> represents the speed of light in the medium.</p>
 </section>
-<section id="parallel-rays" class="level4">
-<h4 class="anchored" data-anchor-id="parallel-rays">Parallel Rays</h4>
-<p>Consider parallel rays coming in from the right, parallel to the x-axis. These can be represented by lines of constant <span class="math inline">\(x\)</span>:</p>
-<p><span class="math display">\[x = k\]</span></p>
-<p>where <span class="math inline">\(k\)</span> is some constant.</p>
-<p>#### Reflection Point The point where a ray meets the parabola is <span class="math inline">\((k, ak^2)\)</span>.</p>
+<section id="time-for-path-b" class="level4">
+<h4 class="anchored" data-anchor-id="time-for-path-b">Time for Path B</h4>
+<p>After reflection, the light ray travels from the point <span class="math inline">\((x, y)\)</span> on the mirror’s surface to the focal point located at <span class="math inline">\((0, p)\)</span>. The length of this segment of the path can be calculated using the distance formula:</p>
+<p><span class="math display">\[
+\sqrt{x^2 + (y - p)^2}
+\]</span></p>
+<p>Consequently, the time required for the light to traverse path B is expressed as:</p>
+<p><span class="math display">\[
+t_B = \frac{\sqrt{x^2 + (y - p)^2}}{c}
+\]</span></p>
 </section>
-<section id="normal-line" class="level4">
-<h4 class="anchored" data-anchor-id="normal-line">Normal Line</h4>
-<p>The slope of the normal line at this point is:</p>
-<p><span class="math display">\[m_{normal} = -\frac{1}{2ak}\]</span></p>
-<p>(This comes from the fact that the normal is perpendicular to the tangent, and the slope of the tangent is <span class="math inline">\(\frac{dy}{dx} = 2ax\)</span>.)</p>
-</section>
-<section id="reflected-ray" class="level4">
-<h4 class="anchored" data-anchor-id="reflected-ray">Reflected Ray</h4>
-<p>According to the law of reflection, the reflected ray will have a slope that is the negative reciprocal of the normal:</p>
-<p><span class="math display">\[m_{reflected} = 2ak\]</span></p>
-</section>
-<section id="focus-point" class="level4">
-<h4 class="anchored" data-anchor-id="focus-point">Focus Point</h4>
-<p>If all rays converge to a single point <span class="math inline">\((0, p)\)</span>, then this point must satisfy the equation of the reflected ray:</p>
-<p><span class="math display">\[p - ak^2 = 2ak(0 - k)\]</span> <span class="math display">\[p = ak^2 - 2ak^2 = -ak^2\]</span></p>
-</section>
-<section id="determining-a" class="level4">
-<h4 class="anchored" data-anchor-id="determining-a">Determining <span class="math inline">\(a\)</span></h4>
-<p>We found that <span class="math inline">\(p = -ak^2\)</span> must be true for all <span class="math inline">\(k\)</span>. This implies that <span class="math inline">\(p\)</span> and <span class="math inline">\(a\)</span> must have a specific relationship that doesn’t depend on <span class="math inline">\(k\)</span>. Let’s rearrange this equation:</p>
-<p><span class="math display">\[-\frac{p}{k^2} = a\]</span></p>
-<p>For this to be true for all <span class="math inline">\(k\)</span>, the left side must be constant. The only way for <span class="math inline">\(\frac{p}{k^2}\)</span> to be constant for all <span class="math inline">\(k\)</span> is if <span class="math inline">\(p\)</span> is proportional to <span class="math inline">\(k^2\)</span>. The simplest relationship that satisfies this is:</p>
-<p><span class="math display">\[p = \frac{1}{4a}\]</span></p>
-<p>This gives us:</p>
-<p><span class="math display">\[a = \frac{1}{4p}\]</span></p>
-<p>Therefore, the parabola that reflects all parallel rays to a single point <span class="math inline">\((0, p)\)</span> has the equation:</p>
-<p><span class="math display">\[y = \frac{1}{4p}x^2\]</span></p>
-<p>This proves that a parabolic surface with this specific shape will focus all parallel rays to a single point.</p>
+<section id="total-time" class="level4">
+<h4 class="anchored" data-anchor-id="total-time">Total Time</h4>
+<p>The total time for the light ray’s journey is the sum of times for paths A and B:</p>
+<p><span class="math display">\[
+t = \frac{y_0 - y}{v} + \frac{\sqrt{x^2 + (y - p)^2}}{c}
+\]</span></p>
+<p>According to Fermat’s principle, all light rays should take the same time. We can express this by setting the total time equal to a constant <span class="math inline">\(t_c\)</span>:</p>
+<p><span class="math display">\[
+\frac{y_0 - y}{v} + \frac{\sqrt{x^2 + (y - p)^2}}{v} = t_c
+\]</span></p>
+<p>For a ray traveling along the y-axis, reflecting at <span class="math inline">\((0, 0)\)</span>, the total distance is <span class="math inline">\(y_0 + p\)</span>. The time for this ray is:</p>
+<p><span class="math display">\[
+\frac{y_0 + p}{c}
+\]</span></p>
+<p>This gives us <span class="math inline">\(t_c = \frac{y_0 + p}{c}\)</span>. Substituting into our general equation:</p>
+<p><span class="math display">\[
+\frac{y_0 - y}{v} + \frac{\sqrt{x^2 + (y - p)^2}}{c} = \frac{y_0 + p}{c}
+\]</span></p>
+<p>Multiplying by <span class="math inline">\(c\)</span> and rearranging:</p>
+<p><span class="math display">\[
+y_0 - y + \sqrt{x^2 + (y - p)^2} = y_0 + p
+\]</span></p>
+<p><span class="math display">\[
+\sqrt{x^2 + (y - p)^2} = y + p
+\]</span></p>
+<p>Squaring both sides and simplifying:</p>
+<p><span class="math display">\[
+x^2 + (y - p)^2 = (y + p)^2
+\]</span></p>
+<p><span class="math display">\[
+x^2 + y^2 - 2py + p^2 = y^2 + 2py + p^2
+\]</span></p>
+<p><span class="math display">\[
+x^2 = 4py
+\]</span></p>
+<p>or</p>
+<p><span class="math display">\[
+y=\frac{1}{4p}x^2
+\]</span></p>
+<p>This final equation describes a parabola with its focus at <span class="math inline">\((0, p)\)</span>. The code below plots a parabolic mirror reflecting parallel rays to the focal point. Yet, I’m cheating a bit here. I’m not calculating the reflected rays, but just plotting them.</p>
 <div id="cell-fig-parabolic-mirror" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
@@ -823,7 +856,7 @@ Elliptical Mirrors and Fermat’s Principle
 <p>There is one interesting feature about elliptical mirrors: they can focus light from one focal point to the other. This is because the sum of the distances from any point on the ellipse to the two focal points is constant. This property is known as the <strong>ellipse’s geometric definition</strong> and you can try that at home with a piece of string and two pins.</p>
 <p>We can now apply Fermat’s principle to proof that the light reflected from the ellipse travels a path length that is a saddle point. This means that the path length is stationary with respect to small perturbations in the path. Assuming for example that light travels from one focal point by a different path that is reflected from a line which is tangent to the ellipse at the point of reflection, the path length would be longer at any other point than the initial reflection point.</p>
 <p>On the other side, if we reflect the ray on a surface that is a circle, which is intersecting the ellipse at the point of reflection, the path length would be shorter at any other point than the initial reflection point. This is a proof that the ellipse is a saddle point.</p>
-<div id="2dda948b" class="cell" data-execution_count="4">
+<div id="fbd2f964" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1309,8 +1342,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../geometrical-optics/Optical Elements II.html" class="pagination-link" aria-label="Optical Elements II">
-        <span class="nav-page-text">Optical Elements II</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../geometrical-optics/Optical Elements II.html" class="pagination-link" aria-label="Optical Elements II - Prims">
+        <span class="nav-page-text">Optical Elements II - Prims</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

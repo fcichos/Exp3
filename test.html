@@ -251,7 +251,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./geometrical-optics/Optical Elements I.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Optical Elements I</span></a>
+ <span class="menu-text">Optical Elements I - Mirrors</span></a>
   </div>
 </li>
       </ul>
@@ -268,13 +268,13 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./geometrical-optics/Optical Elements II.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Optical Elements II</span></a>
+ <span class="menu-text">Optical Elements II - Prims</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./geometrical-optics/Optical Elements III.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Optical Elements III</span></a>
+ <span class="menu-text">Optical Elements III - Lenses</span></a>
   </div>
 </li>
       </ul>
@@ -290,8 +290,14 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./geometrical-optics/Optical Instruments.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">The Human Eye</span></a>
+  <a href="./geometrical-optics/Eye.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optical Instruments- Eye</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./geometrical-optics/Magnifying Glass.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optical Instruments- Magnifying Glass</span></a>
   </div>
 </li>
       </ul>
@@ -303,23 +309,8 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
-  <ul class="collapse">
-  <li><a href="#fermats-principle" id="toc-fermats-principle" class="nav-link" data-scroll-target="#fermats-principle">Fermat’s Principle</a></li>
-  </ul></li>
-  <li><a href="#derivation-of-the-parabolic-shape" id="toc-derivation-of-the-parabolic-shape" class="nav-link" data-scroll-target="#derivation-of-the-parabolic-shape">Derivation of the Parabolic Shape</a>
-  <ul class="collapse">
-  <li><a href="#time-for-path-a" id="toc-time-for-path-a" class="nav-link" data-scroll-target="#time-for-path-a">Time for Path A</a></li>
-  <li><a href="#time-for-path-b" id="toc-time-for-path-b" class="nav-link" data-scroll-target="#time-for-path-b">Time for Path B</a></li>
-  <li><a href="#total-time" id="toc-total-time" class="nav-link" data-scroll-target="#total-time">Total Time</a></li>
-  </ul></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -349,71 +340,53 @@ window.Quarto = {
 </header>
 
 
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>This proof demonstrates that a mirror must possess a parabolic shape to focus all parallel incoming rays to a single point, known as the focus. Our derivation will employ <strong>Fermat’s principle</strong> to determine the mathematical function describing the optimal mirror shape. ```</p>
-<section id="fermats-principle" class="level3">
-<h3 class="anchored" data-anchor-id="fermats-principle">Fermat’s Principle</h3>
-<p>Fermat’s principle asserts that light travels along the path that minimizes the time of transit. In the context of our mirror problem, this principle implies that for parallel rays (effectively originating from infinity) to converge at a single focus after reflection, the total travel time from an arbitrary initial plane to the focus must be identical for all rays, regardless of their point of reflection on the mirror surface.</p>
-<p>We examine a light ray originating from an infinitely distant point, traveling parallel to the principal axis (which aligns with the y-axis). This ray is then reflected by the mirror and subsequently converges at the focal point.</p>
-<p>The total duration of the light’s journey can be divided into two segments: <span class="math display">\[
+<p>We would like to show in the following, that a parabolic mirror is a shape which reflects all light rays parallel to the principal axis to a single point, the focus. This is a fundamental property of parabolic mirrors and is used in many optical systems, such as telescopes, satellite dishes, and car headlights.</p>
+<p>For this purpose, we would like to use Fermat’s principle. We examine a light ray originating from a point <span class="math inline">\(x,y_0\)</span> and travelling parallel to the principal axis. The light ray is reflected at a point <span class="math inline">\((x,y)\)</span> on the mirror and travels to the focus at <span class="math inline">\((0,p)\)</span>. The light path is therefore consisting out of two linear segments <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> for which we have to calculate the time of travel. The total duration of the light’s journey is then: <span class="math display">\[
 t = t_A + t_B
 \]</span></p>
 <p>where:</p>
 <ul>
-<li><span class="math inline">\(t_A\)</span> is the time taken to travel from the dashed line to the mirror.</li>
-<li><span class="math inline">\(t_B\)</span> is the time taken to travel from the mirror to the focus.</li>
+<li><span class="math inline">\(t_A\)</span> is the time taken to travel from <span class="math inline">\(x,y_0\)</span> to the mirror.</li>
+<li><span class="math inline">\(t_B\)</span> is the time taken to travel from <span class="math inline">\((x,y)\)</span> to <span class="math inline">\((0,p)\)</span>.</li>
 </ul>
-<p>Let’s define:</p>
-<ul>
-<li>The dashed line is at <span class="math inline">\(y = y_0=\text{const}\)</span>,</li>
-<li>The speed of light is <span class="math inline">\(v\)</span>,</li>
-<li>The point on the mirror is <span class="math inline">\((x, y)\)</span>,</li>
-<li>The focus is at <span class="math inline">\((0, p)\)</span>.</li>
-</ul>
-</section>
-</section>
-<section id="derivation-of-the-parabolic-shape" class="level2">
-<h2 class="anchored" data-anchor-id="derivation-of-the-parabolic-shape">Derivation of the Parabolic Shape</h2>
-<section id="time-for-path-a" class="level3">
-<h3 class="anchored" data-anchor-id="time-for-path-a">Time for Path A</h3>
+<section id="time-for-path-a" class="level4">
+<h4 class="anchored" data-anchor-id="time-for-path-a">Time for Path A</h4>
 <p>The distance covered in path A is equal to <span class="math inline">\(y_0 - y\)</span>, where <span class="math inline">\(y\)</span> represents the y-coordinate of the point where the ray meets the mirror. Consequently, the time taken for the light to traverse path A can be expressed as:</p>
 <p><span class="math display">\[
-t_A = \frac{y_0 - y}{v}
+t_A = \frac{y_0 - y}{c}
 \]</span></p>
-<p>In this equation, <span class="math inline">\(v\)</span> represents the speed of light in the medium.</p>
+<p>In this equation, <span class="math inline">\(c\)</span> represents the speed of light in the medium.</p>
 </section>
-<section id="time-for-path-b" class="level3">
-<h3 class="anchored" data-anchor-id="time-for-path-b">Time for Path B</h3>
+<section id="time-for-path-b" class="level4">
+<h4 class="anchored" data-anchor-id="time-for-path-b">Time for Path B</h4>
 <p>After reflection, the light ray travels from the point <span class="math inline">\((x, y)\)</span> on the mirror’s surface to the focal point located at <span class="math inline">\((0, p)\)</span>. The length of this segment of the path can be calculated using the distance formula:</p>
 <p><span class="math display">\[
 \sqrt{x^2 + (y - p)^2}
 \]</span></p>
 <p>Consequently, the time required for the light to traverse path B is expressed as:</p>
 <p><span class="math display">\[
-t_B = \frac{\sqrt{x^2 + (y - p)^2}}{v}
+t_B = \frac{\sqrt{x^2 + (y - p)^2}}{c}
 \]</span></p>
-<p>Where <span class="math inline">\(v\)</span> again represents the speed of light in the medium.</p>
 </section>
-<section id="total-time" class="level3">
-<h3 class="anchored" data-anchor-id="total-time">Total Time</h3>
+<section id="total-time" class="level4">
+<h4 class="anchored" data-anchor-id="total-time">Total Time</h4>
 <p>The total time for the light ray’s journey is the sum of times for paths A and B:</p>
 <p><span class="math display">\[
-t = \frac{y_0 - y}{v} + \frac{\sqrt{x^2 + (y - p)^2}}{v}
+t = \frac{y_0 - y}{v} + \frac{\sqrt{x^2 + (y - p)^2}}{c}
 \]</span></p>
-<p>According to Fermat’s principle, all light rays should take the same time. We can express this by setting the total time equal to a constant <span class="math inline">\(k\)</span>:</p>
+<p>According to Fermat’s principle, all light rays should take the same time. We can express this by setting the total time equal to a constant <span class="math inline">\(t_c\)</span>:</p>
 <p><span class="math display">\[
-\frac{y_0 - y}{v} + \frac{\sqrt{x^2 + (y - p)^2}}{v} = k
+\frac{y_0 - y}{v} + \frac{\sqrt{x^2 + (y - p)^2}}{v} = t_c
 \]</span></p>
 <p>For a ray traveling along the y-axis, reflecting at <span class="math inline">\((0, 0)\)</span>, the total distance is <span class="math inline">\(y_0 + p\)</span>. The time for this ray is:</p>
 <p><span class="math display">\[
-\frac{y_0 + p}{v}
+\frac{y_0 + p}{c}
 \]</span></p>
-<p>This gives us <span class="math inline">\(k = \frac{y_0 + p}{v}\)</span>. Substituting into our general equation:</p>
+<p>This gives us <span class="math inline">\(t_c = \frac{y_0 + p}{c}\)</span>. Substituting into our general equation:</p>
 <p><span class="math display">\[
-\frac{y_0 - y}{v} + \frac{\sqrt{x^2 + (y - p)^2}}{v} = \frac{y_0 + p}{v}
+\frac{y_0 - y}{v} + \frac{\sqrt{x^2 + (y - p)^2}}{c} = \frac{y_0 + p}{c}
 \]</span></p>
-<p>Multiplying by <span class="math inline">\(v\)</span> and rearranging:</p>
+<p>Multiplying by <span class="math inline">\(c\)</span> and rearranging:</p>
 <p><span class="math display">\[
 y_0 - y + \sqrt{x^2 + (y - p)^2} = y_0 + p
 \]</span></p>
@@ -430,10 +403,13 @@ x^2 + y^2 - 2py + p^2 = y^2 + 2py + p^2
 <p><span class="math display">\[
 x^2 = 4py
 \]</span></p>
+<p>or</p>
+<p><span class="math display">\[
+y=\frac{1}{4p}x^2
+\]</span></p>
 <p>This final equation describes a parabola with its focus at <span class="math inline">\((0, p)\)</span>.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
