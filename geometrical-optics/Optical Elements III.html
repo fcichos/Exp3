@@ -436,7 +436,7 @@ Paraxial Approximation
 <li>The error increases rapidly for larger angles, indicating the limitations of the paraxial approximation.</li>
 </ol>
 <p>In most optical systems, especially those involving lenses, the angles of incident and refracted rays are typically small enough for this approximation to be valid. However, it’s important to be aware of its limitations when dealing with wide-angle optical systems or scenarios where precision is critical.</p>
-<div id="b3c7b278" class="cell" data-execution_count="2">
+<div id="e413f2f1" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -769,13 +769,27 @@ Matrix Optics and Thick Lens
 </div>
 <div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>The above derived equations yield a linear relation between the input variables <span class="math inline">\(y\)</span> and <span class="math inline">\(\theta_1\)</span> and the output variables <span class="math inline">\(y'\)</span> and <span class="math inline">\(\theta_2\)</span>. The linear relation yields a great opportunity to express optical elements in terms of linear transformations (matrices). This is the basis of <strong>matrix optics</strong>. The matrix representation of a lens is given by</p>
-<p><span class="math display">\[\begin{pmatrix} y' \\ \theta_2 \end{pmatrix} = \begin{pmatrix} 1 &amp; 0 \\ -\frac{1}{f} &amp; 1 \end{pmatrix} \begin{pmatrix} y \\ \theta_1 \end{pmatrix}\]</span></p>
-<p>where the matrix is called the <strong>ABCD matrix</strong> of the lens. The matrix can be easily extended to a system of lenses by multiplying the matrices of the individual lenses. This is a very powerful tool to analyze complex optical systems.</p>
+<p>The above derived equations for a single spherical surface yield a linear relation between the input variables <span class="math inline">\(y_1\)</span> and <span class="math inline">\(\theta_1\)</span> and the output variables <span class="math inline">\(y_2\)</span> and <span class="math inline">\(\theta_2\)</span>. The linear relation yields a great opportunity to express optical elements in terms of linear transformations (matrices). This is the basis of <strong>matrix optics</strong>. The matrix representation of a lens is given by</p>
+<p><span class="math display">\[\begin{pmatrix} y_2 \\
+\theta_2 \end{pmatrix} = \begin{pmatrix} 1 &amp; 0 \\ -\frac{1}{f} &amp; 1 \end{pmatrix} \begin{pmatrix} y_1 \\ \theta_1 \end{pmatrix}\]</span></p>
+<p>where the matrix is called the <strong>ABCD matrix</strong> of the lens. Due to the linearization of Snells law w can write down more generally</p>
+<p><span class="math display">\[\begin{pmatrix} y_2 \\
+\theta_2 \end{pmatrix} = \begin{pmatrix} A &amp; B \\ C &amp; D \end{pmatrix} \begin{pmatrix} y_1 \\ \theta_1 \end{pmatrix}\]</span></p>
+<p>and one can obtain a Matrix for all types of optical elements such as free space of dustance <span class="math inline">\(d\)</span>.</p>
+<p><span class="math display">\[\begin{bmatrix}
+A &amp; B\\
+C &amp; D
+\end{bmatrix}
+=
+\begin{bmatrix}
+1 &amp; d\\
+0 &amp; 1
+\end{bmatrix}
+\]</span></p>
 <p>We would like to model the imaging properties of a thick lens using the matrix method. The lens is divided into three components:</p>
 <ol type="1">
 <li>A thin lens at the front surface</li>
-<li>A region of free space propagation through the lens material</li>
+<li>A region of free space propagation through the lens material of thickness <span class="math inline">\(d\)</span></li>
 <li>Another thin lens at the back surface</li>
 </ol>
 <p>The matrices for these components are:</p>
