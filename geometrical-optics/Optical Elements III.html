@@ -430,7 +430,7 @@ Paraxial Approximation
 <li>The error increases rapidly for larger angles, indicating the limitations of the paraxial approximation.</li>
 </ol>
 <p>In most optical systems, especially those involving lenses, the angles of incident and refracted rays are typically small enough for this approximation to be valid. However, it’s important to be aware of its limitations when dealing with wide-angle optical systems or scenarios where precision is critical.</p>
-<div id="70a4919d" class="cell" data-execution_count="2">
+<div id="a460910d" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -641,24 +641,6 @@ Bessel’s method to measure the focal length of a lens
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Matrix Optics
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>The above derived equations yield a linear relation between the input variables <span class="math inline">\(y\)</span> and <span class="math inline">\(\theta_1\)</span> and the output variables <span class="math inline">\(y'\)</span> and <span class="math inline">\(\theta_2\)</span>. The linear relation yields a great opportunity to express optical elements in terms of linear transformations (matrices). This is the basis of <strong>matrix optics</strong>. The matrix representation of a lens is given by</p>
-<p><span class="math display">\[\begin{pmatrix} y' \\ \theta_2 \end{pmatrix} = \begin{pmatrix} 1 &amp; 0 \\ -\frac{1}{f} &amp; 1 \end{pmatrix} \begin{pmatrix} y \\ \theta_1 \end{pmatrix}\]</span></p>
-<p>where the matrix is called the <strong>ABCD matrix</strong> of the lens. The matrix can be easily extended to a system of lenses by multiplying the matrices of the individual lenses. This is a very powerful tool to analyze complex optical systems.</p>
-</div>
-</div>
-</div>
 <section id="image-construction" class="level4">
 <h4 class="anchored" data-anchor-id="image-construction">Image Construction</h4>
 <p>Images of objects can be now constructed if we refer to rays which do not emerge from a position on the optical axis only. In this case, we consider three different rays (two are actually enough). If we use as in the case of a concave mirror a central and a parallel ray, we will find a position where all rays cross on the other side. The conversion of the rays is exactly the same as in the case of a spherical mirror. The relation between the position of the object and the image along the optical axis is described by the imaging equation.</p>
@@ -770,17 +752,20 @@ Figure&nbsp;6: Thick lens principal planes.
 </div>
 <p>As indicated in the sketch above, an incident ray which is not deflected can be extended to its intersection with the optical axis at a point, which is a distance <span class="math inline">\(h_1\)</span> behind the lens surface. This is the location for the first principle plane. The position of the second principle plane at a distance <span class="math inline">\(h_2\)</span> before the back surface is found for by reversing the ray path. According to that, both principle planes have a distance <span class="math inline">\(h=d-h_1+h_2\)</span> (mind the sign of the <span class="math inline">\(h\)</span>). Using some mathematical effort, one can show that the same imaging equation as for a thins lens can be used with a new definition of the focal length and taking into account that object and image distances refer to their principle planes.</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Matrix Method for a Thick Lens
+Matrix Optics and Thick Lens
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
+<p>The above derived equations yield a linear relation between the input variables <span class="math inline">\(y\)</span> and <span class="math inline">\(\theta_1\)</span> and the output variables <span class="math inline">\(y'\)</span> and <span class="math inline">\(\theta_2\)</span>. The linear relation yields a great opportunity to express optical elements in terms of linear transformations (matrices). This is the basis of <strong>matrix optics</strong>. The matrix representation of a lens is given by</p>
+<p><span class="math display">\[\begin{pmatrix} y' \\ \theta_2 \end{pmatrix} = \begin{pmatrix} 1 &amp; 0 \\ -\frac{1}{f} &amp; 1 \end{pmatrix} \begin{pmatrix} y \\ \theta_1 \end{pmatrix}\]</span></p>
+<p>where the matrix is called the <strong>ABCD matrix</strong> of the lens. The matrix can be easily extended to a system of lenses by multiplying the matrices of the individual lenses. This is a very powerful tool to analyze complex optical systems.</p>
 <p>We would like to model the imaging properties of a thick lens using the matrix method. The lens is divided into three components:</p>
 <ol type="1">
 <li>A thin lens at the front surface</li>
@@ -811,13 +796,7 @@ M_3 = \begin{bmatrix} 1 &amp; 0 \\ -1/f_2 &amp; 1 \end{bmatrix}
 <p><span class="math display">\[\frac{1}{f} = (n-1)\left[\frac{1}{R_1} - \frac{1}{R_2} + \frac{(n-1)d}{nR_1R_2}\right]\]</span></p>
 <p>This is the Lensmaker’s equation for a thick lens.</p>
 <p>The construction of ray diagrams for thick lenses is similar to that for thin lenses, but the object and image distances are measured from the principal planes. The magnification is also calculated using the distances from the principal planes. <strong>Principal planes are where a thick lens can be treated as an equivalent thin lens. At these planes, the magnification is unity.</strong></p>
-<p><strong>Matrix Representation</strong> For a thin lens of focal length f, the matrix is:</p>
-<p><span class="math display">\[M_{thin} = \begin{bmatrix} 1 &amp; 0 \\ -1/f &amp; 1 \end{bmatrix}\]</span></p>
-<p><strong>Equivalent Thin Lens:</strong> We want our thick lens matrix to be equivalent to a thin lens sandwiched between two translations:</p>
-<p><span class="math display">\[\begin{bmatrix} 1 &amp; -H' \\ 0 &amp; 1 \end{bmatrix}
-   \begin{bmatrix} 1 &amp; 0 \\ -1/f &amp; 1 \end{bmatrix}
-   \begin{bmatrix} 1 &amp; H \\ 0 &amp; 1 \end{bmatrix}
-   = \begin{bmatrix} A &amp; B \\ C &amp; D \end{bmatrix}\]</span></p>
+<p>The derivation of the local of the principle planes will be part of the seminar.</p>
 </section>
 </div>
 </div>
@@ -834,12 +813,11 @@ Imaging Equation for Thick Lens
 <div class="callout-body-container callout-body">
 <p>The sum of the inverse object and image distances to the principal planes (<span class="math inline">\(H_1,H_2\)</span>) equals the inverse focal length of the thick lens:</p>
 <p><span class="math display">\[\frac{1}{a}+\frac{1}{b}\approx\frac{1}{f}, \quad \text{where} \quad \frac{1}{f}=n-1\left (\frac{1}{R_1}-\frac{1}{R_2}+\frac{(n-1)d}{n R_1 R_2}\right )\]</span></p>
-<p>in the paraxial approximation.</p>
-</div>
-</div>
-<p>The location of the two principle planes are found to be</p>
+<p>in the paraxial approximation. The construction of the image on a thick lens is done with the help of two principle planes. The object distance <span class="math inline">\(a\)</span> and the image distance <span class="math inline">\(b\)</span> are measured from these principle planes. The location of the two principle planes are found to be</p>
 <p><span class="math display">\[h_{1}=-\frac{(n-1)f d}{n R_2}\]</span></p>
 <p><span class="math display">\[h_{2}=-\frac{(n-1)f d}{n R_1}\]</span></p>
+</div>
+</div>
 <p>As compared to the construction of an image on a thin lens, we now have to consider some pecularities for the thick lens. An incident parallel ray, which turns into a focal ray is now refracted at the second principle plane. The reverse must, therefore, be true for an incident focal ray. This ray is refracted on the first principle plane. The central ray is deflected on both principle planes. It is incident under a certain angle at the first principle plane and outgoing with the same principle angle to the second principle plane. The sketch below summarizes these issues for a thick lens.</p>
 <div id="fig-thick-lens" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
