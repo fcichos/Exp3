@@ -436,7 +436,7 @@ Paraxial Approximation
 <li>The error increases rapidly for larger angles, indicating the limitations of the paraxial approximation.</li>
 </ol>
 <p>In most optical systems, especially those involving lenses, the angles of incident and refracted rays are typically small enough for this approximation to be valid. However, it’s important to be aware of its limitations when dealing with wide-angle optical systems or scenarios where precision is critical.</p>
-<div id="d370f368" class="cell" data-execution_count="2">
+<div id="4884df45" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -762,7 +762,7 @@ Figure&nbsp;6: Thick lens principal planes.
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Matrix Optics and Thick Lens
+Matrix Optics
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -784,6 +784,51 @@ C &amp; D
 0 &amp; 1
 \end{bmatrix}
 \]</span></p>
+<p>Here are some useful matrices for optical elements:</p>
+<p><span class="math display">\[
+\mathbf{M}=\left[\begin{array}{ll}
+1 &amp; d \\
+0 &amp; 1
+\end{array}\right] \tag{Free space}
+\]</span></p>
+<p><span class="math display">\[
+\mathbf{M}=\left[\begin{array}{cc}
+1 &amp; 0 \\
+0 &amp; \frac{n_1}{n_2}
+\end{array}\right] \tag{Planar interface}
+\]</span></p>
+<p><span class="math display">\[
+\mathbf{M}=\left[\begin{array}{cc}
+1 &amp; 0 \\
+-\frac{\left(n_2-n_1\right)}{n_2 R} &amp; \frac{n_1}{n_2}
+\end{array}\right] \tag{Spherical Boundary}
+\]</span></p>
+<p><span class="math display">\[
+\mathbf{M}=\left[\begin{array}{cc}
+1 &amp; 0 \\
+-\frac{1}{f} &amp; 1
+\end{array}\right] \tag{Tin Lens}
+\]</span></p>
+<p>If we have now a system of optical elements, we can multiply the matrices of the individual elements to obtain the matrix of the whole system.</p>
+<p><span class="math display">\[
+\rightarrow \mathrm{M}_1 \rightarrow \mathrm{M}_2 \rightarrow \mathrm{M}_N \rightarrow \mathrm{M}=\mathbf{M}_N \ldots \mathrm{M}_2 \mathbf{M}_1 \text {. }
+\]</span></p>
+<p>This is a very powerful tool to analyze optical systems.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Thick Lens Focal Length
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p>We would like to model the imaging properties of a thick lens using the matrix method. The lens is divided into three components:</p>
 <ol type="1">
 <li>A thin lens at the front surface</li>
