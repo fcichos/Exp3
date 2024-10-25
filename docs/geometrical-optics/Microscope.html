@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Microscope – Experimental Physics Course on Optics</title>
+<title>Optical Instruments – Experimental Physics 3 Course on Optics and Quantum Mechanics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -40,11 +40,11 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
+  "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
+  "panel-placement": "end",
+  "type": "overlay",
   "limit": 50,
   "keyboard-shortcut": [
     "f",
@@ -66,6 +66,12 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script async="" src="https://hypothes.is/embed.js"></script>
+<script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    document.body.classList.add('hypothesis-enabled');
+  });
+</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -97,43 +103,52 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="../assets/styles.css">
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Experimental Physics 3 Course on Optics and Quantum Mechanics</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
-      Experimental Physics Course on Optics
-      </li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Optical Instruments</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="../">Experimental Physics Course on Optics</a> 
-    </div>
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../mona_logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
       </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
@@ -142,24 +157,73 @@ window.Quarto = {
  <span class="menu-text">Home</span></a>
   </div>
 </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Geometrical Optics</span></a>
+ <span class="menu-text">Course Info</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item sidebar-item-section">
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-info/intructors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instructor</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-info/schedule.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Schedule</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-info/resources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ressourcen</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-info/assignments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Assignments</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-info/exam.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exam</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
- <span class="menu-text">Lecture 1</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Geometrical Optics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Lecture 1</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../geometrical-optics/reflection.html" class="sidebar-item-text sidebar-link">
@@ -169,376 +233,71 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../geometrical-optics/refraction-total-internal-reflection.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Refraction &amp; Total Internal Reflection</span></a>
+ <span class="menu-text">Refraction</span></a>
   </div>
 </li>
       </ul>
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
  <span class="menu-text">Lecture 2</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../geometrical-optics/Optical Elements I.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Optical Elements I</span></a>
+ <span class="menu-text">Optical Elements I - Mirrors</span></a>
   </div>
 </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Lecture 3</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../geometrical-optics/Optical Elements II.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Optical Elements II</span></a>
+ <span class="menu-text">Optical Elements II - Prims</span></a>
   </div>
 </li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
- <span class="menu-text">Lecture 3</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../geometrical-optics/Optical Elements III.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Optical Elements III</span></a>
+ <span class="menu-text">Optical Elements III - Lenses</span></a>
   </div>
 </li>
       </ul>
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
- <span class="menu-text">Lecture 4</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../geometrical-optics/Lens Systems and Optical Instruments.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lens Systems Optical Instruments</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../geometrical-optics/optical-instruments.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Optical Instruments</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../geometrical-optics/dispersion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Dispersion</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../geometrical-optics/imaging-errors.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Imaging Errors</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
- <span class="menu-text">Wave Optics</span></a>
+ <span class="menu-text">Lecture 4</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../wave-optics/wave-equation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Wave Equation</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../wave-optics/wave-equation.html#plane-waves" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Plane Waves</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../wave-optics/wave-equation.html#spherical-waves" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Spherical Waves</span></a>
+  <a href="../geometrical-optics/Eye.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optical Instruments- Eye</span></a>
   </div>
 </li>
       </ul>
   </li>
           <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../wave-optics/interference.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Interference</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../wave-optics/interference.html#coherence" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Coherence</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../wave-optics/interference.html#interferometers" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Interferometers</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../wave-optics/huygens-principle.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Huygens Principle</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../wave-optics/huygens-principle.html#diffraction" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Diffraction</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../wave-optics/huygens-principle.html#single-and-double-slit" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Single and Double Slit</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../wave-optics/huygens-principle.html#diffraction-grating" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Diffraction Grating</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../wave-optics/huygens-principle.html#optical-resolution" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Optical Resolution</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
- <span class="menu-text">Electromagnetic Waves</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/electromagnetic-spectrum.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Electromagnetic Spectrum</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/plane-and-spherical-waves.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Plane and Spherical Waves</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/energy-transport-poynting-vector.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Energy Transport &amp; Poynting Vector</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/polarization.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Polarization</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/reflection-and-transmission.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Reflection and Transmission</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/total-internal-reflection.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Total Internal Reflection</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/fresnel-formulas.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Fresnel Formulas</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/hertz-dipole.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Hertz Dipole</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
- <span class="menu-text">Foundations of Quantum Physics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../foundations-of-quantum-physics/particle-properties-of-light.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Particle Properties of Light</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../foundations-of-quantum-physics/particle-properties-of-light.html#photoelectric-effect" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Photoelectric Effect</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../foundations-of-quantum-physics/particle-properties-of-light.html#black-body-radiation" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Black Body Radiation</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../foundations-of-quantum-physics/particle-properties-of-light.html#photon-gas" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Photon Gas</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../foundations-of-quantum-physics/particle-properties-of-light.html#plancks-radiation-law" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Planck’s Radiation Law</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../foundations-of-quantum-physics/structure-of-matter.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Structure of Matter</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../foundations-of-quantum-physics/structure-of-matter.html#thomson-model-of-the-atom" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Thomson Model of the Atom</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../foundations-of-quantum-physics/structure-of-matter.html#rutherford-scattering" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Rutherford Scattering</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../foundations-of-quantum-physics/structure-of-matter.html#rutherford-and-bohr-atom-model" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Rutherford and Bohr Atom Model</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../foundations-of-quantum-physics/matter-waves.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Matter Waves</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../foundations-of-quantum-physics/matter-waves.html#heisenberg-uncertainty-relation" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Heisenberg Uncertainty Relation</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../foundations-of-quantum-physics/matter-waves.html#wave-function" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Wave Function</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../foundations-of-quantum-physics/matter-waves.html#probability-interpretation" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Probability Interpretation</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../foundations-of-quantum-physics/matter-waves.html#schrodinger-equation" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Schrödinger Equation</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../foundations-of-quantum-physics/matter-waves.html#quantum-states" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Quantum States</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../foundations-of-quantum-physics/matter-waves.html#potential-box" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Potential Box</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../foundations-of-quantum-physics/matter-waves.html#harmonic-oscillator" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Harmonic Oscillator</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../foundations-of-quantum-physics/matter-waves.html#tunneling" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Tunneling</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../foundations-of-quantum-physics/matter-waves.html#correspondence-principle" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Correspondence Principle</span></a>
-  </div>
-</li>
-      </ul>
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Lecture 5</span></span>
   </li>
       </ul>
   </li>
@@ -547,15 +306,21 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#microscope" id="toc-microscope" class="nav-link active" data-scroll-target="#microscope">Microscope</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Microscope</h1>
+<h1 class="title">Optical Instruments</h1>
 </div>
 
 
@@ -572,38 +337,55 @@ window.Quarto = {
 </header>
 
 
-<p>The simplest form of a microscope consists of an objective lens with a focal distance <span class="math inline">\(f_1\)</span> and a magnifying glass called eye-piece with a focal length <span class="math inline">\(f_2\)</span>. In this system of two lenses (which are itself systems of lenses in modern microscopes, see below),</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 100%">
-</colgroup>
-<thead>
-<tr class="header">
-<th><img src="img/microscopy_lenses.png" width="60%"></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Fig.:</strong> Cut through a microscope objective lens (left) and an eye-piece.</td>
-</tr>
-</tbody>
-</table>
+<section id="microscope" class="level2">
+<h2 class="anchored" data-anchor-id="microscope">Microscope</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Historical Context of Microscope Development
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Optical Microscopy has a rich history of development, and is a very important tool in the fields of biology, materials science, and nanotechnology. Here are some key milestones in the history of microscopy:</p>
+<p><strong>Ancient Times - 13th Century: Simple magnifying glasses</strong> - The concept of magnification was known to ancient civilizations. - In the 13th century, Italian craftsmen created the first wearable glasses.</p>
+<p><strong>1590: Compound Microscope</strong> - Hans and Zacharias Janssen, Dutch spectacle makers, created the first compound microscope.</p>
+<p><strong>1665: Robert Hooke’s “Micrographia”</strong> - Hooke published detailed observations made with his improved compound microscope. - He coined the term “cell” after observing cork tissue.</p>
+<p><strong>1670s: Antonie van Leeuwenhoek’s Single-Lens Microscopes</strong> - Developed high-quality single-lens microscopes with up to 270x magnification. - First to observe and describe bacteria, yeast, and other microorganisms.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/loewenhook.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption>Image of Leeuwenhoek’s microscope</figcaption>
+</figure>
+</div>
+<p><strong>18th-19th Centuries: Achromatic Lenses</strong> - Joseph Jackson Lister developed achromatic lenses, reducing chromatic aberration.</p>
+<p><strong>1830s: Ernst Abbe’s Theoretical Work</strong> - Formulated the Abbe Sine Condition, crucial for modern lens design.</p>
+<p><strong>Late 19th Century: Oil Immersion Lenses</strong> - Allowed for higher resolution in light microscopy.</p>
+<p><strong>1931: Electron Microscope</strong> - Ernst Ruska and Max Knoll developed the first electron microscope.</p>
+<p><strong>1950s-1960s: Phase Contrast and Fluorescence Microscopy</strong> - Frits Zernike invented phase contrast microscopy. - Development of fluorescence microscopy techniques.</p>
+<p><strong>1981: Scanning Tunneling Microscope</strong> - Gerd Binnig and Heinrich Rohrer invented the STM, allowing imaging at the atomic level.</p>
+<p><strong>1980s-Present: Digital and Computational Microscopy</strong> - Integration of CCD cameras and digital imaging. - Development of confocal microscopy, super-resolution techniques, and computational methods like ptychography.</p>
+</div>
+</div>
+</div>
+<p>In this section we will analyze the optical properties of microscopes from the perspective of geometrical optics which explains image formation. Yet, the key to the performance of a microscope is the understanding provided by wave optics. We will discuss this in a later section. The simplest form of a microscope consists of an objective lens with a focal distance <span class="math inline">\(f_1\)</span> and a magnifying glass called eye-piece with a focal length <span class="math inline">\(f_2\)</span>. In this system of two lenses (which are itself systems of lenses in modern microscopes, see below),</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/microscopy_lenses.png" class="img-fluid figure-img" style="width:60.0%"></p>
+<figcaption><strong>Fig.:</strong> Cut through a microscope objective lens (left) and an eye-piece.</figcaption>
+</figure>
+</div>
 <p>the object is placed at a distance <span class="math inline">\(f_1&lt; a_1&lt;2f_1\)</span> from the objective lens creating a real and reversed image at a distance <span class="math inline">\(b_1\)</span> behind the lens. This reversed image is observed by the eye through the eye-piece. The image of the objective lens is thereby adjusted to appear at the focal distance of the eye-piece.</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 100%">
-</colgroup>
-<thead>
-<tr class="header">
-<th><img src="img/simple_microscope.png" width="60%"></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Fig.:</strong> Sketch of a simple microscope. The strange object on the right is an eye.</td>
-</tr>
-</tbody>
-</table>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/simple_microscope.png" class="img-fluid figure-img" style="width:60.0%"></p>
+<figcaption><strong>Fig.:</strong> Sketch of a simple microscope. The strange object on the right is an eye.</figcaption>
+</figure>
+</div>
 <p>For this simple microscope system we may calculate first the intermediate image position <span class="math inline">\(b_1\)</span>:</p>
 <p><span class="math display">\[
 \frac{1}{f_1}=\frac{1}{a_1}+\frac{1}{b_1}
@@ -635,48 +417,110 @@ V=\frac{(D-f_2)s_0}{f_1 f_2}
 <p>which says that the magnification is the result of the two focal length <span class="math inline">\(f_1,f_2\)</span>.</p>
 <section id="modern-microscopy" class="level4">
 <h4 class="anchored" data-anchor-id="modern-microscopy">Modern microscopy</h4>
-<p>While the above description is correct for the simplest microscope you can think of, modern microscopes have much more complex light paths and work in general with optics, that is so-called <strong>inifinity corrected</strong>. Infinity corrected optics consists of an objective lens, which images the objects in the focal plane to infinity. Such an objctive lens always comes with a second lens, the <strong>tube lens</strong>, which together are designed to give a magnification specified at the objective lens housing.</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th><img src="img/infinity_optics.png" width="40%"></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Fig.:</strong> Infinity optics vs.&nbsp;normal microscopy optics.</td>
-</tr>
-</tbody>
-</table>
+<p>While the description above accurately represents the simplest microscope design, contemporary microscopes employ more intricate light paths and generally utilize what is known as <strong>infinity corrected</strong> optics. This system incorporates an objective lens that projects images of objects in the focal plane to infinity. Such an objective lens is invariably paired with a secondary lens, called the <strong>tube lens</strong>. Together, these lenses are engineered to provide a magnification level that is specified on the objective lens housing.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/infinity_optics.png" class="img-fluid figure-img" style="width:60.0%"></p>
+<figcaption><strong>Fig.:</strong> Infinity optics vs.&nbsp;normal microscopy optics.</figcaption>
+</figure>
+</div>
 <p>Infinity optics allows you to have a free length with a parallel optical path where you can insert optical elements. There is no fixed tube length as in the case sketched above, where the distance of the intermediate image has to be considered. Therefore, it has tremendous technical advantages. Common optical microscopes are further today coupled to CCD cameras to record images digitally. Yet, an eye-piece may still be available in many cases. The sketch below shows the light path for a simple fluorescence microscope recording fluorescence images with a camera.</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th><img src="img/fluorescence_micr.png" width="40%"></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Fig.:</strong> Simple fluorescence microscope.</td>
-</tr>
-</tbody>
-</table>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/fluorescence_micr.png" class="img-fluid figure-img" style="width:40.0%"></p>
+<figcaption><strong>Fig.:</strong> Simple fluorescence microscope.</figcaption>
+</figure>
+</div>
+</section>
+<section id="digital-microscopy" class="level4">
+<h4 class="anchored">Digital Microscopy</h4>
 <p>The possibility to digitally record images creates endless possibilities to computationally enhance and combine images. Nowadays the field of optics is one of the fastest developing fields in physics with numerous new techniques appearing every week. In this field of imaging methods of machine learning also play an increasingly important role. While I’m not ablields in physics with numerous new techniques appearing every week. In this field of imaging methods of machine learning also play an increasingly important role. While I am not able to refer to all possible optical microscopy techniques he to refer to all possible optical microscopy techniques here, I will exemplarily show some data from the Waller group at Berkley using computational methods to enhance the resolution by keeping at the same time a large field of view for imaging. This technique is called <strong>ptychography</strong> and can be understood if you consider Fourier Optics (a field of optics describing ligh propagation in terms Fourier transforms).</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th><img src="img/ptychography.png" width="80%"></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Fig.:</strong> Ptychographic imaging with LED arrays.</td>
-</tr>
-</tbody>
-</table>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/ptychography.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption><strong>Fig.:</strong> Ptychographic imaging with LED arrays.</figcaption>
+</figure>
+</div>
 <p>There is a massive amount of other techniques with increadible images being generated. Have a look around.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Advanced Microscopy Techniques
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>While traditional light microscopy has been invaluable, it’s limited by the diffraction of light, restricting resolution to about 200 nm as will be discussed in a later part of this course. Modern techniques have pushed beyond this limit, revolutionizing our ability to visualize microscopic structures.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/SuperRes.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption>Super resolution Imaging Methods Overview (Schermelleh, L. et al.&nbsp;Super-resolution microscopy demystified. Nat. Cell Biol. 21, 72–84 (2019))</figcaption>
+</figure>
+</div>
+<section id="confocal-microscopy" class="level3">
+<h3 class="anchored" data-anchor-id="confocal-microscopy">Confocal Microscopy</h3>
+<p>Confocal microscopy uses point illumination and a pinhole in an optically conjugate plane in front of the detector to eliminate out-of-focus signal.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/confocal.png" class="img-fluid figure-img" style="width:60.0%"></p>
+<figcaption>Confocal Microscope.</figcaption>
+</figure>
+</div>
+<ul>
+<li><strong>Key Features:</strong>
+<ul>
+<li>Improved optical resolution and contrast</li>
+<li>Ability to collect serial optical sections from thick specimens</li>
+<li>Widely used in biological sciences</li>
+</ul></li>
+<li><strong>Overcoming Limitations:</strong>
+<ul>
+<li>Eliminates background information away from the focal plane</li>
+<li>Allows for 3D reconstruction of samples</li>
+</ul></li>
+</ul>
+</section>
+<section id="examples-for-super-resolution-microscopy-techniques" class="level3">
+<h3 class="anchored" data-anchor-id="examples-for-super-resolution-microscopy-techniques">Examples for Super-Resolution Microscopy Techniques</h3>
+<p>Super-resolution techniques bypass the diffraction limit, achieving resolutions down to tens of nanometers.</p>
+<ol type="1">
+<li><strong>Stimulated Emission Depletion (STED) Microscopy</strong>
+<ul>
+<li>Uses two laser beams: one to excite fluorescent molecules, another to suppress fluorescence around the excitation spot</li>
+<li><strong>Overcoming Limitations:</strong> Achieves resolution as fine as 20-50 nm by precisely controlling which fluorophores are allowed to fluoresce</li>
+</ul></li>
+<li><strong>Photoactivated Localization Microscopy (PALM)</strong>
+<ul>
+<li>Relies on selective activation and sampling of sparse subsets of photoactivatable fluorescent molecules</li>
+<li><strong>Overcoming Limitations:</strong> Locates individual molecules with nanometer precision by isolating their signals over time</li>
+</ul></li>
+<li><strong>Stochastic Optical Reconstruction Microscopy (STORM)</strong>
+<ul>
+<li>Similar to PALM, but uses photoswitchable fluorophores</li>
+<li><strong>Overcoming Limitations:</strong> Achieves resolutions of ~20 nm by precisely locating the centers of single fluorescent molecules</li>
+</ul></li>
+<li><strong>Structured Illumination Microscopy (SIM)</strong>
+<ul>
+<li>Uses patterned illumination to create moiré fringes, which are computationally processed to reconstruct super-resolution images</li>
+<li><strong>Overcoming Limitations:</strong> Doubles the resolution of traditional light microscopy to ~100 nm</li>
+</ul></li>
+<li><strong>Superresolution Photothermal Infrared Imaging</strong>
+<ul>
+<li>Superresolution photothermal infrared imaging is a novel technique that brings the advantages of superresolution microscopy to the infrared regime.</li>
+<li><strong>Overcoming Limitations:</strong> Achieves resolutions of ~300 nm for infrared imaging at wavelength of 10 µm by using photothermal lensing effects.</li>
+</ul></li>
+</ol>
+</section>
+</div>
+</div>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -772,7 +616,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/fcichos\.github\.io\/Exp3_2024\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

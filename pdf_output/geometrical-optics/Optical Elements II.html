@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>6&nbsp; Optical Elements Part II – Experimental Physics 3 Course on Optics and Quantum Mechanics</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../geometrical-optics/Optical Elements III.html" rel="next">
+<link href="../geometrical-optics/Optical Elements I.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://hypothes.is/embed.js"></script>
+<script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    document.body.classList.add('hypothesis-enabled');
+  });
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../geometrical-optics/introduction.html">Geometrical Optics</a></li><li class="breadcrumb-item"><a href="../geometrical-optics/Optical Elements II.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Optical Elements Part II</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Experimental Physics 3 Course on Optics and Quantum Mechanics</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Experimental Physics 3</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Geometrical Optics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Geometrical Optics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/reflection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Reflection</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/refraction-total-internal-reflection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Refraction and Total Internal Reflection</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Optical Elements I.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Optical Elements Part I</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Optical Elements II.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Optical Elements Part II</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Optical Elements III.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Optical Elements Part III</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Eye.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Optical Instruments</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Magnifying Glass.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Optical Instruments</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Microscope.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Optical Instruments</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#prism" id="toc-prism" class="nav-link active" data-scroll-target="#prism"><span class="header-section-number">6.1</span> Prism</a>
+  <ul class="collapse">
+  <li><a href="#deflection-angle" id="toc-deflection-angle" class="nav-link" data-scroll-target="#deflection-angle"><span class="header-section-number">6.1.1</span> Deflection angle</a></li>
+  <li><a href="#minimum-deflection-angle" id="toc-minimum-deflection-angle" class="nav-link" data-scroll-target="#minimum-deflection-angle"><span class="header-section-number">6.1.2</span> Minimum deflection angle</a></li>
+  <li><a href="#dispersion" id="toc-dispersion" class="nav-link" data-scroll-target="#dispersion"><span class="header-section-number">6.1.3</span> Dispersion</a></li>
+  <li><a href="#prims-spectrograph" id="toc-prims-spectrograph" class="nav-link" data-scroll-target="#prims-spectrograph"><span class="header-section-number">6.1.4</span> Prims spectrograph</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../geometrical-optics/introduction.html">Geometrical Optics</a></li><li class="breadcrumb-item"><a href="../geometrical-optics/Optical Elements II.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Optical Elements Part II</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Optical Elements Part II</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="prism" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="prism"><span class="header-section-number">6.1</span> Prism</h2>
+<p>Prisms are wedge-shaped optical elements made of a transparent material, such as glass. A special form of such a prism is an isosceles prism with two sides of equal length. The two equal sides enclose an angle <span class="math inline">\(\gamma\)</span>, known as the apex angle of the prism. When light passes through this prism, it undergoes refraction twice.</p>
+<p>First, the incident angle <span class="math inline">\(\alpha_1\)</span> is changed into a refracted angle <span class="math inline">\(\beta_1\)</span> as the light enters the prism. This refracted ray then hits the second interface at an angle <span class="math inline">\(\beta_2\)</span>, leading to a second refraction as it exits the prism at an angle <span class="math inline">\(\alpha_2\)</span>.</p>
+<p>Of particular interest is the total deflection of the incident ray, which is measured by the angle <span class="math inline">\(\delta\)</span>. This deflection angle represents the difference between the final outgoing angle <span class="math inline">\(\alpha_2\)</span> and the initial incident angle <span class="math inline">\(\alpha_1\)</span>.</p>
+<p>Understanding how this deflection angle changes based on the prism’s properties and the incident angle is crucial in various optical applications. In the following sections, we will explore how to calculate this deflection angle and examine its dependence on different parameters.</p>
+<div id="fig-prism" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-prism-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/prism.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-prism-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.1: Refraction of rays on a prism.
+</figcaption>
+</figure>
+</div>
+<!--
+
+
+
+
+
+
+
+
+```{=html}
+<div id="prism-viz" align="middle"></div>
+<input type="range" id="angle-slider" min="0" max="90" value="30" step="0.1">
+<p id="angle-display"></p>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+
+<script>
+const width = 400;
+const height = 300;
+const svg = d3.select("#prism-viz")
+  .append("svg")
+  .attr("width", width)
+  .attr("height", height);
+
+const prismPoints = [[200, 100], [300, 250], [100, 250]];
+const n = 1.5; // Refractive index of the prism
+
+function calculateRefraction(incidentAngle) {
+  const actualIncidentAngle = incidentAngle * Math.PI / 180;
+  const refractionAngle = Math.asin(Math.sin(actualIncidentAngle) / n);
+  return refractionAngle;
+}
+
+function lineIntersection(x1, y1, x2, y2, x3, y3, x4, y4) {
+  const denom = (y4 - y3) * (x2 - x1) - (x4 - x3) * (y2 - y1);
+  if (denom == 0) return null;
+  const ua = ((x4 - x3) * (y1 - y3) - (y4 - y3) * (x1 - x3)) / denom;
+  return [x1 + ua * (x2 - x1), y1 + ua * (y2 - y1)];
+}
+
+function updateLight(incidentAngle) {
+  const refractionAngle = calculateRefraction(incidentAngle);
+
+  // Calculate the midpoint of the left side of the prism
+  const midX = (prismPoints[0][0] + prismPoints[2][0]) / 2;
+  const midY = (prismPoints[0][1] + prismPoints[2][1]) / 2;
+
+  // Calculate the normal angle of the left side (pointing outwards)
+  const leftSideAngle = Math.atan2(prismPoints[2][1] - prismPoints[0][1], prismPoints[2][0] - prismPoints[0][0]);
+  const normalAngle = leftSideAngle + Math.PI/2;
+
+  // Calculate the start point of the incident ray
+  const rayLength = 150;
+  const startX = midX + rayLength * Math.cos(normalAngle - incidentAngle * Math.PI / 180);
+  const startY = midY + rayLength * Math.sin(normalAngle - incidentAngle * Math.PI / 180);
+
+  // Calculate the end point of the first refracted ray
+  const refractedEndX = midX + 1000 * Math.cos(leftSideAngle - refractionAngle);
+  const refractedEndY = midY + 1000 * Math.sin(leftSideAngle - refractionAngle);
+
+  // Find intersection with the right side of the prism
+  const intersectionRight = lineIntersection(
+    midX, midY, refractedEndX, refractedEndY,
+    prismPoints[0][0], prismPoints[0][1], prismPoints[1][0], prismPoints[1][1]
+  );
+
+  // Find intersection with the bottom side of the prism
+  const intersectionBottom = lineIntersection(
+    midX, midY, refractedEndX, refractedEndY,
+    prismPoints[1][0], prismPoints[1][1], prismPoints[2][0], prismPoints[2][1]
+  );
+
+  let intersection, exitSideAngle, incidentAngleExit;
+  if (intersectionRight && (!intersectionBottom || intersectionRight[1] < intersectionBottom[1])) {
+    intersection = intersectionRight;
+    exitSideAngle = Math.atan2(prismPoints[1][1] - prismPoints[0][1], prismPoints[1][0] - prismPoints[0][0]);
+    incidentAngleExit = exitSideAngle - leftSideAngle + refractionAngle;
+  } else {
+    intersection = intersectionBottom;
+    exitSideAngle = Math.atan2(prismPoints[2][1] - prismPoints[1][1], prismPoints[2][0] - prismPoints[1][0]);
+    incidentAngleExit = Math.PI/2 - (exitSideAngle - leftSideAngle + refractionAngle);
+  }
+
+  const finalRefractionAngle = Math.asin(n * Math.sin(incidentAngleExit));
+
+  svg.select(".incident-ray")
+    .attr("x1", startX)
+    .attr("y1", startY)
+    .attr("x2", midX)
+    .attr("y2", midY);
+
+  svg.select(".refracted-ray-1")
+    .attr("x1", midX)
+    .attr("y1", midY)
+    .attr("x2", intersection[0])
+    .attr("y2", intersection[1]);
+
+  svg.select(".refracted-ray-2")
+    .attr("x1", intersection[0])
+    .attr("y1", intersection[1])
+    .attr("x2", intersection[0] + 100 * Math.cos(exitSideAngle - finalRefractionAngle))
+    .attr("y2", intersection[1] + 100 * Math.sin(exitSideAngle - finalRefractionAngle));
+
+  d3.select("#angle-display")
+    .text(`α₁: ${incidentAngle.toFixed(1)}°, α₂: ${(-(finalRefractionAngle - (exitSideAngle - leftSideAngle)) * 180 / Math.PI).toFixed(1)}°, n: ${n}`);
+}
+
+svg.append("polygon")
+  .attr("points", prismPoints.map(d => d.join(",")).join(" "))
+  .attr("fill", "rgba(173, 216, 230, 0.5)")
+  .attr("stroke", "black");
+
+svg.append("line")
+  .attr("class", "incident-ray")
+  .attr("stroke", "red");
+
+svg.append("line")
+  .attr("class", "refracted-ray-1")
+  .attr("stroke", "orange");
+
+svg.append("line")
+  .attr("class", "refracted-ray-2")
+  .attr("stroke", "yellow");
+
+updateLight(0);
+
+d3.select("#angle-slider")
+  .on("input", function() {
+    updateLight(+this.value);
+  });
+</script>
+```
+
+
+
+
+
+
+
+
+
+-->
+<section id="deflection-angle" class="level3" data-number="6.1.1">
+<h3 data-number="6.1.1" class="anchored" data-anchor-id="deflection-angle"><span class="header-section-number">6.1.1</span> Deflection angle</h3>
+<p>We can calculate the deflection angle <span class="math inline">\(\delta\)</span> from a number of considerations. First consider the following relations between the angles in the prism and Snell’s law</p>
+<p><span class="math display">\[\beta_1=\sin^{-1}\left (\frac{n_0}{n_1}\sin(\alpha_1) \right)\]</span> <span class="math display">\[\beta_2=\gamma-\beta_1\]</span> <span class="math display">\[\alpha_2=\sin^{-1}\left (\frac{n_1}{n_0}\sin(\beta_2)\right )\]</span> <span class="math display">\[\theta_2=\alpha_2-\gamma\]</span></p>
+<p>where <span class="math inline">\(\theta_2\)</span> is the angle between the incident surface normal and the outgoing ray. The total deflection angle <span class="math inline">\(\delta\)</span> is then</p>
+<p><span class="math display">\[\delta =\alpha_1-\beta_1+\alpha_2-\beta_2\]</span></p>
+<p>or</p>
+<p><span class="math display">\[\delta =\alpha_1+\alpha_2-\gamma\]</span></p>
+<p>from which we obtain</p>
+<p><span class="math display">\[\delta=\alpha_1+\sin^{-1}\left (\frac{n_1}{n_0}\sin\left [\gamma-\sin^{-1}\left (\frac{n_0}{n_1}\sin(\alpha_1) \right)\right]\right )-\gamma\]</span></p>
+<p>as the deflection angle.</p>
+<div id="cell-fig-refractive-indices" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display">
+<div id="fig-refractive-indices" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-refractive-indices-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Optical Elements II_files/figure-html/fig-refractive-indices-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="365" height="358">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-refractive-indices-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.2: Deflection angle as a function of the incidence angle for different prism angles.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="minimum-deflection-angle" class="level3" data-number="6.1.2">
+<h3 data-number="6.1.2" class="anchored" data-anchor-id="minimum-deflection-angle"><span class="header-section-number">6.1.2</span> Minimum deflection angle</h3>
+<p>If we now would like to know how the deflection angle changes with the incident angle <span class="math inline">\(\alpha_1\)</span>, we calculate the derivative of the deflection angle <span class="math inline">\(\delta\)</span> with respect to <span class="math inline">\(\alpha_1\)</span>, i.e.,</p>
+<p><span class="math display">\[\frac{\mathrm d\delta}{\mathrm d\alpha_1}=1+\frac{\mathrm d\alpha_2}{\mathrm d \alpha_1}.\]</span></p>
+<p>We are here especially interested in the case, where this change in deflection is reaching a minimum, i.e., <span class="math inline">\(\mathrm d\delta/\mathrm d\alpha_1 =0\)</span>. This readily yields</p>
+<p><span class="math display">\[\mathrm d \alpha_2=-\mathrm d\alpha_1.\]</span></p>
+<p>This means a change in the incidence angle <span class="math inline">\(\mathrm d\alpha_1\)</span> yields an opposite change in the outgoing angle <span class="math inline">\(-\mathrm d\alpha_2\)</span>. We may later observe that in the experiment.</p>
+<p>As both, the incident and the outgoing angle are related to each other by Snells’s law, we may introduce the derivatives of Snell’s law for both interfaces, e.g.,</p>
+<ul>
+<li><span class="math inline">\(\cos(\alpha_1)\mathrm d\alpha_1=n\cos(\beta_1)\mathrm d\beta_1\)</span></li>
+<li><span class="math inline">\(\cos(\alpha_2)\mathrm d\alpha_2=n\cos(\beta_2)\mathrm d\beta_2\)</span></li>
+</ul>
+<p>where <span class="math inline">\(n\)</span> is the refractive index of the prism material and the material outside is air (<span class="math inline">\(n_{\rm air}=1\)</span>). Replacing <span class="math inline">\(\cos(\alpha)=\sqrt{1-\sin^2(\alpha)}\)</span> and dividing the two previous equations by each other readily yields</p>
+<p><span class="math display">\[\frac{1-\sin^2(\alpha_1)}{1-\sin^2(\alpha_2)}=\frac{n^2-\sin^2(\alpha_1)}{n^2-\sin^2(\alpha_2)}.\]</span></p>
+<p>The latter equation is for <span class="math inline">\(n\neq 1\)</span> only satisfied if <span class="math inline">\(\alpha_1=\alpha_2=\alpha\)</span>. In this case, the light path through the prism must be symmetric and we may write down the minimum deflection angle <span class="math inline">\(\delta_{\rm min}\)</span>:</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Minimum prism deflection
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The minimum deflection angle of an isosceles prism with a prism angle <span class="math inline">\(\gamma\)</span> is given by</p>
+<p><span class="math display">\[\delta_{\rm min}=2\alpha-\gamma.\]</span></p>
+</div>
+</div>
+<p>Given this minimum deflection angle <span class="math inline">\(\delta_{\rm min}\)</span> and the properties of the prism, we may also write down Snell’s law using <span class="math inline">\(\sin(\alpha)=n\sin(\beta)\)</span>, which results in</p>
+<p><span class="math display">\[\sin \left ( \frac{\delta_{\rm min}+\gamma}{2}\right )=n\sin\left (\frac{\gamma}{2}\right).\]</span></p>
+<p>which indicates the dependence of the deflection in the refractive index <span class="math inline">\(n\)</span> of the prism material.</p>
+</section>
+<section id="dispersion" class="level3" data-number="6.1.3">
+<h3 data-number="6.1.3" class="anchored" data-anchor-id="dispersion"><span class="header-section-number">6.1.3</span> Dispersion</h3>
+<p>Very important applications now arise from the fact, that the refractive index is a material property, which depends on the color (frequency or wavelength) of light. We do not yet understand the origin of this dependence. The plots below show the wavelength dependence of three different glasses. You may find much more data on the refractive index of different materials in an <a href="https://refractiveindex.info/">online database</a>.</p>
+<div id="cell-fig-wavelength-dependence" class="cell" data-cold-fold="true" data-execution_count="3">
+<div class="cell-output cell-output-display">
+<div id="fig-wavelength-dependence" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-wavelength-dependence-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Optical Elements II_files/figure-html/fig-wavelength-dependence-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="393" height="356">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-wavelength-dependence-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.3: Refractive index of different glasses as a function of the wavelength.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-fig-angle-dependence" class="cell" data-cold-fold="true" data-execution_count="4">
+<div class="cell-output cell-output-display">
+<div id="fig-angle-dependence" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-angle-dependence-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Optical Elements II_files/figure-html/fig-angle-dependence-output-1.png" width="702" height="367" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-angle-dependence-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.4: Deflection angle as a function of the incidence angle for different wavelengths.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The plots have a general feature, which is that the refractive index is largest at small wavelength (blue colors), while it drops continuously with increasing wavelength towards the red (800 nm). If you would characterize the dependence by the slope, i.e., <span class="math inline">\(\mathrm dn/\mathrm d\lambda\)</span> then all displayed curves show in the visible range</p>
+<ul>
+<li><span class="math inline">\(\frac{\mathrm dn}{\mathrm d\lambda}&lt;0\)</span>, is called normal dispersion</li>
+</ul>
+<p>while</p>
+<ul>
+<li><span class="math inline">\(\frac{\mathrm dn}{\mathrm d\lambda}&gt;0\)</span>, is called anomalous dispersion</li>
+</ul>
+<p>This wavelength dependence of the refractive index will yield a dependence of the deflection angle on the color of light as well. The change of the deflection angle with the refractive index can be calculated to be</p>
+<p><span class="math display">\[\frac{\mathrm d\delta}{\mathrm d n}=\frac{2\sin(\gamma/2)}{\sqrt{1-n^2\sin^2(\gamma/2)}}\]</span></p>
+<p>together with the relation</p>
+<p><span class="math display">\[\frac{\mathrm d \delta}{\mathrm d \lambda}=\frac{\mathrm d\delta}{\mathrm d n}\frac{\mathrm d n}{\mathrm d\lambda}\]</span></p>
+<p>we obtain</p>
+<p><span class="math display">\[\frac{\mathrm d\delta}{\mathrm d\lambda}=\frac{2\sin(\gamma/2)}{\sqrt{1-n^2\sin^2(\gamma/2)}}\frac{\mathrm d n}{\mathrm d \lambda}.\]</span></p>
+<p>The refraction of white light through a prism splits the different colors composing white light spatially into a colored spectrum. In this process, light with the longest wavelength (red) is deflected the least, while light with the shortest wavelength (violet) is deflected the most. This occurs because the refractive index of the prism material varies with wavelength, a phenomenon known as dispersion.</p>
+<div id="fig-spectrum" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-spectrum-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="expimg/spectrum.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:49.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-spectrum-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.5: Spectrum as created by a prism in the lecture.
+</figcaption>
+</figure>
+</div>
+<div id="fig-prism-spectrum" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-prism-spectrum-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-prism-spectrum" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-spectrum" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-spectrum-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/spectrum.jpeg" class="img-fluid figure-img" data-ref-parent="fig-prism-spectrum">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-spectrum-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Spectrum
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-prism-spectrum" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-prism" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-prism-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="expimg/prism.png" class="img-fluid figure-img" data-ref-parent="fig-prism-spectrum">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-prism-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Prism
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-prism-spectrum-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.6: Deflection of different wavelengths of light in a prism with normal dispersion.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="prims-spectrograph" class="level3" data-number="6.1.4">
+<h3 data-number="6.1.4" class="anchored" data-anchor-id="prims-spectrograph"><span class="header-section-number">6.1.4</span> Prims spectrograph</h3>
+<p>This wavelength-dependent refraction is crucial as it forms the basis for spectroscopy, a powerful analytical technique that measures and records the intensity of light as a function of wavelength. Spectroscopy allows scientists to analyze the composition and properties of matter by examining its interaction with light across different wavelengths.</p>
+<div id="fig-prism-spectrometer" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-prism-spectrometer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-prism-spectrometer" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-spec-principle" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-spec-principle-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/prism_spec_principle.jpeg" class="img-fluid figure-img" style="width:100.0%" data-ref-parent="fig-prism-spectrometer">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-spec-principle-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Principle of a prism spectrometer
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-prism-spectrometer" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-spec-realization" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-spec-realization-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/prism_spectrometer.jpeg" class="img-fluid figure-img" style="width:100.0%" data-ref-parent="fig-prism-spectrometer">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-spec-realization-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Technical realization of a prism spectrometer
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-prism-spectrometer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.7: Principle and technical realization of a prism spectrometer.
+</figcaption>
+</figure>
+</div>
+<p><strong>DIY prism</strong></p>
+<p>If you don’t have a prism at home (which most people don’t), you can create a simple substitute using a mirror and a basin of water. Here’s how:</p>
+<ol type="1">
+<li>Place a mirror in a basin of water, partially submerged.</li>
+<li>Shine white light from a flashlight onto the mirror.</li>
+<li>Observe the reflected and refracted light, paying special attention to the edges.</li>
+</ol>
+<p>For better results, you can create a small aperture by making a tiny hole in a piece of black paper and placing it in front of the flashlight.</p>
+<div id="fig-diy-prism" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-diy-prism-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/diy_prism.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-diy-prism-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.8: Home made water prism.
+</figcaption>
+</figure>
+</div>
+<p>While the dependence of water’s refractive index on wavelength is relatively weak, it’s still sufficient to demonstrate the familiar colors of the rainbow. This phenomenon will be referenced later in our discussion.</p>
+<div id="cell-fig-water-n" class="cell" data-cold-fold="true" data-execution_count="5">
+<div class="cell-output cell-output-display">
+<div id="fig-water-n" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-water-n-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Optical Elements II_files/figure-html/fig-water-n-output-1.png" width="542" height="362" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-water-n-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.9: Refractive index of water as a function of the wavelength.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Applications of prims
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Prisms are versatile optical components with a wide range of applications across various fields. Here are some common uses of prisms:</p>
+<section id="binoculars-and-telescopes" class="level4" data-number="6.1.4.1">
+<h4 data-number="6.1.4.1" class="anchored" data-anchor-id="binoculars-and-telescopes"><span class="header-section-number">6.1.4.1</span> Binoculars and Telescopes:</h4>
+<p>Porro prisms in traditional binoculars and roof prisms in modern designs serve to correct image inversion and provide a compact form. These prisms enable a longer optical path within a shorter physical length, enhancing magnification while maintaining portability. This design is crucial for both binoculars and some telescopes, offering users powerful magnification in a handheld device.</p>
+</section>
+<section id="periscopes" class="level4" data-number="6.1.4.2">
+<h4 data-number="6.1.4.2" class="anchored" data-anchor-id="periscopes"><span class="header-section-number">6.1.4.2</span> Periscopes:</h4>
+<p>Right-angle prisms are the key component in periscopes, redirecting light at 90-degree angles. This simple yet effective design allows viewers to see over obstacles or around corners, making periscopes invaluable in submarines and various military applications where direct line of sight is obstructed.</p>
+</section>
+<section id="beam-splitting" class="level4" data-number="6.1.4.3">
+<h4 data-number="6.1.4.3" class="anchored" data-anchor-id="beam-splitting"><span class="header-section-number">6.1.4.3</span> Beam Splitting:</h4>
+<p>Cube beamsplitters play a vital role in dividing a single beam of light into two separate beams. This capability is essential in various scientific and medical applications, including interferometry, holography, and optical coherence tomography (OCT). The ability to split light beams precisely opens up numerous possibilities in research and diagnostics.</p>
+</section>
+<section id="beam-steering" class="level4" data-number="6.1.4.4">
+<h4 data-number="6.1.4.4" class="anchored" data-anchor-id="beam-steering"><span class="header-section-number">6.1.4.4</span> Beam Steering:</h4>
+<p>Risley prisms, consisting of a pair of rotating wedge prisms, offer precise control over laser beam direction. This technology finds applications in laser scanning, target tracking, and adaptive optics. The ability to steer beams accurately is crucial in fields ranging from military applications to advanced scientific research.</p>
+</section>
+<section id="digital-projectors" class="level4" data-number="6.1.4.5">
+<h4 data-number="6.1.4.5" class="anchored" data-anchor-id="digital-projectors"><span class="header-section-number">6.1.4.5</span> Digital Projectors:</h4>
+<p>Total Internal Reflection (TIR) prisms are a crucial component in Digital Light Processing (DLP) projectors. They direct light from the lamp to the Digital Micromirror Device (DMD) and then to the projection lens, enabling the high-quality image projection that DLP technology is known for.</p>
+</section>
+<section id="camera-systems" class="level4" data-number="6.1.4.6">
+<h4 data-number="6.1.4.6" class="anchored" data-anchor-id="camera-systems"><span class="header-section-number">6.1.4.6</span> Camera Systems:</h4>
+<p>In Single-Lens Reflex (SLR) cameras, pentaprisms play a critical role in the viewfinder system. They flip the image from the lens to appear upright and correctly oriented in the viewfinder, allowing photographers to accurately compose their shots.</p>
+</section>
+<section id="laser-systems" class="level4" data-number="6.1.4.7">
+<h4 data-number="6.1.4.7" class="anchored" data-anchor-id="laser-systems"><span class="header-section-number">6.1.4.7</span> Laser Systems:</h4>
+<p>Brewster prisms find use in laser systems for polarization and wavelength separation. Additionally, dispersing prisms can be employed for wavelength tuning in certain laser setups, providing precise control over the laser’s output characteristics.</p>
+</section>
+<section id="fiber-optic-communications" class="level4" data-number="6.1.4.8">
+<h4 data-number="6.1.4.8" class="anchored" data-anchor-id="fiber-optic-communications"><span class="header-section-number">6.1.4.8</span> Fiber Optic Communications:</h4>
+<p>In the realm of telecommunications, prisms are utilized in some fiber optic connectors and switches. They help redirect light between fibers, playing a crucial role in maintaining signal integrity and enabling complex network architectures.</p>
+</section>
+<section id="solar-energy" class="level4" data-number="6.1.4.9">
+<h4 data-number="6.1.4.9" class="anchored" data-anchor-id="solar-energy"><span class="header-section-number">6.1.4.9</span> Solar Energy:</h4>
+<p>Fresnel lenses, a specialized type of prism, are employed in concentrated solar power systems. These lenses focus sunlight efficiently, contributing to the development of more effective solar energy collection technologies.</p>
+</section>
+<section id="head-up-displays-huds" class="level4" data-number="6.1.4.10">
+<h4 data-number="6.1.4.10" class="anchored" data-anchor-id="head-up-displays-huds"><span class="header-section-number">6.1.4.10</span> Head-Up Displays (HUDs):</h4>
+<p>Prisms are an integral part of HUD systems in both automotive and aviation contexts. They project crucial information onto the windshield or a combiner glass, allowing drivers or pilots to access important data without taking their eyes off their primary viewpoint.</p>
+</section>
+<section id="microscopy" class="level4" data-number="6.1.4.11">
+<h4 data-number="6.1.4.11" class="anchored" data-anchor-id="microscopy"><span class="header-section-number">6.1.4.11</span> Microscopy:</h4>
+<p>Nomarski prisms enhance the capabilities of differential interference contrast microscopy. They increase contrast in transparent specimens, enabling scientists to observe details that would be difficult or impossible to see with conventional microscopy techniques.</p>
+</section>
+<section id="optical-coherence-tomography-oct" class="level4" data-number="6.1.4.12">
+<h4 data-number="6.1.4.12" class="anchored" data-anchor-id="optical-coherence-tomography-oct"><span class="header-section-number">6.1.4.12</span> Optical Coherence Tomography (OCT):</h4>
+<p>In some OCT systems, prisms are employed for sample arm scanning and reference arm delay. This application of prisms contributes to the high-resolution imaging capabilities of OCT, which is particularly valuable in medical diagnostics, especially in ophthalmology.</p>
+</section>
+</div>
+</div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../geometrical-optics/Optical Elements I.html" class="pagination-link" aria-label="Optical Elements Part I">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Optical Elements Part I</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../geometrical-optics/Optical Elements III.html" class="pagination-link" aria-label="Optical Elements Part III">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Optical Elements Part III</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

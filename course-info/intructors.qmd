@@ -1,0 +1,30 @@
+---
+title: "Instructors"
+---
+
+## Prof. Dr. Frank Cichos
+
+- Linnéstr. 5, 04103 Leipzig
+- Office: 322
+- Phone: +49 341 97 32571
+- Email: *lastname@physik.uni-leipzig.de*
+
+## Axel Märcker
+
+- Vorlesungsexperimente
+- Linnéstr. 5, 04103 Leipzig
+
+
+## Dr. Diptabrata Paul
+
+- Linnéstr. 5, 04103 Leipzig
+- Office: 333a
+- Phone: +49 341 97 32570
+- Email: *firstname.lastname@physik.uni-leipzig.de*
+
+## Dr. Markus Anton
+
+- Linnéstr. 5, 04103 Leipzig
+- Office: 333a
+- Phone: +49 341 97 32570
+- Email: *lastname@physik.uni-leipzig.de*

@@ -1,0 +1,115 @@
+---
+title: "Proof that a Mirror Must Have a Parabolic Shape"
+author: "Author Name"
+format: html
+---
+
+We would like to show in the following, that a parabolic mirror is a shape which reflects all light rays parallel to the principal axis to a single point, the focus. This is a fundamental property of parabolic mirrors and is used in many optical systems, such as telescopes, satellite dishes, and car headlights.
+
+For this purpose, we would like to use Fermat's principle. We examine a light ray originating from a point $x,y_0$ and travelling parallel to the principal axis. The light ray is reflected at a point $(x,y)$ on the mirror and travels to the focus at $(0,p)$. The light path is therefore consisting out of two linear segments $A$ and $B$ for which we have to calculate the time of travel. The total duration of the light's journey is then:
+$$
+t = t_A + t_B
+$$
+
+where:
+
+  - $t_A$ is the time taken to travel from $x,y_0$ to the mirror.
+  - $t_B$ is the time taken to travel from $(x,y)$ to $(0,p)$.
+
+
+#### Time for Path A
+
+The distance covered in path A is equal to $y_0 - y$, where $y$ represents the y-coordinate of the point where the ray meets the mirror. Consequently, the time taken for the light to traverse path A can be expressed as:
+
+$$
+t_A = \frac{y_0 - y}{c}
+$$
+
+In this equation, $c$ represents the speed of light in the medium.
+
+#### Time for Path B
+
+After reflection, the light ray travels from the point $(x, y)$ on the mirror's surface to the focal point located at $(0, p)$. The length of this segment of the path can be calculated using the distance formula:
+
+$$
+\sqrt{x^2 + (y - p)^2}
+$$
+
+Consequently, the time required for the light to traverse path B is expressed as:
+
+$$
+t_B = \frac{\sqrt{x^2 + (y - p)^2}}{c}
+$$
+
+#### Total Time
+
+The total time for the light ray's journey is the sum of times for paths A and B:
+
+$$
+t = \frac{y_0 - y}{v} + \frac{\sqrt{x^2 + (y - p)^2}}{c}
+$$
+
+According to Fermat's principle, all light rays should take the same time. We can express this by setting the total time equal to a constant $t_c$:
+
+$$
+\frac{y_0 - y}{v} + \frac{\sqrt{x^2 + (y - p)^2}}{v} = t_c
+$$
+
+For a ray traveling along the y-axis, reflecting at $(0, 0)$, the total distance is $y_0 + p$. The time for this ray is:
+
+$$
+\frac{y_0 + p}{c}
+$$
+
+This gives us $t_c = \frac{y_0 + p}{c}$. Substituting into our general equation:
+
+$$
+\frac{y_0 - y}{v} + \frac{\sqrt{x^2 + (y - p)^2}}{c} = \frac{y_0 + p}{c}
+$$
+
+Multiplying by $c$ and rearranging:
+
+$$
+y_0 - y + \sqrt{x^2 + (y - p)^2} = y_0 + p
+$$
+
+$$
+\sqrt{x^2 + (y - p)^2} = y + p
+$$
+
+Squaring both sides and simplifying:
+
+$$
+x^2 + (y - p)^2 = (y + p)^2
+$$
+
+$$
+x^2 + y^2 - 2py + p^2 = y^2 + 2py + p^2
+$$
+
+$$
+x^2 = 4py
+$$
+
+or
+
+$$
+y=\frac{1}{4p}x^2
+$$
+
+This final equation describes a parabola with its focus at $(0, p)$.
+
+
+
+**Matrix Representation**
+   For a thin lens of focal length f, the matrix is:
+
+   $$M_{thin} = \begin{bmatrix} 1 & 0 \\ -1/f & 1 \end{bmatrix}$$
+
+**Equivalent Thin Lens:**
+   We want our thick lens matrix to be equivalent to a thin lens sandwiched between two translations:
+
+   $$\begin{bmatrix} 1 & -H' \\ 0 & 1 \end{bmatrix}
+   \begin{bmatrix} 1 & 0 \\ -1/f & 1 \end{bmatrix}
+   \begin{bmatrix} 1 & H \\ 0 & 1 \end{bmatrix}
+   = \begin{bmatrix} A & B \\ C & D \end{bmatrix}$$

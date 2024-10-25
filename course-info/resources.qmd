@@ -1,0 +1,35 @@
+---
+title: "Resources"
+---
+
+## Comments and Feedback
+
+![](../assets/images/main/hypothesis.png){fig-align="center"}
+
+This website makes use of the hypothes.is annotation service. You can use it to leave comments and feedback on the content of this website. To do so, you need to create a hypothes.is account. You can then highlight text on the website and leave comments. You can also reply to comments left by others and create your own nodes. We use this service for the first time, so please let us know if you like that. The annotation sidebar can be reached with the icons depicted in the figure above, wich are located at the right side of the screen.
+Here is the [Link to the Hypothes.is group](https://hypothes.is/groups/5GJKk6bW/experimental-physics-3) for this course.
+
+
+## Books
+
+The course will be mainly built on a number of excellent books on electrodynamics and optics as well as on the basics of quantum mechanics.
+
+### Optics and Electrodynamics
+
+- Demtröder: Electrodynamics and Optics, Springer, 2019
+- Saleh/Teich: Fundamentals of Photonics, Wiley, 2007
+- Jackson: Classical Electrodynamics, Wiley, 1998
+- Hecht: Optics, Pearson, 2016
+
+### Quantum Mechanics
+
+- Demtröder: Atoms, Molecules and Photons, Springer, 2010
+- Haken, Wolf: The Physics of Atoms and Quanta: Introduction to Experiments and Theory, Springer, 2005
+- Harnwel, Livingood: Experimental Atomic Physics, McGraw-Hill Book Company, Inc, 1933
+
+## Molecular Nanophotonics Group
+
+Besides the books, you may also want to have a look at the following websites maintained by the group:
+
+- [Molecular Nanophotonics Group Website](https://home.uni-leipzig.de/~physik/sites/mona/)
+- [Computer-based Physical Modeling Website @ MONA](https://fcichos.github.com/cbpm24/)

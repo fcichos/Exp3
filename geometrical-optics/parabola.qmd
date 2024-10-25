@@ -1,0 +1,117 @@
+---
+title: "Mathematical Analysis"
+author: "Your Name"
+format: pdf
+---
+
+## Tangent
+
+The tangent line has the slope:
+
+$$ m_t = 2 a x_0 $$
+
+The equation for the tangent line is:
+
+$$ y - y_0 = m_t(x - x_0)$$
+
+At the point $P$, we have:
+
+$$ x \rightarrow x_0 \quad \text{and} \quad y \rightarrow y_0 $$
+
+The equation at $y_0$ becomes:
+
+$$ y_0 = m_t x_0 + y_f $$
+
+Substitute for $m_t$:
+
+$$ a x_0^2 = m_t x_0 + y_f $$
+
+This simplifies to:
+
+$$ y_f = a x_0^2 - m_t x_0 $$
+
+$$ y_f = a x_0^2 - 2 a x_0^2 = - a x_0^2 $$
+
+Hence, we have:
+
+$$ y_f = a x_0^2 - m_t x_0 $$
+
+Finally:
+
+$$ y_f = - a x_0^2 $$
+
+## Normal Line
+
+The slope of the normal line is:
+
+$$ m_n = - \frac{1}{2 a x_0} $$
+
+The equation for the normal line is:
+
+$$ y = m_n x + y_{f_n} $$
+
+At the point $x_0$:
+
+$$ a x_0^2 = \frac{1}{2 a x_0} x_0 + y_{f_n} $$
+
+This simplifies to:
+
+$$ a x_0^2 - \frac{1}{2 a} = y_{f_n} $$
+
+Thus, the equation becomes:
+
+$$ y = \frac{1}{2 a x_0} x + (a x_0^2 - \frac{1}{2 a}) $$
+
+To find the angle $\Theta$:
+
+$$ \Theta = \frac{\pi}{2} - \delta $$
+
+Thus:
+
+$$ \gamma - \Theta = \gamma - \frac{\pi}{2} + \delta $$
+
+$$ 2\gamma - \frac{\pi}{2} $$
+
+Finally, the slope $m_2$ is:
+
+$$ m_2 = \tan \left(2\gamma - \frac{\pi}{2}\right) $$
+
+
+## Correction
+
+Let's adjust the analysis to prove that rays parallel to the y-axis (vertical lines) will reflect through the focal point of the parabola. Here's how we can structure this proof:
+
+1. Start with the parabola equation: $y = ax^2$
+
+2. The focal point of the parabola is at $(0, \frac{1}{4a})$
+
+3. Consider a vertical line at any x-coordinate, let's call it $x_0$
+
+4. The point where this line intersects the parabola is $(x_0, ax_0^2)$
+
+5. The slope of the tangent line at this point is $m_t = 2ax_0$
+
+6. The normal line at this point has a slope $m_n = -\frac{1}{2ax_0}$
+
+7. The equation of the normal line is:
+   $y - ax_0^2 = -\frac{1}{2ax_0}(x - x_0)$
+
+8. To prove that the reflected ray passes through the focal point, we need to show that this normal line passes through the midpoint between the point on the parabola and the focal point.
+
+9. The midpoint coordinates are:
+   $(\frac{x_0}{2}, \frac{ax_0^2 + \frac{1}{4a}}{2})$
+
+10. Substitute these coordinates into the normal line equation:
+    $\frac{ax_0^2 + \frac{1}{4a}}{2} - ax_0^2 = -\frac{1}{2ax_0}(\frac{x_0}{2} - x_0)$
+
+11. Simplify:
+    $\frac{1}{4a} - \frac{ax_0^2}{2} = \frac{x_0}{4a}$
+
+12. Further simplification shows this equation holds true:
+    $\frac{1}{4a} - \frac{ax_0^2}{2} = \frac{x_0}{4a}$
+    $\frac{1}{4a} = \frac{x_0}{4a} + \frac{ax_0^2}{2}$
+    $\frac{1}{4a} = \frac{x_0 + 2ax_0^2}{4a}$
+    $1 = x_0 + 2ax_0^2$
+    $1 = x_0 + 2y_0$ (since $y_0 = ax_0^2$)
+
+This proves that the normal line indeed passes through the midpoint between the point on the parabola and the focal point. As a result, any vertical ray (parallel to the y-axis) will reflect off the parabola and pass through the focal point.

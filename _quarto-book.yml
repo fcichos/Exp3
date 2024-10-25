@@ -1,0 +1,38 @@
+project:
+  type: book
+  output-dir: pdf_output
+execute:
+  echo: false # This will hide the code
+  output: true # This will show the output
+  freeze: false # This will freeze the output
+
+book:
+  title: "Experimental Physics 3 Course on Optics and Quantum Mechanics"
+  author: "Frank Cichos"
+  date: "2024-10-20"
+  chapters:
+    - index.qmd
+    - part: "Geometrical Optics"
+      chapters:
+        - geometrical-optics/introduction.qmd
+        - geometrical-optics/reflection.qmd
+        - geometrical-optics/refraction-total-internal-reflection.qmd
+        - geometrical-optics/Optical Elements I.qmd
+        - geometrical-optics/Optical Elements II.qmd
+        - geometrical-optics/Optical Elements III.qmd
+        - geometrical-optics/Eye.qmd
+        - geometrical-optics/Magnifying Glass.qmd
+        - geometrical-optics/Microscope.qmd
+format:
+  pdf:
+    documentclass: book
+    papersize: a4
+    toc: true
+    number-sections: true
+    number-depth: 2
+    colorlinks: true
+    geometry:
+      - top=30mm
+      - left=20mm
+      - right=20mm
+      - bottom=30mm

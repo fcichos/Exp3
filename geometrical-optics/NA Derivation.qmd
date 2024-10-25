@@ -1,0 +1,37 @@
+## Derivation of Numerical Aperture for Optical Fibers
+
+We start with Snell's law at the core-cladding interface:
+
+   $$n_1 \sin \theta_1 = n_2 \sin \theta_2$$
+
+   where $n_1$ is the core refractive index and $n_2$ is the cladding refractive index.
+
+For total internal reflection, the critical angle $\theta_c$ occurs when $\theta_2 = 90°$:
+
+   $$n_1 \sin \theta_c = n_2 \sin 90° = n_2$$
+
+Thus, we can express the critical angle as:
+
+   $$\sin \theta_c = \frac{n_2}{n_1}$$
+
+In the fiber, the maximum angle for total internal reflection is $(90° - \theta_c)$:
+
+   $$\cos \theta_c = \sin(90° - \theta_c)$$
+
+Using the trigonometric identity $\cos^2 \theta + \sin^2 \theta = 1$:
+
+   $$\cos^2 \theta_c = 1 - \sin^2 \theta_c = 1 - \left(\frac{n_2}{n_1}\right)^2$$
+
+At the air-core interface, we apply Snell's law again:
+
+   $$\sin \theta_a = n_1 \sin(90° - \theta_c) = n_1 \cos \theta_c$$
+
+Substituting the result from step 5:
+
+   $$\sin \theta_a = n_1 \sqrt{1 - \left(\frac{n_2}{n_1}\right)^2} = \sqrt{n_1^2 - n_2^2}$$
+
+This final result is the Numerical Aperture (NA):
+
+   $$NA = \sin \theta_a = \sqrt{n_1^2 - n_2^2}$$
+
+This formula relates the maximum acceptance angle $\theta_a$ to the refractive indices of the core ($n_1$) and cladding ($n_2$). It's a crucial parameter in fiber optics, determining the light-gathering ability and the range of angles over which the fiber can accept or emit light.

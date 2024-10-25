@@ -1,0 +1,12 @@
+body::before {
+    content: "";
+    background-image: url("../assets/images/main/CompSoft_banner.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    max-width: 1200px; /* Adjust this to your preferred maximum width */
+    height: 200px; /* Adjust this based on your desired banner height */
+    display: block;
+    margin: 0 auto 20px auto;
+}

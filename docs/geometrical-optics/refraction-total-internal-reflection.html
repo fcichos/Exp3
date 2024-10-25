@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Refraction – Experimental Physics Course on Optics</title>
+<title>Refraction and Total Internal Reflection – Experimental Physics 3 Course on Optics and Quantum Mechanics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,6 +64,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../geometrical-optics/Optical Elements I.html" rel="next">
+<link href="../geometrical-optics/reflection.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -40,11 +76,11 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
+  "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
+  "panel-placement": "end",
+  "type": "overlay",
   "limit": 50,
   "keyboard-shortcut": [
     "f",
@@ -66,6 +102,12 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script async="" src="https://hypothes.is/embed.js"></script>
+<script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    document.body.classList.add('hypothesis-enabled');
+  });
+</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -97,41 +139,52 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="../assets/styles.css">
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Experimental Physics 3 Course on Optics and Quantum Mechanics</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Geometrical Optics</li><li class="breadcrumb-item"><a href="../geometrical-optics/reflection.html">Lecture 1</a></li><li class="breadcrumb-item"><a href="../geometrical-optics/refraction-total-internal-reflection.html">Refraction &amp; Total Internal Reflection</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../geometrical-optics/introduction.html">Geometrical Optics</a></li><li class="breadcrumb-item"><a href="../geometrical-optics/reflection.html">Lecture 1</a></li><li class="breadcrumb-item"><a href="../geometrical-optics/refraction-total-internal-reflection.html">Refraction</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="../">Experimental Physics Course on Optics</a> 
-    </div>
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../mona_logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
       </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
@@ -140,24 +193,73 @@ window.Quarto = {
  <span class="menu-text">Home</span></a>
   </div>
 </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Geometrical Optics</span></a>
+ <span class="menu-text">Course Info</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item sidebar-item-section">
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-info/intructors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instructor</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-info/schedule.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Schedule</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-info/resources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ressourcen</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-info/assignments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Assignments</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-info/exam.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exam</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Lecture 1</span></a>
+ <span class="menu-text">Geometrical Optics</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Lecture 1</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../geometrical-optics/reflection.html" class="sidebar-item-text sidebar-link">
@@ -167,376 +269,71 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../geometrical-optics/refraction-total-internal-reflection.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Refraction &amp; Total Internal Reflection</span></a>
+ <span class="menu-text">Refraction</span></a>
   </div>
 </li>
       </ul>
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
  <span class="menu-text">Lecture 2</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../geometrical-optics/Optical Elements I.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Optical Elements I</span></a>
+ <span class="menu-text">Optical Elements I - Mirrors</span></a>
   </div>
 </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Lecture 3</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../geometrical-optics/Optical Elements II.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Optical Elements II</span></a>
+ <span class="menu-text">Optical Elements II - Prims</span></a>
   </div>
 </li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
- <span class="menu-text">Lecture 3</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../geometrical-optics/Optical Elements III.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Optical Elements III</span></a>
+ <span class="menu-text">Optical Elements III - Lenses</span></a>
   </div>
 </li>
       </ul>
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
- <span class="menu-text">Lecture 4</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../geometrical-optics/Lens Systems and Optical Instruments.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lens Systems Optical Instruments</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../geometrical-optics/optical-instruments.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Optical Instruments</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../geometrical-optics/dispersion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Dispersion</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../geometrical-optics/imaging-errors.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Imaging Errors</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
- <span class="menu-text">Wave Optics</span></a>
+ <span class="menu-text">Lecture 4</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../wave-optics/wave-equation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Wave Equation</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../wave-optics/wave-equation.html#plane-waves" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Plane Waves</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../wave-optics/wave-equation.html#spherical-waves" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Spherical Waves</span></a>
+  <a href="../geometrical-optics/Eye.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optical Instruments- Eye</span></a>
   </div>
 </li>
       </ul>
   </li>
           <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../wave-optics/interference.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Interference</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../wave-optics/interference.html#coherence" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Coherence</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../wave-optics/interference.html#interferometers" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Interferometers</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../wave-optics/huygens-principle.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Huygens Principle</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../wave-optics/huygens-principle.html#diffraction" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Diffraction</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../wave-optics/huygens-principle.html#single-and-double-slit" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Single and Double Slit</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../wave-optics/huygens-principle.html#diffraction-grating" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Diffraction Grating</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../wave-optics/huygens-principle.html#optical-resolution" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Optical Resolution</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
- <span class="menu-text">Electromagnetic Waves</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/electromagnetic-spectrum.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Electromagnetic Spectrum</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/plane-and-spherical-waves.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Plane and Spherical Waves</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/energy-transport-poynting-vector.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Energy Transport &amp; Poynting Vector</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/polarization.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Polarization</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/reflection-and-transmission.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Reflection and Transmission</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/total-internal-reflection.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Total Internal Reflection</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/fresnel-formulas.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Fresnel Formulas</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/hertz-dipole.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Hertz Dipole</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
- <span class="menu-text">Foundations of Quantum Physics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../foundations-of-quantum-physics/particle-properties-of-light.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Particle Properties of Light</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../foundations-of-quantum-physics/particle-properties-of-light.html#photoelectric-effect" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Photoelectric Effect</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../foundations-of-quantum-physics/particle-properties-of-light.html#black-body-radiation" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Black Body Radiation</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../foundations-of-quantum-physics/particle-properties-of-light.html#photon-gas" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Photon Gas</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../foundations-of-quantum-physics/particle-properties-of-light.html#plancks-radiation-law" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Planck’s Radiation Law</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../foundations-of-quantum-physics/structure-of-matter.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Structure of Matter</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../foundations-of-quantum-physics/structure-of-matter.html#thomson-model-of-the-atom" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Thomson Model of the Atom</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../foundations-of-quantum-physics/structure-of-matter.html#rutherford-scattering" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Rutherford Scattering</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../foundations-of-quantum-physics/structure-of-matter.html#rutherford-and-bohr-atom-model" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Rutherford and Bohr Atom Model</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../foundations-of-quantum-physics/matter-waves.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Matter Waves</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../foundations-of-quantum-physics/matter-waves.html#heisenberg-uncertainty-relation" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Heisenberg Uncertainty Relation</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../foundations-of-quantum-physics/matter-waves.html#wave-function" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Wave Function</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../foundations-of-quantum-physics/matter-waves.html#probability-interpretation" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Probability Interpretation</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../foundations-of-quantum-physics/matter-waves.html#schrodinger-equation" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Schrödinger Equation</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../foundations-of-quantum-physics/matter-waves.html#quantum-states" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Quantum States</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../foundations-of-quantum-physics/matter-waves.html#potential-box" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Potential Box</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../foundations-of-quantum-physics/matter-waves.html#harmonic-oscillator" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Harmonic Oscillator</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../foundations-of-quantum-physics/matter-waves.html#tunneling" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Tunneling</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../foundations-of-quantum-physics/matter-waves.html#correspondence-principle" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Correspondence Principle</span></a>
-  </div>
-</li>
-      </ul>
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Lecture 5</span></span>
   </li>
       </ul>
   </li>
@@ -550,11 +347,12 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#refraction" id="toc-refraction" class="nav-link active" data-scroll-target="#refraction"><span class="header-section-number">2.1</span> Refraction</a>
+  <li><a href="#refraction" id="toc-refraction" class="nav-link active" data-scroll-target="#refraction">Refraction</a>
   <ul class="collapse">
-  <li><a href="#refractive-index" id="toc-refractive-index" class="nav-link" data-scroll-target="#refractive-index"><span class="header-section-number">2.1.1</span> Refractive Index</a></li>
-  <li><a href="#snells-law" id="toc-snells-law" class="nav-link" data-scroll-target="#snells-law"><span class="header-section-number">2.1.2</span> Snells Law</a></li>
-  <li><a href="#total-internal-reflection" id="toc-total-internal-reflection" class="nav-link" data-scroll-target="#total-internal-reflection"><span class="header-section-number">2.1.3</span> Total Internal Reflection</a></li>
+  <li><a href="#refractive-index" id="toc-refractive-index" class="nav-link" data-scroll-target="#refractive-index">Refractive Index</a></li>
+  <li><a href="#snells-law" id="toc-snells-law" class="nav-link" data-scroll-target="#snells-law">Snells Law</a></li>
+  <li><a href="#total-internal-reflection" id="toc-total-internal-reflection" class="nav-link" data-scroll-target="#total-internal-reflection">Total Internal Reflection</a></li>
+  <li><a href="#fermats-principle-for-inhomogeneous-media" id="toc-fermats-principle-for-inhomogeneous-media" class="nav-link" data-scroll-target="#fermats-principle-for-inhomogeneous-media">Fermat’s Principle for Inhomogeneous Media</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -562,9 +360,9 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Geometrical Optics</li><li class="breadcrumb-item"><a href="../geometrical-optics/reflection.html">Lecture 1</a></li><li class="breadcrumb-item"><a href="../geometrical-optics/refraction-total-internal-reflection.html">Refraction &amp; Total Internal Reflection</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../geometrical-optics/introduction.html">Geometrical Optics</a></li><li class="breadcrumb-item"><a href="../geometrical-optics/reflection.html">Lecture 1</a></li><li class="breadcrumb-item"><a href="../geometrical-optics/refraction-total-internal-reflection.html">Refraction</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Refraction</h1>
+<h1 class="title">Refraction and Total Internal Reflection</h1>
 </div>
 
 
@@ -581,42 +379,68 @@ window.Quarto = {
 </header>
 
 
-<section id="refraction" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="refraction"><span class="header-section-number">2.1</span> Refraction</h2>
-<p>The law of refraction is the second important law of geometrical optics. It connects the refractive index <span class="math inline">\(n_1\)</span> at the incident side and the angle of incidence <span class="math inline">\(\theta_1\)</span> to the refractive index <span class="math inline">\(n_2\)</span> and the angle of refraction <span class="math inline">\(\theta_2\)</span> on the transmission side. It will later turn out, that both laws, the law of reflection and the law of refraction actually correspond to a conservation of momentum.</p>
-<section id="refractive-index" class="level3" data-number="2.1.1">
-<h3 data-number="2.1.1" class="anchored" data-anchor-id="refractive-index"><span class="header-section-number">2.1.1</span> Refractive Index</h3>
-<p>The refractive index <span class="math inline">\(n\)</span> is a material constant representing the factor by which the speed of light is slowed down in the medium. As the maximum speed is the speed of light in vacuum, the refractive index is typically a number <span class="math inline">\(n \ge 1\)</span>. Yet, it will turn out later, that the refractive index can be smaller than 1 or even negative. This, however, requires first to understand the origin of the refractive index.</p>
-</section>
-<section id="snells-law" class="level3" data-number="2.1.2">
-<h3 data-number="2.1.2" class="anchored" data-anchor-id="snells-law"><span class="header-section-number">2.1.2</span> Snells Law</h3>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 100%">
-</colgroup>
-<thead>
-<tr class="header">
-<th><img src="../assets/images/reflection/snell.png" width="59%"> <img src="../assets/images/reflection/refraction_law.png" width="40%"></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Fig.:</strong> Snell’s law.</td>
-</tr>
-</tbody>
-</table>
-<div class="alert alert-info">
-<p><strong>Law of Reflection (Snells Law)</strong></p>
-<p>The law of refraction (Snell’s law) is given for the above sketch by</p>
-<p><span class="math display">\[\begin{equation}
-n_1 \sin(\theta_1)=n_2 \sin(\theta_2)
-\end{equation}\]</span></p>
+<section id="refraction" class="level2">
+<h2 class="anchored" data-anchor-id="refraction">Refraction</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
+<div class="callout-title-container flex-fill">
+Historical Context of Refraction
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The understanding of refraction has evolved over centuries, with contributions from various cultures and scientific traditions. This timeline highlights key milestones in the discovery and formalization of refraction, showcasing how our comprehension of this fundamental optical phenomenon has deepened over time:</p>
+<ol type="1">
+<li><p><strong>Ancient Greece (3rd century BCE):</strong> Euclid noticed that a stick partially submerged in water appears bent. Archimedes studied the refraction of light in water.</p></li>
+<li><p><strong>Ancient Rome (1st century CE):</strong> Ptolemy conducted experiments on refraction and compiled tables of refraction angles for different media.</p></li>
+<li><p><strong>Islamic Golden Age (10th-11th centuries):</strong> Ibn Sahl (940-1000) discovered the law of refraction, describing it geometrically. Alhazen (965-1040) studied lenses and the human eye, contributing significantly to optics.</p></li>
+<li><p><strong>Middle Ages:</strong> Robert Grosseteste (1175-1253) and Roger Bacon (1214-1294) studied refraction and its application to lenses.</p></li>
+<li><p><strong>Renaissance:</strong> Thomas Harriot (1560-1621) rediscovered the law of refraction but didn’t publish his findings.</p></li>
+<li><p><strong>17th Century:</strong> Willebrord Snellius (1580-1626) derived the mathematical law of refraction (Snell’s law) around 1621. René Descartes (1596-1650) independently derived and published the law of refraction in 1637. Pierre de Fermat (1607-1665) derived the law of refraction using his principle of least time.</p></li>
+<li><p><strong>19th Century:</strong> Augustin-Jean Fresnel (1788-1827) developed the wave theory of light, explaining refraction in terms of changes in wave speed.</p></li>
+<li><p><strong>20th Century:</strong> The quantum mechanical understanding of light, which emerged in the early 20th century, significantly impacted our view of refraction. Max Planck’s work on black body radiation in 1900 and Albert Einstein’s explanation of the photoelectric effect in 1905 laid the groundwork for the quantum nature of light. This quantum perspective provided a complementary explanation to the wave theory, describing refraction in terms of photons interacting with the atoms in the medium. While this quantum view offers insights into certain aspects of refraction, it’s important to note that both the wave and particle descriptions of light are necessary for a complete understanding of optical phenomena.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<p>The law of refraction is the second important law of geometrical optics. It relates the refractive index <span class="math inline">\(n_1\)</span> and angle of incidence <span class="math inline">\(\theta_1\)</span> on one side of an interface to the refractive index <span class="math inline">\(n_2\)</span> and angle of refraction <span class="math inline">\(\theta_2\)</span> on the other side. Both the law of reflection and the law of refraction can be derived from more fundamental principles such as Fermat’s principle of least time and are consistent with the conservation of energy. Their relation to momentum is more complex and involves considering the interaction of light with the medium at an atomic level. These laws provide a mathematical framework for predicting how light behaves when it encounters interfaces between different media, forming the basis for understanding a wide range of optical phenomena and the design of optical devices.</p>
+<section id="refractive-index" class="level3">
+<h3 class="anchored" data-anchor-id="refractive-index">Refractive Index</h3>
+<p>The refractive index <span class="math inline">\(n\)</span> is a material constant representing the factor by which the speed of light is reduced in the medium compared to its speed in vacuum. For most natural materials and visible light, the refractive index is <span class="math inline">\(n \ge 1\)</span>, as light typically travels slower in media than in vacuum. However, in certain special cases—such as for X-rays in some materials or in engineered metamaterials—the refractive index can be less than 1 or even negative. Understanding these exotic cases requires a deeper exploration of the electromagnetic properties of materials and the origin of the refractive index, which we will address later.</p>
+</section>
+<section id="snells-law" class="level3">
+<h3 class="anchored" data-anchor-id="snells-law">Snells Law</h3>
+<p><img src="../assets/images/reflection/snell.png" class="img-fluid" style="width:59.0%" alt="Snell’s law."> <img src="../assets/images/reflection/refraction_law.png" class="img-fluid quarto-figure quarto-figure-center" style="width:40.0%"></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Law of Refraction (Snell’s Law)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The law of refraction (Snell’s law) is given for the above sketch by the equation:</p>
+<p><span class="math display">\[
+n_1 \sin(\theta_1)=n_2 \sin(\theta_2)
+\]</span></p>
+</div>
+</div>
+<p>You can explore the law of refraction using the interactive visualization below. The visualization shows a light ray incident on an interface between two media with different refractive indices. You can adjust the angle of incidence and the refractive index of the first medium to see how the angle of refraction changes according to Snell’s law.</p>
+<div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
 <div id="snells-law-viz"></div>
 <p><input type="range" id="angle-slider" min="0" max="90" value="45" step="1">
 Incident Angle: <span id="angle-value">45</span>°</p>
-<p><input type="range" id="index-slider" min="1.0" max="2.0" value="1.0" step="0.1">
-Refractive Index: <span id="index-value">1.0</span></p>
+<p><input type="range" id="index1-slider" min="1.0" max="2.0" value="1.0" step="0.1">
+Refractive Index n₁: <span id="index1-value">1.0</span></p>
+<p><input type="range" id="index2-slider" min="1.0" max="2.0" value="1.5" step="0.1">
+Refractive Index n₂: <span id="index2-value">1.5</span></p>
+</div>
 <script src="https://d3js.org/d3.v7.min.js"></script>
 
 <script>
@@ -624,16 +448,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
   // Set up the SVG
   const svg = d3.select("#snells-law-viz")
     .append("svg")
-    .attr("width", 400)
-    .attr("height", 400)
+    .attr("width", 350)
+    .attr("height", 350)
     .style("border", "1px solid #000000");
 
-  const width = 400;
-  const height = 400;
+  const width = 350;
+  const height = 350;
 
   // Define constants and initial values
-  let  n1 = 1;
-  const n2 = 1.5;
+  let n1 = 1.0;
+  let n2 = 1.5;
   let angle = 45;
 
   // Create a group for the visualization
@@ -646,8 +470,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     .attr("y1", 0)
     .attr("x2", width/2)
     .attr("y2", 0)
-    .attr("stroke", "black")
-
+    .attr("stroke", "black");
 
   g.append("line")
     .attr("x1", 0)
@@ -657,12 +480,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
     .attr("stroke", "black")
     .attr("stroke-dasharray", "5,5");
 
-  g.append("text")
+  const n2Label = g.append("text")
     .attr("x", 100)
-    .attr("y", -10)
-    .text(`n₂ = ${n2}`);
-
-
+    .attr("y", -10);
 
   const incidentRay = g.append("line")
     .attr("stroke", "red")
@@ -680,163 +500,469 @@ document.addEventListener('DOMContentLoaded', (event) => {
     .attr("x", 10)
     .attr("y", 20);
 
-  const refractedIndexLabel = g.append("text")
+  const n1Label = g.append("text")
     .attr("x", 100)
-    .attr("y", 20)
-    .text(`n₁ = ${n1}`);
+    .attr("y", 20);
 
-function updateViz(angle) {
+  function updateViz(angle, n1, n2) {
+    const theta1 = angle * Math.PI / 180; // Convert angle to radians
 
-  const theta1 = angle * Math.PI / 180; // Convert angle to radians
+    const thetaC = Math.asin(n2 / n1);
 
-  const thetaC = Math.asin(n2 / n1);
+    let theta2;
+    let isTotalInternalReflection = false;
 
-  let theta2;
-  let isTotalInternalReflection = false;
+    // Check for total internal reflection
+    if (theta1 > thetaC) {
+        theta2 = -theta1; // Reflect the angle
+        isTotalInternalReflection = true;
+    } else {
+        theta2 = Math.asin((n1 * Math.sin(theta1)) / n2);
+    }
 
-  // Check for total internal reflection
-  if (theta1 > thetaC) {
-      theta2 = -theta1; // Reflect the angle
-      isTotalInternalReflection = true;
-  } else {
-      theta2 = Math.asin((n1 * Math.sin(theta1)) / n2);
+    incidentRay
+      .attr("x1", 0)
+      .attr("y1", 0)
+      .attr("x2", -150 * Math.sin(theta1))
+      .attr("y2", 150 * Math.cos(theta1));
+
+    if (isTotalInternalReflection) {
+        refractedRay
+          .attr("x1", 0)
+          .attr("y1", 0)
+          .attr("x2", -150 * Math.sin(theta2))
+          .attr("y2", 150 * Math.cos(theta2));
+    } else {
+        refractedRay
+          .attr("x1", 0)
+          .attr("y1", 0)
+          .attr("x2", 150 * Math.sin(theta2))
+          .attr("y2", -150 * Math.cos(theta2));
+    }
+
+    n1Label.text(`n₁ = ${n1.toFixed(1)}`);
+    n2Label.text(`n₂ = ${n2.toFixed(1)}`);
+
+    incidentAngleLabel
+        .text(`θ₁ = ${((theta1 * 180) / Math.PI).toFixed(1)}°`)
+        .attr("transform", `translate(${-150}, 150)`);
+
+    refractedAngleLabel
+        .text(`θ₂ = ${(theta2 * 180 / Math.PI).toFixed(1)}°`)
+        .attr("transform", `translate(75,-175)`);
   }
 
-  incidentRay
-    .attr("x1", 0)
-    .attr("y1", 0)
-    .attr("x2", -150 * Math.sin(theta1))
-    .attr("y2", 150 * Math.cos(theta1));
-
-  if (isTotalInternalReflection) {
-
-      refractedRay
-        .attr("x1", 0)
-        .attr("y1", 0)
-        .attr("x2", -150 * Math.sin(theta2))
-        .attr("y2", 150 * Math.cos(theta2));
-  } else {
-
-      refractedRay
-        .attr("x1", 0)
-        .attr("y1", 0)
-        .attr("x2", 150 * Math.sin(theta2))
-        .attr("y2", -150 * Math.cos(theta2));
-  }
-
-  refractedIndexLabel
-      .text(`n₁ = ${n1}`)
-
-
-  incidentAngleLabel
-      .text(`θ₁ = ${((theta1 * 180) / Math.PI).toFixed(1)}°`)
-      .attr("transform", `translate(${-150}, 150)`);
-
-  refractedAngleLabel
-      .text(`θ₂ = ${(theta2 * 180 / Math.PI).toFixed(1)}°`)
-      .attr("transform", `translate(75,-175)`);
-}
-
-
-
-  updateViz(angle);
+  updateViz(angle, n1, n2);
 
   d3.select("#angle-slider").on("input", function() {
     angle = +this.value;
     d3.select("#angle-value").text(angle);
-    updateViz(angle);
+    updateViz(angle, n1, n2);
   });
 
-  d3.select("#index-slider").on("input", function() {
+  d3.select("#index1-slider").on("input", function() {
     n1 = +this.value;
-    d3.select("#index-value").text(n1);
-    updateViz(angle);
+    d3.select("#index1-value").text(n1.toFixed(1));
+    updateViz(angle, n1, n2);
+  });
+
+  d3.select("#index2-slider").on("input", function() {
+    n2 = +this.value;
+    d3.select("#index2-value").text(n2.toFixed(1));
+    updateViz(angle, n1, n2);
   });
 });
 </script>
-<p>According to Snell’s law, there is a general behavior of the corresponding angles, which you might want to remember (see also Fig. above). Consider the following cases:</p>
-<p><span class="math inline">\(n_1&lt;n_2\)</span>: - refraction is towards the optical axis - <span class="math inline">\(\theta_2&lt;\theta_1\)</span></p>
-<p><span class="math inline">\(n_2&lt;n_1\)</span>: - refraction is away from the optical axis - <span class="math inline">\(\theta_1&lt;\theta_2\)</span></p>
-<p>The plot below shows this result in three plots with varying incident angle and two different refractive index combinations (glass/air, ait/glass).</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th><img src="../assets/images/reflection/angles.png" width="60%"></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Fig.:</strong> Snells law for different combinations of refractive indices.</td>
-</tr>
-</tbody>
-</table>
+<p>Snell’s law leads to some general patterns in the behavior of light rays at interfaces, which are worth remembering. Consider these two cases:</p>
+<ol type="1">
+<li>When light moves from a medium with lower refractive index to one with higher refractive index (<span class="math inline">\(n_1 &lt; n_2\)</span>):
+<ul>
+<li>The refracted ray bends towards the normal (optical axis)</li>
+<li>The angle of refraction is smaller than the angle of incidence (<span class="math inline">\(\theta_2 &lt; \theta_1\)</span>)</li>
+</ul></li>
+<li>When light moves from a medium with higher refractive index to one with lower refractive index (<span class="math inline">\(n_1 &gt; n_2\)</span>):
+<ul>
+<li>The refracted ray bends away from the normal (optical axis)</li>
+<li>The angle of refraction is larger than the angle of incidence (<span class="math inline">\(\theta_2 &gt; \theta_1\)</span>)</li>
+</ul></li>
+</ol>
+<p>Figure <a href="#fig-snells-combinations" class="quarto-xref">1</a> illustrates these principles with three plots showing how the refracted angle changes with the incident angle for two common interface scenarios: glass-to-air and air-to-glass. These plots clearly demonstrate the different behaviors described above.</p>
+<!--
+![Snell's law for different combinations of refractive indices. The plots show the relationship between incident angle ($\theta_1$) and refracted angle ($\theta_2$) for three scenarios: (a) light passing from air to glass, (b) light passing from glass to air, and (c) a comparison of both cases. Note how the curves differ when light moves into a medium with higher refractive index versus a lower refractive index.](../assets/images/reflection/angles.png){#fig-snells-combinations width=60% fig-align="center"}
+ -->
+<div id="cell-fig-snells-combinations" class="cell" data-execution_count="2">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> snell(n1, n2, theta1):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    sin_theta2 <span class="op">=</span> n1 <span class="op">*</span> np.sin(theta1) <span class="op">/</span> n2</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    theta2 <span class="op">=</span> np.arcsin(np.clip(sin_theta2, <span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>))</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    theta2[sin_theta2 <span class="op">&gt;</span> <span class="dv">1</span>] <span class="op">=</span> np.nan</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> theta2</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">4</span>, <span class="dv">4</span>))</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>theta1 <span class="op">=</span> np.linspace(<span class="dv">0</span>, np.pi<span class="op">/</span><span class="dv">2</span>, <span class="dv">1000</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>theta2_1_to_1_5 <span class="op">=</span> snell(<span class="fl">1.0</span>, <span class="fl">1.5</span>, theta1)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>theta2_1_5_to_1 <span class="op">=</span> snell(<span class="fl">1.5</span>, <span class="fl">1.0</span>, theta1)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>theta2_1_to_1 <span class="op">=</span> snell(<span class="fl">1.0</span>, <span class="fl">1.0</span>, theta1)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>ax.plot(np.degrees(theta1), np.degrees(theta2_1_to_1_5), color<span class="op">=</span><span class="st">'blue'</span>)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>ax.plot(np.degrees(theta1), np.degrees(theta2_1_5_to_1), color<span class="op">=</span><span class="st">'red'</span>)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>ax.plot(np.degrees(theta1), np.degrees(theta2_1_to_1), color<span class="op">=</span><span class="st">'green'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="vs">r'$\theta_1$ [°]'</span>)</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="vs">r'$\theta_2$ [°]'</span>)</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>ax.set_xlim(<span class="dv">0</span>, <span class="dv">90</span>)</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>ax.set_ylim(<span class="dv">0</span>, <span class="dv">90</span>)</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>ax.plot([<span class="dv">0</span>, <span class="dv">90</span>], [<span class="dv">0</span>, <span class="dv">90</span>], color<span class="op">=</span><span class="st">'gray'</span>, linestyle<span class="op">=</span><span class="st">':'</span>, label<span class="op">=</span><span class="st">'y=x'</span>)</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>ax.annotate(<span class="vs">r'$\frac</span><span class="sc">{n_2}{n_1}</span><span class="vs">=1.5$'</span>, xy<span class="op">=</span>(<span class="dv">60</span>, <span class="dv">35</span>), xytext<span class="op">=</span>(<span class="dv">50</span>, <span class="dv">20</span>),</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>            arrowprops<span class="op">=</span><span class="bu">dict</span>(arrowstyle<span class="op">=</span><span class="st">'-&gt;'</span>), color<span class="op">=</span><span class="st">'blue'</span>)</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>ax.annotate(<span class="vs">r'$\frac</span><span class="sc">{n_1}{n_2}</span><span class="vs">=1.5$'</span>, xy<span class="op">=</span>(<span class="dv">30</span>, <span class="dv">50</span>), xytext<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">70</span>),</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>            arrowprops<span class="op">=</span><span class="bu">dict</span>(arrowstyle<span class="op">=</span><span class="st">'-&gt;'</span>), color<span class="op">=</span><span class="st">'red'</span>)</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>ax.annotate(<span class="vs">r'$\frac</span><span class="sc">{n_2}{n_1}</span><span class="vs">=1$'</span>, xy<span class="op">=</span>(<span class="dv">45</span>, <span class="dv">45</span>), xytext<span class="op">=</span>(<span class="dv">65</span>, <span class="dv">50</span>),</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>            arrowprops<span class="op">=</span><span class="bu">dict</span>(arrowstyle<span class="op">=</span><span class="st">'-&gt;'</span>), color<span class="op">=</span><span class="st">'green'</span>)</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div id="fig-snells-combinations" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-snells-combinations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="refraction-total-internal-reflection_files/figure-html/fig-snells-combinations-output-1.png" width="367" height="368" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-snells-combinations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1— Snell’s law for different combinations of refractive indices. The plots show the relationship between incident angle (<span class="math inline">\(\theta_1\)</span>) and refracted angle (<span class="math inline">\(\theta_2\)</span>) for three scenarios: (a) light passing from air to glass, (b) light passing from glass to air, and (c) a comparison of both cases. Note how the curves differ when light moves into a medium with higher refractive index versus a lower refractive index.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
-<section id="total-internal-reflection" class="level3" data-number="2.1.3">
-<h3 data-number="2.1.3" class="anchored" data-anchor-id="total-internal-reflection"><span class="header-section-number">2.1.3</span> Total Internal Reflection</h3>
-<p>The above diagram reveals a special case occurring when <span class="math inline">\(n_1&gt;n_2\)</span>. Under these condition, one may change the incident angle <span class="math inline">\(\theta_1\)</span> such that the outgoing angle becomes <span class="math inline">\(\theta_2=\frac{\pi}{2}\)</span>. For any incident angle <span class="math inline">\(\theta_1\)</span> larger than this critical angle, the is no refracted ray anymore, but just a reflected ray. This is despite the fact that the material with <span class="math inline">\(n_2\)</span> is completely transparent. This phenomenon is called <strong>total internal reflection</strong> and it has several important applications.</p>
-<p>Let’s first formalize this. Using the Snell’s law. For <span class="math inline">\(\theta_2=\frac{\pi}{2}\)</span> we obtain</p>
-<p><span class="math display">\[\theta_1=\theta_c=\sin^{-1}\left (\frac{n_2}{n_1}\right )\]</span></p>
-<p>for the critical angle <span class="math inline">\(\theta_c\)</span>. As the <span class="math inline">\(\sin^{-1}()\)</span> requires an argument <span class="math inline">\(\le1\)</span>, this works only if we have <span class="math inline">\(n_2 &lt; n_1\)</span></p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 100%">
-</colgroup>
-<thead>
-<tr class="header">
-<th><img src="../assets/images/reflection/tir.png" width="50%"> <img src="../assets/images/reflection/tir_disk.png" width="49%"></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Fig.:</strong> Total internal reflection</td>
-</tr>
-</tbody>
-</table>
-<div class="alert alert-info">
-<p><strong>Total Internal Reflection</strong></p>
+<section id="total-internal-reflection" class="level3">
+<h3 class="anchored" data-anchor-id="total-internal-reflection">Total Internal Reflection</h3>
+<p>The above diagram reveals a special case occurring when <span class="math inline">\(n_1 &gt; n_2\)</span>. Under these conditions, we can increase the incident angle <span class="math inline">\(\theta_1\)</span> until the outgoing angle reaches <span class="math inline">\(\theta_2 = \frac{\pi}{2}\)</span>. At this point, the refracted ray would be traveling along the interface between the two media. For any incident angle <span class="math inline">\(\theta_1\)</span> larger than this critical angle, there is no refracted ray at all; instead, we observe only a reflected ray. This phenomenon, known as <strong>total internal reflection</strong>, occurs despite the fact that the material with refractive index <span class="math inline">\(n_2\)</span> is completely transparent.</p>
+<p>Let’s formalize this concept mathematically. Using Snell’s law and setting <span class="math inline">\(\theta_2 = \frac{\pi}{2}\)</span>, we obtain the equation for the critical angle <span class="math inline">\(\theta_c\)</span>:</p>
+<p><span class="math display">\[\theta_1 = \theta_c = \sin^{-1}\left(\frac{n_2}{n_1}\right)\]</span></p>
+<p>Note that the <span class="math inline">\(\sin^{-1}()\)</span> function requires an argument <span class="math inline">\(\le 1\)</span>, which is why this phenomenon only occurs when <span class="math inline">\(n_2 &lt; n_1\)</span>.</p>
+<p>It’s important to understand that during total internal reflection, all of the light energy is reflected back into the first medium, hence the term ‘total’. However, electromagnetic optics reveals an interesting subtlety: an evanescent wave penetrates a short distance into the second medium, though it doesn’t propagate energy across the boundary.</p>
+<p>When the incident angle exceeds the critical angle, Snell’s law as we’ve written it no longer applies. Instead, we observe perfect reflection, where the angle of reflection equals the angle of incidence, just as in regular reflection from a mirror. This reflection occurs without any loss of energy to the second medium, making it an extremely efficient process.</p>
+<p><img src="../assets/images/reflection/tir.png" id="fig-total-internal-reflection" class="img-fluid" style="width:50.0%" alt="Total internal reflection."> <img src="../assets/images/reflection/tir_disk.png" class="img-fluid quarto-figure quarto-figure-center" style="width:49.0%"></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Total Internal Reflection
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Total internal reflection occurs when light is passing from higher refractive index to lower refractive index materials for incidence angle larger than a critical angle</p>
-<p><span class="math display">\[\begin{equation}
+<p><span class="math display">\[
 \theta_c=\sin^{-1}\left (\frac{n_2}{n_1}\right )
-\end{equation}\]</span></p>
+\]</span></p>
+</div>
 </div>
 <p>We can demonstrate total internal reflection very easily with a water basin, for example, where we couple in light from a laser from the side.</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 100%">
-</colgroup>
-<thead>
-<tr class="header">
-<th><img src="../assets/images/reflection/basin_tir.png" width="59%"> <img src="../assets/images/reflection/tir_basin.png" width="40%"></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Fig.:</strong> Total internal reflection at a water/air interface.</td>
-</tr>
-</tbody>
-</table>
+<p><img src="../assets/images/reflection/basin_tir.png" id="fig-water-air-interface" class="img-fluid" style="width:59.0%" alt="Total internal reflection at a water/air interface."> <img src="../assets/images/reflection/tir_basin.png" class="img-fluid quarto-figure quarto-figure-center" style="width:40.0%"></p>
 <p>But you could try that yourself also in the bath tub diving below the water surface.</p>
-<p><strong>Optical Fiber</strong> Total internal reflection is very important for guiding light in telecommunications, for example. There, glass wires with a diameter from a few to several 100 µm are used to transport light. The glass wire with a central core of refractive index <span class="math inline">\(n_1\)</span> is surrounded by a cladding layer of slightly lower refractive index <span class="math inline">\(n_2\)</span>. Light is then coupled into the fiber from one side. To obtain total internal reflection in this setting, the incident rays have to hit the front of the fiber at a maximum angle <span class="math inline">\(\theta_{a}\)</span></p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 100%">
-</colgroup>
-<thead>
-<tr class="header">
-<th><img src="../assets/images/reflection/fiber.png" width="59%"> <img src="../assets/images/reflection/tir_rod.png" width="40%"></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Fig.:</strong> Total internal reflection in an optical fiber and a glass rod.</td>
-</tr>
-</tbody>
-</table>
-<p>The angle <span class="math inline">\(\theta_{a}\)</span> can be easily calculated from Snells law. To characterize this opening angle one typically defines a new quantity called numerical aperature <span class="math inline">\(NA\)</span>, which is the sine of the opening angle <span class="math inline">\(\theta_a\)</span></p>
+<p>Total internal reflection has numerous practical applications:</p>
+<ol type="1">
+<li>Fiber optic communications: Light signals can travel long distances with minimal loss through optical fibers.</li>
+<li>Optical instruments: Prisms in binoculars and telescopes use total internal reflection to manipulate light paths.</li>
+<li>Gemstones: The sparkle of diamonds is enhanced by total internal reflection trapping light within the stone.</li>
+<li>Medical endoscopes: Total internal reflection helps guide light through flexible tubes for internal imaging.</li>
+</ol>
+<p><strong>Optical Fibers and Total Internal Reflection</strong></p>
+<p>Total internal reflection plays a crucial role in modern telecommunications, particularly in optical fibers, which are also part of many experimental setups. These fibers are essentially ultra-thin glass wires, ranging in diameter from a few micrometers to several hundred micrometers, designed to transport light over long distances with minimal loss.</p>
+<p>The structure of an optical fiber is key to its function:</p>
+<ol type="1">
+<li>Core: A central glass core with a refractive index <span class="math inline">\(n_1\)</span></li>
+<li>Cladding: A surrounding layer with a slightly lower refractive index <span class="math inline">\(n_2\)</span></li>
+</ol>
+<p>This difference in refractive indices is what allows total internal reflection to occur within the fiber.</p>
+<p><img src="../assets/images/reflection/fiber.png" id="fig-optical-fiber" class="img-fluid" style="width:59.0%" alt="Total internal reflection in an optical fiber and a glass rod."> <img src="../assets/images/reflection/tir_rod.png" class="img-fluid quarto-figure quarto-figure-center" style="width:40.0%"></p>
+<p>For light to propagate effectively through the fiber, it must enter at an angle that ensures total internal reflection at the core-cladding interface. This leads to the concept of the acceptance angle, <span class="math inline">\(\theta_a\)</span>, which is the maximum angle at which light can enter the fiber and still undergo total internal reflection.</p>
+<p>To characterize this acceptance angle, optical engineers use a parameter called the <strong>Numerical Aperture (NA)</strong>.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Numerical Aperture
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The Numerical Aperture of a fiber is defined as the sine of the maximum acceptance angle:</p>
 <p><span class="math display">\[\begin{equation}
-NA=\sin(\theta_a)=\sqrt{n_1^2-n_2^{2}}
+NA = \sin(\theta_a) = \sqrt{n_1^2 - n_2^2}
 \end{equation}\]</span></p>
-<p>Using typical values of the refractive indices <span class="math inline">\(n_1=1.475\)</span> and <span class="math inline">\(n_2=1.46\)</span> one obtains a numerical apeture of <span class="math inline">\(NA\approx 0.2\)</span>.</p>
+</div>
+</div>
+<p>This equation relates the NA directly to the refractive indices of the core and cladding. The derivation of this formula involves applying Snell’s law at the air-fiber interface and at the core-cladding interface, then using the condition for total internal reflection.</p>
+<p>In practice, typical values for the refractive indices might be <span class="math inline">\(n_1 = 1.475\)</span> for the core and <span class="math inline">\(n_2 = 1.46\)</span> for the cladding. Plugging these into our equation:</p>
+<p><span class="math display">\[\begin{equation}
+NA = \sqrt{1.475^2 - 1.46^2} \approx 0.2
+\end{equation}\]</span></p>
+<p>This means that light entering the fiber within a cone of about 11.5° (arcsin(0.2)) from the fiber’s axis will be transmitted through the fiber via total internal reflection.</p>
+<p>The NA is an important parameter in fiber optic design:</p>
+<ol type="1">
+<li>It determines the light-gathering ability of the fiber.</li>
+<li>It affects the fiber’s bandwidth and its susceptibility to certain types of signal distortion.</li>
+<li>It influences how easily the fiber can be coupled to light sources and other fibers.</li>
+</ol>
+<p>Optical fibers come in various types, each optimized for different applications. Some fibers are designed to transmit light over long distances with minimal loss, while others are engineered for specific wavelengths or to guide light in unusual ways. The figure below shows a few examples of optical fiber types.</p>
+<div id="fig-optical-fiber" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-optical-fiber-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/fibers.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-optical-fiber-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2— Rendering of different optical fibers types (from left to right): Hollow core optical fiber, hollow core bragg fiber, photonic crystal fiber, conventional fiber
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="fermats-principle-for-inhomogeneous-media" class="level3">
+<h3 class="anchored" data-anchor-id="fermats-principle-for-inhomogeneous-media">Fermat’s Principle for Inhomogeneous Media</h3>
+<p>While before we have considered Fermat’s principle for the special case of refraction and light propagation in a homogeneous medium, we can define a more general version of it correponding to the following situation also involving an inhomogeneous refractive index <span class="math inline">\(n(\vec{r})\)</span>.</p>
+<div id="fig-fermat-general" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fermat-general-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../assets/images/reflection/fermat_general.png" class="img-fluid figure-img" style="width:40.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fermat-general-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3— Sketch for a general description of Fermat’s principle
+</figcaption>
+</figure>
+</div>
+<p>For this general scenario of light traveling along a path, we can define an optical path length (OPL) as</p>
+<p><span class="math display">\[\begin{equation}
+\text{OPL} = \int\limits_{A}^{C} n(\mathbf{r}) \mathrm ds=0,
+\end{equation}\]</span></p>
+<p>with a varying refractive index <span class="math inline">\(n(\mathbf{r})\)</span>. Fermat’s Principle states that the actual path taken by the light makes the OPL stationary:</p>
+<p><span class="math display">\[
+\delta \left( \int_A^B n(\mathbf{r}) \, ds \right) = 0
+\]</span></p>
+<p>Using the calculus of variations, this leads to the Euler-Lagrange equation for the path of light. In Cartesian coordinates, if the path is parameterized by <span class="math inline">\(\mathbf{r}(s) = (x(s), y(s), z(s))\)</span>, the Euler-Lagrange equations become:</p>
+<p><span class="math display">\[
+\frac{d}{ds} \left( n \frac{d\mathbf{r}}{ds} \right) = \nabla n
+\]</span></p>
+<p>where <span class="math inline">\(\nabla n\)</span> is the gradient of the refractive index. This equation describes how the light ray bends in response to changes in the refractive index of the medium.</p>
+<p>Fermat’s Principle is a cornerstone of geometrical optics and has applications in designing optical systems, understanding mirages, and analyzing the behavior of light in various media.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Fermat’s Principle and Snells Law
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>We would like to apply Fermat’s principle to derive Snell’s law, which is a more lengthy calculation. To do this, we consider a light ray traveling from point <span class="math inline">\(A\)</span> in medium 1 (with refractive index <span class="math inline">\(n_1\)</span>) to point <span class="math inline">\(C\)</span> in medium 2 (with refractive index <span class="math inline">\(n_2\)</span>), crossing the interface at point <span class="math inline">\(B\)</span>. Let the coordinates of points <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, and <span class="math inline">\(C\)</span> be <span class="math inline">\((x_A, y_A)\)</span>, <span class="math inline">\((x_B, y_B)\)</span>, and <span class="math inline">\((x_C, y_C)\)</span>, respectively. Assume the interface between the two media is at <span class="math inline">\(y = y_B\)</span>. The optical path length (OPL) is given by:</p>
+<p><span class="math display">\[
+\delta \int_{A}^{C} n(\vec{r}) \, ds = 0,
+\]</span></p>
+<p>where <span class="math inline">\(n(\vec{r})\)</span> is the refractive index at position <span class="math inline">\(\vec{r}\)</span>, and <span class="math inline">\(ds\)</span> is an infinitesimal element of the path.</p>
+<p>Consider a light ray traveling from point <span class="math inline">\(A\)</span> in medium 1 (with refractive index <span class="math inline">\(n_1\)</span>) to point <span class="math inline">\(C\)</span> in medium 2 (with refractive index <span class="math inline">\(n_2\)</span>), crossing the interface at point <span class="math inline">\(B\)</span>. Let the coordinates of points <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, and <span class="math inline">\(C\)</span> be <span class="math inline">\((x_A, y_A)\)</span>, <span class="math inline">\((x_B, y_B)\)</span>, and <span class="math inline">\((x_C, y_C)\)</span>, respectively. Assume the interface between the two media is at <span class="math inline">\(y = y_B\)</span>.</p>
+<section id="optical-path-length" class="level4">
+<h4 class="anchored" data-anchor-id="optical-path-length">Optical Path Length</h4>
+<p>The optical path length (OPL) is given by:</p>
+<p><span class="math display">\[
+\text{OPL} = n_1 \int_{A}^{B} ds_1 + n_2 \int_{B}^{C} ds_2,
+\]</span></p>
+<p>where <span class="math inline">\(ds_1\)</span> and <span class="math inline">\(ds_2\)</span> are the infinitesimal path lengths in media 1 and 2, respectively.</p>
+</section>
+<section id="path-lengths" class="level4">
+<h4 class="anchored" data-anchor-id="path-lengths">Path Lengths</h4>
+<p>The path lengths <span class="math inline">\(ds_1\)</span> and <span class="math inline">\(ds_2\)</span> can be expressed in terms of the coordinates:</p>
+<p><span class="math display">\[
+ds_1 = \sqrt{(dx_1)^2 + (dy_1)^2}, \quad ds_2 = \sqrt{(dx_2)^2 + (dy_2)^2}.
+\]</span></p>
+<p>Since the interface is at <span class="math inline">\(y = y_B\)</span>, we have <span class="math inline">\(dy_1 = y_B - y_A\)</span> and <span class="math inline">\(dy_2 = y_C - y_B\)</span>. The total optical path length is:</p>
+<p><span class="math display">\[
+\text{OPL} = n_1 \sqrt{(x_B - x_A)^2 + (y_B - y_A)^2} + n_2 \sqrt{(x_C - x_B)^2 + (y_C - y_B)^2}.
+\]</span></p>
+</section>
+<section id="applying-fermats-principle" class="level4">
+<h4 class="anchored" data-anchor-id="applying-fermats-principle">Applying Fermat’s Principle</h4>
+<p>To find the stationary path, we take the variation of the OPL with respect to <span class="math inline">\(x_B\)</span>:</p>
+<p><span class="math display">\[
+\delta \text{OPL} = \delta \left[ n_1 \sqrt{(x_B - x_A)^2 + (y_B - y_A)^2} + n_2 \sqrt{(x_C - x_B)^2 + (y_C - y_B)^2} \right] = 0.
+\]</span></p>
+<p>Taking the derivative with respect to <span class="math inline">\(x_B\)</span>:</p>
+<p><span class="math display">\[
+\frac{\partial}{\partial x_B} \left[ n_1 \sqrt{(x_B - x_A)^2 + (y_B - y_A)^2} + n_2 \sqrt{(x_C - x_B)^2 + (y_C - y_B)^2} \right] = 0.
+\]</span></p>
+</section>
+<section id="differentiating" class="level4">
+<h4 class="anchored" data-anchor-id="differentiating">Differentiating</h4>
+<p>Differentiating each term separately:</p>
+<p><span class="math display">\[
+n_1 \frac{\partial}{\partial x_B} \sqrt{(x_B - x_A)^2 + (y_B - y_A)^2} + n_2 \frac{\partial}{\partial x_B} \sqrt{(x_C - x_B)^2 + (y_C - y_B)^2} = 0.
+\]</span></p>
+<p>Using the chain rule:</p>
+<p><span class="math display">\[
+n_1 \frac{x_B - x_A}{\sqrt{(x_B - x_A)^2 + (y_B - y_A)^2}} + n_2 \frac{x_B - x_C}{\sqrt{(x_C - x_B)^2 + (y_C - y_B)^2}} = 0.
+\]</span></p>
+</section>
+<section id="simplifying" class="level4">
+<h4 class="anchored" data-anchor-id="simplifying">Simplifying</h4>
+<p>Let <span class="math inline">\(\theta_1\)</span> be the angle of incidence and <span class="math inline">\(\theta_2\)</span> be the angle of refraction. Then:</p>
+<p><span class="math display">\[
+\sin \theta_1 = \frac{x_B - x_A}{\sqrt{(x_B - x_A)^2 + (y_B - y_A)^2}}, \quad \sin \theta_2 = \frac{x_C - x_B}{\sqrt{(x_C - x_B)^2 + (y_C - y_B)^2}}.
+\]</span></p>
+<p>Substituting these into the equation:</p>
+<p><span class="math display">\[
+n_1 \sin \theta_1 + n_2 \sin \theta_2 = 0.
+\]</span></p>
+<p>Since <span class="math inline">\(\sin \theta_2\)</span> is in the opposite direction, we have:</p>
+<p><span class="math display">\[
+n_1 \sin \theta_1 = n_2 \sin \theta_2.
+\]</span></p>
+<p>This is Snell’s law, which describes the relationship between the angles of incidence and refraction when light passes from one medium to another.</p>
+</section>
+<section id="conclusion" class="level4">
+<h4 class="anchored" data-anchor-id="conclusion">Conclusion</h4>
+<p>By applying Fermat’s principle and taking the variation of the optical path length, we have derived Snell’s law:</p>
+<p><span class="math display">\[
+n_1 \sin \theta_1 = n_2 \sin \theta_2.
+\]</span></p>
+<p>This demonstrates how the principle of least time leads to the well-known law of refraction in optics.</p>
+</section>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example: Light in a Graded-Index Medium
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Consider a medium where the refractive index varies with height <span class="math inline">\(y\)</span> as <span class="math inline">\(n(y) = n_0 (1 - \frac{\alpha^2}{2 n_0} y^2)\)</span>. The path of light in such a medium can be found by using Fermat’s principle in differential form:</p>
+<p><span class="math display">\[
+\frac{d}{ds}\left (n(\textbf{r})\frac{d\textbf{r}}{ds}\right)=\nabla n(\textbf{r})
+\]</span></p>
+<p>Typically, this requires to express the coordinates in terms of a parameter, such as <span class="math inline">\(x(s)\)</span> and <span class="math inline">\(y(s)\)</span>, and then solve the differential equation. The solution will give the path of light in the medium. This is difficult and commonly done numerically. In paraxial optics, when the light is propagating roughly in the direction of <span class="math inline">\(z\)</span>, the differential element <span class="math inline">\(ds\)</span> can be approximated as <span class="math inline">\(dz\)</span> since then</p>
+<p><span class="math display">\[
+ds=dz\sqrt{1+\left (\frac{dy}{dz}\right )^2+\left (\frac{dx}{dz}\right)^2}\approx dz
+\]</span></p>
+<p>which yields</p>
+<p><span class="math display">\[
+\frac{d}{dz}\left (n\frac{dx}{dz}\right)\approx \frac{dn}{dx}
+\]</span></p>
+<p>and</p>
+<p><span class="math display">\[
+\frac{d}{dz}\left (n\frac{dy}{dz}\right )\approx \frac{dn}{dy}
+\]</span></p>
+<p>This readily yields the path of light in a homogeneous medium, where <span class="math inline">\(n\)</span> is constant. In this case we have</p>
+<p><span class="math display">\[
+\frac{d^2 x}{dz^2}=\frac{d^2 y}{dz^2}=0
+\]</span></p>
+<p>which is true for a straight line. In a graded-index medium, the path of light can be found by solving the differential equation</p>
+<p><span class="math display">\[
+\frac{d^2 y}{dz^2}=-\alpha^2 y
+\]</span></p>
+<p>which is reminiscent of the equation of motion of a harmonic oscillator. The solution is therefore an oscillating function</p>
+<p><span class="math display">\[
+y(z)=y_0\cos(\alpha z)+\frac{\theta_0}{\alpha}\sin(\alpha z  )
+\]</span></p>
+<p>where the angle <span class="math inline">\(\theta_0\)</span> is the initial angle of the light ray with respect to the <span class="math inline">\(z\)</span> axis. This solution describes the path of light in a graded-index medium.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Fermats’s Principle in Integral and Differential Form
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>We have described Fermat’t principle in an integral form specifiying the optical path length <span class="math inline">\(S\)</span> as</p>
+<p><span class="math display">\[
+OPL=\int n(\textbf{r})ds
+\]</span></p>
+<p>The path length <span class="math inline">\(ds\)</span> can be given in terms of two coordinates <span class="math inline">\(x_1\)</span> and <span class="math inline">\(x_2\)</span> parametrized by <span class="math inline">\(\lambda\)</span> such that</p>
+<p><span class="math display">\[
+ds=\sqrt{\dot{x}_1^{2}+\dot{x}_2^{2}}d\lambda
+\]</span></p>
+<p>where <span class="math inline">\(\dot{x}_1=\frac{dx_{1}}{d\lambda}\)</span>. We can therefore write Fermat’s principle as</p>
+<p><span class="math display">\[
+\delta OPL=\int\left[\left(\frac{\partial n}{\partial x_i} \delta x_i\right) \sqrt{\dot{x}_1^2+\dot{x}_2^2}+n \frac{1}{\sqrt{\dot{x}_1^2+\dot{x}_2^2}} \dot{x}_i \delta \dot{x}_i\right] d \lambda = 0
+\]</span></p>
+<p>To evaluate this integral we would like to integrate by parts. We can write the integrand as <span class="math display">\[
+u = n \frac{1}{\sqrt{\dot{x}_1^2+\dot{x}_2^2}} \dot{x}_i
+\]</span></p>
+<p>and</p>
+<p><span class="math display">\[
+dv = \delta \dot{x}_i d\lambda
+\]</span></p>
+<p>We can now calculate <span class="math inline">\(du\)</span> and <span class="math inline">\(v\)</span> and obtain</p>
+<p><span class="math display">\[
+du = \frac{d}{d\lambda}\left[n \frac{1}{\sqrt{\dot{x}_1^2+\dot{x}_2^2}} \dot{x}_i\right] d\lambda
+\]</span></p>
+<p>and</p>
+<p><span class="math display">\[
+v = \delta x_i
+\]</span></p>
+<p>With these expressions we can now apply the integration by parts formula <span class="math inline">\(\int u dv = uv - \int v du\)</span>, we get:</p>
+<p><span class="math display">\[
+\int n \frac{1}{\sqrt{\dot{x}_1^2+\dot{x}_2^2}} \dot{x}_i \delta \dot{x}_i d\lambda = \left[n \frac{1}{\sqrt{\dot{x}_1^2+\dot{x}_2^2}} \dot{x}_i \delta x_i\right]|_{\lambda_1}^{\lambda_2} - \int \delta x_i \frac{d}{d\lambda}\left[n \frac{1}{\sqrt{\dot{x}_1^2+\dot{x}_2^2}} \dot{x}_i\right] d\lambda
+\]</span></p>
+<p>This can be substituted back into the original equation to obtain</p>
+<p><span class="math display">\[
+\begin{aligned}
+\delta OPL &amp;= \int \left[\left(\frac{\partial n}{\partial x_i} \delta x_i\right) \sqrt{\dot{x}_1^2+\dot{x}_2^2}\right] d\lambda \\
+&amp;+ \left[n \frac{1}{\sqrt{\dot{x}_1^2+\dot{x}_2^2}} \dot{x}_i \delta x_i\right]|_{\lambda_1}^{\lambda_2} \\
+&amp;- \int \delta x_i \frac{d}{d\lambda}\left[n \frac{1}{\sqrt{\dot{x}_1^2+\dot{x}_2^2}} \dot{x}_i\right] d\lambda = 0
+\end{aligned}
+\]</span></p>
+<p>After rearranging the terms we get</p>
+<p><span class="math display">\[
+\begin{aligned}
+\delta OPL &amp;= \int \left\{\frac{\partial n}{\partial x_i} \sqrt{\dot{x}_1^2+\dot{x}_2^2} - \frac{d}{d\lambda}\left[n \frac{1}{\sqrt{\dot{x}_1^2+\dot{x}_2^2}} \dot{x}_i\right]\right\} \delta x_i d\lambda \\
+&amp;+ \left[n \frac{1}{\sqrt{\dot{x}_1^2+\dot{x}_2^2}} \dot{x}_i \delta x_i\right]|_{\lambda_1}^{\lambda_2} = 0
+\end{aligned}
+\]</span></p>
+<p>and therefore finally</p>
+<p><span class="math display">\[
+\delta OPL=\int\left[\left(\frac{\partial n}{\partial x_i}\right) \sqrt{\dot{x}_1{ }^2+\dot{x}_2{ }^2}-\frac{d}{d \lambda}\left(n \frac{1}{\sqrt{\dot{x}_1^2+\dot{x}_2^2}} \dot{x}_i\right)\right] \delta x_i d \lambda+\text { boundary terms }
+\]</span></p>
+<p>for which we choose the parameter <span class="math inline">\(\lambda\)</span> such that the boundary terms vanish.</p>
+<p><span class="math display">\[
+\lambda=s
+\]</span></p>
+<p>such that</p>
+<p><span class="math display">\[
+\sqrt{\dot{x}_1^2+\dot{x}_2^2}=1
+\]</span></p>
+<p>and finally leads to the Euler-Lagrange equation</p>
+<p><span class="math display">\[
+\left(\frac{\partial n}{\partial x_i}\right)-\frac{d}{d s}\left(n \dot{x}_i\right)=0
+\]</span></p>
+<p>which is the differential form of the Fermat’s principle.</p>
+</div>
+</div>
+</div>
 
 
 </section>
@@ -935,7 +1061,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/fcichos\.github\.io\/Exp3_2024\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
@@ -1263,6 +1389,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../geometrical-optics/reflection.html" class="pagination-link" aria-label="Reflection">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Reflection</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../geometrical-optics/Optical Elements I.html" class="pagination-link" aria-label="Optical Elements I - Mirrors">
+        <span class="nav-page-text">Optical Elements I - Mirrors</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 
 

@@ -1,0 +1,191 @@
+---
+title: "Reflection"
+jupyter: python3
+format:
+  html:
+    code-fold: true
+crossref:
+  fig-title: Figure     # (default is "Figure")
+  tbl-title: Tbl     # (default is "Table")
+  title-delim: "—"   # (default is ":")
+  fig-prefix: "Figure"
+  eq-prefix: Eq.
+  chapters: true
+---
+
+::: {.callout-note collapse="true"}
+
+## Historical Context of Reflection Laws
+
+The study of reflection has a rich history dating back to ancient times:
+
+1. **Ancient Greece (300 BCE)**: Euclid, in his work "Catoptrics," was among the first to formally describe the law of reflection. He stated that the angle of incidence equals the angle of reflection.
+
+2. **Ancient Rome (50 CE)**: Hero of Alexandria expanded on Euclid's work, applying the principle that light travels along the path of least distance.
+
+3. **Islamic Golden Age (1000 CE)**: Ibn al-Haytham (Alhazen) made significant contributions to optics in his "Book of Optics." He conducted experiments to verify the law of reflection and explored the properties of spherical and parabolic mirrors.
+
+4. **17th Century**: Fermat's Principle, formulated by Pierre de Fermat, provided a more general framework for understanding reflection (and refraction) based on the principle of least time.
+
+5. **Modern Era**: The understanding of reflection has been further refined with the development of electromagnetic theory by James Clerk Maxwell in the 19th century and quantum optics in the 20th century.
+:::
+
+The law of reflection is probably the most simple one. Yet the simplicity gives us the chance to define some basic objects which we will further use for the description of light rays and their propagation.
+
+
+
+### Law of Reflection {#sec-law-of-reflection}
+
+The sketch below shows the reflection of an incoming light ray (red) on an interface. This incoming light ray has an angle $\theta_{1}$ with the axis (dashed line), which is perpendicular to the reflecting surface. As compared to X-ray diffraction, we measure the angle to the normal of the surface and not to the surface itself.
+
+
+::: {#fig-reflection layout-ncol=2}
+
+![Law of reflection](../assets/images/reflection/reflection.png){#fig-reflection-diagram width="80%"}
+
+![Experimental Demonstration](../assets/images/reflection/reflection_law.png){#fig-reflection-experiment width="80%"}
+
+@fig-reflection-diagram illustrates the law of reflection, while Figure @fig-reflection-experiment shows an experimental demonstration.
+:::
+
+@fig-reflection-diagram shows the reflection of an incoming light ray (red) on an interface. This incoming light ray has an angle $\theta_{1}$ with the axis (dashed line), which is perpendicular to the reflecting surface. As compared to X-ray diffraction, we measure the angle to the normal of the surface and not to the surface itself.
+
+The law of reflection tells us now, that the outgoing reflected ray is now leaving the surface under an angle $\theta_2=\theta_1$. So both angles are the same for the reflection.
+
+
+::: {.callout-tip}
+## Law of Reflection
+
+If a ray is incident to a reflecting surface under an angle $\theta_1$ it will be reflected towards under an angle $\theta_2=\theta_1$ to the same side of the surface.
+:::
+
+
+### Fermat's Principle {#sec-fermat-principle}
+
+The law of reflection can be actually obtained from a variational principle saying the light rays propagate along those path on which the propagation time is an extremum. This variational principle is called Fermat's principle.
+
+![Sketch for deriving the law of reflection from Fermat's principle](../assets/images/reflection/fermat.png){#fig-fermat width="60%"}
+
+Consider now a light ray that should travel from point $A$ to point $C$ via a point $B$ on the mirror surface. In general multiple paths are possible such as the one indicated in the above picture. Clearly this path is not satisfying our reflection law formulated above. Fermat's principle now restricts the path length from $A$ to $C$ to be the one, which takes the least amount of time.
+
+::: {.callout-tip}
+
+
+## Fermat's principle
+
+The path taken by a ray between two given points A, B is the path that can be traversed in the least time.
+
+*More precise alternative:* A ray going in a certain particular path has the property that if we make a small change in the ray in any manner whatever, say in the location at which it comes to the mirror, or the shape of the curve, or anything, there will be no first-order change in the time; there will be only a second-order change in the time.
+:::
+
+So let us consider that contraints to the path length. The total length the light hast to travel via the three points is
+
+$$
+l=l_{1}+l_{2}=\sqrt{(x-x_1)^2+y_1^2}+\sqrt{(x_2-x)^2+y_2^2}
+$$
+
+The time that is required by the light to travel that distance $l$ is then given by
+
+$$
+t=\frac{l}{c},
+$$
+
+where $c$ is the speed of light in the medium above the mirror. If this time should now be a minimum, we have to take the derivative of the time $t$ with respect to the position $x$ on the mirror and set that to zero, i.e.,
+
+$$\frac{\mathrm dt}{\mathrm dx}=0.$${#eq-hello}
+
+This results in @eq-hello
+
+$$
+\frac{x-x_1}{\sqrt{(x-x_1)^2+y_{1}^2}}=\frac{x_2-x}{\sqrt{(x_2-x)^2+y_{2}^2}},
+$$
+
+which is actually
+
+$$
+\frac{x-x_1}{l_1}=\frac{x_2-x}{l_2}
+$$
+
+or
+
+$$
+\sin(\theta_1)=\sin(\theta_2)
+$$
+
+which finally requires
+
+$$
+\theta_1=\theta_2
+$$
+
+and is our law of reflection. Thus, reflection satisfies Fermat's principle, i.e. the light rays propagate along those path on which the propagation time is an extremum.
+
+
+
+::: {.callout-tip collapse="true"}
+## Principle of Least Action (Hamilton's Principle)
+
+The Principle of Least Action, also known as Hamilton's Principle, is a fundamental concept in classical mechanics. It states that the path taken by a physical system between two states is the one for which the action integral is stationary (usually a minimum).
+
+### Action Integral
+
+The action $S$ is defined as the integral of the Lagrangian $L$ over time:
+
+$$
+S = \int_{t_1}^{t_2} L \, dt
+$$
+
+### Lagrangian
+
+The Lagrangian $L$ is a function that summarizes the dynamics of the system. For a system with generalized coordinates $q_i$ and velocities $\dot{q}_i$, the Lagrangian is typically given by:
+
+$$
+L = T - V
+$$
+
+where:
+
+- $T$ is the kinetic energy of the system.
+
+- $V$ is the potential energy of the system.
+
+### Euler-Lagrange Equations
+
+Hamilton's Principle leads to the Euler-Lagrange equations, which are the equations of motion for the system. These equations are derived by requiring that the action $S$ be stationary with respect to variations in the path $q_i(t)$:
+
+$$
+\delta S = 0
+$$
+
+This condition leads to the following differential equations:
+
+$$
+\frac{d}{dt} \left( \frac{\partial L}{\partial \dot{q}_i} \right) - \frac{\partial L}{\partial q_i} = 0
+$$
+
+These are the Euler-Lagrange equations, and they provide a powerful method for deriving the equations of motion for a wide variety of physical systems.
+
+### Example: Simple Harmonic Oscillator
+
+For a simple harmonic oscillator with mass $m$ and spring constant $k$, the Lagrangian is:
+
+$$
+L = \frac{1}{2} m \dot{x}^2 - \frac{1}{2} k x^2
+$$
+
+Applying the Euler-Lagrange equation:
+
+$$
+\frac{d}{dt} \left( \frac{\partial L}{\partial \dot{x}} \right) - \frac{\partial L}{\partial x} = 0
+$$
+
+we get:
+
+$$
+m \ddot{x} + k x = 0
+$$
+
+which is the familiar equation of motion for a simple harmonic oscillator.
+
+Hamilton's Principle and the associated Euler-Lagrange equations are foundational in classical mechanics and have far-reaching implications in other areas of physics, including quantum mechanics and field theory.
+:::

@@ -1,0 +1,475 @@
+---
+title: Optical Elements Part II
+jupyter: python3
+format:
+  html:
+    code-fold: true
+---
+
+
+```{python}
+# | echo: false
+## just for plotting later
+#
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+def wavelength_to_rgb(wavelength, gamma=0.8):
+
+    '''This converts a given wavelength of light to an
+    approximate RGB color value. The wavelength must be given
+    in nanometers in the range from 380 nm through 750 nm
+    (789 THz through 400 THz).
+
+    Based on code by Dan Bruton
+    http://www.physics.sfasu.edu/astro/color/spectra.html
+    '''
+
+    wavelength = float(wavelength)
+    if wavelength >= 380 and wavelength <= 440:
+        attenuation = 0.3 + 0.7 * (wavelength - 380) / (440 - 380)
+        R = ((-(wavelength - 440) / (440 - 380)) * attenuation) ** gamma
+        G = 0.0
+        B = (1.0 * attenuation) ** gamma
+    elif wavelength >= 440 and wavelength <= 490:
+        R = 0.0
+        G = ((wavelength - 440) / (490 - 440)) ** gamma
+        B = 1.0
+    elif wavelength >= 490 and wavelength <= 510:
+        R = 0.0
+        G = 1.0
+        B = (-(wavelength - 510) / (510 - 490)) ** gamma
+    elif wavelength >= 510 and wavelength <= 580:
+        R = ((wavelength - 510) / (580 - 510)) ** gamma
+        G = 1.0
+        B = 0.0
+    elif wavelength >= 580 and wavelength <= 645:
+        R = 1.0
+        G = (-(wavelength - 645) / (645 - 580)) ** gamma
+        B = 0.0
+    elif wavelength >= 645 and wavelength <= 750:
+        attenuation = 0.3 + 0.7 * (750 - wavelength) / (750 - 645)
+        R = (1.0 * attenuation) ** gamma
+        G = 0.0
+        B = 0.0
+    else:
+        R = 0.0
+        G = 0.0
+        B = 0.0
+#    R *= 255
+#    G *= 255
+#    B *= 255
+    return (R, G, B)
+plt.rcParams.update({'font.size': 12,
+                     'axes.titlesize': 18,
+                     'axes.labelsize': 12,
+                     'lines.linewidth': 1,
+                     'lines.markersize': 10,
+                     'xtick.labelsize' : 12,
+                     'ytick.labelsize' : 12,
+                     'xtick.top' : True,
+                     'xtick.direction' : 'in',
+                     'ytick.right' : True,
+                     'ytick.direction' : 'in',})
+```
+
+## Prism
+
+Prisms are wedge-shaped optical elements made of a transparent material, such as glass. A special form of such a prism is an isosceles prism with two sides of equal length. The two equal sides enclose an angle $\gamma$, known as the apex angle of the prism. When light passes through this prism, it undergoes refraction twice.
+
+First, the incident angle $\alpha_1$ is changed into a refracted angle $\beta_1$ as the light enters the prism. This refracted ray then hits the second interface at an angle $\beta_2$, leading to a second refraction as it exits the prism at an angle $\alpha_2$.
+
+Of particular interest is the total deflection of the incident ray, which is measured by the angle $\delta$. This deflection angle represents the difference between the final outgoing angle $\alpha_2$ and the initial incident angle $\alpha_1$.
+
+Understanding how this deflection angle changes based on the prism's properties and the incident angle is crucial in various optical applications. In the following sections, we will explore how to calculate this deflection angle and examine its dependence on different parameters.
+
+![Refraction of rays on a prism.](img/prism.png){#fig-prism width="40%" fig-align="center"}
+
+<!--
+```{=html}
+<div id="prism-viz" align="middle"></div>
+<input type="range" id="angle-slider" min="0" max="90" value="30" step="0.1">
+<p id="angle-display"></p>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+
+<script>
+const width = 400;
+const height = 300;
+const svg = d3.select("#prism-viz")
+  .append("svg")
+  .attr("width", width)
+  .attr("height", height);
+
+const prismPoints = [[200, 100], [300, 250], [100, 250]];
+const n = 1.5; // Refractive index of the prism
+
+function calculateRefraction(incidentAngle) {
+  const actualIncidentAngle = incidentAngle * Math.PI / 180;
+  const refractionAngle = Math.asin(Math.sin(actualIncidentAngle) / n);
+  return refractionAngle;
+}
+
+function lineIntersection(x1, y1, x2, y2, x3, y3, x4, y4) {
+  const denom = (y4 - y3) * (x2 - x1) - (x4 - x3) * (y2 - y1);
+  if (denom == 0) return null;
+  const ua = ((x4 - x3) * (y1 - y3) - (y4 - y3) * (x1 - x3)) / denom;
+  return [x1 + ua * (x2 - x1), y1 + ua * (y2 - y1)];
+}
+
+function updateLight(incidentAngle) {
+  const refractionAngle = calculateRefraction(incidentAngle);
+
+  // Calculate the midpoint of the left side of the prism
+  const midX = (prismPoints[0][0] + prismPoints[2][0]) / 2;
+  const midY = (prismPoints[0][1] + prismPoints[2][1]) / 2;
+
+  // Calculate the normal angle of the left side (pointing outwards)
+  const leftSideAngle = Math.atan2(prismPoints[2][1] - prismPoints[0][1], prismPoints[2][0] - prismPoints[0][0]);
+  const normalAngle = leftSideAngle + Math.PI/2;
+
+  // Calculate the start point of the incident ray
+  const rayLength = 150;
+  const startX = midX + rayLength * Math.cos(normalAngle - incidentAngle * Math.PI / 180);
+  const startY = midY + rayLength * Math.sin(normalAngle - incidentAngle * Math.PI / 180);
+
+  // Calculate the end point of the first refracted ray
+  const refractedEndX = midX + 1000 * Math.cos(leftSideAngle - refractionAngle);
+  const refractedEndY = midY + 1000 * Math.sin(leftSideAngle - refractionAngle);
+
+  // Find intersection with the right side of the prism
+  const intersectionRight = lineIntersection(
+    midX, midY, refractedEndX, refractedEndY,
+    prismPoints[0][0], prismPoints[0][1], prismPoints[1][0], prismPoints[1][1]
+  );
+
+  // Find intersection with the bottom side of the prism
+  const intersectionBottom = lineIntersection(
+    midX, midY, refractedEndX, refractedEndY,
+    prismPoints[1][0], prismPoints[1][1], prismPoints[2][0], prismPoints[2][1]
+  );
+
+  let intersection, exitSideAngle, incidentAngleExit;
+  if (intersectionRight && (!intersectionBottom || intersectionRight[1] < intersectionBottom[1])) {
+    intersection = intersectionRight;
+    exitSideAngle = Math.atan2(prismPoints[1][1] - prismPoints[0][1], prismPoints[1][0] - prismPoints[0][0]);
+    incidentAngleExit = exitSideAngle - leftSideAngle + refractionAngle;
+  } else {
+    intersection = intersectionBottom;
+    exitSideAngle = Math.atan2(prismPoints[2][1] - prismPoints[1][1], prismPoints[2][0] - prismPoints[1][0]);
+    incidentAngleExit = Math.PI/2 - (exitSideAngle - leftSideAngle + refractionAngle);
+  }
+
+  const finalRefractionAngle = Math.asin(n * Math.sin(incidentAngleExit));
+
+  svg.select(".incident-ray")
+    .attr("x1", startX)
+    .attr("y1", startY)
+    .attr("x2", midX)
+    .attr("y2", midY);
+
+  svg.select(".refracted-ray-1")
+    .attr("x1", midX)
+    .attr("y1", midY)
+    .attr("x2", intersection[0])
+    .attr("y2", intersection[1]);
+
+  svg.select(".refracted-ray-2")
+    .attr("x1", intersection[0])
+    .attr("y1", intersection[1])
+    .attr("x2", intersection[0] + 100 * Math.cos(exitSideAngle - finalRefractionAngle))
+    .attr("y2", intersection[1] + 100 * Math.sin(exitSideAngle - finalRefractionAngle));
+
+  d3.select("#angle-display")
+    .text(`α₁: ${incidentAngle.toFixed(1)}°, α₂: ${(-(finalRefractionAngle - (exitSideAngle - leftSideAngle)) * 180 / Math.PI).toFixed(1)}°, n: ${n}`);
+}
+
+svg.append("polygon")
+  .attr("points", prismPoints.map(d => d.join(",")).join(" "))
+  .attr("fill", "rgba(173, 216, 230, 0.5)")
+  .attr("stroke", "black");
+
+svg.append("line")
+  .attr("class", "incident-ray")
+  .attr("stroke", "red");
+
+svg.append("line")
+  .attr("class", "refracted-ray-1")
+  .attr("stroke", "orange");
+
+svg.append("line")
+  .attr("class", "refracted-ray-2")
+  .attr("stroke", "yellow");
+
+updateLight(0);
+
+d3.select("#angle-slider")
+  .on("input", function() {
+    updateLight(+this.value);
+  });
+</script>
+```
+
+-->
+
+### Deflection angle
+
+We can calculate the deflection angle $\delta$ from a number of considerations. First consider the following relations between the angles in the prism and Snell's law
+
+$$\beta_1=\sin^{-1}\left (\frac{n_0}{n_1}\sin(\alpha_1) \right)$$
+$$\beta_2=\gamma-\beta_1$$
+$$\alpha_2=\sin^{-1}\left (\frac{n_1}{n_0}\sin(\beta_2)\right )$$
+$$\theta_2=\alpha_2-\gamma$$
+
+where $\theta_2$ is the angle between the incident surface normal and the outgoing ray. The total deflection angle $\delta$ is then
+
+$$\delta =\alpha_1-\beta_1+\alpha_2-\beta_2$$
+
+or
+
+$$\delta =\alpha_1+\alpha_2-\gamma$$
+
+from which we obtain
+
+$$\delta=\alpha_1+\sin^{-1}\left (\frac{n_1}{n_0}\sin\left [\gamma-\sin^{-1}\left (\frac{n_0}{n_1}\sin(\alpha_1) \right)\right]\right )-\gamma$$
+
+as the deflection angle.
+
+
+
+```{python}
+#| code-fold: true
+#| fig-align: center
+#| fig-cap: "Deflection angle as a function of the incidence angle for different prism angles."
+#| label: fig-refractive-indices
+def deflection(alpha_1,gamma,n0,n1):
+    g=gamma*np.pi/180
+    return(alpha_1+np.arcsin(n1*np.sin(g-np.arcsin(n0*np.sin(alpha_1)/n1))))-g
+
+a_1=np.linspace(0.1,np.pi/2,100)
+plt.figure(figsize=(4,4))
+plt.plot(a_1*180/np.pi,deflection(a_1,45,1,1.5)*180/np.pi,label=r"$\gamma=45$ °")
+plt.plot(a_1*180/np.pi,deflection(a_1,30,1,1.5)*180/np.pi,label=r"$\gamma=30$ °")
+plt.plot(a_1*180/np.pi,deflection(a_1,10,1,1.5)*180/np.pi,label=r"$\gamma=10$ °")
+plt.xlabel(r"incindence angle $\alpha_1$ [°]")
+plt.ylabel(r"deflection angle $\delta$ [°]")
+plt.legend()
+plt.show()
+```
+
+### Minimum deflection angle
+
+If we now would like to know how the deflection angle changes with the incident angle $\alpha_1$, we calculate the derivative of the deflection angle $\delta$ with respect to $\alpha_1$, i.e.,
+
+$$\frac{\mathrm d\delta}{\mathrm d\alpha_1}=1+\frac{\mathrm d\alpha_2}{\mathrm d \alpha_1}.$$
+
+We are here especially interested in the case, where this change in deflection is reaching a minimum, i.e., $\mathrm d\delta/\mathrm d\alpha_1 =0$. This readily yields
+
+$$\mathrm d \alpha_2=-\mathrm d\alpha_1.$$
+
+This means a change in the incidence angle $\mathrm d\alpha_1$ yields an opposite change in the outgoing angle  $-\mathrm d\alpha_2$. We may later observe that in the experiment.
+
+As both, the incident and the outgoing angle are related to each other by Snells's law, we may introduce the derivatives of Snell's law for both interfaces, e.g.,
+
+- $\cos(\alpha_1)\mathrm d\alpha_1=n\cos(\beta_1)\mathrm d\beta_1$
+- $\cos(\alpha_2)\mathrm d\alpha_2=n\cos(\beta_2)\mathrm d\beta_2$
+
+where $n$ is the refractive index of the prism material and the material outside is air ($n_{\rm air}=1$). Replacing $\cos(\alpha)=\sqrt{1-\sin^2(\alpha)}$ and dividing the two previous equations by each other readily yields
+
+$$\frac{1-\sin^2(\alpha_1)}{1-\sin^2(\alpha_2)}=\frac{n^2-\sin^2(\alpha_1)}{n^2-\sin^2(\alpha_2)}.$$
+
+The latter equation is for $n\neq 1$ only satisfied if $\alpha_1=\alpha_2=\alpha$. In this case, the light path through the prism must be symmetric and we may write down the minimum deflection angle $\delta_{\rm min}$:
+
+
+::: {.callout-note}
+## Minimum prism deflection
+
+The minimum deflection angle of an isosceles prism with a prism angle $\gamma$ is given by
+
+$$\delta_{\rm min}=2\alpha-\gamma.$$
+
+
+:::
+
+Given this minimum deflection angle $\delta_{\rm min}$ and the properties of the prism, we may also write down Snell's law using $\sin(\alpha)=n\sin(\beta)$, which results in
+
+$$\sin \left ( \frac{\delta_{\rm min}+\gamma}{2}\right )=n\sin\left (\frac{\gamma}{2}\right).$$
+
+which indicates the dependence of the deflection in the refractive index $n$ of the prism material.
+
+### Dispersion
+
+Very important applications now arise from the fact, that the refractive index is a material property, which depends on the color (frequency or wavelength) of light. We do not yet understand the origin of this dependence. The plots below show the wavelength dependence of three different glasses. You may find much more data on the refractive index of different materials in an [online database](https://refractiveindex.info/).
+
+```{python}
+#| cold-fold: true
+#| fig-align: center
+#| fig-cap: "Refractive index of different glasses as a function of the wavelength."
+#| label: fig-wavelength-dependence
+
+
+bk7=pd.read_csv("data/BK7.csv",delimiter=",")
+sf10=pd.read_csv("data/SF10.csv",delimiter=",")
+fk51a=pd.read_csv("data/FK51A.csv",delimiter=",")
+plt.figure(figsize=(4,4))
+plt.plot(bk7.wl*1000,bk7.n,label="BK7")
+plt.plot(sf10.wl*1000,sf10.n,label="SF10")
+plt.plot(fk51a.wl*1000,fk51a.n,label="FK51A")
+plt.xlim(300,900)
+plt.xlabel("wavelength [nm]")
+plt.ylabel("refractive index n")
+plt.legend()
+plt.show()
+```
+
+```{python}
+#| cold-fold: true
+#| fig-cap: "Deflection angle as a function of the incidence angle for different wavelengths."
+#| label: fig-angle-dependence
+
+bk7=pd.read_csv("data/BK7.csv",delimiter=",")
+a_1=np.linspace(0.15,np.pi/2,100)
+plt.figure(figsize=(7.5,4))
+plt.subplot(1,2,1)
+for wl in np.linspace(0.400,0.700,100):
+    n1=np.interp(wl,bk7.wl,bk7.n)
+    c=wavelength_to_rgb(wl*1000, gamma=0.8)
+    plt.plot(a_1*180/np.pi,deflection(a_1,45,1,n1)*180/np.pi,color=c)
+
+plt.xlabel(r"incindence angle $\alpha_1$ [°]")
+plt.ylabel(r"deflection angle $\delta$ [°]")
+
+
+plt.subplot(1,2,2)
+for wl in np.linspace(0.400,0.700,100):
+    n1=np.interp(wl,bk7.wl,bk7.n)
+    c=wavelength_to_rgb(wl*1000, gamma=0.8)
+    plt.plot(a_1*180/np.pi,deflection(a_1,45,1,n1)*180/np.pi,color=c)
+
+plt.xlabel(r"incindence angle $\alpha_1$ [°]")
+plt.ylabel(r"deflection angle $\delta$ [°]")
+plt.xlim(30,45)
+plt.ylim(25,30)
+plt.tight_layout()
+plt.show()
+```
+
+The plots have a general feature, which is that the refractive index is largest at small wavelength (blue colors), while it drops continuously with increasing wavelength towards the red (800 nm). If you would characterize the dependence by the slope, i.e., $\mathrm dn/\mathrm d\lambda$ then all displayed curves show in the visible range
+
+- $\frac{\mathrm dn}{\mathrm d\lambda}<0$, is called normal dispersion
+
+while
+
+- $\frac{\mathrm dn}{\mathrm d\lambda}>0$, is called anomalous dispersion
+
+This wavelength dependence of the refractive index will yield a dependence of the deflection angle on the color of light as well. The change of the deflection angle with the refractive index can be calculated to be
+
+$$\frac{\mathrm d\delta}{\mathrm d n}=\frac{2\sin(\gamma/2)}{\sqrt{1-n^2\sin^2(\gamma/2)}}$$
+
+together with the relation
+
+$$\frac{\mathrm d \delta}{\mathrm d \lambda}=\frac{\mathrm d\delta}{\mathrm d n}\frac{\mathrm d n}{\mathrm d\lambda}$$
+
+we obtain
+
+$$\frac{\mathrm d\delta}{\mathrm d\lambda}=\frac{2\sin(\gamma/2)}{\sqrt{1-n^2\sin^2(\gamma/2)}}\frac{\mathrm d n}{\mathrm d \lambda}.$$
+
+
+The refraction of white light through a prism splits the different colors composing white light spatially into a colored spectrum. In this process, light with the longest wavelength (red) is deflected the least, while light with the shortest wavelength (violet) is deflected the most. This occurs because the refractive index of the prism material varies with wavelength, a phenomenon known as dispersion.
+
+
+![Spectrum as created by a prism in the lecture.](expimg/spectrum.png){#fig-spectrum width="49%" fig-align="center"}
+
+
+::: {#fig-prism-spectrum layout-ncol=2}
+
+![Spectrum](img/spectrum.jpeg){#fig-spectrum}
+
+![Prism](expimg/prism.png){#fig-prism}
+
+Deflection of different wavelengths of light in a prism with normal dispersion.
+:::
+
+### Prims spectrograph
+This wavelength-dependent refraction is crucial as it forms the basis for spectroscopy, a powerful analytical technique that measures and records the intensity of light as a function of wavelength. Spectroscopy allows scientists to analyze the composition and properties of matter by examining its interaction with light across different wavelengths.
+
+::: {#fig-prism-spectrometer layout-ncol=2}
+
+![Principle of a prism spectrometer](img/prism_spec_principle.jpeg){#fig-spec-principle width="100%"}
+
+![Technical realization of a prism spectrometer](img/prism_spectrometer.jpeg){#fig-spec-realization width="100%"}
+
+Principle and technical realization of a prism spectrometer.
+:::
+
+**DIY prism**
+
+If you don't have a prism at home (which most people don't), you can create a simple substitute using a mirror and a basin of water. Here's how:
+
+1. Place a mirror in a basin of water, partially submerged.
+2. Shine white light from a flashlight onto the mirror.
+3. Observe the reflected and refracted light, paying special attention to the edges.
+
+For better results, you can create a small aperture by making a tiny hole in a piece of black paper and placing it in front of the flashlight.
+
+![Home made water prism.](img/diy_prism.png){#fig-diy-prism width="60%" fig-align="center"}
+
+While the dependence of water's refractive index on wavelength is relatively weak, it's still sufficient to demonstrate the familiar colors of the rainbow. This phenomenon will be referenced later in our discussion.
+
+
+```{python}
+#| cold-fold: true
+# | fig-cap: "Refractive index of water as a function of the wavelength."
+# | label: fig-water-n
+#
+h2o=pd.read_csv("data/H2O.csv",delimiter=",")
+plt.figure(figsize=(6,4))
+plt.plot(h2o.wl*1000,h2o.n,label=r"$H_2O$")
+plt.xlim(300,900)
+plt.ylim(1.3,1.36)
+plt.xlabel("wavelength [nm]")
+plt.ylabel("refractive index n")
+plt.legend()
+plt.show()
+```
+
+::: {.callout-note collapse="true"}
+### Applications of prims
+Prisms are versatile optical components with a wide range of applications across various fields. Here are some common uses of prisms:
+
+#### Binoculars and Telescopes:
+Porro prisms in traditional binoculars and roof prisms in modern designs serve to correct image inversion and provide a compact form. These prisms enable a longer optical path within a shorter physical length, enhancing magnification while maintaining portability. This design is crucial for both binoculars and some telescopes, offering users powerful magnification in a handheld device.
+
+#### Periscopes:
+Right-angle prisms are the key component in periscopes, redirecting light at 90-degree angles. This simple yet effective design allows viewers to see over obstacles or around corners, making periscopes invaluable in submarines and various military applications where direct line of sight is obstructed.
+
+#### Beam Splitting:
+Cube beamsplitters play a vital role in dividing a single beam of light into two separate beams. This capability is essential in various scientific and medical applications, including interferometry, holography, and optical coherence tomography (OCT). The ability to split light beams precisely opens up numerous possibilities in research and diagnostics.
+
+#### Beam Steering:
+Risley prisms, consisting of a pair of rotating wedge prisms, offer precise control over laser beam direction. This technology finds applications in laser scanning, target tracking, and adaptive optics. The ability to steer beams accurately is crucial in fields ranging from military applications to advanced scientific research.
+
+#### Digital Projectors:
+Total Internal Reflection (TIR) prisms are a crucial component in Digital Light Processing (DLP) projectors. They direct light from the lamp to the Digital Micromirror Device (DMD) and then to the projection lens, enabling the high-quality image projection that DLP technology is known for.
+
+#### Camera Systems:
+In Single-Lens Reflex (SLR) cameras, pentaprisms play a critical role in the viewfinder system. They flip the image from the lens to appear upright and correctly oriented in the viewfinder, allowing photographers to accurately compose their shots.
+
+#### Laser Systems:
+Brewster prisms find use in laser systems for polarization and wavelength separation. Additionally, dispersing prisms can be employed for wavelength tuning in certain laser setups, providing precise control over the laser's output characteristics.
+
+#### Fiber Optic Communications:
+In the realm of telecommunications, prisms are utilized in some fiber optic connectors and switches. They help redirect light between fibers, playing a crucial role in maintaining signal integrity and enabling complex network architectures.
+
+#### Solar Energy:
+Fresnel lenses, a specialized type of prism, are employed in concentrated solar power systems. These lenses focus sunlight efficiently, contributing to the development of more effective solar energy collection technologies.
+
+#### Head-Up Displays (HUDs):
+Prisms are an integral part of HUD systems in both automotive and aviation contexts. They project crucial information onto the windshield or a combiner glass, allowing drivers or pilots to access important data without taking their eyes off their primary viewpoint.
+
+#### Microscopy:
+Nomarski prisms enhance the capabilities of differential interference contrast microscopy. They increase contrast in transparent specimens, enabling scientists to observe details that would be difficult or impossible to see with conventional microscopy techniques.
+
+#### Optical Coherence Tomography (OCT):
+In some OCT systems, prisms are employed for sample arm scanning and reference arm delay. This application of prisms contributes to the high-resolution imaging capabilities of OCT, which is particularly valuable in medical diagnostics, especially in ophthalmology.
+:::

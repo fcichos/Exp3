@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Reflection – Experimental Physics Course on Optics</title>
+<title>Reflection – Experimental Physics 3 Course on Optics and Quantum Mechanics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,6 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../geometrical-optics/refraction-total-internal-reflection.html" rel="next">
+<link href="../geometrical-optics/introduction.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -40,11 +42,11 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
+  "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
+  "panel-placement": "end",
+  "type": "overlay",
   "limit": 50,
   "keyboard-shortcut": [
     "f",
@@ -66,6 +68,12 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script async="" src="https://hypothes.is/embed.js"></script>
+<script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    document.body.classList.add('hypothesis-enabled');
+  });
+</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -97,41 +105,52 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="../assets/styles.css">
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Experimental Physics 3 Course on Optics and Quantum Mechanics</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Geometrical Optics</li><li class="breadcrumb-item"><a href="../geometrical-optics/reflection.html">Lecture 1</a></li><li class="breadcrumb-item"><a href="../geometrical-optics/reflection.html">Reflection</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../geometrical-optics/introduction.html">Geometrical Optics</a></li><li class="breadcrumb-item"><a href="../geometrical-optics/reflection.html">Lecture 1</a></li><li class="breadcrumb-item"><a href="../geometrical-optics/reflection.html">Reflection</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="../">Experimental Physics Course on Optics</a> 
-    </div>
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../mona_logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
       </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
@@ -140,24 +159,73 @@ window.Quarto = {
  <span class="menu-text">Home</span></a>
   </div>
 </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Geometrical Optics</span></a>
+ <span class="menu-text">Course Info</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item sidebar-item-section">
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-info/intructors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instructor</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-info/schedule.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Schedule</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-info/resources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ressourcen</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-info/assignments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Assignments</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-info/exam.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exam</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Lecture 1</span></a>
+ <span class="menu-text">Geometrical Optics</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Lecture 1</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../geometrical-optics/reflection.html" class="sidebar-item-text sidebar-link active">
@@ -167,376 +235,71 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../geometrical-optics/refraction-total-internal-reflection.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Refraction &amp; Total Internal Reflection</span></a>
+ <span class="menu-text">Refraction</span></a>
   </div>
 </li>
       </ul>
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
  <span class="menu-text">Lecture 2</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../geometrical-optics/Optical Elements I.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Optical Elements I</span></a>
+ <span class="menu-text">Optical Elements I - Mirrors</span></a>
   </div>
 </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Lecture 3</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../geometrical-optics/Optical Elements II.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Optical Elements II</span></a>
+ <span class="menu-text">Optical Elements II - Prims</span></a>
   </div>
 </li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
- <span class="menu-text">Lecture 3</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../geometrical-optics/Optical Elements III.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Optical Elements III</span></a>
+ <span class="menu-text">Optical Elements III - Lenses</span></a>
   </div>
 </li>
       </ul>
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
- <span class="menu-text">Lecture 4</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../geometrical-optics/Lens Systems and Optical Instruments.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lens Systems Optical Instruments</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../geometrical-optics/optical-instruments.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Optical Instruments</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../geometrical-optics/dispersion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Dispersion</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../geometrical-optics/imaging-errors.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Imaging Errors</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
- <span class="menu-text">Wave Optics</span></a>
+ <span class="menu-text">Lecture 4</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../wave-optics/wave-equation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Wave Equation</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../wave-optics/wave-equation.html#plane-waves" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Plane Waves</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../wave-optics/wave-equation.html#spherical-waves" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Spherical Waves</span></a>
+  <a href="../geometrical-optics/Eye.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optical Instruments- Eye</span></a>
   </div>
 </li>
       </ul>
   </li>
           <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../wave-optics/interference.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Interference</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../wave-optics/interference.html#coherence" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Coherence</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../wave-optics/interference.html#interferometers" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Interferometers</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../wave-optics/huygens-principle.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Huygens Principle</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../wave-optics/huygens-principle.html#diffraction" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Diffraction</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../wave-optics/huygens-principle.html#single-and-double-slit" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Single and Double Slit</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../wave-optics/huygens-principle.html#diffraction-grating" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Diffraction Grating</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../wave-optics/huygens-principle.html#optical-resolution" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Optical Resolution</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
- <span class="menu-text">Electromagnetic Waves</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/electromagnetic-spectrum.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Electromagnetic Spectrum</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/plane-and-spherical-waves.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Plane and Spherical Waves</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/energy-transport-poynting-vector.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Energy Transport &amp; Poynting Vector</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/polarization.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Polarization</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/reflection-and-transmission.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Reflection and Transmission</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/total-internal-reflection.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Total Internal Reflection</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/fresnel-formulas.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Fresnel Formulas</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/hertz-dipole.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Hertz Dipole</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
- <span class="menu-text">Foundations of Quantum Physics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../foundations-of-quantum-physics/particle-properties-of-light.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Particle Properties of Light</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../foundations-of-quantum-physics/particle-properties-of-light.html#photoelectric-effect" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Photoelectric Effect</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../foundations-of-quantum-physics/particle-properties-of-light.html#black-body-radiation" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Black Body Radiation</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../foundations-of-quantum-physics/particle-properties-of-light.html#photon-gas" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Photon Gas</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../foundations-of-quantum-physics/particle-properties-of-light.html#plancks-radiation-law" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Planck’s Radiation Law</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../foundations-of-quantum-physics/structure-of-matter.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Structure of Matter</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../foundations-of-quantum-physics/structure-of-matter.html#thomson-model-of-the-atom" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Thomson Model of the Atom</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../foundations-of-quantum-physics/structure-of-matter.html#rutherford-scattering" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Rutherford Scattering</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../foundations-of-quantum-physics/structure-of-matter.html#rutherford-and-bohr-atom-model" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Rutherford and Bohr Atom Model</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../foundations-of-quantum-physics/matter-waves.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Matter Waves</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../foundations-of-quantum-physics/matter-waves.html#heisenberg-uncertainty-relation" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Heisenberg Uncertainty Relation</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../foundations-of-quantum-physics/matter-waves.html#wave-function" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Wave Function</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../foundations-of-quantum-physics/matter-waves.html#probability-interpretation" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Probability Interpretation</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../foundations-of-quantum-physics/matter-waves.html#schrodinger-equation" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Schrödinger Equation</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../foundations-of-quantum-physics/matter-waves.html#quantum-states" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Quantum States</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../foundations-of-quantum-physics/matter-waves.html#potential-box" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Potential Box</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../foundations-of-quantum-physics/matter-waves.html#harmonic-oscillator" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Harmonic Oscillator</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../foundations-of-quantum-physics/matter-waves.html#tunneling" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Tunneling</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../foundations-of-quantum-physics/matter-waves.html#correspondence-principle" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Correspondence Principle</span></a>
-  </div>
-</li>
-      </ul>
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Lecture 5</span></span>
   </li>
       </ul>
   </li>
@@ -550,18 +313,15 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#reflection" id="toc-reflection" class="nav-link active" data-scroll-target="#reflection"><span class="header-section-number">1.1</span> Reflection</a>
-  <ul class="collapse">
-  <li><a href="#sec-law-of-reflection" id="toc-sec-law-of-reflection" class="nav-link" data-scroll-target="#sec-law-of-reflection"><span class="header-section-number">1.1.1</span> Law of Reflection</a></li>
-  <li><a href="#sec-fermat-principle" id="toc-sec-fermat-principle" class="nav-link" data-scroll-target="#sec-fermat-principle"><span class="header-section-number">1.1.2</span> Fermat’s Principle</a></li>
-  </ul></li>
+  <li><a href="#sec-law-of-reflection" id="toc-sec-law-of-reflection" class="nav-link active" data-scroll-target="#sec-law-of-reflection">Law of Reflection</a></li>
+  <li><a href="#sec-fermat-principle" id="toc-sec-fermat-principle" class="nav-link" data-scroll-target="#sec-fermat-principle">Fermat’s Principle</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Geometrical Optics</li><li class="breadcrumb-item"><a href="../geometrical-optics/reflection.html">Lecture 1</a></li><li class="breadcrumb-item"><a href="../geometrical-optics/reflection.html">Reflection</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../geometrical-optics/introduction.html">Geometrical Optics</a></li><li class="breadcrumb-item"><a href="../geometrical-optics/reflection.html">Lecture 1</a></li><li class="breadcrumb-item"><a href="../geometrical-optics/reflection.html">Reflection</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Reflection</h1>
 </div>
@@ -580,8 +340,6 @@ window.Quarto = {
 </header>
 
 
-<section id="reflection" class="level2" data-number-offset="2" data-number="1.1">
-<h2 data-number-offset="2" data-number="1.1" class="anchored" data-anchor-id="reflection"><span class="header-section-number">1.1</span> Reflection</h2>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -606,39 +364,45 @@ Historical Context of Reflection Laws
 </div>
 </div>
 <p>The law of reflection is probably the most simple one. Yet the simplicity gives us the chance to define some basic objects which we will further use for the description of light rays and their propagation.</p>
-<section id="sec-law-of-reflection" class="level3" data-number="1.1.1">
-<h3 data-number="1.1.1" class="anchored" data-anchor-id="sec-law-of-reflection"><span class="header-section-number">1.1.1</span> Law of Reflection</h3>
+<section id="sec-law-of-reflection" class="level3">
+<h3 class="anchored" data-anchor-id="sec-law-of-reflection">Law of Reflection</h3>
 <p>The sketch below shows the reflection of an incoming light ray (red) on an interface. This incoming light ray has an angle <span class="math inline">\(\theta_{1}\)</span> with the axis (dashed line), which is perpendicular to the reflecting surface. As compared to X-ray diffraction, we measure the angle to the normal of the surface and not to the surface itself.</p>
-<hr>
-<div class="grid">
-<div class="g-col-6">
+<div id="fig-reflection" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-reflection-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-reflection" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div id="fig-reflection-diagram" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
+<figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-reflection-diagram-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../assets/images/reflection/reflection.png" class="img-fluid figure-img" style="width:100.0%">
+<img src="../assets/images/reflection/reflection.png" class="img-fluid figure-img" style="width:80.0%" data-ref-parent="fig-reflection">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-reflection-diagram-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.1— Law of reflection
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-reflection-diagram-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Law of reflection
 </figcaption>
 </figure>
 </div>
 </div>
-<div class="g-col-6">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-reflection" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div id="fig-reflection-experiment" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
+<figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-reflection-experiment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../assets/images/reflection/reflection_law.png" class="img-fluid figure-img" style="width:100.0%">
+<img src="../assets/images/reflection/reflection_law.png" class="img-fluid figure-img" style="width:80.0%" data-ref-parent="fig-reflection">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-reflection-experiment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.2— Experimental Demonstration
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-reflection-experiment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Experimental Demonstration
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<hr>
-<p>Figure <a href="#fig-reflection-diagram" class="quarto-xref">1.1</a> illustrates the law of reflection, while Figure <a href="#fig-reflection-experiment" class="quarto-xref">1.2</a> shows an experimental demonstration.</p>
-<p>Figure <span class="citation" data-cites="fig:reflection-diagram">@fig:reflection-diagram</span> shows the reflection of an incoming light ray (red) on an interface. This incoming light ray has an angle <span class="math inline">\(\theta_{1}\)</span> with the axis (dashed line), which is perpendicular to the reflecting surface. As compared to X-ray diffraction, we measure the angle to the normal of the surface and not to the surface itself.</p>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-reflection-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1— <a href="#fig-reflection-diagram" class="quarto-xref">Figure&nbsp;1 (a)</a> illustrates the law of reflection, while Figure <a href="#fig-reflection-experiment" class="quarto-xref">Figure&nbsp;1 (b)</a> shows an experimental demonstration.
+</figcaption>
+</figure>
+</div>
+<p><a href="#fig-reflection-diagram" class="quarto-xref">Figure&nbsp;1 (a)</a> shows the reflection of an incoming light ray (red) on an interface. This incoming light ray has an angle <span class="math inline">\(\theta_{1}\)</span> with the axis (dashed line), which is perpendicular to the reflecting surface. As compared to X-ray diffraction, we measure the angle to the normal of the surface and not to the surface itself.</p>
 <p>The law of reflection tells us now, that the outgoing reflected ray is now leaving the surface under an angle <span class="math inline">\(\theta_2=\theta_1\)</span>. So both angles are the same for the reflection.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -654,8 +418,8 @@ Law of Reflection
 </div>
 </div>
 </section>
-<section id="sec-fermat-principle" class="level3" data-number="1.1.2">
-<h3 data-number="1.1.2" class="anchored" data-anchor-id="sec-fermat-principle"><span class="header-section-number">1.1.2</span> Fermat’s Principle</h3>
+<section id="sec-fermat-principle" class="level3">
+<h3 class="anchored" data-anchor-id="sec-fermat-principle">Fermat’s Principle</h3>
 <p>The law of reflection can be actually obtained from a variational principle saying the light rays propagate along those path on which the propagation time is an extremum. This variational principle is called Fermat’s principle.</p>
 <div id="fig-fermat" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -663,7 +427,7 @@ Law of Reflection
 <img src="../assets/images/reflection/fermat.png" class="img-fluid figure-img" style="width:60.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fermat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.3— Sketch for deriving the law of reflection from Fermat’s principle
+Figure&nbsp;2— Sketch for deriving the law of reflection from Fermat’s principle
 </figcaption>
 </figure>
 </div>
@@ -683,50 +447,98 @@ Fermat’s principle
 </div>
 </div>
 <p>So let us consider that contraints to the path length. The total length the light hast to travel via the three points is</p>
-<p><span class="math display">\[\begin{equation}
+<p><span class="math display">\[
 l=l_{1}+l_{2}=\sqrt{(x-x_1)^2+y_1^2}+\sqrt{(x_2-x)^2+y_2^2}
-\end{equation}\]</span></p>
+\]</span></p>
 <p>The time that is required by the light to travel that distance <span class="math inline">\(l\)</span> is then given by</p>
-<p><span class="math display">\[\begin{equation}
+<p><span class="math display">\[
 t=\frac{l}{c},
-\end{equation}\]</span></p>
+\]</span></p>
 <p>where <span class="math inline">\(c\)</span> is the speed of light in the medium above the mirror. If this time should now be a minimum, we have to take the derivative of the time <span class="math inline">\(t\)</span> with respect to the position <span class="math inline">\(x\)</span> on the mirror and set that to zero, i.e.,</p>
-<p><span id="eq-hello"><span class="math display">\[\frac{\mathrm dt}{\mathrm dx}=0. \tag{1.1}\]</span></span></p>
-<p>This results in <a href="#eq-hello" class="quarto-xref">Eq.&nbsp;1.1</a> <span class="math display">\[\begin{equation}
+<p><span id="eq-hello"><span class="math display">\[\frac{\mathrm dt}{\mathrm dx}=0. \tag{1}\]</span></span></p>
+<p>This results in <a href="#eq-hello" class="quarto-xref">Eq.&nbsp;1</a></p>
+<p><span class="math display">\[
 \frac{x-x_1}{\sqrt{(x-x_1)^2+y_{1}^2}}=\frac{x_2-x}{\sqrt{(x_2-x)^2+y_{2}^2}},
-\end{equation}\]</span></p>
+\]</span></p>
 <p>which is actually</p>
-<p><span class="math display">\[\begin{equation}
+<p><span class="math display">\[
 \frac{x-x_1}{l_1}=\frac{x_2-x}{l_2}
-\end{equation}\]</span></p>
+\]</span></p>
 <p>or</p>
-<p><span class="math display">\[\begin{equation}
+<p><span class="math display">\[
 \sin(\theta_1)=\sin(\theta_2)
-\end{equation}\]</span></p>
+\]</span></p>
 <p>which finally requires</p>
-<p><span class="math display">\[\theta_1=\theta_2\]</span></p>
-<p>and is our law of reflection. Thus, refraction (of course) satisfies Fermat’s principle.</p>
-<p>While this has been a special example of how to apply Fermat’s principle we can define a more general version of it correponding to the following situation also involving an inhomogeneous refractive index <span class="math inline">\(n(\vec{r})\)</span>.</p>
-<hr>
-<div id="fig-fermat-general" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-fermat-general-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../assets/images/reflection/fermat_general.png" class="img-fluid figure-img" style="width:40.0%">
+<p><span class="math display">\[
+\theta_1=\theta_2
+\]</span></p>
+<p>and is our law of reflection. Thus, reflection satisfies Fermat’s principle, i.e.&nbsp;the light rays propagate along those path on which the propagation time is an extremum.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fermat-general-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.4— Sketch for a general description of Fermat’s principle
-</figcaption>
-</figure>
+<div class="callout-title-container flex-fill">
+Principle of Least Action (Hamilton’s Principle)
 </div>
-<hr>
-<p>For this general scenario of light traveling along a path, Fermat’s principle is given by</p>
-<p><span class="math display">\[\begin{equation}
-\delta \int\limits_{A}^{C} n(\vec{r}) \mathrm ds=0,
-\end{equation}\]</span></p>
-<p>where the <span class="math inline">\(\delta\)</span> denotes a variation of the path indicated.</p>
-
-
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The Principle of Least Action, also known as Hamilton’s Principle, is a fundamental concept in classical mechanics. It states that the path taken by a physical system between two states is the one for which the action integral is stationary (usually a minimum).</p>
+<section id="action-integral" class="level3">
+<h3 class="anchored" data-anchor-id="action-integral">Action Integral</h3>
+<p>The action <span class="math inline">\(S\)</span> is defined as the integral of the Lagrangian <span class="math inline">\(L\)</span> over time:</p>
+<p><span class="math display">\[
+S = \int_{t_1}^{t_2} L \, dt
+\]</span></p>
 </section>
+<section id="lagrangian" class="level3">
+<h3 class="anchored" data-anchor-id="lagrangian">Lagrangian</h3>
+<p>The Lagrangian <span class="math inline">\(L\)</span> is a function that summarizes the dynamics of the system. For a system with generalized coordinates <span class="math inline">\(q_i\)</span> and velocities <span class="math inline">\(\dot{q}_i\)</span>, the Lagrangian is typically given by:</p>
+<p><span class="math display">\[
+L = T - V
+\]</span></p>
+<p>where:</p>
+<ul>
+<li><p><span class="math inline">\(T\)</span> is the kinetic energy of the system.</p></li>
+<li><p><span class="math inline">\(V\)</span> is the potential energy of the system.</p></li>
+</ul>
+</section>
+<section id="euler-lagrange-equations" class="level3">
+<h3 class="anchored" data-anchor-id="euler-lagrange-equations">Euler-Lagrange Equations</h3>
+<p>Hamilton’s Principle leads to the Euler-Lagrange equations, which are the equations of motion for the system. These equations are derived by requiring that the action <span class="math inline">\(S\)</span> be stationary with respect to variations in the path <span class="math inline">\(q_i(t)\)</span>:</p>
+<p><span class="math display">\[
+\delta S = 0
+\]</span></p>
+<p>This condition leads to the following differential equations:</p>
+<p><span class="math display">\[
+\frac{d}{dt} \left( \frac{\partial L}{\partial \dot{q}_i} \right) - \frac{\partial L}{\partial q_i} = 0
+\]</span></p>
+<p>These are the Euler-Lagrange equations, and they provide a powerful method for deriving the equations of motion for a wide variety of physical systems.</p>
+</section>
+<section id="example-simple-harmonic-oscillator" class="level3">
+<h3 class="anchored" data-anchor-id="example-simple-harmonic-oscillator">Example: Simple Harmonic Oscillator</h3>
+<p>For a simple harmonic oscillator with mass <span class="math inline">\(m\)</span> and spring constant <span class="math inline">\(k\)</span>, the Lagrangian is:</p>
+<p><span class="math display">\[
+L = \frac{1}{2} m \dot{x}^2 - \frac{1}{2} k x^2
+\]</span></p>
+<p>Applying the Euler-Lagrange equation:</p>
+<p><span class="math display">\[
+\frac{d}{dt} \left( \frac{\partial L}{\partial \dot{x}} \right) - \frac{\partial L}{\partial x} = 0
+\]</span></p>
+<p>we get:</p>
+<p><span class="math display">\[
+m \ddot{x} + k x = 0
+\]</span></p>
+<p>which is the familiar equation of motion for a simple harmonic oscillator.</p>
+<p>Hamilton’s Principle and the associated Euler-Lagrange equations are foundational in classical mechanics and have far-reaching implications in other areas of physics, including quantum mechanics and field theory.</p>
+</section>
+</div>
+</div>
+</div>
+
+
 </section>
 
 </main> <!-- /main -->
@@ -822,7 +634,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/fcichos\.github\.io\/Exp3_2024\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
@@ -1150,6 +962,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../geometrical-optics/introduction.html" class="pagination-link" aria-label="Introduction">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Introduction</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../geometrical-optics/refraction-total-internal-reflection.html" class="pagination-link" aria-label="Refraction">
+        <span class="nav-page-text">Refraction</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 
 

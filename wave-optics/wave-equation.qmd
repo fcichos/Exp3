@@ -1,0 +1,19 @@
+---
+title: "Wave Equation"
+---
+
+# Wave Equation
+
+The general form of the wave equation is:
+
+$$
+\nabla^2 \Psi - \frac{1}{v^2} \frac{\partial^2 \Psi}{\partial t^2} = 0
+$$
+
+## Plane Waves {#plane-waves}
+
+Plane waves are solutions to the wave equation where the wavefronts are infinite planes.
+
+## Spherical Waves {#spherical-waves}
+
+Spherical waves emanate from a point source and have wavefronts that are spheres.

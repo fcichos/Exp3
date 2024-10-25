@@ -1,0 +1,15 @@
+---
+title: "Experimental Physics 3"
+---
+![](./assets/images/main/CompSoft_banner.png)
+
+# Welcome to the Experimental Physics 3 Course!
+
+In this Experimental Physics 3 course, we will explore fundamental experiments and mathematical descriptions related to light propagation, electromagnetic waves, and their material counterpart, matter waves. Specifically, we will focus on:
+
+- Geometrical Optics
+- Wave Optics
+- Electromagnetic Waves
+- Matter Waves and Quantum Mechanics
+
+The fields of optics and quantum mechanics are currently vibrant areas of research, with rapidly evolving optical technologies, high-resolution microscopy, and quantum information science. All of these advancements build upon the foundations that we will address in this course.

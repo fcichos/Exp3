@@ -1,0 +1,73 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  search: true
+  title: "Experimental Physics 3 Course on Optics and Quantum Mechanics"
+  page-navigation: true
+  navbar:
+    background: primary
+    search: true
+    right:
+      - icon: github
+  sidebar:
+    style: "floating" # Options: "floating", "sticky"
+    logo: mona_logo.png
+    collapse-level: 3
+    contents:
+      - text: Home
+        href: index.qmd
+      - text: "---" # This creates a divider
+      - section: "Course Info"
+        contents:
+          - text: Instructor
+            href: course-info/intructors.qmd
+          - text: Schedule
+            href: course-info/schedule.qmd
+          - text: Ressourcen
+            href: course-info/resources.qmd
+          - text: Assignments
+            href: course-info/assignments.qmd
+          - text: Exam
+            href: course-info/exam.qmd
+      - text: "---" # This creates a divider
+      - section: Geometrical Optics
+        contents:
+          - text: Introduction
+            href: geometrical-optics/introduction.qmd
+          - section: "Lecture 1"
+            contents:
+              - text: Reflection
+                href: geometrical-optics/reflection.qmd
+              - text: Refraction
+                href: geometrical-optics/refraction-total-internal-reflection.qmd
+          - section: "Lecture 2"
+            contents:
+              - text: Optical Elements I - Mirrors
+                href: geometrical-optics/Optical Elements I.qmd
+          - section: "Lecture 3"
+            contents:
+              - text: Optical Elements II - Prims
+                href: geometrical-optics/Optical Elements II.qmd
+              - text: Optical Elements III - Lenses
+                href: geometrical-optics/Optical Elements III.qmd
+          - section: "Lecture 4"
+            contents:
+              - text: Optical Instruments- Eye
+                href: geometrical-optics/Eye.qmd
+          - section: "Lecture 5"
+          #  contents:
+          #    - text: Optical Instruments- Magnifying Glass
+          #      href: geometrical-optics/Magnifying Glass.qmd
+          #    - text: Optical Instruments- Microscope
+          #      href: geometrical-optics/Microscope.qmd
+format:
+  html:
+    theme: cosmo
+    css: assets/styles.css
+    toc: true
+    toc-depth: 3
+
+comments:
+  hypothesis: true

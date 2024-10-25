@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Optical Elements Part III – Experimental Physics Course on Optics</title>
+<title>Optical Elements Part III – Experimental Physics 3 Course on Optics and Quantum Mechanics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,6 +64,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../geometrical-optics/Eye.html" rel="next">
+<link href="../geometrical-optics/Optical Elements II.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -40,11 +76,11 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
+  "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
+  "panel-placement": "end",
+  "type": "overlay",
   "limit": 50,
   "keyboard-shortcut": [
     "f",
@@ -66,6 +102,12 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script async="" src="https://hypothes.is/embed.js"></script>
+<script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    document.body.classList.add('hypothesis-enabled');
+  });
+</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -97,41 +139,52 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="../assets/styles.css">
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Experimental Physics 3 Course on Optics and Quantum Mechanics</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Geometrical Optics</li><li class="breadcrumb-item"><a href="../geometrical-optics/Optical Elements III.html">Lecture 3</a></li><li class="breadcrumb-item"><a href="../geometrical-optics/Optical Elements III.html">Optical Elements III</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../geometrical-optics/introduction.html">Geometrical Optics</a></li><li class="breadcrumb-item"><a href="../geometrical-optics/Optical Elements II.html">Lecture 3</a></li><li class="breadcrumb-item"><a href="../geometrical-optics/Optical Elements III.html">Optical Elements III - Lenses</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="../">Experimental Physics Course on Optics</a> 
-    </div>
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../mona_logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
       </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
@@ -140,24 +193,73 @@ window.Quarto = {
  <span class="menu-text">Home</span></a>
   </div>
 </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Geometrical Optics</span></a>
+ <span class="menu-text">Course Info</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item sidebar-item-section">
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-info/intructors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instructor</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-info/schedule.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Schedule</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-info/resources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ressourcen</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-info/assignments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Assignments</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-info/exam.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exam</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
- <span class="menu-text">Lecture 1</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Geometrical Optics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Lecture 1</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../geometrical-optics/reflection.html" class="sidebar-item-text sidebar-link">
@@ -167,30 +269,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../geometrical-optics/refraction-total-internal-reflection.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Refraction &amp; Total Internal Reflection</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
- <span class="menu-text">Lecture 2</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../geometrical-optics/Optical Elements I.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Optical Elements I</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../geometrical-optics/Optical Elements II.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Optical Elements II</span></a>
+ <span class="menu-text">Refraction</span></a>
   </div>
 </li>
       </ul>
@@ -198,7 +277,7 @@ window.Quarto = {
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
- <span class="menu-text">Lecture 3</span></a>
+ <span class="menu-text">Lecture 2</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -206,337 +285,55 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../geometrical-optics/Optical Elements III.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Optical Elements III</span></a>
+  <a href="../geometrical-optics/Optical Elements I.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optical Elements I - Mirrors</span></a>
   </div>
 </li>
       </ul>
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
- <span class="menu-text">Lecture 4</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Lecture 3</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../geometrical-optics/Lens Systems and Optical Instruments.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lens Systems Optical Instruments</span></a>
+  <a href="../geometrical-optics/Optical Elements II.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optical Elements II - Prims</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../geometrical-optics/optical-instruments.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Optical Instruments</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../geometrical-optics/dispersion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Dispersion</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../geometrical-optics/imaging-errors.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Imaging Errors</span></a>
+  <a href="../geometrical-optics/Optical Elements III.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Optical Elements III - Lenses</span></a>
   </div>
 </li>
       </ul>
   </li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
+          <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
- <span class="menu-text">Wave Optics</span></a>
+ <span class="menu-text">Lecture 4</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../wave-optics/wave-equation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Wave Equation</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../wave-optics/wave-equation.html#plane-waves" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Plane Waves</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../wave-optics/wave-equation.html#spherical-waves" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Spherical Waves</span></a>
+  <a href="../geometrical-optics/Eye.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optical Instruments- Eye</span></a>
   </div>
 </li>
       </ul>
   </li>
           <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../wave-optics/interference.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Interference</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../wave-optics/interference.html#coherence" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Coherence</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../wave-optics/interference.html#interferometers" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Interferometers</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../wave-optics/huygens-principle.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Huygens Principle</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../wave-optics/huygens-principle.html#diffraction" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Diffraction</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../wave-optics/huygens-principle.html#single-and-double-slit" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Single and Double Slit</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../wave-optics/huygens-principle.html#diffraction-grating" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Diffraction Grating</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../wave-optics/huygens-principle.html#optical-resolution" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Optical Resolution</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
- <span class="menu-text">Electromagnetic Waves</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/electromagnetic-spectrum.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Electromagnetic Spectrum</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/plane-and-spherical-waves.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Plane and Spherical Waves</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/energy-transport-poynting-vector.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Energy Transport &amp; Poynting Vector</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/polarization.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Polarization</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/reflection-and-transmission.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Reflection and Transmission</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/total-internal-reflection.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Total Internal Reflection</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/fresnel-formulas.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Fresnel Formulas</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/hertz-dipole.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Hertz Dipole</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
- <span class="menu-text">Foundations of Quantum Physics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../foundations-of-quantum-physics/particle-properties-of-light.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Particle Properties of Light</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../foundations-of-quantum-physics/particle-properties-of-light.html#photoelectric-effect" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Photoelectric Effect</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../foundations-of-quantum-physics/particle-properties-of-light.html#black-body-radiation" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Black Body Radiation</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../foundations-of-quantum-physics/particle-properties-of-light.html#photon-gas" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Photon Gas</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../foundations-of-quantum-physics/particle-properties-of-light.html#plancks-radiation-law" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Planck’s Radiation Law</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../foundations-of-quantum-physics/structure-of-matter.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Structure of Matter</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../foundations-of-quantum-physics/structure-of-matter.html#thomson-model-of-the-atom" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Thomson Model of the Atom</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../foundations-of-quantum-physics/structure-of-matter.html#rutherford-scattering" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Rutherford Scattering</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../foundations-of-quantum-physics/structure-of-matter.html#rutherford-and-bohr-atom-model" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Rutherford and Bohr Atom Model</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../foundations-of-quantum-physics/matter-waves.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Matter Waves</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../foundations-of-quantum-physics/matter-waves.html#heisenberg-uncertainty-relation" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Heisenberg Uncertainty Relation</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../foundations-of-quantum-physics/matter-waves.html#wave-function" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Wave Function</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../foundations-of-quantum-physics/matter-waves.html#probability-interpretation" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Probability Interpretation</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../foundations-of-quantum-physics/matter-waves.html#schrodinger-equation" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Schrödinger Equation</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../foundations-of-quantum-physics/matter-waves.html#quantum-states" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Quantum States</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../foundations-of-quantum-physics/matter-waves.html#potential-box" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Potential Box</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../foundations-of-quantum-physics/matter-waves.html#harmonic-oscillator" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Harmonic Oscillator</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../foundations-of-quantum-physics/matter-waves.html#tunneling" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Tunneling</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../foundations-of-quantum-physics/matter-waves.html#correspondence-principle" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Correspondence Principle</span></a>
-  </div>
-</li>
-      </ul>
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Lecture 5</span></span>
   </li>
       </ul>
   </li>
@@ -551,6 +348,7 @@ window.Quarto = {
    
   <ul>
   <li><a href="#lenses" id="toc-lenses" class="nav-link active" data-scroll-target="#lenses">Lenses</a></li>
+  <li><a href="#thin-lens" id="toc-thin-lens" class="nav-link" data-scroll-target="#thin-lens">Thin lens</a></li>
   <li><a href="#thick-lens" id="toc-thick-lens" class="nav-link" data-scroll-target="#thick-lens">Thick lens</a></li>
   <li><a href="#lens-types" id="toc-lens-types" class="nav-link" data-scroll-target="#lens-types">Lens types</a></li>
   </ul>
@@ -559,7 +357,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Geometrical Optics</li><li class="breadcrumb-item"><a href="../geometrical-optics/Optical Elements III.html">Lecture 3</a></li><li class="breadcrumb-item"><a href="../geometrical-optics/Optical Elements III.html">Optical Elements III</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../geometrical-optics/introduction.html">Geometrical Optics</a></li><li class="breadcrumb-item"><a href="../geometrical-optics/Optical Elements II.html">Lecture 3</a></li><li class="breadcrumb-item"><a href="../geometrical-optics/Optical Elements III.html">Optical Elements III - Lenses</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Optical Elements Part III</h1>
 </div>
@@ -599,13 +397,84 @@ Figure&nbsp;1: Refraction at a curved surface.
 <p>We define key relationships:</p>
 <p><span class="math display">\[\sin(\alpha)=\frac{y}{R}, \quad \tan(\theta_1)=\frac{y}{a}, \quad \tan(\theta_2)=\frac{y}{b}\]</span></p>
 <p>To simplify this, we employ the <strong>paraxial approximation</strong>, which assumes all angles are small. This allows us to use first-order approximations of trigonometric functions, effectively linearizing them:</p>
-<p><span class="math display">\[\sin(\theta) \approx \theta, \quad \tan(\theta) \approx \theta,\quad \cos(\theta)\approx 1\]</span></p>
+<p><span class="math display">\[\sin(\theta) \approx \theta+ O(\theta^{3}), \quad \tan(\theta) \approx \theta + O(\theta^{3}),\quad \cos(\theta)\approx 1 + O(\theta^{2})\]</span></p>
 <p>This approach, common in optics, significantly simplifies our calculations while maintaining accuracy for most practical scenarios involving lenses.</p>
 <p>With the help of these approximations we can write Snell’s law for the curved surface as</p>
 <p><span class="math display">\[n_1(\alpha+\theta_1)=n_2(\alpha-\theta_2).\]</span></p>
 <p>With some slight transformation which you will find in the video of the online lecture we obtain, therefore,</p>
 <p><span class="math display">\[\theta_2=\frac{n_2-n_1}{n_2 R}y -\frac{n_1}{n_2}\theta_1,\]</span></p>
 <p>which is a purely linear equation in <span class="math inline">\(y\)</span> and <span class="math inline">\(\theta_1\)</span>.</p>
+<div id="paraxial-approximation" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Paraxial Approximation
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The paraxial approximation is a fundamental simplification in optics that assumes all angles are small. This allows us to use linear approximations for trigonometric functions, significantly simplifying calculations while maintaining accuracy for most practical scenarios involving lenses.</p>
+<p>To visualize the validity of this approximation, let’s examine two plots:</p>
+<ol type="1">
+<li>The first plot compares sin(θ) (blue line) with its linear approximation θ (red dashed line) for angles ranging from 0 to π/2 radians.</li>
+<li>The second plot shows the absolute error between sin(θ) and θ.</li>
+</ol>
+<p>These plots demonstrate that:</p>
+<ol type="1">
+<li>For small angles (roughly up to 0.5 radians or about 30 degrees), the approximation is very close to the actual sine function.</li>
+<li>The error increases rapidly for larger angles, indicating the limitations of the paraxial approximation.</li>
+</ol>
+<p>In most optical systems, especially those involving lenses, the angles of incident and refracted rays are typically small enough for this approximation to be valid. However, it’s important to be aware of its limitations when dealing with wide-angle optical systems or scenarios where precision is critical.</p>
+<div id="b2cdb1cd" class="cell" data-execution_count="2">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the range of angles (in radians)</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>theta <span class="op">=</span> np.linspace(<span class="dv">0</span>, np.pi<span class="op">/</span><span class="dv">2</span>, <span class="dv">1000</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate sin(theta) and theta (linear approximation)</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>sin_theta <span class="op">=</span> np.sin(theta)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>linear_approx <span class="op">=</span> theta</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the absolute error</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>error <span class="op">=</span> np.<span class="bu">abs</span>(sin_theta <span class="op">-</span> linear_approx)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the plot with two subplots side by side</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>fig, (ax1, ax2) <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="fl">7.5</span>, <span class="dv">4</span>))</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot sin(theta) and theta on the first subplot</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>ax1.plot(theta, sin_theta, label<span class="op">=</span><span class="st">'sin(θ)'</span>, color<span class="op">=</span><span class="st">'blue'</span>)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>ax1.plot(theta, linear_approx, label<span class="op">=</span><span class="st">'θ'</span>, color<span class="op">=</span><span class="st">'red'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>ax1.set_xlabel(<span class="vs">r'$\theta$ [rad]'</span>)</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>ax1.set_ylabel(<span class="vs">r'$\sin(x),x$'</span>)</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>ax1.legend()</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the error on the second subplot</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>ax2.plot(theta, error, label<span class="op">=</span><span class="st">'Absolute Error'</span>, color<span class="op">=</span><span class="st">'green'</span>)</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>ax2.set_xlabel(<span class="vs">r'$\theta$ [rad]'</span>)</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>ax2.set_ylabel(<span class="st">'|sin(θ) - θ|'</span>)</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>ax2.legend()</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Adjust the layout and display the plot</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Optical Elements III_files/figure-html/cell-3-output-1.png" width="703" height="368" class="figure-img"></p>
+<figcaption>Visualization of the paraxial approximation plotting the <span class="math inline">\(\sin(\theta)\)</span> and the linear approximation <span class="math inline">\(\theta\)</span> (dashed line) for angles ranging from 0 to <span class="math inline">\(\pi/2\)</span> radians.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <p>Consider light originating from a point at distance <span class="math inline">\(y\)</span> from the optical axis. We’ll analyze two rays: one traveling parallel to the optical axis and hitting the spherical surface at height <span class="math inline">\(y\)</span>, and another incident at <span class="math inline">\(y=0\)</span>.</p>
 <div id="fig-image-curved" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
@@ -639,15 +508,16 @@ Imaging Equation for Spherical Refracting Surface
 </div>
 <div class="callout-body-container callout-body">
 <p>The sum of the inverse object and image distances equals the inverse focal length of the spherical refracting surface:</p>
-<p><span class="math display">\[\frac{n_1}{g}+\frac{n_2}{b}\approx\frac{n_2}{f}\]</span></p>
+<p><span class="math display">\[\frac{n_1}{a}+\frac{n_2}{b}\approx\frac{n_2}{f}\]</span></p>
 <p>where the focal length of the refracting surface is given by:</p>
 <p><span class="math display">\[f=\frac{n_2}{n_2-n_1}R\]</span></p>
 <p>in the paraxial approximation.</p>
 </div>
 </div>
 </section>
-<section id="refraction-with-two-spherical-surfaces" class="level4">
-<h4 class="anchored" data-anchor-id="refraction-with-two-spherical-surfaces">Refraction with two spherical surfaces</h4>
+</section>
+<section id="thin-lens" class="level3">
+<h3 class="anchored" data-anchor-id="thin-lens">Thin lens</h3>
 <p>In our previous calculation we have found a linear relation between the incident angle <span class="math inline">\(\theta_1\)</span> with the optical axis, the incident height of the ray <span class="math inline">\(y\)</span> and the outgoing angle <span class="math inline">\(\theta_2\)</span>:</p>
 <p>Analyzing refraction in a lens involves two spherical surfaces. Light initially travels from a medium with refractive index <span class="math inline">\(n_1\)</span> into the lens material with index <span class="math inline">\(n_2\)</span>. The first surface’s radius, <span class="math inline">\(R_1\)</span>, is typically positive for a convex surface facing the incident light.</p>
 <p>At the second surface, the outgoing angle from the first refraction becomes the incident angle for the second refraction. Here, light travels from <span class="math inline">\(n_2\)</span> back into <span class="math inline">\(n_1\)</span>. The radius <span class="math inline">\(R_2\)</span> of this surface often has a negative value in a converging lens due to its opposite curvature relative to the optical axis.</p>
@@ -677,8 +547,19 @@ Imaging Equation for Thin Lens
 <div class="callout-body-container callout-body">
 <p>The sum of the inverse object and image distances equals the inverse focal length of the thin lens:</p>
 <p><span class="math display">\[\frac{1}{a}+\frac{1}{b}\approx\frac{n_2-n_1}{n_1}\left (\frac{1}{R_1}-\frac{1}{R_2}\right )=\frac{1}{f}\]</span></p>
-<p>where the focal length of the thin lens is given by:</p>
-<p><span class="math display">\[f=\frac{n_1}{n_2-n_1}\left ( \frac{R_1 R_2}{R_2 -R_1}\right)\]</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lensmaker equation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The focal length of a thin lens is calculated by the <strong>lensmaker equation</strong>: <span class="math display">\[f=\frac{n_1}{n_2-n_1}\left ( \frac{R_1 R_2}{R_2 -R_1}\right)\]</span></p>
 <p>in the paraxial approximation.</p>
 </div>
 </div>
@@ -718,7 +599,45 @@ Figure&nbsp;4: Focusing of parallel rays by a lens in air (<span class="math inl
 </figcaption>
 </figure>
 </div>
-</section>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Bessel’s method to measure the focal length of a lens
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The is an interesting way to measure the focal length of a lens. Fix a distance <span class="math inline">\(D\)</span> between object and screen. Then place a converging lens between them. Due to the reversibility of the light path, the lens will create a sharp image on the screen at two positions, which are separated by a distance <span class="math inline">\(d\)</span>.</p>
+<p>The equation for the focal distance can then be obtained from the</p>
+<ul>
+<li>Lens equation: <span class="math inline">\(\frac{1}{f} = \frac{1}{a} + \frac{1}{b}\)</span></li>
+<li>Total distance: <span class="math inline">\(D = a + b\)</span></li>
+</ul>
+<p>Where <span class="math inline">\(f\)</span> is focal length, <span class="math inline">\(a\)</span> is object distance, and <span class="math inline">\(b\)</span> is image distance. To obtain the focal distance according to this method, which is called the <strong>Bessel method</strong>, the following steps are taken:</p>
+<p>For the first lens position:</p>
+<p><span class="math display">\[D = a_1 + b_1\]</span></p>
+<p>For the second lens position:</p>
+<p><span class="math display">\[D = a_2 + b_2\]</span></p>
+<p>We can further calculate the distance between the two lens positions:</p>
+<p><span class="math display">\[d = a_1 - a_2 = b_2 - b_1\]</span></p>
+<p>and use the imaging equation to find the focal length:</p>
+<p><span class="math display">\[\frac{1}{f} = \frac{1}{a_1} + \frac{1}{b_1} = \frac{1}{a_2} + \frac{1}{b_2}\]</span></p>
+<p>Substituting <span class="math inline">\(b_1 = D - a_1\)</span> and <span class="math inline">\(b_2 = D - a_2\)</span> we get further</p>
+<p><span class="math display">\[\frac{1}{f} = \frac{1}{a_1} + \frac{1}{D-a_1} = \frac{1}{a_2} + \frac{1}{D-a_2}\]</span></p>
+<p>Both euqations can be solved by</p>
+<p><span class="math display">\[a_1 = \frac{D + d}{2} \quad \text{and} \quad a_2 = \frac{D - d}{2}\]</span></p>
+<p>If we substitute that back into the imaging equation we obtain</p>
+<p><span class="math display">\[\frac{1}{f} = \frac{2}{D} + \frac{2}{d}\]</span></p>
+<p>which can be rearranged to get Bessel’s formula:</p>
+<p><span class="math display">\[f = \frac{D^2 - d^2}{4D}\]</span></p>
+<p>This method only requires measuring <span class="math inline">\(D\)</span> (fixed distance) and <span class="math inline">\(d\)</span> (distance between lens positions). It eliminates the need to know exact object or image distances from the lens, making it more accurate than methods requiring precise distance measurements from the lens.</p>
+</div>
+</div>
+</div>
 <section id="image-construction" class="level4">
 <h4 class="anchored" data-anchor-id="image-construction">Image Construction</h4>
 <p>Images of objects can be now constructed if we refer to rays which do not emerge from a position on the optical axis only. In this case, we consider three different rays (two are actually enough). If we use as in the case of a concave mirror a central and a parallel ray, we will find a position where all rays cross on the other side. The conversion of the rays is exactly the same as in the case of a spherical mirror. The relation between the position of the object and the image along the optical axis is described by the imaging equation.</p>
@@ -816,7 +735,7 @@ Magnification of a Lens
 </section>
 </section>
 <section id="thick-lens" class="level3">
-<h3 class="anchored" data-anchor-id="thick-lens">Thick lens</h3>
+<h3 class="anchored">Thick lens</h3>
 <p>For a thin lens, the displacement of the beam in height (<span class="math inline">\(y,y^{\prime}\)</span>) due to the thickness has been neglected. That means that we can reduce all refracting action of the lens to a single plane, which we call a principle plane. This approximation is (independent of the paraxial approximation) not anymore true for lenses if the displacement <span class="math inline">\(\Delta\)</span> of the ray as in the image below cannot be neglected. Such lenses are called <strong>thick lenses</strong> and they do not have a single principle plane anymore. In fact, the principle plane splits up into two principle planes at a distance <span class="math inline">\(h\)</span>.</p>
 <div id="fig-thick-lens-planes" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
@@ -830,6 +749,114 @@ Figure&nbsp;6: Thick lens principal planes.
 </div>
 <p>As indicated in the sketch above, an incident ray which is not deflected can be extended to its intersection with the optical axis at a point, which is a distance <span class="math inline">\(h_1\)</span> behind the lens surface. This is the location for the first principle plane. The position of the second principle plane at a distance <span class="math inline">\(h_2\)</span> before the back surface is found for by reversing the ray path. According to that, both principle planes have a distance <span class="math inline">\(h=d-h_1+h_2\)</span> (mind the sign of the <span class="math inline">\(h\)</span>). Using some mathematical effort, one can show that the same imaging equation as for a thins lens can be used with a new definition of the focal length and taking into account that object and image distances refer to their principle planes.</p>
 <div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Matrix Optics
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The above derived equations for a single spherical surface yield a linear relation between the input variables <span class="math inline">\(y_1\)</span> and <span class="math inline">\(\theta_1\)</span> and the output variables <span class="math inline">\(y_2\)</span> and <span class="math inline">\(\theta_2\)</span>. The linear relation yields a great opportunity to express optical elements in terms of linear transformations (matrices). This is the basis of <strong>matrix optics</strong>. The matrix representation of a lens is given by</p>
+<p><span class="math display">\[\begin{pmatrix} y_2 \\ \theta_2 \end{pmatrix} = \begin{pmatrix} 1 &amp; 0 \\ -\frac{1}{f} &amp; 1 \end{pmatrix} \begin{pmatrix} y_1 \\ \theta_1 \end{pmatrix}\]</span></p>
+<p>where the matrix is called the <strong>ABCD matrix</strong> of the lens. Due to the linearization of Snells law w can write down more generally</p>
+<p><span class="math display">\[\begin{pmatrix} y_2 \\
+\theta_2 \end{pmatrix} = \begin{pmatrix} A &amp; B \\ C &amp; D \end{pmatrix} \begin{pmatrix} y_1 \\ \theta_1 \end{pmatrix}\]</span></p>
+<p>and one can obtain a Matrix for all types of optical elements such as free space of dustance <span class="math inline">\(d\)</span>.</p>
+<p><span class="math display">\[\begin{bmatrix}
+A &amp; B\\
+C &amp; D
+\end{bmatrix}
+=
+\begin{bmatrix}
+1 &amp; d\\
+0 &amp; 1
+\end{bmatrix}
+\]</span></p>
+<p>Here are some useful matrices for optical elements:</p>
+<p><span class="math display">\[
+\mathbf{M}=\left[\begin{array}{ll}
+1 &amp; d \\
+0 &amp; 1
+\end{array}\right] \tag{Free space}
+\]</span></p>
+<p><span class="math display">\[
+\mathbf{M}=\left[\begin{array}{cc}
+1 &amp; 0 \\
+0 &amp; \frac{n_1}{n_2}
+\end{array}\right] \tag{Planar interface}
+\]</span></p>
+<p><span class="math display">\[
+\mathbf{M}=\left[\begin{array}{cc}
+1 &amp; 0 \\
+-\frac{\left(n_2-n_1\right)}{n_2 R} &amp; \frac{n_1}{n_2}
+\end{array}\right] \tag{Spherical Boundary}
+\]</span></p>
+<p><span class="math display">\[
+\mathbf{M}=\left[\begin{array}{cc}
+1 &amp; 0 \\
+-\frac{1}{f} &amp; 1
+\end{array}\right] \tag{Tin Lens}
+\]</span></p>
+<p>If we have now a system of optical elements, we can multiply the matrices of the individual elements to obtain the matrix of the whole system.</p>
+<p><span class="math display">\[
+\rightarrow \mathrm{M}_1 \rightarrow \mathrm{M}_2 \rightarrow \mathrm{M}_N \rightarrow \mathrm{M}=\mathbf{M}_N \ldots \mathrm{M}_2 \mathbf{M}_1 \text {. }
+\]</span></p>
+<p>This is a very powerful tool to analyze optical systems.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Thick Lens Focal Length
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>We would like to model the imaging properties of a thick lens using the matrix method. The lens is divided into three components:</p>
+<ol type="1">
+<li>A thin lens at the front surface</li>
+<li>A region of free space propagation through the lens material of thickness <span class="math inline">\(d\)</span></li>
+<li>Another thin lens at the back surface</li>
+</ol>
+<p>The matrices for these components are:</p>
+<p><span class="math display">\[
+M_1 = \begin{bmatrix} 1 &amp; 0 \\ -1/f_1 &amp; 1 \end{bmatrix}, \quad
+M_2 = \begin{bmatrix} 1 &amp; d \\ 0 &amp; 1 \end{bmatrix}, \quad
+M_3 = \begin{bmatrix} 1 &amp; 0 \\ -1/f_2 &amp; 1 \end{bmatrix}
+\]</span></p>
+<p>Where - <span class="math inline">\(f_1\)</span> and <span class="math inline">\(f_2\)</span> are the focal lengths of the front and back surfaces, which are determined by the radii of curvature <span class="math inline">\(R_1\)</span> and <span class="math inline">\(R_2\)</span> of the surfaces - <span class="math inline">\(d\)</span> is the thickness of the lens, measured along the optical axis</p>
+<section id="derivation" class="level2">
+<h2 class="anchored" data-anchor-id="derivation">Derivation</h2>
+<p>For a lens with refractive index <span class="math inline">\(n\)</span> in air, the focal lengths of the surfaces are:</p>
+<p><span class="math display">\[\frac{1}{f_1} = \frac{n-1}{R_1}, \quad \frac{1}{f_2} = \frac{1-n}{R_2}\]</span></p>
+<p>Where <span class="math inline">\(R_1\)</span> and <span class="math inline">\(R_2\)</span> are the radii of curvature of the front and back surfaces.</p>
+<p>The total system matrix is then</p>
+<p><span class="math display">\[M_{total} = M_3 \cdot M_2 \cdot M_1\]</span></p>
+<p>After multiplication, the element in the lower left corner of the resulting matrix represents <span class="math inline">\(-1/f\)</span> for the entire lens system:</p>
+<p><span class="math display">\[-\frac{1}{f} = -\frac{1}{f_2} - \frac{1}{f_1} + \frac{d}{f_1f_2}\]</span></p>
+<p>Substituting the expressions for <span class="math inline">\(1/f_1\)</span> and <span class="math inline">\(1/f_2\)</span>:</p>
+<p><span class="math display">\[\frac{1}{f} = \frac{n-1}{R_1} + \frac{n-1}{R_2} - \frac{d(n-1)^2}{nR_1R_2}\]</span></p>
+<p>Factoring out <span class="math inline">\((n-1)\)</span>:</p>
+<p><span class="math display">\[\frac{1}{f} = (n-1)\left[\frac{1}{R_1} + \frac{1}{R_2} - \frac{(n-1)d}{nR_1R_2}\right]\]</span></p>
+<p>Rearranging slightly:</p>
+<p><span class="math display">\[\frac{1}{f} = (n-1)\left[\frac{1}{R_1} - \frac{1}{R_2} + \frac{(n-1)d}{nR_1R_2}\right]\]</span></p>
+<p>This is the Lensmaker’s equation for a thick lens.</p>
+<p>The construction of ray diagrams for thick lenses is similar to that for thin lenses, but the object and image distances are measured from the principal planes. The magnification is also calculated using the distances from the principal planes. <strong>Principal planes are where a thick lens can be treated as an equivalent thin lens. At these planes, the magnification is unity.</strong></p>
+<p>The derivation of the local of the principle planes will be part of the seminar.</p>
+</section>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -840,14 +867,12 @@ Imaging Equation for Thick Lens
 </div>
 <div class="callout-body-container callout-body">
 <p>The sum of the inverse object and image distances to the principal planes (<span class="math inline">\(H_1,H_2\)</span>) equals the inverse focal length of the thick lens:</p>
-<p><span class="math display">\[\frac{1}{a}+\frac{1}{b}\approx\frac{1}{f}\]</span></p>
-<p>where the inverse focal length of the thick lens is given by:</p>
-<p><span class="math display">\[\frac{1}{f}=n-1\left (\frac{1}{R_1}-\frac{1}{R_2}+\frac{(n-1)d}{n R_1 R_2}\right )\]</span></p>
-<p>in the paraxial approximation.</p>
+<p><span class="math display">\[\frac{1}{a}+\frac{1}{b}\approx\frac{1}{f}, \quad \text{where} \quad \frac{1}{f}=n-1\left (\frac{1}{R_1}-\frac{1}{R_2}+\frac{(n-1)d}{n R_1 R_2}\right )\]</span></p>
+<p>in the paraxial approximation. The construction of the image on a thick lens is done with the help of two principle planes. The object distance <span class="math inline">\(a\)</span> and the image distance <span class="math inline">\(b\)</span> are measured from these principle planes. The location of the two principle planes are found to be</p>
+<p><span class="math display">\[h_{1}=-\frac{(n-1)f d}{n R_2}\]</span></p>
+<p><span class="math display">\[h_{2}=-\frac{(n-1)f d}{n R_1}\]</span></p>
 </div>
 </div>
-<p>The location of the two principle planes are found to be</p>
-<p><span class="math display">\[h_{1}=-\frac{(n-1)f d}{n R_2}\]</span> <span class="math display">\[h_{2}=-\frac{(n-1)f d}{n R_1}\]</span></p>
 <p>As compared to the construction of an image on a thin lens, we now have to consider some pecularities for the thick lens. An incident parallel ray, which turns into a focal ray is now refracted at the second principle plane. The reverse must, therefore, be true for an incident focal ray. This ray is refracted on the first principle plane. The central ray is deflected on both principle planes. It is incident under a certain angle at the first principle plane and outgoing with the same principle angle to the second principle plane. The sketch below summarizes these issues for a thick lens.</p>
 <div id="fig-thick-lens" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
@@ -1017,7 +1042,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/fcichos\.github\.io\/Exp3_2024\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
@@ -1345,6 +1370,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../geometrical-optics/Optical Elements II.html" class="pagination-link" aria-label="Optical Elements II - Prims">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Optical Elements II - Prims</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../geometrical-optics/Eye.html" class="pagination-link" aria-label="Optical Instruments- Eye">
+        <span class="nav-page-text">Optical Instruments- Eye</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 
 

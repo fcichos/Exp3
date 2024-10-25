@@ -1,0 +1,28 @@
+/* Adjust the width of the sidebar */
+.sidebar {
+    width: 250px;
+}
+
+/* Style the sidebar headings */
+.sidebar h2 {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* Adjust link styles */
+.sidebar a {
+    color: #337ab7;
+}
+
+.sidebar-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.sidebar-logo img {
+    max-width: 80%;
+    height: auto;
+}
