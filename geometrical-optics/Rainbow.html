@@ -330,8 +330,27 @@ window.Quarto = {
       </ul>
   </li>
           <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Lecture 5</span></span>
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text">Lecture 5</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Magnifying Glass.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optical Instruments- Magnifying Glass</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Microscope.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optical Instruments- Microscope</span></a>
+  </div>
+</li>
+      </ul>
   </li>
       </ul>
   </li>
@@ -345,8 +364,13 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#deflection-with-one-reflection" id="toc-deflection-with-one-reflection" class="nav-link active" data-scroll-target="#deflection-with-one-reflection">Deflection with one reflection</a></li>
-  <li><a href="#color-of-the-rainbow" id="toc-color-of-the-rainbow" class="nav-link" data-scroll-target="#color-of-the-rainbow">Color of the rainbow</a></li>
+  <li><a href="#historical-background" id="toc-historical-background" class="nav-link active" data-scroll-target="#historical-background">Historical Background</a></li>
+  <li><a href="#single-drop-analysis" id="toc-single-drop-analysis" class="nav-link" data-scroll-target="#single-drop-analysis">Single Drop Analysis</a>
+  <ul class="collapse">
+  <li><a href="#color-formation-and-dispersion" id="toc-color-formation-and-dispersion" class="nav-link" data-scroll-target="#color-formation-and-dispersion">Color Formation and Dispersion</a></li>
+  <li><a href="#primary-and-secondary-rainbows" id="toc-primary-and-secondary-rainbows" class="nav-link" data-scroll-target="#primary-and-secondary-rainbows">Primary and Secondary Rainbows</a></li>
+  </ul></li>
+  <li><a href="#glassbow" id="toc-glassbow" class="nav-link" data-scroll-target="#glassbow">Glassbow</a></li>
   </ul>
 </nav>
     </div>
@@ -372,9 +396,14 @@ window.Quarto = {
 </header>
 
 
-<section id="deflection-with-one-reflection" class="level3">
-<h3 class="anchored" data-anchor-id="deflection-with-one-reflection">Deflection with one reflection</h3>
-<p>As the last topic of the optical elements we would like to have a look at a phenomenon, which has nothing to do with optical elements but is fun and just fits to the topic of dispersion. We will explore the rainbow and in addition a DIY version, the glassbow. To understand the rainbow we will have first a look at the reflection of rays from a single droplet.</p>
+<p>As the last topic of the optical elements we would like to have a look at a phenomenon, which has nothing to do with optical elements but is fun and just fits to the topic of dispersion. We will explore the rainbow and in addition a DIY version, the glassbow.</p>
+<section id="historical-background" class="level3">
+<h3 class="anchored" data-anchor-id="historical-background">Historical Background</h3>
+<p>The rainbow has fascinated humans throughout history, but its first scientific explanation came from René Descartes in 1637. Using geometric optics, he explained how sunlight is reflected and refracted by spherical water droplets to create the bow shape. However, Descartes could not explain the colors. It was Isaac Newton who, through his experiments with prisms and understanding of dispersion, provided the complete explanation of the rainbow’s colors in 1672. Newton showed that white sunlight consists of different colors that are refracted at slightly different angles due to dispersion.</p>
+</section>
+<section id="single-drop-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="single-drop-analysis">Single Drop Analysis</h2>
+<p>To understand the rainbow we will have first a look at the reflection of rays from a single droplet.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/rainbow.png" class="img-fluid figure-img" style="width:40.0%"></p>
@@ -391,7 +420,7 @@ window.Quarto = {
 <p>such that finally</p>
 <p><span class="math display">\[\phi=4\sin^{-1}\left (\frac{n_{\rm air}}{n_{\rm water}}\sin(\alpha) \right)-2\alpha\]</span></p>
 <p>So let us have a look at this dependence of the deflection angle as a function of the incidence angle.</p>
-<div id="a7c8ebef" class="cell" data-execution_count="2">
+<div id="fc7d9595" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>alpha<span class="op">=</span>np.linspace(<span class="dv">0</span>,np.pi<span class="op">/</span><span class="dv">2</span>,<span class="dv">10000</span>)</span>
@@ -417,16 +446,15 @@ window.Quarto = {
 </div>
 </div>
 <p>The dependence seems to show a maximum deflection angle at an incidence angle of around <span class="math inline">\(\alpha=60^{\circ}\)</span>. This is an important finding, as the whole appearance of the rainbow depends on that.</p>
-<div id="3aa6b277" class="cell" data-execution_count="3">
+<div id="8909cfd6" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-stdout">
 <pre><code>Maximum deflection angle  41.78815648670841</code></pre>
 </div>
 </div>
-</section>
-<section id="color-of-the-rainbow" class="level3">
-<h3 class="anchored" data-anchor-id="color-of-the-rainbow">Color of the rainbow</h3>
-<p>The color of the rainbow is now the result of the fact that the maximum deflection angle depends on the color of the light due to the dispersion. Since we have a refraction, reflection and another refraction, the largest maximum deflection angle is observed for red light, while the smallest one appears for blue light. The diagrams below show this result, which is in general true for materials with normal dispersion.</p>
-<div id="cd751696" class="cell" data-execution_count="4">
+<section id="color-formation-and-dispersion" class="level3">
+<h3 class="anchored" data-anchor-id="color-formation-and-dispersion">Color Formation and Dispersion</h3>
+<p>The color of the rainbow is the result of the fact that the maximum deflection angle depends on the color of the light due to the dispersion. Since we have a refraction, reflection and another refraction, the largest maximum deflection angle is observed for red light, while the smallest one appears for blue light. The diagrams below show this result, which is in general true for materials with normal dispersion.</p>
+<div id="2a796ec0" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">4</span>))</span>
@@ -438,19 +466,17 @@ window.Quarto = {
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="vs">r"incident angle $\alpha$ [°]"</span>)</span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="vs">r"deflection angle $\phi$ [°]"</span>)</span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>)</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> wl <span class="kw">in</span> np.linspace(<span class="fl">0.400</span>,<span class="fl">0.700</span>,<span class="dv">100</span>):</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    c<span class="op">=</span>wavelength_to_rgb(wl<span class="op">*</span><span class="dv">1000</span>, gamma<span class="op">=</span><span class="fl">0.8</span>)</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    n<span class="op">=</span>np.interp(wl,h2o.wl,h2o.n)</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    plt.plot(alpha<span class="op">*</span><span class="dv">180</span><span class="op">/</span>np.pi,rainbow(alpha,n)<span class="op">*</span><span class="dv">180</span><span class="op">/</span>np.pi,c<span class="op">=</span>c,alpha<span class="op">=</span><span class="dv">1</span>,lw<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="vs">r"incident angle $\alpha$ [°]"</span>)</span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="vs">r"deflection angle $\phi$ [°]"</span>)</span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="dv">45</span>,<span class="dv">70</span>)</span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="dv">40</span>,<span class="dv">43</span>)</span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> wl <span class="kw">in</span> np.linspace(<span class="fl">0.400</span>,<span class="fl">0.700</span>,<span class="dv">100</span>):</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    c<span class="op">=</span>wavelength_to_rgb(wl<span class="op">*</span><span class="dv">1000</span>, gamma<span class="op">=</span><span class="fl">0.8</span>)</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    n<span class="op">=</span>np.interp(wl,h2o.wl,h2o.n)</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    plt.plot(alpha<span class="op">*</span><span class="dv">180</span><span class="op">/</span>np.pi,rainbow(alpha,n)<span class="op">*</span><span class="dv">180</span><span class="op">/</span>np.pi,c<span class="op">=</span>c,alpha<span class="op">=</span><span class="dv">1</span>,lw<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="vs">r"incident angle $\alpha$ [°]"</span>)</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="vs">r"deflection angle $\phi$ [°]"</span>)</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="dv">45</span>,<span class="dv">70</span>)</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="dv">40</span>,<span class="dv">43</span>)</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -461,9 +487,9 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<p>This order of the colors is actually true for all incident angles, which raises the question, why the rainbow is actually colored. The blue color of a certain incidence angle would actually overlap with the green color of a different incidence angle and the red color of an even different incidence angle. If you select a specific outgoing angle under which you observe the rainbow, let us say 41°, then you find under this observation angle all color and, therefore, should observe always white light.</p>
+<p>This order of the colors is actually true for all incident angles, which raises the question, why the rainbow is actually colored. The blue color of a certain incidence angle would actually overlap with the green color of a different incidence angle and the red color of an even different incidence angle. If you select a specific outgoing angle under which you observe the rainbow, let us say <span class="math inline">\(41^{\circ}\)</span>, then you find under this observation angle all color and, therefore, should observe always white light.</p>
 <p>This is actually true if you look at the inside of a rainbow. You clearly recognize that inside the rainbow it is much brighter than outside. Yet when you reach the maximum angle of each color, you have a region, where even for larger angles for the incidence angles, the deflection angle does not change. Thus, if you assume you send in rays at constantly spaced incidence angles, you will have more rays with a deflection angle close to the maximum. The diagram below just counts the number of deflection angles in the different for each color and you clearly see that around the maximum deflection angles for each color you have a strong peak.</p>
-<div id="66373949" class="cell" data-execution_count="5">
+<div id="953c1220" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">4</span>))</span>
@@ -523,57 +549,41 @@ Figure&nbsp;1: Deflection cones of different colors on a single drop in a rainbo
 </figcaption>
 </figure>
 </div>
-<section id="rainbow" class="level4">
-<h4 class="anchored" data-anchor-id="rainbow">Rainbow</h4>
-<p>The photos below show a rainbow, where you should see the enhanced white color in the center of the rainbow, the color order of the bow itself and the darker region outside. But there is also a second rainbow appearing on the outside.</p>
-<div id="fig-rainbow-full" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-rainbow-full-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+</section>
+<section id="primary-and-secondary-rainbows" class="level3">
+<h3 class="anchored" data-anchor-id="primary-and-secondary-rainbows">Primary and Secondary Rainbows</h3>
+<p>The photos below show a remarkable example of both primary and secondary rainbows. Between these two bows, a careful observer will notice a darker region known as Alexander’s dark band, first described by Alexander of Aphrodisias in 200 AD. This dark band occurs because no light is scattered back to the observer at angles between approximately <span class="math inline">\(42^{\circ}\)</span> (maximum angle of primary rainbow) and <span class="math inline">\(50^{\circ}\)</span> (minimum angle of secondary rainbow).</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="img/rainbow_full.JPG" class="img-fluid figure-img" style="width:100.0%"></p>
-<figcaption>Double rainbow over the Grand Canyon. (c) Picture by Frank Cichos</figcaption>
+<p><img src="img/rainbow_full.png" class="img-fluid figure-img"></p>
+<figcaption>Double rainbow over Grand Canyon. (Frank Cichos)</figcaption>
 </figure>
 </div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rainbow-full-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Double rainbow over the Grand Canyon.
-</figcaption>
-</figure>
-</div>
-<p>This second outside rainbow has a reversed color order and is weaker than the inside rainbow. This secondary rainbow comes from a process involving two refractions and two reflections inside each drop.</p>
-<div id="fig-rainbow-zoom" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-rainbow-zoom-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<p>The primary rainbow results from one internal reflection within each water droplet, while the secondary rainbow involves two internal reflections. This double reflection explains both the reversed color order and the reduced brightness of the secondary rainbow, as each reflection decreases the light intensity.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="img/rainbow_gczoom.JPG" class="img-fluid figure-img" style="width:100.0%"></p>
-<figcaption>Zoom into the rainbow over the Grand Canyon. (c) Picture by Frank Cichos</figcaption>
-</figure>
-</div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rainbow-zoom-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: Zoom into the rainbow over the Grand Canyon.
-</figcaption>
+<p><img src="img/rainbow_gczoom.png" class="img-fluid figure-img"></p>
+<figcaption>Zoom into the Rainbow fotograph showing Alexanders dark band.</figcaption>
 </figure>
 </div>
 </section>
-<section id="glassbow" class="level4">
-<h4 class="anchored" data-anchor-id="glassbow">Glassbow</h4>
-<p>You can observe a beautiful rainbow at home if you just have a few glass beads. You can get these glass beeds from us. They have a diameter of about 200 µm. If you place them on a black background and use a flash lamp, you will observe a nice rainbow as Mr.&nbsp;Märcker did in the photo below. The main difference is the observation angle. Try to calculate the new observation angle for the refractive indices of glass.</p>
-<div id="fig-glassbow" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-glassbow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/glassbow.JPG" class="img-fluid figure-img" style="width:100.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-glassbow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4: Glassbow created by the reflection of light from glass beads. (c) Picture by Axel Märcker.
-</figcaption>
+</section>
+<section id="glassbow" class="level2">
+<h2 class="anchored" data-anchor-id="glassbow">Glassbow</h2>
+<p>A beatiful demonstration of rainbow physics can be created at home using glass beads of about <span class="math inline">\(200\, \mu m\)</span> diameter (available from our lab). When these beads are placed on a black background and illuminated with a flash lamp, they create what we call a “glassbow” - a rainbow-like pattern produced by glass instead of water droplets.</p>
+<p>The main difference between a glassbow and a natural rainbow lies in the observation angle, due to the different refractive index of glass (<span class="math inline">\(n \approx 1.5\)</span>) compared to water (<span class="math inline">\(n \approx 1.33\)</span>). Using the same deflection angle equation:</p>
+<p><span class="math display">\[
+\phi=4\sin^{-1}\left (\frac{n_{\rm air}}{n_{\rm glass}}\sin(\alpha) \right)-2\alpha
+\]</span></p>
+<p>we can calculate why the glassbow appears at a different angle than its atmospheric counterpart.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/glassbow.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption>A glassbow created by light reflection and refraction in microscopic glass beads on a black surface. (c) Picture by Axel Märcker</figcaption>
 </figure>
 </div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
