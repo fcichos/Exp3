@@ -64,6 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../wave-optics/Wave Optics.html" rel="next">
+<link href="../geometrical-optics/Rainbow.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -168,7 +170,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Imaging Errors</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../geometrical-optics/introduction.html">Geometrical Optics</a></li><li class="breadcrumb-item"><a href="../geometrical-optics/ContentsL6.html">Lecture 6</a></li><li class="breadcrumb-item"><a href="../geometrical-optics/Imaging Errors.html">Imaging Errors</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -373,6 +375,30 @@ window.Quarto = {
  <span class="menu-text">Contents</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Rainbow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Rainbow</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Imaging Errors.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Imaging Errors</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Wave Optics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Wave Optics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/interference.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Interference</span></a>
+  </div>
+</li>
       </ul>
   </li>
       </ul>
@@ -387,19 +413,21 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#chromatic-aberrations" id="toc-chromatic-aberrations" class="nav-link active" data-scroll-target="#chromatic-aberrations">Chromatic Aberrations</a></li>
+  <li><a href="#chromatic-aberration" id="toc-chromatic-aberration" class="nav-link active" data-scroll-target="#chromatic-aberration">Chromatic Aberration</a></li>
   <li><a href="#spherical-aberration" id="toc-spherical-aberration" class="nav-link" data-scroll-target="#spherical-aberration">Spherical Aberration</a></li>
   <li><a href="#field-curvature" id="toc-field-curvature" class="nav-link" data-scroll-target="#field-curvature">Field Curvature</a></li>
   <li><a href="#coma" id="toc-coma" class="nav-link" data-scroll-target="#coma">Coma</a></li>
-  <li><a href="#astigmatism" id="toc-astigmatism" class="nav-link" data-scroll-target="#astigmatism">Astigmatism</a></li>
+  <li><a href="#astigmatism" id="toc-astigmatism" class="nav-link" data-scroll-target="#astigmatism">Astigmatism</a>
+  <ul class="collapse">
   <li><a href="#distortions" id="toc-distortions" class="nav-link" data-scroll-target="#distortions">Distortions</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../geometrical-optics/introduction.html">Geometrical Optics</a></li><li class="breadcrumb-item"><a href="../geometrical-optics/ContentsL6.html">Lecture 6</a></li><li class="breadcrumb-item"><a href="../geometrical-optics/Imaging Errors.html">Imaging Errors</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Imaging Errors</h1>
 </div>
@@ -427,8 +455,8 @@ window.Quarto = {
 <li>field curvature</li>
 <li>field distortion</li>
 </ul>
-<section id="chromatic-aberrations" class="level3">
-<h3 class="anchored" data-anchor-id="chromatic-aberrations">Chromatic Aberrations</h3>
+<section id="chromatic-aberration" class="level2">
+<h2 class="anchored" data-anchor-id="chromatic-aberration">Chromatic Aberration</h2>
 <p>Chromatic Aberration are based on the fact that light of different color has a different speed of propgation and thus also a different refractive index. We experienced that also for the prism, where it was useful to create a spectrograph. Here it is causing colored edges in you image, which you do not want.</p>
 <p>As the refractive index for shorter wavelength is typically higher, we expect that the blue color has a shorter focal distance than the red color.</p>
 <div id="fig-chromatic-aberration" class="quarto-layout-panel">
@@ -476,12 +504,12 @@ window.Quarto = {
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-chromatic-aberration-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Chromatic aberration. Left: Sketch of the chromatic aberration, focusing red light less strong than blue. Middle: Image from the lecture. Right: Rendered image using the refractive index for BK7 glass.
+Figure&nbsp;1— Chromatic aberration. Left: Sketch of the chromatic aberration, focusing red light less strong than blue. Middle: Image from the lecture. Right: Rendered image using the refractive index for BK7 glass.
 </figcaption>
 </figure>
 </div>
 <p>Here is a plot for the variation of the focal distance of a lens with a radius of curvature of 100 mm as a function of the wavelength for three different glasses.</p>
-<div id="f48800fd" class="cell" data-execution_count="2">
+<div id="aea57059" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>bk7<span class="op">=</span>pd.read_csv(<span class="st">"data/BK7.csv"</span>,delimiter<span class="op">=</span><span class="st">","</span>)</span>
@@ -497,7 +525,7 @@ Figure&nbsp;1: Chromatic aberration. Left: Sketch of the chromatic aberration, f
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(n,R):</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">1</span><span class="op">/</span>(n<span class="op">-</span><span class="dv">1</span>)<span class="op">*</span>R<span class="op">/</span><span class="dv">2</span></span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>get_size(<span class="dv">5</span>,<span class="dv">4</span>))</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>get_size(<span class="dv">8</span>,<span class="dv">8</span>))</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>plt.plot(bk7.wl<span class="op">*</span><span class="dv">1000</span>, f(bk7.n,R),label<span class="op">=</span><span class="st">"BK7"</span>)</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>plt.plot(sf10.wl<span class="op">*</span><span class="dv">1000</span>, f(sf10.n,R),label<span class="op">=</span><span class="st">"SF10"</span>)</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>plt.plot(fk51a.wl<span class="op">*</span><span class="dv">1000</span>, f(fk51a.n,R),label<span class="op">=</span><span class="st">"FK51a"</span>)</span>
@@ -512,7 +540,7 @@ Figure&nbsp;1: Chromatic aberration. Left: Sketch of the chromatic aberration, f
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="Imaging Errors_files/figure-html/cell-3-output-1.png" width="237" height="179" class="figure-img"></p>
+<p><img src="Imaging Errors_files/figure-html/cell-3-output-1.png" width="325" height="295" class="figure-img"></p>
 <figcaption>Focal distance of a Bk7, SF10 and FK51a lens with a radius of curvature of 100 mm as a function of the wavelength.</figcaption>
 </figure>
 </div>
@@ -525,7 +553,7 @@ Figure&nbsp;1: Chromatic aberration. Left: Sketch of the chromatic aberration, f
 <img src="img/achromat.png" class="img-fluid figure-img" style="width:60.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-achromat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Correction of chromatic aberration by a lens doublet with a convex and a a concave lens.
+Figure&nbsp;2— Correction of chromatic aberration by a lens doublet with a convex and a a concave lens.
 </figcaption>
 </figure>
 </div>
@@ -589,8 +617,8 @@ Chromatic Aberration
 </div>
 </div>
 </section>
-<section id="spherical-aberration" class="level3">
-<h3 class="anchored" data-anchor-id="spherical-aberration">Spherical Aberration</h3>
+<section id="spherical-aberration" class="level2">
+<h2 class="anchored" data-anchor-id="spherical-aberration">Spherical Aberration</h2>
 <p>The spherical abberation arises due to the fact that we have always considered a simplification of the angluar functions to their first order Taylor series expansion. If the angles of incidence on the spherical surfaces get to large, we cannot do that anymore and need to consider higher order corrections.</p>
 <p>The result is that parallel rays which are far from the optical axis are not imaged into the same focal point as the paraxial rays, but to points closer to the lens. You might have all seen such effect also in the case of your empty coffee cup, when the sunlight enters and causes a so-called caustics. This pattern, you observe there is also the result of a soherical aberration. The image below shows the spherical aberration of a lens.</p>
 <div id="fig-spherical" class="quarto-layout-panel">
@@ -624,7 +652,7 @@ Chromatic Aberration
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-spherical-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: Spherical aberration. Left: Schematic illustration showing how parallel rays at different distances from the optical axis focus at different points. Right: Experimental demonstration from the lecture.
+Figure&nbsp;3— Spherical aberration. Left: Schematic illustration showing how parallel rays at different distances from the optical axis focus at different points. Right: Experimental demonstration from the lecture.
 </figcaption>
 </figure>
 </div>
@@ -635,7 +663,7 @@ Figure&nbsp;3: Spherical aberration. Left: Schematic illustration showing how pa
 <img src="img/spherical_theo.png" class="img-fluid figure-img" style="width:60.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-spherical-theo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4: Spherical aberration: Theoretical ray tracing showing the focal point variation with incident ray height.
+Figure&nbsp;4— Spherical aberration: Theoretical ray tracing showing the focal point variation with incident ray height.
 </figcaption>
 </figure>
 </div>
@@ -672,8 +700,8 @@ Spherical Aberration
 </div>
 </div>
 </section>
-<section id="field-curvature" class="level3">
-<h3 class="anchored" data-anchor-id="field-curvature">Field Curvature</h3>
+<section id="field-curvature" class="level2">
+<h2 class="anchored" data-anchor-id="field-curvature">Field Curvature</h2>
 <p>The field curvature is related to our calculations of the spherical abberation. We have seen there, that the focal distance depends on the height <span class="math inline">\(h\)</span> of the rays over the optical axis. This means also means that the image plane is actually not anymore a plane but a curved surface as shown below. The rays incident from point <span class="math inline">\(A_0\)</span> and <span class="math inline">\(A_1\)</span> do not meet in the same plane. This plane is even different for meridional and saggital rays. This typically results in the fact, that you may have the center of the image in focus, but not the edges or vice versa.</p>
 <div id="fig-field-curvature" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure">
@@ -706,7 +734,7 @@ Spherical Aberration
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-field-curvature-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5: Field curvature in optical systems. Left: Schematic diagram showing how a flat object plane is imaged onto a curved image surface (Petzval surface) rather than a flat image plane. This causes different regions of the image to focus at different distances from the lens. Right: Experimental demonstration showing how either the center or the edges of the image can be in focus, but not simultaneously, when using a flat detector. This aberration is particularly noticeable in wide-field imaging systems with simple lenses.
+Figure&nbsp;5— Field curvature in optical systems. Left: Schematic diagram showing how a flat object plane is imaged onto a curved image surface (Petzval surface) rather than a flat image plane. This causes different regions of the image to focus at different distances from the lens. Right: Experimental demonstration showing how either the center or the edges of the image can be in focus, but not simultaneously, when using a flat detector. This aberration is particularly noticeable in wide-field imaging systems with simple lenses.
 </figcaption>
 </figure>
 </div>
@@ -724,8 +752,8 @@ Field Curvature
 </div>
 </div>
 </section>
-<section id="coma" class="level3">
-<h3 class="anchored" data-anchor-id="coma">Coma</h3>
+<section id="coma" class="level2">
+<h2 class="anchored" data-anchor-id="coma">Coma</h2>
 <p>While our previous discussion focused on rays parallel to the optical axis at varying distances, significant aberrations also occur for rays emanating from off-axis object points (both at finite and infinite distances). One important example of such an aberration is “coma.”</p>
 <p>In the case of coma, rays entering the lens at different heights with an angle to the optical axis do not converge to a single point in the image plane. Instead, they create a characteristic comet-shaped intensity distribution, where the light is asymmetrically distributed with a bright head and a diffuse tail pointing radially outward from the optical axis. This asymmetric distribution occurs because rays passing through different zones of the lens experience different effective magnifications, leading to the distinctive comet-like shape that gives this aberration its name.</p>
 <p>The severity of coma typically increases with the distance from the optical axis and with larger apertures, making it particularly problematic in wide-field imaging systems or when using large-aperture optics.</p>
@@ -760,7 +788,7 @@ Field Curvature
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-coma-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6: Coma aberration in optical systems. Left: Schematic illustration showing how oblique rays entering the lens at different heights focus at different positions in the image plane, creating a characteristic comet-shaped blur (coma). The rays passing through different zones of the lens have different effective focal lengths and magnifications, resulting in the asymmetric image formation. Right: Experimental demonstration from the lecture showing the characteristic comet-like shape of the aberration, where the intensity distribution is asymmetric around the central image point.
+Figure&nbsp;6— Coma aberration in optical systems. Left: Schematic illustration showing how oblique rays entering the lens at different heights focus at different positions in the image plane, creating a characteristic comet-shaped blur (coma). The rays passing through different zones of the lens have different effective focal lengths and magnifications, resulting in the asymmetric image formation. Right: Experimental demonstration from the lecture showing the characteristic comet-like shape of the aberration, where the intensity distribution is asymmetric around the central image point.
 </figcaption>
 </figure>
 </div>
@@ -778,8 +806,8 @@ Coma
 </div>
 </div>
 </section>
-<section id="astigmatism" class="level3">
-<h3 class="anchored" data-anchor-id="astigmatism">Astigmatism</h3>
+<section id="astigmatism" class="level2">
+<h2 class="anchored" data-anchor-id="astigmatism">Astigmatism</h2>
 <p>Astigmatism also occurs when imaging point sources located away from the optical axis. To understand this effect, we can analyze the rays from such a source by separating them into two categories:</p>
 <ol type="1">
 <li>Rays in the vertical (meridional) plane</li>
@@ -833,7 +861,7 @@ Coma
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-astigmatism-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7: Astigmatism in optical systems. Left: Schematic diagram illustrating how a tilted lens creates different focal planes for rays in different meridional planes. The tangential (vertical) and sagittal (horizontal) rays focus at different distances from the lens. Middle: Experimental image showing the focusing of vertical lines of a test object (letter “F”) at one focal position. Right: The same object at a different focal position where horizontal lines are in focus. This demonstrates how astigmatism causes different focal planes for vertical and horizontal features when a lens is tilted relative to the optical axis. The inability to focus both orientations simultaneously is a characteristic feature of astigmatic aberration.
+Figure&nbsp;7— Astigmatism in optical systems. Left: Schematic diagram illustrating how a tilted lens creates different focal planes for rays in different meridional planes. The tangential (vertical) and sagittal (horizontal) rays focus at different distances from the lens. Middle: Experimental image showing the focusing of vertical lines of a test object (letter “F”) at one focal position. Right: The same object at a different focal position where horizontal lines are in focus. This demonstrates how astigmatism causes different focal planes for vertical and horizontal features when a lens is tilted relative to the optical axis. The inability to focus both orientations simultaneously is a characteristic feature of astigmatic aberration.
 </figcaption>
 </figure>
 </div>
@@ -851,7 +879,6 @@ Astigmatism
 <p>An optical aberration where rays from an off-axis point source focusing in two perpendicular planes (meridional and sagittal) have different focal lengths, resulting in image points that appear as ellipses oriented either horizontally or vertically, depending on the observation plane.</p>
 </div>
 </div>
-</section>
 <section id="distortions" class="level3">
 <h3 class="anchored" data-anchor-id="distortions">Distortions</h3>
 <p>Barrel or cushion shaped distortions in the image are found when inserting apertures in the optical path. This results in the removal of certain ray path ending up in field distortions.</p>
@@ -886,7 +913,7 @@ Astigmatism
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-distortion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;8: Geometric distortions in optical systems. Left: Cushion (or pincushion) distortion, where the magnification increases with distance from the optical axis, causing straight lines to bow inward and creating a cushion-like appearance. Right: Barrel distortion, where the magnification decreases with distance from the optical axis, causing straight lines to bow outward, resembling the shape of a barrel. These distortions maintain image sharpness but alter the geometric shape of the image, particularly noticeable in architectural photography or when imaging regular grid patterns.
+Figure&nbsp;8— Geometric distortions in optical systems. Left: Cushion (or pincushion) distortion, where the magnification increases with distance from the optical axis, causing straight lines to bow inward and creating a cushion-like appearance. Right: Barrel distortion, where the magnification decreases with distance from the optical axis, causing straight lines to bow outward, resembling the shape of a barrel. These distortions maintain image sharpness but alter the geometric shape of the image, particularly noticeable in architectural photography or when imaging regular grid patterns.
 </figcaption>
 </figure>
 </div>
@@ -905,12 +932,130 @@ Figure&nbsp;8: Geometric distortions in optical systems. Left: Cushion (or pincu
 <img src="img/distortions.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-distortion-sketch-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;9: Cushion (left) and barrel (right) type of distortions.
+Figure&nbsp;9— Cushion (left) and barrel (right) type of distortions.
 </figcaption>
 </figure>
 </div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Cushion Distortion
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Cushion Distortion (also called Pincushion Distortion) - An optical aberration where straight lines appear to bow inward toward the center of the image, like the sides of a cushion or pincushion. This type of distortion is typically seen in telephoto lenses and makes the center of the image appear to be pinched inward.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Barrel Distortion
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Barrel Distortion - An optical aberration where straight lines appear to bow outward from the center of the image, like a barrel shape. This type of distortion is common in wide-angle lenses and makes the center of the image appear to bulge outward.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Aberration Characterization and Zernike Polynomials
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The Zernike polynomials are a set of orthonormal polynomials that are widely used in optics to describe wavefronts and to characterize optical aberrations. As we did not discuss wavefronts and waves yet, this is a more advanced topic here and only for information. Zernike polynomials are defined over the unit disk and are particularly useful because they are orthogonal under the inner product, which involves integration over the unit circle. This makes them suitable for decomposing a wavefront into a sum of orthogonal modes, each representing a different type of aberration.</p>
+<p>The general form of the Zernike polynomials can be expressed in polar coordinates <span class="math inline">\((\rho, \phi)\)</span>, where <span class="math inline">\(\rho\)</span> is the radial distance from the origin (normalized to the unit circle) and <span class="math inline">\(\phi\)</span> is the azimuthal angle. The Zernike polynomials are defined as:</p>
+<p><span class="math display">\[
+Z_n^m(\rho, \phi) =
+\begin{cases}
+R_n^m(\rho) \cos(m\phi) &amp; \text{for } m \geq 0 \\
+R_n^{|m|}(\rho) \sin(|m|\phi) &amp; \text{for } m &lt; 0
+\end{cases}
+\]</span></p>
+<p>where <span class="math inline">\(n\)</span> is a non-negative integer, <span class="math inline">\(m\)</span> is an integer such that <span class="math inline">\(n - |m|\)</span> is even and <span class="math inline">\(0 \leq |m| \leq n\)</span>, and <span class="math inline">\(R_n^m(\rho)\)</span> is the radial polynomial given by:</p>
+<p><span class="math display">\[
+R_n^m(\rho) = \sum_{k=0}^{\frac{n-m}{2}} \frac{(-1)^k (n-k)!}{k! \left(\frac{n+m}{2} - k\right)! \left(\frac{n-m}{2} - k\right)!} \rho^{n-2k}
+\]</span></p>
+<p>The radial polynomials <span class="math inline">\(R_n^m(\rho)\)</span> are only dependent on the radial distance <span class="math inline">\(\rho\)</span>, and they modulate the angular functions <span class="math inline">\(\cos(m\phi)\)</span> and <span class="math inline">\(\sin(|m|\phi)\)</span> that describe the azimuthal variation of the wavefront.</p>
+<p>The Zernike polynomials are indexed in several ways, with one common method being the Noll index, which provides a single index <span class="math inline">\(j\)</span> to each polynomial. Another method uses the pair <span class="math inline">\((n, m)\)</span> to index the polynomials, where <span class="math inline">\(n\)</span> indicates the order of the polynomial and <span class="math inline">\(m\)</span> its azimuthal frequency.</p>
+<p>These polynomials are particularly useful in optics and ophthalmology for describing the shape of optical wavefronts and the aberrations of optical systems, including the human eye. They allow for the decomposition of a complex wavefront into simpler, orthogonal components, each corresponding to a specific type of aberration, such as defocus, astigmatism, coma, etc.</p>
+<p>The plots below visualize the Zernike Polynomials up to a certain order.</p>
+<div id="1d3aec84" class="cell" data-tags="[]" data-execution_count="3">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> radial_polynomial(n, m, rho):</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Compute the radial component of the Zernike polynomial.</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    R <span class="op">=</span> np.zeros_like(rho)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>((n <span class="op">-</span> <span class="bu">abs</span>(m)) <span class="op">//</span> <span class="dv">2</span> <span class="op">+</span> <span class="dv">1</span>):</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>        R <span class="op">+=</span> ((<span class="op">-</span><span class="dv">1</span>)<span class="op">**</span>k <span class="op">*</span> sp.factorial(n <span class="op">-</span> k) <span class="op">/</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>              (sp.factorial(k) <span class="op">*</span> sp.factorial((n <span class="op">+</span> <span class="bu">abs</span>(m)) <span class="op">//</span> <span class="dv">2</span> <span class="op">-</span> k) <span class="op">*</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>              sp.factorial((n <span class="op">-</span> <span class="bu">abs</span>(m)) <span class="op">//</span> <span class="dv">2</span> <span class="op">-</span> k))) <span class="op">*</span> rho<span class="op">**</span>(n <span class="op">-</span> <span class="dv">2</span><span class="op">*</span>k)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> R</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> zernike_polynomial(n, m, rho, phi):</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co">    Compute the Zernike polynomial.</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> m <span class="op">&gt;=</span> <span class="dv">0</span>:</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> radial_polynomial(n, m, rho) <span class="op">*</span> np.cos(m <span class="op">*</span> phi)</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> radial_polynomial(n, <span class="op">-</span>m, rho) <span class="op">*</span> np.sin(<span class="op">-</span>m <span class="op">*</span> phi)</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">400</span>)</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">400</span>)</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>xx, yy <span class="op">=</span> np.meshgrid(x, y)</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>rho <span class="op">=</span> np.sqrt(xx<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> yy<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>phi <span class="op">=</span> np.arctan2(yy, xx)</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>mask <span class="op">=</span> rho <span class="op">&gt;</span> <span class="dv">1</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>rho[mask] <span class="op">=</span> np.nan</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">3</span>, <span class="dv">6</span>, figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>))</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>axs <span class="op">=</span> axs.flatten()</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>index <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> n <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">6</span>):</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> m <span class="kw">in</span> <span class="bu">range</span>(<span class="op">-</span>n, n<span class="op">+</span><span class="dv">1</span>, <span class="dv">2</span>):</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> index <span class="op">&gt;=</span> <span class="bu">len</span>(axs):</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>            <span class="cf">break</span></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>        Z <span class="op">=</span> zernike_polynomial(n, m, rho, phi)</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>        Z[mask] <span class="op">=</span> np.nan  <span class="co"># Apply mask</span></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>        ax <span class="op">=</span> axs[index]</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>        c <span class="op">=</span> ax.imshow(Z, extent<span class="op">=</span>(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>, <span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>), origin<span class="op">=</span><span class="st">'lower'</span>)</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>        ax.set_title(<span class="ss">f'n=</span><span class="sc">{</span>n<span class="sc">}</span><span class="ss">, m=</span><span class="sc">{</span>m<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>        ax.axis(<span class="st">'off'</span>)</span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>        index <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Imaging Errors_files/figure-html/cell-4-output-1.png" width="738" height="375" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -1334,6 +1479,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../geometrical-optics/Rainbow.html" class="pagination-link" aria-label="Rainbow">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Rainbow</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../wave-optics/Wave Optics.html" class="pagination-link" aria-label="Wave Optics">
+        <span class="nav-page-text">Wave Optics</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 
 
