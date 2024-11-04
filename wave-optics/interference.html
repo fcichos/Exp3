@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>interference – Experimental Physics 3 Course on Optics and Quantum Mechanics</title>
+<title>Interference – Experimental Physics 3 Course on Optics and Quantum Mechanics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -73,6 +73,35 @@ ul.task-list li input[type="checkbox"] {
   });
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../assets/styles.css">
 </head>
@@ -105,7 +134,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Interference</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -287,6 +316,29 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Optical Instruments- Microscope</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Telescope.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optical Instruments- Telescope</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
+ <span class="menu-text">Lecture 6</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/ContentsL6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Contents</span></a>
+  </div>
+</li>
       </ul>
   </li>
       </ul>
@@ -302,11 +354,148 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Interference</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
 
 
+</header>
+
+
+<p>Interference is a fundamental physical phenomenon that demonstrates the superposition principle for linear systems. When two wave solutions <span class="math inline">\(U_1(\mathbf{r})\)</span> and <span class="math inline">\(U_2(\mathbf{r})\)</span> combine, their superposition gives:</p>
+<p><span class="math display">\[
+U(\mathbf{r})=U_1(\mathbf{r})+U_2(\mathbf{r})
+\]</span></p>
+<p>The resulting intensity is:</p>
+<p><span class="math display">\[\begin{eqnarray}
+I &amp;= &amp;|U|^2\\
+&amp;= &amp;|U_1+U_2|^2\\
+&amp;= &amp;|U_1|^2+|U_2|^2+U^{*}_1 U_2 + U_1 U^{*}_2
+\end{eqnarray}\]</span></p>
+<p>Using <span class="math inline">\(I_1=|U_1|^2\)</span> and <span class="math inline">\(I_2=|U_2|^2\)</span>, we can write:</p>
+<p><span class="math display">\[
+U_1=\sqrt{I_1}e^{i\phi_1}
+\]</span> <span class="math display">\[
+U_2=\sqrt{I_2}e^{i\phi_2}
+\]</span></p>
+<p>The total intensity becomes:</p>
+<p><span class="math display">\[
+I=I_1+I_2+2\sqrt{I_1 I_2}\cos(\Delta \phi)
+\]</span></p>
+<p>where <span class="math inline">\(\Delta \phi=\phi_2-\phi_1\)</span></p>
+<p>For equal intensities (<span class="math inline">\(I_1=I_2=I_0\)</span>):</p>
+<p><span class="math display">\[
+I=2I_0(1+\cos(\Delta \phi))=4I_0\cos^2\left(\frac{\Delta \phi}{2}\right)
+\]</span></p>
+<div id="fig-interference-constructive" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-interference-constructive-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p><img src="img/w_0.png" class="img-fluid figure-img"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p><img src="img/w_0.png" class="img-fluid figure-img"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p><img src="img/sum_const.png" class="img-fluid figure-img"></p>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-interference-constructive-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Constructive interference of two waves (left, middle) and the sum of the two wave amplitudes
+</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Constructive Interference
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Occurs when <span class="math inline">\(\Delta \phi=2\pi m\)</span> (where <span class="math inline">\(m\)</span> is an integer), resulting in <span class="math inline">\(I=4I_0\)</span></p>
+</div>
+</div>
+<div id="fig-interference-destructive" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-interference-destructive-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<img src="img/w_0.png" class="img-fluid figure-img" style="width:33.0%">
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-interference-destructive-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Destructive interference of two waves (left, middle) and the sum of the two wave amplitudes
+</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Destructive Interference
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Occurs when <span class="math inline">\(\Delta \phi=(2m-1)\pi\)</span> (where <span class="math inline">\(m\)</span> is an integer), resulting in <span class="math inline">\(I=0\)</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Phase Difference and Path Difference
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A path difference <span class="math inline">\(\Delta s\)</span> corresponds to a phase difference <span class="math inline">\(k\Delta s=2\pi\Delta s/\lambda\)</span>. Path differences of integer multiples of <span class="math inline">\(\lambda\)</span> result in phase differences of integer multiples of <span class="math inline">\(2\pi\)</span>.</p>
+</div>
+</div>
+<section id="interference-of-waves-in-space" class="level4">
+<h4 class="anchored" data-anchor-id="interference-of-waves-in-space">Interference of Waves in Space</h4>
+<div id="fig-plane-interference" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-plane-interference-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/plane_plane.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-plane-interference-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Interference of two plane waves propagating under an angle of 45°. The two left graphs show the original waves. The two right show the total amplitude and the intensity pattern.
+</figcaption>
+</figure>
+</div>
+<div id="fig-sphere-plane-interference" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sphere-plane-interference-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/sphere_plane.png" class="img-fluid figure-img" style="width:90.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sphere-plane-interference-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Interference of a spherical wave and a plane wave (left amplitude, right intensity)
+</figcaption>
+</figure>
+</div>
+
+
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
