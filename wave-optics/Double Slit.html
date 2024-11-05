@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Telescopes – Experimental Physics 3 Course on Optics and Quantum Mechanics</title>
+<title>Double Slit Interference – Experimental Physics 3 Course on Optics and Quantum Mechanics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,7 +30,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../geometrical-optics/Microscope.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -74,35 +73,6 @@ ul.task-list li input[type="checkbox"] {
   });
 </script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../assets/styles.css">
 </head>
@@ -135,7 +105,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../geometrical-optics/introduction.html">Geometrical Optics</a></li><li class="breadcrumb-item"><a href="../geometrical-optics/Magnifying Glass.html">Lecture 5</a></li><li class="breadcrumb-item"><a href="../geometrical-optics/Telescope.html">Optical Instruments- Telescope</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Double Slit Interference</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -319,7 +289,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../geometrical-optics/Telescope.html" class="sidebar-item-text sidebar-link active">
+  <a href="../geometrical-optics/Telescope.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Optical Instruments- Telescope</span></a>
   </div>
 </li>
@@ -346,24 +316,15 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#refracting-telescopes" id="toc-refracting-telescopes" class="nav-link active" data-scroll-target="#refracting-telescopes">Refracting Telescopes</a></li>
-  <li><a href="#reflecting-telescopes" id="toc-reflecting-telescopes" class="nav-link" data-scroll-target="#reflecting-telescopes">Reflecting Telescopes</a></li>
-  <li><a href="#adaptive-optics" id="toc-adaptive-optics" class="nav-link" data-scroll-target="#adaptive-optics">Adaptive Optics</a></li>
-  <li><a href="#space-based-telescopes" id="toc-space-based-telescopes" class="nav-link" data-scroll-target="#space-based-telescopes">Space-Based Telescopes</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../geometrical-optics/introduction.html">Geometrical Optics</a></li><li class="breadcrumb-item"><a href="../geometrical-optics/Magnifying Glass.html">Lecture 5</a></li><li class="breadcrumb-item"><a href="../geometrical-optics/Telescope.html">Optical Instruments- Telescope</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Telescopes</h1>
+<h1 class="title">Double Slit Interference</h1>
 </div>
 
 
@@ -380,82 +341,136 @@ window.Quarto = {
 </header>
 
 
-<p>Other than the microscope, the telescope is made to observe distant objects, which would appear under a very small observation angle. This can be achieved with different optical designs. The most common telescopes are refracting telescopes, which use lenses to magnify the angle under which the object is observed. The second type of telescopes are reflecting telescopes, which use mirrors to magnify the angle under which the object is observed.</p>
-<section id="refracting-telescopes" class="level3">
-<h3 class="anchored" data-anchor-id="refracting-telescopes">Refracting Telescopes</h3>
-<p>The telescope is therefore made to magnify the angle under which the object is observed. In the same way as a microscope, the telescope consists of two lenses with the focal distances <span class="math inline">\(f_1,f_2\)</span>.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/telescope.png" class="img-fluid figure-img" style="width:60.0%"></p>
-<figcaption>Kepler telescope with two biconvex lenses, creating a reversed image of distance objects.</figcaption>
-</figure>
-</div>
-<p>As indicated in the sketch above, the first lens generates an image at the focal length of the first lens. This intermediate image is the magnified by an eye-piece as well acting as a magnifying glass. We may therefore apply the same kind of techniques as earlier for the calculation of the angular magnification. The angle of observation for the object of size <span class="math inline">\(D\)</span> is given by</p>
-<p><span class="math display">\[
-2\epsilon_0=\frac{D}{f_1}
-\]</span></p>
-<p>while the angle of observation through the telescope is given as</p>
-<p><span class="math display">\[
-2\epsilon=\frac{D}{f_2}
-\]</span></p>
-<p>Correspondingly, the angular magnification is given by</p>
-<p><span class="math display">\[
-V=\frac{\epsilon}{\epsilon_0}=\frac{D}{f_2}\frac{f_1}{D}=\frac{f_1}{f_2}
-\]</span></p>
-<p>The magnification is therefore given by the ration of the focal length of the entrance lens and the eye-piece. The above telescope is also termed <strong>astronomical telescope</strong> or <strong>Kepler telescope</strong>, since it has been used for astromical observations. It creates an image which is reversed.</p>
-<p>A telescope with an upright image may be created with the help of a concave lens. This type of telescope is called Galilei telescope and obeyes the same magnification formula as above. Due to the fact that a concave lens has a negative focal length, the total magnification will be negative as well being indicative for an upright image.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/galilei.png" class="img-fluid figure-img" style="width:60.0%"></p>
-<figcaption>Galilei telescope for imaging objects into upright images with the help of a concave and a convex lens.</figcaption>
-</figure>
-</div>
-</section>
-<section id="reflecting-telescopes" class="level3">
-<h3 class="anchored" data-anchor-id="reflecting-telescopes">Reflecting Telescopes</h3>
-<p>Modern powerful telescopes also use mirrors instead of refracting optical elements, as reflecting elements with nearly 100 percent reflectivity can be built with a much smaller mass than large glass elements. Such telescopes come in different setups. The one below is a Cassegrain telescope, where a secondary convex miror is used for imaging the intermediate image to the eye.</p>
-<div>
 
-</div>
-<div class="quarto-layout-panel" data-layout-ncol="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="img/real_telescope.png" class="img-fluid"></p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/cassegrain.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<figcaption>Reflective optics is commonly used in modern high quality telescopes for the advantage of weight. The image and sketch shows the optics of a so-called Cassegrain telescope.</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="adaptive-optics" class="level3">
-<h3 class="anchored" data-anchor-id="adaptive-optics">Adaptive Optics</h3>
-<p>When observing objects from the ground, the atmosphere can distort the image. This is due to the fact that the atmosphere is not homogeneous and the refractive index of the air is changing with time. This leads to a distortion of the image, which can be corrected with the help of adaptive optics. The principle of adaptive optics is to measure the distortion of the image with the help of a laser beam and to correct the image with the help of a deformable mirror. The deformable mirror is a mirror with a number of actuators, which can change the shape of the mirror in order to correct the distortion of the image. The principle of adaptive optics is shown in the figure below.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/adaptive_optics.png" class="img-fluid figure-img" style="width:50.0%"></p>
-<figcaption>Principle of adaptive optics. The image of a star is distorted by the atmosphere. The distortion is measured with the help of a laser beam and corrected with the help of a deformable mirror.</figcaption>
-</figure>
-</div>
-</section>
-<section id="space-based-telescopes" class="level3">
-<h3 class="anchored" data-anchor-id="space-based-telescopes">Space-Based Telescopes</h3>
-<p>Placing telescopes in space eliminates atmospheric interference completely. The Hubble Space Telescope revolutionized astronomy with its crystal-clear views of the universe.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/hubble.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<figcaption>Light path in the Hubble space telescope.</figcaption>
-</figure>
-</div>
-<p>Its successor, the James Webb Space Telescope (launched in 2021), operates in the infrared spectrum and can peer even further into space and time. Being above the atmosphere not only provides clearer images but also allows these telescopes to observe wavelengths that are normally blocked by Earth’s atmosphere, particularly in the infrared and ultraviolet regions.</p>
+    <title>Wave Interference Pattern</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+    </style>
 
 
-</section>
+<div class="container">
+    <div id="plot"></div>
+    <div>
+        <label for="separation">Source Separation: </label>
+        <input type="range" id="separation" min="0" max="200" value="100" step="1">
+    </div>
+</div>
+
+<script>
+// Set up the dimensions
+const width = 500;
+const height = 500;
+const margin = { top: 20, right: 20, bottom: 20, left: 20 };
+
+// Wave parameters
+const wavelength = 50;
+const amplitude = 1;
+const k = 2 * Math.PI / wavelength;
+let separation = 100;
+
+// Create the SVG container
+const svg = d3.select("#plot")
+    .append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+// Create a group for the heatmap
+const heatmapGroup = svg.append("g")
+    .attr("transform", `translate(${margin.left}, ${margin.top})`);
+
+// Create color scale
+const colorScale = d3.scaleSequential(d3.interpolateRdBu)
+    .domain([-2, 2]);
+
+// Create grid data
+const gridSize = 200;
+const cellWidth = (width - margin.left - margin.right) / gridSize;
+const cellHeight = (height - margin.top - margin.bottom) / gridSize;
+
+function calculateWaveAmplitude(x, y, sourceX1, sourceX2) {
+    const r1 = Math.sqrt((x - sourceX1) ** 2 + (y - height/2) ** 2);
+    const r2 = Math.sqrt((x - sourceX2) ** 2 + (y - height/2) ** 2);
+
+    // Calculate wave amplitudes
+    const wave1 = amplitude * Math.cos(k * r1) / Math.sqrt(Math.max(r1, 1));
+    const wave2 = amplitude * Math.cos(k * r2) / Math.sqrt(Math.max(r2, 1));
+
+    return wave1 + wave2;
+}
+
+function updateHeatmap() {
+    const sourceX1 = width/2 - separation/2;
+    const sourceX2 = width/2 + separation/2;
+
+    const cells = [];
+    for (let i = 0; i < gridSize; i++) {
+        for (let j = 0; j < gridSize; j++) {
+            const x = i * cellWidth + margin.left;
+            const y = j * cellHeight + margin.top;
+            const amplitude = calculateWaveAmplitude(x, y, sourceX1, sourceX2);
+            cells.push({
+                x: x,
+                y: y,
+                amplitude: amplitude*10
+            });
+        }
+    }
+
+    // Update heatmap
+    const rects = heatmapGroup.selectAll("rect")
+        .data(cells);
+
+    rects.enter()
+        .append("rect")
+        .merge(rects)
+        .attr("x", d => d.x)
+        .attr("y", d => d.y)
+        .attr("width", cellWidth)
+        .attr("height", cellHeight)
+        .attr("fill", d => colorScale(d.amplitude));
+
+    rects.exit().remove();
+
+    // Draw source points
+    heatmapGroup.selectAll(".source")
+        .data([sourceX1, sourceX2])
+        .join("circle")
+        .attr("class", "source")
+        .attr("cx", d => d)
+        .attr("cy", height/2)
+        .attr("r", 5)
+        .attr("fill", "black");
+}
+
+// Initial render
+updateHeatmap();
+
+// Add slider interaction
+d3.select("#separation").on("input", function() {
+    separation = +this.value;
+    updateHeatmap();
+});
+
+// Animation loop
+let time = 0;
+function animate() {
+    time += 0.1;
+    k = 2 * Math.PI / wavelength + time * 0.01;
+    updateHeatmap();
+    requestAnimationFrame(animate);
+}
+
+animate();
+</script>
+
+
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -878,15 +893,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../geometrical-optics/Microscope.html" class="pagination-link" aria-label="Optical Instruments- Microscope">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Optical Instruments- Microscope</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-  </div>
-</nav>
 </div> <!-- /content -->
 
 

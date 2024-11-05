@@ -64,8 +64,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../wave-optics/Wave Optics.html" rel="next">
-<link href="../geometrical-optics/Rainbow.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -170,7 +168,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../geometrical-optics/introduction.html">Geometrical Optics</a></li><li class="breadcrumb-item"><a href="../geometrical-optics/ContentsL6.html">Lecture 6</a></li><li class="breadcrumb-item"><a href="../geometrical-optics/Imaging Errors.html">Imaging Errors</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Imaging Errors</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -370,35 +368,8 @@ window.Quarto = {
       </div>
       <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../geometrical-optics/ContentsL6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Contents</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../geometrical-optics/Rainbow.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Rainbow</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../geometrical-optics/Imaging Errors.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Imaging Errors</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../wave-optics/Wave Optics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Wave Optics</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../wave-optics/interference.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Interference</span></a>
-  </div>
-</li>
+ <span class="menu-text">Contents</span>
+  </li>
       </ul>
   </li>
       </ul>
@@ -427,7 +398,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../geometrical-optics/introduction.html">Geometrical Optics</a></li><li class="breadcrumb-item"><a href="../geometrical-optics/ContentsL6.html">Lecture 6</a></li><li class="breadcrumb-item"><a href="../geometrical-optics/Imaging Errors.html">Imaging Errors</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Imaging Errors</h1>
 </div>
@@ -509,7 +480,7 @@ Figure&nbsp;1— Chromatic aberration. Left: Sketch of the chromatic aberration,
 </figure>
 </div>
 <p>Here is a plot for the variation of the focal distance of a lens with a radius of curvature of 100 mm as a function of the wavelength for three different glasses.</p>
-<div id="aea57059" class="cell" data-execution_count="2">
+<div id="a51d3a77" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>bk7<span class="op">=</span>pd.read_csv(<span class="st">"data/BK7.csv"</span>,delimiter<span class="op">=</span><span class="st">","</span>)</span>
@@ -991,7 +962,7 @@ R_n^m(\rho) = \sum_{k=0}^{\frac{n-m}{2}} \frac{(-1)^k (n-k)!}{k! \left(\frac{n+m
 <p>The Zernike polynomials are indexed in several ways, with one common method being the Noll index, which provides a single index <span class="math inline">\(j\)</span> to each polynomial. Another method uses the pair <span class="math inline">\((n, m)\)</span> to index the polynomials, where <span class="math inline">\(n\)</span> indicates the order of the polynomial and <span class="math inline">\(m\)</span> its azimuthal frequency.</p>
 <p>These polynomials are particularly useful in optics and ophthalmology for describing the shape of optical wavefronts and the aberrations of optical systems, including the human eye. They allow for the decomposition of a complex wavefront into simpler, orthogonal components, each corresponding to a specific type of aberration, such as defocus, astigmatism, coma, etc.</p>
 <p>The plots below visualize the Zernike Polynomials up to a certain order.</p>
-<div id="1d3aec84" class="cell" data-tags="[]" data-execution_count="3">
+<div id="d93c40c1" class="cell" data-tags="[]" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> radial_polynomial(n, m, rho):</span>
@@ -1479,18 +1450,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../geometrical-optics/Rainbow.html" class="pagination-link" aria-label="Rainbow">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Rainbow</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../wave-optics/Wave Optics.html" class="pagination-link" aria-label="Wave Optics">
-        <span class="nav-page-text">Wave Optics</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 
 
