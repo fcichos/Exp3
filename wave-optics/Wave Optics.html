@@ -64,6 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../wave-optics/interference.html" rel="next">
+<link href="../geometrical-optics/Telescope.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -168,7 +170,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Wave Optics</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../geometrical-optics/introduction.html">Geometrical Optics</a></li><li class="breadcrumb-item"><a href="../wave-optics/Wave Optics.html">Lecture 7</a></li><li class="breadcrumb-item"><a href="../wave-optics/Wave Optics.html">Wave Optics</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -372,6 +374,29 @@ window.Quarto = {
   </li>
       </ul>
   </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
+ <span class="menu-text">Lecture 7</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Wave Optics.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Wave Optics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/interference.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Interference</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
       </ul>
   </li>
     </ul>
@@ -391,6 +416,9 @@ window.Quarto = {
   <li><a href="#monochromatic-wave" id="toc-monochromatic-wave" class="nav-link" data-scroll-target="#monochromatic-wave">Monochromatic Wave</a></li>
   </ul></li>
   <li><a href="#plane-waves" id="toc-plane-waves" class="nav-link" data-scroll-target="#plane-waves">Plane Waves</a></li>
+  <li><a href="#dispersion-relation" id="toc-dispersion-relation" class="nav-link" data-scroll-target="#dispersion-relation">Dispersion Relation</a></li>
+  <li><a href="#propagation-in-a-medium" id="toc-propagation-in-a-medium" class="nav-link" data-scroll-target="#propagation-in-a-medium">Propagation in a Medium</a></li>
+  <li><a href="#snells-law" id="toc-snells-law" class="nav-link" data-scroll-target="#snells-law">Snells Law</a></li>
   <li><a href="#spherical-waves" id="toc-spherical-waves" class="nav-link" data-scroll-target="#spherical-waves">Spherical Waves</a></li>
   </ul>
 </nav>
@@ -398,7 +426,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../geometrical-optics/introduction.html">Geometrical Optics</a></li><li class="breadcrumb-item"><a href="../wave-optics/Wave Optics.html">Lecture 7</a></li><li class="breadcrumb-item"><a href="../wave-optics/Wave Optics.html">Wave Optics</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Wave Optics</h1>
 </div>
@@ -599,17 +627,22 @@ I(\mathbf{r})=|U(\mathbf{r})|^2
 <h2 class="anchored" data-anchor-id="plane-waves">Plane Waves</h2>
 <p>A plane wave represents a fundamental solution of the homogeneous wave equation. In its complex form, it is expressed as:</p>
 <p><span class="math display">\[\begin{equation}
-U=Ae^{-i\mathbf{k}\cdot \mathbf{r}}e^{i\omega t}
+U(\mathbf{r},t)=Ae^{-i\mathbf{k}\cdot \mathbf{r}}e^{i\omega t}
 \end{equation}\]</span></p>
-<p>where: - The first exponential term contains the spatial phase - The second exponential term contains the temporal phase - <span class="math inline">\(A\)</span> is the (potentially complex) amplitude of the plane wave</p>
+<p>where:</p>
+<ul>
+<li>The first exponential term contains the spatial phase</li>
+<li>The second exponential term contains the temporal phase</li>
+<li><span class="math inline">\(A\)</span> is the (potentially complex) amplitude of the plane wave</li>
+</ul>
 <p>The wavefront of a plane wave is defined by:</p>
 <p><span class="math display">\[\mathbf{k}\cdot \mathbf{r}=2\pi q + \text{arg}(A)\]</span></p>
-<p>This equation describes a plane perpendicular to the wavevector <span class="math inline">\(\mathbf{k}\)</span>. Adjacent wavefronts are separated by the wavelength <span class="math inline">\(\lambda=2\pi/k\)</span>, where <span class="math inline">\(k\)</span> represents the spatial frequency of the wave oscillation.</p>
+<p>where <span class="math inline">\(1\)</span> is an integer. It just means that the projection of the position vector <span class="math inline">\(\mathbf{r}\)</span> onto the wavevector <span class="math inline">\(\mathbf{k}\)</span> is a multiple of <span class="math inline">\(2\pi\)</span>. This equation describes a plane perpendicular to the wavevector <span class="math inline">\(\mathbf{k}\)</span>. Adjacent wavefronts are separated by the wavelength <span class="math inline">\(\lambda=2\pi/k\)</span>, where <span class="math inline">\(k\)</span> represents the spatial frequency of the wave oscillation.</p>
 <p>The spatial component of the plane wave is given by:</p>
 <p><span class="math display">\[\begin{equation}
 U(\mathbf{r})=Ae^{-i\mathbf{k}\cdot \mathbf{r}}
 \end{equation}\]</span></p>
-<p>In vacuum, the wavevector <span class="math inline">\(\mathbf{k}_0\)</span> is real-valued and can be written as:</p>
+<p>In vacuum, the wavevector <span class="math inline">\(\mathbf{k}=\mathbf{k}_0\)</span> is real-valued and can be written as:</p>
 <p><span class="math display">\[\begin{equation}
 \mathbf{k}_0=
 \begin{pmatrix}
@@ -618,8 +651,7 @@ k_{0y}\\
 k_{0z}\\
 \end{pmatrix}
 \end{equation}\]</span></p>
-<p>This vector defines the direction of wave propagation.</p>
-<div id="bb005aec" class="cell" data-execution_count="2">
+<div id="77b46d1d" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plane_wave(k,omega,r,t):</span>
@@ -661,15 +693,35 @@ k_{0z}\\
 </div>
 </div>
 </div>
-<p>The wavevector, which is proportional to the wave’s momentum, is related to the frequency through the dispersion relation:</p>
+</section>
+<section id="dispersion-relation" class="level2">
+<h2 class="anchored" data-anchor-id="dispersion-relation">Dispersion Relation</h2>
+<p>Using the plane wave solution</p>
 <p><span class="math display">\[\begin{equation}
-k_0=\frac{\omega}{c_0}
+U(\mathbf{r},t)=Ae^{-i\mathbf{k}\cdot \mathbf{r}}e^{i\omega t}
+\end{equation}\]</span></p>
+<p>we can write down the sum of the spatial and temporal phase as</p>
+<p><span class="math display">\[
+\phi(r,t)=\omega t-\mathbf{k}\cdot \mathbf{r}
+\]</span></p>
+<p>If we select a point on the wavefront <span class="math inline">\(\mathbf{r}_{m}\)</span>, and follow that over time, the phase <span class="math inline">\(\phi(t)=\text{const}\)</span>. Taking the time derivative results in</p>
+<p><span class="math display">\[
+\mathbf{k}\cdot \frac{d\mathbf{r}}{dt}=\omega
+\]</span></p>
+<p>If we choose the direction of the wavevector for measuring the propagation speed, i.e.&nbsp;<span class="math inline">\(\mathbf{r}=r\mathbf{e}_k\)</span> then we find for the propagation speed</p>
+<p><span class="math display">\[
+\frac{dr}{dt}=\frac{\omega}{k}
+\]</span></p>
+<p>or in vacuum</p>
+<p><span class="math display">\[\begin{equation}
+c_0=\frac{\omega}{k_0}
 \end{equation}\]</span></p>
 <p>This fundamental relationship connects:</p>
 <ul>
-<li>The momentum (<span class="math inline">\(k\)</span>)</li>
+<li>The momentum (<span class="math inline">\(k\)</span>),</li>
 <li>The energy (<span class="math inline">\(\omega\)</span>)</li>
 </ul>
+<p>and is called a dispersion relation despite the fact, that we do not really understand why those quantities are related to energy and momentum.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -683,6 +735,18 @@ Note
 <p>Light in free space exhibits a linear dispersion relation, i.e.&nbsp;the frequency of light changes linearly with the wavevector magnitude.</p>
 </div>
 </div>
+<p>Note that if we choose a different propagation direction <span class="math inline">\(\mathbf{e}\)</span> than the one along the wavevector <span class="math inline">\(\mathbf{e}_k\)</span>, we can write the phase velocity as</p>
+<p><span class="math display">\[
+\mathbf{k}\cdot\mathbf{e}$ \frac{dr}{dt}=k\cos(\measuredangle\mathbf{k},\mathbf{e}) \frac{dr}{dt}=\omega
+\]</span></p>
+<p>or</p>
+<p><span class="math display">\[
+\frac{dr}{dt}=\frac{\omega}{k\cos(\measuredangle\mathbf{k},\mathbf{e})}
+\]</span></p>
+<p>which means that if you observe the wavepropagation not in the direction of the wavevector, the phase velocity is actually bigger than the speed of light and even tends to infinity if the angle between the wavevector and the observation direction tends to 90°.</p>
+</section>
+<section id="propagation-in-a-medium" class="level2">
+<h2 class="anchored" data-anchor-id="propagation-in-a-medium">Propagation in a Medium</h2>
 <p>When a wave propagates through a medium:</p>
 <ol type="1">
 <li>The frequency <span class="math inline">\(\omega\)</span> remains constant (determined by the source)</li>
@@ -692,13 +756,86 @@ c=\frac{c_0}{n}
 </ol>
 <p>This leads to changes in:</p>
 <ul>
-<li><p>Wavelength: becomes shorter in the medium <span class="math display">\[
+<li><p>the wavelength, which becomes shorter in the medium <span class="math display">\[
 \lambda=\frac{\lambda_0}{n}
 \]</span></p></li>
-<li><p>Wavenumber: increases in the medium <span class="math display">\[
+<li><p>the length of the wavevector, which increases in the medium <span class="math display">\[
 k=nk_0
 \]</span></p></li>
 </ul>
+</section>
+<section id="snells-law" class="level2">
+<h2 class="anchored" data-anchor-id="snells-law">Snells Law</h2>
+<p>The change in the length of the wavevector has some simple consequence for Snells law. We can write Snells law as</p>
+<p><span class="math display">\[
+n_1k_0\sin(\theta_1)=n_2k_0\sin(\theta_2)
+\]</span></p>
+<p>where <span class="math inline">\(k_0\)</span> is the wavevector length in vacuum. As the <span class="math inline">\(n_1k_0\)</span> is the magnitude of the wavevector in medium 1, and <span class="math inline">\(n_2k_0\)</span> is the magnitude of the wavevector in medium 2, we can rewrite Snells law as</p>
+<p><span class="math display">\[
+k_1\sin(\theta_1)=k_2\sin(\theta_2)
+\]</span></p>
+<p>which means that the component of the wavevector parallel to the interface is conserved. If the wavevector has constant length then the wavevector incident at different angles is between a point on a circle and the origin in the diagram below. The circle corresponds to an isofrequency surface.</p>
+<div id="f9c00c95" class="cell" data-execution_count="3">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>theta_upper <span class="op">=</span> np.linspace(<span class="dv">0</span>, np.pi, <span class="dv">100</span>)  <span class="co"># Upper half circle</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>theta_lower <span class="op">=</span> np.linspace(np.pi, <span class="dv">2</span><span class="op">*</span>np.pi, <span class="dv">100</span>)  <span class="co"># Lower half circle</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Radii for the circles</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>r1 <span class="op">=</span> <span class="fl">1.51</span>  <span class="co"># Radius for upper half circle</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>r2 <span class="op">=</span> <span class="fl">1.01</span>  <span class="co"># Radius for lower half circle</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>x_upper <span class="op">=</span> r1 <span class="op">*</span> np.cos(theta_upper)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>y_upper <span class="op">=</span> r1 <span class="op">*</span> np.sin(theta_upper)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>x_lower <span class="op">=</span> r2 <span class="op">*</span> np.cos(theta_lower)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>y_lower <span class="op">=</span> r2 <span class="op">*</span> np.sin(theta_lower)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the plot</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>get_size(<span class="dv">6</span>, <span class="dv">6</span>))</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>plt.plot(x_upper, y_upper, <span class="st">'b-'</span>, label<span class="op">=</span><span class="ss">f'Upper radius = </span><span class="sc">{</span>r1<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>plt.plot(x_lower, y_lower, <span class="st">'r-'</span>, label<span class="op">=</span><span class="ss">f'Lower radius = </span><span class="sc">{</span>r2<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Add arrow</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate arrow start point (on the upper circle at 135 degrees)</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>arrow_start_x <span class="op">=</span> r1 <span class="op">*</span> np.cos(<span class="dv">3</span><span class="op">*</span>np.pi<span class="op">/</span><span class="fl">4.2</span>)  <span class="co"># 135 degrees in radians</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>arrow_start_y <span class="op">=</span> r1 <span class="op">*</span> np.sin(<span class="dv">3</span><span class="op">*</span>np.pi<span class="op">/</span><span class="fl">4.2</span>)</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Add arrow to origin (0,0)</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>plt.arrow(arrow_start_x, arrow_start_y, <span class="op">-</span>arrow_start_x, <span class="op">-</span>arrow_start_y,</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>          head_width<span class="op">=</span><span class="fl">0.1</span>, head_length<span class="op">=</span><span class="fl">0.2</span>, fc<span class="op">=</span><span class="st">'b'</span>, ec<span class="op">=</span><span class="st">'b'</span>,</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>          length_includes_head<span class="op">=</span><span class="va">True</span>, label<span class="op">=</span><span class="st">'45° arrow'</span>)</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>dy<span class="op">=</span>np.sqrt(r2<span class="op">**</span><span class="dv">2</span><span class="op">-</span>arrow_start_x<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>plt.arrow(<span class="dv">0</span>, <span class="dv">0</span>, <span class="op">-</span>arrow_start_x, <span class="op">-</span>dy,</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>          head_width<span class="op">=</span><span class="fl">0.1</span>, head_length<span class="op">=</span><span class="fl">0.2</span>, fc<span class="op">=</span><span class="st">'r'</span>, ec<span class="op">=</span><span class="st">'r'</span>,</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>          length_includes_head<span class="op">=</span><span class="va">True</span>, label<span class="op">=</span><span class="st">'45° arrow'</span>)</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>plt.axhline(y<span class="op">=</span><span class="dv">0</span>, color<span class="op">=</span><span class="st">'k'</span>, linestyle<span class="op">=</span><span class="st">'-'</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>plt.axvline(x<span class="op">=</span><span class="dv">0</span>, color<span class="op">=</span><span class="st">'k'</span>, linestyle<span class="op">=</span><span class="st">'-'</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>plt.axvline(x<span class="op">=-</span>arrow_start_x, color<span class="op">=</span><span class="st">'k'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>,lw<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>plt.axvline(x<span class="op">=</span>arrow_start_x, color<span class="op">=</span><span class="st">'k'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, lw<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>plt.axis(<span class="st">'equal'</span>)</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="vs">r'$k_x/k_0$'</span>)</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="vs">r'$k_y/k_0$'</span>)</span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="op">-</span><span class="dv">2</span>,<span class="dv">2</span> )</span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="op">-</span><span class="dv">2</span>,<span class="dv">2</span> )</span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the plot</span></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Wave Optics_files/figure-html/cell-4-output-1.png" width="370" height="349" class="figure-img"></p>
+<figcaption>Snells law construction using the conservation of the wavevector component parallel to the interface. The vertical dashed lines indicate the parallal component of the wavevector in the two media. The situation below corresponds to the transition from glass to air. Obviously, at a certain incident angle no suitable parallel component can be found in the second medium, which is the reason for total internal reflection.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Isofrequency surfaces can have non-spherical shape. In anisotropic media, they can be ellipsoids. In photonic crystals, i.e.&nbsp;crystals with a periodic structure on the scale of the wavelength, they can have a more complex shape.</p>
 </section>
 <section id="spherical-waves" class="level2">
 <h2 class="anchored" data-anchor-id="spherical-waves">Spherical Waves</h2>
@@ -1156,6 +1293,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../geometrical-optics/Telescope.html" class="pagination-link" aria-label="Optical Instruments- Telescope">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Optical Instruments- Telescope</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../wave-optics/interference.html" class="pagination-link" aria-label="Interference">
+        <span class="nav-page-text">Interference</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 
 
