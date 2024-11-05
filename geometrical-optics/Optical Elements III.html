@@ -467,7 +467,7 @@ Paraxial Approximation
 <li>The error increases rapidly for larger angles, indicating the limitations of the paraxial approximation.</li>
 </ol>
 <p>In most optical systems, especially those involving lenses, the angles of incident and refracted rays are typically small enough for this approximation to be valid. However, it’s important to be aware of its limitations when dealing with wide-angle optical systems or scenarios where precision is critical.</p>
-<div id="ad8900b5" class="cell" data-execution_count="2">
+<div id="3f24b0c6" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -876,7 +876,7 @@ M_3 = \begin{bmatrix} 1 &amp; 0 \\ -1/f_2 &amp; n \end{bmatrix}
 <section id="derivation" class="level2">
 <h2 class="anchored" data-anchor-id="derivation">Derivation</h2>
 <p>For a lens with refractive index <span class="math inline">\(n\)</span> in air, the focal lengths of the surfaces are:</p>
-<p><span class="math display">\[\frac{1}{f_1} = \frac{n-1}{R_1 n}, \quad \frac{1}{f_2} = \frac{1-n}{R_2}\]</span></p>
+<p><span class="math display">\[\frac{1}{f_1} = \frac{1-n}{nR_1}, \quad \frac{1}{f_2} = \frac{n-1}{R_2}\]</span></p>
 <p>Where <span class="math inline">\(R_1\)</span> and <span class="math inline">\(R_2\)</span> are the radii of curvature of the front and back surfaces.</p>
 <p>The total system matrix is then</p>
 <p><span class="math display">\[M_{total} = M_3 \cdot M_2 \cdot M_1\]</span></p>
@@ -888,14 +888,51 @@ M=\begin{bmatrix}
 \end{bmatrix}
 \]</span></p>
 <p>where the element in the lower left corner is the inverse of the focal length of the thick lens. This can be simplified to the following expression:</p>
-<p><span class="math display">\[-\frac{1}{f} = -\frac{1}{f_2} + \frac{1}{f_1} -\frac{d}{f_1f_2}\]</span></p>
+<p><span class="math display">\[-\frac{1}{f} = -\frac{1}{f_2} - \frac{n}{f_1} -\frac{d n}{f_1f_2}\]</span></p>
 <p>Substituting the expressions for <span class="math inline">\(1/f_1\)</span> and <span class="math inline">\(1/f_2\)</span>:</p>
 <p><span class="math display">\[\frac{1}{f} = \frac{n-1}{R_1} - \frac{n-1}{R_2} + \frac{d(n-1)^2}{nR_1R_2}\]</span></p>
 <p>Factoring out <span class="math inline">\((n-1)\)</span> gives the final expression for the focal length of a thick lens:</p>
-<p><span class="math display">\[\frac{1}{f} = (n-1)\left[\frac{1}{R_1} - \frac{1}{R_2} + \frac{(n-1)d}{nR_1R_2}\right]\]</span></p>
+<p><span class="math display">\[\frac{1}{f} = (n-1)\left[\frac{1}{R_1} - \frac{1}{R_2} + \frac{(n-1)d}{R_1R_2}\right]\]</span></p>
 <p>This is the Lensmaker’s equation for a thick lens.</p>
 <p>The construction of ray diagrams for thick lenses is similar to that for thin lenses, but the object and image distances are measured from the principal planes. The magnification is also calculated using the distances from the principal planes. <strong>Principal planes are where a thick lens can be treated as an equivalent thin lens. At these planes, the magnification is unity.</strong></p>
 <p>The derivation of the local of the principle planes will be part of the seminar.</p>
+<div id="13b66bd0" class="cell" data-execution_count="3">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># %% Importing libraries and defining symbols</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sympy <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> display, Math</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>n1, n2 , d, R1, R2, f1, f2, f    <span class="op">=</span> symbols(<span class="st">'n1 n2 d R1 R2 f1 f2 f'</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>init_session(quiet<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>init_printing()</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># %% Definition of matrices</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>f1<span class="op">=</span><span class="dv">1</span><span class="op">/</span>((n2<span class="op">-</span>n1)<span class="op">/</span>R1<span class="op">/</span>n2) <span class="co">## First spherical refracting surface</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>f2<span class="op">=</span><span class="dv">1</span><span class="op">/</span>((n1<span class="op">-</span>n2)<span class="op">/</span>R2<span class="op">/</span>n1) <span class="co">## Second spherical refracting surface</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>M1<span class="op">=</span>Matrix([[<span class="dv">1</span>,<span class="dv">0</span>],[<span class="op">-</span><span class="dv">1</span><span class="op">/</span>f1,n1<span class="op">/</span>n2]]) <span class="co"># first refracting surface</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>M2<span class="op">=</span>Matrix([[<span class="dv">1</span>,n2<span class="op">*</span>d],[<span class="dv">0</span>,<span class="dv">1</span>]]) <span class="co"># free space</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>M3<span class="op">=</span>Matrix([[<span class="dv">1</span>,<span class="dv">0</span>],[<span class="op">-</span><span class="dv">1</span><span class="op">/</span>f2,n2<span class="op">/</span>n1]]) <span class="co"># second refracting surface</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="co"># %% Thin lens calculation</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>M_thin<span class="op">=</span>M3<span class="op">*</span>M1  <span class="co"># first and second refracting surfaces</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="co">#display(Math('1/f ='+ latex(factor(collect(expand(simplify(-M_thin)[1,0]),[1/R1,1/R2],factor)))))</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="co"># The result of the matrix multiplication for a thick lens with SymPy</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="co"># %% Thick lens calculation</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>M_thick<span class="op">=</span>M3<span class="op">*</span>M2<span class="op">*</span>M1</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>display(Math(<span class="st">'1/f ='</span><span class="op">+</span> latex(collect(expand(simplify(<span class="op">-</span>M_thick)[<span class="dv">1</span>,<span class="dv">0</span>]),[<span class="dv">1</span><span class="op">/</span>R1,<span class="dv">1</span><span class="op">/</span>R2,<span class="dv">1</span><span class="op">/</span>(R1<span class="op">*</span>R2)],factor))))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code></code></pre>
+</div>
+<div class="cell-output cell-output-display cell-output-markdown">
+<p><span class="math inline">\(\displaystyle 1/f =\frac{n_{1} - n_{2}}{R_{2} n_{1}} - \frac{n_{1} - n_{2}}{R_{1} n_{1}} + \frac{d \left(n_{1} - n_{2}\right)^{2}}{R_{1} R_{2} n_{1}}\)</span></p>
+</div>
+</div>
 </section>
 </div>
 </div>
