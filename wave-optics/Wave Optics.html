@@ -651,7 +651,7 @@ k_{0y}\\
 k_{0z}\\
 \end{pmatrix}
 \end{equation}\]</span></p>
-<div id="77b46d1d" class="cell" data-execution_count="2">
+<div id="2c7472f7" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plane_wave(k,omega,r,t):</span>
@@ -775,7 +775,7 @@ n_1k_0\sin(\theta_1)=n_2k_0\sin(\theta_2)
 k_1\sin(\theta_1)=k_2\sin(\theta_2)
 \]</span></p>
 <p>which means that the component of the wavevector parallel to the interface is conserved. If the wavevector has constant length then the wavevector incident at different angles is between a point on a circle and the origin in the diagram below. The circle corresponds to an isofrequency surface.</p>
-<div id="f9c00c95" class="cell" data-execution_count="3">
+<div id="f94430d8" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>theta_upper <span class="op">=</span> np.linspace(<span class="dv">0</span>, np.pi, <span class="dv">100</span>)  <span class="co"># Upper half circle</span></span>
@@ -856,6 +856,48 @@ Important
 <p>The <span class="math inline">\(1/|\mathbf{r}-\mathbf{r}_0|\)</span> factor in the amplitude is necessary for energy conservation - ensuring that the total energy flux through any spherical surface centered on the source remains constant.</p>
 </div>
 </div>
+<div id="d438189e" class="cell" data-execution_count="4">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> spherical_wave(k,omega,r,r0,t):</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    k<span class="op">=</span>np.linalg.norm(k)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    d<span class="op">=</span>np.linalg.norm(r<span class="op">-</span>r0)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span>( np.exp(<span class="ot">1j</span><span class="op">*</span>(k<span class="op">*</span>d<span class="op">-</span>omega<span class="op">*</span>t))<span class="op">/</span>d)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>get_size(<span class="dv">5</span>,<span class="dv">5</span>))</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>x<span class="op">=</span>np.linspace(<span class="op">-</span><span class="fl">5e-6</span>,<span class="fl">5e-6</span>,<span class="dv">300</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>z<span class="op">=</span>np.linspace(<span class="op">-</span><span class="fl">5e-6</span>,<span class="fl">5e-6</span>,<span class="dv">300</span>)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>X,Z<span class="op">=</span>np.meshgrid(x,z)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>r<span class="op">=</span>np.array([X,<span class="dv">0</span>,Z],dtype<span class="op">=</span><span class="bu">object</span>)</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>wavelength<span class="op">=</span><span class="fl">532e-9</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>k0<span class="op">=</span><span class="dv">2</span><span class="op">*</span>np.pi<span class="op">/</span>wavelength</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>c<span class="op">=</span><span class="dv">299792458</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>omega0<span class="op">=</span>k0<span class="op">*</span>c</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>k<span class="op">=</span>k0<span class="op">*</span>np.array([<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">1.</span>])</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>r0<span class="op">=</span>np.array([<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>])</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>field<span class="op">=</span>spherical_wave(k,omega0,r,r0,<span class="dv">0</span>)</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>extent <span class="op">=</span> np.<span class="bu">min</span>(z)<span class="op">*</span><span class="fl">1e6</span>, np.<span class="bu">max</span>(z)<span class="op">*</span><span class="fl">1e6</span>,np.<span class="bu">min</span>(x)<span class="op">*</span><span class="fl">1e6</span>, np.<span class="bu">max</span>(x)<span class="op">*</span><span class="fl">1e6</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>plt.imshow(np.real(field.transpose()),extent<span class="op">=</span>extent,vmin<span class="op">=-</span><span class="fl">5e6</span>,vmax<span class="op">=</span><span class="fl">5e6</span>,cmap<span class="op">=</span><span class="st">'seismic'</span>)</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'z [µm]'</span>)</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'x [µm]'</span>)</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Wave Optics_files/figure-html/cell-5-output-1.png" width="328" height="303" class="figure-img"></p>
+<figcaption>Spherical wave propagation. The wave is emitted from the origin and propagates in the positive z-direction. The wavefronts are spherical surfaces. The wave is visualized in the xz-plane.</figcaption>
+</figure>
+</div>
+</div>
+</div>
 <div id="fig-spherical-amplitude" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-spherical-amplitude-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -867,6 +909,23 @@ Figure&nbsp;5— Spherical wave amplitude and intensity of the spherical wave as
 </figure>
 </div>
 <p>The plots demonstrate that: - The field amplitude decays rapidly with distance - The intensity follows a <span class="math inline">\(1/r^2\)</span> law (with slight deviations at small distances due to discretization artifacts)</p>
+<div id="fig-spherical-propagation" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-spherical-propagation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><video src="img/out.mov" class="img-fluid" controls=""><a href="img/out.mov">Video</a></video></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><video src="img/in.mov" class="img-fluid" controls=""><a href="img/in.mov">Video</a></video></p>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-spherical-propagation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6— Propagating spherical waves for positive wavenumber
+</figcaption>
+</figure>
+</div>
 <p>Note: The direction of wave propagation can be reversed by changing the sign of the wavenumber <span class="math inline">\(k\)</span>.</p>
 
 
