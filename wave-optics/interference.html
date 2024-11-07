@@ -412,6 +412,7 @@ window.Quarto = {
   <li><a href="#interference-of-waves-in-space" id="toc-interference-of-waves-in-space" class="nav-link" data-scroll-target="#interference-of-waves-in-space">Interference of Waves in Space</a></li>
   <li><a href="#coherence" id="toc-coherence" class="nav-link" data-scroll-target="#coherence">Coherence</a></li>
   <li><a href="#more-general-description-of-coherence" id="toc-more-general-description-of-coherence" class="nav-link" data-scroll-target="#more-general-description-of-coherence">More General Description of Coherence</a></li>
+  <li><a href="#interference-of-two-point-sources" id="toc-interference-of-two-point-sources" class="nav-link" data-scroll-target="#interference-of-two-point-sources">Interference of two Point Sources</a></li>
   </ul>
 </nav>
     </div>
@@ -437,7 +438,8 @@ window.Quarto = {
 </header>
 
 
-<p>Interference is a fundamental physical phenomenon that demonstrates the superposition principle for linear systems. When two wave solutions <span class="math inline">\(U_1(\mathbf{r})\)</span> and <span class="math inline">\(U_2(\mathbf{r})\)</span> combine, their superposition gives:</p>
+<p>Interference is a fundamental physical phenomenon that demonstrates the superposition principle for linear systems. This principle, which states that the net response to multiple stimuli is the sum of the individual responses, is central to our understanding of wave physics. Interference appears across many domains of physics: in optics where it enables high-precision measurements and holography, in quantum mechanics where it reveals the wave nature of matter, and in acoustics where it forms the basis for noise cancellation technology. The ability of waves to interfere constructively (amplifying each other) or destructively (canceling each other) has profound practical applications, from the anti-reflective coatings on optical elements to the operational principles of interferometric gravitational wave detectors like LIGO. Understanding interference is therefore not just of theoretical interest but crucial for modern technology and experimental physics.</p>
+<p>When two wave solutions <span class="math inline">\(U_1(\mathbf{r})\)</span> and <span class="math inline">\(U_2(\mathbf{r})\)</span> combine, their superposition gives:</p>
 <p><span class="math display">\[
 U(\mathbf{r})=U_1(\mathbf{r})+U_2(\mathbf{r})
 \]</span></p>
@@ -485,28 +487,29 @@ Constructive Interference
 <p>Occurs when <span class="math inline">\(\Delta \phi=2\pi m\)</span> (where <span class="math inline">\(m\)</span> is an integer), resulting in <span class="math inline">\(I=4I_0\)</span></p>
 </div>
 </div>
-<div id="86080813" class="cell" data-execution_count="2">
+<div id="706b205f" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x<span class="op">=</span>np.linspace(<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">1000</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>k<span class="op">=</span><span class="dv">2</span><span class="op">*</span>np.pi<span class="op">/</span><span class="fl">0.532</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>y1<span class="op">=</span>np.cos(k<span class="op">*</span>x)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>fig,[ax1,ax2,ax3]<span class="op">=</span>plt.subplots(<span class="dv">3</span>,<span class="dv">1</span>,figsize<span class="op">=</span>get_size(<span class="dv">10</span>,<span class="dv">8</span>))</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>ax1.plot(x,y1,label<span class="op">=</span><span class="st">'Wave 1'</span>)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>ax2.plot(x,y1,label<span class="op">=</span><span class="st">'Wave 1'</span>)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>ax3.plot(x,<span class="dv">2</span><span class="op">*</span>y1,label<span class="op">=</span><span class="st">'Wave 1'</span>)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>ax3.set_xlabel(<span class="st">"distance [µm]"</span>)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>ax1.set_ylabel(<span class="vs">r"$U_1$"</span>)</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>ax2.set_ylabel(<span class="vs">r"$U_2$"</span>)</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>ax3.set_ylabel(<span class="vs">r"$U_1+U_2$"</span>)</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>wavelength<span class="op">=</span><span class="fl">0.532</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>k<span class="op">=</span><span class="dv">2</span><span class="op">*</span>np.pi<span class="op">/</span><span class="fl">0.532</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>y1<span class="op">=</span>np.cos(k<span class="op">*</span>x)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>fig,[ax1,ax2,ax3]<span class="op">=</span>plt.subplots(<span class="dv">3</span>,<span class="dv">1</span>,figsize<span class="op">=</span>get_size(<span class="dv">10</span>,<span class="dv">8</span>))</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>ax1.plot(x<span class="op">/</span>wavelength,y1,label<span class="op">=</span><span class="st">'Wave 1'</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>ax2.plot(x<span class="op">/</span>wavelength,y1,label<span class="op">=</span><span class="st">'Wave 1'</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>ax3.plot(x<span class="op">/</span>wavelength,<span class="dv">2</span><span class="op">*</span>y1,label<span class="op">=</span><span class="st">'Wave 1'</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>ax3.set_xlabel(<span class="vs">r"distance [$\lambda$]"</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>ax1.set_ylabel(<span class="vs">r"$U_1$"</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>ax2.set_ylabel(<span class="vs">r"$U_2$"</span>)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>ax3.set_ylabel(<span class="vs">r"$U_1+U_2$"</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="interference_files/figure-html/cell-3-output-1.png" width="572" height="457" class="figure-img"></p>
+<p><img src="interference_files/figure-html/cell-3-output-1.png" width="572" height="454" class="figure-img"></p>
 <figcaption>Constructive interference of two waves (top, middle) and the sum of the two wave amplitudes (bottom)</figcaption>
 </figure>
 </div>
@@ -525,30 +528,31 @@ Destructive Interference
 <p>Occurs when <span class="math inline">\(\Delta \phi=(2m-1)\pi\)</span> (where <span class="math inline">\(m\)</span> is an integer), resulting in <span class="math inline">\(I=0\)</span></p>
 </div>
 </div>
-<div id="46cf3e43" class="cell" data-execution_count="3">
+<div id="c5067ad3" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>x<span class="op">=</span>np.linspace(<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">1000</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>k<span class="op">=</span><span class="dv">2</span><span class="op">*</span>np.pi<span class="op">/</span><span class="fl">0.532</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>y1<span class="op">=</span>np.cos(k<span class="op">*</span>x)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>y2<span class="op">=</span>np.cos(k<span class="op">*</span>x<span class="op">+</span>np.pi)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>fig,[ax1,ax2,ax3]<span class="op">=</span>plt.subplots(<span class="dv">3</span>,<span class="dv">1</span>,figsize<span class="op">=</span>get_size(<span class="dv">10</span>,<span class="dv">8</span>))</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>ax1.plot(x,y1,label<span class="op">=</span><span class="st">'Wave 1'</span>)</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>ax2.plot(x,y2,label<span class="op">=</span><span class="st">'Wave 1'</span>)</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>ax3.plot(x,y1<span class="op">+</span>y2,label<span class="op">=</span><span class="st">'Wave 1'</span>)</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>ax3.set_xlabel(<span class="st">"distance [µm]"</span>)</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>ax1.set_ylabel(<span class="vs">r"$U_1$"</span>)</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>ax2.set_ylabel(<span class="vs">r"$U_2$"</span>)</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>ax3.set_ylabel(<span class="vs">r"$U_1+U_2$"</span>)</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>ax3.set_ylim(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>)</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>wavelength<span class="op">=</span><span class="fl">0.532</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>k<span class="op">=</span><span class="dv">2</span><span class="op">*</span>np.pi<span class="op">/</span><span class="fl">0.532</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>y1<span class="op">=</span>np.cos(k<span class="op">*</span>x)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>y2<span class="op">=</span>np.cos(k<span class="op">*</span>x<span class="op">+</span>np.pi)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>fig,[ax1,ax2,ax3]<span class="op">=</span>plt.subplots(<span class="dv">3</span>,<span class="dv">1</span>,figsize<span class="op">=</span>get_size(<span class="dv">10</span>,<span class="dv">8</span>))</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>ax1.plot(x<span class="op">/</span>wavelength,y1,label<span class="op">=</span><span class="st">'Wave 1'</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>ax2.plot(x<span class="op">/</span>wavelength,y2,label<span class="op">=</span><span class="st">'Wave 1'</span>)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>ax3.plot(x<span class="op">/</span>wavelength,y1<span class="op">+</span>y2,label<span class="op">=</span><span class="st">'Wave 1'</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>ax3.set_xlabel(<span class="vs">r"distance [$\lambda$]"</span>)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>ax1.set_ylabel(<span class="vs">r"$U_1$"</span>)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>ax2.set_ylabel(<span class="vs">r"$U_2$"</span>)</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>ax3.set_ylabel(<span class="vs">r"$U_1+U_2$"</span>)</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>ax3.set_ylim(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>)</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="interference_files/figure-html/cell-4-output-1.png" width="572" height="457" class="figure-img"></p>
+<p><img src="interference_files/figure-html/cell-4-output-1.png" width="572" height="454" class="figure-img"></p>
 <figcaption>Destructive interference of two waves (top, middle) and the sum of the two wave amplitudes (bottom)</figcaption>
 </figure>
 </div>
@@ -588,7 +592,7 @@ Phase Difference and Path Difference
 </section>
 <section id="interference-of-waves-in-space" class="level3">
 <h3 class="anchored" data-anchor-id="interference-of-waves-in-space">Interference of Waves in Space</h3>
-<div id="28454608" class="cell" data-execution_count="4">
+<div id="7cab51a6" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plane_wave(k,omega,r,t):</span>
@@ -619,13 +623,13 @@ Phase Difference and Path Difference
 <span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>extent <span class="op">=</span> np.<span class="bu">min</span>(z)<span class="op">*</span><span class="fl">1e6</span>, np.<span class="bu">max</span>(z)<span class="op">*</span><span class="fl">1e6</span>,np.<span class="bu">min</span>(x)<span class="op">*</span><span class="fl">1e6</span>, np.<span class="bu">max</span>(x)<span class="op">*</span><span class="fl">1e6</span></span>
 <span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>,<span class="dv">0</span>].imshow(np.real(field.transpose()),extent<span class="op">=</span>extent,vmin<span class="op">=-</span><span class="dv">1</span>,vmax<span class="op">=</span><span class="dv">1</span>,cmap<span class="op">=</span><span class="st">'seismic'</span>)</span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>,<span class="dv">0</span>].set_title(<span class="st">'Wave 1'</span>)</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>,<span class="dv">0</span>].set_title(<span class="st">'wave 1'</span>)</span>
 <span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>,<span class="dv">1</span>].imshow(np.real(field1.transpose()),extent<span class="op">=</span>extent,vmin<span class="op">=-</span><span class="dv">1</span>,vmax<span class="op">=</span><span class="dv">1</span>,cmap<span class="op">=</span><span class="st">'seismic'</span>)</span>
-<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>,<span class="dv">1</span>].set_title(<span class="st">'Wave 2'</span>)</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>,<span class="dv">1</span>].set_title(<span class="st">'wave 2'</span>)</span>
 <span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>,<span class="dv">0</span>].imshow(np.real(field.transpose()<span class="op">+</span>field1.transpose()),extent<span class="op">=</span>extent,vmin<span class="op">=-</span><span class="dv">1</span>,vmax<span class="op">=</span><span class="dv">1</span>,cmap<span class="op">=</span><span class="st">'seismic'</span>)</span>
-<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>,<span class="dv">0</span>].set_title(<span class="st">'Sum'</span>)</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>,<span class="dv">0</span>].set_title(<span class="st">'sum'</span>)</span>
 <span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>,<span class="dv">1</span>].imshow(np.<span class="bu">abs</span>(field.transpose()<span class="op">+</span>field1.transpose())<span class="op">**</span><span class="dv">2</span>,extent<span class="op">=</span>extent,cmap<span class="op">=</span><span class="st">'gray'</span>)</span>
-<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>,<span class="dv">1</span>].set_title(<span class="st">'Intensity'</span>)</span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>,<span class="dv">1</span>].set_title(<span class="st">'intensity'</span>)</span>
 <span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>,<span class="dv">1</span>].set_xlabel(<span class="st">'z-position [µm]'</span>)</span>
 <span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>,<span class="dv">0</span>].set_xlabel(<span class="st">'z-position [µm]'</span>)</span>
 <span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>,<span class="dv">0</span>].set_ylabel(<span class="st">'x-position [µm]'</span>)</span>
@@ -642,7 +646,7 @@ Phase Difference and Path Difference
 </div>
 </div>
 </div>
-<div id="93c763a3" class="cell" data-execution_count="5">
+<div id="102b212b" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> spherical_wave(k,omega,r,r0,t):</span>
@@ -696,6 +700,9 @@ Phase Difference and Path Difference
 </div>
 </div>
 <p>The interference of the spherical and the plane wave (also the one of the two plane waves) give also an interesting result. The intensity resembles to be a snapshot of the shape of the wavefronts of the spherical wave. We can therefore measure the wavefronts of the spherical wave by interfering it with a plane wave. This is also the basic principle behind holography. There we use a reference wave to interfere with the wave that we want to measure. The interference pattern is recorded and can be used to reconstruct the wavefronts of the wave.</p>
+<div class="callout-alert">
+<p>A super nice website to try out interference interactively is <a href="https://www.falstad.com/ripple/">here</a>.</p>
+</div>
 </section>
 <section id="coherence" class="level3">
 <h3 class="anchored" data-anchor-id="coherence">Coherence</h3>
@@ -742,13 +749,32 @@ Coherence
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Two waves are called coherent, if they exihibit a fixed phase relation over time. A constant phase relation allows the observation of interference effects.</p>
-<p>The coherence time <span class="math inline">\(\tau_c\)</span> is given by <span class="math display">\[
-\tau_{c}=\Delta t =\frac{1}{\Delta \nu}
-\]</span></p>
-<p>The coherence length <span class="math inline">\(L_c\)</span> is given by <span class="math display">\[
-L_c=c\tau_c
-\]</span></p>
+<p>Two waves are called coherent, if they exihibit a fixed phase relation in space or time relation over time. It measures their ability to interfer. The main types of coherence are</p>
+<section id="temporal-coherence" class="level3">
+<h3 class="anchored" data-anchor-id="temporal-coherence">Temporal Coherence</h3>
+<ul>
+<li>Measures phase correlation of a wave with itself at different times</li>
+<li>Characterized by coherence time <span class="math inline">\(\tau_c\)</span> and coherence length <span class="math inline">\(L_c = c\tau_c\)</span></li>
+<li>Related to spectral width: <span class="math inline">\(\tau_c = 1/\Delta\nu\)</span></li>
+<li>Perfect for monochromatic waves (single frequency)</li>
+<li>Limited for broad spectrum sources (like thermal light)</li>
+</ul>
+</section>
+<section id="spatial-coherence" class="level3">
+<h3 class="anchored" data-anchor-id="spatial-coherence">Spatial Coherence</h3>
+<ul>
+<li>Measures phase correlation between different points in space</li>
+<li>Important for interference from extended sources</li>
+<li>Determines ability to form interference patterns</li>
+<li>Related to source size and geometry</li>
+</ul>
+<p>Coherence is a property of the light source and is connected to the frequency distribution of the light. Sources can be:</p>
+<ul>
+<li><strong>Fully coherent</strong>: ideal laser</li>
+<li><strong>Partially coherent</strong>: real laser</li>
+<li><strong>Incoherent</strong>: thermal light</li>
+</ul>
+</section>
 </div>
 </div>
 </section>
@@ -782,7 +808,7 @@ L_c=c\tau_c
 <li>Limited coherence length/area</li>
 <li>Spectral broadening</li>
 </ul>
-<div id="a8bff31f" class="cell" data-execution_count="6">
+<div id="c9586bef" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>omega0 <span class="op">=</span> <span class="fl">2.0</span></span>
@@ -822,9 +848,9 @@ L_c=c\tau_c
 <span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>fig, (ax1, ax2) <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="dv">1</span>, figsize<span class="op">=</span>get_size(<span class="dv">10</span>, <span class="dv">8</span>))</span>
 <span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot waves</span></span>
-<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>ax1.plot(t[:<span class="dv">500</span>], np.real(wave1[:<span class="dv">500</span>]), label<span class="op">=</span><span class="st">'Wave 1'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
-<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a>ax1.plot(t[:<span class="dv">500</span>], np.real(wave2[:<span class="dv">500</span>]), label<span class="op">=</span><span class="st">'Wave 2'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
-<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a>ax1.plot(t[:<span class="dv">500</span>], np.real(wave_total[:<span class="dv">500</span>]), <span class="st">'k'</span>, label<span class="op">=</span><span class="st">'Sum'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>ax1.plot(t[:<span class="dv">500</span>], np.real(wave1[:<span class="dv">500</span>]), label<span class="op">=</span><span class="st">'Wave 1'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a>ax1.plot(t[:<span class="dv">500</span>], np.real(wave2[:<span class="dv">500</span>]), label<span class="op">=</span><span class="st">'Wave 2'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a>ax1.plot(t[:<span class="dv">500</span>], np.real(wave_total[:<span class="dv">500</span>]), <span class="st">'k'</span>, label<span class="op">=</span><span class="st">'Sum'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>,lw<span class="op">=</span><span class="fl">0.5</span>)</span>
 <span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a>ax1.set_title(<span class="st">'wave superposition'</span>)</span>
 <span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a>ax1.set_xlabel(<span class="st">'time'</span>)</span>
 <span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a>ax1.set_ylabel(<span class="st">'amplitude'</span>)</span>
@@ -854,7 +880,7 @@ L_c=c\tau_c
 </div>
 </div>
 <p>Besides different frequencies the coherence time can also be affected by phase jumps. The following example shows two waves with the same frequency but multiple phase jumps. The temporal correlation function shows the decoherence due to the phase jumps.</p>
-<div id="cafa5c4e" class="cell" data-execution_count="7">
+<div id="7abee2f5" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -951,6 +977,258 @@ L_c=c\tau_c
 </div>
 </div>
 </div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Coherence of Thermal radiation
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Thermal radiation is a common example of incoherent light. The following factors contribute to the incoherence of thermal radiation:</p>
+<ol type="1">
+<li><strong>Random Emission Process</strong></li>
+</ol>
+<ul>
+<li>Individual atoms/molecules emit light independently</li>
+<li>Each emission event has a random phase</li>
+<li>The emission timing is random</li>
+<li>These random events effectively create continuous phase jumps</li>
+</ul>
+<ol start="2" type="1">
+<li><strong>Multiple Emitters</strong></li>
+</ol>
+<ul>
+<li>Many atoms/molecules emit simultaneously</li>
+<li>Each emitter acts independently</li>
+<li>There’s no phase relationship between different emitters</li>
+<li>This leads to spatially incoherent radiation</li>
+</ul>
+<ol start="3" type="1">
+<li><strong>Thermal Motion</strong></li>
+</ol>
+<ul>
+<li>Atoms/molecules are in constant thermal motion</li>
+<li>This motion causes Doppler shifts</li>
+<li>The shifts result in frequency variations</li>
+<li>Motion also affects the phase of emitted radiation</li>
+</ul>
+<ol start="4" type="1">
+<li><strong>Collision Effects</strong></li>
+</ol>
+<ul>
+<li>Frequent atomic/molecular collisions</li>
+<li>Each collision can cause phase jumps</li>
+<li>At higher temperatures, more frequent collisions</li>
+<li>This leads to shorter coherence times</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Partial Coherence in Lasers
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Lasers are partially coherent (rather than perfectly coherent) due to several physical mechanisms that introduce phase and frequency fluctuations:</p>
+<ol type="1">
+<li><strong>Spontaneous Emission</strong></li>
+</ol>
+<ul>
+<li>Not all emission in a laser is stimulated</li>
+<li>Some spontaneous emission is always present</li>
+<li>Adds random phase jumps to the laser field</li>
+<li>Sets fundamental quantum limit to coherence</li>
+</ul>
+<ol start="2" type="1">
+<li><strong>Technical Noise Sources</strong></li>
+</ol>
+<ul>
+<li>Mechanical vibrations of cavity mirrors</li>
+<li>Thermal fluctuations in gain medium</li>
+<li>Pump power fluctuations</li>
+<li>Current noise in diode lasers</li>
+<li>These lead to:
+<ul>
+<li>Frequency jitter</li>
+<li>Phase noise</li>
+<li>Amplitude fluctuations</li>
+</ul></li>
+</ul>
+<ol start="3" type="1">
+<li><strong>Gain Medium Properties</strong></li>
+</ol>
+<ul>
+<li>Finite linewidth of the lasing transition</li>
+<li>Thermal motion of atoms/molecules</li>
+<li>Pressure broadening in gas lasers</li>
+<li>Population fluctuations</li>
+<li>Results in:
+<ul>
+<li>Frequency spread</li>
+<li>Phase variations</li>
+</ul></li>
+</ul>
+<ol start="4" type="1">
+<li><strong>Cavity Effects</strong></li>
+</ol>
+<ul>
+<li>Finite cavity lifetime</li>
+<li>Multiple longitudinal modes</li>
+<li>Temperature-induced length changes</li>
+<li>Contributes to:
+<ul>
+<li>Linewidth broadening</li>
+<li>Mode competition</li>
+<li>Frequency drift</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="interference-of-two-point-sources" class="level3">
+<h3 class="anchored" data-anchor-id="interference-of-two-point-sources">Interference of two Point Sources</h3>
+<p>The interference of two point sources is a classic example of wave interference. The interference pattern depends on the relative phase of the two waves. The following example shows the interference pattern for two spherical waves separated by a distance <code>d</code>.</p>
+
+    <title>Wave Interference Pattern</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+    </style>
+
+
+<div class="container">
+    <div id="plot"></div>
+    <div>
+        <label for="separation">Source Separation: </label>
+        <input type="range" id="separation" min="0" max="200" value="100" step="1">
+    </div>
+</div>
+
+<script>
+// Set up the dimensions
+const width = 500;
+const height = 500;
+const margin = { top: 20, right: 20, bottom: 20, left: 20 };
+
+// Wave parameters
+const wavelength = 50;
+const amplitude = 1;
+const k = 2 * Math.PI / wavelength;
+let separation = 100;
+
+// Create the SVG container
+const svg = d3.select("#plot")
+    .append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+// Create a group for the heatmap
+const heatmapGroup = svg.append("g")
+    .attr("transform", `translate(${margin.left}, ${margin.top})`);
+
+// Create color scale
+const colorScale = d3.scaleSequential(d3.interpolateRdBu)
+    .domain([-2, 2]);
+
+// Create grid data
+const gridSize = 200;
+const cellWidth = (width - margin.left - margin.right) / gridSize;
+const cellHeight = (height - margin.top - margin.bottom) / gridSize;
+
+function calculateWaveAmplitude(x, y, sourceX1, sourceX2) {
+    const r1 = Math.sqrt((x - sourceX1) ** 2 + (y - height/2) ** 2);
+    const r2 = Math.sqrt((x - sourceX2) ** 2 + (y - height/2) ** 2);
+
+    // Calculate wave amplitudes
+    const wave1 = amplitude * Math.cos(k * r1) / Math.sqrt(Math.max(r1, 1));
+    const wave2 = amplitude * Math.cos(k * r2) / Math.sqrt(Math.max(r2, 1));
+
+    return wave1 + wave2;
+}
+
+function updateHeatmap() {
+    const sourceX1 = width/2 - separation/2;
+    const sourceX2 = width/2 + separation/2;
+
+    const cells = [];
+    for (let i = 0; i < gridSize; i++) {
+        for (let j = 0; j < gridSize; j++) {
+            const x = i * cellWidth + margin.left;
+            const y = j * cellHeight + margin.top;
+            const amplitude = calculateWaveAmplitude(x, y, sourceX1, sourceX2);
+            cells.push({
+                x: x,
+                y: y,
+                amplitude: amplitude*10
+            });
+        }
+    }
+
+    // Update heatmap
+    const rects = heatmapGroup.selectAll("rect")
+        .data(cells);
+
+    rects.enter()
+        .append("rect")
+        .merge(rects)
+        .attr("x", d => d.x)
+        .attr("y", d => d.y)
+        .attr("width", cellWidth)
+        .attr("height", cellHeight)
+        .attr("fill", d => colorScale(d.amplitude));
+
+    rects.exit().remove();
+
+    // Draw source points
+    heatmapGroup.selectAll(".source")
+        .data([sourceX1, sourceX2])
+        .join("circle")
+        .attr("class", "source")
+        .attr("cx", d => d)
+        .attr("cy", height/2)
+        .attr("r", 5)
+        .attr("fill", "black");
+}
+
+// Initial render
+updateHeatmap();
+
+// Add slider interaction
+d3.select("#separation").on("input", function() {
+    separation = +this.value;
+    updateHeatmap();
+});
+
+// Animation loop
+let time = 0;
+function animate() {
+    time += 0.1;
+    k = 2 * Math.PI / wavelength + time * 0.01;
+    updateHeatmap();
+    requestAnimationFrame(animate);
+}
+
+animate();
+</script>
+
 
 
 </section>

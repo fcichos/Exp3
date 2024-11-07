@@ -563,7 +563,7 @@ U(\mathbf{r},t)=a(\mathbf{r})e^{i\phi(\mathbf{r})}e^{i\omega t}
 <div id="fig-complex-rep" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-complex-rep-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/complex_rep.png" class="img-fluid figure-img" style="width:50.0%">
+<img src="img/complex_rep.png" class="img-fluid figure-img" style="width:70.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-complex-rep-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;3— Phasor diagram of the complex amplitude <span class="math inline">\(U(\mathbf{r})\)</span> (left) and <span class="math inline">\(U(t)\)</span> (right)
@@ -599,10 +599,28 @@ U(\mathbf{r},t)=U(\mathbf{r})e^{i\omega t}
 <p><span class="math display">\[
 U(\mathbf{r})=a(\mathbf{r})e^{i\phi(\mathbf{r})}
 \]</span></p>
-<p>Here, <span class="math inline">\(\phi\)</span> represents the spatial phase of the wavefunction. The intensity of the wave is simply given by:</p>
+<p>Here, <span class="math inline">\(\phi\)</span> represents the spatial phase of the wavefunction. Substituting this into the wave equation and noting that the time derivatives bring down factors of <span class="math inline">\(i\omega\)</span>:</p>
+<p><span class="math display">\[\nabla^2 [U(\mathbf{r})e^{i\omega t}] - \frac{1}{c^2}\frac{\partial^2}{\partial t^2}[U(\mathbf{r})e^{i\omega t}] = 0\]</span> <span class="math display">\[\nabla^2 U(\mathbf{r})e^{i\omega t} + \frac{\omega^2}{c^2}U(\mathbf{r})e^{i\omega t} = 0\]</span></p>
+<p>The time dependence <span class="math inline">\(e^{i\omega t}\)</span> factors out, leaving us with <strong>the Helmholtz equation</strong>:</p>
+<p><span class="math display">\[\nabla^2 U(\mathbf{r}) + k^2U(\mathbf{r}) = 0\]</span></p>
+<p>where <span class="math inline">\(k = \omega/c\)</span> is the wave number. This equation describes the spatial behavior of monochromatic waves.</p>
+</section>
+<section id="intensity-of-waves-1" class="level4">
+<h4 class="anchored" data-anchor-id="intensity-of-waves-1">Intensity of Waves</h4>
+<p>The intensity of a wave at position <span class="math inline">\(\mathbf{r}\)</span> and time <span class="math inline">\(t\)</span> is defined as:</p>
+<p><span class="math display">\[
+I(\mathbf{r},t)=2\langle u^2(\mathbf{r},t)\rangle
+\]</span></p>
+<p>where <span class="math inline">\(I\)</span> is measured in units of <span class="math inline">\(\left[\frac{W}{m^2}\right]\)</span>. The angle brackets <span class="math inline">\(\langle \ldots \rangle\)</span> represent a time average over one oscillation cycle of <span class="math inline">\(u\)</span>. For visible light, this averaging occurs over an extremely brief period - for example, light with a wavelength of 600 nm has a cycle duration of just 2 femtoseconds.</p>
+<p>The optical power <span class="math inline">\(P\)</span> of a wave can be calculated by integrating the intensity over a surface area <span class="math inline">\(A\)</span>:</p>
+<p><span class="math display">\[
+P=\int_A I(\mathbf{r},t) \, dA
+\]</span></p>
+<p>Inserting the seperation of the complex wavefunction into spatial and temporal components leads to the following expression for the intensity:</p>
 <p><span class="math display">\[
 I(\mathbf{r})=|U(\mathbf{r})|^2
 \]</span></p>
+<p>Thus the physical quantity forming the spatial and temporal oscillation of the wavefunction is also providing the intensity of the wave when its magnitude is squared. This is a fundamental property of wavefunctions and for example not the case when temperature oscillates in space and time in a medium.</p>
 </section>
 <section id="wavefronts" class="level4">
 <h4 class="anchored" data-anchor-id="wavefronts">Wavefronts</h4>
@@ -651,7 +669,7 @@ k_{0y}\\
 k_{0z}\\
 \end{pmatrix}
 \end{equation}\]</span></p>
-<div id="2c7472f7" class="cell" data-execution_count="2">
+<div id="7aa2f71a" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plane_wave(k,omega,r,t):</span>
@@ -706,11 +724,11 @@ U(\mathbf{r},t)=Ae^{-i\mathbf{k}\cdot \mathbf{r}}e^{i\omega t}
 \]</span></p>
 <p>If we select a point on the wavefront <span class="math inline">\(\mathbf{r}_{m}\)</span>, and follow that over time, the phase <span class="math inline">\(\phi(t)=\text{const}\)</span>. Taking the time derivative results in</p>
 <p><span class="math display">\[
-\mathbf{k}\cdot \frac{d\mathbf{r}}{dt}=\omega
+\mathbf{k}\cdot \frac{d\mathbf{r}_{m}}{dt}=\omega
 \]</span></p>
-<p>If we choose the direction of the wavevector for measuring the propagation speed, i.e.&nbsp;<span class="math inline">\(\mathbf{r}=r\mathbf{e}_k\)</span> then we find for the propagation speed</p>
+<p>If we choose the direction of the wavevector for measuring the propagation speed, i.e.&nbsp;<span class="math inline">\(\mathbf{r}_{m}=r_{m}\mathbf{e}_k\)</span> then we find for the propagation speed</p>
 <p><span class="math display">\[
-\frac{dr}{dt}=\frac{\omega}{k}
+\frac{dr_{m}}{dt}=\frac{\omega}{k}
 \]</span></p>
 <p>or in vacuum</p>
 <p><span class="math display">\[\begin{equation}
@@ -737,7 +755,7 @@ Note
 </div>
 <p>Note that if we choose a different propagation direction <span class="math inline">\(\mathbf{e}\)</span> than the one along the wavevector <span class="math inline">\(\mathbf{e}_k\)</span>, we can write the phase velocity as</p>
 <p><span class="math display">\[
-\mathbf{k}\cdot\mathbf{e}$ \frac{dr}{dt}=k\cos(\measuredangle\mathbf{k},\mathbf{e}) \frac{dr}{dt}=\omega
+\mathbf{k}\cdot\mathbf{e} \frac{dr}{dt}=k\cos(\measuredangle\mathbf{k},\mathbf{e}) \frac{dr}{dt}=\omega
 \]</span></p>
 <p>or</p>
 <p><span class="math display">\[
@@ -775,7 +793,6 @@ n_1k_0\sin(\theta_1)=n_2k_0\sin(\theta_2)
 k_1\sin(\theta_1)=k_2\sin(\theta_2)
 \]</span></p>
 <p>which means that the component of the wavevector parallel to the interface is conserved. If the wavevector has constant length then the wavevector incident at different angles is between a point on a circle and the origin in the diagram below. The circle corresponds to an isofrequency surface.</p>
-<div id="f94430d8" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>theta_upper <span class="op">=</span> np.linspace(<span class="dv">0</span>, np.pi, <span class="dv">100</span>)  <span class="co"># Upper half circle</span></span>
@@ -792,7 +809,7 @@ k_1\sin(\theta_1)=k_2\sin(\theta_2)
 <span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>y_lower <span class="op">=</span> r2 <span class="op">*</span> np.sin(theta_lower)</span>
 <span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the plot</span></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>get_size(<span class="dv">6</span>, <span class="dv">6</span>))</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>get_size(<span class="dv">4</span>, <span class="dv">3</span>))</span>
 <span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>plt.plot(x_upper, y_upper, <span class="st">'b-'</span>, label<span class="op">=</span><span class="ss">f'Upper radius = </span><span class="sc">{</span>r1<span class="sc">}</span><span class="ss">'</span>)</span>
 <span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>plt.plot(x_lower, y_lower, <span class="st">'r-'</span>, label<span class="op">=</span><span class="ss">f'Lower radius = </span><span class="sc">{</span>r2<span class="sc">}</span><span class="ss">'</span>)</span>
 <span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
@@ -815,7 +832,7 @@ k_1\sin(\theta_1)=k_2\sin(\theta_2)
 <span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>plt.axvline(x<span class="op">=-</span>arrow_start_x, color<span class="op">=</span><span class="st">'k'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>,lw<span class="op">=</span><span class="fl">0.5</span>)</span>
 <span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>plt.axvline(x<span class="op">=</span>arrow_start_x, color<span class="op">=</span><span class="st">'k'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, lw<span class="op">=</span><span class="fl">0.5</span>)</span>
 <span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>plt.axis(<span class="st">'equal'</span>)</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>plt.axis(<span class="st">'square'</span>)</span>
 <span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
 <span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="vs">r'$k_x/k_0$'</span>)</span>
@@ -826,12 +843,33 @@ k_1\sin(\theta_1)=k_2\sin(\theta_2)
 <span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the plot</span></span>
 <span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
+<div class="quarto-layout-panel" data-column-width-right="20%" data-column-width-middle="20%" data-layout-ncol="3" data-column-width-left="40%">
+<div class="quarto-layout-row">
+<div id="008e0bca" class="cell quarto-layout-cell" data-execution_count="3" style="flex-basis: 33.3%;justify-content: flex-start;">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="Wave Optics_files/figure-html/cell-4-output-1.png" width="370" height="349" class="figure-img"></p>
-<figcaption>Snells law construction using the conservation of the wavevector component parallel to the interface. The vertical dashed lines indicate the parallal component of the wavevector in the two media. The situation below corresponds to the transition from glass to air. Obviously, at a certain incident angle no suitable parallel component can be found in the second medium, which is the reason for total internal reflection.</figcaption>
+<p><img src="Wave Optics_files/figure-html/cell-4-output-1.png" width="232" height="220" class="figure-img"></p>
+<figcaption>Snells law construction using the conservation of the wavevector component parallel to the interface. The vertical dashed lines indicate the parallal component of the wavevector in the two media.</figcaption>
 </figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/pc_ex.png" class="img-fluid figure-img" style="width:90.0%"></p>
+<figcaption>Electron microscopy image of a 2D photonic crystal</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/pc_iso.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>Isofrequency surfaces of a photonic crystal</figcaption>
+</figure>
+</div>
 </div>
 </div>
 </div>
@@ -856,7 +894,7 @@ Important
 <p>The <span class="math inline">\(1/|\mathbf{r}-\mathbf{r}_0|\)</span> factor in the amplitude is necessary for energy conservation - ensuring that the total energy flux through any spherical surface centered on the source remains constant.</p>
 </div>
 </div>
-<div id="d438189e" class="cell" data-execution_count="4">
+<div id="729e7d19" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> spherical_wave(k,omega,r,r0,t):</span>
@@ -909,23 +947,6 @@ Figure&nbsp;5— Spherical wave amplitude and intensity of the spherical wave as
 </figure>
 </div>
 <p>The plots demonstrate that: - The field amplitude decays rapidly with distance - The intensity follows a <span class="math inline">\(1/r^2\)</span> law (with slight deviations at small distances due to discretization artifacts)</p>
-<div id="fig-spherical-propagation" class="quarto-layout-panel">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-spherical-propagation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><video src="img/out.mov" class="img-fluid" controls=""><a href="img/out.mov">Video</a></video></p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><video src="img/in.mov" class="img-fluid" controls=""><a href="img/in.mov">Video</a></video></p>
-</div>
-</div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-spherical-propagation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6— Propagating spherical waves for positive wavenumber
-</figcaption>
-</figure>
-</div>
 <p>Note: The direction of wave propagation can be reversed by changing the sign of the wavenumber <span class="math inline">\(k\)</span>.</p>
 
 
