@@ -412,7 +412,6 @@ window.Quarto = {
   <li><a href="#postulates-of-wave-optics" id="toc-postulates-of-wave-optics" class="nav-link active" data-scroll-target="#postulates-of-wave-optics">Postulates of Wave Optics</a>
   <ul class="collapse">
   <li><a href="#wave-equation" id="toc-wave-equation" class="nav-link" data-scroll-target="#wave-equation">Wave equation</a></li>
-  <li><a href="#intensity-of-waves" id="toc-intensity-of-waves" class="nav-link" data-scroll-target="#intensity-of-waves">Intensity of Waves</a></li>
   <li><a href="#monochromatic-wave" id="toc-monochromatic-wave" class="nav-link" data-scroll-target="#monochromatic-wave">Monochromatic Wave</a></li>
   </ul></li>
   <li><a href="#plane-waves" id="toc-plane-waves" class="nav-link" data-scroll-target="#plane-waves">Plane Waves</a></li>
@@ -521,18 +520,6 @@ u(\mathbf{r},t)=a_1u_1(\mathbf{r},t)+a_2u_2(\mathbf{r},t)
 \]</span></p>
 <p>is also a solution, where <span class="math inline">\(a_1\)</span> and <span class="math inline">\(a_2\)</span> are arbitrary constants.</p>
 </section>
-<section id="intensity-of-waves" class="level3">
-<h3 class="anchored" data-anchor-id="intensity-of-waves">Intensity of Waves</h3>
-<p>The intensity of a wave at position <span class="math inline">\(\mathbf{r}\)</span> and time <span class="math inline">\(t\)</span> is defined as:</p>
-<p><span class="math display">\[
-I(\mathbf{r},t)=2\langle u^2(\mathbf{r},t)\rangle
-\]</span></p>
-<p>where <span class="math inline">\(I\)</span> is measured in units of <span class="math inline">\(\left[\frac{W}{m^2}\right]\)</span>. The angle brackets <span class="math inline">\(\langle \ldots \rangle\)</span> represent a time average over one oscillation cycle of <span class="math inline">\(u\)</span>. For visible light, this averaging occurs over an extremely brief period - for example, light with a wavelength of 600 nm has a cycle duration of just 2 femtoseconds.</p>
-<p>The optical power <span class="math inline">\(P\)</span> of a wave can be calculated by integrating the intensity over a surface area <span class="math inline">\(A\)</span>:</p>
-<p><span class="math display">\[
-P=\int_A I(\mathbf{r},t) \, dA
-\]</span></p>
-</section>
 <section id="monochromatic-wave" class="level3">
 <h3 class="anchored" data-anchor-id="monochromatic-wave">Monochromatic Wave</h3>
 <p>A monochromatic wave consists of a single frequency <span class="math inline">\(\omega\)</span>. By definition, such a wave must be infinite in time and free from phase disturbances (such as sudden jumps). The mathematical expression for a monochromatic wave is:</p>
@@ -605,8 +592,8 @@ U(\mathbf{r})=a(\mathbf{r})e^{i\phi(\mathbf{r})}
 <p><span class="math display">\[\nabla^2 U(\mathbf{r}) + k^2U(\mathbf{r}) = 0\]</span></p>
 <p>where <span class="math inline">\(k = \omega/c\)</span> is the wave number. This equation describes the spatial behavior of monochromatic waves.</p>
 </section>
-<section id="intensity-of-waves-1" class="level4">
-<h4 class="anchored" data-anchor-id="intensity-of-waves-1">Intensity of Waves</h4>
+<section id="intensity-of-waves" class="level4">
+<h4 class="anchored" data-anchor-id="intensity-of-waves">Intensity of Waves</h4>
 <p>The intensity of a wave at position <span class="math inline">\(\mathbf{r}\)</span> and time <span class="math inline">\(t\)</span> is defined as:</p>
 <p><span class="math display">\[
 I(\mathbf{r},t)=2\langle u^2(\mathbf{r},t)\rangle
@@ -669,7 +656,7 @@ k_{0y}\\
 k_{0z}\\
 \end{pmatrix}
 \end{equation}\]</span></p>
-<div id="f453fcc7" class="cell" data-execution_count="2">
+<div id="9380056e" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plane_wave(k,omega,r,t):</span>
@@ -843,9 +830,9 @@ k_1\sin(\theta_1)=k_2\sin(\theta_2)
 <span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the plot</span></span>
 <span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="quarto-layout-panel" data-column-width-left="40%" data-column-width-right="20%" data-column-width-middle="20%" data-layout-ncol="3">
+<div class="quarto-layout-panel" data-column-width-right="20%" data-column-width-left="40%" data-column-width-middle="20%" data-layout-ncol="3">
 <div class="quarto-layout-row">
-<div id="8ad5d89b" class="cell quarto-layout-cell" data-execution_count="3" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div id="f4b0493d" class="cell quarto-layout-cell" data-execution_count="3" style="flex-basis: 33.3%;justify-content: flex-start;">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -894,7 +881,7 @@ Important
 <p>The <span class="math inline">\(1/|\mathbf{r}-\mathbf{r}_0|\)</span> factor in the amplitude is necessary for energy conservation - ensuring that the total energy flux through any spherical surface centered on the source remains constant.</p>
 </div>
 </div>
-<div id="396e5bed" class="cell" data-execution_count="4">
+<div id="2082376b" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> spherical_wave(k,omega,r,r0,t):</span>
