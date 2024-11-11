@@ -644,7 +644,7 @@ d=\frac{(2m-1)\lambda_{max}}{2n}\approx 75\, {\rm nm}
 <span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>wavelengths <span class="op">=</span> np.linspace(<span class="dv">400</span>, <span class="dv">750</span>, <span class="dv">10000</span>)</span>
 <span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>R_100nm <span class="op">=</span> [calculate_reflection(w<span class="op">*</span><span class="fl">1e-9</span>, <span class="fl">0.1e-6</span>) <span class="cf">for</span> w <span class="kw">in</span> wavelengths]</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>R_100nm <span class="op">=</span> [calculate_reflection(w<span class="op">*</span><span class="fl">1e-9</span>, <span class="fl">1e-6</span>) <span class="cf">for</span> w <span class="kw">in</span> wavelengths]</span>
 <span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>R_10nm <span class="op">=</span> [calculate_reflection(w<span class="op">*</span><span class="fl">1e-9</span>, <span class="fl">100e-6</span>) <span class="cf">for</span> w <span class="kw">in</span> wavelengths]</span>
 <span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>fig, (ax1, ax2) <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>get_size(<span class="dv">10</span>, <span class="dv">5</span>),dpi<span class="op">=</span><span class="dv">150</span>)</span>
