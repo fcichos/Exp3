@@ -423,6 +423,12 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../wave-optics/MultiWave Interference.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Multi Wave Interference</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../wave-optics/FabryPerot.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Fabry-Perot Interferometer</span></a>
   </div>
@@ -536,7 +542,7 @@ Constructive Interference
 <p>Occurs when <span class="math inline">\(\Delta \phi=2\pi m\)</span> (where <span class="math inline">\(m\)</span> is an integer), resulting in <span class="math inline">\(I=4I_0\)</span></p>
 </div>
 </div>
-<div id="f80c852e" class="cell" data-execution_count="2">
+<div id="7ce50c8d" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x<span class="op">=</span>np.linspace(<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">1000</span>)</span>
@@ -577,7 +583,7 @@ Destructive Interference
 <p>Occurs when <span class="math inline">\(\Delta \phi=(2m-1)\pi\)</span> (where <span class="math inline">\(m\)</span> is an integer), resulting in <span class="math inline">\(I=0\)</span></p>
 </div>
 </div>
-<div id="8c6524e8" class="cell" data-execution_count="3">
+<div id="8461aa87" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>x<span class="op">=</span>np.linspace(<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">1000</span>)</span>
@@ -641,7 +647,7 @@ Phase Difference and Path Difference
 </section>
 <section id="interference-of-waves-in-space" class="level3">
 <h3 class="anchored" data-anchor-id="interference-of-waves-in-space">Interference of Waves in Space</h3>
-<div id="b89fbac5" class="cell" data-execution_count="4">
+<div id="64e9318e" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plane_wave(k,omega,r,t):</span>
@@ -695,7 +701,7 @@ Phase Difference and Path Difference
 </div>
 </div>
 </div>
-<div id="9acf345c" class="cell" data-execution_count="5">
+<div id="94dd6529" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> spherical_wave(k,omega,r,r0,t):</span>
@@ -857,7 +863,7 @@ Coherence
 <li>Limited coherence length/area</li>
 <li>Spectral broadening</li>
 </ul>
-<div id="9bd67773" class="cell" data-execution_count="6">
+<div id="292cf538" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>omega0 <span class="op">=</span> <span class="fl">2.0</span></span>
@@ -929,7 +935,7 @@ Coherence
 </div>
 </div>
 <p>Besides different frequencies the coherence time can also be affected by phase jumps. The following example shows two waves with the same frequency but multiple phase jumps. The temporal correlation function shows the decoherence due to the phase jumps.</p>
-<div id="e0b80989" class="cell" data-execution_count="7">
+<div id="643f197f" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
