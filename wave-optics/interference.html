@@ -170,7 +170,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../geometrical-optics/introduction.html">Geometrical Optics</a></li><li class="breadcrumb-item"><a href="../wave-optics/Interference.html">Lecture 8</a></li><li class="breadcrumb-item"><a href="../wave-optics/Interference.html">Interference</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../geometrical-optics/introduction.html">Geometrical Optics</a></li><li class="breadcrumb-item"><a href="../wave-optics/Interference.html">Lecture 8</a></li><li class="breadcrumb-item"><a href="../wave-optics/Interference.html">Interference &amp; Coherence</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -406,7 +406,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../wave-optics/Interference.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Interference</span></a>
+ <span class="menu-text">Interference &amp; Coherence</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -468,7 +468,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../geometrical-optics/introduction.html">Geometrical Optics</a></li><li class="breadcrumb-item"><a href="../wave-optics/Interference.html">Lecture 8</a></li><li class="breadcrumb-item"><a href="../wave-optics/Interference.html">Interference</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../geometrical-optics/introduction.html">Geometrical Optics</a></li><li class="breadcrumb-item"><a href="../wave-optics/Interference.html">Lecture 8</a></li><li class="breadcrumb-item"><a href="../wave-optics/Interference.html">Interference &amp; Coherence</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Interference</h1>
 </div>
@@ -536,7 +536,7 @@ Constructive Interference
 <p>Occurs when <span class="math inline">\(\Delta \phi=2\pi m\)</span> (where <span class="math inline">\(m\)</span> is an integer), resulting in <span class="math inline">\(I=4I_0\)</span></p>
 </div>
 </div>
-<div id="1035098b" class="cell" data-execution_count="2">
+<div id="28e77686" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x<span class="op">=</span>np.linspace(<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">1000</span>)</span>
@@ -577,7 +577,7 @@ Destructive Interference
 <p>Occurs when <span class="math inline">\(\Delta \phi=(2m-1)\pi\)</span> (where <span class="math inline">\(m\)</span> is an integer), resulting in <span class="math inline">\(I=0\)</span></p>
 </div>
 </div>
-<div id="dc7c8cdf" class="cell" data-execution_count="3">
+<div id="ebbaf3e2" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>x<span class="op">=</span>np.linspace(<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">1000</span>)</span>
@@ -641,7 +641,7 @@ Phase Difference and Path Difference
 </section>
 <section id="interference-of-waves-in-space" class="level3">
 <h3 class="anchored" data-anchor-id="interference-of-waves-in-space">Interference of Waves in Space</h3>
-<div id="940552ae" class="cell" data-execution_count="4">
+<div id="4159bbe9" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plane_wave(k,omega,r,t):</span>
@@ -695,7 +695,7 @@ Phase Difference and Path Difference
 </div>
 </div>
 </div>
-<div id="4b3fe792" class="cell" data-execution_count="5">
+<div id="a60396b3" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> spherical_wave(k,omega,r,r0,t):</span>
@@ -857,7 +857,7 @@ Coherence
 <li>Limited coherence length/area</li>
 <li>Spectral broadening</li>
 </ul>
-<div id="e32169da" class="cell" data-execution_count="6">
+<div id="b67a0672" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>omega0 <span class="op">=</span> <span class="fl">2.0</span></span>
@@ -929,7 +929,7 @@ Coherence
 </div>
 </div>
 <p>Besides different frequencies the coherence time can also be affected by phase jumps. The following example shows two waves with the same frequency but multiple phase jumps. The temporal correlation function shows the decoherence due to the phase jumps.</p>
-<div id="3633ffb7" class="cell" data-execution_count="7">
+<div id="04e125a3" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>

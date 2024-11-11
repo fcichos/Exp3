@@ -406,7 +406,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../wave-optics/Interference.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Interference</span></a>
+ <span class="menu-text">Interference &amp; Coherence</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -551,7 +551,7 @@ window.Quarto = {
 </details>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
-<div id="e868a689" class="cell quarto-layout-cell" data-execution_count="2" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="9a3bfd91" class="cell quarto-layout-cell" data-execution_count="2" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -706,7 +706,7 @@ d3.select("#wavelength").on("input", function() {
 I = I_1 + I_2 + 2 \sqrt{I_1 I_2} \cos(\Delta \phi)
 \]</span></p>
 <p>where <span class="math inline">\(I_1\)</span> and <span class="math inline">\(I_2\)</span> are the intensities of the two sources. The intensity pattern is shown in the plot below. The intensity is highest at the center of the screen and decreases as we move away from the center. The intensity is zero at points where the path length difference is equal to an integer multiple of the wavelength, i.e.&nbsp;<span class="math inline">\(\Delta s = m \lambda\)</span> where <span class="math inline">\(m\)</span> is an integer. This gives the condition for constructive interference. The intensity is also zero at points where the path length difference is equal to an integer multiple of the wavelength plus half a wavelength, i.e.&nbsp;<span class="math inline">\(\Delta s = (m + 0.5) \lambda\)</span> where <span class="math inline">\(m\)</span> is an integer. This gives the condition for destructive interference.</p>
-<div id="4d7f28e4" class="cell" data-execution_count="3">
+<div id="d190777d" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot intensity pattern</span></span>
@@ -749,15 +749,23 @@ d = \frac{\lambda}{2 \sin(\theta)}
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Fresnel double mirror experiment
+Fresnel double mirror and biprism experiment
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
+<p>One of the first experiments that demonstrated the wave nature of light was the Fresnel double mirror experiment. In this experiment, a light source is placed in front of two tilted mirrors. The light is reflected from this mirror to a screen. The interference pattern that is observed on the screen is due to the interference of the light that is reflected from the two mirrors. The interference pattern is similar to the one that is observed in the Young’s double slit experiment as the two mirrors “immitate” two virtual light sources behind the tilted mirror.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="img/fresnel_alt.png" class="img-fluid figure-img"></p>
+<p><img src="img/fresnel_alt.jpg" class="img-fluid figure-img"></p>
+<figcaption>Fresnel double mirror experiment</figcaption>
+</figure>
+</div>
+<p>A similar experiment is done with the so-called Fresnel biprism. The Fresnel biprism is a prism that is cut in half and the two halves are separated by a small distance. The light that is incident on the biprism is split into two beams that are then recombined on a screen. The interference pattern that is observed on the screen is due to the interference of the two beams.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/fresnel_biprism.jpg" class="img-fluid figure-img"></p>
 <figcaption>Fresnel double mirror experiment</figcaption>
 </figure>
 </div>
@@ -1191,8 +1199,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../wave-optics/Interference.html" class="pagination-link" aria-label="Interference">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Interference</span>
+      <a href="../wave-optics/Interference.html" class="pagination-link" aria-label="Interference &amp; Coherence">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Interference &amp; Coherence</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
