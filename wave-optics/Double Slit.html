@@ -415,6 +415,17 @@ window.Quarto = {
  <span class="menu-text">Double Slit Interference</span></a>
   </div>
 </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true">
+ <span class="menu-text">Lecture 9</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../wave-optics/Thin Film Interference.html" class="sidebar-item-text sidebar-link">
@@ -433,17 +444,6 @@ window.Quarto = {
  <span class="menu-text">Fabry-Perot Interferometer</span></a>
   </div>
 </li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true">
- <span class="menu-text">Lecture 9</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../wave-optics/Diffraction.html" class="sidebar-item-text sidebar-link">
@@ -557,7 +557,7 @@ window.Quarto = {
 </details>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
-<div id="1d5b4a6e" class="cell quarto-layout-cell" data-execution_count="2" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="769f43d0" class="cell quarto-layout-cell" data-execution_count="2" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -707,12 +707,51 @@ d3.select("#wavelength").on("input", function() {
 <p><span class="math display">\[
 \Delta \phi = \frac{2\pi}{\lambda} \Delta s = \frac{2\pi}{\lambda} d \sin(\theta)
 \]</span></p>
-<p>If the screen is at a distance <span class="math inline">\(L\)</span> from the sources, the angle <span class="math inline">\(\theta\)</span> can be calculated as <span class="math inline">\(\theta = \arctan(y/L)\)</span>, where <span class="math inline">\(y\)</span> is the distance from the center of the screen. This is, of course only approximately correct. The exact calculation would involve the geometry of the problem and the path length difference would be calculated as <span class="math inline">\(\Delta s = \sqrt{d^2 + L^2 - 2dL \cos(\theta)} - \sqrt{d^2 + L^2 - 2dL \cos(\theta)}\)</span>. Note that when observing the pattern on the screen with the help of a lens that is placed at the focal distance from the screen, the two path would correspond to parallel rays and the path length difference assumed above would be correct. The intensity at a point on the screen is then given by</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Correct path length difference
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The path length difference given above is only approximately correct. The exact calculation would involve the geometry of the problem and the path length difference would be calculated as <span class="math inline">\(\Delta s = \sqrt{d^2 + L^2 - 2dL \cos(\theta)} - \sqrt{d^2 + L^2 - 2dL \cos(\theta)}\)</span>. Note that when observing the pattern on the screen with the help of a lens that is placed at the focal distance from the screen, the two path would correspond to parallel rays and the path length difference assumed above would be correct.</p>
+</div>
+</div>
+</div>
+<p>As constructive interference occurs when the phase difference is a multiple of, i.e.&nbsp;<span class="math inline">\(m 2\pi\)</span>, the constructive interference will be observed when</p>
 <p><span class="math display">\[
-I = I_1 + I_2 + 2 \sqrt{I_1 I_2} \cos(\Delta \phi)
+\sin(\theta) = m \frac{\lambda}{d}
 \]</span></p>
-<p>where <span class="math inline">\(I_1\)</span> and <span class="math inline">\(I_2\)</span> are the intensities of the two sources. The intensity pattern is shown in the plot below. The intensity is highest at the center of the screen and decreases as we move away from the center. The intensity is zero at points where the path length difference is equal to an integer multiple of the wavelength, i.e.&nbsp;<span class="math inline">\(\Delta s = m \lambda\)</span> where <span class="math inline">\(m\)</span> is an integer. This gives the condition for constructive interference. The intensity is also zero at points where the path length difference is equal to an integer multiple of the wavelength plus half a wavelength, i.e.&nbsp;<span class="math inline">\(\Delta s = (m + 0.5) \lambda\)</span> where <span class="math inline">\(m\)</span> is an integer. This gives the condition for destructive interference.</p>
-<div id="2a5df98b" class="cell" data-execution_count="3">
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Constructive interference from two sources
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Constructive interference from two sources separated by a distance <span class="math inline">\(d\)</span> will be observed at an angle <span class="math inline">\(\theta\)</span> when <span class="math inline">\(\sin(\theta) = m \frac{\lambda}{d}\)</span>, where <span class="math inline">\(m\)</span> is an integer. The orders of the constructive interference are labeled as <span class="math inline">\(m = 0, 1, 2, 3, \ldots\)</span> and the <span class="math inline">\(m=0\)</span> constructive interference is the central maximum. The first order constructive interference angle with scale with the wavelength as <span class="math inline">\(\lambda\)</span> and the inverse distance between the sources as <span class="math inline">\(1/d\)</span>, i.e.&nbsp;larger wavelength will lead to larger angles and larger source separation will lead to smaller angles.</p>
+<p>This scaling is a common feature in many interference applications and the foundation of spectrocopy!</p>
+</div>
+</div>
+<p>If the screen is at a distance <span class="math inline">\(L\)</span> from the sources, the angle <span class="math inline">\(\theta\)</span> can be calculated as <span class="math inline">\(\theta = \arctan(y/L)\)</span>, where <span class="math inline">\(y\)</span> is the distance from the center of the screen.</p>
+<p>Inserting the phase difference into the intensity formula, we get</p>
+<p><span class="math display">\[
+I = 2 I_1 + 2 I_2 + 2 \sqrt{I_1 I_2} \cos\left(\frac{2\pi d}{\lambda} \sin(\theta)\right)
+\]</span></p>
+<p>or when assuming the same intensity from the two sources</p>
+<p><span class="math display">\[
+I= 4I_0\cos^2\left(\frac{d\pi}{\lambda}\sin(\theta)\right)
+\]</span></p>
+<p>The plot below shows this intensity pattern for two sources separated by a distance <span class="math inline">\(d = 2\)</span> µm and a wavelength of <span class="math inline">\(\lambda = 0.532\)</span> micrometers.</p>
+<div id="33b48221" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot intensity pattern</span></span>
@@ -750,7 +789,7 @@ d = \frac{\lambda}{2 \sin(\theta)}
 \]</span></p>
 <p>where <span class="math inline">\(\lambda\)</span> is the wavelength of the light and <span class="math inline">\(\theta\)</span> is the angle subtended by the two objects at the lens. The Abbe criterion is derived from the condition that the microscopy lens has to collect at least the first minimum of the interference pattern of the two objects. This first destructive interference is the information that is needed to separate the two objects from one object.</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -759,7 +798,7 @@ Fresnel double mirror and biprism experiment
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>One of the first experiments that demonstrated the wave nature of light was the Fresnel double mirror experiment. In this experiment, a light source is placed in front of two tilted mirrors. The light is reflected from this mirror to a screen. The interference pattern that is observed on the screen is due to the interference of the light that is reflected from the two mirrors. The interference pattern is similar to the one that is observed in the Young’s double slit experiment as the two mirrors “immitate” two virtual light sources behind the tilted mirror.</p>
 <div class="quarto-figure quarto-figure-center">

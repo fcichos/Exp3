@@ -170,7 +170,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../geometrical-optics/introduction.html">Geometrical Optics</a></li><li class="breadcrumb-item"><a href="../wave-optics/Interference.html">Lecture 8</a></li><li class="breadcrumb-item"><a href="../wave-optics/Thin Film Interference.html">Thin Film Interference</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../geometrical-optics/introduction.html">Geometrical Optics</a></li><li class="breadcrumb-item"><a href="../wave-optics/Thin Film Interference.html">Lecture 9</a></li><li class="breadcrumb-item"><a href="../wave-optics/Thin Film Interference.html">Thin Film Interference</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -415,6 +415,17 @@ window.Quarto = {
  <span class="menu-text">Double Slit Interference</span></a>
   </div>
 </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true">
+ <span class="menu-text">Lecture 9</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../wave-optics/Thin Film Interference.html" class="sidebar-item-text sidebar-link active">
@@ -433,17 +444,6 @@ window.Quarto = {
  <span class="menu-text">Fabry-Perot Interferometer</span></a>
   </div>
 </li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true">
- <span class="menu-text">Lecture 9</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../wave-optics/Diffraction.html" class="sidebar-item-text sidebar-link">
@@ -464,14 +464,16 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#newton-rings" id="toc-newton-rings" class="nav-link active" data-scroll-target="#newton-rings">Newton Rings</a></li>
+  <li><a href="#fixed-wavelength" id="toc-fixed-wavelength" class="nav-link active" data-scroll-target="#fixed-wavelength">Fixed Wavelength</a></li>
+  <li><a href="#fixed-thickness" id="toc-fixed-thickness" class="nav-link" data-scroll-target="#fixed-thickness">Fixed Thickness</a></li>
+  <li><a href="#newton-rings" id="toc-newton-rings" class="nav-link" data-scroll-target="#newton-rings">Newton Rings</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../geometrical-optics/introduction.html">Geometrical Optics</a></li><li class="breadcrumb-item"><a href="../wave-optics/Interference.html">Lecture 8</a></li><li class="breadcrumb-item"><a href="../wave-optics/Thin Film Interference.html">Thin Film Interference</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../geometrical-optics/introduction.html">Geometrical Optics</a></li><li class="breadcrumb-item"><a href="../wave-optics/Thin Film Interference.html">Lecture 9</a></li><li class="breadcrumb-item"><a href="../wave-optics/Thin Film Interference.html">Thin Film Interference</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Thin Film Interference</h1>
 </div>
@@ -532,21 +534,26 @@ Phase Jump at Boundaries
 <p><span class="math display">\[
 \Delta \phi=\frac{2\pi}{\lambda}2dn+\pi
 \]</span></p>
-<p>In case we are searching for constructive interference, this phase shift should correspond to an integer multiple of <span class="math inline">\(2\pi\)</span>, e.g.&nbsp;<span class="math inline">\(\Delta \phi =m2\pi\)</span>. From the last equation we see already, that for <span class="math inline">\(d=0\)</span>, we have in principle a residual phase shift of <span class="math inline">\(\pi\)</span>, meaning that there is only destructive interference. Yet a film thickness of zeor does not really make sense.</p>
+<p>In case we are searching for constructive interference, this phase shift should correspond to an integer multiple of <span class="math inline">\(2\pi\)</span>, e.g.&nbsp;<span class="math inline">\(\Delta \phi =m2\pi\)</span>. From the last equation we see already, that for <span class="math inline">\(d=0\)</span>, we have in principle a residual phase shift of <span class="math inline">\(\pi\)</span>, meaning that there is only destructive interference. Yet a film thickness of zero does not really make sense.</p>
 <p>We would like to discuss two different situations in the following in an example. For that we either look at the thickness under which a constructive interference at a wavelength of <span class="math inline">\(\lambda\)</span> occurs, or we ask what kind of wavelength do show constructive interference for a fixed thickness.</p>
-<p><strong>Fixed Wavelength</strong></p>
+<section id="fixed-wavelength" class="level3">
+<h3 class="anchored" data-anchor-id="fixed-wavelength">Fixed Wavelength</h3>
 <p>For a fixed wavelength of <span class="math inline">\(\lambda\)</span> we obtain a corresponding thickness for the constructive interference of</p>
 <p><span class="math display">\[
 d=\frac{(2m-1)\lambda}{4n}
 \]</span></p>
-<p><strong>Fixed Thickness</strong></p>
-<p>For a fixed thickness of <span class="math inline">\(d\)</span> we obtain constructive interference at</p>
+<p>Thus we see constructive interference at from regions of the same thickness <span class="math inline">\(d\)</span>. This means that the interference fringes correspond to iso-thickness lines that we can use to determine the thickness of the film.</p>
+</section>
+<section id="fixed-thickness" class="level3">
+<h3 class="anchored" data-anchor-id="fixed-thickness">Fixed Thickness</h3>
+<p>If we use now a film of a fixed thickness of <span class="math inline">\(d\)</span> and send in a mixture of different wavelength, we obtain constructive interference for the wavelengths</p>
 <p><span class="math display">\[
 \lambda_{max}=\frac{4nd}{2m-1}
 \]</span></p>
-<p>We can now have a look at two examples.</p>
-<p><strong>Example 1 - d=100 nm</strong></p>
-<p>If we look at a film thickness of <span class="math inline">\(d=100\)</span> nm and a film of <span class="math inline">\(n=1.33\)</span>, which corresponds to water we obbtain constructive interference for</p>
+<p>This means, thin films appear colored under some circumstances, which we still have to define. For this, we can now have a look at some examples.</p>
+<section id="example---d100-nm-and-below" class="level4">
+<h4 class="anchored" data-anchor-id="example---d100-nm-and-below">Example - d=100 nm and below</h4>
+<p>If we look at a film thickness of <span class="math inline">\(d=100\)</span> nm with <span class="math inline">\(n=1.33\)</span>, which corresponds to water we obbtain constructive interference for</p>
 <p><span class="math display">\[
 \lambda_{max}=\frac{4\cdot 100\, {\rm nm} \cdot 1.33}{2m-1}
 \]</span></p>
@@ -560,7 +567,7 @@ d=\frac{(2m-1)\lambda}{4n}
 <li><span class="math inline">\(m=2\)</span>: 177 nm</li>
 <li><span class="math inline">\(m=3\)</span>: 106 nm</li>
 </ul>
-<p>and so on. We see therefore that the longest wavelength to create constructive interference is <span class="math inline">\(532\)</span> nm, which is green light. The next longest wavelength is 177 nm, which is not visible anymore, so the reflection of a <span class="math inline">\(d=100\)</span> nm film would look green. The left plot in the figure below shows the intensity distribution over wavelength where you recognize that the maximum is very broad.</p>
+<p>and so on. We see therefore that the longest wavelength to create constructive interference is <span class="math inline">\(532\)</span> nm, which is green light. There is no longer wavelength causing constructive interefernece. The next longest wavelength is 177 nm, which is not visible anymore, so the reflection of a <span class="math inline">\(d=100\)</span> nm film would look green. The left plot in the figure below shows the intensity distribution over wavelength where you recognize that the maximum is very broad. If your therefore see green light being reflected from a thin sopa film, you can be sure that the film is about 100 nm thick!</p>
 <div id="cell-fig-reflection" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
@@ -619,11 +626,14 @@ Figure&nbsp;1— Intensity of reflection for a 100 nm and a 10 nm film of water.
 </div>
 </div>
 </div>
-<p>An interesting effect is appearing, when the thickness of the water film get very thin. We may ask, when is no constructive interference observed. We therefore set the wavelength of the constructive interefence to <span class="math inline">\(\lambda_{max}=400\, {\rm nm}\)</span> and calculate the film thickness for which this occurs.</p>
+<p>An interesting effect is appearing, when the thickness of the water film get very thin. We may ask, when is no constructive interference in the visible range observed. We therefore set the wavelength of the constructive interefence to <span class="math inline">\(\lambda_{max}=400\, {\rm nm}\)</span> and calculate the film thickness for which this occurs.</p>
 <p><span class="math display">\[
 d=\frac{(2m-1)\lambda_{max}}{2n}\approx 75\, {\rm nm}
 \]</span></p>
 <p>So for film thickness of water thinner than 75 nm, there is no constructive interference of the reflected light from the two boundaries in the visible region anymore. There will be still a reflection but no specific color. If the film gets even thinner, the intensity of the reflected light is further diminished by desctructive interference and whe obtain no reflection as shown on the right side of the above figure for a <span class="math inline">\(d=10\)</span> nm film. Such thin films, which do not show any reflection are called <strong>Newton black films</strong>. You might have seen them, if you look closer at soap bubbles. They will show regions, which look like holes, but of course there are no holes in soap bubbles.</p>
+</section>
+<section id="example---d1-µm-and-d100-µm" class="level4">
+<h4 class="anchored" data-anchor-id="example---d1-µm-and-d100-µm">Example - d=1 µm and d=100 µm</h4>
 <p>If the film gets thicker, e.g.&nbsp;<span class="math inline">\(d=1\)</span> µm or even <span class="math inline">\(d=100\)</span> µm, more than one constructive interference fits into the visible wavelength range. Due to that, the film may appear to have mixed colors or even look white. Below are the diagrams for those film thicknesses.</p>
 <div id="cell-fig-reflection2" class="cell" data-execution_count="3">
 <details class="code-fold">
@@ -650,19 +660,19 @@ d=\frac{(2m-1)\lambda_{max}}{2n}\approx 75\, {\rm nm}
 <span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>wavelengths <span class="op">=</span> np.linspace(<span class="dv">400</span>, <span class="dv">750</span>, <span class="dv">10000</span>)</span>
 <span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>R_100nm <span class="op">=</span> [calculate_reflection(w<span class="op">*</span><span class="fl">1e-9</span>, <span class="fl">1e-6</span>) <span class="cf">for</span> w <span class="kw">in</span> wavelengths]</span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>R_10nm <span class="op">=</span> [calculate_reflection(w<span class="op">*</span><span class="fl">1e-9</span>, <span class="fl">100e-6</span>) <span class="cf">for</span> w <span class="kw">in</span> wavelengths]</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>R_1mum <span class="op">=</span> [calculate_reflection(w<span class="op">*</span><span class="fl">1e-9</span>, <span class="fl">1e-6</span>) <span class="cf">for</span> w <span class="kw">in</span> wavelengths]</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>R_100mum <span class="op">=</span> [calculate_reflection(w<span class="op">*</span><span class="fl">1e-9</span>, <span class="fl">100e-6</span>) <span class="cf">for</span> w <span class="kw">in</span> wavelengths]</span>
 <span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>fig, (ax1, ax2) <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>get_size(<span class="dv">10</span>, <span class="dv">5</span>),dpi<span class="op">=</span><span class="dv">150</span>)</span>
 <span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>ax1.plot(wavelengths, R_100nm, <span class="st">'b-'</span>)</span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>ax1.set_title(<span class="st">'100 nm water film'</span>)</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>ax1.plot(wavelengths, R_1mum, <span class="st">'b-'</span>)</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>ax1.set_title(<span class="st">'1&nbsp;µm water film'</span>)</span>
 <span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>ax1.set_xlabel(<span class="st">'wavelength [nm]'</span>)</span>
 <span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>ax1.set_ylabel(<span class="st">'intensity '</span>)</span>
 <span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>ax1.set_ylim(<span class="dv">0</span>, <span class="dv">4</span>)</span>
 <span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>ax2.plot(wavelengths, R_10nm, <span class="st">'r-'</span>,lw<span class="op">=</span><span class="fl">0.1</span>)</span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>ax2.set_title(<span class="st">'1 µm water film'</span>)</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>ax2.plot(wavelengths, R_100mum, <span class="st">'r-'</span>,lw<span class="op">=</span><span class="fl">0.1</span>)</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>ax2.set_title(<span class="st">'100 µm water film'</span>)</span>
 <span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>ax2.set_xlabel(<span class="st">'wavelength [nm]'</span>)</span>
 <span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>ax2.set_ylabel(<span class="st">'intensity'</span>)</span>
 <span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>ax2.set_ylim(<span class="dv">0</span>, <span class="dv">4</span>)</span>
@@ -683,7 +693,6 @@ Figure&nbsp;2— Reflection from a 1µm (left) and a 100 µm (right)thin water f
 </div>
 </div>
 </div>
-<p>This type of interference fringes observed on a plane-parallel film are called <strong>Haidinger fringes</strong>.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -696,7 +705,7 @@ Haidinger fringes
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Haidinger fringes are circular interference patterns observed when collimated light passes through a transparent plate at near-normal incidence. Named after Wilhelm von Haidinger who first described them in 1849, these fringes are localized at infinity (or in the focal plane of a lens) and arise from multiple reflections between the parallel surfaces of the plate. Unlike Newton’s rings, which are localized near the surfaces that create them and require curved surfaces, Haidinger fringes occur with parallel surfaces and depend on the plate’s thickness, its refractive index, the angle of incidence, and the wavelength of light.</p>
+<p>This type of interference fringes observed on a plane-parallel film are called <strong>Haidinger fringes</strong>. Haidinger fringes are circular interference patterns observed when collimated light passes through a transparent plate at near-normal incidence. Named after Wilhelm von Haidinger who first described them in 1849, these fringes are localized at infinity (or in the focal plane of a lens) and arise from multiple reflections between the parallel surfaces of the plate. Unlike Newton’s rings, which are localized near the surfaces that create them and require curved surfaces, Haidinger fringes occur with parallel surfaces and depend on the plate’s thickness, its refractive index, the angle of incidence, and the wavelength of light.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/haidinger.jpg" class="img-fluid figure-img"></p>
@@ -724,6 +733,8 @@ Figure&nbsp;3— Experimental demonstration of the reflection of white light by 
 </figcaption>
 </figure>
 </div>
+</section>
+</section>
 <section id="newton-rings" class="level2">
 <h2 class="anchored" data-anchor-id="newton-rings">Newton Rings</h2>
 <p>A similar interference pattern is also observed in the case of a hemi-spherical surface touching a planar surface as sketched in the image below.</p>
