@@ -468,9 +468,9 @@ window.Quarto = {
 <p><span class="math display">\[
 U_1=A_0t_1 t_2
 \]</span></p>
-<p>where <span class="math inline">\(t_1\)</span> and <span class="math inline">\(t_2\)</span> are the transmission coefficients of the first and second mirrors. The second transmitted wave includes reflections from both mirrors (<span class="math inline">\(r_1\)</span> and <span class="math inline">\(r_2\)</span>) and a phase shift <span class="math inline">\(\phi\)</span>:</p>
+<p>where <span class="math inline">\(t_1\)</span> and <span class="math inline">\(t_2\)</span> are the transmission coefficients of the first and second mirrors. The second transmitted wave includes reflections from both mirrors (<span class="math inline">\(r_1\)</span> and <span class="math inline">\(r_2\)</span>) and a phase shift <span class="math inline">\(\Delta\phi\)</span>:</p>
 <p><span class="math display">\[
-U_2=A_0t_1 t_2 r_1 r_2 e^{i\phi}=U_1 r_1 r_2 e^{i\phi}
+U_2=A_0t_1 t_2 r_1 r_2 e^{i\phi}=U_1 r_1 r_2 e^{i\Delta\phi}
 \]</span></p>
 <p>This follows our earlier treatment of multiple-wave interference with decreasing amplitude, where <span class="math inline">\(\sqrt{I_0}=A_0 t_1 t_2\)</span> and <span class="math inline">\(r=r_1r_2\)</span>. The phase shift between successive reflections is:</p>
 <p><span class="math display">\[
@@ -496,43 +496,51 @@ I=|U|^2=\frac{I_{0}}{|1-re^{i\phi}|^2}=\frac{I_0}{(1-r)^2+4r\sin^2\left (\frac{2
 <p>where <span class="math inline">\(r=r_1r_2\)</span> is the product of the mirrors’ reflection coefficients. As <span class="math inline">\(r\)</span> approaches 1 (higher reflectivity), the Finesse increases, resulting in sharper interference peaks.</p>
 <p>For normal incidence (<span class="math inline">\(\theta=0\)</span>), the phase difference simplifies to:</p>
 <p><span class="math display">\[
-\phi=\frac{4\pi d}{\lambda}
+\Delta\phi=\frac{4\pi d}{\lambda}
 \]</span></p>
-<p>Constructive interference occurs when <span class="math inline">\(\phi=m2\pi\)</span> (where <span class="math inline">\(m\)</span> is an integer), giving us the wavelengths of transmission maxima:</p>
+<p>Constructive interference occurs when <span class="math inline">\(\Delta\phi=m2\pi\)</span> (where <span class="math inline">\(m\)</span> is an integer), giving us the wavelengths of transmission maxima:</p>
 <p><span class="math display">\[
 \lambda_m=\frac{2d}{m}
 \]</span></p>
 <section id="free-spectral-range" class="level4">
 <h4 class="anchored" data-anchor-id="free-spectral-range">Free Spectral Range</h4>
-<p>The spacing between adjacent transmission peaks can be expressed in different ways:</p>
-<ol type="1">
-<li><p>In wavelength: <span class="math display">\[
-\delta \lambda= \lambda_{m}-\lambda_{m+1}=\frac{\lambda_m}{m+1}
-\]</span></p></li>
-<li><p>In frequency: <span class="math display">\[
-\delta \nu=\nu_{m+1}-\nu_m=\frac{c}{2d}
-\]</span></p></li>
-</ol>
-<p>This spacing is called the <strong>free spectral range</strong>.</p>
+<p>The spacing between adjacent transmission peaks in an optical system can be expressed in terms of either wavelength or frequency. This spacing is known as the <strong>free spectral range (FSR)</strong>.</p>
+<p><strong>In Wavelength:</strong></p>
+<p>The difference in wavelength between adjacent transmission peaks is given by:</p>
+<p><span class="math display">\[
+   \delta \lambda = \lambda_{m} - \lambda_{m+1} = \frac{\lambda_m}{m+1}
+   \]</span></p>
+<p>Here, <span class="math inline">\(\lambda_m\)</span> is the wavelength corresponding to the <span class="math inline">\(m\)</span>-th transmission peak.</p>
+<p><strong>In Frequency:</strong></p>
+<p>The difference in frequency between adjacent transmission peaks is given by:</p>
+<p><span class="math display">\[
+   \delta \nu = \nu_{m+1} - \nu_m = \frac{c}{2d}
+   \]</span></p>
+<p>Here, <span class="math inline">\(c\)</span> is the speed of light, and <span class="math inline">\(d\)</span> is the distance between the reflecting surfaces in the optical system.</p>
+<p>The free spectral range (FSR) represents the interval between successive transmission peaks and is a crucial parameter in the design and analysis of optical systems, such as Fabry-Pérot interferometers and optical resonators.</p>
 </section>
 <section id="spectral-resolution" class="level4">
 <h4 class="anchored" data-anchor-id="spectral-resolution">Spectral Resolution</h4>
-<p>The width of interference peaks determines the interferometer’s ability to resolve nearby wavelengths. Using the full width at half maximum (FWHM), we find:</p>
+<p>The spectral resolution of an interferometer is determined by the width of its interference peaks, which indicates the instrument’s ability to distinguish between closely spaced wavelengths. This width is often characterized by the full width at half maximum (FWHM) of the peaks.</p>
+<p>To find the FWHM, we start with the intensity ratio at half maximum:</p>
 <p><span class="math display">\[
-\frac{I}{I_{\rm max}}=\frac{1}{2}=\frac{1}{1+\left( \frac{\mathcal{F}}{\pi}\right )^2\phi^{2}_{1/2} }
+\frac{I}{I_{\rm max}} = \frac{1}{2} = \frac{1}{1 + \left( \frac{\mathcal{F}}{\pi} \right)^2 \Delta \phi_{1/2}^2 }
 \]</span></p>
-<p>This gives a frequency width of:</p>
+<p>Solving for the phase difference <span class="math inline">\(\Delta \phi_{1/2}\)</span> at half maximum, we can determine the corresponding frequency width:</p>
 <p><span class="math display">\[
-\Delta \nu=\frac{c}{2d\mathcal{F}}=\frac{\delta \nu}{\mathcal{F}}
+\Delta \nu = \frac{c}{2d \mathcal{F}} = \frac{\delta \nu}{\mathcal{F}}
 \]</span></p>
-<p>The Finesse can thus be expressed as the ratio:</p>
+<p>Here, <span class="math inline">\(\delta \nu\)</span> is the free spectral range, <span class="math inline">\(c\)</span> is the speed of light, <span class="math inline">\(d\)</span> is the distance between the reflecting surfaces, and <span class="math inline">\(\mathcal{F}\)</span> is the finesse of the interferometer.</p>
+<p>The finesse <span class="math inline">\(\mathcal{F}\)</span> is defined as the ratio of the free spectral range to the FWHM:</p>
 <p><span class="math display">\[
-\mathcal{F}=\frac{\delta \nu}{\Delta \nu}=\frac{\lambda}{\Delta \lambda}
+\mathcal{F} = \frac{\delta \nu}{\Delta \nu} = \frac{\lambda}{\Delta \lambda}
 \]</span></p>
-<p>This provides a measure of the interferometer’s spectral resolution. The overall resolving power <span class="math inline">\(\mathcal{R}\)</span> is:</p>
+<p>This ratio provides a measure of the interferometer’s spectral resolution, indicating how well it can separate two closely spaced spectral lines.</p>
+<p>The overall resolving power <span class="math inline">\(\mathcal{R}\)</span> of the interferometer is given by:</p>
 <p><span class="math display">\[
-\mathcal{R}=m\mathcal{F}
+\mathcal{R} = m \mathcal{F}
 \]</span></p>
+<p>where <span class="math inline">\(m\)</span> is the order of the interference. The resolving power <span class="math inline">\(\mathcal{R}\)</span> quantifies the ability of the interferometer to resolve spectral features, with higher values indicating better resolution.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/perot_spectral.png" class="img-fluid figure-img" style="width:60.0%"></p>

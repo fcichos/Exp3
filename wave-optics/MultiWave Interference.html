@@ -643,7 +643,7 @@ I=I_{0}\frac{\sin^2(M\Delta \phi/2)}{\sin^2(\Delta \phi/2)}
 </details>
 <div id="figure-md" class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
-<div id="0d0b26c1" class="cell quarto-layout-cell" data-execution_count="2" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="afec43a2" class="cell quarto-layout-cell" data-execution_count="2" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -705,7 +705,7 @@ I(\Delta \phi=m2\Delta \pi)=M^2 I_0
 k \sin{\theta}= K
 \]</span></p>
 <p>where <span class="math inline">\(k\)</span> is the magnitude of the wavevector of the light and <span class="math inline">\(K\)</span> is the wavevector magnitude that corresponds to the grating period <span class="math inline">\(d\)</span>. As the magnitude of the wavevector of the light is conserved, the wavevectors of the incident light and the light traveling along the direction of the first interence peak form the sides of an equilateral triangle. This is shown in the following figure.</p>
-<div id="4df5d936" class="cell" data-execution_count="4">
+<div id="9d413e46" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -784,14 +784,6 @@ k \sin{\theta}= K
 </div>
 <p>This means that the diffraction grating is providing a wavevector <span class="math inline">\(K\)</span> to alter the direction of the incident light. This is again a common feature reappearing in many situations as for example in the X-ray diffraction of crystals.</p>
 </section>
-<section id="resolution-of-a-grating" class="level4">
-<h4 class="anchored" data-anchor-id="resolution-of-a-grating">Resolution of a Grating</h4>
-<p>Despite the fact that we cannot really describe a grating completely, as the fundamental element of diffraction is still missing in our considerations, we can write do The width of the individual <strong>primary</strong> maxima is now defined by the location of the first minimum, which is at <span class="math inline">\(\sin(\theta_\textrm{min})=\frac{1}{M}\frac{\lambda}{d}\)</span>. The important feature is, however that the angular width of the first minimum is decreasing with the number of sources <span class="math inline">\(M\)</span>. This instantly leads us to define the spectral resolution of an grating. If <span class="math inline">\(\theta_\textrm{min}\)</span> is the location of the first minimum,</p>
-<p><span class="math display">\[
-R=\frac{\lambda}{\Delta \lambda}=\frac{mN}{M}
-\]</span></p>
-<p>which is in one or the other form again appearing for different types of spectroscopic devices.</p>
-</section>
 </section>
 <section id="multiple-wave-interference-with-decreasing-amplitude" class="level3">
 <h3 class="anchored" data-anchor-id="multiple-wave-interference-with-decreasing-amplitude">Multiple Wave Interference with Decreasing Amplitude</h3>
@@ -803,7 +795,7 @@ U_2=h U_1
 <p><span class="math display">\[
 I_2=|U_2|^2=|h U_1|^2=r^2 I_1
 \]</span></p>
-<p>The intensity of the incident wave is multiplied by a factor <span class="math inline">\(r^2\)</span>, while the amplitude is multiplied by <span class="math inline">\(r\)</span>. Note that the phase factor <span class="math inline">\(e^{i\phi}\)</span> is removed when taking the square of this complex number.</p>
+<p>The intensity of the incident wave is multiplied by a factor <span class="math inline">\(r^2\)</span>, while the amplitude is multiplied by <span class="math inline">\(r\)</span>. Note that the phase factor <span class="math inline">\(e^{i\Delta\phi}\)</span> is removed when taking the square of this complex number.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -919,7 +911,7 @@ U=U_1+U_2+U_3+\ldots+U_M = \sqrt{I_0}(1+h+h^2+\ldots)
 </details>
 <div id="figure-fabry" class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
-<div id="c58648e8" class="cell quarto-layout-cell" data-execution_count="5" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="5515eaed" class="cell quarto-layout-cell" data-execution_count="5" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -929,7 +921,7 @@ U=U_1+U_2+U_3+\ldots+U_M = \sqrt{I_0}(1+h+h^2+\ldots)
 </div>
 </div>
 </div>
-<div id="8ae304f8" class="cell quarto-layout-cell" data-execution_count="6" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="be1bf903" class="cell quarto-layout-cell" data-execution_count="6" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -943,11 +935,11 @@ U=U_1+U_2+U_3+\ldots+U_M = \sqrt{I_0}(1+h+h^2+\ldots)
 </div>
 <p>This yields again</p>
 <p><span class="math display">\[
-U=\sqrt{I_0}\frac{(1-h^M)}{1-h}=\frac{\sqrt{I_0}}{1-r e^{i\phi}}
+U=\sqrt{I_0}\frac{(1-h^M)}{1-h}=\frac{\sqrt{I_0}}{1-r e^{i\Delta\phi}}
 \]</span></p>
 <p>Calculating the intensity of the waves is giving</p>
 <p><span class="math display">\[
-I=|U|^2=\frac{I_{0}}{|1-re^{i\phi}|^2}=\frac{I_0}{(1-r)^2+4r\sin^2(\phi/2)}
+I=|U|^2=\frac{I_{0}}{|1-re^{i\Delta\phi}|^2}=\frac{I_0}{(1-r)^2+4r\sin^2(\Delta\phi/2)}
 \]</span></p>
 <p>which is also known as the <strong>Airy function</strong>. This function can be further simplified by the following abbrevations</p>
 <p><span class="math display">\[
@@ -959,7 +951,7 @@ I_{\rm max}=\frac{I_0}{(1-r)^2}
 \]</span></p>
 <p>where the latter is called the <em>Finesse</em>. With those abbrevations, we obtain</p>
 <p><span class="math display">\[
-I=\frac{I_{\rm max}}{1+4\left(\frac{\mathcal{F}}{\pi}\right)\sin^{2}(\phi/2)}
+I=\frac{I_{\rm max}}{1+4\left(\frac{\mathcal{F}}{\pi}\right)^2\sin^{2}(\Delta\phi/2)}
 \]</span></p>
 <p>for the interference of multiple waves with decreasing amplitude.</p>
 <p>This intensity distribution has a different shape than the one we obtained for multiple waves with the same amplitude.</p>

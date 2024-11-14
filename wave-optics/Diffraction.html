@@ -463,11 +463,11 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#huygens-principle" id="toc-huygens-principle" class="nav-link active" data-scroll-target="#huygens-principle">Huygens Principle</a></li>
+  <li><a href="#huygens-principle" id="toc-huygens-principle" class="nav-link active" data-scroll-target="#huygens-principle">Huygens’ Principle</a></li>
   <li><a href="#single-slit-diffraction" id="toc-single-slit-diffraction" class="nav-link" data-scroll-target="#single-slit-diffraction">Single Slit Diffraction</a></li>
   <li><a href="#circular-aperture" id="toc-circular-aperture" class="nav-link" data-scroll-target="#circular-aperture">Circular Aperture</a>
   <ul class="collapse">
-  <li><a href="#application-diffraction-at-the-human-eye" id="toc-application-diffraction-at-the-human-eye" class="nav-link" data-scroll-target="#application-diffraction-at-the-human-eye">Application: Diffraction at the Human Eye</a></li>
+  <li><a href="#application-diffraction-in-the-human-eye" id="toc-application-diffraction-in-the-human-eye" class="nav-link" data-scroll-target="#application-diffraction-in-the-human-eye">Application: Diffraction in the Human Eye</a></li>
   <li><a href="#resolution-of-an-optical-microscope" id="toc-resolution-of-an-optical-microscope" class="nav-link" data-scroll-target="#resolution-of-an-optical-microscope">Resolution of an Optical Microscope</a></li>
   </ul></li>
   </ul>
@@ -496,57 +496,66 @@ window.Quarto = {
 
 
 <section id="huygens-principle" class="level2">
-<h2 class="anchored" data-anchor-id="huygens-principle">Huygens Principle</h2>
-<p>The Huygens principle, formulated by Christiaan Huygens in 1678, states that every point on a wavefront acts as a source of secondary spherical waves propagating in the forward direction. While this might seem counterintuitive from a classical electromagnetic perspective, where waves typically originate from accelerated charges, the principle has proven to be remarkably accurate and is fully consistent with modern quantum field theory.</p>
+<h2 class="anchored" data-anchor-id="huygens-principle">Huygens’ Principle</h2>
+<p>Formulated by Christiaan Huygens in 1678, <strong>Huygens’ principle</strong> states that every point on a wavefront acts as a source of secondary spherical wavelets that spread out in the forward direction. The new position of the wavefront at any later time is found by constructing a surface tangent to these secondary wavelets. This principle provides a powerful method for analyzing wave propagation and explains various wave phenomena such as reflection, refraction, and diffraction.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/huygens.png" class="img-fluid figure-img" style="width:40.0%"></p>
-<figcaption>Huygens principle for a plane wave incident with a wave vector <span class="math inline">\(\vec{k}\)</span>.</figcaption>
+<figcaption>Illustration of Huygens’ principle for a plane wave incident with a wave vector <span class="math inline">\(\vec{k}\)</span>. Each point on the wavefront acts as a source of secondary wavelets, and the new wavefront is the envelope of these wavelets.</figcaption>
 </figure>
 </div>
-<p>The principle can be demonstrated numerically, as shown in the figure below. By placing many spherical wave sources in close proximity along a line, we can reconstruct a plane wave, validating Huygens’ concept.</p>
+<p>Huygens’ principle can be demonstrated numerically and visually. By placing a large number of spherical wave sources closely along a line and allowing their waves to interfere, we can reconstruct a plane wavefront propagating in the forward direction, illustrating how a plane wave advances according to Huygens’ concept.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/huygens_num.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<figcaption>Huygens principle used to create a plane wave from a set of spherical waves. The graph on the left shows the amplitude of a single spherical wave of a wavelength <span class="math inline">\(\lambda=532\)</span> nm. If we arrange 500 spherical wave sources along the x-direction very densely and they all are in phase since they represent the phase of the incident plane wave at <span class="math inline">\(z=0\)</span>, we can recreate the plane wavefronts for <span class="math inline">\(z&gt;0\)</span> (middle) and the constant intensity (right).</figcaption>
+<figcaption>Numerical demonstration of Huygens’ principle used to recreate a plane wave from a set of spherical waves. The graph on the left shows the amplitude of a single spherical wave of wavelength <span class="math inline">\(\lambda=532\)</span> nm. By arranging 500 spherical wave sources densely along the x-axis at <span class="math inline">\(z=0\)</span>, all in phase (representing the phase of the incident plane wave at <span class="math inline">\(z=0\)</span>), we can recreate the plane wavefronts for <span class="math inline">\(z&gt;0\)</span> (middle) and the constant intensity distribution (right).</figcaption>
 </figure>
 </div>
-<p>This phenomenon can be described mathematically using our earlier treatment of multiple-wave interference. Consider <span class="math inline">\(N\)</span> spherical waves arranged along the x-axis at <span class="math inline">\(z=0\)</span> with spacing <span class="math inline">\(d\)</span> between neighboring sources. At a large distance (effectively infinity), the phase difference between adjacent waves is given by <span class="math inline">\(\Delta \phi=2\pi d\sin(\theta)/\lambda\)</span>, where <span class="math inline">\(\theta\)</span> is the angle relative to the z-direction. The resulting intensity pattern follows our previous derivation:</p>
+<p>Mathematically, this phenomenon can be described using our earlier treatment of multi-wave interference. Consider <span class="math inline">\(M\)</span> spherical wave sources arranged along the x-axis at <span class="math inline">\(z=0\)</span>, each separated by a small distance <span class="math inline">\(d\)</span> from its neighbor. At a point far away from the sources (in the far-field approximation), the path difference between waves from adjacent sources leads to a phase difference given by:</p>
 <p><span class="math display">\[
-I=I_0 \frac{\sin^2\left (N\frac{\pi}{\lambda}d\sin(\theta)\right)}{\sin^2\left (\frac{\pi}{\lambda}d\sin(\theta)\right)}
+\Delta \phi = \frac{2\pi d \sin \theta }{\lambda}
 \]</span></p>
-<p>This mathematical framework serves as the foundation for understanding diffraction phenomena, particularly in two important cases: 1. Single-slit diffraction, where Huygens wavelets are confined to a finite region 2. Diffraction gratings, where multiple slits are arranged periodically, creating a powerful tool for spectroscopic applications</p>
-<p>While we use the term “diffraction” to describe these phenomena, they are fundamentally manifestations of wave interference, as described by Huygens’ principle.</p>
+<p>where <span class="math inline">\(\theta\)</span> is the angle relative to the z-axis (the forward direction), and <span class="math inline">\(\lambda\)</span> is the wavelength of the waves. The superposition of these waves results in an intensity pattern described by:</p>
+<p><span class="math display">\[
+I(\theta) = I_0 \frac{\sin^2\left ( M \frac{\pi d \sin \theta }{\lambda} \right )}{\sin^2\left ( \frac{\pi d \sin \theta }{\lambda} \right )}
+\]</span></p>
+<p>This expression arises from the interference of <span class="math inline">\(M\)</span> waves with a constant phase difference <span class="math inline">\(\Delta \phi\)</span> between neighboring waves. The numerator represents the constructive and destructive interference due to the finite number of sources, and the denominator accounts for the spacing between them.</p>
+<p>This mathematical framework serves as the foundation for understanding diffraction phenomena, particularly in two important cases:</p>
+<ol type="1">
+<li><p><strong>Single-Slit Diffraction</strong>: When Huygens’ wavelets are confined to a finite width (the slit width), the interference between these wavelets produces a characteristic diffraction pattern with a central maximum and diminishing side lobes.</p></li>
+<li><p><strong>Diffraction Gratings</strong>: When multiple slits are arranged periodically, the interference of the transmitted waves leads to sharp diffraction maxima at specific angles, making diffraction gratings powerful tools for spectroscopic analysis.</p></li>
+</ol>
+<p>While we commonly use the term “diffraction” to describe these phenomena, they are fundamentally due to the interference of waves, as explained by Huygens’ principle. By considering every point on a wavefront as a source of secondary wavelets, we can understand and predict the complex patterns that arise when waves encounter obstacles or apertures.</p>
 </section>
 <section id="single-slit-diffraction" class="level2">
 <h2 class="anchored" data-anchor-id="single-slit-diffraction">Single Slit Diffraction</h2>
-<p>Let’s apply our interference formula to study the diffraction of an incident plane wave (wavevector <span class="math inline">\(\vec{k}\)</span>) on a single slit of width <span class="math inline">\(b\)</span>. We can model this by placing a series of Huygens sources along the slit opening. While the sketch below shows just 3 sources for clarity, we’ll generalize this to <span class="math inline">\(N\)</span> sources.</p>
+<p>Let’s apply our interference formula to study the diffraction of an incident plane wave (wavevector <span class="math inline">\(\vec{k}\)</span>) on a single slit of width <span class="math inline">\(b\)</span>. We can model this by placing a series of Huygens sources along the slit opening. While the sketch below shows just 3 sources for clarity, we’ll generalize this to <span class="math inline">\(M\)</span> sources.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/single_slit.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="400"></p>
 </figure>
 </div>
-<p>We divide the slit into segments of width <span class="math inline">\(\Delta b\)</span> such that we have <span class="math inline">\(N=b/\Delta b\)</span> Huygens sources, each with amplitude <span class="math inline">\(A_0=\sqrt{I_0}\)</span>. Applying our previous multi-wave interference formula with spacing <span class="math inline">\(d=\Delta b\)</span>, we obtain:</p>
+<p>We divide the slit into segments of width <span class="math inline">\(\Delta b\)</span> such that we have <span class="math inline">\(M=b/\Delta b\)</span> Huygens sources, each with amplitude <span class="math inline">\(A_0=\sqrt{I_0}\)</span>. Applying our previous multi-wave interference formula with spacing <span class="math inline">\(d=\Delta b\)</span>, we obtain:</p>
 <p><span class="math display">\[
-I=I_0 \frac{\sin^2\left (N\pi\frac{\Delta b}{\lambda}\sin(\theta)\right)}{\sin^2\left (\pi\frac{\Delta b}{\lambda}\sin(\theta)\right)}
+I=I_0 \frac{\sin^2\left (M\pi\frac{\Delta b}{\lambda}\sin(\theta)\right)}{\sin^2\left (\pi\frac{\Delta b}{\lambda}\sin(\theta)\right)}
 \]</span></p>
-<p>Since <span class="math inline">\(N\Delta b = b\)</span>, we can rewrite this as:</p>
+<p>Since <span class="math inline">\(M\Delta b = b\)</span>, we can rewrite this as:</p>
 <p><span class="math display">\[
-I=I_0 \frac{\sin^2\left (\pi\frac{b}{\lambda}\sin(\theta)\right)}{\sin^2\left (\pi\frac{b}{N\lambda}\sin(\theta)\right)}
+I=I_0 \frac{\sin^2\left (\pi\frac{b}{\lambda}\sin(\theta)\right)}{\sin^2\left (\pi\frac{b}{M\lambda}\sin(\theta)\right)}
 \]</span></p>
 <p>For convenience, let’s substitute <span class="math inline">\(x=\pi \frac{b}{\lambda}\sin(\theta)\)</span>, giving:</p>
 <p><span class="math display">\[
-I=I_0\frac{\sin^2(x)}{\sin^2(x/N)}
+I=I_0\frac{\sin^2(x)}{\sin^2(x/M)}
 \]</span></p>
-<p>In reality, we have a continuous distribution of sources across the slit width, corresponding to <span class="math inline">\(N\to\infty\)</span>. In this limit, for the denominator, <span class="math inline">\(x/N\)</span> becomes very small, and we can use the small-angle approximation:</p>
+<p>In reality, we have a continuous distribution of sources across the slit width, corresponding to <span class="math inline">\(M\to\infty\)</span>. In this limit, for the denominator, <span class="math inline">\(x/M\)</span> becomes very small, and we can use the small-angle approximation:</p>
 <p><span class="math display">\[
-\sin^2\left (\frac{x}{N}\right) \approx \left(\frac{x}{N}\right)^2
+\sin^2\left (\frac{x}{M}\right) \approx \left(\frac{x}{M}\right)^2
 \]</span></p>
 <p>Therefore, our final expression becomes:</p>
 <p><span class="math display">\[
 I(\theta)=I_s\frac{\sin^2\left (\pi \frac{b}{\lambda}\sin(\theta)\right)}{\left(\pi \frac{b}{\lambda}\sin(\theta)\right)^2}
 \]</span></p>
-<p>where <span class="math inline">\(I_s=N^2I_0\)</span> represents the total intensity from all sources. This expression is often written using the sinc function (sinus cardinalis):</p>
+<p>where <span class="math inline">\(I_s=M^2I_0\)</span> represents the total intensity from all sources. This expression is often written using the sinc function (sinus cardinalis):</p>
 <p><span class="math display">\[
 I(\theta)=I_s\,\text{sinc}^2\left(\pi \frac{b}{\lambda}\sin(\theta)\right)
 \]</span></p>
@@ -578,7 +587,7 @@ I(\theta)=I_s\frac{\sin^2\left (\pi \frac{b}{\lambda}\sin(\theta)\right)}{\left(
 </figure>
 </div>
 <p>Let’s have a look at some of the properties of the intensity distribution.</p>
-<div id="d2728991" class="cell" data-execution_count="2">
+<div id="f812cdeb" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
@@ -681,88 +690,279 @@ x_1=1.22\pi=\frac{2\pi R}{\lambda}\sin(\theta_1)
 \sin(\theta_1)=0.61\frac{\lambda}{R}
 \]</span></p>
 <p>This follows the same general principle we’ve seen before: the angular spread is proportional to wavelength divided by aperture size. The central bright region up to this first minimum is known as the <strong>Airy disc</strong>, and in microscopy, this defines a resolution element or <strong>resel</strong>.</p>
-<section id="application-diffraction-at-the-human-eye" class="level3">
-<h3 class="anchored" data-anchor-id="application-diffraction-at-the-human-eye">Application: Diffraction at the Human Eye</h3>
-<p>The iris of the human eye provides an excellent example of circular aperture diffraction. Let’s calculate its effects:</p>
-<p>For an iris radius of <span class="math inline">\(R=2.5\)</span> mm and green light (<span class="math inline">\(\lambda=532\)</span> nm):</p>
+<section id="application-diffraction-in-the-human-eye" class="level3">
+<h3 class="anchored" data-anchor-id="application-diffraction-in-the-human-eye">Application: Diffraction in the Human Eye</h3>
+<p>The human eye provides an excellent real-world example of circular aperture diffraction through the pupil (the opening in the iris). By examining how light diffracts as it enters the eye, we can understand fundamental limits on visual resolution and how the eye is naturally optimized to these constraints.</p>
+<p><strong>Calculating the Diffraction Limit of the Eye</strong></p>
+<p>When light passes through the circular aperture of the pupil, it undergoes diffraction, producing an Airy disk pattern on the retina. The angle to the first minimum (dark ring) of the diffraction pattern is given by:</p>
 <p><span class="math display">\[
-\sin(\theta_1)=0.61\frac{532\, \mathrm{nm}}{2.5\, \mathrm{mm}}=0.00013
+\sin(\theta_1) = 0.61\, \frac{\lambda}{R}
 \]</span></p>
-<p>The size of the Airy disc on the retina (approximately 2 cm from the iris) is:</p>
+<p>where: - <span class="math inline">\(\theta_1\)</span> is the angle to the first minimum, - <span class="math inline">\(\lambda\)</span> is the wavelength of the light, - <span class="math inline">\(R\)</span> is the radius of the aperture (pupil).</p>
+<p>For an average pupil radius of <span class="math inline">\(R = 2.5\, \text{mm}\)</span> and green light with a wavelength of <span class="math inline">\(\lambda = 532\, \text{nm}\)</span> (to which the human eye is most sensitive), we have:</p>
 <p><span class="math display">\[
-2\,\mathrm{cm}\sin(\theta_1)=2.59\, \mathrm{\mu m}
+\sin(\theta_1) = 0.61 \times \frac{532 \times 10^{-9}\, \text{m}}{2.5 \times 10^{-3}\, \text{m}} = 0.61 \times 2.128 \times 10^{-4} \approx 1.298 \times 10^{-4}
 \]</span></p>
-<p>This 2.59 µm width matches remarkably well with the spacing of photoreceptor cells in the fovea, where cell density is approximately 150,000 per square millimeter (corresponding to 2.58 µm spacing). This is not coincidental: having more cells within an Airy disc wouldn’t improve resolution but would require each cell to be more sensitive as they share the available light intensity.</p>
-<p>This natural optimization illustrates how biological systems have evolved to match physical limitations.</p>
-</section>
-<section id="resolution-of-an-optical-microscope" class="level3">
-<h3 class="anchored" data-anchor-id="resolution-of-an-optical-microscope">Resolution of an Optical Microscope</h3>
-<section id="rayleighs-resolution-criterion" class="level4">
-<h4 class="anchored" data-anchor-id="rayleighs-resolution-criterion">Rayleigh’s Resolution Criterion</h4>
-<p>The resolution of an optical system can be understood through diffraction patterns of circular apertures. The key question is: How close can two objects be while still being resolved as distinct entities? To answer this, we need to consider two aspects of how a lens affects wave propagation:</p>
-<ol type="1">
-<li>It changes wavefront curvature, focusing plane waves to a point</li>
-<li>It acts as a circular aperture, creating diffraction effects due to its finite size</li>
-</ol>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/resolution_definition.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></p>
-</figure>
-</div>
-<p>Each point source creates its own diffraction pattern. As sources move closer together, their patterns begin to overlap. Rayleigh proposed a specific criterion for resolvability:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/resolution_rayleigh.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></p>
-</figure>
-</div>
-<p>According to the Rayleigh criterion, two objects are just resolvable when the maximum of one diffraction pattern coincides with the first minimum of the other. For incoherent sources, this creates a 26% intensity dip between the peaks.</p>
-<p>The mathematical derivation follows these steps:</p>
-<ol type="1">
-<li><p>First minimum angle: <span class="math display">\[
-\sin(\theta_1)=0.61\frac{\lambda}{R}
-\]</span></p></li>
-<li><p>For small angles: <span class="math display">\[
-\sin(\theta_1)=\frac{d}{b}
-\]</span> where <span class="math inline">\(d\)</span> is the separation of image points and <span class="math inline">\(b\)</span> is the image distance.</p></li>
-<li><p>Combining these with the imaging equation: <span class="math display">\[
-\frac{\Delta d}{d}=\frac{g}{b}
-\]</span></p></li>
-</ol>
-<p>We obtain: <span class="math display">\[
-\Delta d=0.61\lambda \frac{g}{R}\approx 0.61\lambda \frac{1}{\sin(\alpha)}
+<p>Thus, the angle to the first minimum is approximately:</p>
+<p><span class="math display">\[
+\theta_1 \approx \sin^{-1}(1.298 \times 10^{-4}) \approx 0.00744^\circ
 \]</span></p>
-<p>This introduces the concept of <strong>numerical aperture</strong>: <span class="math display">\[
-NA=n\sin(\alpha)
-\]</span> where <span class="math inline">\(n\)</span> is the refractive index of the medium.</p>
-<p>The final form of the Rayleigh resolution criterion is: <span class="math display">\[
-\Delta d=0.61\frac{\lambda}{NA}
+<p><strong>Determining the Size of the Airy Disk on the Retina</strong></p>
+<p>The distance from the pupil to the retina (the image plane) is approximately <span class="math inline">\(L = 20\, \text{mm}\)</span> (or <span class="math inline">\(2\, \text{cm}\)</span>). The linear radius <span class="math inline">\(r\)</span> of the Airy disk on the retina is calculated by:</p>
+<p><span class="math display">\[
+r = L \sin(\theta_1) = 20\, \text{mm} \times 1.298 \times 10^{-4} = 2.596 \times 10^{-3}\, \text{mm} = 2.596\, \mu\text{m}
 \]</span></p>
+<p>So, the diameter <span class="math inline">\(D\)</span> of the Airy disk (central bright spot) is:</p>
+<p><span class="math display">\[
+D = 2r = 2 \times 2.596\, \mu\text{m} = 5.192\, \mu\text{m}
+\]</span></p>
+<p>This means that the smallest spot of light that can be formed on the retina due to diffraction is about <span class="math inline">\(5.19\, \mu\text{m}\)</span> in diameter.</p>
+<p><strong>Comparing with Photoreceptor Spacing in the Fovea</strong></p>
+<p>The fovea is a small region in the retina responsible for sharp central vision. It contains a high density of cone photoreceptor cells. The average density of cones in the fovea is approximately <span class="math inline">\(150,000\)</span> cells per square millimeter. To find the average spacing <span class="math inline">\(d\)</span> between these cells, we proceed as follows:</p>
+<p><strong>Area per Cell:</strong></p>
+<p><span class="math display">\[
+   \text{Area per cell} = \frac{1\, \text{mm}^2}{150,000} = 6.667 \times 10^{-6}\, \text{mm}^2 = 6.667\, \mu\text{m}^2
+   \]</span></p>
+<p><strong>Linear Spacing Between Cells:</strong></p>
+<p>Assuming a square packing (for simplicity), the linear spacing <span class="math inline">\(d\)</span> is:</p>
+<p><span class="math display">\[
+   d = \sqrt{\text{Area per cell}} = \sqrt{6.667\, \mu\text{m}^2} \approx 2.58\, \mu\text{m}
+   \]</span></p>
+<p>In reality, the photoreceptors are more closely packed in a hexagonal arrangement, but this calculation gives a good approximation.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Rayleigh Resolution Criterion
+Analysis of the results
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Two incoherent light sources can be resolved when their separation satisfies: <span class="math display">\[
-\Delta d\ge 0.61\frac{\lambda}{NA}
-\]</span></p>
-<p>The numerical aperture <span class="math inline">\(NA=n\sin(\alpha)\)</span> depends on: - The refractive index <span class="math inline">\(n\)</span> of the medium - The collection angle <span class="math inline">\(\alpha\)</span> of the lens</p>
-<p>In air, NA &lt; 1, while immersion lenses (using water or oil) can achieve higher NA values, up to the medium’s refractive index.</p>
+<p>We observe that:</p>
+<ul>
+<li><strong>Airy Disk Diameter:</strong> <span class="math inline">\(5.192\, \mu\text{m}\)</span></li>
+<li><strong>Photoreceptor Spacing (center-to-center):</strong> <span class="math inline">\(2.58\, \mu\text{m}\)</span></li>
+</ul>
+<p>Notably, the diameter of the Airy disk is roughly twice the photoreceptor spacing. This means that the central maximum of the diffraction pattern spans about two photoreceptors.</p>
+<p>The close match between the diffraction limit of the eye and the spacing of photoreceptor cells is significant:</p>
+<ul>
+<li><p><strong>Diffraction Limit:</strong> Sets the fundamental limit on the resolving power of the eye. It determines the smallest angular separation between two points of light that can be distinguished.</p></li>
+<li><p><strong>Photoreceptor Density:</strong> The photoreceptors are spaced closely enough to sample the details provided by the optical system up to the diffraction limit.</p></li>
+</ul>
+<p>Adding more photoreceptors (with smaller spacing) within the area of the Airy disk would not enhance resolution because:</p>
+<ul>
+<li><p><strong>Physical Limitations:</strong> The diffraction limit is a fundamental constraint imposed by the wave nature of light and the size of the pupil. Resolution cannot be improved beyond this limit by increasing photoreceptor density alone.</p></li>
+<li><p><strong>Signal Intensity:</strong> More photoreceptors in the same area would mean each cell receives less light (since the total light intensity is fixed), potentially reducing the signal-to-noise ratio and making it harder to detect light.</p></li>
+</ul>
+<p><strong>Biological Optimization</strong></p>
+<p>The eye’s design reflects a natural optimization:</p>
+<ul>
+<li><p><strong>Efficient Use of Resources:</strong> Photoreceptor density is matched to the optical resolving power, ensuring that the visual system extracts maximum information without unnecessary redundancy.</p></li>
+<li><p><strong>Adaptive Evolution:</strong> Over time, biological systems have evolved to align anatomical structures with physical laws, optimizing functions like vision for survival advantages.</p></li>
+<li><p>Land, M. F., &amp; Nilsson, D.-E. (2012). <em>Animal Eyes</em> (2nd ed.). Oxford University Press.</p></li>
+<li><p>Williams, D. R. (1988). Topography of the foveal cone mosaic in the living human eye. <em>Vision Research</em>, 28(3), 433–454.</p></li>
+</ul>
 </div>
 </div>
 </div>
-<p>Physically, this criterion reflects how much of the spherical wavefront from a point source is collected by the lens. A larger collection angle <span class="math inline">\(\alpha\)</span> captures more of the wavefront, providing better spatial information about the source.</p>
 </section>
-<section id="abbes-resolution-definition" class="level4">
-<h4 class="anchored" data-anchor-id="abbes-resolution-definition">Abbe’s Resolution Definition</h4>
-<p>While Rayleigh’s criterion applies to incoherent sources (where intensities add), Abbe considered coherent sources. For coherent light, we must first calculate the total amplitude before determining intensity, leading to a different resolution criterion due to interference effects.</p>
-<p>This distinction between coherent and incoherent imaging is crucial in microscopy and other optical systems.</p>
+<section id="resolution-of-an-optical-microscope" class="level3">
+<h3 class="anchored" data-anchor-id="resolution-of-an-optical-microscope">Resolution of an Optical Microscope</h3>
+<p>The resolution of an optical microscope is fundamentally limited by the diffraction of light as it passes through the optical components, particularly the objective lens. Diffraction causes point sources of light to produce blurred images rather than perfect points, affecting the microscope’s ability to distinguish between two closely spaced objects.</p>
+<section id="rayleighs-criterion-for-resolution" class="level4">
+<h4 class="anchored" data-anchor-id="rayleighs-criterion-for-resolution">Rayleigh’s Criterion for Resolution</h4>
+<p><strong>Key Question:</strong> <em>How close can two point sources be while still being perceived as distinct entities by an optical system?</em></p>
+<p>To answer this, we need to consider two essential aspects of how a lens modifies light:</p>
+<ol type="1">
+<li><p><strong>Wavefront Transformation:</strong> A lens alters the curvature of incoming wavefronts, focusing parallel rays (plane waves) to a point in the focal plane.</p></li>
+<li><p><strong>Finite Aperture Effects:</strong> The lens has a finite size and acts as a circular aperture, introducing diffraction effects that spread the image of a point source into a diffraction pattern known as the Airy disk.</p></li>
+</ol>
+<p><strong>Visual Representation:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/resolution_definition.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption>Illustration showing two point sources and their overlapping diffraction patterns as they approach each other.</figcaption>
+</figure>
+</div>
+<p>Each point source produces its own diffraction pattern. As the sources move closer, their patterns begin to overlap, making it harder to distinguish between them.</p>
+<p><strong>Rayleigh’s Resolution Criterion:</strong></p>
+<ul>
+<li>Two point sources are considered <strong>just resolvable</strong> when the principal maximum (center) of one Airy pattern coincides with the first minimum (dark ring) of the other.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/resolution_rayleigh.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption>Graph depicting Rayleigh’s criterion, showing the intensity profiles of two overlapping Airy patterns.</figcaption>
+</figure>
+</div>
+<p>For <strong>incoherent light sources</strong> (where the light waves are not in phase), this criterion corresponds to a 26% dip in intensity between the two peaks, which is generally sufficient for the human eye or detectors to distinguish the two sources as separate.</p>
+<p><strong>Angle to the First Minimum:</strong></p>
+<p>The angle <span class="math inline">\(\theta_1\)</span> to the first minimum of the diffraction pattern from a circular aperture of radius <span class="math inline">\(R\)</span> is given by:</p>
+<p><span class="math display">\[
+   \sin(\theta_1) = 1.22\, \frac{\lambda}{2R}
+   \]</span></p>
+<p>Since the diameter of the aperture <span class="math inline">\(D = 2R\)</span>, this can also be written as:</p>
+<p><span class="math display">\[
+   \sin(\theta_1) = 1.22\, \frac{\lambda}{D}
+   \]</span></p>
+<p>The factor 1.22 arises from the first zero of the Bessel function <span class="math inline">\(J_1\)</span> that describes the diffraction pattern of a circular aperture.</p>
+<p><strong>Small Angle Approximation:</strong></p>
+<p>For small angles (common in optical systems), <span class="math inline">\(\sin(\theta_1) \approx \theta_1\)</span> in radians.</p>
+<p><strong>Relating Angular to Linear Separation in the Image Plane:</strong></p>
+<p>The angular resolution <span class="math inline">\(\theta_1\)</span> corresponds to a linear separation <span class="math inline">\(\Delta x\)</span> in the image plane (at image distance <span class="math inline">\(b\)</span>):</p>
+<p><span class="math display">\[
+   \theta_1 = \frac{\Delta x}{b}
+   \]</span></p>
+<p><strong>Combining the Equations:</strong></p>
+<p>Substituting <span class="math inline">\(\theta_1\)</span>:</p>
+<p><span class="math display">\[
+   \frac{\Delta x}{b} = 1.22\, \frac{\lambda}{D}
+   \]</span></p>
+<p>Solving for <span class="math inline">\(\Delta x\)</span>:</p>
+<p><span class="math display">\[
+   \Delta x = 1.22\, \frac{\lambda b}{D}
+   \]</span></p>
+<p><strong>Considering the Object Plane:</strong></p>
+<p>The magnification <span class="math inline">\(M\)</span> of the optical system is:</p>
+<p><span class="math display">\[
+   M = \frac{b}{g}
+   \]</span></p>
+<p>where <span class="math inline">\(g\)</span> is the object distance. The corresponding separation in the object plane (<span class="math inline">\(\Delta d\)</span>) is:</p>
+<p><span class="math display">\[
+   \Delta d = \frac{\Delta x}{M} = \frac{\Delta x \, g}{b}
+   \]</span></p>
+<p>Substituting <span class="math inline">\(\Delta x\)</span>:</p>
+<p><span class="math display">\[
+   \Delta d = 1.22\, \frac{\lambda b}{D} \times \frac{g}{b} = 1.22\, \frac{\lambda g}{D}
+   \]</span></p>
+<p><strong>Introducing Numerical Aperture (NA):</strong></p>
+<p>The <strong>numerical aperture</strong> (NA) of the lens is defined as:</p>
+<p><span class="math display">\[
+   \text{NA} = n \sin(\alpha)
+   \]</span></p>
+<p>where:</p>
+<ul>
+<li><span class="math inline">\(n\)</span> is the refractive index of the medium between the object and the lens.</li>
+<li><span class="math inline">\(\alpha\)</span> is the half-angle of the maximum cone of light that can enter or exit the lens.</li>
+</ul>
+<p>Since <span class="math inline">\(\sin(\alpha) = \frac{R}{g}\)</span>, we have:</p>
+<p><span class="math display">\[
+   D = 2R = 2 g \sin(\alpha)
+   \]</span></p>
+<p>Substituting <span class="math inline">\(D\)</span> into <span class="math inline">\(\Delta d\)</span>:</p>
+<p><span class="math display">\[
+   \Delta d = 1.22\, \frac{\lambda g}{2 g \sin(\alpha)} = \frac{1.22\, \lambda}{2 \sin(\alpha)} = \frac{0.61\, \lambda}{\sin(\alpha)}
+   \]</span></p>
+<p>Therefore, incorporating the refractive index <span class="math inline">\(n\)</span>:</p>
+<p><span class="math display">\[
+   \Delta d = \frac{0.61\, \lambda}{n \sin(\alpha)} = \frac{0.61\, \lambda}{\text{NA}}
+   \]</span></p>
+<p>Under Rayleigh’s resolution criterion, several key factors influence the resolving power of an optical system.</p>
+<p>Firstly, a <strong>higher numerical aperture (NA)</strong> improves resolution. This increase can be achieved by enhancing either the refractive index <span class="math inline">\(n\)</span> of the medium between the object and the lens or the sine of the collection angle <span class="math inline">\(\sin(\alpha)\)</span>. Since the NA is defined as <span class="math inline">\(\text{NA} = n \sin(\alpha)\)</span>, a larger NA allows the lens to gather more diffracted light, thereby resolving finer details in the image. In air, where the refractive index is approximately <span class="math inline">\(n \approx 1\)</span>, the <strong>maximum achievable NA is less than 1</strong>, which limits the resolution. This limitation arises because the maximum value of <span class="math inline">\(\sin(\alpha)\)</span> is 1 (when <span class="math inline">\(\alpha = 90^\circ\)</span>), so the NA in air cannot exceed 1. In practical systems, the collection angle <span class="math inline">\(\alpha\)</span> is much less than <span class="math inline">\(90^\circ\)</span>, further reducing the NA and thus the resolution. Immersion lenses, which use a medium with a higher refractive index (such as water or oil), can achieve higher NAs, overcoming this limitation and improving resolution.</p>
+<p>Secondly, using <strong>shorter wavelengths</strong> <span class="math inline">\((\lambda)\)</span> of light leads to better resolution. According to the formula <span class="math inline">\(\Delta d = \frac{0.61\, \lambda}{\text{NA}}\)</span>, the minimum resolvable distance <span class="math inline">\(\Delta d\)</span> is directly proportional to the wavelength. Therefore, decreasing the wavelength reduces <span class="math inline">\(\Delta d\)</span>, allowing the optical system to distinguish smaller features of the object.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Rayleigh’s Resolution Criterion</strong></p>
+<p>Two incoherent point sources can be resolved when their minimum separation <span class="math inline">\(\Delta d\)</span> satisfies:</p>
+<p><span class="math display">\[
+\Delta d \geq \frac{0.61\, \lambda}{\text{NA}}
+\]</span></p>
+<p><strong>Where:</strong></p>
+<ul>
+<li><span class="math inline">\(\Delta d\)</span> is the minimum resolvable distance between the two point sources.</li>
+<li><span class="math inline">\(\lambda\)</span> is the wavelength of the light used for imaging.</li>
+<li><span class="math inline">\(\text{NA} = n \sin(\alpha)\)</span> is the numerical aperture of the optical system.
+<ul>
+<li><span class="math inline">\(n\)</span> is the refractive index of the medium.</li>
+<li><span class="math inline">\(\alpha\)</span> is the half-angle of the maximum cone of light entering the lens.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="abbes-criterion-for-resolution" class="level4">
+<h4 class="anchored" data-anchor-id="abbes-criterion-for-resolution">Abbe’s Criterion for Resolution</h4>
+<p><strong>Limitations of Rayleigh’s Criterion:</strong></p>
+<ul>
+<li>Rayleigh’s criterion applies to <strong>incoherent</strong> light sources, where the intensities of the diffraction patterns add directly.</li>
+<li>It does not fully account for the effects of coherence and interference in the imaging process.</li>
+</ul>
+<p><strong>Ernst Abbe</strong> developed a theory that considers the imaging of <strong>coherent</strong> light sources, where the phases of the waves are correlated. It emphasizes the importance of diffracted orders and spatial frequencies in the formation of images.</p>
+<p>The key concepts in Abbe’s theory are</p>
+<p><strong>Diffraction Grating Analogy:</strong></p>
+<ul>
+<li>An object with fine details can be thought of as a diffraction grating that scatters light into multiple diffraction orders.</li>
+<li>The ability to resolve these fine details depends on the optical system’s capacity to capture these diffracted orders.</li>
+</ul>
+<p><strong>Spatial Frequencies:</strong></p>
+<ul>
+<li>The finer the details in the object, the higher the spatial frequency.</li>
+<li>High spatial frequencies correspond to larger angles in the diffraction pattern.</li>
+</ul>
+<p><strong>Optical Transfer Function:</strong></p>
+<ul>
+<li>Describes how different spatial frequencies are transmitted through the optical system.</li>
+<li>An optical system with a larger NA can transmit higher spatial frequencies, improving resolution.</li>
+</ul>
+<p>Following that analogy, Abbe’s criterion states that the minimum resolvable distance <span class="math inline">\(\Delta d\)</span> between two points in the object plane is given by:</p>
+<p><span class="math display">\[
+\Delta d = \frac{\lambda}{2 \text{NA}}
+\]</span></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Rayleigh’s and Abbe’s criteria
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><p><strong>Abbe’s Limit:</strong></p>
+<ul>
+<li><span class="math inline">\(\Delta d = \frac{\lambda}{2 \text{NA}}\)</span></li>
+<li>Emphasizes coherent imaging and the transmission of at least two diffracted orders (zeroth and first) for resolution.</li>
+</ul></li>
+<li><p><strong>Rayleigh’s Limit:</strong></p>
+<ul>
+<li><span class="math inline">\(\Delta d = \frac{0.61\, \lambda}{\text{NA}}\)</span></li>
+<li>Based on the visibility of intensity dips in the overlapping Airy patterns of incoherent sources.</li>
+</ul></li>
+</ul>
+<p><strong>Implications in Microscopy:</strong></p>
+<p>Coherent Illumination:</p>
+<ul>
+<li>Techniques like phase-contrast or interference microscopy rely on coherent light.</li>
+<li>Abbe’s criterion is more appropriate for these methods.</li>
+</ul>
+<p>Incoherent Illumination:</p>
+<ul>
+<li>Common in conventional bright-field microscopy.</li>
+<li>Rayleigh’s criterion provides a practical resolution limit.</li>
+</ul>
+<p>Importance of Abbe’s Criterion:</p>
+<ul>
+<li>Highlights the role of interference between diffracted waves in image formation.</li>
+<li>Demonstrates that resolution is fundamentally limited by the wavelength of light and the NA of the system.</li>
+<li>Suggests that capturing higher spatial frequencies (larger NA) leads to better resolution.</li>
+</ul>
+</div>
+</div>
 
 
 </section>
