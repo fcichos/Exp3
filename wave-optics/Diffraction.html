@@ -64,6 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../wave-optics/Fresnel Zones.html" rel="next">
+<link href="../wave-optics/Dummy.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -168,7 +170,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Diffraction</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../geometrical-optics/introduction.html">Geometrical Optics</a></li><li class="breadcrumb-item"><a href="../wave-optics/Dummy.html">Lecture 10</a></li><li class="breadcrumb-item"><a href="../wave-optics/Diffraction.html">Diffraction</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -453,6 +455,24 @@ window.Quarto = {
  <span class="menu-text">Fabry Perot Interferometer</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Diffraction.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Diffraction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Fresnel Zones.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fresnel Zone Plate</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Dummy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Diffraction Integral</span></a>
+  </div>
+</li>
       </ul>
   </li>
       </ul>
@@ -469,10 +489,20 @@ window.Quarto = {
   <ul>
   <li><a href="#huygens-principle" id="toc-huygens-principle" class="nav-link active" data-scroll-target="#huygens-principle">Huygens’ Principle</a></li>
   <li><a href="#single-slit-diffraction" id="toc-single-slit-diffraction" class="nav-link" data-scroll-target="#single-slit-diffraction">Single Slit Diffraction</a></li>
-  <li><a href="#circular-aperture" id="toc-circular-aperture" class="nav-link" data-scroll-target="#circular-aperture">Circular Aperture</a>
+  <li><a href="#circular-aperture" id="toc-circular-aperture" class="nav-link" data-scroll-target="#circular-aperture">Circular Aperture</a></li>
+  <li><a href="#application-diffraction-grating" id="toc-application-diffraction-grating" class="nav-link" data-scroll-target="#application-diffraction-grating">Application: Diffraction Grating</a>
   <ul class="collapse">
+  <li><a href="#properties-of-the-diffraction-pattern" id="toc-properties-of-the-diffraction-pattern" class="nav-link" data-scroll-target="#properties-of-the-diffraction-pattern">Properties of the Diffraction Pattern</a></li>
+  <li><a href="#position-of-the-main-peaks" id="toc-position-of-the-main-peaks" class="nav-link" data-scroll-target="#position-of-the-main-peaks">Position of the Main Peaks</a></li>
+  <li><a href="#influence-of-the-slit-width" id="toc-influence-of-the-slit-width" class="nav-link" data-scroll-target="#influence-of-the-slit-width">Influence of the Slit Width</a></li>
+  <li><a href="#influence-of-the-slit-number" id="toc-influence-of-the-slit-number" class="nav-link" data-scroll-target="#influence-of-the-slit-number">Influence of the Slit Number</a></li>
+  <li><a href="#spectral-resolution" id="toc-spectral-resolution" class="nav-link" data-scroll-target="#spectral-resolution">Spectral Resolution</a></li>
+  </ul></li>
   <li><a href="#application-diffraction-in-the-human-eye" id="toc-application-diffraction-in-the-human-eye" class="nav-link" data-scroll-target="#application-diffraction-in-the-human-eye">Application: Diffraction in the Human Eye</a></li>
-  <li><a href="#resolution-of-an-optical-microscope" id="toc-resolution-of-an-optical-microscope" class="nav-link" data-scroll-target="#resolution-of-an-optical-microscope">Resolution of an Optical Microscope</a></li>
+  <li><a href="#application-resolution-of-an-optical-microscope" id="toc-application-resolution-of-an-optical-microscope" class="nav-link" data-scroll-target="#application-resolution-of-an-optical-microscope">Application: Resolution of an Optical Microscope</a>
+  <ul class="collapse">
+  <li><a href="#rayleighs-criterion-for-resolution" id="toc-rayleighs-criterion-for-resolution" class="nav-link" data-scroll-target="#rayleighs-criterion-for-resolution">Rayleigh’s Criterion for Resolution</a></li>
+  <li><a href="#abbes-criterion-for-resolution" id="toc-abbes-criterion-for-resolution" class="nav-link" data-scroll-target="#abbes-criterion-for-resolution">Abbe’s Criterion for Resolution</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -480,7 +510,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../geometrical-optics/introduction.html">Geometrical Optics</a></li><li class="breadcrumb-item"><a href="../wave-optics/Dummy.html">Lecture 10</a></li><li class="breadcrumb-item"><a href="../wave-optics/Diffraction.html">Diffraction</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Diffraction</h1>
 </div>
@@ -533,7 +563,7 @@ I(\theta) = I_0 \frac{\sin^2\left ( M \frac{\pi d \sin \theta }{\lambda} \right 
 </section>
 <section id="single-slit-diffraction" class="level2">
 <h2 class="anchored" data-anchor-id="single-slit-diffraction">Single Slit Diffraction</h2>
-<p>Let’s apply our interference formula to study the diffraction of an incident plane wave (wavevector <span class="math inline">\(\vec{k}\)</span>) on a single slit of width <span class="math inline">\(b\)</span>. We can model this by placing a series of Huygens sources along the slit opening. While the sketch below shows just 3 sources for clarity, we’ll generalize this to <span class="math inline">\(M\)</span> sources.</p>
+<p>We now apply our interference formula to study the diffraction of an incident plane wave (wavevector <span class="math inline">\(\vec{k}\)</span>) on a single slit of width <span class="math inline">\(b\)</span>. We can model this by placing a series of Huygens sources along the slit opening. While the sketch below shows just 3 sources for clarity, we’ll generalize this to <span class="math inline">\(M\)</span> sources.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/single_slit.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="400"></p>
@@ -581,17 +611,24 @@ Single Slit Diffraction
 I(\theta)=I_s\frac{\sin^2\left (\pi \frac{b}{\lambda}\sin(\theta)\right)}{\left( \pi \frac{b}{\lambda}\sin(\theta)\right)^2}
 \]</span></p>
 <p>where <span class="math inline">\(\lambda\)</span> is the wavelength of the light and <span class="math inline">\(b\)</span> the width of the slit. The angle of observation is given by <span class="math inline">\(\theta\)</span>. Note that the diffraction pattern on any aperture is resulting from the fact that you remove Huygens sources that would be normally needed to form a plane wavefront for example.</p>
+<p><strong>Fourier Transform and Diffraction</strong></p>
+<p>The intensity distribution generated by the diffraction of monochromatic light on a single slit and observed in the far field is given by</p>
+<p><span class="math display">\[
+I(\theta)=I_s\frac{\sin^2\left (\pi \frac{b}{\lambda}\sin(\theta)\right)}{\left( \pi \frac{b}{\lambda}\sin(\theta)\right)^2}
+\]</span></p>
+<p>where <span class="math inline">\(\lambda\)</span> is the wavelength of the light and <span class="math inline">\(b\)</span> the width of the slit. The angle of observation is given by <span class="math inline">\(\theta\)</span>. Note that the diffraction pattern on any aperture is resulting from the fact that you remove Huygens sources that would be normally needed to form a plane wavefront for example.</p>
+<p>This diffraction pattern can be understood as the Fourier transform of the aperture function. In the case of a single slit, the aperture function is a rectangular function, and its Fourier transform is a sinc function. This relationship between the aperture and its diffraction pattern is a fundamental concept in wave optics and is widely used in various applications, including imaging and signal processing.</p>
 </div>
 </div>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="img/slit_intensity.png" class="img-fluid figure-img" style="width:90.0%"></p>
+<p><img src="img/slit_intensity.png" class="img-fluid figure-img" style="width:100.0%"></p>
 <figcaption>Total wave amplitude behind a slit (b=2µm) for an incident wave of 532 nm wavelength. The plot in the middle shows the intensity in the space behind the slit. The graph on the right displays the diffraction pattern at a screen at 100 µm distance from the slit.</figcaption>
 </figure>
 </div>
 <p>Let’s have a look at some of the properties of the intensity distribution.</p>
-<div id="9fa5244a" class="cell" data-execution_count="2">
+<div id="86da3572" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
@@ -631,7 +668,7 @@ I(\theta)=I_s\frac{\sin^2\left (\pi \frac{b}{\lambda}\sin(\theta)\right)}{\left(
 <p>The single-slit diffraction pattern shows characteristic features that we can observe in both theoretical calculations and experimental measurements. The intensity distribution is described by an oscillating function with decreasing amplitude. The oscillations arise from the <span class="math inline">\(\sin^2\)</span> term in the numerator, while the decay comes from the square term in the denominator.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="img/slit_diff_min.png" class="img-fluid figure-img" width="600"></p>
+<p><img src="img/slit_diff_min.png" class="img-fluid figure-img" width="400"></p>
 <figcaption>Diffraction patterns as a function of the sine of the diffraction angle. The minima of the diffraction pattern in this plot are at integer multiples of <span class="math inline">\(\lambda/b\)</span>.</figcaption>
 </figure>
 </div>
@@ -694,8 +731,306 @@ x_1=1.22\pi=\frac{2\pi R}{\lambda}\sin(\theta_1)
 \sin(\theta_1)=0.61\frac{\lambda}{R}
 \]</span></p>
 <p>This follows the same general principle we’ve seen before: the angular spread is proportional to wavelength divided by aperture size. The central bright region up to this first minimum is known as the <strong>Airy disc</strong>, and in microscopy, this defines a resolution element or <strong>resel</strong>.</p>
-<section id="application-diffraction-in-the-human-eye" class="level3">
-<h3 class="anchored" data-anchor-id="application-diffraction-in-the-human-eye">Application: Diffraction in the Human Eye</h3>
+<hr>
+</section>
+<section id="application-diffraction-grating" class="level2">
+<h2 class="anchored" data-anchor-id="application-diffraction-grating">Application: Diffraction Grating</h2>
+<p>We now combine the concepts of single-slit diffraction and multiple-wave interference to understand the behavior of diffraction gratings. Diffraction gratings are important in spectroscopy and the compression of short laser pulses.</p>
+<p>Consider a diffraction grating with <span class="math inline">\(N\)</span> slits, each of width <span class="math inline">\(b\)</span>, and separated by a distance <span class="math inline">\(d\)</span>. Each slit acts as a source of diffraction, producing an intensity pattern that oscillates with decreasing amplitude. The width of this diffraction pattern is determined by <span class="math inline">\(\lambda/b\)</span>, and the pattern is given by:</p>
+<p><span class="math display">\[
+I(\theta) = I_s \frac{\sin^2\left(\pi \frac{b}{\lambda} \sin(\theta)\right)}{\left(\pi \frac{b}{\lambda} \sin(\theta)\right)^2}
+\]</span></p>
+<p>Now, we have multiple slits, each separated by a distance <span class="math inline">\(d\)</span>. The interference of waves from these slits is described by:</p>
+<p><span class="math display">\[
+I = I_0 \frac{\sin^2(N \phi / 2)}{\sin^2(\phi / 2)}
+\]</span></p>
+<p>where the phase difference <span class="math inline">\(\phi\)</span> between waves from neighboring slits is given by:</p>
+<p><span class="math display">\[
+\phi = k \Delta s = \frac{2\pi}{\lambda} d \sin(\theta)
+\]</span></p>
+<p>Combining these expressions, the intensity distribution for a diffraction grating is:</p>
+<p><span class="math display">\[
+I(\theta) = I_0 \frac{\sin^2\left(\pi \frac{b}{\lambda} \sin(\theta)\right)}{\left(\pi \frac{b}{\lambda} \sin(\theta)\right)^2} \frac{\sin^2\left(N \pi \frac{d}{\lambda} \sin(\theta)\right)}{\sin^2\left(\pi \frac{d}{\lambda} \sin(\theta)\right)}
+\]</span></p>
+<p>This formula describes the intensity pattern produced by a diffraction grating, which is the product of the single-slit diffraction pattern and the multiple-slit interference pattern.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Diffraction Grating
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The intensity distribution generated by a diffraction grating from monochromatic light and observed in the far field is given by</p>
+<p><span class="math display">\[
+I(\theta) = I_0 \frac{\sin^2\left(\pi \frac{b}{\lambda} \sin(\theta)\right)}{\left(\pi \frac{b}{\lambda} \sin(\theta)\right)^2} \frac{\sin^2\left(N \pi \frac{d}{\lambda} \sin(\theta)\right)}{\sin^2\left(\pi \frac{d}{\lambda} \sin(\theta)\right)}
+\]</span></p>
+<p>where <span class="math inline">\(\lambda\)</span> is the wavelength of the light, <span class="math inline">\(b\)</span> is the width of the slit, <span class="math inline">\(d\)</span> is the distance between the slits, and <span class="math inline">\(N\)</span> is the number of slits illuminated. The angle of observation is given by <span class="math inline">\(\theta\)</span>.</p>
+</div>
+</div>
+<section id="properties-of-the-diffraction-pattern" class="level3">
+<h3 class="anchored" data-anchor-id="properties-of-the-diffraction-pattern">Properties of the Diffraction Pattern</h3>
+<p>Let’s examine the properties of this intensity distribution. The graph below shows the intensity distribution for a diffraction grating with <span class="math inline">\(N=8\)</span> slits, a slit distance of <span class="math inline">\(d=4\)</span> µm, a slit width of <span class="math inline">\(b=2\)</span> µm, and a wavelength of 532 nm. We observe the following general properties:</p>
+<ul>
+<li>The intensity pattern consists of main maxima, called <strong>diffraction orders</strong>, characterized by integer numbers. The central peak is the 0th order peak, the first main peak to the right is the 1st diffraction order, and so on.</li>
+<li>The main peaks are separated by <span class="math inline">\(N-2\)</span> secondary peaks and <span class="math inline">\(N-1\)</span> minima.</li>
+<li>The intensity distribution is characterized by an envelope, which is the diffraction pattern of a single slit (dashed line). In the example below, the 2nd order peak is suppressed. The envelope becomes wider if the slits become narrower.</li>
+</ul>
+</section>
+<section id="position-of-the-main-peaks" class="level3">
+<h3 class="anchored" data-anchor-id="position-of-the-main-peaks">Position of the Main Peaks</h3>
+<p>The position of the main peaks is determined by the condition that the denominator of the multiple-slit interference term is zero. This occurs when the argument is an integer multiple of <span class="math inline">\(\pi\)</span>, i.e., <span class="math inline">\(\pi \frac{d}{\lambda} \sin(\theta) = m\pi\)</span>, or:</p>
+<p><span class="math display">\[
+\sin(\theta) = m \frac{\lambda}{d}
+\]</span></p>
+<p>where <span class="math inline">\(m\)</span> is an integer. The first-order diffraction maximum is found at <span class="math inline">\(\sin(\theta) = \frac{\lambda}{d}\)</span>, independent of the number of slits <span class="math inline">\(N\)</span>. This means that the position of the main peaks increases linearly with the wavelength <span class="math inline">\(\lambda\)</span> and decreases with increasing slit distance <span class="math inline">\(d\)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/grating_general.png" class="img-fluid figure-img" style="width:75.0%"></p>
+<figcaption>Diffraction pattern of a grating where 8 slits with a width of 2 µm and a distance of 4 micrometers are illuminated by a wavelength of 532 nm.</figcaption>
+</figure>
+</div>
+</section>
+<section id="influence-of-the-slit-width" class="level3">
+<h3 class="anchored" data-anchor-id="influence-of-the-slit-width">Influence of the Slit Width</h3>
+<p>The two plots below show the influence of the slit width while keeping the slit distance the same. We have <span class="math inline">\(N=8\)</span> slits with <span class="math inline">\(d=4\)</span> µm, while the slit width is <span class="math inline">\(b=2\)</span> µm on the left side and <span class="math inline">\(b=1\)</span> µm on the right side. The result is an increased width of the envelope. The first minimum of the slit diffraction pattern occurs at <span class="math inline">\(\sin(\theta) = \frac{\lambda}{b}\)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/grating_slit_width.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption><strong>(Left)</strong> Diffraction pattern of a grating with <span class="math inline">\(N=8\)</span> slits (<span class="math inline">\(d=4\)</span> µm, <span class="math inline">\(b=2\)</span> µm) with <span class="math inline">\(\lambda=532\)</span> nm. <strong>(Right)</strong> Diffraction pattern of a grating with <span class="math inline">\(N=8\)</span> slits (<span class="math inline">\(d=4\)</span> µm, <span class="math inline">\(b=1\)</span> µm) with <span class="math inline">\(\lambda=532\)</span> nm.</figcaption>
+</figure>
+</div>
+</section>
+<section id="influence-of-the-slit-number" class="level3">
+<h3 class="anchored" data-anchor-id="influence-of-the-slit-number">Influence of the Slit Number</h3>
+<p>When increasing the number of slits, the main diffraction peaks become sharper. The location of the main peaks for a given wavelength remains unchanged, but there are now <span class="math inline">\(N-2\)</span> secondary maxima in between. This decreased width of the main peaks is important for the spectral resolution of the grating.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/grating_slit_number.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption><strong>(Left)</strong> Diffraction pattern of a grating with <span class="math inline">\(N=16\)</span> slits (<span class="math inline">\(d=4\)</span> µm, <span class="math inline">\(b=1\)</span> µm) with <span class="math inline">\(\lambda=532\)</span> nm. <strong>(Right)</strong> Diffraction pattern of a grating with <span class="math inline">\(N=100\)</span> slits (<span class="math inline">\(d=4\)</span> µm, <span class="math inline">\(b=1\)</span> µm) with <span class="math inline">\(\lambda=532\)</span> nm.</figcaption>
+</figure>
+</div>
+</section>
+<section id="spectral-resolution" class="level3">
+<h3 class="anchored" data-anchor-id="spectral-resolution">Spectral Resolution</h3>
+<p>To quantify the spectral resolution, we use a criterion similar to the optical resolution of a microscope: two peaks are separable if the second peak is located at the minimum of the first diffraction pattern. Here, the diffraction patterns refer to different wavelengths <span class="math inline">\(\lambda_1\)</span> and <span class="math inline">\(\lambda_2\)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/grating_resolution.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption><strong>Fig.:</strong> Rayleigh resolution limit of a grating with <span class="math inline">\(N=100\)</span> slits (<span class="math inline">\(d=4\)</span> µm, <span class="math inline">\(b=1\)</span> µm) with <span class="math inline">\(\lambda_1=532\)</span> nm and <span class="math inline">\(\lambda_2=537\)</span> nm in the first order diffraction peak (left) and the second order peak (right).</figcaption>
+</figure>
+</div>
+<p>Consider the <span class="math inline">\(m\)</span>th order diffraction peak for the wavelength <span class="math inline">\(\lambda_1\)</span>. This occurs at:</p>
+<p><span class="math display">\[
+\sin(\theta) = m \frac{\lambda_1}{d}
+\]</span></p>
+<p>The next secondary minimum to larger angles of the diffraction pattern is located where the numerator of the multiple-wave interference term:</p>
+<p><span class="math display">\[
+\sin^2\left(N \pi \frac{d}{\lambda} \sin(\theta)\right)
+\]</span></p>
+<p>becomes zero, or the argument:</p>
+<p><span class="math display">\[
+N \pi \frac{d}{\lambda} \sin(\theta) = l \pi
+\]</span></p>
+<p>becomes a multiple <span class="math inline">\(l\)</span> of <span class="math inline">\(\pi\)</span>. For the first-order main peak, we have <span class="math inline">\(N-2\)</span> intermediate peaks as well as the 0th and now the first-order peak. Therefore, <span class="math inline">\(m = l/N\)</span>, and the next minimum after the 1st order peak is at:</p>
+<p><span class="math display">\[
+\sin(\theta_1) = \frac{l+1}{N} \frac{\lambda_1}{d}
+\]</span></p>
+<p>This angle must correspond to the position of the main peak of the first-order diffraction of the wavelength <span class="math inline">\(\lambda_2\)</span>, so:</p>
+<p><span class="math display">\[
+\sin(\theta_1) = m \frac{\lambda_2}{d}
+\]</span></p>
+<p>Combining both equations for the two wavelengths yields:</p>
+<p><span class="math display">\[
+\left(m + \frac{1}{N}\right) \frac{\lambda_1}{d} = m \frac{\lambda_2}{d}
+\]</span></p>
+<p>and after some rearrangements (setting <span class="math inline">\(\lambda_1 = \lambda\)</span>):</p>
+<p><span class="math display">\[
+R = \frac{\lambda}{\Delta \lambda} = mN
+\]</span></p>
+<p>This is the resolving power <span class="math inline">\(R\)</span> of a grating. The ability to resolve two wavelengths increases with the diffraction order <span class="math inline">\(m\)</span> and the number of slits used for the diffraction. However, the intensity of higher diffraction orders rapidly decreases due to the grating envelope. Therefore, the main parameter to change is the number of illuminated slits.</p>
+<p>Our finding is illustrated in the figure above, where we achieve a resolution of about 5 nm when using <span class="math inline">\(N=100\)</span> slits at a distance of <span class="math inline">\(d=4\)</span> µm.</p>
+<div id="fig-grating" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-grating-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/red_light_grating.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption>Diffraction pattern observed for a grating in the lecture with red light (left) and white light (right).</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/white_light_grating.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption>Diffraction pattern observed for a grating in the lecture with red light (left) and white light (right).</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-grating-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2— Diffraction pattern observed for a grating in the lecture with red light (left) and white light (right).
+</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Diffraction Grating Playground
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div id="controls" align="center">
+  <label for="wavelength">Wavelength (nm):</label>
+  <input type="range" id="wavelength" name="wavelength" min="400" max="700" value="532">
+  <span id="wavelength-value">532</span> nm
+  <br>
+  <label for="slitWidth">Slit Width (µm):</label>
+  <input type="range" id="slitWidth" name="slitWidth" min="0.5" max="3" value="1" step="0.1">
+  <span id="slitWidth-value">2</span> µm
+  <br>
+  <label for="numSlits">Number of Slits:</label>
+  <input type="range" id="numSlits" name="numSlits" min="1" max="100" value="8">
+  <span id="numSlits-value">8</span>
+</div>
+
+<div id="chart" align="center"></div>
+
+<script src="https://d3js.org/d3.v6.min.js"></script>
+<script>
+  // Set up the SVG canvas dimensions
+  const margin = {top: 20, right: 30, bottom: 40, left: 50};
+  const width = 600 - margin.left - margin.right;
+  const height = 400 - margin.top - margin.bottom;
+
+  // Create the SVG canvas
+  const svg = d3.select("#chart")
+    .append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+    .attr("transform", `translate(${margin.left},${margin.top})`);
+
+  // Set up the scales
+  const x = d3.scaleLinear().domain([-1, 1]).range([0, width]);
+  const y = d3.scaleLinear().domain([0, 1]).range([height, 0]);
+
+  // Add the x-axis
+  svg.append("g")
+    .attr("transform", `translate(0,${height})`)
+    .call(d3.axisBottom(x).tickSizeOuter(0))
+    .selectAll("text")
+    .style("font-size", "14px");
+
+  // Add the y-axis
+  svg.append("g")
+    .call(d3.axisLeft(y).tickSizeOuter(0))
+    .selectAll("text")
+    .style("font-size", "14px");
+
+  // Add labels
+  svg.append("text")
+    .attr("x", width / 2)
+    .attr("y", height + margin.bottom-8)
+    .attr("text-anchor", "middle")
+    .text("sin(θ)");
+
+  svg.append("text")
+    .attr("x", -height / 2)
+    .attr("y", -margin.left + 10)
+    .attr("text-anchor", "middle")
+    .attr("transform", "rotate(-90)")
+    .text("Intensity");
+
+  // Function to calculate the intensity pattern
+  function calculateIntensity(wavelength, slitWidth, numSlits) {
+    const k = 2 * Math.PI / (wavelength * 1e-9); // Convert wavelength from nm to meters
+    const d = slitWidth * 1e-6; // Convert slit width from µm to meters
+    const a = 4e-6; // Distance between slits in meters (fixed at 4 µm)
+    const N = numSlits;
+    const data = [];
+
+    for (let theta = -Math.PI / 2; theta <= Math.PI / 2; theta += 0.001) {
+      const beta = k * d * Math.sin(theta);
+      const gamma = k * a * Math.sin(theta);
+      const singleSlit = Math.pow(Math.sin(beta / 2) / (beta / 2), 2);
+      const multiSlit = Math.pow(Math.sin(N * gamma / 2) / Math.sin(gamma / 2), 2);
+      const intensity = singleSlit * multiSlit;
+      data.push({theta: Math.sin(theta), intensity: intensity});
+    }
+
+    return data;
+  }
+
+  // Function to update the chart
+  function updateChart(wavelength, slitWidth, numSlits) {
+    const data = calculateIntensity(wavelength, slitWidth, numSlits);
+
+    // Update the scales
+    y.domain([0, d3.max(data, d => d.intensity)]);
+
+    // Bind the data to the line
+    const line = svg.selectAll(".line")
+      .data([data]);
+
+    // Enter new data
+    line.enter()
+      .append("path")
+      .attr("class", "line")
+      .merge(line)
+      .attr("fill", "none")
+      .attr("stroke", "steelblue")
+      .attr("stroke-width", 1.5)
+      .attr("d", d3.line()
+        .x(d => x(d.theta))
+        .y(d => y(d.intensity))
+      );
+
+    // Remove old data
+    line.exit().remove();
+  }
+
+  // Initial chart update
+  updateChart(532, 2, 8);
+
+  // Event listeners for the sliders
+  d3.select("#wavelength").on("input", function() {
+    const wavelength = +this.value;
+    d3.select("#wavelength-value").text(wavelength);
+    updateChart(wavelength, +d3.select("#slitWidth").property("value"), +d3.select("#numSlits").property("value"));
+  });
+
+  d3.select("#slitWidth").on("input", function() {
+    const slitWidth = +this.value;
+    d3.select("#slitWidth-value").text(slitWidth);
+    updateChart(+d3.select("#wavelength").property("value"), slitWidth, +d3.select("#numSlits").property("value"));
+  });
+
+  d3.select("#numSlits").on("input", function() {
+    const numSlits = +this.value;
+    d3.select("#numSlits-value").text(numSlits);
+    updateChart(+d3.select("#wavelength").property("value"), +d3.select("#slitWidth").property("value"), numSlits);
+  });
+</script>
+<p>App to play with the parameters of a grating with a slit distance of 4 µm and a slit width of 2 µm.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="application-diffraction-in-the-human-eye" class="level2">
+<h2 class="anchored" data-anchor-id="application-diffraction-in-the-human-eye">Application: Diffraction in the Human Eye</h2>
 <p>The human eye provides an excellent real-world example of circular aperture diffraction through the pupil (the opening in the iris). By examining how light diffracts as it enters the eye, we can understand fundamental limits on visual resolution and how the eye is naturally optimized to these constraints.</p>
 <p><strong>Calculating the Diffraction Limit of the Eye</strong></p>
 <p>When light passes through the circular aperture of the pupil, it undergoes diffraction, producing an Airy disk pattern on the retina. The angle to the first minimum (dark ring) of the diffraction pattern is given by:</p>
@@ -734,7 +1069,7 @@ D = 2r = 2 \times 2.596\, \mu\text{m} = 5.192\, \mu\text{m}
    \]</span></p>
 <p>In reality, the photoreceptors are more closely packed in a hexagonal arrangement, but this calculation gives a good approximation.</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -743,7 +1078,7 @@ Analysis of the results
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>We observe that:</p>
 <ul>
@@ -773,11 +1108,11 @@ Analysis of the results
 </div>
 </div>
 </section>
-<section id="resolution-of-an-optical-microscope" class="level3">
-<h3 class="anchored" data-anchor-id="resolution-of-an-optical-microscope">Resolution of an Optical Microscope</h3>
+<section id="application-resolution-of-an-optical-microscope" class="level2">
+<h2 class="anchored" data-anchor-id="application-resolution-of-an-optical-microscope">Application: Resolution of an Optical Microscope</h2>
 <p>The resolution of an optical microscope is fundamentally limited by the diffraction of light as it passes through the optical components, particularly the objective lens. Diffraction causes point sources of light to produce blurred images rather than perfect points, affecting the microscope’s ability to distinguish between two closely spaced objects.</p>
-<section id="rayleighs-criterion-for-resolution" class="level4">
-<h4 class="anchored" data-anchor-id="rayleighs-criterion-for-resolution">Rayleigh’s Criterion for Resolution</h4>
+<section id="rayleighs-criterion-for-resolution" class="level3">
+<h3 class="anchored" data-anchor-id="rayleighs-criterion-for-resolution">Rayleigh’s Criterion for Resolution</h3>
 <p><strong>Key Question:</strong> <em>How close can two point sources be while still being perceived as distinct entities by an optical system?</em></p>
 <p>To answer this, we need to consider two essential aspects of how a lens modifies light:</p>
 <ol type="1">
@@ -868,7 +1203,7 @@ Analysis of the results
 <p>Firstly, a <strong>higher numerical aperture (NA)</strong> improves resolution. This increase can be achieved by enhancing either the refractive index <span class="math inline">\(n\)</span> of the medium between the object and the lens or the sine of the collection angle <span class="math inline">\(\sin(\alpha)\)</span>. Since the NA is defined as <span class="math inline">\(\text{NA} = n \sin(\alpha)\)</span>, a larger NA allows the lens to gather more diffracted light, thereby resolving finer details in the image. In air, where the refractive index is approximately <span class="math inline">\(n \approx 1\)</span>, the <strong>maximum achievable NA is less than 1</strong>, which limits the resolution. This limitation arises because the maximum value of <span class="math inline">\(\sin(\alpha)\)</span> is 1 (when <span class="math inline">\(\alpha = 90^\circ\)</span>), so the NA in air cannot exceed 1. In practical systems, the collection angle <span class="math inline">\(\alpha\)</span> is much less than <span class="math inline">\(90^\circ\)</span>, further reducing the NA and thus the resolution. Immersion lenses, which use a medium with a higher refractive index (such as water or oil), can achieve higher NAs, overcoming this limitation and improving resolution.</p>
 <p>Secondly, using <strong>shorter wavelengths</strong> <span class="math inline">\((\lambda)\)</span> of light leads to better resolution. According to the formula <span class="math inline">\(\Delta d = \frac{0.61\, \lambda}{\text{NA}}\)</span>, the minimum resolvable distance <span class="math inline">\(\Delta d\)</span> is directly proportional to the wavelength. Therefore, decreasing the wavelength reduces <span class="math inline">\(\Delta d\)</span>, allowing the optical system to distinguish smaller features of the object.</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -877,7 +1212,7 @@ Note
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>Rayleigh’s Resolution Criterion</strong></p>
 <p>Two incoherent point sources can be resolved when their minimum separation <span class="math inline">\(\Delta d\)</span> satisfies:</p>
@@ -898,8 +1233,8 @@ Note
 </div>
 </div>
 </section>
-<section id="abbes-criterion-for-resolution" class="level4">
-<h4 class="anchored" data-anchor-id="abbes-criterion-for-resolution">Abbe’s Criterion for Resolution</h4>
+<section id="abbes-criterion-for-resolution" class="level3">
+<h3 class="anchored" data-anchor-id="abbes-criterion-for-resolution">Abbe’s Criterion for Resolution</h3>
 <p><strong>Limitations of Rayleigh’s Criterion:</strong></p>
 <ul>
 <li>Rayleigh’s criterion applies to <strong>incoherent</strong> light sources, where the intensities of the diffraction patterns add directly.</li>
@@ -969,7 +1304,6 @@ Rayleigh’s and Abbe’s criteria
 </div>
 
 
-</section>
 </section>
 </section>
 
@@ -1394,6 +1728,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../wave-optics/Dummy.html" class="pagination-link" aria-label="Fabry Perot Interferometer">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Fabry Perot Interferometer</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../wave-optics/Fresnel Zones.html" class="pagination-link" aria-label="Fresnel Zone Plate">
+        <span class="nav-page-text">Fresnel Zone Plate</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 
 
