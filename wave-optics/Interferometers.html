@@ -30,6 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../wave-optics/Fresnel Zones.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -134,7 +135,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Interferometers and other Coherence Applications</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../geometrical-optics/introduction.html">Geometrical Optics</a></li><li class="breadcrumb-item"><a href="../wave-optics/Diffraction2.html">Lecture 11</a></li><li class="breadcrumb-item"><a href="../wave-optics/Interferometers.html">Interferometers</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -454,6 +455,12 @@ window.Quarto = {
  <span class="menu-text">Diffraction Integral</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Interferometers.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Interferometers</span></a>
+  </div>
+</li>
       </ul>
   </li>
       </ul>
@@ -477,7 +484,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../geometrical-optics/introduction.html">Geometrical Optics</a></li><li class="breadcrumb-item"><a href="../wave-optics/Diffraction2.html">Lecture 11</a></li><li class="breadcrumb-item"><a href="../wave-optics/Interferometers.html">Interferometers</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Interferometers and other Coherence Applications</h1>
 </div>
@@ -498,15 +505,24 @@ window.Quarto = {
 
 <section id="michelson-interferometer" class="level3">
 <h3 class="anchored" data-anchor-id="michelson-interferometer">Michelson Interferometer</h3>
+<p>The Michelson interferometer is an essential optical instrument used to measure the interference of light waves. It consists of a coherent light source, such as a laser, which emits a beam directed towards a beam splitter. The beam splitter divides the light into two beams: one reflected towards a fixed mirror and the other transmitted towards a movable mirror. After reflecting off their respective mirrors, the beams are recombined at the beam splitter, where they interfere.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/michelson.png" class="img-fluid figure-img" style="width:30.0%"></p>
 <figcaption>Michelson Interferometer</figcaption>
 </figure>
 </div>
+<p>The interference pattern depends on the difference in the optical path lengths of the two beams. Constructive interference occurs when the path lengths are equal or differ by an integer multiple of the wavelength <span class="math inline">\(\lambda\)</span>, given by the condition <span class="math inline">\(2d = m\lambda\)</span>, where <span class="math inline">\(d\)</span> is the path length difference and <span class="math inline">\(m\)</span> is an integer. Destructive interference occurs when the path lengths differ by an odd multiple of half the wavelength, given by <span class="math inline">\(2d = (m + \frac{1}{2})\lambda\)</span>.</p>
+<p>By adjusting the position of the movable mirror, the path length difference changes, altering the interference pattern. This sensitivity to path length variations makes the Michelson interferometer useful for precise measurements, such as determining the wavelength of light, measuring small distances, and detecting changes in refractive index. It also played a crucial role in the Michelson-Morley experiment, which provided evidence against the existence of the luminiferous ether and supported the theory of special relativity.</p>
 <section id="ligo-interferometer-overview" class="level4">
 <h4 class="anchored">LIGO Interferometer Overview</h4>
 <p>The Laser Interferometer Gravitational-Wave Observatory (LIGO) is designed to detect gravitational waves—ripples in spacetime caused by massive accelerating objects, such as merging black holes or neutron stars. LIGO uses a Michelson interferometer configuration with two perpendicular arms, each several kilometers long. A laser beam is split into two beams that travel down these arms, reflect off mirrors at the ends, and then recombine at the beam splitter. Under normal conditions, the lengths of the arms are such that the beams interfere destructively, resulting in no light reaching the detector.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/VIRGO.jpg" class="img-fluid figure-img" data-with="50%"></p>
+<figcaption>Virgo detector of LIGO</figcaption>
+</figure>
+</div>
 <p>When a gravitational wave passes through the interferometer, it causes a tiny but measurable change in the lengths of the arms. This change alters the interference pattern of the recombined beams, allowing the detection of the gravitational wave. The sensitivity of LIGO is such that it can detect changes in arm length smaller than a thousandth of the diameter of a proton.</p>
 <p>The phase shift <span class="math inline">\(\Delta \phi\)</span> caused by a gravitational wave can be expressed as:</p>
 <p><span class="math display">\[
@@ -531,13 +547,13 @@ window.Quarto = {
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-LIGO Details
+LIGO Technical Details
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>LIGO consists of two large interferometers located in the United States: one in Hanford, Washington, and the other in Livingston, Louisiana. These facilities are operated by the LIGO Scientific Collaboration (LSC), which includes scientists from various institutions around the world.</p>
+<p>LIGO consists of two large interferometers located in the United States: one in Hanford, Washington, and the other in Livingston, Louisiana. These facilities are operated by the LIGO Scientific Collaboration (LSC), which includes scientists from various institutions around the world. Here is a link to the <a href="https://www.ligo.caltech.edu/">LIGO website</a> and a direct link to an <a href="https://www.ligo.caltech.edu/system/media_files/binaries/303/original/ligo-educators-guide.pdf?1455165573">overview document</a>.</p>
 <section id="interferometer-design" class="level3">
 <h3 class="anchored" data-anchor-id="interferometer-design">Interferometer Design</h3>
 <ol type="1">
@@ -613,12 +629,15 @@ LIGO Details
 </section>
 <section id="mach-zehnder-interferometer" class="level3">
 <h3 class="anchored" data-anchor-id="mach-zehnder-interferometer">Mach Zehnder Interferometer</h3>
+<p>The Mach-Zehnder interferometer is an optical device used to measure phase shifts between two light beams. It consists of a coherent light source, such as a laser, which emits a beam that is split into two paths by a beam splitter. Each beam travels along a different path, encountering mirrors that redirect them towards a second beam splitter where they are recombined. The recombined beams then interfere, producing an interference pattern that can be observed at the output ports.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/mach.png" class="img-fluid figure-img" style="width:30.0%"></p>
 <figcaption>Mach Zehnder Interferometer</figcaption>
 </figure>
 </div>
+<p>The interference pattern depends on the phase difference between the two beams, which is influenced by the optical path lengths they travel. If the path lengths are equal, constructive interference occurs, resulting in maximum intensity at one output port and minimum intensity at the other. If the path lengths differ, the phase difference causes a shift in the interference pattern, leading to varying intensities at the output ports.</p>
+<p>The phase difference <span class="math inline">\(\Delta \phi\)</span> between the two beams is given by <span class="math inline">\(\Delta \phi = \frac{2\pi \Delta L}{\lambda}\)</span>, where <span class="math inline">\(\Delta L\)</span> is the difference in path lengths and <span class="math inline">\(\lambda\)</span> is the wavelength of the light. By introducing a phase shift in one of the paths, such as by changing the length of the path or altering the refractive index of the medium through which the beam travels, the interference pattern can be controlled and measured.</p>
 <div>
 
 </div>
@@ -642,6 +661,13 @@ LIGO Details
 </div>
 </div>
 </div>
+<p>The Mach-Zehnder interferometer is widely used in applications requiring precise measurements of phase shifts, such as in optical communication systems, quantum mechanics experiments, and the study of optical properties of materials.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/MZI-ONN.png" class="img-fluid figure-img"></p>
+<figcaption>Network of Mach Zehnder Interferometers forming an all optical neural network. Zhou, H. et al.&nbsp;Photonic matrix multiplication lights up photonic accelerator and beyond. Light: Sci. Appl. 11, 30 (2022).</figcaption>
+</figure>
+</div>
 </section>
 <section id="sagnac-interferometer-overview" class="level3">
 <h3 class="anchored" data-anchor-id="sagnac-interferometer-overview">Sagnac Interferometer Overview</h3>
@@ -657,6 +683,12 @@ LIGO Details
 \Delta \phi = \frac{8 \pi A \Omega}{\lambda c}
 \]</span></p>
 <p>where <span class="math inline">\(A\)</span> represents the area enclosed by the light path, <span class="math inline">\(\Omega\)</span> is the angular velocity of the rotation, <span class="math inline">\(\lambda\)</span> is the wavelength of the light, and <span class="math inline">\(c\)</span> is the speed of light.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/sagnac_exp.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption>Sagnac interferometer made of a fibre rolled up on a cylinder taken from <a href="https://www.stabilock.com/holography--consulting/fiber-optic-sensors/sagnac-interferometer.html">here</a></figcaption>
+</figure>
+</div>
 <section id="derivation-of-the-phase-shift-1" class="level4">
 <h4 class="anchored" data-anchor-id="derivation-of-the-phase-shift-1">Derivation of the Phase Shift</h4>
 <p>To derive the phase shift, we start by considering the path length difference. Assume a loop with a perimeter <span class="math inline">\(L\)</span> and an area <span class="math inline">\(A\)</span>. In the absence of rotation, the time taken for light to travel around the loop is given by <span class="math inline">\(T = \frac{L}{c}\)</span>.</p>
@@ -669,7 +701,19 @@ LIGO Details
 <p><span class="math display">\[
 \Delta \phi = \frac{2 \pi \Delta T}{T} = \frac{8 \pi A \Omega}{\lambda c}
 \]</span></p>
-<p>:::{.callout-note collapse = true} ### Derivation Details To derive the formula for the time difference <span class="math inline">\(\Delta T\)</span> between two counter-propagating beams in a Sagnac interferometer, we start by considering a loop of perimeter <span class="math inline">\(L\)</span> and area <span class="math inline">\(A\)</span>. The interferometer is rotating with an angular velocity <span class="math inline">\(\Omega\)</span>. Light travels in opposite directions around the loop, creating two counter-propagating beams.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Derivation Details
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>To derive the formula for the time difference <span class="math inline">\(\Delta T\)</span> between two counter-propagating beams in a Sagnac interferometer, we start by considering a loop of perimeter <span class="math inline">\(L\)</span> and area <span class="math inline">\(A\)</span>. The interferometer is rotating with an angular velocity <span class="math inline">\(\Omega\)</span>. Light travels in opposite directions around the loop, creating two counter-propagating beams.</p>
 <p>In a non-rotating frame, the time taken for light to travel around the loop is <span class="math inline">\(T = \frac{L}{c}\)</span>. When the interferometer rotates with angular velocity <span class="math inline">\(\Omega\)</span>, the effective path lengths for the two beams differ due to the rotation. For the beam traveling in the direction of rotation, the effective path length increases, while for the beam traveling opposite to the direction of rotation, the effective path length decreases.</p>
 <p>The relative velocity of light with respect to the rotating frame is <span class="math inline">\(c \pm v\)</span>, where <span class="math inline">\(v = \Omega R\)</span> is the tangential velocity at the perimeter of the loop. For small angular velocities, we can approximate the effect using the area <span class="math inline">\(A\)</span> and the angular velocity <span class="math inline">\(\Omega\)</span>.</p>
 <p>The time taken for the beam traveling in the direction of rotation is: <span class="math display">\[
@@ -715,7 +759,10 @@ L^2 = 4A
 \]</span></p>
 <p>Since the time difference <span class="math inline">\(\Delta T\)</span> is typically considered in magnitude, we take the absolute value: <span class="math display">\[
 \Delta T = \frac{4 A \Omega}{c^2}
-\]</span> :::</p>
+\]</span></p>
+</div>
+</div>
+</div>
 
 
 </section>
@@ -1142,6 +1189,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../wave-optics/Fresnel Zones.html" class="pagination-link" aria-label="Fresnel Zone Plate">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Fresnel Zone Plate</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
 </div> <!-- /content -->
 
 
