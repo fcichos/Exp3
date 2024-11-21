@@ -22,7 +22,7 @@
   </url>
   <url>
     <loc>https://fcichos.github.io/Exp3_2024/single_slit_kirchhoff.html</loc>
-    <lastmod>2024-11-17T16:25:13.511Z</lastmod>
+    <lastmod>2024-11-20T21:32:41.764Z</lastmod>
   </url>
   <url>
     <loc>https://fcichos.github.io/Exp3_2024/index.html</loc>
@@ -78,75 +78,87 @@
   </url>
   <url>
     <loc>https://fcichos.github.io/Exp3_2024/wave-optics/Diffraction Integral.html</loc>
-    <lastmod>2024-11-17T19:04:50.222Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fcichos.github.io/Exp3_2024/wave-optics/Diffraction Integral Dummy.html</loc>
-    <lastmod>2024-11-17T19:42:31.677Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fcichos.github.io/Exp3_2024/wave-optics/Fresnel Zones.html</loc>
-    <lastmod>2024-11-17T17:02:10.375Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fcichos.github.io/Exp3_2024/wave-optics/FabryPerot.html</loc>
-    <lastmod>2024-11-17T19:04:41.337Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fcichos.github.io/Exp3_2024/wave-optics/Wave Optics.html</loc>
-    <lastmod>2024-11-07T09:42:43.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fcichos.github.io/Exp3_2024/wave-optics/Interferometers.html</loc>
-    <lastmod>2024-11-10T16:32:49.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fcichos.github.io/Exp3_2024/wave-optics/Double Slit.html</loc>
-    <lastmod>2024-11-13T11:07:11.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fcichos.github.io/Exp3_2024/wave-optics/Interference.html</loc>
-    <lastmod>2024-11-15T15:54:28.061Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fcichos.github.io/Exp3_2024/thin_film_test.html</loc>
-    <lastmod>2024-11-10T16:53:57.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fcichos.github.io/Exp3_2024/wave-optics/Thin Film Interference.html</loc>
-    <lastmod>2024-11-13T11:22:44.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fcichos.github.io/Exp3_2024/wave-optics/Dummy.html</loc>
-    <lastmod>2024-11-15T15:56:58.291Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fcichos.github.io/Exp3_2024/wave-optics/huygens-principle.html</loc>
-    <lastmod>2024-09-14T20:37:06.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fcichos.github.io/Exp3_2024/wave-optics/Diffraction Grating.html</loc>
-    <lastmod>2024-11-17T16:44:04.500Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fcichos.github.io/Exp3_2024/wave-optics/FabryPerotDummy.html</loc>
-    <lastmod>2024-11-17T19:15:20.127Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fcichos.github.io/Exp3_2024/wave-optics/index.html</loc>
-    <lastmod>2024-09-14T19:41:03.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fcichos.github.io/Exp3_2024/wave-optics/Fourier.html</loc>
-    <lastmod>2024-11-17T19:02:51.000Z</lastmod>
+    <lastmod>2024-11-20T21:32:40.699Z</lastmod>
   </url>
   <url>
     <loc>https://fcichos.github.io/Exp3_2024/wave-optics/MultiWave Interference.html</loc>
     <lastmod>2024-11-14T09:24:26.431Z</lastmod>
   </url>
   <url>
+    <loc>https://fcichos.github.io/Exp3_2024/wave-optics/Sagnac_Interferometer.html</loc>
+    <lastmod>2024-11-20T19:45:17.079Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3_2024/wave-optics/Fresnel Zones.html</loc>
+    <lastmod>2024-11-21T07:19:22.058Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3_2024/wave-optics/index.html</loc>
+    <lastmod>2024-09-14T19:41:03.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3_2024/wave-optics/FabryPerotDummy.html</loc>
+    <lastmod>2024-11-17T19:15:20.127Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3_2024/wave-optics/Diffraction Grating.html</loc>
+    <lastmod>2024-11-17T16:44:04.500Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3_2024/wave-optics/huygens-principle.html</loc>
+    <lastmod>2024-09-14T20:37:06.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3_2024/wave-optics/Dummy.html</loc>
+    <lastmod>2024-11-15T15:56:58.291Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3_2024/wave-optics/Thin Film Interference.html</loc>
+    <lastmod>2024-11-13T11:22:44.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3_2024/thin_film_test.html</loc>
+    <lastmod>2024-11-10T16:53:57.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3_2024/wave-optics/Interference.html</loc>
+    <lastmod>2024-11-15T15:54:28.061Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3_2024/wave-optics/Double Slit.html</loc>
+    <lastmod>2024-11-20T18:42:56.909Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3_2024/wave-optics/Interferometers.html</loc>
+    <lastmod>2024-11-20T21:31:17.160Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3_2024/wave-optics/Wave Optics.html</loc>
+    <lastmod>2024-11-07T09:42:43.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3_2024/wave-optics/FabryPerot.html</loc>
+    <lastmod>2024-11-17T19:04:41.337Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3_2024/wave-optics/Diffraction2.html</loc>
+    <lastmod>2024-11-20T20:18:14.010Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3_2024/wave-optics/Fourier.html</loc>
+    <lastmod>2024-11-17T19:02:51.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3_2024/wave-optics/Diffraction Integral Dummy.html</loc>
+    <lastmod>2024-11-20T21:32:05.654Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3_2024/wave-optics/LIGO.html</loc>
+    <lastmod>2024-11-20T19:45:19.092Z</lastmod>
+  </url>
+  <url>
     <loc>https://fcichos.github.io/Exp3_2024/wave-optics/Diffraction.html</loc>
-    <lastmod>2024-11-17T19:50:22.891Z</lastmod>
+    <lastmod>2024-11-20T19:53:52.998Z</lastmod>
   </url>
   <url>
     <loc>https://fcichos.github.io/Exp3_2024/foundations-of-quantum-physics/particle-properties-of-light.html</loc>

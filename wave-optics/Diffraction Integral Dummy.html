@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -459,6 +425,23 @@ window.Quarto = {
  <span class="menu-text">Diffraction</span></a>
   </div>
 </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="true">
+ <span class="menu-text">Lecture 11</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Diffraction2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Diffraction</span></a>
+  </div>
+</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../wave-optics/Fresnel Zones.html" class="sidebar-item-text sidebar-link">
@@ -663,213 +646,6 @@ Babinet’s Principle
 <p><img src="img/babinet_exp.png" class="img-fluid figure-img" style="width:90.0%"></p>
 <figcaption>Babinet’s principle demonstrated experimentally on a slit (left) and a wire (right).</figcaption>
 </figure>
-</div>
-<div id="c0d9ae90" class="cell" data-execution_count="2">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> <span class="dv">8</span>  <span class="co"># Number of slits</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="fl">2e-6</span>  <span class="co"># Slit width in meters</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> <span class="fl">4e-6</span>  <span class="co"># Separation between slits in meters</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>wavelength <span class="op">=</span> <span class="fl">532e-9</span>  <span class="co"># Wavelength of light in meters</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Diffraction angle range</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>theta <span class="op">=</span> np.linspace(<span class="op">-</span>np.pi<span class="op">/</span><span class="dv">2</span>, np.pi<span class="op">/</span><span class="dv">2</span>, <span class="dv">1000</span>)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>sin_theta <span class="op">=</span> np.sin(theta)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the intensity</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>beta <span class="op">=</span> (np.pi <span class="op">*</span> b <span class="op">/</span> wavelength) <span class="op">*</span> sin_theta</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>gamma <span class="op">=</span> (np.pi <span class="op">*</span> d <span class="op">/</span> wavelength) <span class="op">*</span> sin_theta</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>single_slit <span class="op">=</span> (np.sin(beta) <span class="op">/</span> beta)<span class="op">**</span><span class="dv">2</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>multi_slit <span class="op">=</span> (np.sin(N <span class="op">*</span> gamma) <span class="op">/</span> np.sin(gamma))<span class="op">**</span><span class="dv">2</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Handle division by zero for beta and gamma</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>single_slit[np.isnan(single_slit)] <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>multi_slit[np.isnan(multi_slit)] <span class="op">=</span> N<span class="op">**</span><span class="dv">2</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>intensity <span class="op">=</span> single_slit <span class="op">*</span> multi_slit</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the intensity</span></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>get_size(<span class="dv">10</span>, <span class="dv">6</span>))</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>plt.plot(sin_theta, intensity<span class="op">/</span>np.<span class="bu">max</span>(intensity),label<span class="op">=</span><span class="st">'Intensity'</span>)</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>plt.plot(sin_theta, single_slit, <span class="st">'r--'</span>,label<span class="op">=</span><span class="st">'Single Slit'</span>)</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="vs">r'$\sin(\theta)$'</span>)</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="vs">r'$I/I_</span><span class="sc">{max}</span><span class="vs">$'</span>)</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="op">-</span><span class="fl">0.5</span>,<span class="fl">0.5</span>)</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="Diffraction Integral Dummy_files/figure-html/cell-3-output-1.png" width="545" height="349" class="figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
-<div id="d1fbcdb0" class="cell" data-execution_count="3">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> <span class="dv">8</span>  <span class="co"># Number of slits</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="fl">1e-6</span>  <span class="co"># Slit width in meters</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> <span class="fl">4e-6</span>  <span class="co"># Separation between slits in meters</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>wavelength <span class="op">=</span> <span class="fl">532e-9</span>  <span class="co"># Wavelength of light in meters</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Diffraction angle range</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>theta <span class="op">=</span> np.linspace(<span class="op">-</span>np.pi<span class="op">/</span><span class="dv">2</span>, np.pi<span class="op">/</span><span class="dv">2</span>, <span class="dv">1000</span>)</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>sin_theta <span class="op">=</span> np.sin(theta)</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the intensity</span></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>beta <span class="op">=</span> (np.pi <span class="op">*</span> b <span class="op">/</span> wavelength) <span class="op">*</span> sin_theta</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>gamma <span class="op">=</span> (np.pi <span class="op">*</span> d <span class="op">/</span> wavelength) <span class="op">*</span> sin_theta</span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>single_slit <span class="op">=</span> (np.sin(beta) <span class="op">/</span> beta)<span class="op">**</span><span class="dv">2</span></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>multi_slit <span class="op">=</span> (np.sin(N <span class="op">*</span> gamma) <span class="op">/</span> np.sin(gamma))<span class="op">**</span><span class="dv">2</span></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Handle division by zero for beta and gamma</span></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>single_slit[np.isnan(single_slit)] <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>multi_slit[np.isnan(multi_slit)] <span class="op">=</span> N<span class="op">**</span><span class="dv">2</span></span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>intensity <span class="op">=</span> single_slit <span class="op">*</span> multi_slit</span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the intensity</span></span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>get_size(<span class="dv">10</span>, <span class="dv">6</span>))</span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>plt.plot(sin_theta, intensity<span class="op">/</span>np.<span class="bu">max</span>(intensity),label<span class="op">=</span><span class="st">'Intensity'</span>)</span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>plt.plot(sin_theta, single_slit, <span class="st">'r--'</span>,label<span class="op">=</span><span class="st">'Single Slit'</span>)</span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="vs">r'$\sin(\theta)$'</span>)</span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="vs">r'$I/I_</span><span class="sc">{max}</span><span class="vs">$'</span>)</span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="op">-</span><span class="fl">0.5</span>,<span class="fl">0.5</span>)</span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="Diffraction Integral Dummy_files/figure-html/cell-4-output-1.png" width="545" height="349" class="figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
-<div id="7786f54e" class="cell" data-execution_count="4">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> <span class="dv">100</span>  <span class="co"># Number of slits</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="fl">1e-6</span>  <span class="co"># Slit width in meters</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> <span class="fl">4e-6</span>  <span class="co"># Separation between slits in meters</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>wavelength <span class="op">=</span> <span class="fl">532e-9</span>  <span class="co"># Wavelength of light in meters</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Diffraction angle range</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>theta <span class="op">=</span> np.linspace(<span class="op">-</span>np.pi<span class="op">/</span><span class="dv">2</span>, np.pi<span class="op">/</span><span class="dv">2</span>, <span class="dv">10000</span>)</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>sin_theta <span class="op">=</span> np.sin(theta)</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the intensity</span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>beta <span class="op">=</span> (np.pi <span class="op">*</span> b <span class="op">/</span> wavelength) <span class="op">*</span> sin_theta</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>gamma <span class="op">=</span> (np.pi <span class="op">*</span> d <span class="op">/</span> wavelength) <span class="op">*</span> sin_theta</span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>single_slit <span class="op">=</span> (np.sin(beta) <span class="op">/</span> beta)<span class="op">**</span><span class="dv">2</span></span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>multi_slit <span class="op">=</span> (np.sin(N <span class="op">*</span> gamma) <span class="op">/</span> np.sin(gamma))<span class="op">**</span><span class="dv">2</span></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Handle division by zero for beta and gamma</span></span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>single_slit[np.isnan(single_slit)] <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>multi_slit[np.isnan(multi_slit)] <span class="op">=</span> N<span class="op">**</span><span class="dv">2</span></span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>intensity <span class="op">=</span> single_slit <span class="op">*</span> multi_slit</span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the intensity</span></span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>get_size(<span class="dv">10</span>, <span class="dv">6</span>))</span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>plt.plot(sin_theta, intensity<span class="op">/</span>np.<span class="bu">max</span>(intensity),label<span class="op">=</span><span class="st">'Intensity'</span>)</span>
-<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>plt.plot(sin_theta, single_slit, <span class="st">'r--'</span>,label<span class="op">=</span><span class="st">'Single Slit'</span>)</span>
-<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="vs">r'$\sin(\theta)$'</span>)</span>
-<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="vs">r'$I/I_</span><span class="sc">{max}</span><span class="vs">$'</span>)</span>
-<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="op">-</span><span class="fl">0.5</span>,<span class="fl">0.5</span>)</span>
-<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="Diffraction Integral Dummy_files/figure-html/cell-5-output-1.png" width="545" height="349" class="figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
-<div id="4abafbd3" class="cell" data-execution_count="5">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> <span class="dv">100</span>  <span class="co"># Number of slits</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="fl">1e-6</span>  <span class="co"># Slit width in meters</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> <span class="fl">4e-6</span>  <span class="co"># Separation between slits in meters</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>wavelength <span class="op">=</span> <span class="fl">532e-9</span>  <span class="co"># Wavelength of light in meters</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Diffraction angle range</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>theta <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">10000</span>)</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>sin_theta <span class="op">=</span> np.sin(theta)</span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> intensity(theta, wavelength,b,d):</span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Calculate the intensity</span></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    beta <span class="op">=</span> (np.pi <span class="op">*</span> b <span class="op">/</span> wavelength) <span class="op">*</span> sin_theta</span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>    gamma <span class="op">=</span> (np.pi <span class="op">*</span> d <span class="op">/</span> wavelength) <span class="op">*</span> sin_theta</span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>    single_slit <span class="op">=</span> (np.sin(beta) <span class="op">/</span> beta)<span class="op">**</span><span class="dv">2</span></span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>    multi_slit <span class="op">=</span> (np.sin(N <span class="op">*</span> gamma) <span class="op">/</span> np.sin(gamma))<span class="op">**</span><span class="dv">2</span></span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Handle division by zero for beta and gamma</span></span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>    single_slit[np.isnan(single_slit)] <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>    multi_slit[np.isnan(multi_slit)] <span class="op">=</span> N<span class="op">**</span><span class="dv">2</span></span>
-<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> single_slit , multi_slit</span>
-<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>single_slit , multi_slit <span class="op">=</span> intensity(theta, <span class="fl">532e-9</span>,b,d)</span>
-<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>i1 <span class="op">=</span> single_slit <span class="op">*</span> multi_slit</span>
-<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>single_slit , multi_slit <span class="op">=</span> intensity(theta, <span class="fl">537e-9</span>,b,d)</span>
-<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>i2 <span class="op">=</span> single_slit <span class="op">*</span> multi_slit</span>
-<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the intensity</span></span>
-<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>fig,ax<span class="op">=</span>plt.subplots(<span class="dv">1</span>,<span class="dv">2</span>,figsize<span class="op">=</span>get_size(<span class="dv">12</span>, <span class="dv">6</span>))</span>
-<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].plot(sin_theta, i1<span class="op">/</span>np.<span class="bu">max</span>(i1),label<span class="op">=</span><span class="st">'Intensity'</span>)</span>
-<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].plot(sin_theta, i2<span class="op">/</span>np.<span class="bu">max</span>(i2),label<span class="op">=</span><span class="st">'Intensity'</span>)</span>
-<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].set_xlabel(<span class="vs">r'$\sin(\theta)$'</span>)</span>
-<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].set_ylabel(<span class="vs">r'$I/I_</span><span class="sc">{max}</span><span class="vs">$'</span>)</span>
-<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].set_xlim(<span class="fl">0.12</span>,<span class="fl">0.15</span>)</span>
-<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].plot(sin_theta, i1<span class="op">/</span>np.<span class="bu">max</span>(i1),label<span class="op">=</span><span class="st">'Intensity'</span>)</span>
-<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].plot(sin_theta, i2<span class="op">/</span>np.<span class="bu">max</span>(i2),label<span class="op">=</span><span class="st">'Intensity'</span>)</span>
-<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].set_xlabel(<span class="vs">r'$\sin(\theta)$'</span>)</span>
-<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].set_ylabel(<span class="vs">r'$I/I_</span><span class="sc">{max}</span><span class="vs">$'</span>)</span>
-<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].set_xlim(<span class="fl">0.255</span>,<span class="fl">0.28</span>)</span>
-<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stderr">
-<pre><code>/var/folders/6n/52yj404d5ld29901s85pd6sh0000gn/T/ipykernel_44482/2864441835.py:20: RuntimeWarning:
-
-invalid value encountered in divide
-
-/var/folders/6n/52yj404d5ld29901s85pd6sh0000gn/T/ipykernel_44482/2864441835.py:21: RuntimeWarning:
-
-invalid value encountered in divide
-</code></pre>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="Diffraction Integral Dummy_files/figure-html/cell-6-output-2.png" width="691" height="336" class="figure-img"></p>
-</figure>
-</div>
-</div>
 </div>
 
 

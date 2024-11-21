@@ -64,7 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../wave-optics/Fresnel Zones.html" rel="next">
+<link href="../wave-optics/Diffraction2.html" rel="next">
 <link href="../wave-optics/Dummy.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -461,6 +461,23 @@ window.Quarto = {
  <span class="menu-text">Diffraction</span></a>
   </div>
 </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="true">
+ <span class="menu-text">Lecture 11</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Diffraction2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Diffraction</span></a>
+  </div>
+</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../wave-optics/Fresnel Zones.html" class="sidebar-item-text sidebar-link">
@@ -497,12 +514,6 @@ window.Quarto = {
   <li><a href="#influence-of-the-slit-width" id="toc-influence-of-the-slit-width" class="nav-link" data-scroll-target="#influence-of-the-slit-width">Influence of the Slit Width</a></li>
   <li><a href="#influence-of-the-slit-number" id="toc-influence-of-the-slit-number" class="nav-link" data-scroll-target="#influence-of-the-slit-number">Influence of the Slit Number</a></li>
   <li><a href="#spectral-resolution" id="toc-spectral-resolution" class="nav-link" data-scroll-target="#spectral-resolution">Spectral Resolution</a></li>
-  </ul></li>
-  <li><a href="#application-diffraction-in-the-human-eye" id="toc-application-diffraction-in-the-human-eye" class="nav-link" data-scroll-target="#application-diffraction-in-the-human-eye">Application: Diffraction in the Human Eye</a></li>
-  <li><a href="#application-resolution-of-an-optical-microscope" id="toc-application-resolution-of-an-optical-microscope" class="nav-link" data-scroll-target="#application-resolution-of-an-optical-microscope">Application: Resolution of an Optical Microscope</a>
-  <ul class="collapse">
-  <li><a href="#rayleighs-criterion-for-resolution" id="toc-rayleighs-criterion-for-resolution" class="nav-link" data-scroll-target="#rayleighs-criterion-for-resolution">Rayleigh’s Criterion for Resolution</a></li>
-  <li><a href="#abbes-criterion-for-resolution" id="toc-abbes-criterion-for-resolution" class="nav-link" data-scroll-target="#abbes-criterion-for-resolution">Abbe’s Criterion for Resolution</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -628,7 +639,7 @@ I(\theta)=I_s\frac{\sin^2\left (\pi \frac{b}{\lambda}\sin(\theta)\right)}{\left(
 </figure>
 </div>
 <p>Let’s have a look at some of the properties of the intensity distribution.</p>
-<div id="5efb42d3" class="cell" data-execution_count="2">
+<div id="7bae0317" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
@@ -786,7 +797,7 @@ I(\theta) = I_0 \frac{\sin^2\left(\pi \frac{b}{\lambda} \sin(\theta)\right)}{\le
 \sin(\theta) = m \frac{\lambda}{d}
 \]</span></p>
 <p>where <span class="math inline">\(m\)</span> is an integer. The first-order diffraction maximum is found at <span class="math inline">\(\sin(\theta) = \frac{\lambda}{d}\)</span>, independent of the number of slits <span class="math inline">\(N\)</span>. This means that the position of the main peaks increases linearly with the wavelength <span class="math inline">\(\lambda\)</span> and decreases with increasing slit distance <span class="math inline">\(d\)</span>.</p>
-<div id="1dd8523a" class="cell" data-execution_count="3">
+<div id="f192fe3b" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters</span></span>
@@ -834,45 +845,65 @@ I(\theta) = I_0 \frac{\sin^2\left(\pi \frac{b}{\lambda} \sin(\theta)\right)}{\le
 <section id="influence-of-the-slit-width" class="level3">
 <h3 class="anchored" data-anchor-id="influence-of-the-slit-width">Influence of the Slit Width</h3>
 <p>The two plots below show the influence of the slit width while keeping the slit distance the same. We have <span class="math inline">\(N=8\)</span> slits with <span class="math inline">\(d=4\)</span> µm, while the slit width is <span class="math inline">\(b=2\)</span> µm on the left side and <span class="math inline">\(b=1\)</span> µm on the right side. The result is an increased width of the envelope. The first minimum of the slit diffraction pattern occurs at <span class="math inline">\(\sin(\theta) = \frac{\lambda}{b}\)</span>.</p>
-<div id="7442f580" class="cell" data-execution_count="4">
+<div id="4c1308f3" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> <span class="dv">8</span>  <span class="co"># Number of slits</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="fl">1e-6</span>  <span class="co"># Slit width in meters</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> <span class="fl">4e-6</span>  <span class="co"># Separation between slits in meters</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>wavelength <span class="op">=</span> <span class="fl">532e-9</span>  <span class="co"># Wavelength of light in meters</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Diffraction angle range</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>theta <span class="op">=</span> np.linspace(<span class="op">-</span>np.pi<span class="op">/</span><span class="dv">2</span>, np.pi<span class="op">/</span><span class="dv">2</span>, <span class="dv">1000</span>)</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>sin_theta <span class="op">=</span> np.sin(theta)</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the intensity</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>beta <span class="op">=</span> (np.pi <span class="op">*</span> b <span class="op">/</span> wavelength) <span class="op">*</span> sin_theta</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>gamma <span class="op">=</span> (np.pi <span class="op">*</span> d <span class="op">/</span> wavelength) <span class="op">*</span> sin_theta</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>single_slit <span class="op">=</span> (np.sin(beta) <span class="op">/</span> beta)<span class="op">**</span><span class="dv">2</span></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>multi_slit <span class="op">=</span> (np.sin(N <span class="op">*</span> gamma) <span class="op">/</span> np.sin(gamma))<span class="op">**</span><span class="dv">2</span></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Handle division by zero for beta and gamma</span></span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>single_slit[np.isnan(single_slit)] <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>multi_slit[np.isnan(multi_slit)] <span class="op">=</span> N<span class="op">**</span><span class="dv">2</span></span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>intensity <span class="op">=</span> single_slit <span class="op">*</span> multi_slit</span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the intensity</span></span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>get_size(<span class="dv">12</span>, <span class="dv">8</span>))</span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>plt.plot(sin_theta, intensity<span class="op">/</span>np.<span class="bu">max</span>(intensity),label<span class="op">=</span><span class="st">'Intensity'</span>)</span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>plt.plot(sin_theta, single_slit, <span class="st">'r--'</span>,label<span class="op">=</span><span class="st">'Single Slit'</span>)</span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="vs">r'$\sin(\theta)$'</span>)</span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="vs">r'$I/I_</span><span class="sc">{max}</span><span class="vs">$'</span>)</span>
-<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="op">-</span><span class="fl">0.5</span>,<span class="fl">0.5</span>)</span>
-<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> <span class="fl">4e-6</span>  <span class="co"># Separation between slits in meters</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>wavelength <span class="op">=</span> <span class="fl">532e-9</span>  <span class="co"># Wavelength of light in meters</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Diffraction angle range</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>theta <span class="op">=</span> np.linspace(<span class="op">-</span>np.pi <span class="op">/</span> <span class="dv">2</span>, np.pi <span class="op">/</span> <span class="dv">2</span>, <span class="dv">1000</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>sin_theta <span class="op">=</span> np.sin(theta)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calculate_intensity(N, b, d, wavelength, sin_theta):</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    beta <span class="op">=</span> (np.pi <span class="op">*</span> b <span class="op">/</span> wavelength) <span class="op">*</span> sin_theta</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    gamma <span class="op">=</span> (np.pi <span class="op">*</span> d <span class="op">/</span> wavelength) <span class="op">*</span> sin_theta</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Single slit intensity pattern using sinc function</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    single_slit <span class="op">=</span> (np.sinc(beta <span class="op">/</span> np.pi))<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Multi-slit interference pattern</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    multi_slit <span class="op">=</span> np.ones_like(gamma)</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    gamma_nonzero <span class="op">=</span> gamma <span class="op">!=</span> <span class="dv">0</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    multi_slit[gamma_nonzero] <span class="op">=</span> (np.sin(N <span class="op">*</span> gamma[gamma_nonzero]) <span class="op">/</span> np.sin(gamma[gamma_nonzero]))<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>    multi_slit[<span class="op">~</span>gamma_nonzero] <span class="op">=</span> N<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>    intensity <span class="op">=</span> single_slit <span class="op">*</span> multi_slit</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> single_slit, intensity</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>get_size(<span class="dv">18</span>, <span class="dv">8</span>))</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="co"># First plot with b = 2e-6</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="fl">2e-6</span></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>single_slit, intensity <span class="op">=</span> calculate_intensity(N, b, d, wavelength, sin_theta)</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].plot(sin_theta, intensity <span class="op">/</span> np.<span class="bu">max</span>(intensity), label<span class="op">=</span><span class="st">'Intensity'</span>)</span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].plot(sin_theta, single_slit, <span class="st">'r--'</span>, label<span class="op">=</span><span class="st">'Single Slit'</span>)</span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].set_xlabel(<span class="vs">r'$\sin(\theta)$'</span>)</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].set_ylabel(<span class="vs">r'$I/I_</span><span class="sc">{max}</span><span class="vs">$'</span>)</span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].set_xlim(<span class="op">-</span><span class="fl">0.5</span>, <span class="fl">0.5</span>)</span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].legend()</span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a><span class="co"># Second plot with b = 1e-6</span></span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="fl">1e-6</span></span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>single_slit, intensity <span class="op">=</span> calculate_intensity(N, b, d, wavelength, sin_theta)</span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].plot(sin_theta, intensity <span class="op">/</span> np.<span class="bu">max</span>(intensity), label<span class="op">=</span><span class="st">'Intensity'</span>)</span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].plot(sin_theta, single_slit, <span class="st">'r--'</span>, label<span class="op">=</span><span class="st">'Single Slit'</span>)</span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].set_xlabel(<span class="vs">r'$\sin(\theta)$'</span>)</span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].set_ylabel(<span class="vs">r'$I/I_</span><span class="sc">{max}</span><span class="vs">$'</span>)</span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].set_xlim(<span class="op">-</span><span class="fl">0.5</span>, <span class="fl">0.5</span>)</span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].legend()</span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="Diffraction_files/figure-html/cell-5-output-1.png" width="409" height="283" class="figure-img"></p>
+<p><img src="Diffraction_files/figure-html/cell-5-output-1.png" width="670" height="291" class="figure-img"></p>
 <figcaption>Diffraction pattern of a grating with <span class="math inline">\(N=8\)</span> slits (<span class="math inline">\(d=4\)</span> µm, <span class="math inline">\(b=1\)</span> µm) with <span class="math inline">\(\lambda=532\)</span> nm.</figcaption>
 </figure>
 </div>
@@ -882,7 +913,7 @@ I(\theta) = I_0 \frac{\sin^2\left(\pi \frac{b}{\lambda} \sin(\theta)\right)}{\le
 <section id="influence-of-the-slit-number" class="level3">
 <h3 class="anchored" data-anchor-id="influence-of-the-slit-number">Influence of the Slit Number</h3>
 <p>When increasing the number of slits, the main diffraction peaks become sharper. The location of the main peaks for a given wavelength remains unchanged, but there are now <span class="math inline">\(N-2\)</span> secondary maxima in between. This decreased width of the main peaks is important for the spectral resolution of the grating.</p>
-<div id="b40869df" class="cell" data-execution_count="5">
+<div id="e67d0d6f" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> <span class="dv">100</span>  <span class="co"># Number of slits</span></span>
@@ -929,55 +960,53 @@ I(\theta) = I_0 \frac{\sin^2\left(\pi \frac{b}{\lambda} \sin(\theta)\right)}{\le
 <section id="spectral-resolution" class="level3">
 <h3 class="anchored" data-anchor-id="spectral-resolution">Spectral Resolution</h3>
 <p>To quantify the spectral resolution, we use a criterion similar to the optical resolution of a microscope: two peaks are separable if the second peak is located at the minimum of the first diffraction pattern. Here, the diffraction patterns refer to different wavelengths <span class="math inline">\(\lambda_1\)</span> and <span class="math inline">\(\lambda_2\)</span>.</p>
-<div id="cb87f924" class="cell" data-execution_count="6">
+<div id="892db397" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> <span class="dv">100</span>  <span class="co"># Number of slits</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="fl">1e-6</span>  <span class="co"># Slit width in meters</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> <span class="fl">4e-6</span>  <span class="co"># Separation between slits in meters</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>wavelength <span class="op">=</span> <span class="fl">532e-9</span>  <span class="co"># Wavelength of light in meters</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Diffraction angle range</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>theta <span class="op">=</span> np.linspace(<span class="fl">0.01</span>, <span class="dv">1</span>, <span class="dv">10000</span>)</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>sin_theta <span class="op">=</span> np.sin(theta)</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> intensity(theta, wavelength,b,d):</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Calculate the intensity</span></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    beta <span class="op">=</span> (np.pi <span class="op">*</span> b <span class="op">/</span> wavelength) <span class="op">*</span> sin_theta</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    gamma <span class="op">=</span> (np.pi <span class="op">*</span> d <span class="op">/</span> wavelength) <span class="op">*</span> sin_theta</span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    single_slit <span class="op">=</span> (np.sin(beta) <span class="op">/</span> beta)<span class="op">**</span><span class="dv">2</span></span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    multi_slit <span class="op">=</span> (np.sin(N <span class="op">*</span> gamma) <span class="op">/</span> np.sin(gamma))<span class="op">**</span><span class="dv">2</span></span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Handle division by zero for beta and gamma</span></span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>    single_slit[np.isnan(single_slit)] <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>    multi_slit[np.isnan(multi_slit)] <span class="op">=</span> N<span class="op">**</span><span class="dv">2</span></span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> single_slit , multi_slit</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Diffraction angle range</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>theta <span class="op">=</span> np.linspace(<span class="fl">0.01</span>, <span class="dv">1</span>, <span class="dv">10000</span>)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>sin_theta <span class="op">=</span> np.sin(theta)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> intensity(sin_theta, wavelength, b, d, N):</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Calculate beta and gamma</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    beta <span class="op">=</span> (np.pi <span class="op">*</span> b <span class="op">/</span> wavelength) <span class="op">*</span> sin_theta</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    gamma <span class="op">=</span> (np.pi <span class="op">*</span> d <span class="op">/</span> wavelength) <span class="op">*</span> sin_theta</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Compute single-slit intensity</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    single_slit <span class="op">=</span> np.where(beta <span class="op">==</span> <span class="dv">0</span>, <span class="fl">1.0</span>, (np.sin(beta) <span class="op">/</span> beta))<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Compute multi-slit interference</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>    multi_slit <span class="op">=</span> np.where(gamma <span class="op">==</span> <span class="dv">0</span>, N<span class="op">**</span><span class="dv">2</span>, (np.sin(N <span class="op">*</span> gamma) <span class="op">/</span> np.sin(gamma))<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Combine intensities</span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>    intensity <span class="op">=</span> single_slit <span class="op">*</span> multi_slit</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> intensity</span>
 <span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>single_slit , multi_slit <span class="op">=</span> intensity(theta, <span class="fl">532e-9</span>,b,d)</span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>i1 <span class="op">=</span> single_slit <span class="op">*</span> multi_slit</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>i1 <span class="op">=</span> intensity(sin_theta, <span class="fl">532e-9</span>, b, d, N)</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>i2 <span class="op">=</span> intensity(sin_theta, <span class="fl">537e-9</span>, b, d, N)</span>
 <span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>single_slit , multi_slit <span class="op">=</span> intensity(theta, <span class="fl">537e-9</span>,b,d)</span>
-<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>i2 <span class="op">=</span> single_slit <span class="op">*</span> multi_slit</span>
-<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the intensity</span></span>
-<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>fig,ax<span class="op">=</span>plt.subplots(<span class="dv">1</span>,<span class="dv">2</span>,figsize<span class="op">=</span>get_size(<span class="dv">16</span>, <span class="dv">8</span>))</span>
-<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].plot(sin_theta, i1<span class="op">/</span>np.<span class="bu">max</span>(i1),label<span class="op">=</span><span class="st">'Intensity'</span>)</span>
-<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].plot(sin_theta, i2<span class="op">/</span>np.<span class="bu">max</span>(i2),label<span class="op">=</span><span class="st">'Intensity'</span>)</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the intensity</span></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>get_size(<span class="dv">16</span>, <span class="dv">8</span>))</span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].plot(sin_theta, i1 <span class="op">/</span> np.<span class="bu">max</span>(i1), label<span class="op">=</span><span class="st">'532 nm'</span>)</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].plot(sin_theta, i2 <span class="op">/</span> np.<span class="bu">max</span>(i2), label<span class="op">=</span><span class="st">'537 nm'</span>)</span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].set_xlabel(<span class="vs">r'$\sin(\theta)$'</span>)</span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].set_ylabel(<span class="vs">r'$I/I_</span><span class="sc">{max}</span><span class="vs">$'</span>)</span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].set_xlim(<span class="fl">0.12</span>, <span class="fl">0.15</span>)</span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].legend()</span>
 <span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].set_xlabel(<span class="vs">r'$\sin(\theta)$'</span>)</span>
-<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].set_ylabel(<span class="vs">r'$I/I_</span><span class="sc">{max}</span><span class="vs">$'</span>)</span>
-<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].set_xlim(<span class="fl">0.12</span>,<span class="fl">0.15</span>)</span>
-<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].plot(sin_theta, i1<span class="op">/</span>np.<span class="bu">max</span>(i1),label<span class="op">=</span><span class="st">'Intensity'</span>)</span>
-<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].plot(sin_theta, i2<span class="op">/</span>np.<span class="bu">max</span>(i2),label<span class="op">=</span><span class="st">'Intensity'</span>)</span>
-<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].set_xlabel(<span class="vs">r'$\sin(\theta)$'</span>)</span>
-<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].set_ylabel(<span class="vs">r'$I/I_</span><span class="sc">{max}</span><span class="vs">$'</span>)</span>
-<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].set_xlim(<span class="fl">0.255</span>,<span class="fl">0.28</span>)</span>
-<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].plot(sin_theta, i1 <span class="op">/</span> np.<span class="bu">max</span>(i1), label<span class="op">=</span><span class="st">'532 nm'</span>)</span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].plot(sin_theta, i2 <span class="op">/</span> np.<span class="bu">max</span>(i2), label<span class="op">=</span><span class="st">'537 nm'</span>)</span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].set_xlabel(<span class="vs">r'$\sin(\theta)$'</span>)</span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].set_ylabel(<span class="vs">r'$I/I_</span><span class="sc">{max}</span><span class="vs">$'</span>)</span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].set_xlim(<span class="fl">0.255</span>, <span class="fl">0.28</span>)</span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].legend()</span>
+<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -1191,281 +1220,6 @@ Diffraction Grating Playground
 </script>
 <p>App to play with the parameters of a grating with a slit distance of 4 µm and a slit width of 2 µm.</p>
 </div>
-</div>
-</div>
-</section>
-</section>
-<section id="application-diffraction-in-the-human-eye" class="level2">
-<h2 class="anchored" data-anchor-id="application-diffraction-in-the-human-eye">Application: Diffraction in the Human Eye</h2>
-<p>The human eye provides an excellent real-world example of circular aperture diffraction through the pupil (the opening in the iris). By examining how light diffracts as it enters the eye, we can understand fundamental limits on visual resolution and how the eye is naturally optimized to these constraints.</p>
-<p><strong>Calculating the Diffraction Limit of the Eye</strong></p>
-<p>When light passes through the circular aperture of the pupil, it undergoes diffraction, producing an Airy disk pattern on the retina. The angle to the first minimum (dark ring) of the diffraction pattern is given by:</p>
-<p><span class="math display">\[
-\sin(\theta_1) = 0.61\, \frac{\lambda}{R}
-\]</span></p>
-<p>where: - <span class="math inline">\(\theta_1\)</span> is the angle to the first minimum, - <span class="math inline">\(\lambda\)</span> is the wavelength of the light, - <span class="math inline">\(R\)</span> is the radius of the aperture (pupil).</p>
-<p>For an average pupil radius of <span class="math inline">\(R = 2.5\, \text{mm}\)</span> and green light with a wavelength of <span class="math inline">\(\lambda = 532\, \text{nm}\)</span> (to which the human eye is most sensitive), we have:</p>
-<p><span class="math display">\[
-\sin(\theta_1) = 0.61 \times \frac{532 \times 10^{-9}\, \text{m}}{2.5 \times 10^{-3}\, \text{m}} = 0.61 \times 2.128 \times 10^{-4} \approx 1.298 \times 10^{-4}
-\]</span></p>
-<p>Thus, the angle to the first minimum is approximately:</p>
-<p><span class="math display">\[
-\theta_1 \approx \sin^{-1}(1.298 \times 10^{-4}) \approx 0.00744^\circ
-\]</span></p>
-<p><strong>Determining the Size of the Airy Disk on the Retina</strong></p>
-<p>The distance from the pupil to the retina (the image plane) is approximately <span class="math inline">\(L = 20\, \text{mm}\)</span> (or <span class="math inline">\(2\, \text{cm}\)</span>). The linear radius <span class="math inline">\(r\)</span> of the Airy disk on the retina is calculated by:</p>
-<p><span class="math display">\[
-r = L \sin(\theta_1) = 20\, \text{mm} \times 1.298 \times 10^{-4} = 2.596 \times 10^{-3}\, \text{mm} = 2.596\, \mu\text{m}
-\]</span></p>
-<p>So, the diameter <span class="math inline">\(D\)</span> of the Airy disk (central bright spot) is:</p>
-<p><span class="math display">\[
-D = 2r = 2 \times 2.596\, \mu\text{m} = 5.192\, \mu\text{m}
-\]</span></p>
-<p>This means that the smallest spot of light that can be formed on the retina due to diffraction is about <span class="math inline">\(5.19\, \mu\text{m}\)</span> in diameter.</p>
-<p><strong>Comparing with Photoreceptor Spacing in the Fovea</strong></p>
-<p>The fovea is a small region in the retina responsible for sharp central vision. It contains a high density of cone photoreceptor cells. The average density of cones in the fovea is approximately <span class="math inline">\(150,000\)</span> cells per square millimeter. To find the average spacing <span class="math inline">\(d\)</span> between these cells, we proceed as follows:</p>
-<p><strong>Area per Cell:</strong></p>
-<p><span class="math display">\[
-   \text{Area per cell} = \frac{1\, \text{mm}^2}{150,000} = 6.667 \times 10^{-6}\, \text{mm}^2 = 6.667\, \mu\text{m}^2
-   \]</span></p>
-<p><strong>Linear Spacing Between Cells:</strong></p>
-<p>Assuming a square packing (for simplicity), the linear spacing <span class="math inline">\(d\)</span> is:</p>
-<p><span class="math display">\[
-   d = \sqrt{\text{Area per cell}} = \sqrt{6.667\, \mu\text{m}^2} \approx 2.58\, \mu\text{m}
-   \]</span></p>
-<p>In reality, the photoreceptors are more closely packed in a hexagonal arrangement, but this calculation gives a good approximation.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Analysis of the results
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>We observe that:</p>
-<ul>
-<li><strong>Airy Disk Diameter:</strong> <span class="math inline">\(5.192\, \mu\text{m}\)</span></li>
-<li><strong>Photoreceptor Spacing (center-to-center):</strong> <span class="math inline">\(2.58\, \mu\text{m}\)</span></li>
-</ul>
-<p>Notably, the diameter of the Airy disk is roughly twice the photoreceptor spacing. This means that the central maximum of the diffraction pattern spans about two photoreceptors.</p>
-<p>The close match between the diffraction limit of the eye and the spacing of photoreceptor cells is significant:</p>
-<ul>
-<li><p><strong>Diffraction Limit:</strong> Sets the fundamental limit on the resolving power of the eye. It determines the smallest angular separation between two points of light that can be distinguished.</p></li>
-<li><p><strong>Photoreceptor Density:</strong> The photoreceptors are spaced closely enough to sample the details provided by the optical system up to the diffraction limit.</p></li>
-</ul>
-<p>Adding more photoreceptors (with smaller spacing) within the area of the Airy disk would not enhance resolution because:</p>
-<ul>
-<li><p><strong>Physical Limitations:</strong> The diffraction limit is a fundamental constraint imposed by the wave nature of light and the size of the pupil. Resolution cannot be improved beyond this limit by increasing photoreceptor density alone.</p></li>
-<li><p><strong>Signal Intensity:</strong> More photoreceptors in the same area would mean each cell receives less light (since the total light intensity is fixed), potentially reducing the signal-to-noise ratio and making it harder to detect light.</p></li>
-</ul>
-<p><strong>Biological Optimization</strong></p>
-<p>The eye’s design reflects a natural optimization:</p>
-<ul>
-<li><p><strong>Efficient Use of Resources:</strong> Photoreceptor density is matched to the optical resolving power, ensuring that the visual system extracts maximum information without unnecessary redundancy.</p></li>
-<li><p><strong>Adaptive Evolution:</strong> Over time, biological systems have evolved to align anatomical structures with physical laws, optimizing functions like vision for survival advantages.</p></li>
-<li><p>Land, M. F., &amp; Nilsson, D.-E. (2012). <em>Animal Eyes</em> (2nd ed.). Oxford University Press.</p></li>
-<li><p>Williams, D. R. (1988). Topography of the foveal cone mosaic in the living human eye. <em>Vision Research</em>, 28(3), 433–454.</p></li>
-</ul>
-</div>
-</div>
-</div>
-</section>
-<section id="application-resolution-of-an-optical-microscope" class="level2">
-<h2 class="anchored" data-anchor-id="application-resolution-of-an-optical-microscope">Application: Resolution of an Optical Microscope</h2>
-<p>The resolution of an optical microscope is fundamentally limited by the diffraction of light as it passes through the optical components, particularly the objective lens. Diffraction causes point sources of light to produce blurred images rather than perfect points, affecting the microscope’s ability to distinguish between two closely spaced objects.</p>
-<section id="rayleighs-criterion-for-resolution" class="level3">
-<h3 class="anchored" data-anchor-id="rayleighs-criterion-for-resolution">Rayleigh’s Criterion for Resolution</h3>
-<p><strong>Key Question:</strong> <em>How close can two point sources be while still being perceived as distinct entities by an optical system?</em></p>
-<p>To answer this, we need to consider two essential aspects of how a lens modifies light:</p>
-<ol type="1">
-<li><p><strong>Wavefront Transformation:</strong> A lens alters the curvature of incoming wavefronts, focusing parallel rays (plane waves) to a point in the focal plane.</p></li>
-<li><p><strong>Finite Aperture Effects:</strong> The lens has a finite size and acts as a circular aperture, introducing diffraction effects that spread the image of a point source into a diffraction pattern known as the Airy disk.</p></li>
-</ol>
-<p><strong>Visual Representation:</strong></p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/resolution_definition.png" class="img-fluid figure-img" style="width:50.0%"></p>
-<figcaption>Illustration showing two point sources and their overlapping diffraction patterns as they approach each other.</figcaption>
-</figure>
-</div>
-<p>Each point source produces its own diffraction pattern. As the sources move closer, their patterns begin to overlap, making it harder to distinguish between them.</p>
-<p><strong>Rayleigh’s Resolution Criterion:</strong></p>
-<ul>
-<li>Two point sources are considered <strong>just resolvable</strong> when the principal maximum (center) of one Airy pattern coincides with the first minimum (dark ring) of the other.</li>
-</ul>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/resolution_rayleigh.png" class="img-fluid figure-img" style="width:50.0%"></p>
-<figcaption>Graph depicting Rayleigh’s criterion, showing the intensity profiles of two overlapping Airy patterns.</figcaption>
-</figure>
-</div>
-<p>For <strong>incoherent light sources</strong> (where the light waves are not in phase), this criterion corresponds to a 26% dip in intensity between the two peaks, which is generally sufficient for the human eye or detectors to distinguish the two sources as separate.</p>
-<p><strong>Angle to the First Minimum:</strong></p>
-<p>The angle <span class="math inline">\(\theta_1\)</span> to the first minimum of the diffraction pattern from a circular aperture of radius <span class="math inline">\(R\)</span> is given by:</p>
-<p><span class="math display">\[
-   \sin(\theta_1) = 1.22\, \frac{\lambda}{2R}
-   \]</span></p>
-<p>Since the diameter of the aperture <span class="math inline">\(D = 2R\)</span>, this can also be written as:</p>
-<p><span class="math display">\[
-   \sin(\theta_1) = 1.22\, \frac{\lambda}{D}
-   \]</span></p>
-<p>The factor 1.22 arises from the first zero of the Bessel function <span class="math inline">\(J_1\)</span> that describes the diffraction pattern of a circular aperture.</p>
-<p><strong>Small Angle Approximation:</strong></p>
-<p>For small angles (common in optical systems), <span class="math inline">\(\sin(\theta_1) \approx \theta_1\)</span> in radians.</p>
-<p><strong>Relating Angular to Linear Separation in the Image Plane:</strong></p>
-<p>The angular resolution <span class="math inline">\(\theta_1\)</span> corresponds to a linear separation <span class="math inline">\(\Delta x\)</span> in the image plane (at image distance <span class="math inline">\(b\)</span>):</p>
-<p><span class="math display">\[
-   \theta_1 = \frac{\Delta x}{b}
-   \]</span></p>
-<p><strong>Combining the Equations:</strong></p>
-<p>Substituting <span class="math inline">\(\theta_1\)</span>:</p>
-<p><span class="math display">\[
-   \frac{\Delta x}{b} = 1.22\, \frac{\lambda}{D}
-   \]</span></p>
-<p>Solving for <span class="math inline">\(\Delta x\)</span>:</p>
-<p><span class="math display">\[
-   \Delta x = 1.22\, \frac{\lambda b}{D}
-   \]</span></p>
-<p><strong>Considering the Object Plane:</strong></p>
-<p>The magnification <span class="math inline">\(M\)</span> of the optical system is:</p>
-<p><span class="math display">\[
-   M = \frac{b}{g}
-   \]</span></p>
-<p>where <span class="math inline">\(g\)</span> is the object distance. The corresponding separation in the object plane (<span class="math inline">\(\Delta d\)</span>) is:</p>
-<p><span class="math display">\[
-   \Delta d = \frac{\Delta x}{M} = \frac{\Delta x \, g}{b}
-   \]</span></p>
-<p>Substituting <span class="math inline">\(\Delta x\)</span>:</p>
-<p><span class="math display">\[
-   \Delta d = 1.22\, \frac{\lambda b}{D} \times \frac{g}{b} = 1.22\, \frac{\lambda g}{D}
-   \]</span></p>
-<p><strong>Introducing Numerical Aperture (NA):</strong></p>
-<p>The <strong>numerical aperture</strong> (NA) of the lens is defined as:</p>
-<p><span class="math display">\[
-   \text{NA} = n \sin(\alpha)
-   \]</span></p>
-<p>where:</p>
-<ul>
-<li><span class="math inline">\(n\)</span> is the refractive index of the medium between the object and the lens.</li>
-<li><span class="math inline">\(\alpha\)</span> is the half-angle of the maximum cone of light that can enter or exit the lens.</li>
-</ul>
-<p>Since <span class="math inline">\(\sin(\alpha) = \frac{R}{g}\)</span>, we have:</p>
-<p><span class="math display">\[
-   D = 2R = 2 g \sin(\alpha)
-   \]</span></p>
-<p>Substituting <span class="math inline">\(D\)</span> into <span class="math inline">\(\Delta d\)</span>:</p>
-<p><span class="math display">\[
-   \Delta d = 1.22\, \frac{\lambda g}{2 g \sin(\alpha)} = \frac{1.22\, \lambda}{2 \sin(\alpha)} = \frac{0.61\, \lambda}{\sin(\alpha)}
-   \]</span></p>
-<p>Therefore, incorporating the refractive index <span class="math inline">\(n\)</span>:</p>
-<p><span class="math display">\[
-   \Delta d = \frac{0.61\, \lambda}{n \sin(\alpha)} = \frac{0.61\, \lambda}{\text{NA}}
-   \]</span></p>
-<p>Under Rayleigh’s resolution criterion, several key factors influence the resolving power of an optical system.</p>
-<p>Firstly, a <strong>higher numerical aperture (NA)</strong> improves resolution. This increase can be achieved by enhancing either the refractive index <span class="math inline">\(n\)</span> of the medium between the object and the lens or the sine of the collection angle <span class="math inline">\(\sin(\alpha)\)</span>. Since the NA is defined as <span class="math inline">\(\text{NA} = n \sin(\alpha)\)</span>, a larger NA allows the lens to gather more diffracted light, thereby resolving finer details in the image. In air, where the refractive index is approximately <span class="math inline">\(n \approx 1\)</span>, the <strong>maximum achievable NA is less than 1</strong>, which limits the resolution. This limitation arises because the maximum value of <span class="math inline">\(\sin(\alpha)\)</span> is 1 (when <span class="math inline">\(\alpha = 90^\circ\)</span>), so the NA in air cannot exceed 1. In practical systems, the collection angle <span class="math inline">\(\alpha\)</span> is much less than <span class="math inline">\(90^\circ\)</span>, further reducing the NA and thus the resolution. Immersion lenses, which use a medium with a higher refractive index (such as water or oil), can achieve higher NAs, overcoming this limitation and improving resolution.</p>
-<p>Secondly, using <strong>shorter wavelengths</strong> <span class="math inline">\((\lambda)\)</span> of light leads to better resolution. According to the formula <span class="math inline">\(\Delta d = \frac{0.61\, \lambda}{\text{NA}}\)</span>, the minimum resolvable distance <span class="math inline">\(\Delta d\)</span> is directly proportional to the wavelength. Therefore, decreasing the wavelength reduces <span class="math inline">\(\Delta d\)</span>, allowing the optical system to distinguish smaller features of the object.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><strong>Rayleigh’s Resolution Criterion</strong></p>
-<p>Two incoherent point sources can be resolved when their minimum separation <span class="math inline">\(\Delta d\)</span> satisfies:</p>
-<p><span class="math display">\[
-\Delta d \geq \frac{0.61\, \lambda}{\text{NA}}
-\]</span></p>
-<p><strong>Where:</strong></p>
-<ul>
-<li><span class="math inline">\(\Delta d\)</span> is the minimum resolvable distance between the two point sources.</li>
-<li><span class="math inline">\(\lambda\)</span> is the wavelength of the light used for imaging.</li>
-<li><span class="math inline">\(\text{NA} = n \sin(\alpha)\)</span> is the numerical aperture of the optical system.
-<ul>
-<li><span class="math inline">\(n\)</span> is the refractive index of the medium.</li>
-<li><span class="math inline">\(\alpha\)</span> is the half-angle of the maximum cone of light entering the lens.</li>
-</ul></li>
-</ul>
-</div>
-</div>
-</div>
-</section>
-<section id="abbes-criterion-for-resolution" class="level3">
-<h3 class="anchored" data-anchor-id="abbes-criterion-for-resolution">Abbe’s Criterion for Resolution</h3>
-<p><strong>Limitations of Rayleigh’s Criterion:</strong></p>
-<ul>
-<li>Rayleigh’s criterion applies to <strong>incoherent</strong> light sources, where the intensities of the diffraction patterns add directly.</li>
-<li>It does not fully account for the effects of coherence and interference in the imaging process.</li>
-</ul>
-<p><strong>Ernst Abbe</strong> developed a theory that considers the imaging of <strong>coherent</strong> light sources, where the phases of the waves are correlated. It emphasizes the importance of diffracted orders and spatial frequencies in the formation of images.</p>
-<p>The key concepts in Abbe’s theory are</p>
-<p><strong>Diffraction Grating Analogy:</strong></p>
-<ul>
-<li>An object with fine details can be thought of as a diffraction grating that scatters light into multiple diffraction orders.</li>
-<li>The ability to resolve these fine details depends on the optical system’s capacity to capture these diffracted orders.</li>
-</ul>
-<p><strong>Spatial Frequencies:</strong></p>
-<ul>
-<li>The finer the details in the object, the higher the spatial frequency.</li>
-<li>High spatial frequencies correspond to larger angles in the diffraction pattern.</li>
-</ul>
-<p><strong>Optical Transfer Function:</strong></p>
-<ul>
-<li>Describes how different spatial frequencies are transmitted through the optical system.</li>
-<li>An optical system with a larger NA can transmit higher spatial frequencies, improving resolution.</li>
-</ul>
-<p>Following that analogy, Abbe’s criterion states that the minimum resolvable distance <span class="math inline">\(\Delta d\)</span> between two points in the object plane is given by:</p>
-<p><span class="math display">\[
-\Delta d = \frac{\lambda}{2 \text{NA}}
-\]</span></p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Rayleigh’s and Abbe’s criteria
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li><p><strong>Abbe’s Limit:</strong></p>
-<ul>
-<li><span class="math inline">\(\Delta d = \frac{\lambda}{2 \text{NA}}\)</span></li>
-<li>Emphasizes coherent imaging and the transmission of at least two diffracted orders (zeroth and first) for resolution.</li>
-</ul></li>
-<li><p><strong>Rayleigh’s Limit:</strong></p>
-<ul>
-<li><span class="math inline">\(\Delta d = \frac{0.61\, \lambda}{\text{NA}}\)</span></li>
-<li>Based on the visibility of intensity dips in the overlapping Airy patterns of incoherent sources.</li>
-</ul></li>
-</ul>
-<p><strong>Implications in Microscopy:</strong></p>
-<p>Coherent Illumination:</p>
-<ul>
-<li>Techniques like phase-contrast or interference microscopy rely on coherent light.</li>
-<li>Abbe’s criterion is more appropriate for these methods.</li>
-</ul>
-<p>Incoherent Illumination:</p>
-<ul>
-<li>Common in conventional bright-field microscopy.</li>
-<li>Rayleigh’s criterion provides a practical resolution limit.</li>
-</ul>
-<p>Importance of Abbe’s Criterion:</p>
-<ul>
-<li>Highlights the role of interference between diffracted waves in image formation.</li>
-<li>Demonstrates that resolution is fundamentally limited by the wavelength of light and the NA of the system.</li>
-<li>Suggests that capturing higher spatial frequencies (larger NA) leads to better resolution.</li>
-</ul>
 </div>
 </div>
 
@@ -1901,8 +1655,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../wave-optics/Fresnel Zones.html" class="pagination-link" aria-label="Fresnel Zone Plate">
-        <span class="nav-page-text">Fresnel Zone Plate</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../wave-optics/Diffraction2.html" class="pagination-link" aria-label="Diffraction">
+        <span class="nav-page-text">Diffraction</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
