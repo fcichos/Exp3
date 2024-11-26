@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Contents – Experimental Physics 3 Course on Optics and Quantum Mechanics</title>
+<title>Electromagnetic Optics – Experimental Physics 3 Course on Optics and Quantum Mechanics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../wave-optics/Diffraction.html" rel="next">
-<link href="../wave-optics/MultiWave Interference.html" rel="prev">
+<link href="../electromagnetic-waves/Polarization of EM Waves.html" rel="next">
+<link href="../wave-optics/Interferometers.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -75,6 +75,35 @@ ul.task-list li input[type="checkbox"] {
   });
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../assets/styles.css">
 </head>
@@ -107,7 +136,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Wave Optics</li><li class="breadcrumb-item"><a href="../wave-optics/Dummy.html">Lecture 10</a></li><li class="breadcrumb-item"><a href="../wave-optics/Dummy.html">Fabry Perot Interferometer</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Electromagnetic Optics</li><li class="breadcrumb-item"><a href="../electromagnetic-waves/Electromagnetic Optics.html">Lecture 12</a></li><li class="breadcrumb-item"><a href="../electromagnetic-waves/Electromagnetic Optics.html">Electromagnetic Optics</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -390,16 +419,16 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false">
  <span class="menu-text">Lecture 10</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../wave-optics/Dummy.html" class="sidebar-item-text sidebar-link active">
+  <a href="../wave-optics/Dummy.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Fabry Perot Interferometer</span></a>
   </div>
 </li>
@@ -459,16 +488,16 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="true">
  <span class="menu-text">Lecture 12</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-16" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-16" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/Electromagnetic Optics.html" class="sidebar-item-text sidebar-link">
+  <a href="../electromagnetic-waves/Electromagnetic Optics.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Electromagnetic Optics</span></a>
   </div>
 </li>
@@ -487,15 +516,29 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#electromagnetic-spectrum" id="toc-electromagnetic-spectrum" class="nav-link active" data-scroll-target="#electromagnetic-spectrum">Electromagnetic Spectrum</a>
+  <ul class="collapse">
+  <li><a href="#maxwell-equations" id="toc-maxwell-equations" class="nav-link" data-scroll-target="#maxwell-equations">Maxwell Equations</a></li>
+  </ul></li>
+  <li><a href="#plane-waves-spherical-waves" id="toc-plane-waves-spherical-waves" class="nav-link" data-scroll-target="#plane-waves-spherical-waves">Plane Waves, Spherical Waves</a>
+  <ul class="collapse">
+  <li><a href="#plane-waves" id="toc-plane-waves" class="nav-link" data-scroll-target="#plane-waves">Plane Waves</a></li>
+  <li><a href="#spherical-waves" id="toc-spherical-waves" class="nav-link" data-scroll-target="#spherical-waves">Spherical Waves</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Wave Optics</li><li class="breadcrumb-item"><a href="../wave-optics/Dummy.html">Lecture 10</a></li><li class="breadcrumb-item"><a href="../wave-optics/Dummy.html">Fabry Perot Interferometer</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Electromagnetic Optics</li><li class="breadcrumb-item"><a href="../electromagnetic-waves/Electromagnetic Optics.html">Lecture 12</a></li><li class="breadcrumb-item"><a href="../electromagnetic-waves/Electromagnetic Optics.html">Electromagnetic Optics</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Contents</h1>
+<h1 class="title">Electromagnetic Optics</h1>
 </div>
 
 
@@ -512,9 +555,209 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>The contents of this Topic will only be presented in the lectures and not part of the online publications.</p>
+<p>So far we have looked at the propagation of light in form of ray’s and its description in Gemoetrical Optics. We made a number of assumtions that we formulated as postulates. We then extended this description by a scalar Wave Optics description to allow for a description of interference and diffraction, which can not be explained by Geometrical Optics. Yet concepts of refractive index and light matter interaction and the intensities are not covered by Wave Optics and also just postulates.</p>
+<p>Electromagnetic Optics allows us to define these missing things. We discover light as electromagnetic waves consisting of electric and magnetic fields, which allow us to describe the interaction with charges in atoms, which is the foundation for the refractive index for example. The new thing is therefore the fact that we now need vectors for the description of light.</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p><img src="img/vertical_pol.png" class="img-fluid" style="width:100.0%" alt="Vertical Polarization"> <img src="img/horizontal_pol.png" class="img-fluid" style="width:100.0%" alt="Horizontal Polarization"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p>Demonstration of the vectorial nature of the electric field of electromagnetic waves with the help of a set of polarizers. (Left) The first polarizer on the right side of the image is transmitting only the vertical direction of the electric field. This vertical direction of the electric field is probed with the second polarizer. If pointing in the same direction, the intensity as measured with the meter behind is maximum. When probed with a second polarizer along the horizontal direction (Right), the detector shows zero intensity.</p>
+</div>
+</div>
+</div>
+<section id="electromagnetic-spectrum" class="level2">
+<h2 class="anchored" data-anchor-id="electromagnetic-spectrum">Electromagnetic Spectrum</h2>
+<p>While most of our considerations are focused on electromagnetic waves in the visible region, all of them can be generalized to other regions of the very broad electromagnetic spectrum. The electromagnetic theory is scale free, meaning that the same effect on specific structures occur also at smaller scales if you scale the wavelength of the wave.</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="1">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/em_spectrum.png" class="img-fluid figure-img" style="width:90.0%"></p>
+<figcaption>Electromagnetic Spectrum</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<p>Electromagnetic wave spectrum with its specific regions.</p>
+</div>
+</div>
+</div>
+<section id="maxwell-equations" class="level3">
+<h3 class="anchored" data-anchor-id="maxwell-equations">Maxwell Equations</h3>
+<p>To obtain a wave equation in terms of electric <span class="math inline">\(\vec{E}\)</span> and magnetic fields <span class="math inline">\(\vec{B}\)</span> we need Maxwell’s equations. We will consider them in vacumm, i.e.&nbsp;for zero charge <span class="math inline">\(\rho=0\)</span> and current density. The electric and magnetic permeabilities of vacuum are given by <span class="math inline">\(\epsilon_0\)</span> and <span class="math inline">\(\mu_0\)</span>.</p>
+<p><span class="math display">\[
+\nabla \times \vec{E}=-\frac{\partial \vec{B}}{\partial t}
+\label{eq:ME1}\tag{ME.1}
+\]</span></p>
+<p><span class="math display">\[
+\nabla\cdot\vec{E}=0
+\tag{ME.2}
+\]</span></p>
+<p><span class="math display">\[
+\nabla\times \vec{B}=\epsilon_0\mu_0\frac{\partial \vec{E}}{\partial t}
+\tag{ME.3}
+\]</span></p>
+<p><span class="math display">\[
+\nabla\cdot \vec{B}=0
+\tag{ME.4}
+\]</span></p>
+<p>We will take the first (ME.1) of the four equations and apply another rotation <span class="math inline">\(\nabla \times\)</span> to both sides</p>
+<p><span class="math display">\[
+\nabla\times\nabla\times = -\nabla \times \frac{\partial \vec{B}}{\partial t}
+\]</span></p>
+<p>We can exchange the time and spatial derivate on the right side as <span class="math inline">\(\nabla\)</span> is not depending on time to get</p>
+<p><span class="math display">\[\begin{eqnarray}
+\nabla\times\nabla\times \vec{E}&amp;=&amp; - \frac{\partial \nabla \times \vec{B}}{\partial t}\\
+&amp;=&amp;-\epsilon_0\mu_0 \frac{\partial^2 \vec{E}}{\partial t^2}
+\end{eqnarray}\]</span></p>
+<p>where we used the third equation (ME.3) to replace the rotation of the magnetic field. We now have to expand the left side with the identity</p>
+<p><span class="math display">\[
+\nabla\times\nabla\times \vec{E}=\nabla(\nabla\cdot \vec{E})-\nabla(\nabla \vec{E})
+\]</span></p>
+<p>Note the the first term on the right side is the gradient of the divergence of <span class="math inline">\(\vec{E}\)</span>, while the second term is the divergence of the gradient of <span class="math inline">\(\vec{E}\)</span>. We know that in vacuum the divergence of the elecric field is zero (no sources of the electric field) and therefore <span class="math inline">\(\nabla\times\nabla\times \vec{E}=-\nabla(\nabla \vec{E})\)</span> and we have our wave equation</p>
+<p><span class="math display">\[
+\frac{\partial^2 \vec{E}}{\partial \vec{r}^2}-\epsilon_0\mu_0 \frac{\partial^2\vec{E}}{\partial t^2}=0
+\tag{Wave Equation}
+\]</span></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Wave Equation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The wave equation for the propagation of electric fields in vaccum is given by</p>
+<p><span class="math display">\[
+\frac{\partial^2 \vec{E}}{\partial \vec{r}^2}-\epsilon_0\mu_0 \frac{\partial^2\vec{E}}{\partial t^2}=0
+\]</span></p>
+<p>The phase velocity of the wave is</p>
+<p><span class="math display">\[
+c=\frac{1}{\sqrt{\mu_0\epsilon_0}}=299792458 \, {\rm\frac{m}{s}}
+\]</span></p>
+</div>
+</div>
+<p>One of the interesting relations to electrostatics is now, that the static permeabilities <span class="math inline">\(\epsilon_0.\mu_0\)</span> determine the speed of light. Note that the above wave equation is a vectorial equation., That means there is a wave equation for each component of the elecric field, e.g.</p>
+<p><span class="math display">\[
+\frac{\partial^2 E_x}{\partial x^2}+\frac{\partial^2 E_x}{\partial y^2}+\frac{\partial^2 E_x}{\partial z^2}-\frac{1}{c^2} \frac{\partial^2 E_x}{\partial t^2}=0
+\]</span></p>
+<p>for the x-component of the electric field. Equivalent equations exist for the other field components.</p>
+<p>The same mathematical treatment can be done for the magnetic field <span class="math inline">\(\vec{B}\)</span> and the same wave equation will follow from that.</p>
+</section>
+</section>
+<section id="plane-waves-spherical-waves" class="level2">
+<h2 class="anchored" data-anchor-id="plane-waves-spherical-waves">Plane Waves, Spherical Waves</h2>
+<section id="plane-waves" class="level3">
+<h3 class="anchored" data-anchor-id="plane-waves">Plane Waves</h3>
+<p>We will first have a look at elementary solutions of the wave equation again as we have done that in the wave optics sections. First of all we can write the solution of the wave equation as a product of a spatial and a temporal amplitude, i.e.</p>
+<p><span class="math display">\[\begin{eqnarray}
+\vec{\mathcal{E}}(\vec{r},t)&amp;=&amp;\mathcal{Re}\lbrace \vec{E}(\vec{r})e^{-i\omega t}\rbrace\\
+\vec{\mathcal{B}}(\vec{r},t)&amp;=&amp;\mathcal{Re}\lbrace \vec{B}(\vec{r})e^{-i\omega t}\rbrace
+\end{eqnarray}\]</span></p>
+<p>We use again the complex notation and remember that the measurable physical quantity <span class="math inline">\(\vec{\mathcal{E}}\)</span> or <span class="math inline">\(\vec{\mathcal{B}}\)</span> has to be a real valued quantity. Therefore we may calculate with the complex quantities, but finally need to calculate the real part (<span class="math inline">\(\mathcal{Re}\)</span>) if required. In the following we will use the complex notation throughout the calculation and only refer to the real value if this is really useful. When inserting the complex ansatz above into the wave equation, we can take the time derivative which yields for the electric field</p>
+<p><span class="math display">\[\begin{equation}
+\Delta \vec{E}(\vec{r})+\frac{\omega^2}{c^2}\vec{E}(\vec{r})=0
+\tag{Helmholtz Equation}
+\end{equation}\]</span></p>
+<p>The latter equation is known as the <strong>Helmholtz equation</strong>. It is the differential equation for the spatial amplitude of the wave. We may also insert the solutions into the first and the third Maxwell equation which results in</p>
+<p><span class="math display">\[\begin{eqnarray}
+\nabla \times \vec{E}&amp;=&amp;i\omega\vec{B}\\
+\nabla \times\vec{B} &amp;=&amp; -\epsilon_0\mu_0 i\omega \vec{E}
+\end{eqnarray}\]</span></p>
+<p>We obtain finally a plane wave with our knowledge from the wave optics section.</p>
+<p><span class="math display">\[\begin{eqnarray}
+\vec{E}(\vec{r})&amp;=&amp;\vec{E}_{0}e^{i\vec{k}\cdot\vec{r}}\\
+\vec{B}(\vec{r})&amp;=&amp;\vec{B}_{0}e^{i\vec{k}\cdot\vec{r}}\\
+\end{eqnarray}\]</span></p>
+<p>Taking the rotation of those two equations yields</p>
+<p><span class="math display">\[\begin{eqnarray}
+\vec{k}\times \vec{E}_{0}&amp;=&amp;\omega \vec{B}_0\\
+\vec{k}\times \vec{B}_{0}&amp;=&amp;-\frac{\omega}{c^2} \vec{E}_0
+\end{eqnarray}\]</span></p>
+<p>The latter two equations tell essentiall two things. First of all they state that the vectors <span class="math inline">\(\vec{k}\)</span>, <span class="math inline">\(\vec{E}_0\)</span> and <span class="math inline">\(\vec{B}_{0}\)</span> stand perpendicular to each other. This is why electromagnetic waves are termed transverse waves. The physical quantity of a transverse wave change sperpendicular to its propagation direction.</p>
+<p>The second thing is that the ampolitudes of the two waves are not independent of each other but rather</p>
+<p><span class="math display">\[
+B_0=\frac{1}{c}E_0
+\]</span></p>
+<p>This is quite helpful, as we may just do calculations for the electric field and transfer them with the help of this conversion to the magnetic field.</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="1">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/plane_wave.png" class="img-fluid figure-img" style="width:90.0%"></p>
+<figcaption>Plane Wave</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<p>Plane wave propagating along the y-direction, with the electric field oscillating along the z-direction.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="spherical-waves" class="level3">
+<h3 class="anchored" data-anchor-id="spherical-waves">Spherical Waves</h3>
+<p>The situation is a bit more complicated for spherical waves and we wont do the detailed calculation here. A spherical wave is constructed with the help of an axuliary function</p>
+<p><span class="math display">\[
+\vec{A}(\vec{r})=A_0 U(\vec{r})\hat{x}
+\]</span></p>
+<p>where <span class="math inline">\(\hat{x}\)</span> is the unit vector in the x-direction and</p>
+<p><span class="math display">\[
+U(\vec{r})=\frac{1}{r}e^{-ik r}
+\]</span></p>
+<p>is our scalar spherical wave we know from the wave optics section. The auxilary function is termed <strong>Vector potential</strong> and also fulfills an Helmholtz equation</p>
+<p><span class="math display">\[
+\Delta\vec{A}+k^2 \vec{A}=0
+\]</span></p>
+<p>A more detailed calculation finally leads to the following Electric and magnetic field vectors in spherical coordinates and for large distances <span class="math inline">\(r\gg\lambda\)</span> or <span class="math inline">\(k r\gg2\pi\)</span>.</p>
+<p><span class="math display">\[\begin{eqnarray}
+\vec{E}(\vec{r})&amp;=&amp; E_0 \sin(\theta) U(\vec{r}) \hat{\theta}\\
+\vec{B}(\vec{r})&amp;=&amp; B_0 \sin(\theta) U(\vec{r}) \hat{\phi}
+\end{eqnarray}\]</span></p>
+<p>The electric and magnetic fields are therefire tangential to the wavefront surface, which is a sphere. The propgation direction is always radial, so the spherical wave is also a transverse electromagnetic wave.</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="1">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/spherical_wave.png" class="img-fluid figure-img" style="width:95.0%"></p>
+<figcaption>Spherical Wave</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<p>(Left) Definition of the unit vectors in a spherical coordinate system. (Right) Vectors of the electric and magnetic field for a spherical wave.</p>
+</div>
+</div>
+</div>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -939,13 +1182,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../wave-optics/MultiWave Interference.html" class="pagination-link" aria-label="Multi Wave Interference">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Multi Wave Interference</span>
+      <a href="../wave-optics/Interferometers.html" class="pagination-link" aria-label="Interferometers">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Interferometers</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../wave-optics/Diffraction.html" class="pagination-link" aria-label="Diffraction">
-        <span class="nav-page-text">Diffraction</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../electromagnetic-waves/Polarization of EM Waves.html" class="pagination-link" aria-label="Polarization of EM Waves">
+        <span class="nav-page-text">Polarization of EM Waves</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
