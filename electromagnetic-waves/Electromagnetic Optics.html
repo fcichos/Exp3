@@ -509,6 +509,46 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-17" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 13</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-17" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-17" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Energy Transport.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Energy Transport</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-18" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 14</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-18" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-18" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/EM Waves in Matter.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Wave in Matter</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Dispersion and Absorption.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Microscopic Origin of Refractive Index</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
       </ul>
   </li>
     </ul>
@@ -524,6 +564,7 @@ window.Quarto = {
   <li><a href="#electromagnetic-spectrum" id="toc-electromagnetic-spectrum" class="nav-link active" data-scroll-target="#electromagnetic-spectrum">Electromagnetic Spectrum</a>
   <ul class="collapse">
   <li><a href="#maxwell-equations" id="toc-maxwell-equations" class="nav-link" data-scroll-target="#maxwell-equations">Maxwell Equations</a></li>
+  <li><a href="#deriving-the-wave-equation" id="toc-deriving-the-wave-equation" class="nav-link" data-scroll-target="#deriving-the-wave-equation">Deriving the Wave Equation</a></li>
   </ul></li>
   <li><a href="#plane-waves-spherical-waves" id="toc-plane-waves-spherical-waves" class="nav-link" data-scroll-target="#plane-waves-spherical-waves">Plane Waves, Spherical Waves</a>
   <ul class="collapse">
@@ -612,6 +653,19 @@ window.Quarto = {
 \nabla\cdot \vec{B}=0
 \tag{ME.4}
 \]</span></p>
+<p>Maxwell’s third equation (ME.3) is significant because it expands upon Ampère’s law, which states that magnetic field lines form closed loops around electric currents. This principle can be applied to a capacitor circuit, where we can calculate the magnetic field by integrating along a circular path around the current-carrying wire.</p>
+<p>In this setup, the current density flows through a surface bounded by the circular path. Importantly, we can choose any surface that shares the same boundary circle (mathematically known as path-independent surface integration). However, this creates an apparent paradox: Ampère’s law must work both for: 1. A simple surface through which the conduction current flows 2. A surface that passes through the capacitor gap where no actual charges flow</p>
+<p>To resolve this inconsistency, Maxwell introduced the concept of displacement current. This additional current exists even in regions without flowing charges and is proportional to the time rate of change of the electric field, multiplied by the vacuum permittivity (<span class="math inline">\(\epsilon_{0}\)</span>).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/diplacement_current.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></p>
+</figure>
+</div>
+<p>The displacement current makes physical sense because current only flows in the capacitor’s wires when the electric field between the plates is changing. This addition to Ampère’s law was crucial, as it completed the set of equations that describe electromagnetic waves.</p>
+<p>This term is essential for deriving the electromagnetic wave equation and understanding how electromagnetic waves propagate through space.</p>
+</section>
+<section id="deriving-the-wave-equation" class="level3">
+<h3 class="anchored" data-anchor-id="deriving-the-wave-equation">Deriving the Wave Equation</h3>
 <p>We will take the first (ME.1) of the four equations and apply another rotation <span class="math inline">\(\nabla \times\)</span> to both sides</p>
 <p><span class="math display">\[
 \nabla\times\nabla\times = -\nabla \times \frac{\partial \vec{B}}{\partial t}
@@ -656,6 +710,37 @@ c=\frac{1}{\sqrt{\mu_0\epsilon_0}}=299792458 \, {\rm\frac{m}{s}}
 \]</span></p>
 <p>for the x-component of the electric field. Equivalent equations exist for the other field components.</p>
 <p>The same mathematical treatment can be done for the magnetic field <span class="math inline">\(\vec{B}\)</span> and the same wave equation will follow from that.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Michelson Morley Experiment
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/michelson_morley.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+</figure>
+</div>
+<p>The Michelson-Morley experiment of 1887 was designed to detect the hypothetical luminiferous ether through which light was thought to propagate. Using an interferometer, they split a light beam into two perpendicular paths and recombined them to create an interference pattern. The theoretical derivation considered the time for light to travel in both directions: along the direction of Earth’s motion through the ether, the outward and return journey times are given by:</p>
+<p><span class="math display">\[t_1 = \frac{L}{c-v}\]</span> <span class="math display">\[t_2 = \frac{L}{c+v}\]</span></p>
+<p>where L is the arm length, c is the speed of light, and v is Earth’s velocity through the ether. The total time for this path is therefore:</p>
+<p><span class="math display">\[T_1 = t_1 + t_2 = \frac{L}{c-v} + \frac{L}{c+v} = \frac{2Lc}{c^2-v^2}\]</span></p>
+<p>For the perpendicular arm, the time calculation involved the Pythagorean theorem, as light would travel diagonally relative to the ether, giving:</p>
+<p><span class="math display">\[T_2 = \frac{2L}{\sqrt{c^2-v^2}}\]</span></p>
+<p>The time difference ΔT = T₁ - T₂, when expanded using the binomial theorem and keeping terms to second order in v/c, yields:</p>
+<p><span class="math display">\[\Delta T = \frac{L}{c} \times \frac{v^2}{c^2}\]</span></p>
+<p>This time difference corresponds to a path difference of:</p>
+<p><span class="math display">\[\Delta d = 2L\frac{v^2}{c^2}\]</span></p>
+<p>However, Michelson and Morley observed no significant fringe shift, contradicting the ether theory and paving the way for special relativity, which established the constancy of the speed of light in all inertial reference frames.</p>
+</div>
+</div>
+</div>
 </section>
 </section>
 <section id="plane-waves-spherical-waves" class="level2">
@@ -688,7 +773,7 @@ c=\frac{1}{\sqrt{\mu_0\epsilon_0}}=299792458 \, {\rm\frac{m}{s}}
 \vec{k}\times \vec{B}_{0}&amp;=&amp;-\frac{\omega}{c^2} \vec{E}_0
 \end{eqnarray}\]</span></p>
 <p>The latter two equations tell essentiall two things. First of all they state that the vectors <span class="math inline">\(\vec{k}\)</span>, <span class="math inline">\(\vec{E}_0\)</span> and <span class="math inline">\(\vec{B}_{0}\)</span> stand perpendicular to each other. This is why electromagnetic waves are termed transverse waves. The physical quantity of a transverse wave change sperpendicular to its propagation direction.</p>
-<p>The second thing is that the ampolitudes of the two waves are not independent of each other but rather</p>
+<p>The second thing is that the amplitudes of the two waves are not independent of each other but rather</p>
 <p><span class="math display">\[
 B_0=\frac{1}{c}E_0
 \]</span></p>
@@ -716,36 +801,31 @@ B_0=\frac{1}{c}E_0
 </section>
 <section id="spherical-waves" class="level3">
 <h3 class="anchored" data-anchor-id="spherical-waves">Spherical Waves</h3>
-<p>The situation is a bit more complicated for spherical waves and we wont do the detailed calculation here. A spherical wave is constructed with the help of an axuliary function</p>
+<p>Spherical waves are more complex than plane waves and require a different mathematical approach. We can describe them using an auxiliary function called the <strong>Vector potential</strong>, defined as:</p>
 <p><span class="math display">\[
 \vec{A}(\vec{r})=A_0 U(\vec{r})\hat{x}
 \]</span></p>
-<p>where <span class="math inline">\(\hat{x}\)</span> is the unit vector in the x-direction and</p>
+<p>where <span class="math inline">\(\hat{x}\)</span> is the unit vector in the x-direction, and <span class="math inline">\(U(\vec{r})\)</span> is the scalar spherical wave function from wave optics:</p>
 <p><span class="math display">\[
 U(\vec{r})=\frac{1}{r}e^{-ik r}
 \]</span></p>
-<p>is our scalar spherical wave we know from the wave optics section. The auxilary function is termed <strong>Vector potential</strong> and also fulfills an Helmholtz equation</p>
+<p>This vector potential satisfies the Helmholtz equation:</p>
 <p><span class="math display">\[
 \Delta\vec{A}+k^2 \vec{A}=0
 \]</span></p>
-<p>A more detailed calculation finally leads to the following Electric and magnetic field vectors in spherical coordinates and for large distances <span class="math inline">\(r\gg\lambda\)</span> or <span class="math inline">\(k r\gg2\pi\)</span>.</p>
+<p>When we solve for the electric and magnetic fields in spherical coordinates, and consider large distances where <span class="math inline">\(r\gg\lambda\)</span> or <span class="math inline">\(k r\gg2\pi\)</span>, we get:</p>
 <p><span class="math display">\[\begin{eqnarray}
 \vec{E}(\vec{r})&amp;=&amp; E_0 \sin(\theta) U(\vec{r}) \hat{\theta}\\
 \vec{B}(\vec{r})&amp;=&amp; B_0 \sin(\theta) U(\vec{r}) \hat{\phi}
 \end{eqnarray}\]</span></p>
-<p>The electric and magnetic fields are therefire tangential to the wavefront surface, which is a sphere. The propgation direction is always radial, so the spherical wave is also a transverse electromagnetic wave.</p>
+<p>These equations reveal that both the electric and magnetic fields lie tangent to the spherical wavefront. Since the wave propagates radially while the fields are perpendicular to this direction, we can classify spherical waves as transverse electromagnetic waves, just like plane waves.</p>
 <div>
 
 </div>
 <div class="quarto-layout-panel" data-layout-ncol="1">
 <div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/spherical_wave.png" class="img-fluid figure-img" style="width:95.0%"></p>
-<figcaption>Spherical Wave</figcaption>
-</figure>
-</div>
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<p><img src="img/spherical_wave.png" class="img-fluid"></p>
 </div>
 </div>
 <div class="quarto-layout-row">
