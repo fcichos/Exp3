@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -66,12 +100,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script async="" src="https://hypothes.is/embed.js"></script>
-<script>
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    document.body.classList.add('hypothesis-enabled');
-  });
-</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -536,13 +564,13 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../electromagnetic-waves/EM Waves in Matter.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Wave in Matter</span></a>
+ <span class="menu-text">Waves in Matter</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../electromagnetic-waves/Dispersion and Absorption.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Microscopic Origin of Refractive Index</span></a>
+ <span class="menu-text">Origin of Refractive Index</span></a>
   </div>
 </li>
       </ul>
@@ -559,7 +587,9 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#boundary-condition" id="toc-boundary-condition" class="nav-link active" data-scroll-target="#boundary-condition">Boundary Condition</a></li>
+  <li><a href="#effect-of-the-refractive-index" id="toc-effect-of-the-refractive-index" class="nav-link active" data-scroll-target="#effect-of-the-refractive-index">Effect of the Refractive Index</a></li>
+  <li><a href="#general-description-of-reflection-and-refraction" id="toc-general-description-of-reflection-and-refraction" class="nav-link" data-scroll-target="#general-description-of-reflection-and-refraction">General Description of Reflection and Refraction</a></li>
+  <li><a href="#boundary-condition" id="toc-boundary-condition" class="nav-link" data-scroll-target="#boundary-condition">Boundary Condition</a></li>
   <li><a href="#reflectionrefraction" id="toc-reflectionrefraction" class="nav-link" data-scroll-target="#reflectionrefraction">Reflection/Refraction</a>
   <ul class="collapse">
   <li><a href="#frequency-and-wavevector-matching" id="toc-frequency-and-wavevector-matching" class="nav-link" data-scroll-target="#frequency-and-wavevector-matching">Frequency and Wavevector Matching</a></li>
@@ -589,6 +619,65 @@ window.Quarto = {
 </header>
 
 
+<section id="effect-of-the-refractive-index" class="level3">
+<h3 class="anchored" data-anchor-id="effect-of-the-refractive-index">Effect of the Refractive Index</h3>
+<p>The effect of the material on the wave propagation can be understood, when considering a plane wave <span class="math inline">\(E_s\)</span> incindent on a thin material slab of thickness <span class="math inline">\(\Delta z\)</span>.</p>
+<span class="math display">\[\begin{aligned}
+E &amp; =E_0 \cdot e^{-i(\omega t-k z-(n-1) \lambda \cdot \Delta z)} \\
+&amp; =e^{-i \omega(n-1) \Delta z / c} E_0 e^{i(\omega t-k z)} \\
+&amp; =e^{-i \theta} E_s \quad \text { with } \theta-k(n-1) \Delta z
+\end{aligned}\]</span>
+<p>For small values of <span class="math inline">\(\Theta\)</span> the exponential function can be approximated by</p>
+<p><span class="math display">\[e^x \sim 1+x+\left(\frac{x^2}{2}\right)\]</span></p>
+<p>such that we obtain</p>
+<p><span class="math display">\[e^{-i k(n-1) \Delta z} \approx 1-i k(n-1) \Delta z-\frac{i k^2(n-1)^2 \Delta z^2}{2}\]</span></p>
+<p>The total field behind the thin slab therefore is</p>
+<p><span class="math display">\[E(z)=\underbrace{E_0 e^{i(\omega t-k z)}}_{E_e}-\underbrace{i k(n-1) \Delta z E_0 e^{i(\omega t-k z)}}_{E_{\text {medium }}}\]</span></p>
+<p>The resulting wave is therefore delayed by a phase factor <span class="math inline">\(k(n-1) \Delta z\)</span> and the amplitude is reduced by a factor <span class="math inline">\(k(n-1) \Delta z\)</span>. If there are now multiple very thin slabs behind each other than each layer will contribute to the delay and the amplitude reduction. This succsessive phase delay will finally result in a phase velocity of the wave in the medium, which is reduced by a factor <span class="math inline">\(n\)</span> compared to the vacuum.</p>
+<div id="5d8f96b1" class="cell" data-execution_count="2">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>E0 <span class="op">=</span> <span class="fl">1.0</span>  <span class="co"># Initial amplitude</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>k <span class="op">=</span> <span class="dv">2</span><span class="op">*</span>np.pi  <span class="co"># Wave number</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="fl">1.5</span>  <span class="co"># Refractive index</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>dz <span class="op">=</span> <span class="fl">0.1</span>  <span class="co"># Thickness of slab</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>omega <span class="op">=</span> <span class="dv">2</span><span class="op">*</span>np.pi  <span class="co"># Angular frequency</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> <span class="dv">0</span>  <span class="co"># Fixed time point</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Spatial grid</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">1000</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate components</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>E_vacuum <span class="op">=</span> E0 <span class="op">*</span> np.exp(<span class="ot">1j</span><span class="op">*</span>(omega<span class="op">*</span>t <span class="op">-</span> k<span class="op">*</span>z))</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>E_medium <span class="op">=</span> <span class="op">-</span><span class="ot">1j</span> <span class="op">*</span> k <span class="op">*</span> (n<span class="op">-</span><span class="dv">1</span>) <span class="op">*</span> dz <span class="op">*</span> E0 <span class="op">*</span> np.exp(<span class="ot">1j</span><span class="op">*</span>(omega<span class="op">*</span>t <span class="op">-</span> k<span class="op">*</span>z))</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>E_total <span class="op">=</span> E_vacuum <span class="op">+</span> E_medium</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Create figure</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>fig, ax1 <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">1</span>, figsize<span class="op">=</span>get_size(<span class="dv">12</span>, <span class="dv">8</span>))</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot real parts</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>ax1.plot(z, E_vacuum.real, <span class="st">'b-'</span>, label<span class="op">=</span><span class="st">'Incident'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>ax1.plot(z, E_medium.real, <span class="st">'r-'</span>, label<span class="op">=</span><span class="st">'Medium'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>ax1.plot(z, E_total.real, <span class="st">'g-.'</span>, label<span class="op">=</span><span class="st">'Total'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>ax1.set_xlabel(<span class="st">'position (z)'</span>)</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>ax1.set_ylabel(<span class="st">'Re[E(z)]'</span>)</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>ax1.legend()</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Reflection and Refraction_files/figure-html/cell-3-output-1.png" width="653" height="440" class="figure-img"></p>
+<figcaption>Components of the electric field in medium</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="general-description-of-reflection-and-refraction" class="level3">
+<h3 class="anchored" data-anchor-id="general-description-of-reflection-and-refraction">General Description of Reflection and Refraction</h3>
 <p>Before we have a look at the behavior of electromagnetic waves at boundaries, we would like to setup the stage for those considerations. For this purpose we need to define the geometry we are referring to and also have a look at the electric fields (and magnetic fields) that will be present. The sketch below shows the wavevectors of the incident <span class="math inline">\(\vec{k}_I\)</span>, reflected <span class="math inline">\(\vec{k}_R\)</span> and transmitted <span class="math inline">\(\vec{k}_T\)</span> waves in the two materials with the refractive indices <span class="math inline">\(n_1\)</span> and <span class="math inline">\(n_2\)</span>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -622,6 +711,7 @@ window.Quarto = {
 </figure>
 </div>
 <p>To apply the boundary conditions, we will further need to split thesse polarisation vectors into components, which are <strong>parallel</strong> (<span class="math inline">\(||\)</span>) or <strong>perpendicular</strong> (<span class="math inline">\(\perp\)</span>) to the interface. This is required as we will have boundary conditions for the electric and magnetic fields either parallel or perpendicular to the interface. The s-polarisation, for example, has an electric field, which is always parallel to the interface, while the p-polarization comprises both components.</p>
+</section>
 <section id="boundary-condition" class="level2">
 <h2 class="anchored" data-anchor-id="boundary-condition">Boundary Condition</h2>
 <p>The boundary conditions for the electric or magnetic field passing an interface are derived from the Maxwell equations. As I assume you have don this already in the electro- and magnetostatics lectures, I will only resume shortly here.</p>

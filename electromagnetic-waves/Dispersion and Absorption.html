@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Microscopic Origin of Refractive Index – Experimental Physics 3 Course on Optics and Quantum Mechanics</title>
+<title>Frequency dependent Refractive Index – Experimental Physics 3 Course on Optics and Quantum Mechanics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -101,12 +101,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script async="" src="https://hypothes.is/embed.js"></script>
-<script>
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    document.body.classList.add('hypothesis-enabled');
-  });
-</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -169,7 +163,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Electromagnetic Optics</li><li class="breadcrumb-item"><a href="../electromagnetic-waves/EM Waves in Matter.html">Lecture 14</a></li><li class="breadcrumb-item"><a href="../electromagnetic-waves/Dispersion and Absorption.html">Microscopic Origin of Refractive Index</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Electromagnetic Optics</li><li class="breadcrumb-item"><a href="../electromagnetic-waves/EM Waves in Matter.html">Lecture 14</a></li><li class="breadcrumb-item"><a href="../electromagnetic-waves/Dispersion and Absorption.html">Origin of Refractive Index</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -571,13 +565,13 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../electromagnetic-waves/EM Waves in Matter.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Wave in Matter</span></a>
+ <span class="menu-text">Waves in Matter</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../electromagnetic-waves/Dispersion and Absorption.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Microscopic Origin of Refractive Index</span></a>
+ <span class="menu-text">Origin of Refractive Index</span></a>
   </div>
 </li>
       </ul>
@@ -594,8 +588,7 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#microscopic-theory-of-light-matter-interaction" id="toc-microscopic-theory-of-light-matter-interaction" class="nav-link active" data-scroll-target="#microscopic-theory-of-light-matter-interaction">Microscopic Theory of Light-Matter Interaction</a></li>
-  <li><a href="#absorption" id="toc-absorption" class="nav-link" data-scroll-target="#absorption">Absorption</a></li>
+  <li><a href="#absorption" id="toc-absorption" class="nav-link active" data-scroll-target="#absorption">Absorption</a></li>
   <li><a href="#dispersion" id="toc-dispersion" class="nav-link" data-scroll-target="#dispersion">Dispersion</a>
   <ul class="collapse">
   <li><a href="#phase-velocity" id="toc-phase-velocity" class="nav-link" data-scroll-target="#phase-velocity">Phase Velocity</a></li>
@@ -609,9 +602,9 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Electromagnetic Optics</li><li class="breadcrumb-item"><a href="../electromagnetic-waves/EM Waves in Matter.html">Lecture 14</a></li><li class="breadcrumb-item"><a href="../electromagnetic-waves/Dispersion and Absorption.html">Microscopic Origin of Refractive Index</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Electromagnetic Optics</li><li class="breadcrumb-item"><a href="../electromagnetic-waves/EM Waves in Matter.html">Lecture 14</a></li><li class="breadcrumb-item"><a href="../electromagnetic-waves/Dispersion and Absorption.html">Origin of Refractive Index</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Microscopic Origin of Refractive Index</h1>
+<h1 class="title">Frequency dependent Refractive Index</h1>
 </div>
 
 
@@ -628,15 +621,6 @@ window.Quarto = {
 </header>
 
 
-<p>The interaction between light and matter is fundamental to many optical phenomena we observe in nature, from the blue color of the sky to the operation of fiber optic communications. This document explores how materials respond to electromagnetic waves at the microscopic level, leading to two key phenomena: dispersion and absorption. Understanding these effects is crucial for:</p>
-<ul>
-<li>Designing optical devices and communications systems</li>
-<li>Analyzing spectroscopic measurements</li>
-<li>Explaining everyday optical phenomena</li>
-<li>Developing new optical materials</li>
-</ul>
-<section id="microscopic-theory-of-light-matter-interaction" class="level2">
-<h2 class="anchored" data-anchor-id="microscopic-theory-of-light-matter-interaction">Microscopic Theory of Light-Matter Interaction</h2>
 <p>When light interacts with matter, its electric field <span class="math inline">\(\vec{E}(\vec{r},t)\)</span> influences the charged particles within atoms. For visible light (<span class="math inline">\(\lambda \approx 500\, \text{nm}\)</span>) interacting with atoms (size <span class="math inline">\(\approx 0.1\, \text{nm}\)</span>), we can make two important approximations:</p>
 <ol type="1">
 <li><p><strong>Dipole Approximation</strong>: Since <span class="math inline">\(\lambda \gg a\)</span> (atomic size), the field appears uniform across each atom: <span class="math display">\[\vec{E}(\vec{r},t) \approx \vec{E}(t)\]</span></p></li>
@@ -682,7 +666,7 @@ n=1+\frac{Nq^2}{2\epsilon_0 m}\frac{(\omega_0^2-\omega^2)-i\sigma\omega}{(\omega
 <p>and</p>
 <p><span class="math display">\[\kappa = A\frac{\sigma\omega}{(\omega_0^2-\omega^2)^2+\omega^2\sigma^2}\]</span></p>
 <p>with <span class="math inline">\(A=\frac{Nq^2}{2\epsilon_0 m}\)</span>.</p>
-<div id="087f299a" class="cell" data-execution_count="2">
+<div id="b4ff3ed0" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> <span class="dv">1</span>  <span class="co"># Number density</span></span>
@@ -729,7 +713,36 @@ n=1+\frac{Nq^2}{2\epsilon_0 m}\frac{(\omega_0^2-\omega^2)-i\sigma\omega}{(\omega
 </div>
 </div>
 <p>The plots show how both components vary with frequency due to the atomic resonance. Near resonance, the real part exhibits strong dispersion, transitioning from values above 1 to below 1. The imaginary part shows a Lorentzian peak with width determined by the damping coefficient <span class="math inline">\(\sigma\)</span>.</p>
-</section>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Measuring Refractive Index
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A simple way to measure the refractive index is through the critical angle principle. By measuring the critical angle at which total internal reflection occurs, one can determine the refractive index of a material. This technique is widely used in refractometers and optical sensors.</p>
+<div id="fig-abbe" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-abbe-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="img/abbe_refractometer.png" class="img-fluid figure-img"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p><img src="img/IMG_0554.jpeg" class="img-fluid figure-img" style="width:60.0%"> <img src="img/abbe_reading.png" class="img-fluid figure-img" style="width:30.0%"></p>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-abbe-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1— Principle of the Abbe refractometer (left). Abbe refractometer for alcohol content measurement (right).
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
 <section id="absorption" class="level2">
 <h2 class="anchored" data-anchor-id="absorption">Absorption</h2>
 <div class="callout callout-style-default callout-important callout-titled">
@@ -783,11 +796,101 @@ I &amp;= \frac{1}{2}\epsilon_0 c|\vec{E}|^2 \\
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-absorption1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1— Measurement of the absorption coefficient.
+Figure&nbsp;2— Measurement of the absorption coefficient.
 </figcaption>
 </figure>
 </div>
 <p>The frequency-dependent absorption reflects resonant behavior, with strong absorption near resonance and weak absorption elsewhere. Real materials typically have multiple resonances, creating complex absorption spectra that serve as unique chemical fingerprints.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Absorption Measurements
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The measurement of absorption is fundamental to many fields including chemistry, materials science, and biological studies. The basic principle relies on the Lambert-Beer Law:</p>
+<p><span class="math display">\[\ln\left(\frac{I}{I_0}\right) = -\alpha(\lambda)L = -\epsilon(\lambda)cL\]</span></p>
+<p>where:</p>
+<ul>
+<li><span class="math inline">\(I/I_0\)</span> is the transmittance</li>
+<li><span class="math inline">\(\alpha(\lambda)\)</span> is the absorption coefficient</li>
+<li><span class="math inline">\(\epsilon(\lambda)\)</span> is the molar extinction coefficient</li>
+<li><span class="math inline">\(c\)</span> is the molar concentration</li>
+<li><span class="math inline">\(L\)</span> is the path length</li>
+</ul>
+<p>The above logarithm can be used to define the absorbance <span class="math inline">\(A\)</span> as</p>
+<p><span class="math display">\[A = -\ln\left(\frac{I}{I_0}\right)/\ln(10)\]</span></p>
+<p>which is the typical quantity that is plotted against concentration in absorption measurements and linearly depends on the concentration. According to Lambert Beers law, the absorbance is calculated from <span class="math display">\[A = \epsilon c L\]</span> and provides the molar extinction coefficient <span class="math inline">\(\epsilon\)</span> for the material at a given wavelength.</p>
+<div id="267d0371" class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Dispersion and Absorption_files/figure-html/cell-4-output-1.png" width="579" height="302" class="figure-img"></p>
+<figcaption>Basic setup for absorption measurements</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<section id="concentration-measurements" class="level3">
+<h3 class="anchored" data-anchor-id="concentration-measurements">Concentration Measurements</h3>
+<p>The linear relationship between absorbance and concentration enables quantitative analysis:</p>
+<div id="17432885" class="cell" data-execution_count="4">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>concentrations <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">10</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>absorbance <span class="op">=</span> <span class="dv">2</span><span class="op">*</span>concentrations <span class="op">+</span> np.random.normal(<span class="dv">0</span>, <span class="fl">0.02</span>, <span class="dv">10</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>get_size(<span class="dv">8</span>,<span class="dv">6</span>))</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>plt.plot(concentrations, absorbance, <span class="st">'bo'</span>, label<span class="op">=</span><span class="st">'Data'</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>plt.plot(concentrations, <span class="dv">2</span><span class="op">*</span>concentrations, <span class="st">'r-'</span>, label<span class="op">=</span><span class="st">'Linear fit'</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'concentration'</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'absorbance'</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Dispersion and Absorption_files/figure-html/cell-5-output-1.png" width="454" height="349" class="figure-img"></p>
+<figcaption>Beer-Lambert law verification plot</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The linear range typically extends up to absorbance values of ~1.0 Beyond this, deviation from linearity may occur</p>
+</div>
+</div>
+</section>
+<section id="applications" class="level3">
+<h3 class="anchored" data-anchor-id="applications">Applications</h3>
+<section id="chemical-analysis" class="level4">
+<h4 class="anchored" data-anchor-id="chemical-analysis">1. Chemical Analysis</h4>
+<p>Chemical analysis provides quantitative information about composition and concentration in solutions. Absorption measurements enable precise determination of concentration levels across many compounds. Reaction kinetics can be monitored in real-time by tracking absorption changes. Quality control in industrial processes relies on rapid and accurate absorption measurements to ensure product consistency.</p>
+</section>
+<section id="materials-characterization" class="level4">
+<h4 class="anchored" data-anchor-id="materials-characterization">2. Materials Characterization</h4>
+<p>Optical properties of materials reveal crucial information about their electronic structure and physical properties. Band gap determination helps classify semiconductors and predict their behavior in devices. Film thickness measurements using absorption techniques provide non-destructive ways to characterize thin films and coatings. Understanding these properties is essential for developing new materials and optimizing their performance in applications.</p>
+</section>
+<section id="biological-studies" class="level4">
+<h4 class="anchored" data-anchor-id="biological-studies">3. Biological Studies</h4>
+<p>Protein quantification through absorption measurements forms a cornerstone of biochemical analysis. DNA and RNA analysis relies on characteristic absorption peaks to determine concentration and purity. Enzyme assays monitor reaction progress through changes in absorption, providing insight into biological processes. These techniques are fundamental to modern biological research and medical diagnostics.</p>
+</section>
+</section>
+</div>
+</div>
 </section>
 <section id="dispersion" class="level2">
 <h2 class="anchored" data-anchor-id="dispersion">Dispersion</h2>
@@ -822,51 +925,51 @@ v=\frac{\omega}{k}=\frac{c}{n_r}
 v_g=\frac{d\omega}{dk}
 \tag{group velocity}
 \]</span></p>
-<div id="92467f8c" class="cell" data-execution_count="3">
+<div id="5cdaf273" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up the spatial grid</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">1000</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> <span class="dv">0</span>  <span class="co"># Time snapshot</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Wave packet parameters</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>k0 <span class="op">=</span> <span class="fl">2.0</span>  <span class="co"># Central wavenumber</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>sigma <span class="op">=</span> <span class="fl">1.0</span>  <span class="co"># Width of gaussian envelope</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>omega <span class="op">=</span> <span class="fl">2.0</span>  <span class="co"># Angular frequency</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Create gaussian envelope</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>envelope <span class="op">=</span> np.exp(<span class="op">-</span>x<span class="op">**</span><span class="dv">2</span><span class="op">/</span>(<span class="dv">4</span><span class="op">*</span>sigma<span class="op">**</span><span class="dv">2</span>))</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Create carrier wave</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>carrier <span class="op">=</span> np.cos(k0<span class="op">*</span>x <span class="op">-</span> omega<span class="op">*</span>t)</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine to create wave packet</span></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>wave_packet <span class="op">=</span> envelope <span class="op">*</span> carrier</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting</span></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>get_size(<span class="dv">10</span>, <span class="dv">8</span>))</span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot envelope</span></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>plt.plot(x, envelope, <span class="st">'r--'</span>, label<span class="op">=</span><span class="st">'Envelope'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>plt.plot(x, <span class="op">-</span>envelope, <span class="st">'r--'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot carrier wave</span></span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>plt.plot(x, carrier, <span class="st">'g:'</span>, label<span class="op">=</span><span class="st">'Carrier wave'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot wave packet</span></span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>plt.plot(x, wave_packet, <span class="st">'b-'</span>, label<span class="op">=</span><span class="st">'Wave packet'</span>)</span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'position x'</span>)</span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'amplitude'</span>)</span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="op">-</span><span class="fl">1.2</span>, <span class="fl">1.2</span>)</span>
-<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up the spatial grid</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">1000</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> <span class="dv">0</span>  <span class="co"># Time snapshot</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Wave packet parameters</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>k0 <span class="op">=</span> <span class="fl">2.0</span>  <span class="co"># Central wavenumber</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>sigma <span class="op">=</span> <span class="fl">1.0</span>  <span class="co"># Width of gaussian envelope</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>omega <span class="op">=</span> <span class="fl">2.0</span>  <span class="co"># Angular frequency</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Create gaussian envelope</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>envelope <span class="op">=</span> np.exp(<span class="op">-</span>x<span class="op">**</span><span class="dv">2</span><span class="op">/</span>(<span class="dv">4</span><span class="op">*</span>sigma<span class="op">**</span><span class="dv">2</span>))</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Create carrier wave</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>carrier <span class="op">=</span> np.cos(k0<span class="op">*</span>x <span class="op">-</span> omega<span class="op">*</span>t)</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine to create wave packet</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>wave_packet <span class="op">=</span> envelope <span class="op">*</span> carrier</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>get_size(<span class="dv">10</span>, <span class="dv">8</span>))</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot envelope</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>plt.plot(x, envelope, <span class="st">'r--'</span>, label<span class="op">=</span><span class="st">'Envelope'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>plt.plot(x, <span class="op">-</span>envelope, <span class="st">'r--'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot carrier wave</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>plt.plot(x, carrier, <span class="st">'g:'</span>, label<span class="op">=</span><span class="st">'Carrier wave'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot wave packet</span></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>plt.plot(x, wave_packet, <span class="st">'b-'</span>, label<span class="op">=</span><span class="st">'Wave packet'</span>)</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'position x'</span>)</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'amplitude'</span>)</span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="op">-</span><span class="fl">1.2</span>, <span class="fl">1.2</span>)</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="Dispersion and Absorption_files/figure-html/cell-4-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="561" height="440"></p>
+<p><img src="Dispersion and Absorption_files/figure-html/cell-6-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="561" height="440"></p>
 </figure>
 </div>
 </div>
@@ -881,56 +984,56 @@ v_g=\frac{c}{n_r+\omega \frac{dn_r}{d\omega}}
 \tag{group velocity dispersion}
 \]</span></p>
 <p>The group velocity is distinct from the phase velocity and represents how fast the envelope of a wave packet propagates through space. In a dispersive medium, where the refractive index depends on frequency, the group velocity can differ significantly from the phase velocity. This is particularly important in optical communications where information is carried by wave packets rather than single-frequency waves.</p>
-<div id="b1a510c5" class="cell" data-execution_count="4">
+<div id="0cd84e93" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Constants (working in scaled units)</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="fl">1.0</span>          <span class="co"># Speed of light (scaled)</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> <span class="fl">0.1</span>          <span class="co"># Amplitude parameter</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>omega_0 <span class="op">=</span> <span class="fl">1.0</span>    <span class="co"># Resonant frequency (scaled to 1)</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>sigma <span class="op">=</span> <span class="fl">0.2</span>    <span class="co"># Damping parameter (~10% of omega_0)</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Frequency range</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>omega <span class="op">=</span> np.linspace(<span class="fl">0.5</span><span class="op">*</span>omega_0, <span class="fl">1.5</span><span class="op">*</span>omega_0, <span class="dv">1000</span>)</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate refractive index</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> n_r(omega):</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">1</span> <span class="op">+</span> A <span class="op">*</span> (omega_0<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> omega<span class="op">**</span><span class="dv">2</span>) <span class="op">/</span> ((omega_0<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> omega<span class="op">**</span><span class="dv">2</span>)<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> omega<span class="op">**</span><span class="dv">2</span> <span class="op">*</span> sigma<span class="op">**</span><span class="dv">2</span>)</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate dn_r/dω</span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dn_r_domega(omega):</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    numerator <span class="op">=</span> <span class="op">-</span><span class="dv">2</span><span class="op">*</span>A<span class="op">*</span>omega<span class="op">*</span>((omega_0<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> omega<span class="op">**</span><span class="dv">2</span>)<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> omega<span class="op">**</span><span class="dv">2</span><span class="op">*</span>sigma<span class="op">**</span><span class="dv">2</span>) <span class="op">\</span></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>                <span class="op">+</span> A<span class="op">*</span>(omega_0<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> omega<span class="op">**</span><span class="dv">2</span>)<span class="op">*</span>(<span class="op">-</span><span class="dv">4</span><span class="op">*</span>omega<span class="op">*</span>(omega_0<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> omega<span class="op">**</span><span class="dv">2</span>) <span class="op">+</span> <span class="dv">2</span><span class="op">*</span>omega<span class="op">*</span>sigma<span class="op">**</span><span class="dv">2</span>)</span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    denominator <span class="op">=</span> ((omega_0<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> omega<span class="op">**</span><span class="dv">2</span>)<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> omega<span class="op">**</span><span class="dv">2</span><span class="op">*</span>sigma<span class="op">**</span><span class="dv">2</span>)<span class="op">**</span><span class="dv">2</span></span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> numerator<span class="op">/</span>denominator</span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>v_g <span class="op">=</span> c <span class="op">/</span> (n_r(omega) <span class="op">+</span> omega <span class="op">*</span> dn_r_domega(omega))</span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>fig, (ax1, ax2) <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>get_size(<span class="dv">12</span>, <span class="dv">7</span>))</span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>ax1.plot(omega<span class="op">/</span>omega_0, n_r(omega), <span class="st">'b-'</span>, label<span class="op">=</span><span class="st">'Refractive index'</span>)</span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>ax1.set_xlabel(<span class="st">'ω/ω₀'</span>)</span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>ax1.set_ylabel(<span class="vs">r'$n_r$'</span>)</span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>ax1.legend()</span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>ax1.axhline(y<span class="op">=</span><span class="dv">1</span>, color<span class="op">=</span><span class="st">'k'</span>, linestyle<span class="op">=</span><span class="st">':'</span>)</span>
-<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>ax1.axvline(x<span class="op">=</span><span class="dv">1</span>, color<span class="op">=</span><span class="st">'k'</span>, linestyle<span class="op">=</span><span class="st">':'</span>)</span>
-<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>ax2.plot(omega<span class="op">/</span>omega_0, v_g<span class="op">/</span>c, <span class="st">'r-'</span>, label<span class="op">=</span><span class="st">'Group velocity'</span>)</span>
-<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>ax2.set_xlabel(<span class="st">'ω/ω₀'</span>)</span>
-<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>ax2.set_ylabel(<span class="vs">r'$v_g/c$'</span>)</span>
-<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>ax2.legend()</span>
-<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>ax2.axhline(y<span class="op">=</span><span class="dv">1</span>, color<span class="op">=</span><span class="st">'k'</span>, linestyle<span class="op">=</span><span class="st">':'</span>)</span>
-<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>ax2.axvline(x<span class="op">=</span><span class="dv">1</span>, color<span class="op">=</span><span class="st">'k'</span>, linestyle<span class="op">=</span><span class="st">':'</span>)</span>
-<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>ax2.set_ylim(<span class="op">-</span><span class="dv">10</span>,<span class="dv">10</span>)</span>
-<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a><span class="co"># Adjust layout</span></span>
-<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Constants (working in scaled units)</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="fl">1.0</span>          <span class="co"># Speed of light (scaled)</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> <span class="fl">0.1</span>          <span class="co"># Amplitude parameter</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>omega_0 <span class="op">=</span> <span class="fl">1.0</span>    <span class="co"># Resonant frequency (scaled to 1)</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>sigma <span class="op">=</span> <span class="fl">0.2</span>    <span class="co"># Damping parameter (~10% of omega_0)</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Frequency range</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>omega <span class="op">=</span> np.linspace(<span class="fl">0.5</span><span class="op">*</span>omega_0, <span class="fl">1.5</span><span class="op">*</span>omega_0, <span class="dv">1000</span>)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate refractive index</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> n_r(omega):</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">1</span> <span class="op">+</span> A <span class="op">*</span> (omega_0<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> omega<span class="op">**</span><span class="dv">2</span>) <span class="op">/</span> ((omega_0<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> omega<span class="op">**</span><span class="dv">2</span>)<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> omega<span class="op">**</span><span class="dv">2</span> <span class="op">*</span> sigma<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate dn_r/dω</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dn_r_domega(omega):</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    numerator <span class="op">=</span> <span class="op">-</span><span class="dv">2</span><span class="op">*</span>A<span class="op">*</span>omega<span class="op">*</span>((omega_0<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> omega<span class="op">**</span><span class="dv">2</span>)<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> omega<span class="op">**</span><span class="dv">2</span><span class="op">*</span>sigma<span class="op">**</span><span class="dv">2</span>) <span class="op">\</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>                <span class="op">+</span> A<span class="op">*</span>(omega_0<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> omega<span class="op">**</span><span class="dv">2</span>)<span class="op">*</span>(<span class="op">-</span><span class="dv">4</span><span class="op">*</span>omega<span class="op">*</span>(omega_0<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> omega<span class="op">**</span><span class="dv">2</span>) <span class="op">+</span> <span class="dv">2</span><span class="op">*</span>omega<span class="op">*</span>sigma<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>    denominator <span class="op">=</span> ((omega_0<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> omega<span class="op">**</span><span class="dv">2</span>)<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> omega<span class="op">**</span><span class="dv">2</span><span class="op">*</span>sigma<span class="op">**</span><span class="dv">2</span>)<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> numerator<span class="op">/</span>denominator</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>v_g <span class="op">=</span> c <span class="op">/</span> (n_r(omega) <span class="op">+</span> omega <span class="op">*</span> dn_r_domega(omega))</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>fig, (ax1, ax2) <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>get_size(<span class="dv">12</span>, <span class="dv">7</span>))</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>ax1.plot(omega<span class="op">/</span>omega_0, n_r(omega), <span class="st">'b-'</span>, label<span class="op">=</span><span class="st">'Refractive index'</span>)</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>ax1.set_xlabel(<span class="st">'ω/ω₀'</span>)</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>ax1.set_ylabel(<span class="vs">r'$n_r$'</span>)</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>ax1.legend()</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>ax1.axhline(y<span class="op">=</span><span class="dv">1</span>, color<span class="op">=</span><span class="st">'k'</span>, linestyle<span class="op">=</span><span class="st">':'</span>)</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>ax1.axvline(x<span class="op">=</span><span class="dv">1</span>, color<span class="op">=</span><span class="st">'k'</span>, linestyle<span class="op">=</span><span class="st">':'</span>)</span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>ax2.plot(omega<span class="op">/</span>omega_0, v_g<span class="op">/</span>c, <span class="st">'r-'</span>, label<span class="op">=</span><span class="st">'Group velocity'</span>)</span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>ax2.set_xlabel(<span class="st">'ω/ω₀'</span>)</span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>ax2.set_ylabel(<span class="vs">r'$v_g/c$'</span>)</span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>ax2.legend()</span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>ax2.axhline(y<span class="op">=</span><span class="dv">1</span>, color<span class="op">=</span><span class="st">'k'</span>, linestyle<span class="op">=</span><span class="st">':'</span>)</span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>ax2.axvline(x<span class="op">=</span><span class="dv">1</span>, color<span class="op">=</span><span class="st">'k'</span>, linestyle<span class="op">=</span><span class="st">':'</span>)</span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>ax2.set_ylim(<span class="op">-</span><span class="dv">10</span>,<span class="dv">10</span>)</span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a><span class="co"># Adjust layout</span></span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="Dispersion and Absorption_files/figure-html/cell-5-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="695" height="397"></p>
+<p><img src="Dispersion and Absorption_files/figure-html/cell-7-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="695" height="397"></p>
 </figure>
 </div>
 </div>
@@ -1035,7 +1138,7 @@ Important
 <p>The study of superluminal group velocity has practical applications in: - Understanding fundamental limits of signal propagation - Designing fast-light and slow-light devices - Developing optical delay lines and buffers - Quantum information processing</p>
 <p>This phenomenon illustrates the subtle interplay between classical electromagnetic theory, special relativity, and the practical limitations of optical pulse propagation.</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1044,7 +1147,7 @@ Kramers-Kronig Relations
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The Kramers-Kronig relations express a fundamental connection between the real and imaginary parts of the complex refractive index (or susceptibility). These relations arise from causality - the principle that effects cannot precede their causes - and the analytical properties of response functions in the complex frequency plane.</p>
 <section id="physical-origin" class="level4">
@@ -1099,8 +1202,8 @@ Important
 </div>
 </div>
 </section>
-<section id="applications" class="level4">
-<h4 class="anchored" data-anchor-id="applications">Applications</h4>
+<section id="applications-1" class="level4">
+<h4 class="anchored" data-anchor-id="applications-1">Applications</h4>
 <p>The practical significance of the Kramers-Kronig relations extends throughout optical physics and engineering. Scientists and engineers use these relations to determine complete optical responses from partial measurements, as measuring either the real or imaginary part allows reconstruction of the other. This capability proves invaluable in materials characterization and optical device design. The relations also serve as a theoretical framework for validating experimental optical data and understanding the fundamental limits of optical materials.</p>
 <p>In optical device design, these relations guide the development of components with specific dispersion properties, though they also highlight the inherent trade-offs between dispersion and absorption that must be considered. The understanding provided by the Kramers-Kronig relations has become essential in fields ranging from spectroscopy to telecommunications, where precise control of optical properties is crucial.</p>
 <p>The Kramers-Kronig relations stand as one of the most elegant examples of how fundamental physical principles - in this case, causality - manifest in measurable optical properties, providing both practical tools for optical engineering and deep insights into the nature of light-matter interactions.</p>
@@ -1536,8 +1639,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../electromagnetic-waves/EM Waves in Matter.html" class="pagination-link" aria-label="Wave in Matter">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Wave in Matter</span>
+      <a href="../electromagnetic-waves/EM Waves in Matter.html" class="pagination-link" aria-label="Waves in Matter">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Waves in Matter</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
