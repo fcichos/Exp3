@@ -682,7 +682,7 @@ n=1+\frac{Nq^2}{2\epsilon_0 m}\frac{(\omega_0^2-\omega^2)-i\sigma\omega}{(\omega
 <p>and</p>
 <p><span class="math display">\[\kappa = A\frac{\sigma\omega}{(\omega_0^2-\omega^2)^2+\omega^2\sigma^2}\]</span></p>
 <p>with <span class="math inline">\(A=\frac{Nq^2}{2\epsilon_0 m}\)</span>.</p>
-<div id="0343a75b" class="cell" data-execution_count="2">
+<div id="cce67f1b" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> <span class="dv">1</span>  <span class="co"># Number density</span></span>
@@ -822,7 +822,7 @@ v=\frac{\omega}{k}=\frac{c}{n_r}
 v_g=\frac{d\omega}{dk}
 \tag{group velocity}
 \]</span></p>
-<div id="5e72f1f5" class="cell" data-execution_count="3">
+<div id="0bf358a2" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up the spatial grid</span></span>
@@ -881,7 +881,7 @@ v_g=\frac{c}{n_r+\omega \frac{dn_r}{d\omega}}
 \tag{group velocity dispersion}
 \]</span></p>
 <p>The group velocity is distinct from the phase velocity and represents how fast the envelope of a wave packet propagates through space. In a dispersive medium, where the refractive index depends on frequency, the group velocity can differ significantly from the phase velocity. This is particularly important in optical communications where information is carried by wave packets rather than single-frequency waves.</p>
-<div id="eebccd15" class="cell" data-execution_count="4">
+<div id="2ed1c94f" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -909,7 +909,7 @@ v_g=\frac{c}{n_r+\omega \frac{dn_r}{d\omega}}
 <span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>v_g <span class="op">=</span> c <span class="op">/</span> (n_r(omega) <span class="op">+</span> omega <span class="op">*</span> dn_r_domega(omega))</span>
 <span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>fig, (ax1, ax2) <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>get_size(<span class="dv">18</span>, <span class="dv">10</span>))</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>fig, (ax1, ax2) <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>get_size(<span class="dv">12</span>, <span class="dv">7</span>))</span>
 <span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>ax1.plot(omega<span class="op">/</span>omega_0, n_r(omega), <span class="st">'b-'</span>, label<span class="op">=</span><span class="st">'Refractive index'</span>)</span>
 <span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>ax1.set_xlabel(<span class="st">'ω/ω₀'</span>)</span>
@@ -933,7 +933,7 @@ v_g=\frac{c}{n_r+\omega \frac{dn_r}{d\omega}}
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="Dispersion and Absorption_files/figure-html/cell-5-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="1049" height="575"></p>
+<p><img src="Dispersion and Absorption_files/figure-html/cell-5-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="695" height="397"></p>
 </figure>
 </div>
 </div>
