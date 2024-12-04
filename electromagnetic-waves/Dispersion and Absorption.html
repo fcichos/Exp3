@@ -594,8 +594,15 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#absorption" id="toc-absorption" class="nav-link active" data-scroll-target="#absorption">Absorption</a></li>
-  <li><a href="#dispersion" id="toc-dispersion" class="nav-link" data-scroll-target="#dispersion">Dispersion</a></li>
+  <li><a href="#microscopic-theory-of-light-matter-interaction" id="toc-microscopic-theory-of-light-matter-interaction" class="nav-link active" data-scroll-target="#microscopic-theory-of-light-matter-interaction">Microscopic Theory of Light-Matter Interaction</a></li>
+  <li><a href="#absorption" id="toc-absorption" class="nav-link" data-scroll-target="#absorption">Absorption</a></li>
+  <li><a href="#dispersion" id="toc-dispersion" class="nav-link" data-scroll-target="#dispersion">Dispersion</a>
+  <ul class="collapse">
+  <li><a href="#phase-velocity" id="toc-phase-velocity" class="nav-link" data-scroll-target="#phase-velocity">Phase Velocity</a></li>
+  <li><a href="#group-velocity" id="toc-group-velocity" class="nav-link" data-scroll-target="#group-velocity">Group Velocity</a></li>
+  <li><a href="#types-of-dispersion" id="toc-types-of-dispersion" class="nav-link" data-scroll-target="#types-of-dispersion">Types of Dispersion</a></li>
+  <li><a href="#superluminal-group-velocity" id="toc-superluminal-group-velocity" class="nav-link" data-scroll-target="#superluminal-group-velocity">Superluminal Group Velocity</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -621,32 +628,37 @@ window.Quarto = {
 </header>
 
 
-<p>To understand light-matter interaction at the atomic level, let’s examine how an atom responds to an electromagnetic wave. Our model atom is approximately 0.1 nm in size, much smaller than visible light wavelengths (~500 nm). Consequently, the electric field appears uniform across the atom, varying only temporally as <span class="math inline">\(E(t)=E_0 e^{-i\omega t}\)</span>.</p>
-<div id="fig-polarization" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-polarization-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/polarization.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-polarization-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1— Polarization of an electric cloud of an atom.
-</figcaption>
-</figure>
-</div>
-<p>For an electric field aligned with the x-direction, the equation of motion for the atomic charges follows a damped driven harmonic oscillator:</p>
-<p><span class="math display">\[
-\ddot{x}+\sigma\dot{x}+\omega_0x=\frac{q}{m}E(t)
+<p>The interaction between light and matter is fundamental to many optical phenomena we observe in nature, from the blue color of the sky to the operation of fiber optic communications. This document explores how materials respond to electromagnetic waves at the microscopic level, leading to two key phenomena: dispersion and absorption. Understanding these effects is crucial for:</p>
+<ul>
+<li>Designing optical devices and communications systems</li>
+<li>Analyzing spectroscopic measurements</li>
+<li>Explaining everyday optical phenomena</li>
+<li>Developing new optical materials</li>
+</ul>
+<section id="microscopic-theory-of-light-matter-interaction" class="level2">
+<h2 class="anchored" data-anchor-id="microscopic-theory-of-light-matter-interaction">Microscopic Theory of Light-Matter Interaction</h2>
+<p>When light interacts with matter, its electric field <span class="math inline">\(\vec{E}(\vec{r},t)\)</span> influences the charged particles within atoms. For visible light (<span class="math inline">\(\lambda \approx 500\, \text{nm}\)</span>) interacting with atoms (size <span class="math inline">\(\approx 0.1\, \text{nm}\)</span>), we can make two important approximations:</p>
+<ol type="1">
+<li><p><strong>Dipole Approximation</strong>: Since <span class="math inline">\(\lambda \gg a\)</span> (atomic size), the field appears uniform across each atom: <span class="math display">\[\vec{E}(\vec{r},t) \approx \vec{E}(t)\]</span></p></li>
+<li><p><strong>Local Field Approximation</strong>: The field acting on each atom is approximately the macroscopic field: <span class="math display">\[\vec{E}_\text{local} \approx \vec{E}\]</span></p></li>
+</ol>
+<p>For a linearly polarized wave along the x-direction: <span class="math display">\[\vec{E}(t)=E_0\hat{x} e^{-i\omega t}\]</span></p>
+<p>For isotropic media, the dipole moment <span class="math inline">\(\vec{p}\)</span> of an atom is proportional to the local electric field:</p>
+<p><span class="math display">\[\vec{p}=\alpha\vec{E}\]</span></p>
+<p>The equation of motion for the electron displacement vector follows: <span class="math display">\[
+\ddot{\vec{r}}+\sigma\dot{\vec{r}}+\omega_0\vec{r}=\frac{q}{m}\vec{E}(t)
 \]</span></p>
-<p>Given our knowledge of mechanical oscillators and the driving electric field, we can propose a solution:</p>
-<p><span class="math display">\[
+<p>For the x-component, we can write: <span class="math display">\[
+\ddot{x}+\sigma\dot{x}+\omega_0x=\frac{q}{m}E_x(t)
+\]</span></p>
+<p>The solution has the form: <span class="math display">\[
 x(t)=x_0 e^{i\omega t}
 \]</span></p>
-<p>Solving for the amplitude yields:</p>
-<p><span class="math display">\[
-x(t)=\frac{1}{\omega_0^2+i\omega\sigma-\omega^2}\frac{q}{m}E(t)
+<p>This leads to: <span class="math display">\[
+\vec{r}(t)=\frac{1}{\omega_0^2+i\omega\sigma-\omega^2}\frac{q}{m}\vec{E}(t)
 \]</span></p>
-<p>This displacement creates an oscillating dipole moment <span class="math inline">\(p=q x(t)=\alpha E(t)\)</span>, where <span class="math inline">\(\alpha\)</span> represents the atom’s electronic polarizability. The polarization density becomes:</p>
-<p><span class="math display">\[
-P=Nq\frac{1}{\omega_0^2+i\omega\sigma-\omega^2}\frac{q}{m}E(t)=\epsilon_0\chi E(t)
+<p>The oscillating dipole moment becomes <span class="math inline">\(\vec{p}=q\vec{r}(t)=\alpha\vec{E}(t)\)</span>, and the polarization density: <span class="math display">\[
+\vec{P}=Nq\frac{1}{\omega_0^2+i\omega\sigma-\omega^2}\frac{q}{m}\vec{E}(t)=\epsilon_0\chi\vec{E}(t)
 \]</span></p>
 <p>From this, we obtain the electronic susceptibility:</p>
 <p><span class="math display">\[
@@ -663,10 +675,14 @@ n=n_r-i\kappa=\sqrt{\epsilon_r}=\sqrt{1+\chi}
 \]</span></p>
 <p>where the negative sign convention for the imaginary part is standard but not universal. Explicitly:</p>
 <p><span class="math display">\[
-n=1+\frac{Nq^2}{2\epsilon_0 m}\frac{(\omega_0^2-\omega^2)-i\sigma\omega}{(\omega_0^2-\omega^2)^2+\omega^2\sigma^2}=n-i\kappa
+n=1+\frac{Nq^2}{2\epsilon_0 m}\frac{(\omega_0^2-\omega^2)-i\sigma\omega}{(\omega_0^2-\omega^2)^2+\omega^2\sigma^2}=n_r-i\kappa
 \]</span></p>
-<p>These real and imaginary components, <span class="math inline">\(n_r\)</span> and <span class="math inline">\(\kappa\)</span>, significantly affect light propagation.</p>
-<div id="60653445" class="cell" data-execution_count="2">
+<p>These real and imaginary components, <span class="math inline">\(n_r\)</span> and <span class="math inline">\(\kappa\)</span>, significantly affect light propagation. The two components can be written as</p>
+<p><span class="math display">\[n_r = 1 + A\frac{(\omega_0^2-\omega^2)}{(\omega_0^2-\omega^2)^2+\omega^2\sigma^2}\]</span></p>
+<p>and</p>
+<p><span class="math display">\[\kappa = A\frac{\sigma\omega}{(\omega_0^2-\omega^2)^2+\omega^2\sigma^2}\]</span></p>
+<p>with <span class="math inline">\(A=\frac{Nq^2}{2\epsilon_0 m}\)</span>.</p>
+<div id="0343a75b" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> <span class="dv">1</span>  <span class="co"># Number density</span></span>
@@ -692,18 +708,16 @@ n=1+\frac{Nq^2}{2\epsilon_0 m}\frac{(\omega_0^2-\omega^2)-i\sigma\omega}{(\omega
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>ax1.axvline(x<span class="op">=</span><span class="dv">1</span>, color<span class="op">=</span><span class="st">'k'</span>, linestyle<span class="op">=</span><span class="st">':'</span>)</span>
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>ax1.set_xlabel(<span class="st">'ω/ω₀'</span>)</span>
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>ax1.set_ylabel(<span class="st">'Re(n)'</span>)</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>ax1.grid(<span class="va">True</span>)</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Imaginary part</span></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>ax2.plot(omega<span class="op">/</span>omega_0, n_imag, <span class="st">'r-'</span>)</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>ax2.axhline(y<span class="op">=</span><span class="dv">0</span>, color<span class="op">=</span><span class="st">'k'</span>, linestyle<span class="op">=</span><span class="st">':'</span>)</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>ax2.axvline(x<span class="op">=</span><span class="dv">1</span>, color<span class="op">=</span><span class="st">'k'</span>, linestyle<span class="op">=</span><span class="st">':'</span>)</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>ax2.set_xlabel(<span class="st">'ω/ω₀'</span>)</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>ax2.set_ylabel(<span class="st">'Im(n)'</span>)</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>ax2.grid(<span class="va">True</span>)</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Imaginary part</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>ax2.plot(omega<span class="op">/</span>omega_0, n_imag, <span class="st">'r-'</span>)</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>ax2.axhline(y<span class="op">=</span><span class="dv">0</span>, color<span class="op">=</span><span class="st">'k'</span>, linestyle<span class="op">=</span><span class="st">':'</span>)</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>ax2.axvline(x<span class="op">=</span><span class="dv">1</span>, color<span class="op">=</span><span class="st">'k'</span>, linestyle<span class="op">=</span><span class="st">':'</span>)</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>ax2.set_xlabel(<span class="st">'ω/ω₀'</span>)</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>ax2.set_ylabel(<span class="st">'Im(n)'</span>)</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -715,23 +729,43 @@ n=1+\frac{Nq^2}{2\epsilon_0 m}\frac{(\omega_0^2-\omega^2)-i\sigma\omega}{(\omega
 </div>
 </div>
 <p>The plots show how both components vary with frequency due to the atomic resonance. Near resonance, the real part exhibits strong dispersion, transitioning from values above 1 to below 1. The imaginary part shows a Lorentzian peak with width determined by the damping coefficient <span class="math inline">\(\sigma\)</span>.</p>
+</section>
 <section id="absorption" class="level2">
 <h2 class="anchored" data-anchor-id="absorption">Absorption</h2>
-<p>The imaginary component <span class="math inline">\(\kappa\)</span> determines wave attenuation. Starting with:</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The imaginary component of the refractive index leads to the Lambert-Beer Law, a fundamental principle in optics and spectroscopy.</p>
+</div>
+</div>
+<p>The imaginary component <span class="math inline">\(\kappa\)</span> determines wave attenuation. For a plane wave propagating in the z-direction, the electric field is:</p>
 <p><span class="math display">\[
-E(z)=Ee^{-ik z}=E_0e^{-in k_0 z}
+\vec{E}(z,t) = E_0\hat{x}e^{i(kz-\omega t)}
+\]</span></p>
+<p>The spatial part follows:</p>
+<p><span class="math display">\[
+\vec{E}(z)=E_0\hat{x}e^{-ik z}=E_0\hat{x}e^{-in k_0 z}
 \]</span></p>
 <p>Including the complex refractive index:</p>
 <p><span class="math display">\[
-E(z)=E_0e^{-i(n-i\kappa) k_0 z} =E_0 e^{-i n_r k_0 z}e^{-\kappa k_0 z}
+\vec{E}(z)=E_0\hat{x}e^{-i(n-i\kappa) k_0 z} =E_0\hat{x} e^{-i n_r k_0 z}e^{-\kappa k_0 z}
 \]</span></p>
 <p>The exponential decay factor modifies the wave amplitude with distance.</p>
-<p>The intensity follows:</p>
-<p><span class="math display">\[\begin{eqnarray}
-I &amp;=&amp; \epsilon_0 c E^2=\epsilon_0 c \left | E_0 e^{-in_r k_0 z }e^{-\kappa k_0 z} \right |^2\\
-&amp;=&amp; e^{-2\kappa k_0 z}=e^{-\alpha z}
-\end{eqnarray}\]</span></p>
-<p>where <span class="math inline">\(\alpha=2k_0 z\)</span> represents the absorption coefficient. This exponential decay of intensity with distance is known as the <strong>Lambert-Beer Law</strong>:</p>
+<p>The intensity, which is proportional to the time-averaged Poynting vector magnitude, follows:</p>
+<p><span class="math display">\[\begin{align}
+I &amp;= \frac{1}{2}\epsilon_0 c|\vec{E}|^2 \\
+  &amp;= \frac{1}{2}\epsilon_0 c |E_0|^2 \left | e^{-in_r k_0 z }e^{-\kappa k_0 z} \right |^2\\
+  &amp;= I_0 e^{-2\kappa k_0 z} \\
+  &amp;= I_0 e^{-\alpha z}
+\end{align}\]</span></p>
+<p>where <span class="math inline">\(\alpha=2k_0\kappa = \frac{4\pi\kappa}{\lambda}\)</span> represents the absorption coefficient. This exponential decay of intensity with distance is known as the <strong>Lambert-Beer Law</strong>:</p>
 <p><span class="math display">\[
 \frac{I}{I_0}= e^{-\alpha z}
 \tag{Lambert Beer Law}
@@ -740,16 +774,16 @@ I &amp;=&amp; \epsilon_0 c E^2=\epsilon_0 c \left | E_0 e^{-in_r k_0 z }e^{-\kap
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-absorption1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 51.2%;justify-content: center;">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <p><img src="img/absorption_exp.png" class="img-fluid figure-img"></p>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 48.8%;justify-content: center;">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <p><img src="img/lambert_exp.png" class="img-fluid figure-img"></p>
 </div>
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-absorption1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2— Measurement of the absorption coefficient.
+Figure&nbsp;1— Measurement of the absorption coefficient.
 </figcaption>
 </figure>
 </div>
@@ -757,67 +791,329 @@ Figure&nbsp;2— Measurement of the absorption coefficient.
 </section>
 <section id="dispersion" class="level2">
 <h2 class="anchored" data-anchor-id="dispersion">Dispersion</h2>
-<p>The frequency dependence of the real refractive index affects wave propagation speeds, both for phase fronts (phase velocity) and wave packets (group velocity <span class="math inline">\(v_g\)</span>).</p>
-<p>The phase velocity is defined as:</p>
-<p><span class="math display">\[
-v=\frac{\omega}{k}
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Dispersion manifests through two key velocities:</p>
+<ul>
+<li>Phase velocity: speed of wave fronts</li>
+<li>Group velocity: speed of wave packets</li>
+</ul>
+</div>
+</div>
+<p>The frequency dependence of the real refractive index affects wave propagation speeds in two important ways: through the phase velocity and group velocity.</p>
+<section id="phase-velocity" class="level3">
+<h3 class="anchored" data-anchor-id="phase-velocity">Phase Velocity</h3>
+<p>The phase velocity represents the speed of wave phase fronts: <span class="math display">\[
+v=\frac{\omega}{k}=\frac{c}{n_r}
 \tag{phase velocity}
 \]</span></p>
-<p>while the group velocity is:</p>
-<p><span class="math display">\[
+</section>
+<section id="group-velocity" class="level3">
+<h3 class="anchored" data-anchor-id="group-velocity">Group Velocity</h3>
+<p>The group velocity represents the speed of wave packets <span class="math display">\[
 v_g=\frac{d\omega}{dk}
 \tag{group velocity}
 \]</span></p>
-<p>The group velocity relates to the refractive index through:</p>
+<div id="5e72f1f5" class="cell" data-execution_count="3">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up the spatial grid</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">1000</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> <span class="dv">0</span>  <span class="co"># Time snapshot</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Wave packet parameters</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>k0 <span class="op">=</span> <span class="fl">2.0</span>  <span class="co"># Central wavenumber</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>sigma <span class="op">=</span> <span class="fl">1.0</span>  <span class="co"># Width of gaussian envelope</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>omega <span class="op">=</span> <span class="fl">2.0</span>  <span class="co"># Angular frequency</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Create gaussian envelope</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>envelope <span class="op">=</span> np.exp(<span class="op">-</span>x<span class="op">**</span><span class="dv">2</span><span class="op">/</span>(<span class="dv">4</span><span class="op">*</span>sigma<span class="op">**</span><span class="dv">2</span>))</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Create carrier wave</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>carrier <span class="op">=</span> np.cos(k0<span class="op">*</span>x <span class="op">-</span> omega<span class="op">*</span>t)</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine to create wave packet</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>wave_packet <span class="op">=</span> envelope <span class="op">*</span> carrier</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>get_size(<span class="dv">10</span>, <span class="dv">8</span>))</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot envelope</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>plt.plot(x, envelope, <span class="st">'r--'</span>, label<span class="op">=</span><span class="st">'Envelope'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>plt.plot(x, <span class="op">-</span>envelope, <span class="st">'r--'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot carrier wave</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>plt.plot(x, carrier, <span class="st">'g:'</span>, label<span class="op">=</span><span class="st">'Carrier wave'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot wave packet</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>plt.plot(x, wave_packet, <span class="st">'b-'</span>, label<span class="op">=</span><span class="st">'Wave packet'</span>)</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'position x'</span>)</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'amplitude'</span>)</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="op">-</span><span class="fl">1.2</span>, <span class="fl">1.2</span>)</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Dispersion and Absorption_files/figure-html/cell-4-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="561" height="440"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>To relate group velocity to the refractive index, we can derive:</p>
 <p><span class="math display">\[
 v_g=\frac{d}{dk}(v k)=v+k\frac{dv}{dk}
 \]</span></p>
-<p>Using <span class="math inline">\(k=k_0 n_r\)</span> and <span class="math inline">\(v=c/n_r\)</span>:</p>
-<p><span class="math display">\[\begin{eqnarray}
-v_g&amp;=&amp;v+k_0 n_r \frac{d}{dk}\left ( \frac{c}{n_r}\right)\\
-&amp;=&amp;v-k_0 n_r c\frac{1}{n_r^2}\frac{dn_r}{dk}
-\end{eqnarray}\]</span></p>
-<p>From the total differential:</p>
-<p><span class="math display">\[
-dk=\frac{n_r}{c}d\omega+\frac{\omega}{c}d n_r
-\]</span></p>
-<p>we obtain:</p>
-<p><span class="math display">\[
-\frac{dk}{dn_r}=\frac{n_r}{c}\frac{d\omega}{d n_r}+\frac{\omega}{c}
-\]</span></p>
-<p>Leading to the group velocity dispersion:</p>
+<p>Using <span class="math inline">\(k=k_0 n_r\)</span> and <span class="math inline">\(v=c/n_r\)</span>, and after some algebra, we obtain:</p>
 <p><span class="math display">\[
 v_g=\frac{c}{n_r+\omega \frac{dn_r}{d\omega}}
 \tag{group velocity dispersion}
 \]</span></p>
-<p>When</p>
-<p><span class="math display">\[
+<p>The group velocity is distinct from the phase velocity and represents how fast the envelope of a wave packet propagates through space. In a dispersive medium, where the refractive index depends on frequency, the group velocity can differ significantly from the phase velocity. This is particularly important in optical communications where information is carried by wave packets rather than single-frequency waves.</p>
+<div id="eebccd15" class="cell" data-execution_count="4">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Constants (working in scaled units)</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="fl">1.0</span>          <span class="co"># Speed of light (scaled)</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> <span class="fl">0.1</span>          <span class="co"># Amplitude parameter</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>omega_0 <span class="op">=</span> <span class="fl">1.0</span>    <span class="co"># Resonant frequency (scaled to 1)</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>sigma <span class="op">=</span> <span class="fl">0.2</span>    <span class="co"># Damping parameter (~10% of omega_0)</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Frequency range</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>omega <span class="op">=</span> np.linspace(<span class="fl">0.5</span><span class="op">*</span>omega_0, <span class="fl">1.5</span><span class="op">*</span>omega_0, <span class="dv">1000</span>)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate refractive index</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> n_r(omega):</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">1</span> <span class="op">+</span> A <span class="op">*</span> (omega_0<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> omega<span class="op">**</span><span class="dv">2</span>) <span class="op">/</span> ((omega_0<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> omega<span class="op">**</span><span class="dv">2</span>)<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> omega<span class="op">**</span><span class="dv">2</span> <span class="op">*</span> sigma<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate dn_r/dω</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dn_r_domega(omega):</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    numerator <span class="op">=</span> <span class="op">-</span><span class="dv">2</span><span class="op">*</span>A<span class="op">*</span>omega<span class="op">*</span>((omega_0<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> omega<span class="op">**</span><span class="dv">2</span>)<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> omega<span class="op">**</span><span class="dv">2</span><span class="op">*</span>sigma<span class="op">**</span><span class="dv">2</span>) <span class="op">\</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>                <span class="op">+</span> A<span class="op">*</span>(omega_0<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> omega<span class="op">**</span><span class="dv">2</span>)<span class="op">*</span>(<span class="op">-</span><span class="dv">4</span><span class="op">*</span>omega<span class="op">*</span>(omega_0<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> omega<span class="op">**</span><span class="dv">2</span>) <span class="op">+</span> <span class="dv">2</span><span class="op">*</span>omega<span class="op">*</span>sigma<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>    denominator <span class="op">=</span> ((omega_0<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> omega<span class="op">**</span><span class="dv">2</span>)<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> omega<span class="op">**</span><span class="dv">2</span><span class="op">*</span>sigma<span class="op">**</span><span class="dv">2</span>)<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> numerator<span class="op">/</span>denominator</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>v_g <span class="op">=</span> c <span class="op">/</span> (n_r(omega) <span class="op">+</span> omega <span class="op">*</span> dn_r_domega(omega))</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>fig, (ax1, ax2) <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>get_size(<span class="dv">18</span>, <span class="dv">10</span>))</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>ax1.plot(omega<span class="op">/</span>omega_0, n_r(omega), <span class="st">'b-'</span>, label<span class="op">=</span><span class="st">'Refractive index'</span>)</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>ax1.set_xlabel(<span class="st">'ω/ω₀'</span>)</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>ax1.set_ylabel(<span class="vs">r'$n_r$'</span>)</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>ax1.legend()</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>ax1.axhline(y<span class="op">=</span><span class="dv">1</span>, color<span class="op">=</span><span class="st">'k'</span>, linestyle<span class="op">=</span><span class="st">':'</span>)</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>ax1.axvline(x<span class="op">=</span><span class="dv">1</span>, color<span class="op">=</span><span class="st">'k'</span>, linestyle<span class="op">=</span><span class="st">':'</span>)</span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>ax2.plot(omega<span class="op">/</span>omega_0, v_g<span class="op">/</span>c, <span class="st">'r-'</span>, label<span class="op">=</span><span class="st">'Group velocity'</span>)</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>ax2.set_xlabel(<span class="st">'ω/ω₀'</span>)</span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>ax2.set_ylabel(<span class="vs">r'$v_g/c$'</span>)</span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>ax2.legend()</span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>ax2.axhline(y<span class="op">=</span><span class="dv">1</span>, color<span class="op">=</span><span class="st">'k'</span>, linestyle<span class="op">=</span><span class="st">':'</span>)</span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>ax2.axvline(x<span class="op">=</span><span class="dv">1</span>, color<span class="op">=</span><span class="st">'k'</span>, linestyle<span class="op">=</span><span class="st">':'</span>)</span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>ax2.set_ylim(<span class="op">-</span><span class="dv">10</span>,<span class="dv">10</span>)</span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a><span class="co"># Adjust layout</span></span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Dispersion and Absorption_files/figure-html/cell-5-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="1049" height="575"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>For optical pulses in fibers or other waveguides, group velocity dispersion leads to pulse spreading because different frequency components travel at different speeds. This effect becomes critical in long-distance optical communication systems where pulse broadening can lead to signal distortion and intersymbol interference.</p>
+<p>In vacuum or non-dispersive media where the refractive index is constant (<span class="math inline">\(\frac{dn_r}{d\omega}=0\)</span>), the group velocity equals the phase velocity. However, in most practical situations involving light propagation through materials, dispersion causes these velocities to differ, necessitating careful consideration in optical system design.</p>
+</section>
+<section id="types-of-dispersion" class="level3">
+<h3 class="anchored" data-anchor-id="types-of-dispersion">Types of Dispersion</h3>
+<p>The frequency dependence of the refractive index leads to two distinct regimes of dispersion:</p>
+<ol type="1">
+<li><strong>Normal Dispersion</strong>: <span class="math display">\[
 \frac{dn_r}{d\omega}&gt;0
-\tag{normal dispersion}
-\]</span></p>
-<p>we have <strong>normal dispersion</strong>, as seen in prisms and rainbows. When</p>
-<p><span class="math display">\[
+\]</span> In the normal dispersion regime, the refractive index increases with frequency, meaning that higher frequency (blue) light travels more slowly through the medium than lower frequency (red) light. This behavior is commonly observed in transparent materials at frequencies far from their resonances. The effects of normal dispersion are ubiquitous in optics: when white light passes through a prism, it separates into its spectral components creating a rainbow pattern; in optical systems, it causes chromatic aberration where different colors focus at different points; and in optical fibers, it leads to temporal spreading of pulses as different frequency components travel at different speeds through the medium.</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Normal dispersion dominates in transparent materials at frequencies well below their resonances. This is why prisms separate white light into its spectral components with blue light bending more than red light.</p>
+</div>
+</div>
+<ol start="2" type="1">
+<li><strong>Anomalous Dispersion</strong>: <span class="math display">\[
 \frac{dn_r}{d\omega}&lt;0
-\tag{anomalous dispersion}
-\]</span></p>
-<p>we have <strong>anomalous dispersion</strong>. Both arise from material polarizability and resonances.</p>
-<p>Group velocity can exceed c when:</p>
-<p><span class="math display">\[
+\]</span> Anomalous dispersion occurs in the vicinity of absorption resonances, where the conventional relationship between frequency and refractive index is reversed. In this regime, higher frequencies propagate faster than lower frequencies, leading to unique optical phenomena. The behavior is characterized by strong frequency-dependent absorption accompanied by rapid variations in the refractive index. This unusual dispersion can even result in negative group velocities under certain conditions. The practical applications of anomalous dispersion are particularly important in modern optics, where it is used for pulse compression in ultrafast laser systems, dispersion compensation in optical communications, and various applications in ultrafast optics.</li>
+</ol>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The transition between normal and anomalous dispersion typically occurs near absorption resonances, where the refractive index varies rapidly with frequency. This behavior is described by the Kramers-Kronig relations, which connect the real and imaginary parts of the refractive index.</p>
+</div>
+</div>
+<p>Real materials often exhibit both types of dispersion across different frequency ranges, resulting in complex optical behavior. Understanding and controlling these dispersion effects is crucial for the development of optical communication systems, the generation and manipulation of ultrashort pulses, the design of optical components, and the implementation of nonlinear optical processes. The interplay between normal and anomalous dispersion enables sophisticated control over light propagation, essential for modern optical technologies.</p>
+</section>
+<section id="superluminal-group-velocity" class="level3">
+<h3 class="anchored" data-anchor-id="superluminal-group-velocity">Superluminal Group Velocity</h3>
+<p>The concept of superluminal group velocity emerges in regions of anomalous dispersion, where the group velocity can mathematically exceed the speed of light c.&nbsp;This occurs when: <span class="math display">\[
 n_r+\omega \frac{dn_r}{d\omega}&lt;1
 \]</span></p>
-<p>occurring in our model when:</p>
-<p><span class="math display">\[
+<p>In our classical oscillator model, this condition is met near the resonance frequency when: <span class="math display">\[
 |\omega_0-\omega|&lt;\frac{\sigma}{2}
-\tag{$v_g&gt;c$}
 \]</span></p>
-<p>While this seems to violate special relativity, the constraint <span class="math inline">\(v≤c\)</span> applies only to energy, matter, or information transport, not group velocity.</p>
-<p>The energy transport velocity:</p>
+<p>This seemingly paradoxical result warrants careful interpretation. The group velocity, while traditionally associated with the speed of energy or information transport, becomes problematic near resonances. Several key points help clarify this phenomenon:</p>
+<ol type="1">
+<li><p><strong>Physical Interpretation</strong>: The superluminal effect is associated with pulse reshaping rather than actual faster-than-light signal propagation. The pulse peak appears to emerge from the medium before it would in vacuum due to preferential absorption and dispersion of different frequency components.</p></li>
+<li><p><strong>Pulse Distortion</strong>: Near resonances, pulses undergo severe distortion, making the group velocity less meaningful as a measure of signal propagation. The pulse envelope no longer maintains its shape, and different parts of the pulse travel at different velocities.</p></li>
+<li><p><strong>Causality and Energy Transport</strong>: While <span class="math inline">\(v_g\)</span> may exceed c, the energy transport velocity: <span class="math display">\[
+v_{E}=\frac{\vec{S}}{w_{em}}=\frac{I}{w_{em}}\le c
+\]</span> where <span class="math inline">\(\vec{S}\)</span> is the Poynting vector and <span class="math inline">\(w_{em}\)</span> is the electromagnetic energy density, always remains subluminal, preserving causality.</p></li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The apparent superluminal propagation has been observed experimentally in various systems, including:</p>
+<ul>
+<li>Gain media</li>
+<li>Photonic crystals</li>
+<li>Atomic gases near absorption lines</li>
+<li>Optical fibers with specially engineered dispersion</li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Despite superluminal group velocity, no information can be transmitted faster than c.&nbsp;This is ensured by:</p>
+<ol type="1">
+<li>The severe pulse distortion in regions of anomalous dispersion</li>
+<li>The Kramers-Kronig relations linking absorption and dispersion</li>
+<li>The principle of causality in electromagnetic theory</li>
+</ol>
+</div>
+</div>
+<p>The study of superluminal group velocity has practical applications in: - Understanding fundamental limits of signal propagation - Designing fast-light and slow-light devices - Developing optical delay lines and buffers - Quantum information processing</p>
+<p>This phenomenon illustrates the subtle interplay between classical electromagnetic theory, special relativity, and the practical limitations of optical pulse propagation.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Kramers-Kronig Relations
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The Kramers-Kronig relations express a fundamental connection between the real and imaginary parts of the complex refractive index (or susceptibility). These relations arise from causality - the principle that effects cannot precede their causes - and the analytical properties of response functions in the complex frequency plane.</p>
+<section id="physical-origin" class="level4">
+<h4 class="anchored" data-anchor-id="physical-origin">Physical Origin</h4>
+<p>Consider a general response function <span class="math inline">\(\chi(\omega)\)</span> describing how a system responds to electromagnetic perturbations. For this response to be causal, <span class="math inline">\(\chi(\omega)\)</span> must be analytic in the upper half of the complex frequency plane. This analyticity requirement, combined with the reality condition <span class="math inline">\(\chi(-\omega)=\chi^*(\omega)\)</span>, leads to the Kramers-Kronig relations.</p>
+</section>
+<section id="principal-relations" class="level4">
+<h4 class="anchored" data-anchor-id="principal-relations">Principal Relations</h4>
+<p>For the complex susceptibility <span class="math inline">\(\chi(\omega)=\chi'(\omega)+i\chi''(\omega)\)</span>, the Kramers-Kronig relations take the form:</p>
 <p><span class="math display">\[
-v_{E}=\frac{I}{w_{em}}\le c
+\chi'(\omega) = \frac{1}{\pi}\mathcal{P}\int_{-\infty}^{\infty}\frac{\chi''(\omega')}{\omega'-\omega}d\omega'
 \]</span></p>
-<p>always remains below or equal to c.</p>
+<p><span class="math display">\[
+\chi''(\omega) = -\frac{1}{\pi}\mathcal{P}\int_{-\infty}^{\infty}\frac{\chi'(\omega')}{\omega'-\omega}d\omega'
+\]</span></p>
+<p>where <span class="math inline">\(\mathcal{P}\)</span> denotes the Cauchy principal value of the integral.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Similar relations hold for the complex refractive index <span class="math inline">\(n(\omega)=n_r(\omega)+i\kappa(\omega)\)</span>:</p>
+<p><span class="math display">\[
+n_r(\omega)-1 = \frac{2}{\pi}\mathcal{P}\int_{0}^{\infty}\frac{\omega'\kappa(\omega')}{\omega'^2-\omega^2}d\omega'
+\]</span></p>
+<p><span class="math display">\[
+\kappa(\omega) = -\frac{2\omega}{\pi}\mathcal{P}\int_{0}^{\infty}\frac{n_r(\omega')-1}{\omega'^2-\omega^2}d\omega'
+\]</span></p>
+</div>
+</div>
+</section>
+<section id="implications" class="level4">
+<h4 class="anchored" data-anchor-id="implications">Implications</h4>
+<p>The Kramers-Kronig relations reveal profound connections in optical physics. Most significantly, they demonstrate that absorption and dispersion are intrinsically linked phenomena. It is impossible to have a perfectly transparent medium that exhibits dispersion, as the presence of dispersion necessarily implies some absorption at certain frequencies. This connection is mathematically expressed through sum rules, such as the integral relation <span class="math inline">\(\int_0^\infty \omega'\chi''(\omega')d\omega' = 0\)</span>, which places constraints on physically possible optical responses.</p>
+<p>The relations enforce causality in light-matter interactions, ensuring that optical responses cannot precede their stimuli. This causality principle manifests in the observed behavior of optical materials, particularly near resonances where anomalous dispersion invariably accompanies absorption peaks.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The Kramers-Kronig relations demonstrate that dispersion and absorption are not independent phenomena but are fundamentally linked through causality. This connection explains why anomalous dispersion always occurs near absorption resonances.</p>
+</div>
+</div>
+</section>
+<section id="applications" class="level4">
+<h4 class="anchored" data-anchor-id="applications">Applications</h4>
+<p>The practical significance of the Kramers-Kronig relations extends throughout optical physics and engineering. Scientists and engineers use these relations to determine complete optical responses from partial measurements, as measuring either the real or imaginary part allows reconstruction of the other. This capability proves invaluable in materials characterization and optical device design. The relations also serve as a theoretical framework for validating experimental optical data and understanding the fundamental limits of optical materials.</p>
+<p>In optical device design, these relations guide the development of components with specific dispersion properties, though they also highlight the inherent trade-offs between dispersion and absorption that must be considered. The understanding provided by the Kramers-Kronig relations has become essential in fields ranging from spectroscopy to telecommunications, where precise control of optical properties is crucial.</p>
+<p>The Kramers-Kronig relations stand as one of the most elegant examples of how fundamental physical principles - in this case, causality - manifest in measurable optical properties, providing both practical tools for optical engineering and deep insights into the nature of light-matter interactions.</p>
+</section>
+</div>
+</div>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

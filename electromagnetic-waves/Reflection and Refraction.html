@@ -589,28 +589,13 @@ window.Quarto = {
 </header>
 
 
-<style>
-figure {
-  border: 1px #cccccc solid;
-  padding: 4px; 
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-figcaption {
-  background-color: #eeeeee;
-  color: black;
-  padding: 2px;
-}
-</style>
-<p>Before we have a look at the behavior of electromagnetic waves at boundaries, we would like to setup the stage for those consideraations. For this purpose we need to define the geometry we are referring to and also have a look at the electric fields (and magnetic fields) that will be present. The sketch below shows the wavevectors of the incident <span class="math inline">\(\vec{k}_I\)</span>, reflected <span class="math inline">\(\vec{k}_R\)</span> and transmitted <span class="math inline">\(\vec{k}_T\)</span> waves in the two materials with the refractive indices <span class="math inline">\(n_1\)</span> and <span class="math inline">\(n_2\)</span>.</p>
+<p>Before we have a look at the behavior of electromagnetic waves at boundaries, we would like to setup the stage for those considerations. For this purpose we need to define the geometry we are referring to and also have a look at the electric fields (and magnetic fields) that will be present. The sketch below shows the wavevectors of the incident <span class="math inline">\(\vec{k}_I\)</span>, reflected <span class="math inline">\(\vec{k}_R\)</span> and transmitted <span class="math inline">\(\vec{k}_T\)</span> waves in the two materials with the refractive indices <span class="math inline">\(n_1\)</span> and <span class="math inline">\(n_2\)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<img src="img/setup_k.png" width="40%" class="figure-img">
-<figcaption>
-<strong>Fig.:</strong> Polarization of an electric cloud of an atom.
-</figcaption>
+<p><img src="img/setup_k.png" class="img-fluid figure-img" style="width:40.0%"></p>
+<figcaption>Reflection and refraction of an electromagnetic wave at a boundary.</figcaption>
 </figure>
+</div>
 <p>These wavevectors are connected to the following plane waves, we will consider. We will first assume that these three waves have different frequencies as well, even though we may guess that they have the same as they all stem from the incident wave.</p>
 <p><span class="math display">\[
 \vec{E}_{\rm inc}=\vec{E}_I e^{i(\omega_I t -\vec{k}_I\cdot \vec{r})}
@@ -626,26 +611,26 @@ figcaption {
 \]</span></p>
 <p>What we have to consider, however, is the direction of polarization of their electric or magnetic fields. This is important and shall not be confused in the following. We will differentiate between</p>
 <ul>
-<li><strong>p-polarized light:</strong> electric field is in the plane of incidence (given by the k-vector and the surface normal), also called transverse magnetic (TM)</li>
+<li><strong>p-polarized light:</strong> electric field is in the plane of incidence (given by the <span class="math inline">\(k\)</span>-vector and the surface normal), also called transverse magnetic (TM)</li>
 <li><strong>s-polarized light:</strong> electric field is perpendicular to the plane of incidence, also called transverse electric (TE)</li>
 </ul>
 <p>This is sketched in the image below.</p>
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<img src="img/pol_decomp.png" width="70%" class="figure-img">
-<figcaption>
-<strong>Fig.:</strong> Polarization of an electric cloud of an atom.
-</figcaption>
+<p><img src="img/pol_decomp.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption>Decomposition of the incident electric field into components normal and tangential to the dielectric boundary.</figcaption>
 </figure>
+</div>
 <p>To apply the boundary conditions, we will further need to split thesse polarisation vectors into components, which are <strong>parallel</strong> (<span class="math inline">\(||\)</span>) or <strong>perpendicular</strong> (<span class="math inline">\(\perp\)</span>) to the interface. This is required as we will have boundary conditions for the electric and magnetic fields either parallel or perpendicular to the interface. The s-polarisation, for example, has an electric field, which is always parallel to the interface, while the p-polarization comprises both components.</p>
 <section id="boundary-condition" class="level2">
 <h2 class="anchored" data-anchor-id="boundary-condition">Boundary Condition</h2>
-<p>The boundary conditions fo rthe electric or magnetic field passing an interface are derived from the Maxwell equations. As I assume you have don this already in the electro- and magnetostatics lectures, I will only resume shortly here.</p>
+<p>The boundary conditions for the electric or magnetic field passing an interface are derived from the Maxwell equations. As I assume you have don this already in the electro- and magnetostatics lectures, I will only resume shortly here.</p>
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<img src="img/boundary.png" width="70%" class="figure-img">
-<figcaption>
-<strong>Fig.:</strong> Polarization of an electric cloud of an atom.
-</figcaption>
+<p><img src="img/boundary.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption>Integration over a closed surface (left) and close path (right) to obtain the boundary conditions for the electric field components.</figcaption>
 </figure>
+</div>
 <p>Let us take the divergence of the displacement field <span class="math inline">\(\nabla \cdot \vec{D}=\rho_f\)</span> which is equal to the density of free charges. When integrating both sides over the volume</p>
 <p><span class="math display">\[
 \int\nabla \vec{D} dV=\int \rho_f dV
@@ -692,12 +677,7 @@ E_{2||}=E_{1||}
 <section id="frequency-and-wavevector-matching" class="level3">
 <h3 class="anchored" data-anchor-id="frequency-and-wavevector-matching">Frequency and Wavevector Matching</h3>
 <p>Recalling the above formulas for the incident, reflected and transmitted plane waves, we can explicitely write down the components of the wavevectors of the three waves in our cordinate system</p>
-<figure class="figure">
-<img src="img/coordinates.png" width="40%" class="figure-img">
-<figcaption>
-<strong>Fig.:</strong>
-</figcaption>
-</figure>
+<p><img src="img/coordinates.png" class="img-fluid" style="width:40.0%"></p>
 <p>According to that drawing, we have</p>
 <p><span class="math display">\[\begin{eqnarray}
 \vec{k}_I &amp;=&amp; k_I \cos(\theta_I)\hat{e}_x+k_I \sin(\theta_I)\hat{e}_z\\

@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -561,19 +581,39 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#electromagnetic-waves-in-matter" id="toc-electromagnetic-waves-in-matter" class="nav-link active" data-scroll-target="#electromagnetic-waves-in-matter">Electromagnetic Waves in Matter</a>
+  <li><a href="#microscopic-picture-of-dielectric-response" id="toc-microscopic-picture-of-dielectric-response" class="nav-link active" data-scroll-target="#microscopic-picture-of-dielectric-response">Microscopic Picture of Dielectric Response</a>
   <ul class="collapse">
+  <li><a href="#single-atom-response" id="toc-single-atom-response" class="nav-link" data-scroll-target="#single-atom-response">Single Atom Response</a></li>
+  <li><a href="#atomic-polarizability" id="toc-atomic-polarizability" class="nav-link" data-scroll-target="#atomic-polarizability">Atomic Polarizability</a></li>
+  <li><a href="#from-single-atoms-to-collective-response" id="toc-from-single-atoms-to-collective-response" class="nav-link" data-scroll-target="#from-single-atoms-to-collective-response">From Single Atoms to Collective Response</a></li>
+  </ul></li>
+  <li><a href="#macroscopic-description-of-dielectric-materials" id="toc-macroscopic-description-of-dielectric-materials" class="nav-link" data-scroll-target="#macroscopic-description-of-dielectric-materials">Macroscopic Description of Dielectric Materials</a>
+  <ul class="collapse">
+  <li><a href="#polarization-density-and-surface-charges" id="toc-polarization-density-and-surface-charges" class="nav-link" data-scroll-target="#polarization-density-and-surface-charges">Polarization Density and Surface Charges</a></li>
   <li><a href="#volume-charge-density" id="toc-volume-charge-density" class="nav-link" data-scroll-target="#volume-charge-density">Volume Charge Density</a></li>
   <li><a href="#electric-displacement-field" id="toc-electric-displacement-field" class="nav-link" data-scroll-target="#electric-displacement-field">Electric Displacement Field</a></li>
-  <li><a href="#dielectric-polarization-in-materials" id="toc-dielectric-polarization-in-materials" class="nav-link" data-scroll-target="#dielectric-polarization-in-materials">Dielectric Polarization in Materials</a></li>
-  <li><a href="#magnetic-response-of-materials" id="toc-magnetic-response-of-materials" class="nav-link" data-scroll-target="#magnetic-response-of-materials">Magnetic Response of Materials</a></li>
+  <li><a href="#linear-dielectric-response" id="toc-linear-dielectric-response" class="nav-link" data-scroll-target="#linear-dielectric-response">Linear Dielectric Response</a></li>
+  <li><a href="#clausius-mossotti-relation" id="toc-clausius-mossotti-relation" class="nav-link" data-scroll-target="#clausius-mossotti-relation">Clausius-Mossotti Relation</a></li>
   </ul></li>
   <li><a href="#maxwells-equations-in-matter" id="toc-maxwells-equations-in-matter" class="nav-link" data-scroll-target="#maxwells-equations-in-matter">Maxwell’s Equations in Matter</a>
   <ul class="collapse">
-  <li><a href="#wave-propagation-in-matter" id="toc-wave-propagation-in-matter" class="nav-link" data-scroll-target="#wave-propagation-in-matter">Wave Propagation in Matter</a></li>
-  <li><a href="#special-case-negative-refraction" id="toc-special-case-negative-refraction" class="nav-link" data-scroll-target="#special-case-negative-refraction">Special Case: Negative Refraction</a></li>
+  <li><a href="#modified-maxwell-equations" id="toc-modified-maxwell-equations" class="nav-link" data-scroll-target="#modified-maxwell-equations">Modified Maxwell Equations</a></li>
+  <li><a href="#constitutive-relations" id="toc-constitutive-relations" class="nav-link" data-scroll-target="#constitutive-relations">Constitutive Relations</a></li>
+  <li><a href="#magnetic-response" id="toc-magnetic-response" class="nav-link" data-scroll-target="#magnetic-response">Magnetic Response</a></li>
+  </ul></li>
+  <li><a href="#wave-propagation-in-matter" id="toc-wave-propagation-in-matter" class="nav-link" data-scroll-target="#wave-propagation-in-matter">Wave Propagation in Matter</a>
+  <ul class="collapse">
+  <li><a href="#wave-equation" id="toc-wave-equation" class="nav-link" data-scroll-target="#wave-equation">Wave Equation</a></li>
+  <li><a href="#refractive-index" id="toc-refractive-index" class="nav-link" data-scroll-target="#refractive-index">Refractive Index</a></li>
   <li><a href="#wave-properties" id="toc-wave-properties" class="nav-link" data-scroll-target="#wave-properties">Wave Properties</a></li>
   </ul></li>
+  <li><a href="#special-cases-and-applications" id="toc-special-cases-and-applications" class="nav-link" data-scroll-target="#special-cases-and-applications">Special Cases and Applications</a>
+  <ul class="collapse">
+  <li><a href="#negative-refraction" id="toc-negative-refraction" class="nav-link" data-scroll-target="#negative-refraction">Negative Refraction</a></li>
+  <li><a href="#energy-flow-in-negative-index-materials" id="toc-energy-flow-in-negative-index-materials" class="nav-link" data-scroll-target="#energy-flow-in-negative-index-materials">Energy Flow in Negative Index Materials</a></li>
+  <li><a href="#metamaterial-realization" id="toc-metamaterial-realization" class="nav-link" data-scroll-target="#metamaterial-realization">Metamaterial Realization</a></li>
+  </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
     </div>
@@ -599,13 +639,15 @@ window.Quarto = {
 </header>
 
 
-<section id="electromagnetic-waves-in-matter" class="level2">
-<h2 class="anchored" data-anchor-id="electromagnetic-waves-in-matter">Electromagnetic Waves in Matter</h2>
-<p>The behavior of electromagnetic waves changes significantly when they propagate through materials rather than vacuum. This interaction is fundamentally governed by how the electric and magnetic fields of the wave affect the charged particles within the material. Before exploring these wave phenomena, let’s first understand how materials respond to electric fields through the process of polarization - the separation of positive and negative charge centers in atoms.</p>
-<p>To understand how materials respond to electromagnetic waves, let’s first examine how individual atoms become polarized in an electric field. We’ll use a simple but instructive model where:</p>
+<p>The behavior of electromagnetic waves changes dramatically when they propagate through materials rather than vacuum. This interaction between light and matter underlies numerous phenomena in our daily lives, from the colors we see to modern optical technologies. Understanding these interactions requires bridging two perspectives: the microscopic view of how individual atoms respond to electromagnetic fields, and the macroscopic description of wave propagation through bulk materials.</p>
+<section id="microscopic-picture-of-dielectric-response" class="level2">
+<h2 class="anchored" data-anchor-id="microscopic-picture-of-dielectric-response">Microscopic Picture of Dielectric Response</h2>
+<section id="single-atom-response" class="level3">
+<h3 class="anchored" data-anchor-id="single-atom-response">Single Atom Response</h3>
+<p>To understand how materials respond to electromagnetic waves, let’s first examine how individual atoms become polarized in an electric field. Our model atom consists of:</p>
 <ol type="1">
-<li>An electron charge -q is uniformly distributed in a spherical cloud of radius a</li>
-<li>A positive nucleus sits at the center of this negative charge distribution</li>
+<li>An electron charge <span class="math inline">\(-q\)</span> uniformly distributed in a spherical cloud of radius <span class="math inline">\(a\)</span></li>
+<li>A positive nucleus at the center of this negative charge distribution</li>
 </ol>
 <p>The charge density of the electron cloud is:</p>
 <p><span class="math display">\[
@@ -613,9 +655,9 @@ window.Quarto = {
 \]</span></p>
 <p>This configuration creates a radial electric field inside the cloud:</p>
 <p><span class="math display">\[
-E(r)=-\frac{1}{4\pi\epsilon_0}\frac{qr}{a^3}
+\vec{E}(r)=-\frac{1}{4\pi\epsilon_0}\frac{q}{a^3}\vec{r}
 \]</span></p>
-<p>where r is the distance from the center. This linear dependence on r creates a restoring force similar to a spring.</p>
+<p>where <span class="math inline">\(\vec{r}\)</span> is the position vector from the center. The linear dependence on <span class="math inline">\(\vec{r}\)</span> creates a restoring force similar to a spring.</p>
 <div id="fig-atom" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-atom-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -626,28 +668,42 @@ Figure&nbsp;1— Polarization of an electric cloud of an atom: An external elect
 </figcaption>
 </figure>
 </div>
-<p>When we apply an external electric field <span class="math inline">\(E_{\rm ex}\)</span>, the nucleus is displaced by a distance d until forces balance:</p>
+</section>
+<section id="atomic-polarizability" class="level3">
+<h3 class="anchored" data-anchor-id="atomic-polarizability">Atomic Polarizability</h3>
+<p>When we apply an external electric field <span class="math inline">\(\vec{E}_{\rm ex}\)</span>, the nucleus is displaced by a distance <span class="math inline">\(\vec{d}\)</span> until forces balance:</p>
 <p><span class="math display">\[
-qE_{\rm ex}-\frac{1}{4\pi\epsilon_0}\frac{q^2d}{a^3}=0
+q\vec{E}_{\rm ex}-\frac{1}{4\pi\epsilon_0}\frac{q^2\vec{d}}{a^3}=\vec{0}
 \]</span></p>
-<p>This force balance between the external field (pushing the nucleus) and the internal field (trying to restore the nucleus to the center) determines the atomic polarization, from which we find the displacement</p>
+<p>This force balance between the external field (pushing the nucleus) and the internal field (trying to restore the nucleus to the center) determines the atomic polarization, leading to the displacement:</p>
 <p><span class="math display">\[
-d=4\pi \epsilon_0 a^3 \frac{E_{\rm ex}}{q}
+\vec{d}=4\pi \epsilon_0 a^3 \frac{\vec{E}_{\rm ex}}{q}
 \]</span></p>
-<p>This displacement creates a dipole moment</p>
+<p>This displacement creates a dipole moment:</p>
 <p><span class="math display">\[
-p=qd=4\pi\epsilon_0 a^3 E_{\rm ex}
+\vec{p}=q\vec{d}=4\pi\epsilon_0 a^3 \vec{E}_{\rm ex}
 \]</span></p>
-<p>The dipole moment increases linearly with the external field, with the proportionality constant</p>
+<p>The dipole moment increases linearly with the external field, with the proportionality constant:</p>
 <p><span class="math display">\[
 \alpha=4\pi \epsilon_0 a^3
 \]</span></p>
 <p>known as the electronic polarizability. Note that this polarizability scales with atomic volume.</p>
+</section>
+<section id="from-single-atoms-to-collective-response" class="level3">
+<h3 class="anchored" data-anchor-id="from-single-atoms-to-collective-response">From Single Atoms to Collective Response</h3>
 <p>When many atoms in a material are exposed to an electric field, their individual dipole moments combine to create a macroscopic polarization. The collective behavior can be characterized by the polarization density:</p>
 <p><span class="math display">\[
 \vec{P}=N\vec{p}
 \]</span></p>
-<p>where N is the number of dipoles per unit volume and p is the individual atomic dipole moment.</p>
+<p>where <span class="math inline">\(N\)</span> is the number of dipoles per unit volume and <span class="math inline">\(\vec{p}\)</span> is the individual atomic dipole moment. However, this simple picture of independent atoms needs modification for dense materials where atoms are closely packed and interact with each other.</p>
+<p>In real materials, each atom experiences not only the external field but also the fields from neighboring dipoles. This leads us to consider the local field effects and the transition from microscopic to macroscopic descriptions, which we’ll explore in the next section.</p>
+</section>
+</section>
+<section id="macroscopic-description-of-dielectric-materials" class="level2">
+<h2 class="anchored" data-anchor-id="macroscopic-description-of-dielectric-materials">Macroscopic Description of Dielectric Materials</h2>
+<section id="polarization-density-and-surface-charges" class="level3">
+<h3 class="anchored" data-anchor-id="polarization-density-and-surface-charges">Polarization Density and Surface Charges</h3>
+<p>The transition from microscopic to macroscopic behavior becomes apparent when we examine a sample of polarized material. For a cylindrical sample with cross-sectional area <span class="math inline">\(A\)</span> and height <span class="math inline">\(s\)</span>, the microscopic dipoles create observable macroscopic effects:</p>
 <div id="fig-sample" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-sample-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -658,95 +714,94 @@ Figure&nbsp;2— Polarization in a dielectric material showing aligned atomic di
 </figcaption>
 </figure>
 </div>
-<p>For a cylindrical sample with cross-sectional area A and height s, this microscopic picture leads to:</p>
+<p>This alignment leads to:</p>
 <ul>
-<li>Total dipole moment: <span class="math inline">\(p_{\rm cyl}=A s P\)</span></li>
+<li>Total dipole moment: <span class="math inline">\(\vec{p}_{\rm cyl}=A s \vec{P}\)</span></li>
 <li>End charges: <span class="math inline">\(q_{\rm end}=\frac{p_{\rm cyl}}{s}=A P\)</span></li>
 <li>Surface charge density: <span class="math inline">\(\sigma=\frac{q_{\rm end}}{A}=P\)</span></li>
 </ul>
 <p>More generally, the surface charge density at any boundary is:</p>
 <p><span class="math display">\[
-\sigma=\vec{P}\cdot\hat{n}
+\sigma_b=\vec{P}\cdot\hat{n}
 \]</span></p>
-<p>where <span class="math inline">\(\hat{n}\)</span> is the surface normal. These surface charges are “bound” to atoms, distinct from free charges, and denoted as <span class="math inline">\(\sigma_b\)</span>.</p>
+<p>where <span class="math inline">\(\hat{n}\)</span> is the surface normal. These surface charges are “bound” to atoms, distinct from free charges.</p>
+</section>
 <section id="volume-charge-density" class="level3">
 <h3 class="anchored" data-anchor-id="volume-charge-density">Volume Charge Density</h3>
-<p>When polarization isn’t uniform throughout a material, we need to consider both surface and volume charges. All bound charges in the material must sum to zero since the material was initially neutral. This charge conservation requirement leads to:</p>
+<p>When polarization isn’t uniform throughout a material, we need to consider both surface and volume charges. All bound charges in the material must sum to zero since the material was initially neutral:</p>
 <p><span class="math display">\[\int \sigma_b dA +\int \rho_b dv=0\]</span></p>
-<p>We know that surface charge density is related to polarization through <span class="math inline">\(\sigma_b=\vec{P}\cdot\hat{n}\)</span>. Therefore, the surface integral can be written as:</p>
+<p>Using the surface charge relation <span class="math inline">\(\sigma_b=\vec{P}\cdot\hat{n}\)</span>, we can write:</p>
 <p><span class="math display">\[\int \sigma_b dA = \int \vec{P}\cdot\hat{n}dA = \int \vec{P}\cdot d\vec{A}\]</span></p>
-<p>Now we can apply Gauss’s theorem, which states that <span class="math inline">\(\int \vec{P}\cdot d\vec{A} = \int (\nabla\cdot\vec{P})dv\)</span>. Applying this to our charge conservation equation gives:</p>
-<p><span class="math display">\[\int \rho_b dv + \int (\nabla\cdot\vec{P})dv = 0\]</span></p>
-<p>Since this relationship must hold for any arbitrary volume within the material, we can conclude that the integrands must be equal and opposite, leading to the local relationship:</p>
+<p>Applying Gauss’s theorem:</p>
+<p><span class="math display">\[\int \vec{P}\cdot d\vec{A} = \int (\nabla\cdot\vec{P})dv\]</span></p>
+<p>This leads to the local relationship:</p>
 <p><span class="math display">\[\rho_b = -\nabla\cdot\vec{P}\]</span></p>
 <p>This fundamental equation reveals that bound volume charges appear wherever the polarization has a divergence - that is, wherever it changes spatially in a way that creates an imbalance of positive and negative charges.</p>
 </section>
 <section id="electric-displacement-field" class="level3">
 <h3 class="anchored" data-anchor-id="electric-displacement-field">Electric Displacement Field</h3>
-<p>In materials, the electric field’s divergence must account for both free charges and the bound charges that arise from polarization. Starting with Gauss’s law, we can write:</p>
+<p>In materials, the electric field’s divergence must account for both free charges and bound charges:</p>
 <p><span class="math display">\[
 \nabla \cdot \vec{E}=\frac{\rho_{\rm f}+\rho_{\rm b}}{\epsilon_0}
 \]</span></p>
-<p>We previously found that bound charges are related to the polarization through <span class="math inline">\(\rho_b=-\nabla\cdot \vec{P}\)</span>. Inserting this relationship into Gauss’s law yields:</p>
+<p>Using <span class="math inline">\(\rho_b=-\nabla\cdot \vec{P}\)</span>:</p>
 <p><span class="math display">\[
 \nabla \cdot \vec{E}=\frac{\rho_{\rm f}-\nabla\cdot \vec{P}}{\epsilon_0}
 \]</span></p>
-<p>Multiplying both sides by <span class="math inline">\(\epsilon_0\)</span> and rearranging terms leads to a more compact form:</p>
-<p><span class="math display">\[
-\nabla \cdot(\epsilon_0\vec{E}+\vec{P})=\rho_f
-\]</span></p>
-<p>This naturally suggests defining a new field quantity, the electric displacement field:</p>
+<p>This suggests defining the electric displacement field:</p>
 <p><span class="math display">\[
 \vec{D}=\epsilon_0 \vec{E}+\vec{P}
 \]</span></p>
-<p>The displacement field <span class="math inline">\(\vec{D}\)</span> elegantly simplifies Gauss’s law to:</p>
+<p>which simplifies Gauss’s law to:</p>
 <p><span class="math display">\[
 \nabla \cdot \vec{D} =\rho_f
 \]</span></p>
-<p>This form resembles the original Gauss’s law in vacuum, but now the displacement field <span class="math inline">\(\vec{D}\)</span> accounts for both the electric field and the material’s polarization response, while only relating to free charges.</p>
+<p>This is beautiful, since it brings back the same dependence on free charges as in vacuum, but now with the displacement field <span class="math inline">\(\vec{D}\)</span> instead of the electric field <span class="math inline">\(\vec{E}\)</span>.</p>
 </section>
-<section id="dielectric-polarization-in-materials" class="level3">
-<h3 class="anchored" data-anchor-id="dielectric-polarization-in-materials">Dielectric Polarization in Materials</h3>
+<section id="linear-dielectric-response" class="level3">
+<h3 class="anchored" data-anchor-id="linear-dielectric-response">Linear Dielectric Response</h3>
 <p>For many materials, the polarization density is proportional to the applied electric field:</p>
 <p><span class="math display">\[
 \vec{P}=\epsilon_0\chi\vec{E}
 \]</span></p>
-<p>where <span class="math inline">\(\chi\)</span> is the electric susceptibility, characterizing the material’s response to electric fields. This linear relationship between <span class="math inline">\(\vec{P}\)</span> and <span class="math inline">\(\vec{E}\)</span> defines what we call linear dielectric materials. While this linear response follows from our simple atomic model, real materials often exhibit nonlinear responses to strong electric fields - effects studied in the field of nonlinear optics.</p>
-<p>Within this linear approximation, we can express the displacement field in terms of the susceptibility:</p>
+<p>where <span class="math inline">\(\chi\)</span> is the electric susceptibility. This linear relationship defines linear dielectric materials, though real materials can exhibit nonlinear responses under strong fields.</p>
+<p>The displacement field becomes:</p>
 <p><span class="math display">\[
 \vec{D}=\epsilon_0 \vec{E}+\vec{P}=\epsilon_0 (1+\chi)\vec{E}=\epsilon \vec{E}
 \]</span></p>
-<p>where we define the electric permittivity as:</p>
+<p>with electric permittivity:</p>
 <p><span class="math display">\[
 \epsilon=\epsilon_0 (1+\chi)
 \tag{electric permittivity}
 \]</span></p>
-<p>The dimensionless ratio</p>
+<p>The dimensionless ratio:</p>
 <p><span class="math display">\[
 \epsilon_r=\frac{\epsilon}{\epsilon_0}=1+\chi
 \]</span></p>
-<p>is called the relative permittivity or dielectric constant. However, this term can be misleading as <span class="math inline">\(\epsilon_r\)</span> typically depends on the frequency of the electromagnetic field - making it a dielectric function rather than a constant.</p>
+<p>is the relative permittivity or dielectric constant, though it typically depends on frequency.</p>
 </section>
-<section id="magnetic-response-of-materials" class="level3">
-<h3 class="anchored" data-anchor-id="magnetic-response-of-materials">Magnetic Response of Materials</h3>
-<p>Similar principles apply to magnetic materials, though the physics differs due to the absence of magnetic monopoles. The magnetic flux density <span class="math inline">\(\vec{B}\)</span> relates to the magnetic field <span class="math inline">\(\vec{H}\)</span> through:</p>
-<p><span class="math display">\[
-\vec{B}=\mu_0(1+\chi_m)\vec{H}
-\]</span></p>
-<p>where <span class="math inline">\(\chi_m\)</span> is the magnetic susceptibility. Analogous to electric polarization, we define the magnetization <span class="math inline">\(\vec{M}\)</span> as the density of magnetic dipole moments:</p>
-<p><span class="math display">\[
-\vec{B}=\mu_0(\vec{H}+\vec{M})
-\]</span></p>
+<section id="clausius-mossotti-relation" class="level3">
+<h3 class="anchored" data-anchor-id="clausius-mossotti-relation">Clausius-Mossotti Relation</h3>
+<p>In dense materials, the local electric field <span class="math inline">\(\vec{E}_{loc}\)</span> experienced by an atom differs from the average field <span class="math inline">\(\vec{E}\)</span>:</p>
+<p><span class="math display">\[\vec{E}_{loc} = \vec{E} + \vec{E}_{dep}\]</span></p>
+<p>where <span class="math inline">\(\vec{E}_{dep} = -\frac{\vec{P}}{3\epsilon_0}\)</span> is the depolarization field from the cavity surface charges.</p>
+<p>The polarization density relates to the local field through:</p>
+<p><span class="math display">\[\vec{P} = N\alpha \vec{E}_{loc} = N\alpha(\vec{E} - \frac{\vec{P}}{3\epsilon_0})\]</span></p>
+<p>Solving this equation and comparing with <span class="math inline">\(\vec{P} = \epsilon_0(\epsilon_r-1)\vec{E}\)</span> yields the Clausius-Mossotti relation:</p>
+<p><span class="math display">\[\frac{\epsilon_r-1}{\epsilon_r+2} = \frac{N\alpha}{3\epsilon_0}\]</span></p>
+<p>This fundamental relation connects microscopic polarizability to macroscopic permittivity, accounting for local field effects in dense media.</p>
 </section>
 </section>
 <section id="maxwells-equations-in-matter" class="level2">
 <h2 class="anchored" data-anchor-id="maxwells-equations-in-matter">Maxwell’s Equations in Matter</h2>
-<p>Maxwell’s equations in materials take a modified form to account for the material’s response to electromagnetic fields. The four fundamental equations become:</p>
+<section id="modified-maxwell-equations" class="level3">
+<h3 class="anchored" data-anchor-id="modified-maxwell-equations">Modified Maxwell Equations</h3>
+<p>The presence of bound charges and currents in materials requires a modified form of Maxwell’s equations. The four fundamental equations become:</p>
 <p><span class="math display">\[
 \nabla \times \vec{E}=-\frac{\partial \vec{B}}{\partial t}
 \tag{ME.1}
 \]</span></p>
-<p>Faraday’s law of induction remains unchanged from its vacuum form.</p>
+<p>Faraday’s law remains unchanged, describing electromagnetic induction regardless of medium.</p>
 <p><span class="math display">\[
 \nabla\cdot\vec{D}=\rho_f
 \tag{ME.2}
@@ -761,90 +816,208 @@ Figure&nbsp;2— Polarization in a dielectric material showing aligned atomic di
 \nabla\cdot \vec{B}=0
 \tag{ME.4}
 \]</span></p>
-<p>The absence of magnetic monopoles remains a fundamental principle.</p>
+<p>The absence of magnetic monopoles remains fundamental.</p>
+</section>
+<section id="constitutive-relations" class="level3">
+<h3 class="anchored" data-anchor-id="constitutive-relations">Constitutive Relations</h3>
 <p>The material properties enter through the constitutive relations:</p>
 <p><span class="math display">\[\begin{eqnarray}
 \vec{D}&amp;=&amp;\epsilon \vec{E}=\epsilon_0 \epsilon_r\vec{E}\\
 \vec{B}&amp;=&amp;\mu \vec{H}=\mu_0 \mu_r\vec{H}
 \end{eqnarray}\]</span></p>
-<section id="wave-propagation-in-matter" class="level3">
-<h3 class="anchored" data-anchor-id="wave-propagation-in-matter">Wave Propagation in Matter</h3>
-<p>For media without free charges (<span class="math inline">\(\rho_f=0\)</span>) and currents (<span class="math inline">\(\vec{j}_f=0\)</span>), these equations lead to the wave equation:</p>
+</section>
+<section id="magnetic-response" class="level3">
+<h3 class="anchored" data-anchor-id="magnetic-response">Magnetic Response</h3>
+<p>Similar to electric polarization, materials respond to magnetic fields through magnetization <span class="math inline">\(\vec{M}\)</span>:</p>
 <p><span class="math display">\[
-\frac{\partial^2 \vec{E}}{\partial \vec{r}^2}-\frac{1}{v^2} \frac{\partial^2\vec{E}}{\partial t^2}=0
+\vec{B}=\mu_0(\vec{H}+\vec{M})
 \]</span></p>
-<p>where the phase velocity <span class="math inline">\(v\)</span> is:</p>
+<p>For linear magnetic materials:</p>
+<p><span class="math display">\[
+\vec{B}=\mu_0(1+\chi_m)\vec{H}
+\]</span></p>
+<p>where <span class="math inline">\(\chi_m\)</span> is the magnetic susceptibility.</p>
+</section>
+</section>
+<section id="wave-propagation-in-matter" class="level2">
+<h2 class="anchored" data-anchor-id="wave-propagation-in-matter">Wave Propagation in Matter</h2>
+<section id="wave-equation" class="level3">
+<h3 class="anchored" data-anchor-id="wave-equation">Wave Equation</h3>
+<p>For media without free charges (<span class="math inline">\(\rho_f=0\)</span>) and currents (<span class="math inline">\(\vec{j}_f=0\)</span>), Maxwell’s equations lead to the wave equation:</p>
+<p><span class="math display">\[
+\nabla^2\vec{E}-\frac{1}{v^2} \frac{\partial^2\vec{E}}{\partial t^2}=0
+\]</span></p>
+<p>where the phase velocity is:</p>
 <p><span class="math display">\[
 v=\frac{c}{\sqrt{\epsilon_r\mu_r}}
 \]</span></p>
-<p>This shows that electromagnetic waves travel more slowly in matter than in vacuum. For non-magnetic materials (<span class="math inline">\(\mu_r=1\)</span>), we define the refractive index:</p>
+</section>
+<section id="refractive-index" class="level3">
+<h3 class="anchored" data-anchor-id="refractive-index">Refractive Index</h3>
+<p>For non-magnetic materials (<span class="math inline">\(\mu_r=1\)</span>), we define the refractive index:</p>
 <p><span class="math display">\[
 n=\frac{c}{v}=\sqrt{\epsilon_r}
 \tag{refractive index}
 \]</span></p>
-<p>This connects our microscopic understanding of atomic polarization to the macroscopic phenomenon of light propagation in matter.</p>
+<p>This fundamental relation connects our microscopic understanding of atomic polarization to the macroscopic phenomenon of light propagation.</p>
 </section>
-<section id="special-case-negative-refraction" class="level3">
-<h3 class="anchored" data-anchor-id="special-case-negative-refraction">Special Case: Negative Refraction</h3>
-<p>While most materials have <span class="math inline">\(n&gt;1\)</span>, materials with both <span class="math inline">\(\epsilon_r&lt;0\)</span> and <span class="math inline">\(\mu_r&lt;0\)</span> exhibit the unusual property of negative refraction, where:</p>
+<section id="wave-properties" class="level3">
+<h3 class="anchored" data-anchor-id="wave-properties">Wave Properties</h3>
+<p>Monochromatic waves in matter take the form:</p>
+<p><span class="math display">\[
+\vec{E}=\vec{E}_0e^{i(\omega t- \vec{k}\cdot \vec{r})}
+\]</span></p>
+<p>The wavevector <span class="math inline">\(\vec{k}\)</span> relates to the vacuum wavevector <span class="math inline">\(\vec{k}_0\)</span> through:</p>
+<p><span class="math display">\[
+\vec{k}=n\vec{k}_0
+\]</span></p>
+<p>This relationship governs how waves propagate and refract at material interfaces.</p>
+</section>
+</section>
+<section id="special-cases-and-applications" class="level2">
+<h2 class="anchored" data-anchor-id="special-cases-and-applications">Special Cases and Applications</h2>
+<section id="negative-refraction" class="level3">
+<h3 class="anchored" data-anchor-id="negative-refraction">Negative Refraction</h3>
+<p>While most materials have <span class="math inline">\(n&gt;1\)</span>, a remarkable class of engineered materials called metamaterials can exhibit negative refraction when both <span class="math inline">\(\epsilon_r&lt;0\)</span> and <span class="math inline">\(\mu_r&lt;0\)</span>. In these materials:</p>
 <p><span class="math display">\[
 v=-\frac{c}{\sqrt{\epsilon_r\mu_r}}
 \tag{negative refraction}
 \]</span></p>
-<p>Such metamaterials, engineered with specific substructures, enable novel optical phenomena and applications.</p>
 <div id="fig-negative-refraction" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-negative-refraction-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/negative_refraction.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-negative-refraction-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3— Refraction: Diagrams of (a) positive refraction and (b) negative refraction; and calculated images of a metal rod (c) in a glass filled with regular water (n = 1.3), and (d) in a glass filled with “negative-index water” (n = -1.3). In parts a and b, solid lines with arrows indicate the direction of the energy flows, broken lines with arrows show the direction of the wave vectors. (Parts c and d from G. Dolling et al., Photorealistic images of objects in effective negative-index materials, Opt. Express, 14:1842–1849, 2006).
+Figure&nbsp;3— Refraction: Diagrams of (a) positive refraction and (b) negative refraction; and calculated images of a metal rod (c) in a glass filled with regular water (<span class="math inline">\(n = 1.3\)</span>), and (d) in a glass filled with “negative-index water” (<span class="math inline">\(n = -1.3\)</span>). In parts a and b, solid lines with arrows indicate the direction of the energy flows, broken lines with arrows show the direction of the wave vectors. (Parts c and d from G. Dolling et al., Opt. Express, 14:1842–1849, 2006).
 </figcaption>
 </figure>
 </div>
-<p>The Poynting vector describes the energy flow in electromagnetic waves, representing power per unit area. For any electromagnetic wave, we can calculate this energy flow as the cross product of the electric and magnetic fields:</p>
-<p><span class="math display">\[ \mathbf{S} = \mathbf{E} \times \mathbf{H} \]</span></p>
-<p>where <span class="math inline">\(\mathbf{H}\)</span> relates to the magnetic field <span class="math inline">\(\mathbf{B}\)</span> through the material’s permeability: <span class="math inline">\(\mathbf{B} = \mu \mathbf{H}\)</span>. In negative refractive index materials, both the permittivity and permeability are negative, leading to <span class="math inline">\(\mathbf{H}\)</span> pointing opposite to <span class="math inline">\(\mathbf{B}\)</span>.</p>
-<p>For a plane wave, the magnetic field relates to the electric field through <span class="math inline">\(\mathbf{B} = \frac{1}{\omega} \mathbf{k} \times \mathbf{E}\)</span>, allowing us to express <span class="math inline">\(\mathbf{H}\)</span> as:</p>
-<p><span class="math display">\[ \mathbf{H} = \frac{1}{\mu \omega} \mathbf{k} \times \mathbf{E} \]</span></p>
-<p>Inserting this into our expression for the Poynting vector and using the vector triple product identity, we find:</p>
-<p><span class="math display">\[ \mathbf{S} = \frac{1}{\mu \omega} \left[ \mathbf{k} (\mathbf{E} \cdot \mathbf{E}) - \mathbf{E} (\mathbf{E} \cdot \mathbf{k}) \right] \]</span></p>
-<p>Since the electric field is perpendicular to the wave vector in a plane wave (<span class="math inline">\(\mathbf{E} \cdot \mathbf{k} = 0\)</span>), this simplifies to:</p>
-<p><span class="math display">\[ \mathbf{S} = \frac{1}{\mu \omega} \mathbf{k} E_0^2 \]</span></p>
-<p>In negative index materials, where <span class="math inline">\(\mathbf{k} = -k \hat{\mathbf{k}}\)</span>, the Poynting vector becomes:</p>
-<p><span class="math display">\[ \mathbf{S} = -\frac{k E_0^2}{\mu \omega} \hat{\mathbf{k}} \]</span></p>
-<p>This remarkable result shows that energy flows in the direction opposite to the wave propagation, a unique characteristic of negative index materials that leads to their unusual optical properties.</p>
+</section>
+<section id="energy-flow-in-negative-index-materials" class="level3">
+<h3 class="anchored" data-anchor-id="energy-flow-in-negative-index-materials">Energy Flow in Negative Index Materials</h3>
+<p>The Poynting vector describes energy flow in electromagnetic waves:</p>
+<p><span class="math display">\[ \vec{S} = \vec{E} \times \vec{H} \]</span></p>
+<p>where <span class="math inline">\(\vec{H}\)</span> relates to <span class="math inline">\(\vec{B}\)</span> through <span class="math inline">\(\vec{B} = \mu \vec{H}\)</span>. In negative index materials, both permittivity and permeability are negative, leading to unusual behavior.</p>
+<p>For a plane wave, <span class="math inline">\(\vec{B} = \frac{1}{\omega} \vec{k} \times \vec{E}\)</span>, giving:</p>
+<p><span class="math display">\[ \vec{H} = \frac{1}{\mu \omega} \vec{k} \times \vec{E} \]</span></p>
+<p>Using the vector triple product identity:</p>
+<p><span class="math display">\[ \vec{S} = \frac{1}{\mu \omega} \left[ \vec{k} (\vec{E} \cdot \vec{E}) - \vec{E} (\vec{E} \cdot \vec{k}) \right] \]</span></p>
+<p>Since <span class="math inline">\(\vec{E} \cdot \vec{k} = 0\)</span> in a plane wave:</p>
+<p><span class="math display">\[ \vec{S} = \frac{1}{\mu \omega} \vec{k} E_0^2 \]</span></p>
+<p>In negative index materials (<span class="math inline">\(\vec{k} = -k \hat{\vec{k}}\)</span>):</p>
+<p><span class="math display">\[ \vec{S} = -\frac{k E_0^2}{\mu \omega} \hat{\vec{k}} \]</span></p>
+<p>This remarkable result shows that energy flows opposite to wave propagation, a unique characteristic of negative index materials.</p>
+</section>
+<section id="metamaterial-realization" class="level3">
+<h3 class="anchored" data-anchor-id="metamaterial-realization">Metamaterial Realization</h3>
 <div id="fig-negative-refraction1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-negative-refraction1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/split_ring.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-negative-refraction1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4— Metamaterial with negative refraction. Smith, D. R., et al.&nbsp;(2004). Metamaterials and Negative Refractive Index. <em>Science</em>, 305(5685), 788-792.
+Figure&nbsp;4— Metamaterial with negative refraction. Split-ring resonators provide negative permeability while metallic wires provide negative permittivity. Smith, D. R., et al.&nbsp;(2004). Science, 305(5685), 788-792.
 </figcaption>
 </figure>
 </div>
-<p>The concept of negative refractive index was first theorized by Victor Veselago in 1968. He predicted that materials with simultaneous negative permittivity and permeability would exhibit unique optical properties such as reversed Snell’s law, reversed Doppler effect, and reversed Cherenkov radiation.</p>
-<pre><code>Veselago, V. G. (1968). The Electrodynamics of Substances with Simultaneously Negative Values of $\epsilon$ and $\mu$. *Soviet Physics Uspekhi*, 10(4), 509-514.
-Pendry, J. B. (2000). Negative Refraction Makes a Perfect Lens. *Physical Review Letters*, 85(18), 3966-3969.</code></pre>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Split-Ring Resonators (SRRs)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>A split-ring resonator typically consists of a pair of concentric metallic rings, each with a gap. These rings can be thought of as forming an LC circuit, where the rings themselves provide the inductance (<span class="math inline">\(L\)</span>) and the gaps provide the capacitance (<span class="math inline">\(C\)</span>).</p>
+<section id="resonant-frequency-of-the-srr" class="level4">
+<h4 class="anchored" data-anchor-id="resonant-frequency-of-the-srr">Resonant Frequency of the SRR</h4>
+<p>The SRR behaves as an LC resonator with a specific resonant frequency (<span class="math inline">\(\omega_0\)</span>). The resonant frequency can be expressed as:</p>
+<p><span class="math display">\[ \omega_0 = \frac{1}{\sqrt{LC}} \]</span></p>
+<p>where: - <span class="math inline">\(L\)</span> is the inductance of the rings. - <span class="math inline">\(C\)</span> is the capacitance of the gaps.</p>
 </section>
-<section id="wave-properties" class="level3">
-<h3 class="anchored" data-anchor-id="wave-properties">Wave Properties</h3>
-<p>For monochromatic waves of the form:</p>
-<p><span class="math display">\[
-\vec{E}=\vec{E}_0e^{i(\omega t- \vec{k}\cdot \vec{r})}
-\]</span></p>
-<p>the wavevector <span class="math inline">\(\vec{k}\)</span> relates to the vacuum wavevector <span class="math inline">\(\vec{k}_0\)</span> through:</p>
-<p><span class="math display">\[
-\vec{k}=n\vec{k}_0
-\]</span></p>
-<p>This relationship determines how waves propagate and refract at material interfaces.</p>
+<section id="magnetic-response-of-the-srr" class="level4">
+<h4 class="anchored" data-anchor-id="magnetic-response-of-the-srr">Magnetic Response of the SRR</h4>
+<p>When an external alternating magnetic field is applied perpendicular to the plane of the SRR, it induces a circulating current around the rings. This induced current creates a magnetic dipole moment that opposes the change in the external magnetic field (Lenz’s Law).</p>
+</section>
+<section id="magnetic-susceptibility" class="level4">
+<h4 class="anchored" data-anchor-id="magnetic-susceptibility">Magnetic Susceptibility</h4>
+<p>The magnetic susceptibility (<span class="math inline">\(\chi_m\)</span>) of the SRR can be related to the magnetic moment (<span class="math inline">\(m\)</span>) induced in response to the external magnetic field (<span class="math inline">\(H\)</span>):</p>
+<p><span class="math display">\[ m = \alpha H \]</span></p>
+<p>where <span class="math inline">\(\alpha\)</span> is the polarizability of the SRR. The susceptibility is given by:</p>
+<p><span class="math display">\[ \chi_m = \frac{m}{H} = \alpha \]</span></p>
+</section>
+<section id="polarizability-of-the-srr" class="level4">
+<h4 class="anchored" data-anchor-id="polarizability-of-the-srr">Polarizability of the SRR</h4>
+<p>The polarizability <span class="math inline">\(\alpha\)</span> can be modeled using the Lorentz oscillator model for the resonant behavior of the SRR. This gives:</p>
+<p><span class="math display">\[ \alpha(\omega) = \frac{F\omega^2}{\omega_0^2 - \omega^2 - i\gamma\omega} \]</span></p>
+<p>where: - <span class="math inline">\(F\)</span> is a geometric factor related to the SRR. - <span class="math inline">\(\omega_0\)</span> is the resonant frequency. - <span class="math inline">\(\gamma\)</span> is the damping factor (related to losses). - <span class="math inline">\(\omega\)</span> is the angular frequency of the applied magnetic field.</p>
+</section>
+<section id="effective-permeability" class="level4">
+<h4 class="anchored" data-anchor-id="effective-permeability">Effective Permeability</h4>
+<p>The effective permeability <span class="math inline">\(\mu(\omega)\)</span> of the metamaterial containing SRRs can be expressed in terms of the magnetic susceptibility <span class="math inline">\(\chi_m(\omega)\)</span>:</p>
+<p><span class="math display">\[ \mu(\omega) = 1 + \chi_m(\omega) \]</span></p>
+<p>Substituting <span class="math inline">\(\chi_m(\omega)\)</span> with <span class="math inline">\(\alpha(\omega)\)</span>:</p>
+<p><span class="math display">\[ \mu(\omega) = 1 + \frac{F\omega^2}{\omega_0^2 - \omega^2 - i\gamma\omega} \]</span></p>
+<p>This equation describes the frequency-dependent effective permeability of a metamaterial containing split-ring resonators.</p>
+</section>
+<section id="negative-permeability" class="level4">
+<h4 class="anchored" data-anchor-id="negative-permeability">Negative Permeability</h4>
+<p>For negative permeability to occur, the term in the denominator <span class="math inline">\((\omega_0^2 - \omega^2 - i\gamma\omega)\)</span> must be such that the real part of the permeability becomes negative. This generally happens in the frequency range around the resonant frequency <span class="math inline">\(\omega_0\)</span>. Specifically, when <span class="math inline">\(\omega\)</span> is slightly below <span class="math inline">\(\omega_0\)</span>, the real part of <span class="math inline">\(\mu(\omega)\)</span> can become negative due to the resonance.</p>
+<p>The final equation for the effective permeability of a metamaterial with split-ring resonators is:</p>
+<p><span class="math display">\[ \mu(\omega) = 1 + \frac{F\omega^2}{\omega_0^2 - \omega^2 - i\gamma\omega} \]</span></p>
+</section>
+<section id="interpretation" class="level4">
+<h4 class="anchored" data-anchor-id="interpretation">Interpretation</h4>
+<ul>
+<li>When <span class="math inline">\(\omega\)</span> is near <span class="math inline">\(\omega_0\)</span>, the permeability <span class="math inline">\(\mu(\omega)\)</span> can exhibit negative values.</li>
+<li>The parameters <span class="math inline">\(F\)</span>, <span class="math inline">\(\omega_0\)</span>, and <span class="math inline">\(\gamma\)</span> are determined by the geometry and material properties of the SRRs.</li>
+</ul>
+<p>This equation highlights how the resonant properties of the SRRs lead to a negative permeability in the metamaterial, enabling unique electromagnetic properties such as a negative refractive index.</p>
+</section>
+</div>
+</div>
+</div>
+<p>The concept of negative refractive index, first theorized by Victor Veselago in 1968, predicted materials with simultaneous negative permittivity and permeability would exhibit:</p>
+<ul>
+<li>Reversed Snell’s law</li>
+<li>Reversed Doppler effect</li>
+<li>Reversed Cherenkov radiation</li>
+</ul>
+<p>Modern realizations use carefully designed structures with:</p>
+<ul>
+<li>Split-ring resonators for negative μ</li>
+<li>Wire arrays for negative ε</li>
+<li>Precise geometric arrangements to maintain wave propagation</li>
+</ul>
+<p>These materials enable novel applications including:</p>
+<ul>
+<li>Superlenses breaking the diffraction limit</li>
+<li>Electromagnetic cloaking</li>
+<li>Novel waveguiding devices</li>
+</ul>
+<p>The concept of negative refractive index was first theorized by Veselago <span class="citation" data-cites="veselago1968electrodynamics">(<a href="#ref-veselago1968electrodynamics" role="doc-biblioref">Veselago 1968</a>)</span>. Later, Pendry showed how these materials could be used to create perfect lenses <span class="citation" data-cites="pendry2000negative">(<a href="#ref-pendry2000negative" role="doc-biblioref">Pendry 2000</a>)</span>.</p>
+</section>
+</section>
+<section id="references" class="level2 unnumbered">
+
+
 
 
 </section>
-</section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-pendry2000negative" class="csl-entry" role="listitem">
+Pendry, John B. 2000. <span>“Negative Refraction Makes a Perfect Lens.”</span> <em>Physical Review Letters</em> 85 (18): 3966–69.
+</div>
+<div id="ref-veselago1968electrodynamics" class="csl-entry" role="listitem">
+Veselago, Victor Georgievich. 1968. <span>“The Electrodynamics of Substances with Simultaneously Negative Values of <span class="math inline">\(\epsilon\)</span> and <span class="math inline">\(\mu\)</span>.”</span> <em>Soviet Physics Uspekhi</em> 10 (4): 509–14.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
