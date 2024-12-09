@@ -648,9 +648,9 @@ window.Quarto = {
 <p>The effect of the material on the wave propagation can be understood when considering a plane wave <span class="math inline">\(E_s\)</span> incident on a thin material slab of thickness <span class="math inline">\(\Delta z\)</span>.</p>
 <p><span id="eq-wave-slab"><span class="math display">\[
 \begin{aligned}
-E &amp; =E_0 \cdot e^{-i(\omega t-k z-(n-1) \lambda \cdot \Delta z)} \\
+E &amp; =E_0 \cdot e^{-i(\omega t-k z-(n-1) k \cdot \Delta z)} \\
 &amp; =e^{-i \omega(n-1) \Delta z / c} E_0 e^{i(\omega t-k z)} \\
-&amp; =e^{-i \theta} E_s \quad \text { with } \theta-k(n-1) \Delta z
+&amp; =e^{-i \theta} E_s \quad \text { with } \theta=k(n-1) \Delta z
 \end{aligned}
 \tag{1}\]</span></span></p>
 <p>For small values of <span class="math inline">\(\Theta\)</span> the exponential function can be approximated by</p>

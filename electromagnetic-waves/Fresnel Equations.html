@@ -1244,7 +1244,8 @@ Figure&nbsp;7— Electric field amplitude (left) and intensity (right) at a glas
 </div>
 </div>
 </div>
-<div id="cell-fig-TIRA-glass-air" class="cell" data-execution_count="7">
+<p>To gain a bit more insight into the lengthscale on which the electric field in Figure <a href="#fig-components" class="quarto-xref">Figure&nbsp;8</a> is decaying, we may have a look at the prefactor in the above exponential term.</p>
+<div id="cell-fig-components" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>fig,(ax1,ax2)<span class="op">=</span>plt.subplots(<span class="dv">1</span>,<span class="dv">2</span>,figsize<span class="op">=</span>get_size(<span class="dv">12</span>,<span class="dv">6</span>))</span>
@@ -1260,19 +1261,19 @@ Figure&nbsp;7— Electric field amplitude (left) and intensity (right) at a glas
 <span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
-<div id="fig-tira-glass-air" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<div id="fig-components" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-tira-glass-air-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="Fresnel Equations_files/figure-html/fig-tira-glass-air-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="694" height="339">
+<div aria-describedby="fig-components-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Fresnel Equations_files/figure-html/fig-components-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="694" height="339">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tira-glass-air-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-components-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;8— Electric field amplitude (left) and intensity (right) along the propagation direction at a glass(<span class="math inline">\(n_1=1.5\)</span>)/air(<span class="math inline">\(n_2=1.0\)</span>) interface.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>To gain a bit more insight into the lengthscale on which the electric field in Figure <strong>?@fig-TIRA-glass-air</strong> is decaying, we may have a look at the prefactor in the above exponential term. This prefactor denotes an inverse length scale, i.e.</p>
+<p>This prefactor denotes an inverse length scale, i.e.</p>
 <p><span class="math display">\[
 \delta=\frac{1}{n_2k_0 \alpha}
 \]</span></p>
@@ -1327,7 +1328,7 @@ Figure&nbsp;9— Decay length of the evanescent wave in air for total internal r
 <figcaption>Total internal reflection of microwaves by a prism (left).</figcaption>
 </figure>
 </div>
-<p>In the visible region, this decay length is on the order of a feww 100 nanometers. Evanescent field play an important role for optical microscopy for example, where they are either used in total internal reflection fluorescence microscopy (TIRF), exciting only a tiny sheet above an interface and thus reducing fluorescence background. Other techniques use the evanescent field on tiny tips as sources for excitation of fluorescence or scattering (NSOM). Evanescent waves are also used for coupling light into small mechanical resonators to cool them to extremely low temperatures (opto-mechanics).</p>
+<p>In the visible region, this decay length is on the order of a few 100 nanometers. Evanescent field play an important role for optical microscopy for example, where they are either used in total internal reflection fluorescence microscopy (TIRF), exciting only a tiny sheet above an interface and thus reducing fluorescence background. Other techniques use the evanescent field on tiny tips as sources for excitation of fluorescence or scattering (NSOM). Evanescent waves are also used for coupling light into small mechanical resonators to cool them to extremely low temperatures (opto-mechanics).</p>
 </section>
 </section>
 <section id="intensities-of-reflected-and-transmitted-waves" class="level2">
