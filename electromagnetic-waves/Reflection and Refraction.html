@@ -64,6 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../electromagnetic-waves/Fresnel Equations.html" rel="next">
+<link href="../electromagnetic-waves/Dispersion and Absorption.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -162,7 +164,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Reflection and Refraction of Electromagnetic Waves</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Electromagnetic Optics</li><li class="breadcrumb-item"><a href="../electromagnetic-waves/Reflection and Refraction.html">Lecture 15</a></li><li class="breadcrumb-item"><a href="../electromagnetic-waves/Reflection and Refraction.html">Reflection and Refraction</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -575,6 +577,29 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-19" role="navigation" aria-expanded="true">
+ <span class="menu-text">Lecture 15</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-19" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-19" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Reflection and Refraction.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Reflection and Refraction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Fresnel Equations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fresnel Equations</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
       </ul>
   </li>
     </ul>
@@ -588,11 +613,10 @@ window.Quarto = {
    
   <ul>
   <li><a href="#effect-of-the-refractive-index" id="toc-effect-of-the-refractive-index" class="nav-link active" data-scroll-target="#effect-of-the-refractive-index">Effect of the Refractive Index</a></li>
-  <li><a href="#general-description-of-reflection-and-refraction" id="toc-general-description-of-reflection-and-refraction" class="nav-link" data-scroll-target="#general-description-of-reflection-and-refraction">General Description of Reflection and Refraction</a></li>
-  <li><a href="#boundary-condition" id="toc-boundary-condition" class="nav-link" data-scroll-target="#boundary-condition">Boundary Condition</a></li>
-  <li><a href="#reflectionrefraction" id="toc-reflectionrefraction" class="nav-link" data-scroll-target="#reflectionrefraction">Reflection/Refraction</a>
+  <li><a href="#general-description-of-reflection-and-refraction" id="toc-general-description-of-reflection-and-refraction" class="nav-link" data-scroll-target="#general-description-of-reflection-and-refraction">General Description of Reflection and Refraction</a>
   <ul class="collapse">
-  <li><a href="#frequency-and-wavevector-matching" id="toc-frequency-and-wavevector-matching" class="nav-link" data-scroll-target="#frequency-and-wavevector-matching">Frequency and Wavevector Matching</a></li>
+  <li><a href="#boundary-conditions" id="toc-boundary-conditions" class="nav-link" data-scroll-target="#boundary-conditions">Boundary Conditions</a></li>
+  <li><a href="#reflectionrefraction" id="toc-reflectionrefraction" class="nav-link" data-scroll-target="#reflectionrefraction">Reflection/Refraction</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -600,7 +624,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Electromagnetic Optics</li><li class="breadcrumb-item"><a href="../electromagnetic-waves/Reflection and Refraction.html">Lecture 15</a></li><li class="breadcrumb-item"><a href="../electromagnetic-waves/Reflection and Refraction.html">Reflection and Refraction</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Reflection and Refraction of Electromagnetic Waves</h1>
 </div>
@@ -619,22 +643,24 @@ window.Quarto = {
 </header>
 
 
-<section id="effect-of-the-refractive-index" class="level3">
-<h3 class="anchored" data-anchor-id="effect-of-the-refractive-index">Effect of the Refractive Index</h3>
-<p>The effect of the material on the wave propagation can be understood, when considering a plane wave <span class="math inline">\(E_s\)</span> incindent on a thin material slab of thickness <span class="math inline">\(\Delta z\)</span>.</p>
-<span class="math display">\[\begin{aligned}
+<section id="effect-of-the-refractive-index" class="level2">
+<h2 class="anchored" data-anchor-id="effect-of-the-refractive-index">Effect of the Refractive Index</h2>
+<p>The effect of the material on the wave propagation can be understood when considering a plane wave <span class="math inline">\(E_s\)</span> incident on a thin material slab of thickness <span class="math inline">\(\Delta z\)</span>.</p>
+<p><span id="eq-wave-slab"><span class="math display">\[
+\begin{aligned}
 E &amp; =E_0 \cdot e^{-i(\omega t-k z-(n-1) \lambda \cdot \Delta z)} \\
 &amp; =e^{-i \omega(n-1) \Delta z / c} E_0 e^{i(\omega t-k z)} \\
 &amp; =e^{-i \theta} E_s \quad \text { with } \theta-k(n-1) \Delta z
-\end{aligned}\]</span>
+\end{aligned}
+\tag{1}\]</span></span></p>
 <p>For small values of <span class="math inline">\(\Theta\)</span> the exponential function can be approximated by</p>
-<p><span class="math display">\[e^x \sim 1+x+\left(\frac{x^2}{2}\right)\]</span></p>
+<p><span id="eq-exp-approx"><span class="math display">\[e^x \sim 1+x+\left(\frac{x^2}{2}\right) \tag{2}\]</span></span></p>
 <p>such that we obtain</p>
-<p><span class="math display">\[e^{-i k(n-1) \Delta z} \approx 1-i k(n-1) \Delta z-\frac{i k^2(n-1)^2 \Delta z^2}{2}\]</span></p>
+<p><span id="eq-wave-approx"><span class="math display">\[e^{-i k(n-1) \Delta z} \approx 1-i k(n-1) \Delta z-\frac{i k^2(n-1)^2 \Delta z^2}{2} \tag{3}\]</span></span></p>
 <p>The total field behind the thin slab therefore is</p>
-<p><span class="math display">\[E(z)=\underbrace{E_0 e^{i(\omega t-k z)}}_{E_e}-\underbrace{i k(n-1) \Delta z E_0 e^{i(\omega t-k z)}}_{E_{\text {medium }}}\]</span></p>
-<p>The resulting wave is therefore delayed by a phase factor <span class="math inline">\(k(n-1) \Delta z\)</span> and the amplitude is reduced by a factor <span class="math inline">\(k(n-1) \Delta z\)</span>. If there are now multiple very thin slabs behind each other than each layer will contribute to the delay and the amplitude reduction. This succsessive phase delay will finally result in a phase velocity of the wave in the medium, which is reduced by a factor <span class="math inline">\(n\)</span> compared to the vacuum.</p>
-<div id="5c4c0d9a" class="cell" data-execution_count="2">
+<p><span id="eq-total-field"><span class="math display">\[E(z)=\underbrace{E_0 e^{i(\omega t-k z)}}_{E_e}-\underbrace{i k(n-1) \Delta z E_0 e^{i(\omega t-k z)}}_{E_{\text {medium}}} \tag{4}\]</span></span></p>
+<p>As shown in <a href="#fig-components" class="quarto-xref">Figure&nbsp;1</a>, the resulting wave is delayed by a phase factor <span class="math inline">\(k(n-1) \Delta z\)</span> (see <a href="#eq-wave-slab" class="quarto-xref">Equation&nbsp;1</a>) and the amplitude is reduced by a factor <span class="math inline">\(k(n-1) \Delta z\)</span>.</p>
+<div id="cell-fig-components" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters</span></span>
@@ -667,147 +693,168 @@ E &amp; =E_0 \cdot e^{-i(\omega t-k z-(n-1) \lambda \cdot \Delta z)} \\
 <span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="Reflection and Refraction_files/figure-html/cell-3-output-1.png" width="653" height="440" class="figure-img"></p>
-<figcaption>Components of the electric field in medium</figcaption>
+<div id="fig-components" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-components-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Reflection and Refraction_files/figure-html/fig-components-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="653" height="440">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-components-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1— Components of the electric field in medium
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="general-description-of-reflection-and-refraction" class="level3">
-<h3 class="anchored" data-anchor-id="general-description-of-reflection-and-refraction">General Description of Reflection and Refraction</h3>
-<p>Before we have a look at the behavior of electromagnetic waves at boundaries, we would like to setup the stage for those considerations. For this purpose we need to define the geometry we are referring to and also have a look at the electric fields (and magnetic fields) that will be present. The sketch below shows the wavevectors of the incident <span class="math inline">\(\vec{k}_I\)</span>, reflected <span class="math inline">\(\vec{k}_R\)</span> and transmitted <span class="math inline">\(\vec{k}_T\)</span> waves in the two materials with the refractive indices <span class="math inline">\(n_1\)</span> and <span class="math inline">\(n_2\)</span>.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/setup_k.png" class="img-fluid figure-img" style="width:40.0%"></p>
-<figcaption>Reflection and refraction of an electromagnetic wave at a boundary.</figcaption>
+<section id="general-description-of-reflection-and-refraction" class="level2">
+<h2 class="anchored" data-anchor-id="general-description-of-reflection-and-refraction">General Description of Reflection and Refraction</h2>
+<p>Before we examine the behavior of electromagnetic waves at boundaries, we need to define the geometry and examine the electric and magnetic fields present. <a href="#fig-setup-k" class="quarto-xref">Figure&nbsp;2</a> shows the wavevectors of the incident <span class="math inline">\(\vec{k}_I\)</span>, reflected <span class="math inline">\(\vec{k}_R\)</span> and transmitted <span class="math inline">\(\vec{k}_T\)</span> waves in the two materials with the refractive indices <span class="math inline">\(n_1\)</span> and <span class="math inline">\(n_2\)</span>.</p>
+<div id="fig-setup-k" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-setup-k-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/setup_k.png" class="img-fluid figure-img" style="width:40.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-setup-k-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2— Reflection and refraction of an electromagnetic wave at a boundary.
+</figcaption>
 </figure>
 </div>
-<p>These wavevectors are connected to the following plane waves, we will consider. We will first assume that these three waves have different frequencies as well, even though we may guess that they have the same as they all stem from the incident wave.</p>
-<p><span class="math display">\[
+<p>These wavevectors are connected to the following plane waves:</p>
+<p><span id="eq-incident"><span class="math display">\[
 \vec{E}_{\rm inc}=\vec{E}_I e^{i(\omega_I t -\vec{k}_I\cdot \vec{r})}
-\tag{incident}
-\]</span></p>
-<p><span class="math display">\[
+\tag{5}\]</span></span></p>
+<p><span id="eq-reflected"><span class="math display">\[
 \vec{E}_{\rm ref}=\vec{E}_R e^{i(\omega_R t -\vec{k}_R\cdot \vec{r})}
-\tag{reflected}
-\]</span></p>
-<p><span class="math display">\[
+\tag{6}\]</span></span></p>
+<p><span id="eq-transmitted"><span class="math display">\[
 \vec{E}_{\rm tra}=\vec{E}_T e^{i(\omega_T t -\vec{k}_T\cdot \vec{r})}
-\tag{transmitted}
-\]</span></p>
-<p>What we have to consider, however, is the direction of polarization of their electric or magnetic fields. This is important and shall not be confused in the following. We will differentiate between</p>
+\tag{7}\]</span></span></p>
+<p>As discussed in <a href="#eq-incident" class="quarto-xref">Equation&nbsp;5</a> through <a href="#eq-transmitted" class="quarto-xref">Equation&nbsp;7</a>, we must consider the direction of polarization of their electric or magnetic fields. We differentiate between:</p>
 <ul>
 <li><strong>p-polarized light:</strong> electric field is in the plane of incidence (given by the <span class="math inline">\(k\)</span>-vector and the surface normal), also called transverse magnetic (TM)</li>
 <li><strong>s-polarized light:</strong> electric field is perpendicular to the plane of incidence, also called transverse electric (TE)</li>
 </ul>
-<p>This is sketched in the image below.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/pol_decomp.png" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption>Decomposition of the incident electric field into components normal and tangential to the dielectric boundary.</figcaption>
+<div id="fig-pol-decomp" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pol-decomp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/pol_decomp.png" class="img-fluid figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pol-decomp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3— Decomposition of the incident electric field into components normal and tangential to the dielectric boundary.
+</figcaption>
 </figure>
 </div>
-<p>To apply the boundary conditions, we will further need to split thesse polarisation vectors into components, which are <strong>parallel</strong> (<span class="math inline">\(||\)</span>) or <strong>perpendicular</strong> (<span class="math inline">\(\perp\)</span>) to the interface. This is required as we will have boundary conditions for the electric and magnetic fields either parallel or perpendicular to the interface. The s-polarisation, for example, has an electric field, which is always parallel to the interface, while the p-polarization comprises both components.</p>
-</section>
-<section id="boundary-condition" class="level2">
-<h2 class="anchored" data-anchor-id="boundary-condition">Boundary Condition</h2>
-<p>The boundary conditions for the electric or magnetic field passing an interface are derived from the Maxwell equations. As I assume you have don this already in the electro- and magnetostatics lectures, I will only resume shortly here.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/boundary.png" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption>Integration over a closed surface (left) and close path (right) to obtain the boundary conditions for the electric field components.</figcaption>
+<p>As shown in <a href="#fig-pol-decomp" class="quarto-xref">Figure&nbsp;3</a> , we need to split these polarisation vectors into components that are <strong>parallel</strong> (<span class="math inline">\(||\)</span>) or <strong>perpendicular</strong> (<span class="math inline">\(\perp\)</span>) to the interface. This is required for applying boundary conditions for the electric and magnetic fields.</p>
+<section id="boundary-conditions" class="level3">
+<h3 class="anchored" data-anchor-id="boundary-conditions">Boundary Conditions</h3>
+<p>The boundary conditions for the electric or magnetic field passing an interface are derived from the Maxwell equations.</p>
+<div id="fig-boundary" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-boundary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/boundary.png" class="img-fluid figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-boundary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4— Integration over a closed surface (left) and close path (right) to obtain the boundary conditions for the electric field components.
+</figcaption>
 </figure>
 </div>
-<p>Let us take the divergence of the displacement field <span class="math inline">\(\nabla \cdot \vec{D}=\rho_f\)</span> which is equal to the density of free charges. When integrating both sides over the volume</p>
-<p><span class="math display">\[
+<p>Let us take the divergence of the displacement field <span class="math inline">\(\nabla \cdot \vec{D}=\rho_f\)</span> which is equal to the density of free charges. When integrating both sides over the volume:</p>
+<p><span id="eq-divergence"><span class="math display">\[
 \int\nabla \vec{D} dV=\int \rho_f dV
-\]</span></p>
-<p>we can apply Gauss’ theorem and replace the volume integral over the divergence with an integral over closed surface of that volume</p>
-<p><span class="math display">\[
+\tag{8}\]</span></span></p>
+<p>we can apply Gauss’ theorem and replace the volume integral over the divergence with an integral over closed surface of that volume:</p>
+<p><span id="eq-gauss"><span class="math display">\[
 \oint \vec{D} d\vec{A}= q_f
-\]</span></p>
-<p>where <span class="math inline">\(d\vec{A}\)</span> is a vector standing perpendicular on the surface element <span class="math inline">\(dA\)</span> and <span class="math inline">\(q_f\)</span> are the free charges in the volume. If we now consider a volume, which has the shape of a pillbox as displayed in the above sketch on the left side, we may let the height of the volume contract to zero and write the surface integral as</p>
-<p><span class="math display">\[
+\tag{9}\]</span></span></p>
+<p>where <span class="math inline">\(d\vec{A}\)</span> is a vector standing perpendicular on the surface element <span class="math inline">\(dA\)</span> and <span class="math inline">\(q_f\)</span> are the free charges in the volume. For a pillbox volume as shown in <a href="#fig-boundary" class="quarto-xref">Figure&nbsp;4</a>, letting the height contract to zero, we get:</p>
+<p><span id="eq-boundary-condition"><span class="math display">\[
 (\vec{D}_2-\vec{D}_1)\cdot \hat{n}=q_f/A=\sigma_f
-\]</span></p>
-<p>where <span class="math inline">\(A\)</span> is the cap area of the cylinder and <span class="math inline">\(\hat{n}\)</span> is a unit vector directed from material 2 to material 1. As the unit vector <span class="math inline">\(\hat{n}\)</span> is perpendicular to the interface, this states that the difference in the normal components of the displacement field is due to free surfaces charges. Thus in the case of no free charges at the interface (<span class="math inline">\(\sigma_f=0\)</span>), the normal components of the displacement field is conserved across the interface.</p>
-<p><span class="math display">\[
+\tag{10}\]</span></span></p>
+<p>where <span class="math inline">\(A\)</span> is the cap area of the cylinder and <span class="math inline">\(\hat{n}\)</span> is a unit vector directed from material 2 to 1. For no free charges at the interface (<span class="math inline">\(\sigma_f=0\)</span>):</p>
+<p><span id="eq-d-perpendicular"><span class="math display">\[
 D_{1\perp}=D_{1\perp}
-\tag{for $\sigma_f=0$}
-\]</span></p>
-<p>This also says that there is a jump in the normal electric field component</p>
-<p><span class="math display">\[
+\tag{11}\]</span></span></p>
+<p>This implies a jump in the normal electric field component:</p>
+<p><span id="eq-e-perpendicular"><span class="math display">\[
 \frac{E_{1\perp}}{E_{2\perp}}=\frac{\epsilon_2}{\epsilon_1}
-\]</span></p>
-<p>as <span class="math inline">\(D=\epsilon&nbsp;E\)</span>. A similar calculation can also be done with the magnetic flux density <span class="math inline">\(\nabla \cdot \vec{B}=0\)</span>, which yields tha the normal component of the flux density is conserved as well, but the magnetic field normal component has a jump according to the magnetic permeabilities <span class="math inline">\(\mu_1,\mu_2\)</span>.</p>
-<p>The right sketch in the above Figure indicates the calculations that yield the boundary conditions for the parallel components of the electric and magnetic field. Here we use the Maxwell equation</p>
-<p><span class="math display">\[
+\tag{12}\]</span></span></p>
+<p>as <span class="math inline">\(D=\epsilon E\)</span>. Similar calculations with the magnetic flux density <span class="math inline">\(\nabla \cdot \vec{B}=0\)</span> show that the normal component of the flux density is conserved.</p>
+<p>Using the Maxwell equation:</p>
+<p><span id="eq-maxwell-faraday"><span class="math display">\[
 \nabla \times \vec{E}=-\frac{\partial \vec{B}}{\partial t}
-\]</span></p>
-<p>Integrating both sides over an area allows us to use Stokes theorem, stating that the integral over the rotation of an electric field can be transformed into a closed loop integral over the electric field.</p>
-<p><span class="math display">\[
+\tag{13}\]</span></span></p>
+<p>Integrating both sides over an area and applying Stokes theorem:</p>
+<p><span id="eq-stokes"><span class="math display">\[
 \oint \vec{E} d\vec{l}=-\frac{\partial}{\partial t}\int \vec{B}d\vec{A}
-\]</span></p>
-<p>Letting the area go to zero as well, we find</p>
-<p><span class="math display">\[
+\tag{14}\]</span></span></p>
+<p>As the area approaches zero:</p>
+<p><span id="eq-boundary-tangential"><span class="math display">\[
 \hat{n} \times (\vec{E}_2-\vec{E}_1)=0
-\]</span></p>
-<p>or</p>
-<p><span class="math display">\[
+\tag{15}\]</span></span></p>
+<p>Therefore:</p>
+<p><span id="eq-e-parallel"><span class="math display">\[
 E_{2||}=E_{1||}
-\]</span></p>
-<p>saying that the tangential component of the electric field is conserved. In the case of zero surface currentsm, this is also true for the magnetic field (<span class="math inline">\(\vec{H}\)</span>) components along the interface.</p>
+\tag{16}\]</span></span></p>
+<p>indicating that the tangential component of the electric field is conserved.</p>
 </section>
-<section id="reflectionrefraction" class="level2">
-<h2 class="anchored" data-anchor-id="reflectionrefraction">Reflection/Refraction</h2>
-<p>We can now continue to calculate the mathcing of frequency and wavevector at the interface as well consider the amplitudes of the electric and magnetic fields.</p>
-<section id="frequency-and-wavevector-matching" class="level3">
-<h3 class="anchored" data-anchor-id="frequency-and-wavevector-matching">Frequency and Wavevector Matching</h3>
-<p>Recalling the above formulas for the incident, reflected and transmitted plane waves, we can explicitely write down the components of the wavevectors of the three waves in our cordinate system</p>
-<p><img src="img/coordinates.png" class="img-fluid" style="width:40.0%"></p>
-<p>According to that drawing, we have</p>
+<section id="reflectionrefraction" class="level3">
+<h3 class="anchored" data-anchor-id="reflectionrefraction">Reflection/Refraction</h3>
+<section id="frequency-and-wavevector-matching" class="level4">
+<h4 class="anchored" data-anchor-id="frequency-and-wavevector-matching">Frequency and Wavevector Matching</h4>
+<p>Referring to <a href="#fig-coordinates" class="quarto-xref">Figure&nbsp;5</a>, we can explicitly write down the components of the wavevectors of the three waves in our coordinate system:</p>
+<div id="fig-coordinates" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-coordinates-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/coordinates.png" class="img-fluid figure-img" style="width:40.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-coordinates-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5— Coordinate system for wave at interfaces.
+</figcaption>
+</figure>
+</div>
+<p>According to the coordinate system shown in <a href="#fig-coordinates" class="quarto-xref">Figure&nbsp;5</a>, we have:</p>
 <p><span class="math display">\[\begin{eqnarray}
-\vec{k}_I &amp;=&amp; k_I \cos(\theta_I)\hat{e}_x+k_I \sin(\theta_I)\hat{e}_z\\
-\vec{k}_R &amp;=&amp; -k_R \cos(\theta_R)\hat{e}_x+k_R \sin(\theta_R)\hat{e}_z\\
+\vec{k}_I &amp;=&amp; k_I \cos(\theta_I)\hat{e}_x+k_I \sin(\theta_I)\hat{e}_z \\
+\vec{k}_R &amp;=&amp; -k_R \cos(\theta_R)\hat{e}_x+k_R \sin(\theta_R)\hat{e}_z \\
 \vec{k}_T &amp;=&amp; k_T \cos(\theta_T)\hat{e}_x+k_T \sin(\theta_T)\hat{e}_z
-\end{eqnarray}\]</span></p>
-<p>Note that the component <span class="math inline">\(\hat{e}_x\)</span> always provides the wavevector component perpendicular to the interface, while <span class="math inline">\(\hat{e}_z\)</span> is the tangential (parallel) component. The total field in both sides is given by</p>
-<p><span class="math display">\[
+\end{eqnarray}\]</span> {#eq-wavevectors}</p>
+<p>Note that the component <span class="math inline">\(\hat{e}_x\)</span> always provides the wavevector component perpendicular to the interface, while <span class="math inline">\(\hat{e}_z\)</span> is the tangential (parallel) component. The total field on both sides is given by:</p>
+<p><span id="eq-total-field-left"><span class="math display">\[
 \vec{E}=\vec{E}_{\rm inc}+\vec{E}_{\rm ref}
-\tag{$x&lt;0$}
-\]</span></p>
+\quad \text{(for } x&lt;0 \text{)}
+\tag{17}\]</span></span></p>
 <p>and</p>
-<p><span class="math display">\[
+<p><span id="eq-total-field-right"><span class="math display">\[
 \vec{E}=\vec{E}_{\rm tra}
-\tag{$x&gt;0$}
-\]</span></p>
-<p>on the other side. We now want that those field mathc according to our previously described boundary conditions.</p>
-<p>This matching of the field shall be valid at all times, which directly requires</p>
-<p><span class="math display">\[
+\quad \text{(for } x&gt;0 \text{)}
+\tag{18}\]</span></span></p>
+<p>For these fields to match according to our previously described boundary conditions, we require:</p>
+<p><span id="eq-frequency-matching"><span class="math display">\[
 \omega_I=\omega_R=\omega_T
-\tag{frequency mathcing}
-\]</span></p>
-<p>This is what we already guessed. Along the interface we also need to have a phase mathcing of the waves as already discussed in the wave optics chapter. This means that</p>
-<p><span class="math display">\[
+\tag{19}\]</span></span></p>
+<p>This frequency matching confirms our initial intuition. Along the interface, we also need phase matching of the waves as discussed in the wave optics chapter:</p>
+<p><span id="eq-phase-matching"><span class="math display">\[
 \vec{k}_I\cdot \vec{r}=\vec{k}_R\cdot \vec{r}=\vec{k}_T\cdot \vec{r}
-\]</span></p>
-<p>at all positions <span class="math inline">\(\vec{r}\)</span> that belong to the interface (i.e.&nbsp;<span class="math inline">\(x=0\)</span>). Therefore <span class="math inline">\(\vec{r}=\lbrace 0,y,z \rbrace\)</span> and the equalities yield</p>
-<p><span class="math display">\[
+\tag{20}\]</span></span></p>
+<p>at all positions <span class="math inline">\(\vec{r}\)</span> that belong to the interface (i.e., <span class="math inline">\(x=0\)</span>). Therefore <span class="math inline">\(\vec{r}=\lbrace 0,y,z \rbrace\)</span> and the equalities yield:</p>
+<p><span id="eq-snell-prelim"><span class="math display">\[
 k_I\sin(\theta_I)=k_R\sin(\theta_R)=k_T\sin(\theta_T)
-\]</span></p>
-<p>Since the magnitude of the wavevector of the incidenet and the reflected light is the same (both wave travel in the same material), we immediately find</p>
-<p><span class="math inline">\(\theta_I=\theta_R\)</span></p>
-<p>For the incident and the transmitted wave we have to take the change of the wavenumber into account, which gives.</p>
-<p><span class="math display">\[\begin{eqnarray}
-n_1 k_0\sin(\theta_I) &amp;=&amp; n_2 k_0\sin(\theta_T)\\
+\tag{21}\]</span></span></p>
+<p>Since the magnitude of the wavevector of the incident and the reflected light is the same (both waves travel in the same material), we find:</p>
+<p><span id="eq-reflection-angle"><span class="math display">\[
+\theta_I=\theta_R
+\tag{22}\]</span></span></p>
+<p>For the incident and transmitted waves, we must account for the change in wavenumber:</p>
+<p><span id="eq-snell"><span class="math display">\[
+\begin{eqnarray}
+n_1 k_0\sin(\theta_I) &amp;=&amp; n_2 k_0\sin(\theta_T) \\
 n_1 \sin(\theta_I) &amp;=&amp; n_2 \sin(\theta_T)
-\end{eqnarray}\]</span></p>
-<p>which is Snells law. Snells law is the result of the conservation of the parallel component of the wavevector across an interface, while the normal component has to have a jump according to the refractive indices.</p>
+\end{eqnarray}
+\tag{23}\]</span></span></p>
+<p><a href="#eq-snell" class="quarto-xref">Equation&nbsp;23</a> represents Snell’s law, which results from the conservation of the parallel component of the wavevector across an interface, while the normal component must have a jump according to the refractive indices.</p>
 
 
+</section>
 </section>
 </section>
 
@@ -1232,6 +1279,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../electromagnetic-waves/Dispersion and Absorption.html" class="pagination-link" aria-label="Origin of Refractive Index">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Origin of Refractive Index</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../electromagnetic-waves/Fresnel Equations.html" class="pagination-link" aria-label="Fresnel Equations">
+        <span class="nav-page-text">Fresnel Equations</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 
 
