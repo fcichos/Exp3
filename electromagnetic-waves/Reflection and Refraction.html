@@ -621,10 +621,27 @@ window.Quarto = {
  <span class="menu-text">Metals</span></a>
   </div>
 </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-21" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 17</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-21" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-21" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../electromagnetic-waves/Anisotropic Materials.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Anisotropic Materials</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Optical Activity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optical Activity</span></a>
   </div>
 </li>
       </ul>
@@ -837,8 +854,7 @@ D_{1\perp}=D_{1\perp}
 <p><span id="eq-e-perpendicular"><span class="math display">\[
 \frac{E_{1\perp}}{E_{2\perp}}=\frac{\epsilon_2}{\epsilon_1}
 \tag{11}\]</span></span></p>
-<p>as <span class="math inline">\(D=\epsilon E\)</span>. Similar calculations with the magnetic flux density <span class="math inline">\(\nabla \cdot \vec{B}=0\)</span> show that the normal component of the flux density is conserved.</p>
-<p>Another boundary condition arises from the curl of the electric field. Using the Maxwell equation:</p>
+<p>as <span class="math inline">\(D=\epsilon E\)</span>. Another boundary condition arises from the curl of the electric field. Using the Maxwell equation:</p>
 <p><span id="eq-maxwell-faraday"><span class="math display">\[
 \nabla \times \vec{E}=-\frac{\partial \vec{B}}{\partial t}
 \tag{12}\]</span></span></p>
@@ -879,6 +895,85 @@ w(\vec{E}_1 - \vec{E}_2) \cdot \hat{t} = 0
 E_{2||}=E_{1||}
 \tag{15}\]</span></span></p>
 <p>indicating that the tangential component of the electric field is conserved.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Boundary Conditions for the Magnetic Field
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>For the magnetic field, we can derive boundary conditions using similar approaches. Starting with Ampère’s law:</p>
+<p><span class="math display">\[
+\nabla \times \vec{H}=\vec{J}+\frac{\partial \vec{D}}{\partial t}
+\]</span></p>
+<p>Integrating over an area and applying Stokes’ theorem:</p>
+<p><span class="math display">\[
+\oint \vec{H} \cdot d\vec{l}=\int \vec{J} \cdot d\vec{A}+\frac{\partial}{\partial t}\int \vec{D} \cdot d\vec{A}
+\]</span></p>
+<p>Using the same rectangular loop approach as with the electric field, but now in the limit as <span class="math inline">\(h \to 0\)</span>:</p>
+<ol type="1">
+<li>The area integral of the displacement current (<span class="math inline">\(\partial \vec{D}/\partial t\)</span>) vanishes</li>
+<li>The surface current density <span class="math inline">\(\vec{K}=\vec{J}dA\)</span> remains finite</li>
+</ol>
+<p>This yields:</p>
+<p><span class="math display">\[
+\hat{n} \times (\vec{H}_2-\vec{H}_1)=\vec{K}
+\]</span></p>
+<p>In the absence of surface currents (<span class="math inline">\(\vec{K}=0\)</span>), we have:</p>
+<p><span id="eq-h-parallel"><span class="math display">\[
+H_{2||}=H_{1||}
+\tag{16}\]</span></span></p>
+<p>For the normal component, starting from <span class="math inline">\(\nabla \cdot \vec{B}=0\)</span> and using the pillbox approach as with the electric field:</p>
+<p><span class="math display">\[
+\oint \vec{B} \cdot d\vec{A}=0
+\]</span></p>
+<p>This leads directly to:</p>
+<p><span id="eq-b-perpendicular"><span class="math display">\[
+B_{1\perp}=B_{2\perp}
+\tag{17}\]</span></span></p>
+<p>Since <span class="math inline">\(\vec{B}=\mu\vec{H}\)</span>, this implies a jump in the normal component of the H-field:</p>
+<p><span id="eq-h-perpendicular"><span class="math display">\[
+\frac{H_{1\perp}}{H_{2\perp}}=\frac{\mu_2}{\mu_1}
+\tag{18}\]</span></span></p>
+<p>These boundary conditions for the magnetic field complement those for the electric field and are essential for determining the reflection and transmission coefficients at interfaces.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Summary Boundary Conditions at an Interface
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For a boundary between two media (1 and 2) with surface normal <span class="math inline">\(\hat{n}\)</span>:</p>
+<p><strong>Electric Field</strong></p>
+<ul>
+<li>Normal component (with surface charge density <span class="math inline">\(\sigma_f\)</span>): <span class="math display">\[\epsilon_1 E_{1\perp} - \epsilon_2 E_{2\perp} = \sigma_f\]</span></li>
+<li>Tangential component: <span class="math display">\[E_{1||} = E_{2||}\]</span></li>
+</ul>
+<p><strong>Magnetic Field</strong></p>
+<ul>
+<li>Normal component: <span class="math display">\[B_{1\perp} = B_{2\perp}\]</span></li>
+<li>Tangential component (with surface current density <span class="math inline">\(\vec{K}\)</span>): <span class="math display">\[\hat{n} \times (\vec{H}_2-\vec{H}_1)=\vec{K}\]</span></li>
+</ul>
+<p>In the absence of free charges (<span class="math inline">\(\sigma_f = 0\)</span>) and currents (<span class="math inline">\(\vec{K} = 0\)</span>), these reduce to:</p>
+<ul>
+<li><span class="math inline">\(\epsilon_1 E_{1\perp} = \epsilon_2 E_{2\perp}\)</span></li>
+<li><span class="math inline">\(E_{1||} = E_{2||}\)</span></li>
+<li><span class="math inline">\(B_{1\perp} = B_{2\perp}\)</span></li>
+<li><span class="math inline">\(H_{1||} = H_{2||}\)</span></li>
+</ul>
+</div>
+</div>
 </section>
 <section id="reflectionrefraction" class="level3">
 <h3 class="anchored" data-anchor-id="reflectionrefraction">Reflection/Refraction</h3>
@@ -902,41 +997,41 @@ Figure&nbsp;5— Coordinate system for wave at interfaces.
   \vec{k}_R &amp;=  -k_R \cos(\theta_R)\hat{e}_x+k_R \sin(\theta_R)\hat{e}_z \\
   \vec{k}_T &amp;=  k_T \cos(\theta_T)\hat{e}_x+k_T \sin(\theta_T)\hat{e}_z
 \end{aligned}
-\tag{16}\]</span></span></p>
+\tag{19}\]</span></span></p>
 <p>Note that the component <span class="math inline">\(\hat{e}_x\)</span> always provides the wavevector component perpendicular to the interface, while <span class="math inline">\(\hat{e}_z\)</span> is the tangential (parallel) component. The total field on both sides is given by:</p>
 <p><span id="eq-total-field-left"><span class="math display">\[
 \vec{E}=\vec{E}_{inc}+\vec{E}_{ref}
 \quad \text{(for } x&lt;0 \text{)}
-\tag{17}\]</span></span></p>
+\tag{20}\]</span></span></p>
 <p>and</p>
 <p><span id="eq-total-field-right"><span class="math display">\[
 \vec{E}=\vec{E}_{tra}
 \quad \text{(for } x&gt;0 \text{)}
-\tag{18}\]</span></span></p>
+\tag{21}\]</span></span></p>
 <p>For these fields to match according to our previously described boundary conditions, we require:</p>
 <p><span id="eq-frequency-matching"><span class="math display">\[
 \omega_I=\omega_R=\omega_T
-\tag{19}\]</span></span></p>
+\tag{22}\]</span></span></p>
 <p>This frequency matching confirms our initial intuition. Along the interface, we also need phase matching of the waves as discussed in the wave optics chapter:</p>
 <p><span id="eq-phase-matching"><span class="math display">\[
 \vec{k}_I\cdot \vec{r}=\vec{k}_R\cdot \vec{r}=\vec{k}_T\cdot \vec{r}
-\tag{20}\]</span></span></p>
+\tag{23}\]</span></span></p>
 <p>at all positions <span class="math inline">\(\vec{r}\)</span> that belong to the interface (i.e., <span class="math inline">\(x=0\)</span>). Therefore <span class="math inline">\(\vec{r}=\lbrace 0,y,z \rbrace\)</span> and the equalities yield:</p>
 <p><span id="eq-snell-prelim"><span class="math display">\[
 k_I\sin(\theta_I)=k_R\sin(\theta_R)=k_T\sin(\theta_T)
-\tag{21}\]</span></span></p>
+\tag{24}\]</span></span></p>
 <p>Since the magnitude of the wavevector of the incident and the reflected light is the same (both waves travel in the same material), we find:</p>
 <p><span id="eq-reflection-angle"><span class="math display">\[
 \theta_I=\theta_R
-\tag{22}\]</span></span></p>
+\tag{25}\]</span></span></p>
 <p>For the incident and transmitted waves, we must account for the change in wavenumber:</p>
 <p><span id="eq-snell"><span class="math display">\[
 \begin{aligned}
 n_1 k_0\sin(\theta_I) &amp;= n_2 k_0\sin(\theta_T) \\
 n_1 \sin(\theta_I) &amp;= n_2 \sin(\theta_T)
 \end{aligned}
-\tag{23}\]</span></span></p>
-<p><a href="#eq-snell" class="quarto-xref">Equation&nbsp;23</a> represents Snell’s law, which results from the conservation of the parallel component of the wavevector across an interface, while the normal component must have a jump according to the refractive indices.</p>
+\tag{26}\]</span></span></p>
+<p><a href="#eq-snell" class="quarto-xref">Equation&nbsp;26</a> represents Snell’s law, which results from the conservation of the parallel component of the wavevector across an interface, while the normal component must have a jump according to the refractive indices.</p>
 
 
 </section>

@@ -621,10 +621,27 @@ window.Quarto = {
  <span class="menu-text">Metals</span></a>
   </div>
 </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-21" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 17</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-21" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-21" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../electromagnetic-waves/Anisotropic Materials.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Anisotropic Materials</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Optical Activity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optical Activity</span></a>
   </div>
 </li>
       </ul>
@@ -677,6 +694,7 @@ window.Quarto = {
 </header>
 
 
+<p>In the last lecture, we have discussed the matching of the frequency and the wavevector at an interface between two materials. We now also need to have a look at the matching of the electric field amplitudes at the boundaries.</p>
 <p>In the last lecture, we have discussed the mathcing of the frequency and the wavevector at an interface between the two materials. We no also need to have a look at the matching of the electric field amplitudes at the boundaries.</p>
 <section id="reflection" class="level2">
 <h2 class="anchored" data-anchor-id="reflection">Reflection</h2>
@@ -708,13 +726,13 @@ B_I\cos(\theta_I)-B_R\cos(\theta_R)=B_T\cos(\theta_T)
 \]</span></p>
 <p>and that all three vectors are orthogonal we can use the relation <span class="math inline">\(B=E/v\)</span> for the magnetic and electric field amplitudes and <span class="math inline">\(\theta_I=\theta_R\)</span> to obtain</p>
 <p><span class="math display">\[
-\frac{E_I-E_r}{v_1}\cos(\theta_I)=\frac{E_T}{v_2}\cos(\theta_T)
+\frac{E_I-E_R}{v_1}\cos(\theta_I)=\frac{E_T}{v_2}\cos(\theta_T)
 \]</span></p>
 <p>With the help of the condition <em>matching</em> above we can replace the transmitted electric field <span class="math inline">\(E_T\)</span> and using <span class="math inline">\(v_1=c/n_1\)</span> and <span class="math inline">\(v_2=c/n_2\)</span> we finally find</p>
 <p><span class="math display">\[
 \frac{E_R}{E_I}=\frac{n_1\cos(\theta_I)-n_2\cos(\theta_T)}{n_1\cos(\theta_I)+n_2\cos(\theta_T)}=r_s
 \]</span></p>
-<p>This is the <strong>Fresnel coefficient for the reflection of s-polarized light</strong> <span class="math inline">\(r_s\)</span>. If we replace not the transmitted but the refletec electric field in the formula above, we may obtain the <strong>Fresnel coefficient for the transmission of s-polarized light</strong> <span class="math inline">\(t_s\)</span></p>
+<p>This is the <strong>Fresnel coefficient for the reflection of s-polarized light</strong> <span class="math inline">\(r_s\)</span>. If we replace not the transmitted but the reflected electric field in the formula above, we may obtain the <strong>Fresnel coefficient for the transmission of s-polarized light</strong> <span class="math inline">\(t_s\)</span></p>
 <p><span class="math display">\[
 \frac{E_T}{E_I}=\frac{2n_1\cos(\theta_I)}{n_1\cos(\theta_I)+n_2\cos(\theta_T)}=t_s
 \]</span></p>

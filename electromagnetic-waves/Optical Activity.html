@@ -30,6 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../electromagnetic-waves/Anisotropic Materials.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -128,7 +129,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Optical Activity and Rotatory Dispersion</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Electromagnetic Optics</li><li class="breadcrumb-item"><a href="../electromagnetic-waves/Anisotropic Materials.html">Lecture 17</a></li><li class="breadcrumb-item"><a href="../electromagnetic-waves/Optical Activity.html">Optical Activity</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -585,10 +586,27 @@ window.Quarto = {
  <span class="menu-text">Metals</span></a>
   </div>
 </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-21" role="navigation" aria-expanded="true">
+ <span class="menu-text">Lecture 17</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-21" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-21" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../electromagnetic-waves/Anisotropic Materials.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Anisotropic Materials</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Optical Activity.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Optical Activity</span></a>
   </div>
 </li>
       </ul>
@@ -605,11 +623,7 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#fundamental-mechanisms" id="toc-fundamental-mechanisms" class="nav-link active" data-scroll-target="#fundamental-mechanisms">Fundamental Mechanisms</a>
-  <ul class="collapse">
-  <li><a href="#electronic-basis-of-optical-activity" id="toc-electronic-basis-of-optical-activity" class="nav-link" data-scroll-target="#electronic-basis-of-optical-activity">Electronic Basis of Optical Activity</a></li>
-  <li><a href="#circular-birefringence-and-its-electronic-origin" id="toc-circular-birefringence-and-its-electronic-origin" class="nav-link" data-scroll-target="#circular-birefringence-and-its-electronic-origin">Circular Birefringence and Its Electronic Origin</a></li>
-  </ul></li>
+  <li><a href="#circular-birefringence-and-its-electronic-origin" id="toc-circular-birefringence-and-its-electronic-origin" class="nav-link active" data-scroll-target="#circular-birefringence-and-its-electronic-origin">Circular Birefringence and Its Electronic Origin</a></li>
   <li><a href="#wavelength-dependence-and-the-cotton-effect" id="toc-wavelength-dependence-and-the-cotton-effect" class="nav-link" data-scroll-target="#wavelength-dependence-and-the-cotton-effect">Wavelength Dependence and the Cotton Effect</a></li>
   <li><a href="#sugar-solutions" id="toc-sugar-solutions" class="nav-link" data-scroll-target="#sugar-solutions">Sugar Solutions</a></li>
   <li><a href="#temperature-effects" id="toc-temperature-effects" class="nav-link" data-scroll-target="#temperature-effects">Temperature Effects</a></li>
@@ -620,7 +634,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Electromagnetic Optics</li><li class="breadcrumb-item"><a href="../electromagnetic-waves/Anisotropic Materials.html">Lecture 17</a></li><li class="breadcrumb-item"><a href="../electromagnetic-waves/Optical Activity.html">Optical Activity</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Optical Activity and Rotatory Dispersion</h1>
 </div>
@@ -640,10 +654,6 @@ window.Quarto = {
 
 
 <p>Optical activity is a phenomenon where certain molecules rotate the plane of polarized light. While this basic definition is widely known, the underlying quantum mechanical and electromagnetic mechanisms reveal a fascinating interplay between molecular structure and light interaction.</p>
-<section id="fundamental-mechanisms" class="level2">
-<h2 class="anchored" data-anchor-id="fundamental-mechanisms">Fundamental Mechanisms</h2>
-<section id="electronic-basis-of-optical-activity" class="level3">
-<h3 class="anchored" data-anchor-id="electronic-basis-of-optical-activity">Electronic Basis of Optical Activity</h3>
 <p>When light interacts with chiral molecules, it induces both electric (<span class="math inline">\(\vec{p}\)</span>) and magnetic (<span class="math inline">\(\vec{m}\)</span>) dipole moments. These moments are coupled through the molecule’s electronic structure:</p>
 <p><span class="math display">\[\vec{p} = \alpha \vec{E} + G\vec{B}\]</span> <span class="math display">\[\vec{m} = G\vec{E} + \beta \vec{B}\]</span></p>
 <p>where:</p>
@@ -654,7 +664,6 @@ window.Quarto = {
 <li><span class="math inline">\(\vec{E}\)</span> and <span class="math inline">\(\vec{B}\)</span> are the electric and magnetic fields of light</li>
 </ul>
 <p>The crucial parameter <span class="math inline">\(G\)</span> exists only in chiral molecules and directly leads to circular birefringence.</p>
-</section>
 <section id="circular-birefringence-and-its-electronic-origin" class="level3">
 <h3 class="anchored" data-anchor-id="circular-birefringence-and-its-electronic-origin">Circular Birefringence and Its Electronic Origin</h3>
 <p>The mixed polarizability <span class="math inline">\(G\)</span> creates different responses for left and right circularly polarized light. Plane-polarized light can be decomposed into these circular components:</p>
@@ -692,7 +701,6 @@ Quantum Mechanical Foundation
 </div>
 </div>
 </div>
-</section>
 </section>
 <section id="wavelength-dependence-and-the-cotton-effect" class="level2">
 <h2 class="anchored" data-anchor-id="wavelength-dependence-and-the-cotton-effect">Wavelength Dependence and the Cotton Effect</h2>
@@ -1178,6 +1186,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../electromagnetic-waves/Anisotropic Materials.html" class="pagination-link" aria-label="Anisotropic Materials">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Anisotropic Materials</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
 </div> <!-- /content -->
 
 

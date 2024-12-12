@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -64,6 +30,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../electromagnetic-waves/Optical Activity.html" rel="next">
 <link href="../electromagnetic-waves/Metals.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -163,7 +130,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Electromagnetic Optics</li><li class="breadcrumb-item"><a href="../electromagnetic-waves/Fresnel Equations.html">Lecture 16</a></li><li class="breadcrumb-item"><a href="../electromagnetic-waves/Anisotropic Materials.html">Anisotropic Materials</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Electromagnetic Optics</li><li class="breadcrumb-item"><a href="../electromagnetic-waves/Anisotropic Materials.html">Lecture 17</a></li><li class="breadcrumb-item"><a href="../electromagnetic-waves/Anisotropic Materials.html">Anisotropic Materials</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -601,13 +568,13 @@ window.Quarto = {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-20" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-20" role="navigation" aria-expanded="false">
  <span class="menu-text">Lecture 16</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-20" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-20" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-20" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-20" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../electromagnetic-waves/Fresnel Equations.html" class="sidebar-item-text sidebar-link">
@@ -620,10 +587,27 @@ window.Quarto = {
  <span class="menu-text">Metals</span></a>
   </div>
 </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-21" role="navigation" aria-expanded="true">
+ <span class="menu-text">Lecture 17</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-21" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-21" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../electromagnetic-waves/Anisotropic Materials.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Anisotropic Materials</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Optical Activity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optical Activity</span></a>
   </div>
 </li>
       </ul>
@@ -652,7 +636,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Electromagnetic Optics</li><li class="breadcrumb-item"><a href="../electromagnetic-waves/Fresnel Equations.html">Lecture 16</a></li><li class="breadcrumb-item"><a href="../electromagnetic-waves/Anisotropic Materials.html">Anisotropic Materials</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Electromagnetic Optics</li><li class="breadcrumb-item"><a href="../electromagnetic-waves/Anisotropic Materials.html">Lecture 17</a></li><li class="breadcrumb-item"><a href="../electromagnetic-waves/Anisotropic Materials.html">Anisotropic Materials</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Anisotropic Materials</h1>
 </div>
@@ -674,10 +658,10 @@ window.Quarto = {
 <section id="light-propagation" class="level2">
 <h2 class="anchored" data-anchor-id="light-propagation">Light propagation</h2>
 <p>So war we have only discussed isotropic materials, meaning that the speed of light was independent by the direction of light propagation in the material. Often, the light propagation is, however, not isotropic as the underlying materials have an anisotropic structure.</p>
-<div id="fig-anisotropy" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<div id="fig-anisotropy" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="cente">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-anisotropy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/anisotropy.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%">
+<img src="img/anisotropy.png" class="img-fluid quarto-figure quarto-figure-cente figure-img" style="width:40.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-anisotropy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1— Ethene molecules as an example for an anisotropically polarizable object. The red arrows denote the electric field directions.
@@ -761,10 +745,12 @@ Figure&nbsp;3
 </ul>
 <p>An <strong>optical axis</strong> is now a propagation direction, for which the refractive index does not depend on the direction of the electric field. For a biaxial material, there are two distinct directions for a propagation, while there is only one for uniaxial.</p>
 <p>Considering now in more detail the propagation of light as a function of the direction of light propagation one obtains a dispersion relation (how the wavenumber depends on teh direction for a given frequency of light). This surface is the so-called <strong>k-surface</strong>, which in general consists of 2 sheets. This k-surface is obtained from Maxwells equations</p>
-<p><span class="math display">\[\begin{eqnarray}
-\vec{k}\times \vec{H}&amp; = &amp;-\omega \vec{D}\\
-\vec{k}\times\vec{E}=\omega \mu_0 \vec{H}
-\end{eqnarray}\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+\vec{k}\times \vec{H} &amp; = -\omega \vec{D}\\
+\vec{k}\times\vec{E} &amp;=\omega \mu_0 \vec{H}
+\end{aligned}
+\]</span></p>
 <p>which leads to</p>
 <p><span class="math display">\[
 \vec{k}\times(\vec{k}\times\vec{E})+\omega^2\mu_0 \epsilon_0 \overleftrightarrow{\epsilon_r} \vec{E}=0
@@ -783,10 +769,27 @@ Figure&nbsp;4
 </div>
 <p>If we select now a specific direction of propagation for the light with the direction of <span class="math inline">\(\vec{k}\)</span>, the intersections of the k-surface with the k-vector deliver the solutions for the refractive indices. From the figure above, it becomes obvious, that the electric field vector must be perpendicular to the plane in the case of the ordinary refractive index. Only in this case, the wavevector can be rotated in the above sketch such that the direction of the electric field does not change. If the electric field is within the plane of the above sketch, the field direction with respect to the crystal structure changes and therefore the refractive index changes.</p>
 <p>Therefore the <strong>extra-ordinary</strong> refractive index is valid for the p-polarization and the ordinary refractive index is valid for the <strong>s-polarization</strong>.</p>
-<div id="fig-birefringence" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-birefringence" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-birefringence-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/birefringence.png" class="img-fluid figure-img" style="width:100.0%">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/birefringence.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>Birefringence.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/birefringence_exp.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>Birefringence experiment.</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-birefringence-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;5
@@ -799,26 +802,28 @@ Figure&nbsp;5
 <div id="fig-polarizers" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-polarizers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/polarizers.png" class="img-fluid figure-img" style="width:60.0%"></p>
-<figcaption>Polarizing beam splitters.</figcaption>
-</figure>
+<img src="img/polarizers.png" class="img-fluid figure-img" style="width:60.0%">
 </div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-polarizers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-polarizers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6— Polarizing beam splitters.
 </figcaption>
 </figure>
 </div>
 <p>Birefringence is often observed in mechanically stressed materials like quickly cooled glasses or stretched polymer foils. The latter is demonstrated in the images below, where we used</p>
-<div id="fig-scotchtape" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-scotchtape" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-scotchtape-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/christmas_tree.png" class="img-fluid figure-img" style="width:45.0%">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="img/christmas_tree.png" class="img-fluid figure-img"></p>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-scotchtape-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="img/tulip.png" class="img-fluid figure-img"></p>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-scotchtape-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7— Scotch tape art. Scotch tape christmas tree and tulip between crossed polarizers showing their birefringent behavior.
 </figcaption>
 </figure>
 </div>
@@ -831,20 +836,26 @@ Figure&nbsp;7
 \vec{E}=(E_{0x}\hat{e}_x +E_{0y}\hat{e}_y)e^{i(\omega t -k z)}
 \]</span></p>
 <p>be the incident electric field of the plane wave travelling along the z-direction with <span class="math inline">\(E_{0x}=E_{0y}\)</span> and the optical axis aligned along the y-axis. Then each vector component of the wave travels with a different wavevector</p>
-<p><span class="math display">\[\begin{eqnarray}
-E_x &amp; = &amp; E_{0x}e^{i(\omega t -n_e k_0 z)}\\
-E_y &amp; = &amp; E_{0y}e^{i(\omega t -n_o k_0 z)}
-\end{eqnarray}\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+E_x &amp; =  E_{0x}e^{i(\omega t -n_e k_0 z)}\\
+E_y &amp; =  E_{0y}e^{i(\omega t -n_o k_0 z)}
+\end{aligned}
+\]</span></p>
 <p>After a material of thickness <span class="math inline">\(d\)</span> both components have accumulated a phase shift of</p>
 <p><span class="math display">\[
 \Delta \phi=(n_e-n_o)k_0 d
 \]</span></p>
 <section id="quarter-wave-plate" class="level3">
 <h3 class="anchored" data-anchor-id="quarter-wave-plate">Quarter Wave Plate</h3>
-<div id="fig-retarder" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-retarder" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-retarder-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <img src="img/retarder.png" class="img-fluid figure-img" style="width:50.0%">
+</div>
+</div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-retarder-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;8
@@ -861,52 +872,6 @@ d=\frac{\pi}{2}\frac{1}{k_0(n_e-n_o)}=\frac{\lambda}{4(n_e-n_o)}
 <section id="half-wave-plate" class="level3">
 <h3 class="anchored" data-anchor-id="half-wave-plate">Half Wave Plate</h3>
 <p>The phase difference between the two elecric field components could also be adjusted to be half a wavelength of <span class="math inline">\(\pi\)</span>. In this case, one of the components is flipped in its orientation with respect to the other. This is happening for the component perpendicular to the optical axis. If the incident electric field vectors makes an angle of <span class="math inline">\(45^{°}\)</span> to the optical axis, the field vector after the half wave plate will be rotated by <span class="math inline">\(90^{°}\)</span>. For any other angle of incidence, the angle between the incident and the outgoing linear polarization will correspond to twice the angle between the optical axis and the incident polarization.</p>
-<div id="fig-anisotropic" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="2">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-anisotropic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a figure</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">8</span>))</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> fig.add_subplot(<span class="dv">111</span>)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>no <span class="op">=</span> <span class="fl">1.5</span>  <span class="co"># ordinary refractive index</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>ne <span class="op">=</span> <span class="fl">1.7</span>  <span class="co"># extraordinary refractive index</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>omega <span class="op">=</span> <span class="fl">1.0</span>  <span class="co"># frequency (arbitrary units)</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate kx and ky points</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>k <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">1000</span>)</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>kx, ky <span class="op">=</span> np.meshgrid(k, k)</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate ordinary wave (circular)</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>ko <span class="op">=</span> omega <span class="op">*</span> no</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>ordinary <span class="op">=</span> kx<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> ky<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> ko<span class="op">**</span><span class="dv">2</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate extraordinary wave (elliptical)</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>ke <span class="op">=</span> omega <span class="op">*</span> ne</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>extraordinary <span class="op">=</span> (kx<span class="op">**</span><span class="dv">2</span><span class="op">/</span>ne<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> ky<span class="op">**</span><span class="dv">2</span><span class="op">/</span>no<span class="op">**</span><span class="dv">2</span>) <span class="op">-</span> omega<span class="op">**</span><span class="dv">2</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>ax.contour(kx, ky, ordinary, [<span class="dv">0</span>], colors<span class="op">=</span><span class="st">'blue'</span>, label<span class="op">=</span><span class="st">'Ordinary'</span>)</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>ax.contour(kx, ky, extraordinary, [<span class="dv">0</span>], colors<span class="op">=</span><span class="st">'red'</span>, label<span class="op">=</span><span class="st">'Extraordinary'</span>)</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'kx'</span>)</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'ky'</span>)</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Isofrequency Surfaces for Uniaxial Anisotropic Material'</span>)</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>ax.axis(<span class="st">'equal'</span>)</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>ax.legend()</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-anisotropic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;9
-</figcaption>
-</figure>
-</div>
 
 
 </section>
@@ -1340,6 +1305,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="../electromagnetic-waves/Optical Activity.html" class="pagination-link" aria-label="Optical Activity">
+        <span class="nav-page-text">Optical Activity</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
