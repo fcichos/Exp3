@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,6 +64,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../electromagnetic-waves/Anisotropic Materials.html" rel="next">
+<link href="../electromagnetic-waves/Fresnel Equations.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -128,7 +164,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Metals</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Electromagnetic Optics</li><li class="breadcrumb-item"><a href="../electromagnetic-waves/Fresnel Equations.html">Lecture 16</a></li><li class="breadcrumb-item"><a href="../electromagnetic-waves/Metals.html">Metals</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -564,6 +600,35 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-20" role="navigation" aria-expanded="true">
+ <span class="menu-text">Lecture 16</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-20" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-20" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Fresnel Equations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fresnel Equations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Metals.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Metals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Anisotropic Materials.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Anisotropic Materials</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
       </ul>
   </li>
     </ul>
@@ -581,13 +646,15 @@ window.Quarto = {
   <li><a href="#dielectric-function" id="toc-dielectric-function" class="nav-link" data-scroll-target="#dielectric-function">Dielectric function</a></li>
   <li><a href="#conductivity" id="toc-conductivity" class="nav-link" data-scroll-target="#conductivity">Conductivity</a></li>
   </ul></li>
+  <li><a href="#dispersion-relation-in-metals" id="toc-dispersion-relation-in-metals" class="nav-link" data-scroll-target="#dispersion-relation-in-metals">Dispersion Relation in Metals</a></li>
+  <li><a href="#skin-depth-analysis" id="toc-skin-depth-analysis" class="nav-link" data-scroll-target="#skin-depth-analysis">Skin Depth Analysis</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Electromagnetic Optics</li><li class="breadcrumb-item"><a href="../electromagnetic-waves/Fresnel Equations.html">Lecture 16</a></li><li class="breadcrumb-item"><a href="../electromagnetic-waves/Metals.html">Metals</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Metals</h1>
 </div>
@@ -606,21 +673,6 @@ window.Quarto = {
 </header>
 
 
-<style>
-figure {
-  border: 1px #cccccc solid;
-  padding: 4px; 
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-figcaption {
-  background-color: #eeeeee;
-  color: black;
-  padding: 2px;
-}
-</style>
 <p>Metals have free charges, which modify the propagation of light. Their influence is large and gives metals their characteristic reflection and color. In this case, we have to include the free charge density <span class="math inline">\(\rho_f\)</span> and the current density <span class="math inline">\(\vec{j}\)</span> in the Maxwell equations and derive the wave equation accordingly. Instead of modifying the wave equation, we would like to go a different way here. We would like to derive the dielectric function for metals based on a microscopic description, which is only approximate but captures some basic features.</p>
 <section id="drude-model" class="level2">
 <h2 class="anchored" data-anchor-id="drude-model">Drude Model</h2>
@@ -664,12 +716,56 @@ n^2=n_r^2-\kappa^2-2i n_r \kappa=\epsilon^{\prime}+i\epsilon^{\prime\prime}
 \epsilon^{\prime\prime}=2n_r\kappa=\frac{\omega_p^2\tau}{\omega(1+\omega^2\tau^2)}
 \]</span></p>
 <p>of the dielectric function <span class="math inline">\(\epsilon=\epsilon^{\prime}+i\epsilon^{\prime\prime}\)</span> to the refractive index components.</p>
-<figure class="figure">
-<img src="img/drude_dielectric.png" width="70%" class="figure-img">
-<figcaption>
-<strong>Fig.:</strong> Real (left) and imaginary part (right) of the dielectric function according to the Drude model. The dashed line in the left plot corresponds to the plasma frequency. The calculations are for Gold.
+<div id="cell-fig-drude" class="cell" data-execution_count="2">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>omega_p_d<span class="op">=</span><span class="fl">13.8e15</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>gamma_d<span class="op">=</span><span class="fl">1.075e14</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">#wavelength range</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>wavelength<span class="op">=</span>np.arange(<span class="dv">400</span>,<span class="dv">1000</span>,<span class="dv">1</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> epsilon_d(omega,gamma,omega_p):</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span>(<span class="dv">1</span><span class="op">-</span>omega_p<span class="op">**</span><span class="dv">2</span><span class="op">/</span>(omega<span class="op">**</span><span class="dv">2</span><span class="op">+</span><span class="ot">1j</span><span class="op">*</span>gamma<span class="op">*</span>omega))</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">#conversion from wavelength in angular frequency</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> freq(lam): <span class="co"># supply wavelength in nm</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    c<span class="op">=</span><span class="dv">299792458</span> <span class="co"># speed of light m/s</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span>(<span class="dv">2</span><span class="op">*</span>np.pi<span class="op">*</span>c<span class="op">/</span>(lam<span class="op">*</span><span class="fl">1e-9</span>))</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co">#dielectric function, complex!</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>epsilon<span class="op">=</span>epsilon_d(freq(wavelength),gamma_d,omega_p_d)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>fig<span class="op">=</span>plt.figure(figsize<span class="op">=</span>get_size(<span class="dv">12</span>,<span class="dv">6</span>))</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">121</span>)</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>plt.plot(wavelength,np.real(epsilon),label<span class="op">=</span><span class="vs">r'Re($\epsilon_</span><span class="sc">{D}</span><span class="vs">$)'</span>)</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'wavelength [nm]'</span>)</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="vs">r'$\epsilon_</span><span class="sc">{D}</span><span class="vs">$'</span>)</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">122</span>)</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>plt.plot(wavelength,np.imag(epsilon),label<span class="op">=</span><span class="vs">r'Im($\epsilon_</span><span class="sc">{D}</span><span class="vs">$)'</span>)</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'wavelength [nm]'</span>)</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="vs">r'$\epsilon_</span><span class="sc">{D}</span><span class="vs">$'</span>)</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div id="fig-drude" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-drude-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Metals_files/figure-html/fig-drude-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="694" height="339">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-drude-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1— Real (left) and imaginary part (right) of the dielectric function according to the Drude model. The dashed line in the left plot corresponds to the plasma frequency. The calculations are for Gold.
 </figcaption>
 </figure>
+</div>
+</div>
+</div>
 <p>The figure above shows the dielectric function for Gold as determined from the parameters <span class="math inline">\(\omega_{p}=13.8\times 10^{15}\, \rm{s}^{-1}\)</span> and <span class="math inline">\(\Gamma=1.075\times 10^{14}\, \rm{s}^{-1}\)</span>. The real value of the dielectric function is negative over the whole visible range stating that there is no propagating wave inside the matal. It just becomes positive below the plasma frequency. The imaginary part increases continuously with the wavelength.</p>
 </section>
 <section id="conductivity" class="level3">
@@ -690,15 +786,228 @@ n^2=n_r^2-\kappa^2-2i n_r \kappa=\epsilon^{\prime}+i\epsilon^{\prime\prime}
 \epsilon^{\prime\prime}=\frac{\mathcal{Im}(\sigma)}{\epsilon_0 \omega^2 \tau}
 \]</span></p>
 <p>which readily tells us, that we obtain information on the conductivity at high frequencies from optical measurements.</p>
-<figure class="figure">
-<img src="img/gold_np.png" width="70%" class="figure-img">
-<figcaption>
-<strong>Fig.:</strong> Backscattering and transmission through a 65 nm gold nanoparticle solution. The backscattering is green due to the surface plasmon resonance of the conduction band electrons, while the transission is red, since the green light is removed by scattering.
+</section>
+</section>
+<section id="dispersion-relation-in-metals" class="level2">
+<h2 class="anchored" data-anchor-id="dispersion-relation-in-metals">Dispersion Relation in Metals</h2>
+<p>To understand how electromagnetic waves propagate in metals, we need to derive the dispersion relation. Starting from Maxwell’s equations and using the dielectric function we derived from the Drude model, we can obtain the wave equation in metals:</p>
+<p><span class="math display">\[
+\nabla^2\vec{E}-\frac{1}{c^2}\frac{\partial^2\vec{E}}{\partial t^2}=\mu_0\frac{\partial\vec{j}}{\partial t}
+\]</span></p>
+<p>For a plane wave solution <span class="math inline">\(\vec{E}=\vec{E}_0e^{i(kx-\omega t)}\)</span>, and using the relation between current density and electric field through conductivity <span class="math inline">\(\vec{j}=\sigma\vec{E}\)</span>, we get:</p>
+<p><span class="math display">\[
+-k^2\vec{E}+\frac{\omega^2}{c^2}\vec{E}+i\omega\mu_0\sigma\vec{E}=0
+\]</span></p>
+<p>This leads to the dispersion relation:</p>
+<p><span class="math display">\[
+k^2=\frac{\omega^2}{c^2}\left(1+i\frac{\sigma}{\epsilon_0\omega}\right)=\frac{\omega^2}{c^2}\epsilon_r(\omega)
+\]</span></p>
+<p>Using the Drude model expression for <span class="math inline">\(\epsilon_r(\omega)\)</span>, we can write:</p>
+<p><span class="math display">\[
+k^2=\frac{\omega^2}{c^2}\left(1-\frac{\omega_p^2}{\omega^2-i\Gamma\omega}\right)
+\]</span></p>
+<p>This dispersion relation shows two important regimes:</p>
+<ol type="1">
+<li><p>For <span class="math inline">\(\omega &lt; \omega_p\)</span>: The wave vector <span class="math inline">\(k\)</span> becomes imaginary, meaning the waves are evanescent and decay exponentially into the metal. This explains why metals are reflective at visible frequencies.</p></li>
+<li><p>For <span class="math inline">\(\omega &gt; \omega_p\)</span>: The wave vector <span class="math inline">\(k\)</span> is real, and electromagnetic waves can propagate through the metal. This typically occurs in the ultraviolet region for most metals.</p></li>
+</ol>
+<p>The penetration depth (skin depth) <span class="math inline">\(\delta\)</span> of the electromagnetic wave into the metal can be calculated from the imaginary part of <span class="math inline">\(k\)</span>:</p>
+<p><span class="math display">\[
+\delta=\frac{1}{\text{Im}(k)}
+\]</span></p>
+<p>This skin depth is typically on the order of tens of nanometers in the visible region, explaining why metals are opaque even in thin films.</p>
+<div id="cell-fig-dispersion" class="cell" data-execution_count="3">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> k_metal(omega, omega_p, gamma):</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Calculate complex wave vector in metal using Drude model"""</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    eps_r <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span> omega_p<span class="op">**</span><span class="dv">2</span><span class="op">/</span>(omega<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> <span class="ot">1j</span><span class="op">*</span>gamma<span class="op">*</span>omega)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> omega<span class="op">/</span>c <span class="op">*</span> np.sqrt(eps_r)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Constants</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="dv">299792458</span>  <span class="co"># speed of light in m/s</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>omega_p <span class="op">=</span> <span class="fl">13.8e15</span>  <span class="co"># plasma frequency for Gold</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>gamma <span class="op">=</span> <span class="fl">1.075e14</span>   <span class="co"># damping constant for Gold</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Frequency range (normalized to plasma frequency)</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>omega_range <span class="op">=</span> np.linspace(<span class="fl">0.1</span>, <span class="dv">2</span><span class="op">*</span>omega_p, <span class="dv">1000</span>)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate wave vector</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>k <span class="op">=</span> k_metal(omega_range, omega_p, gamma)</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Create plot</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>get_size(<span class="dv">8</span>,<span class="dv">6</span>))</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>plt.plot(np.real(k)<span class="op">*</span>c<span class="op">/</span>omega_p, omega_range<span class="op">/</span>omega_p, <span class="st">'b-'</span>, label<span class="op">=</span><span class="st">'Real(k)'</span>)</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>plt.plot(np.imag(k)<span class="op">*</span>c<span class="op">/</span>omega_p, omega_range<span class="op">/</span>omega_p, <span class="st">'r-'</span>, label<span class="op">=</span><span class="st">'Imag(k)'</span>)</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>plt.plot(omega_range<span class="op">/</span>omega_p, omega_range<span class="op">/</span>omega_p, <span class="st">'k--'</span>, label<span class="op">=</span><span class="st">'Light line'</span>)</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>plt.axhline(y<span class="op">=</span><span class="dv">1</span>, color<span class="op">=</span><span class="st">'gray'</span>, linestyle<span class="op">=</span><span class="st">':'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>plt.text(<span class="fl">0.5</span>, <span class="fl">1.05</span>, <span class="vs">r'$\omega_p$'</span>, fontsize<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="vs">r'$kc/\omega_p$'</span>)</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="vs">r'$\omega/\omega_p$'</span>)</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Dispersion Relation in Metal'</span>)</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>)</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="dv">0</span>, <span class="dv">2</span>)</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div id="fig-dispersion" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-dispersion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Metals_files/figure-html/fig-dispersion-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="454" height="335">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dispersion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2— Dispersion relation for electromagnetic waves in a metal according to the Drude model. The light line (dashed) represents the dispersion in vacuum. Note how below the plasma frequency, no propagating waves exist in the metal.
 </figcaption>
 </figure>
-
-
+</div>
+</div>
+</div>
+<p>The figure above shows the dispersion relation for electromagnetic waves in a metal according to the Drude model. Several important features can be observed:</p>
+<ol type="1">
+<li><p>Below the plasma frequency (<span class="math inline">\(\omega &lt; \omega_p\)</span>), the real part of <span class="math inline">\(k\)</span> is zero while the imaginary part is large, indicating evanescent waves that decay exponentially into the metal.</p></li>
+<li><p>Above the plasma frequency (<span class="math inline">\(\omega &gt; \omega_p\)</span>), the real part of <span class="math inline">\(k\)</span> becomes dominant, allowing wave propagation through the metal.</p></li>
+<li><p>The light line (dashed) represents the dispersion relation in vacuum (<span class="math inline">\(\omega = ck\)</span>). The metal’s dispersion relation deviates significantly from this line, especially near and below the plasma frequency.</p></li>
+<li><p>The presence of damping (<span class="math inline">\(\gamma\)</span>) leads to a smooth transition around <span class="math inline">\(\omega_p\)</span> rather than an abrupt change.</p></li>
+</ol>
+<p>This behavior explains why metals are highly reflective at frequencies below the plasma frequency (typically in the visible range) but can become transparent at higher frequencies in the ultraviolet region.</p>
+<p>In the simple interpretation of the Drude model, we often say that below the plasma frequency, waves cannot propagate in the metal because the dielectric function is negative. However, this is only strictly true when we ignore damping (<span class="math inline">\(\Gamma = 0\)</span>).</p>
+<p>When we include damping (<span class="math inline">\(\Gamma \neq 0\)</span>), the dielectric function becomes complex:</p>
+<p><span class="math display">\[
+\epsilon_r(\omega)=1-\frac{\omega_p^2}{\omega^2-i\Gamma \omega}
+\]</span></p>
+<p>In the low-frequency limit ($&lt;&lt; _p), this becomes:</p>
+<p><span class="math display">\[
+\epsilon_r(\omega) \approx 1-\frac{\omega_p^2}{-i\Gamma \omega} \approx -\frac{\omega_p^2}{-i\Gamma \omega} = \frac{\omega_p^2}{\Gamma \omega}i
+\]</span></p>
+<p>The wave vector is then:</p>
+<p><span class="math display">\[
+k = \frac{\omega}{c}\sqrt{\epsilon_r} \approx \frac{\omega}{c}\sqrt{\frac{\omega_p^2}{\Gamma \omega}i} = \frac{\omega}{c}(1+i)\sqrt{\frac{\omega_p^2}{2\Gamma \omega}}
+\]</span></p>
+<p>This shows that both the real and imaginary parts of k are non-zero and equal in magnitude in this limit. This represents a heavily damped wave that can propagate a short distance into the metal.</p>
+<p>The wave in the metal has the form:</p>
+<p><span class="math display">\[
+E(x) = E_0 e^{ikx} = E_0 e^{i\text{Re}(k)x}e^{-\text{Im}(k)x}
+\]</span></p>
+<p>The skin depth is then:</p>
+<p><span class="math display">\[
+\delta = \frac{1}{\text{Im}(k)} = \frac{c}{\omega}\sqrt{\frac{2\Gamma \omega}{\omega_p^2}}
+\]</span></p>
+<div id="cell-fig-skin-depth-corrected" class="cell" data-execution_count="4">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> skin_depth_full(omega, omega_p, gamma):</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    eps_r <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span> omega_p<span class="op">**</span><span class="dv">2</span><span class="op">/</span>(omega<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> <span class="ot">1j</span><span class="op">*</span>gamma<span class="op">*</span>omega)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    k <span class="op">=</span> omega<span class="op">/</span>c <span class="op">*</span> np.sqrt(eps_r)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">1</span><span class="op">/</span><span class="bu">abs</span>(np.imag(k))  <span class="co"># Using abs to ensure positive values</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> skin_depth_low(omega, omega_p, gamma):</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> c<span class="op">/</span>omega <span class="op">*</span> np.sqrt(<span class="dv">2</span><span class="op">*</span>gamma<span class="op">*</span>omega<span class="op">/</span>omega_p<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="dv">299792458</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>omega_p <span class="op">=</span> <span class="fl">13.8e15</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>gamma <span class="op">=</span> <span class="fl">1.075e14</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>freq <span class="op">=</span> np.logspace(<span class="dv">12</span>, <span class="dv">16</span>, <span class="dv">1000</span>)  <span class="co"># Hz</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>omega <span class="op">=</span> <span class="dv">2</span><span class="op">*</span>np.pi<span class="op">*</span>freq</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>delta_full <span class="op">=</span> skin_depth_full(omega, omega_p, gamma)</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>delta_low <span class="op">=</span> skin_depth_low(omega, omega_p, gamma)</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>get_size(<span class="dv">8</span>,<span class="dv">6</span>))</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Sample values:"</span>)</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"freq (Hz) | delta_full (nm) | delta_low (nm)"</span>)</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="bu">len</span>(freq), <span class="dv">200</span>):</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>freq[i]<span class="sc">:.2e}</span><span class="ss"> | </span><span class="sc">{</span>delta_full[i]<span class="op">*</span><span class="fl">1e9</span><span class="sc">:.2f}</span><span class="ss"> | </span><span class="sc">{</span>delta_low[i]<span class="op">*</span><span class="fl">1e9</span><span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>plt.loglog(freq, delta_full<span class="op">*</span><span class="fl">1e9</span>, <span class="st">'b-'</span>, label<span class="op">=</span><span class="st">'Full model'</span>)</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>plt.loglog(freq, delta_low<span class="op">*</span><span class="fl">1e9</span>, <span class="st">'r--'</span>, label<span class="op">=</span><span class="st">'Low freq. approx.'</span>)</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="vs">r'frequency $\omega$ [Hz]'</span>)</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'skin depth [nm]'</span>)</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a><span class="co"># Add vertical line at plasma frequency</span></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>plt.axvline(omega_p<span class="op">/</span>(<span class="dv">2</span><span class="op">*</span>np.pi), color<span class="op">=</span><span class="st">'gray'</span>, linestyle<span class="op">=</span><span class="st">':'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>plt.text(omega_p<span class="op">/</span>(<span class="dv">2</span><span class="op">*</span>np.pi)<span class="op">*</span><span class="fl">1.1</span>, <span class="dv">4</span>, <span class="vs">r'$\omega_p$'</span>, fontsize<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a><span class="co"># Add frequency markers for visible light</span></span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>plt.axvspan(<span class="fl">4e14</span>, <span class="fl">8e14</span>, color<span class="op">=</span><span class="st">'yellow'</span>, alpha<span class="op">=</span><span class="fl">0.1</span>)</span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>plt.text(<span class="fl">5e14</span>, plt.ylim()[<span class="dv">0</span>]<span class="op">*</span><span class="dv">50</span>, <span class="st">'Visible'</span>, rotation<span class="op">=</span><span class="dv">90</span>)</span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="dv">1</span>, <span class="fl">1e4</span>)</span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Sample values:
+freq (Hz) | delta_full (nm) | delta_low (nm)
+1.00e+12 | 123.63 | 127.08
+6.32e+12 | 44.97 | 50.54
+4.00e+13 | 23.13 | 20.10
+2.53e+14 | 21.91 | 8.00
+1.60e+15 | 31.64 | 3.18</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div id="fig-skin-depth-corrected" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-skin-depth-corrected-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Metals_files/figure-html/fig-skin-depth-corrected-output-2.png" class="quarto-figure quarto-figure-center figure-img" width="457" height="335">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-skin-depth-corrected-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3— Skin depth as a function of frequency for a metal (Gold parameters). The dashed line shows the typical δ ∝ 1/√ω behavior at low frequencies.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
+<section id="skin-depth-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="skin-depth-analysis">Skin Depth Analysis</h2>
+<p>At low frequencies, the skin depth can be approximated as:</p>
+<p><span class="math display">\[
+\delta \approx \sqrt{\frac{2}{\omega_p^2\Gamma}}\frac{c}{\sqrt{\omega}} = \sqrt{\frac{2}{\sigma_0\mu_0\omega}}
+\]</span></p>
+<p>where <span class="math inline">\(\sigma_0 = \frac{\omega_p^2\epsilon_0}{\Gamma}\)</span> is the DC conductivity. This shows the characteristic <span class="math inline">\(\delta \propto 1/\sqrt{\omega}\)</span> behavior.</p>
+<p>Some important observations from the plot:</p>
+<ol type="1">
+<li>At low frequencies (below the plasma frequency), the skin depth follows the <span class="math inline">\(1/\sqrt{\omega}\)</span> dependence</li>
+<li>For visible light (<span class="math inline">\(\omega \approx 10^{14}-10^{15} Hz\)</span>), the skin depth is typically tens of nanometers</li>
+<li>Above the plasma frequency, the skin depth increases rapidly as the metal becomes transparent</li>
+<li>For Gold at room temperature and visible frequencies, the skin depth is approximately 20-30 nm</li>
+</ol>
+<p>This small skin depth explains why:</p>
+<ul>
+<li>Thin metal films (&gt;100 nm) are opaque</li>
+<li>Surface effects dominate in metals at optical frequencies</li>
+<li>Metal nanoparticles can support localized surface plasmons</li>
+<li>Why RF shielding requires only thin metal layers</li>
+</ul>
+<p>The skin effect is crucial in many applications:</p>
+<ul>
+<li>RF and microwave engineering</li>
+<li>Electromagnetic shielding</li>
+<li>Design of electrical conductors for AC applications</li>
+<li>Plasmonic devices</li>
+</ul>
+<div id="fig-np-gold" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-np-gold-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/gold_np.png" class="img-fluid figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-np-gold-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4— Backscattering and transmission through a 65 nm gold nanoparticle solution. The backscattering is green due to the surface plasmon resonance of the conduction band electrons, while the transmission is red, since the green light is removed by scattering.
+</figcaption>
+</figure>
+</div>
+
+
 </section>
 
 </main> <!-- /main -->
@@ -1122,6 +1431,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../electromagnetic-waves/Fresnel Equations.html" class="pagination-link" aria-label="Fresnel Equations">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Fresnel Equations</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../electromagnetic-waves/Anisotropic Materials.html" class="pagination-link" aria-label="Anisotropic Materials">
+        <span class="nav-page-text">Anisotropic Materials</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 
 

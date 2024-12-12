@@ -600,6 +600,35 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-20" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 16</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-20" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-20" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Fresnel Equations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fresnel Equations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Metals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Metals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Anisotropic Materials.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Anisotropic Materials</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
       </ul>
   </li>
     </ul>
@@ -649,14 +678,14 @@ window.Quarto = {
 <p><span id="eq-wave-slab"><span class="math display">\[
 \begin{aligned}
 E &amp; =E_0 \cdot e^{-i(\omega t-k z-(n-1) k \cdot \Delta z)} \\
-&amp; =e^{-i \omega(n-1) \Delta z / c} E_0 e^{i(\omega t-k z)} \\
+&amp; =E_0 e^{-i(n-1) k \Delta z} e^{i(\omega t-k z)} \\
 &amp; =e^{-i \theta} E_s \quad \text { with } \theta=k(n-1) \Delta z
 \end{aligned}
 \tag{1}\]</span></span></p>
-<p>For small values of <span class="math inline">\(\Theta\)</span> the exponential function can be approximated by</p>
-<p><span id="eq-exp-approx"><span class="math display">\[e^x \sim 1+x+\left(\frac{x^2}{2}\right) \tag{2}\]</span></span></p>
+<p>For small values of <span class="math inline">\(\theta\)</span> the exponential function can be approximated by</p>
+<p><span id="eq-exp-approx"><span class="math display">\[e^x \sim 1+x+\frac{x^2}{2} \tag{2}\]</span></span></p>
 <p>such that we obtain</p>
-<p><span id="eq-wave-approx"><span class="math display">\[e^{-i k(n-1) \Delta z} \approx 1-i k(n-1) \Delta z-\frac{i k^2(n-1)^2 \Delta z^2}{2} \tag{3}\]</span></span></p>
+<p><span id="eq-wave-approx"><span class="math display">\[e^{-i k(n-1) \Delta z} \approx 1-i k(n-1) \Delta z-\frac{k^2(n-1)^2 \Delta z^2}{2} \tag{3}\]</span></span></p>
 <p>The total field behind the thin slab therefore is</p>
 <p><span id="eq-total-field"><span class="math display">\[E(z)=\underbrace{E_0 e^{i(\omega t-k z)}}_{E_e}-\underbrace{i k(n-1) \Delta z E_0 e^{i(\omega t-k z)}}_{E_{\text {medium}}} \tag{4}\]</span></span></p>
 <p>As shown in <a href="#fig-components" class="quarto-xref">Figure&nbsp;1</a>, the resulting wave is delayed by a phase factor <span class="math inline">\(k(n-1) \Delta z\)</span> (see <a href="#eq-wave-slab" class="quarto-xref">Equation&nbsp;1</a>) and the amplitude is reduced by a factor <span class="math inline">\(k(n-1) \Delta z\)</span>.</p>
@@ -721,13 +750,13 @@ Figure&nbsp;2— Reflection and refraction of an electromagnetic wave at a bound
 </div>
 <p>These wavevectors are connected to the following plane waves:</p>
 <p><span id="eq-incident"><span class="math display">\[
-\vec{E}_{\rm inc}=\vec{E}_I e^{i(\omega_I t -\vec{k}_I\cdot \vec{r})}
+\vec{E}_{ inc}=\vec{E}_I e^{i(\omega_I t -\vec{k}_I\cdot \vec{r})}
 \tag{5}\]</span></span></p>
 <p><span id="eq-reflected"><span class="math display">\[
-\vec{E}_{\rm ref}=\vec{E}_R e^{i(\omega_R t -\vec{k}_R\cdot \vec{r})}
+\vec{E}_{ ref}=\vec{E}_R e^{i(\omega_R t -\vec{k}_R\cdot \vec{r})}
 \tag{6}\]</span></span></p>
 <p><span id="eq-transmitted"><span class="math display">\[
-\vec{E}_{\rm tra}=\vec{E}_T e^{i(\omega_T t -\vec{k}_T\cdot \vec{r})}
+\vec{E}_{ tra}=\vec{E}_T e^{i(\omega_T t -\vec{k}_T\cdot \vec{r})}
 \tag{7}\]</span></span></p>
 <p>As discussed in <a href="#eq-incident" class="quarto-xref">Equation&nbsp;5</a> through <a href="#eq-transmitted" class="quarto-xref">Equation&nbsp;7</a>, we must consider the direction of polarization of their electric or magnetic fields. We differentiate between:</p>
 <ul>
@@ -766,35 +795,89 @@ Figure&nbsp;4— Integration over a closed surface (left) and close path (right)
 <p><span id="eq-gauss"><span class="math display">\[
 \oint \vec{D} d\vec{A}= q_f
 \tag{9}\]</span></span></p>
-<p>where <span class="math inline">\(d\vec{A}\)</span> is a vector standing perpendicular on the surface element <span class="math inline">\(dA\)</span> and <span class="math inline">\(q_f\)</span> are the free charges in the volume. For a pillbox volume as shown in <a href="#fig-boundary" class="quarto-xref">Figure&nbsp;4</a>, letting the height contract to zero, we get:</p>
-<p><span id="eq-boundary-condition"><span class="math display">\[
-(\vec{D}_2-\vec{D}_1)\cdot \hat{n}=q_f/A=\sigma_f
-\tag{10}\]</span></span></p>
-<p>where <span class="math inline">\(A\)</span> is the cap area of the cylinder and <span class="math inline">\(\hat{n}\)</span> is a unit vector directed from material 2 to 1. For no free charges at the interface (<span class="math inline">\(\sigma_f=0\)</span>):</p>
+<p>where <span class="math inline">\(d\vec{A}\)</span> is a vector standing perpendicular on the surface element <span class="math inline">\(dA\)</span> and <span class="math inline">\(q_f\)</span> are the free charges in the volume. When we consider a pillbox-shaped volume straddling the interface between two materials, the surface integral can be broken down into three parts:</p>
+<ol type="1">
+<li>Top surface (in material 1)</li>
+<li>Bottom surface (in material 2)</li>
+<li>Side surface (cylindrical part)</li>
+</ol>
+<p>The total surface integral becomes:</p>
+<p><span class="math display">\[
+\oint \vec{D} \cdot d\vec{A} = \int_{\text{top}} \vec{D}_1 \cdot d\vec{A} + \int_{\text{bottom}} \vec{D}_2 \cdot d\vec{A} + \int_{\text{side}} \vec{D} \cdot d\vec{A}
+\]</span></p>
+<p>For a pillbox of height <span class="math inline">\(h\)</span> and radius <span class="math inline">\(r\)</span>:</p>
+<ul>
+<li><p>The top surface contributes: <span class="math inline">\(\vec{D}_1 \cdot \hat{n}A\)</span> (negative because <span class="math inline">\(d\vec{A}\)</span> points along <span class="math inline">\(\hat{n}\)</span>)</p></li>
+<li><p>The bottom surface contributes: <span class="math inline">\(-\vec{D}_2 \cdot \hat{n}A\)</span></p></li>
+<li><p>The side surface contribution goes to zero as <span class="math inline">\(h \to 0\)</span> (as area <span class="math inline">\(\sim 2\pi rh\)</span>)</p></li>
+</ul>
+<p>Therefore:</p>
+<p><span class="math display">\[
+\oint \vec{D} \cdot d\vec{A} = A(\vec{D}_1 - \vec{D}_2) \cdot \hat{n} = q_f
+\]</span></p>
+<p><strong>Key Points</strong></p>
+<ol type="1">
+<li><p>The side surface contribution vanishes as <span class="math inline">\(h \to 0\)</span> because:</p>
+<ul>
+<li>Its area scales with <span class="math inline">\(h\)</span> (<span class="math inline">\(2\pi rh\)</span>)</li>
+<li>The field components remain finite</li>
+</ul></li>
+<li><p>Only the normal components of <span class="math inline">\(\vec{D}\)</span> contribute because:</p>
+<ul>
+<li><span class="math inline">\(d\vec{A}\)</span> is parallel to <span class="math inline">\(\hat{n}\)</span> for top and bottom surfaces</li>
+<li>The tangential components don’t contribute to the dot product</li>
+</ul></li>
+<li><p>The ratio <span class="math inline">\(q_f/A\)</span> becomes the surface charge density <span class="math inline">\(\sigma_f\)</span> as <span class="math inline">\(h \to 0\)</span></p></li>
+</ol>
+<p>Following that, we obtain the boundary condition for the normal component of the displacement field:</p>
 <p><span id="eq-d-perpendicular"><span class="math display">\[
 D_{1\perp}=D_{1\perp}
-\tag{11}\]</span></span></p>
+\tag{10}\]</span></span></p>
 <p>This implies a jump in the normal electric field component:</p>
 <p><span id="eq-e-perpendicular"><span class="math display">\[
 \frac{E_{1\perp}}{E_{2\perp}}=\frac{\epsilon_2}{\epsilon_1}
-\tag{12}\]</span></span></p>
+\tag{11}\]</span></span></p>
 <p>as <span class="math inline">\(D=\epsilon E\)</span>. Similar calculations with the magnetic flux density <span class="math inline">\(\nabla \cdot \vec{B}=0\)</span> show that the normal component of the flux density is conserved.</p>
-<p>Using the Maxwell equation:</p>
+<p>Another boundary condition arises from the curl of the electric field. Using the Maxwell equation:</p>
 <p><span id="eq-maxwell-faraday"><span class="math display">\[
 \nabla \times \vec{E}=-\frac{\partial \vec{B}}{\partial t}
-\tag{13}\]</span></span></p>
+\tag{12}\]</span></span></p>
 <p>Integrating both sides over an area and applying Stokes theorem:</p>
 <p><span id="eq-stokes"><span class="math display">\[
 \oint \vec{E} d\vec{l}=-\frac{\partial}{\partial t}\int \vec{B}d\vec{A}
-\tag{14}\]</span></span></p>
-<p>As the area approaches zero:</p>
+\tag{13}\]</span></span></p>
+<p>Consider a rectangular loop straddling the interface between two media, with a height <span class="math inline">\(h\)</span> a width <span class="math inline">\(w\)</span> and a normal to the interface <span class="math inline">\(\hat{n}\)</span> the line integral can be broken down into four parts:</p>
+<ol type="1">
+<li>Top segment (in medium 1)</li>
+<li>Bottom segment (in medium 2)</li>
+<li>Two vertical segments connecting them</li>
+</ol>
+<p>The line integral becomes:</p>
+<p><span class="math display">\[
+\oint \vec{E} \cdot d\vec{l} = w\vec{E}_1 \cdot \hat{t} - w\vec{E}_2 \cdot \hat{t} + \text{(vertical segments)}
+\]</span></p>
+<p>where <span class="math inline">\(\hat{t}\)</span> is the unit vector tangent to the interface.</p>
+<p>As <span class="math inline">\(h \to 0\)</span>:</p>
+<ol type="1">
+<li>The contribution from vertical segments vanishes (as <span class="math inline">\(h \to 0\)</span>)</li>
+<li>The area of the loop approaches zero, making the right-hand side zero: <span class="math display">\[-\frac{\partial}{\partial t}\int \vec{B}\cdot d\vec{A} \to 0\]</span></li>
+</ol>
+<p>Therefore:</p>
+<p><span class="math display">\[
+w(\vec{E}_1 - \vec{E}_2) \cdot \hat{t} = 0
+\]</span></p>
+<p>Since <span class="math inline">\(w \neq 0\)</span>, this implies:</p>
+<p><span class="math display">\[
+(\vec{E}_1 - \vec{E}_2) \cdot \hat{t} = 0
+\]</span></p>
+<p>This can be rewritten in terms of the cross product with the normal vector:</p>
 <p><span id="eq-boundary-tangential"><span class="math display">\[
 \hat{n} \times (\vec{E}_2-\vec{E}_1)=0
-\tag{15}\]</span></span></p>
+\tag{14}\]</span></span></p>
 <p>Therefore:</p>
 <p><span id="eq-e-parallel"><span class="math display">\[
 E_{2||}=E_{1||}
-\tag{16}\]</span></span></p>
+\tag{15}\]</span></span></p>
 <p>indicating that the tangential component of the electric field is conserved.</p>
 </section>
 <section id="reflectionrefraction" class="level3">
@@ -813,19 +896,21 @@ Figure&nbsp;5— Coordinate system for wave at interfaces.
 </figure>
 </div>
 <p>According to the coordinate system shown in <a href="#fig-coordinates" class="quarto-xref">Figure&nbsp;5</a>, we have:</p>
-<p><span class="math display">\[\begin{eqnarray}
-\vec{k}_I &amp;=&amp; k_I \cos(\theta_I)\hat{e}_x+k_I \sin(\theta_I)\hat{e}_z \\
-\vec{k}_R &amp;=&amp; -k_R \cos(\theta_R)\hat{e}_x+k_R \sin(\theta_R)\hat{e}_z \\
-\vec{k}_T &amp;=&amp; k_T \cos(\theta_T)\hat{e}_x+k_T \sin(\theta_T)\hat{e}_z
-\end{eqnarray}\]</span> {#eq-wavevectors}</p>
+<p><span id="eq-wavevectors"><span class="math display">\[
+\begin{aligned}
+  \vec{k}_I &amp;=  k_I \cos(\theta_I)\hat{e}_x+k_I \sin(\theta_I)\hat{e}_z \\
+  \vec{k}_R &amp;=  -k_R \cos(\theta_R)\hat{e}_x+k_R \sin(\theta_R)\hat{e}_z \\
+  \vec{k}_T &amp;=  k_T \cos(\theta_T)\hat{e}_x+k_T \sin(\theta_T)\hat{e}_z
+\end{aligned}
+\tag{16}\]</span></span></p>
 <p>Note that the component <span class="math inline">\(\hat{e}_x\)</span> always provides the wavevector component perpendicular to the interface, while <span class="math inline">\(\hat{e}_z\)</span> is the tangential (parallel) component. The total field on both sides is given by:</p>
 <p><span id="eq-total-field-left"><span class="math display">\[
-\vec{E}=\vec{E}_{\rm inc}+\vec{E}_{\rm ref}
+\vec{E}=\vec{E}_{inc}+\vec{E}_{ref}
 \quad \text{(for } x&lt;0 \text{)}
 \tag{17}\]</span></span></p>
 <p>and</p>
 <p><span id="eq-total-field-right"><span class="math display">\[
-\vec{E}=\vec{E}_{\rm tra}
+\vec{E}=\vec{E}_{tra}
 \quad \text{(for } x&gt;0 \text{)}
 \tag{18}\]</span></span></p>
 <p>For these fields to match according to our previously described boundary conditions, we require:</p>
@@ -846,10 +931,10 @@ k_I\sin(\theta_I)=k_R\sin(\theta_R)=k_T\sin(\theta_T)
 \tag{22}\]</span></span></p>
 <p>For the incident and transmitted waves, we must account for the change in wavenumber:</p>
 <p><span id="eq-snell"><span class="math display">\[
-\begin{eqnarray}
-n_1 k_0\sin(\theta_I) &amp;=&amp; n_2 k_0\sin(\theta_T) \\
-n_1 \sin(\theta_I) &amp;=&amp; n_2 \sin(\theta_T)
-\end{eqnarray}
+\begin{aligned}
+n_1 k_0\sin(\theta_I) &amp;= n_2 k_0\sin(\theta_T) \\
+n_1 \sin(\theta_I) &amp;= n_2 \sin(\theta_T)
+\end{aligned}
 \tag{23}\]</span></span></p>
 <p><a href="#eq-snell" class="quarto-xref">Equation&nbsp;23</a> represents Snell’s law, which results from the conservation of the parallel component of the wavevector across an interface, while the normal component must have a jump according to the refractive indices.</p>
 

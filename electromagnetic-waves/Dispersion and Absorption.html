@@ -54,7 +54,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -600,6 +620,35 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-20" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 16</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-20" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-20" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Fresnel Equations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fresnel Equations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Metals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Metals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Anisotropic Materials.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Anisotropic Materials</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
       </ul>
   </li>
     </ul>
@@ -690,7 +739,7 @@ n=1+\frac{Nq^2}{2\epsilon_0 m}\frac{(\omega_0^2-\omega^2)-i\sigma\omega}{(\omega
 <p>and</p>
 <p><span class="math display">\[\kappa = A\frac{\sigma\omega}{(\omega_0^2-\omega^2)^2+\omega^2\sigma^2}\]</span></p>
 <p>with <span class="math inline">\(A=\frac{Nq^2}{2\epsilon_0 m}\)</span>.</p>
-<div id="1d25723d" class="cell" data-execution_count="2">
+<div id="5a52118a" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> <span class="dv">1</span>  <span class="co"># Number density</span></span>
@@ -848,7 +897,7 @@ Absorption Measurements
 <p>The above logarithm can be used to define the absorbance <span class="math inline">\(A\)</span> as</p>
 <p><span class="math display">\[A = -\ln\left(\frac{I}{I_0}\right)/\ln(10)\]</span></p>
 <p>which is the typical quantity that is plotted against concentration in absorption measurements and linearly depends on the concentration. According to Lambert Beers law, the absorbance is calculated from <span class="math display">\[A = \epsilon c L\]</span> and provides the molar extinction coefficient <span class="math inline">\(\epsilon\)</span> for the material at a given wavelength.</p>
-<div id="0d97131f" class="cell" data-execution_count="3">
+<div id="271c216f" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -861,7 +910,7 @@ Absorption Measurements
 <section id="concentration-measurements" class="level3">
 <h3 class="anchored" data-anchor-id="concentration-measurements">Concentration Measurements</h3>
 <p>The linear relationship between absorbance and concentration enables quantitative analysis:</p>
-<div id="13225f30" class="cell" data-execution_count="4">
+<div id="32a54de5" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>concentrations <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">10</span>)</span>
@@ -949,7 +998,7 @@ v=\frac{\omega}{k}=\frac{c}{n_r}
 v_g=\frac{d\omega}{dk}
 \tag{group velocity}
 \]</span></p>
-<div id="57d5a0cb" class="cell" data-execution_count="5">
+<div id="22372ddb" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up the spatial grid</span></span>
@@ -1008,7 +1057,7 @@ v_g=\frac{c}{n_r+\omega \frac{dn_r}{d\omega}}
 \tag{group velocity dispersion}
 \]</span></p>
 <p>The group velocity is distinct from the phase velocity and represents how fast the envelope of a wave packet propagates through space. In a dispersive medium, where the refractive index depends on frequency, the group velocity can differ significantly from the phase velocity. This is particularly important in optical communications where information is carried by wave packets rather than single-frequency waves.</p>
-<div id="58265a72" class="cell" data-execution_count="6">
+<div id="7253e271" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Constants (working in scaled units)</span></span>
@@ -1136,7 +1185,7 @@ Note
 <ul>
 <li>Gain media</li>
 <li>Photonic crystals</li>
-<li>Atomic gases near absorption lines</li>
+<li>Atomic gases near absorption lines (see <span class="citation" data-cites="superluminal">Wang, Kuzmich, and Dogariu (<a href="#ref-superluminal" role="doc-biblioref">2000</a>)</span>)</li>
 <li>Optical fibers with specially engineered dispersion</li>
 </ul>
 </div>
@@ -1237,10 +1286,15 @@ Important
 </div>
 
 
+
 </section>
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-superluminal" class="csl-entry" role="listitem">
+Wang, L. J., A. Kuzmich, and A. Dogariu. 2000. <span>“<span class="nocase">Gain-assisted superluminal light propagation</span>.”</span> <em>Nature</em> 406 (6793): 277–79. <a href="https://doi.org/10.1038/35018520">https://doi.org/10.1038/35018520</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
