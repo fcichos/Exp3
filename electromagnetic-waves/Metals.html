@@ -913,7 +913,7 @@ R = \left|\frac{n - 1}{n + 1}\right|^2
 <span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>n_squared <span class="op">=</span> drude_epsilon(omega, omega_p, gamma)</span>
 <span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot</span></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span><span class="op">/</span><span class="fl">2.54</span>, <span class="dv">6</span><span class="op">/</span><span class="fl">2.54</span>))</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>get_size(<span class="dv">8</span>, <span class="dv">6</span>))</span>
 <span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>plt.plot(wavelength, np.real(n_squared), <span class="st">'b-'</span>, label<span class="op">=</span><span class="vs">r'Re($n^2$)'</span>)</span>
 <span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>plt.plot(wavelength, np.imag(n_squared), <span class="st">'r--'</span>, label<span class="op">=</span><span class="vs">r'Im($n^2$)'</span>)</span>
 <span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Wavelength (nm)'</span>)</span>
@@ -936,9 +936,9 @@ R = \left|\frac{n - 1}{n + 1}\right|^2
 <span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
 <span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a><span class="co"># Print some values</span></span>
-<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Wavelength (nm) | Re(n²) | Im(n²)"</span>)</span>
-<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="bu">len</span>(wavelength), <span class="dv">200</span>):</span>
-<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>wavelength[i]<span class="sc">:13.1f}</span><span class="ss"> | </span><span class="sc">{</span>np<span class="sc">.</span>real(n_squared)[i]<span class="sc">:6.2f}</span><span class="ss"> | </span><span class="sc">{</span>np<span class="sc">.</span>imag(n_squared)[i]<span class="sc">:6.2f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a><span class="co">#print("\nWavelength (nm) | Re(n²) | Im(n²)")</span></span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a><span class="co">#for i in range(0, len(wavelength), 200):</span></span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a><span class="co">#    print(f"{wavelength[i]:13.1f} | {np.real(n_squared)[i]:6.2f} | {np.imag(n_squared)[i]:6.2f}")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div id="fig-n-squared" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
@@ -952,70 +952,106 @@ Figure&nbsp;2— Real and imaginary parts of n² for gold according to the Drude
 </figure>
 </div>
 </div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-Wavelength (nm) | Re(n²) | Im(n²)
-         10.0 |   0.99 |  -0.00
-         88.1 |   0.58 |  -0.00
-        166.2 |  -0.48 |  -0.01
-        244.2 |  -2.20 |  -0.04
-        322.3 |  -4.57 |  -0.10</code></pre>
 </div>
+<div id="tbl-refindex" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-refindex-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tbl&nbsp;1— Real and imaginary components of the refractive index squared (n²) at different wavelengths
+</figcaption>
+<div aria-describedby="tbl-refindex-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Wavelength (nm)</th>
+<th>Re(n²)</th>
+<th>Im(n²)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>10.0</td>
+<td>0.99</td>
+<td>-0.00</td>
+</tr>
+<tr class="even">
+<td>88.1</td>
+<td>0.58</td>
+<td>-0.00</td>
+</tr>
+<tr class="odd">
+<td>166.2</td>
+<td>-0.48</td>
+<td>-0.01</td>
+</tr>
+<tr class="even">
+<td>244.2</td>
+<td>-2.20</td>
+<td>-0.04</td>
+</tr>
+<tr class="odd">
+<td>322.3</td>
+<td>-4.57</td>
+<td>-0.10</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
 </div>
 <p>From the square of the refractive index, we can calculate the reflectivity of the metal. The plot below shows the reflectivity of gold with and without damping. Without damping, the reflectivity is exactly 1 below the plasma frequency and drops sharply above it. The damping broadens the reflectivity curve and reduces the reflectivity below the plasma frequency.</p>
 <div id="cell-fig-reflectivity-damping" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> drude_epsilon(omega, omega_p, gamma):</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Calculate complex dielectric function using Drude model"""</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">1</span> <span class="op">-</span> omega_p<span class="op">**</span><span class="dv">2</span><span class="op">/</span>(omega<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> <span class="ot">1j</span><span class="op">*</span>gamma<span class="op">*</span>omega)</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> reflectivity_from_epsilon(epsilon):</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Calculate reflectivity from complex dielectric function"""</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    n_complex <span class="op">=</span> np.sqrt(epsilon)</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    r <span class="op">=</span> (n_complex <span class="op">-</span> <span class="dv">1</span>)<span class="op">/</span>(n_complex <span class="op">+</span> <span class="dv">1</span>)</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.<span class="bu">abs</span>(r)<span class="op">**</span><span class="dv">2</span></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters</span></span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>omega_p <span class="op">=</span> <span class="fl">13.8e15</span>  <span class="co"># plasma frequency</span></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>gamma <span class="op">=</span> <span class="fl">1.075e14</span>   <span class="co"># damping constant</span></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Frequency range</span></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>wavelength <span class="op">=</span> np.linspace(<span class="dv">100</span>, <span class="dv">1000</span>, <span class="dv">1000</span>)  <span class="co"># wavelength in nm</span></span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="dv">299792458</span>  <span class="co"># speed of light in m/s</span></span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>omega <span class="op">=</span> <span class="dv">2</span><span class="op">*</span>np.pi<span class="op">*</span>c<span class="op">/</span>(wavelength<span class="op">*</span><span class="fl">1e-9</span>)  <span class="co"># angular frequency</span></span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate reflectivity with and without damping</span></span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>R_with_damping <span class="op">=</span> reflectivity_from_epsilon(drude_epsilon(omega, omega_p, gamma))</span>
-<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>R_no_damping <span class="op">=</span> reflectivity_from_epsilon(drude_epsilon(omega, omega_p, <span class="dv">0</span>))</span>
-<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot</span></span>
-<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span><span class="op">/</span><span class="fl">2.54</span>, <span class="dv">6</span><span class="op">/</span><span class="fl">2.54</span>))</span>
-<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>plt.plot(wavelength, R_with_damping, <span class="st">'b-'</span>, label<span class="op">=</span><span class="st">'With damping'</span>)</span>
-<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>plt.plot(wavelength, R_no_damping, <span class="st">'r--'</span>, label<span class="op">=</span><span class="st">'Without damping'</span>)</span>
-<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'wavelength [nm]'</span>)</span>
-<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'reflectivity'</span>)</span>
-<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
-<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Add plasma wavelength</span></span>
-<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>plasma_wavelength <span class="op">=</span> <span class="dv">2</span><span class="op">*</span>np.pi<span class="op">*</span>c<span class="op">/</span>omega_p <span class="op">*</span> <span class="fl">1e9</span>  <span class="co"># convert to nm</span></span>
-<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>plt.axvline(plasma_wavelength, color<span class="op">=</span><span class="st">'gray'</span>, linestyle<span class="op">=</span><span class="st">':'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
-<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>plt.text(plasma_wavelength<span class="op">*</span><span class="fl">1.1</span>, <span class="fl">0.5</span>, <span class="vs">r'$\omega_p$'</span>, fontsize<span class="op">=</span><span class="dv">10</span>)</span>
-<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a><span class="co"># Add visible range</span></span>
-<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a>plt.axvspan(<span class="dv">400</span>, <span class="dv">750</span>, color<span class="op">=</span><span class="st">'yellow'</span>, alpha<span class="op">=</span><span class="fl">0.1</span>)</span>
-<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a>plt.text(<span class="dv">575</span>, plt.ylim()[<span class="dv">0</span>]<span class="op">+</span><span class="fl">0.4</span>, <span class="st">'Visible'</span>, rotation<span class="op">=</span><span class="dv">90</span>)</span>
-<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
-<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a><span class="co"># Print some values</span></span>
-<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Wavelength (nm) | R (with damping) | R (no damping)"</span>)</span>
-<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="bu">len</span>(wavelength), <span class="dv">200</span>):</span>
-<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>wavelength[i]<span class="sc">:13.1f}</span><span class="ss"> | </span><span class="sc">{</span>R_with_damping[i]<span class="sc">:15.3f}</span><span class="ss"> | </span><span class="sc">{</span>R_no_damping[i]<span class="sc">:12.3f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> drude_epsilon(omega, omega_p, gamma):</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Calculate complex dielectric function using Drude model"""</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">1</span> <span class="op">-</span> omega_p<span class="op">**</span><span class="dv">2</span><span class="op">/</span>(omega<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> <span class="ot">1j</span><span class="op">*</span>gamma<span class="op">*</span>omega)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> reflectivity_from_epsilon(epsilon):</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Calculate reflectivity from complex dielectric function"""</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    n_complex <span class="op">=</span> np.sqrt(epsilon)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    r <span class="op">=</span> (n_complex <span class="op">-</span> <span class="dv">1</span>)<span class="op">/</span>(n_complex <span class="op">+</span> <span class="dv">1</span>)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.<span class="bu">abs</span>(r)<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>omega_p <span class="op">=</span> <span class="fl">13.8e15</span>  <span class="co"># plasma frequency</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>gamma <span class="op">=</span> <span class="fl">1.075e14</span>   <span class="co"># damping constant</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Frequency range</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>wavelength <span class="op">=</span> np.linspace(<span class="dv">100</span>, <span class="dv">1000</span>, <span class="dv">1000</span>)  <span class="co"># wavelength in nm</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="dv">299792458</span>  <span class="co"># speed of light in m/s</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>omega <span class="op">=</span> <span class="dv">2</span><span class="op">*</span>np.pi<span class="op">*</span>c<span class="op">/</span>(wavelength<span class="op">*</span><span class="fl">1e-9</span>)  <span class="co"># angular frequency</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate reflectivity with and without damping</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>R_with_damping <span class="op">=</span> reflectivity_from_epsilon(drude_epsilon(omega, omega_p, gamma))</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>R_no_damping <span class="op">=</span> reflectivity_from_epsilon(drude_epsilon(omega, omega_p, <span class="dv">0</span>))</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>get_size(<span class="dv">8</span>, <span class="dv">6</span>))</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>plt.plot(wavelength, R_with_damping, <span class="st">'b-'</span>, label<span class="op">=</span><span class="st">'With damping'</span>)</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>plt.plot(wavelength, R_no_damping, <span class="st">'r--'</span>, label<span class="op">=</span><span class="st">'Without damping'</span>)</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'wavelength [nm]'</span>)</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'reflectivity'</span>)</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Add plasma wavelength</span></span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>plasma_wavelength <span class="op">=</span> <span class="dv">2</span><span class="op">*</span>np.pi<span class="op">*</span>c<span class="op">/</span>omega_p <span class="op">*</span> <span class="fl">1e9</span>  <span class="co"># convert to nm</span></span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>plt.axvline(plasma_wavelength, color<span class="op">=</span><span class="st">'gray'</span>, linestyle<span class="op">=</span><span class="st">':'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>plt.text(plasma_wavelength<span class="op">*</span><span class="fl">1.1</span>, <span class="fl">0.5</span>, <span class="vs">r'$\omega_p$'</span>, fontsize<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a><span class="co"># Add visible range</span></span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>plt.axvspan(<span class="dv">400</span>, <span class="dv">750</span>, color<span class="op">=</span><span class="st">'yellow'</span>, alpha<span class="op">=</span><span class="fl">0.1</span>)</span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>plt.text(<span class="dv">575</span>, plt.ylim()[<span class="dv">0</span>]<span class="op">+</span><span class="fl">0.4</span>, <span class="st">'Visible'</span>, rotation<span class="op">=</span><span class="dv">90</span>)</span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a><span class="co"># Print some values</span></span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a><span class="co">#print("\nWavelength (nm) | R (with damping) | R (no damping)")</span></span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a><span class="co">#for i in range(0, len(wavelength), 200):</span></span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a><span class="co">#    print(f"{wavelength[i]:13.1f} | {R_with_damping[i]:15.3f} | {R_no_damping[i]:12.3f}")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div id="fig-reflectivity-damping" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
@@ -1029,15 +1065,51 @@ Figure&nbsp;3— Comparison of metal reflectivity with and without damping. With
 </figure>
 </div>
 </div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-Wavelength (nm) | R (with damping) | R (no damping)
-        100.0 |           0.036 |        0.036
-        280.2 |           0.982 |        1.000
-        460.4 |           0.984 |        1.000
-        640.5 |           0.984 |        1.000
-        820.7 |           0.984 |        1.000</code></pre>
 </div>
+<div id="tbl-reflectivity" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-reflectivity-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tbl&nbsp;2— Comparison of reflectivity (R) values with and without damping effects at different wavelengths
+</figcaption>
+<div aria-describedby="tbl-reflectivity-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Wavelength (nm)</th>
+<th>R (with damping)</th>
+<th>R (no damping)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>100.0</td>
+<td>0.036</td>
+<td>0.036</td>
+</tr>
+<tr class="even">
+<td>280.2</td>
+<td>0.982</td>
+<td>1.000</td>
+</tr>
+<tr class="odd">
+<td>460.4</td>
+<td>0.984</td>
+<td>1.000</td>
+</tr>
+<tr class="even">
+<td>640.5</td>
+<td>0.984</td>
+<td>1.000</td>
+</tr>
+<tr class="odd">
+<td>820.7</td>
+<td>0.984</td>
+<td>1.000</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
 </div>
 </section>
 <section id="dispersion-relation-in-metals" class="level3">
@@ -1071,39 +1143,39 @@ k^2=\frac{\omega^2}{c^2}\left(1-\frac{\omega_p^2}{\omega^2-i\Gamma\omega}\right)
 <div id="cell-fig-dispersion" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> k_metal(omega, omega_p, gamma):</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Calculate complex wave vector in metal using Drude model"""</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    eps_r <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span> omega_p<span class="op">**</span><span class="dv">2</span><span class="op">/</span>(omega<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> <span class="ot">1j</span><span class="op">*</span>gamma<span class="op">*</span>omega)</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> omega<span class="op">/</span>c <span class="op">*</span> np.sqrt(eps_r)</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Constants</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="dv">299792458</span>  <span class="co"># speed of light in m/s</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>omega_p <span class="op">=</span> <span class="fl">13.8e15</span>  <span class="co"># plasma frequency for Gold</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>gamma <span class="op">=</span> <span class="fl">1.075e14</span>   <span class="co"># damping constant for Gold</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Frequency range (normalized to plasma frequency)</span></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>omega_range <span class="op">=</span> np.linspace(<span class="fl">0.1</span>, <span class="dv">2</span><span class="op">*</span>omega_p, <span class="dv">1000</span>)</span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate wave vector</span></span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>k <span class="op">=</span> k_metal(omega_range, omega_p, gamma)</span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Create plot</span></span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>get_size(<span class="dv">8</span>,<span class="dv">6</span>))</span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>plt.plot(np.real(k)<span class="op">*</span>c<span class="op">/</span>omega_p, omega_range<span class="op">/</span>omega_p, <span class="st">'b-'</span>, label<span class="op">=</span><span class="st">'Real(k)'</span>)</span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>plt.plot(np.imag(k)<span class="op">*</span>c<span class="op">/</span>omega_p, omega_range<span class="op">/</span>omega_p, <span class="st">'r-'</span>, label<span class="op">=</span><span class="st">'Imag(k)'</span>)</span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>plt.plot(omega_range<span class="op">/</span>omega_p, omega_range<span class="op">/</span>omega_p, <span class="st">'k--'</span>, label<span class="op">=</span><span class="st">'Light line'</span>)</span>
-<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>plt.axhline(y<span class="op">=</span><span class="dv">1</span>, color<span class="op">=</span><span class="st">'gray'</span>, linestyle<span class="op">=</span><span class="st">':'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
-<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>plt.text(<span class="fl">0.5</span>, <span class="fl">1.05</span>, <span class="vs">r'$\omega_p$'</span>, fontsize<span class="op">=</span><span class="dv">10</span>)</span>
-<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="vs">r'$kc/\omega_p$'</span>)</span>
-<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="vs">r'$\omega/\omega_p$'</span>)</span>
-<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
-<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
-<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>)</span>
-<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="dv">0</span>, <span class="dv">2</span>)</span>
-<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> k_metal(omega, omega_p, gamma):</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Calculate complex wave vector in metal using Drude model"""</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    eps_r <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span> omega_p<span class="op">**</span><span class="dv">2</span><span class="op">/</span>(omega<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> <span class="ot">1j</span><span class="op">*</span>gamma<span class="op">*</span>omega)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> omega<span class="op">/</span>c <span class="op">*</span> np.sqrt(eps_r)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Constants</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="dv">299792458</span>  <span class="co"># speed of light in m/s</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>omega_p <span class="op">=</span> <span class="fl">13.8e15</span>  <span class="co"># plasma frequency for Gold</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>gamma <span class="op">=</span> <span class="fl">1.075e14</span>   <span class="co"># damping constant for Gold</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Frequency range (normalized to plasma frequency)</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>omega_range <span class="op">=</span> np.linspace(<span class="fl">0.1</span>, <span class="dv">2</span><span class="op">*</span>omega_p, <span class="dv">1000</span>)</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate wave vector</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>k <span class="op">=</span> k_metal(omega_range, omega_p, gamma)</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Create plot</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>get_size(<span class="dv">8</span>,<span class="dv">6</span>))</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>plt.plot(np.real(k)<span class="op">*</span>c<span class="op">/</span>omega_p, omega_range<span class="op">/</span>omega_p, <span class="st">'b-'</span>, label<span class="op">=</span><span class="st">'Real(k)'</span>)</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>plt.plot(np.imag(k)<span class="op">*</span>c<span class="op">/</span>omega_p, omega_range<span class="op">/</span>omega_p, <span class="st">'r-'</span>, label<span class="op">=</span><span class="st">'Imag(k)'</span>)</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>plt.plot(omega_range<span class="op">/</span>omega_p, omega_range<span class="op">/</span>omega_p, <span class="st">'k--'</span>, label<span class="op">=</span><span class="st">'Light line'</span>)</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>plt.axhline(y<span class="op">=</span><span class="dv">1</span>, color<span class="op">=</span><span class="st">'gray'</span>, linestyle<span class="op">=</span><span class="st">':'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>plt.text(<span class="fl">0.5</span>, <span class="fl">1.05</span>, <span class="vs">r'$\omega_p$'</span>, fontsize<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="vs">r'$kc/\omega_p$'</span>)</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="vs">r'$\omega/\omega_p$'</span>)</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>)</span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="dv">0</span>, <span class="dv">2</span>)</span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div id="fig-dispersion" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
@@ -1151,65 +1223,56 @@ E(x) = E_0 e^{ikx} = E_0 e^{i\text{Re}(k)x}e^{-\text{Im}(k)x}
 <div id="cell-fig-skin-depth-corrected" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> skin_depth_full(omega, omega_p, gamma):</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    eps_r <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span> omega_p<span class="op">**</span><span class="dv">2</span><span class="op">/</span>(omega<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> <span class="ot">1j</span><span class="op">*</span>gamma<span class="op">*</span>omega)</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    k <span class="op">=</span> omega<span class="op">/</span>c <span class="op">*</span> np.sqrt(eps_r)</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">1</span><span class="op">/</span><span class="bu">abs</span>(np.imag(k))  <span class="co"># Using abs to ensure positive values</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> skin_depth_low(omega, omega_p, gamma):</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> c<span class="op">/</span>omega <span class="op">*</span> np.sqrt(<span class="dv">2</span><span class="op">*</span>gamma<span class="op">*</span>omega<span class="op">/</span>omega_p<span class="op">**</span><span class="dv">2</span>)</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="dv">299792458</span></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>omega_p <span class="op">=</span> <span class="fl">13.8e15</span></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>gamma <span class="op">=</span> <span class="fl">1.075e14</span></span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>freq <span class="op">=</span> np.logspace(<span class="dv">12</span>, <span class="dv">16</span>, <span class="dv">1000</span>)  <span class="co"># Hz</span></span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>omega <span class="op">=</span> <span class="dv">2</span><span class="op">*</span>np.pi<span class="op">*</span>freq</span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>delta_full <span class="op">=</span> skin_depth_full(omega, omega_p, gamma)</span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>delta_low <span class="op">=</span> skin_depth_low(omega, omega_p, gamma)</span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>get_size(<span class="dv">8</span>,<span class="dv">6</span>))</span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Sample values:"</span>)</span>
-<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"freq (Hz) | delta_full (nm) | delta_low (nm)"</span>)</span>
-<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="bu">len</span>(freq), <span class="dv">200</span>):</span>
-<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>freq[i]<span class="sc">:.2e}</span><span class="ss"> | </span><span class="sc">{</span>delta_full[i]<span class="op">*</span><span class="fl">1e9</span><span class="sc">:.2f}</span><span class="ss"> | </span><span class="sc">{</span>delta_low[i]<span class="op">*</span><span class="fl">1e9</span><span class="sc">:.2f}</span><span class="ss">"</span>)</span>
-<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>plt.loglog(freq, delta_full<span class="op">*</span><span class="fl">1e9</span>, <span class="st">'b-'</span>, label<span class="op">=</span><span class="st">'Full model'</span>)</span>
-<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>plt.loglog(freq, delta_low<span class="op">*</span><span class="fl">1e9</span>, <span class="st">'r--'</span>, label<span class="op">=</span><span class="st">'Low freq. approx.'</span>)</span>
-<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="vs">r'frequency $\omega$ [Hz]'</span>)</span>
-<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'skin depth [nm]'</span>)</span>
-<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
-<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a><span class="co"># Add vertical line at plasma frequency</span></span>
-<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a>plt.axvline(omega_p<span class="op">/</span>(<span class="dv">2</span><span class="op">*</span>np.pi), color<span class="op">=</span><span class="st">'gray'</span>, linestyle<span class="op">=</span><span class="st">':'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
-<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>plt.text(omega_p<span class="op">/</span>(<span class="dv">2</span><span class="op">*</span>np.pi)<span class="op">*</span><span class="fl">1.1</span>, <span class="dv">4</span>, <span class="vs">r'$\omega_p$'</span>, fontsize<span class="op">=</span><span class="dv">10</span>)</span>
-<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a><span class="co"># Add frequency markers for visible light</span></span>
-<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a>plt.axvspan(<span class="fl">4e14</span>, <span class="fl">8e14</span>, color<span class="op">=</span><span class="st">'yellow'</span>, alpha<span class="op">=</span><span class="fl">0.1</span>)</span>
-<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a>plt.text(<span class="fl">5e14</span>, plt.ylim()[<span class="dv">0</span>]<span class="op">*</span><span class="dv">50</span>, <span class="st">'Visible'</span>, rotation<span class="op">=</span><span class="dv">90</span>)</span>
-<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="dv">1</span>, <span class="fl">1e4</span>)</span>
-<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> skin_depth_full(omega, omega_p, gamma):</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    eps_r <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span> omega_p<span class="op">**</span><span class="dv">2</span><span class="op">/</span>(omega<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> <span class="ot">1j</span><span class="op">*</span>gamma<span class="op">*</span>omega)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    k <span class="op">=</span> omega<span class="op">/</span>c <span class="op">*</span> np.sqrt(eps_r)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">1</span><span class="op">/</span><span class="bu">abs</span>(np.imag(k))  <span class="co"># Using abs to ensure positive values</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> skin_depth_low(omega, omega_p, gamma):</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> c<span class="op">/</span>omega <span class="op">*</span> np.sqrt(<span class="dv">2</span><span class="op">*</span>gamma<span class="op">*</span>omega<span class="op">/</span>omega_p<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="dv">299792458</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>omega_p <span class="op">=</span> <span class="fl">13.8e15</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>gamma <span class="op">=</span> <span class="fl">1.075e14</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>freq <span class="op">=</span> np.logspace(<span class="dv">12</span>, <span class="dv">16</span>, <span class="dv">1000</span>)  <span class="co"># Hz</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>omega <span class="op">=</span> <span class="dv">2</span><span class="op">*</span>np.pi<span class="op">*</span>freq</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>delta_full <span class="op">=</span> skin_depth_full(omega, omega_p, gamma)</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>delta_low <span class="op">=</span> skin_depth_low(omega, omega_p, gamma)</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>get_size(<span class="dv">8</span>,<span class="dv">6</span>))</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="co">#print("Sample values:")</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a><span class="co">#print("freq (Hz) | delta_full (nm) | delta_low (nm)")</span></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="co">#for i in range(0, len(freq), 200):</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a><span class="co">#    print(f"{freq[i]:.2e} | {delta_full[i]*1e9:.2f} | {delta_low[i]*1e9:.2f}")</span></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>plt.loglog(freq, delta_full<span class="op">*</span><span class="fl">1e9</span>, <span class="st">'b-'</span>, label<span class="op">=</span><span class="st">'Full model'</span>)</span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>plt.loglog(freq, delta_low<span class="op">*</span><span class="fl">1e9</span>, <span class="st">'r--'</span>, label<span class="op">=</span><span class="st">'Low freq. approx.'</span>)</span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="vs">r'frequency $\omega$ [Hz]'</span>)</span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'skin depth [nm]'</span>)</span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a><span class="co"># Add vertical line at plasma frequency</span></span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>plt.axvline(omega_p<span class="op">/</span>(<span class="dv">2</span><span class="op">*</span>np.pi), color<span class="op">=</span><span class="st">'gray'</span>, linestyle<span class="op">=</span><span class="st">':'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>plt.text(omega_p<span class="op">/</span>(<span class="dv">2</span><span class="op">*</span>np.pi)<span class="op">*</span><span class="fl">1.1</span>, <span class="dv">4</span>, <span class="vs">r'$\omega_p$'</span>, fontsize<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a><span class="co"># Add frequency markers for visible light</span></span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a>plt.axvspan(<span class="fl">4e14</span>, <span class="fl">8e14</span>, color<span class="op">=</span><span class="st">'yellow'</span>, alpha<span class="op">=</span><span class="fl">0.1</span>)</span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a>plt.text(<span class="fl">5e14</span>, plt.ylim()[<span class="dv">0</span>]<span class="op">*</span><span class="dv">50</span>, <span class="st">'Visible'</span>, rotation<span class="op">=</span><span class="dv">90</span>)</span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="dv">1</span>, <span class="fl">1e4</span>)</span>
+<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-stdout">
-<pre><code>Sample values:
-freq (Hz) | delta_full (nm) | delta_low (nm)
-1.00e+12 | 123.63 | 127.08
-6.32e+12 | 44.97 | 50.54
-4.00e+13 | 23.13 | 20.10
-2.53e+14 | 21.91 | 8.00
-1.60e+15 | 31.64 | 3.18</code></pre>
-</div>
 <div class="cell-output cell-output-display">
 <div id="fig-skin-depth-corrected" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-skin-depth-corrected-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="Metals_files/figure-html/fig-skin-depth-corrected-output-2.png" class="quarto-figure quarto-figure-center figure-img" width="457" height="335">
+<img src="Metals_files/figure-html/fig-skin-depth-corrected-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="457" height="335">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-skin-depth-corrected-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;5— Skin depth as a function of frequency for a metal (Gold parameters). The dashed line shows the typical δ ∝ 1/√ω behavior at low frequencies.
@@ -1217,6 +1280,51 @@ Figure&nbsp;5— Skin depth as a function of frequency for a metal (Gold paramet
 </figure>
 </div>
 </div>
+</div>
+<div id="tbl-penetration" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-penetration-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tbl&nbsp;3— Penetration depth (delta) comparison between full model and low frequency approximation at different frequencies
+</figcaption>
+<div aria-describedby="tbl-penetration-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>freq (Hz)</th>
+<th>delta_full (nm)</th>
+<th>delta_low (nm)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1.00e+12</td>
+<td>123.63</td>
+<td>127.08</td>
+</tr>
+<tr class="even">
+<td>6.32e+12</td>
+<td>44.97</td>
+<td>50.54</td>
+</tr>
+<tr class="odd">
+<td>4.00e+13</td>
+<td>23.13</td>
+<td>20.10</td>
+</tr>
+<tr class="even">
+<td>2.53e+14</td>
+<td>21.91</td>
+<td>8.00</td>
+</tr>
+<tr class="odd">
+<td>1.60e+15</td>
+<td>31.64</td>
+<td>3.18</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
 </div>
 </section>
 <section id="skin-depth" class="level3">
@@ -1290,65 +1398,65 @@ Figure&nbsp;7— Two different excitation schemes of surface plasmon polaritons 
 <div id="cell-fig-spp-reflectivity-ag-au" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fresnel_rp(theta, eps1, eps2, eps3, d, k0):</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    kz1 <span class="op">=</span> np.sqrt(eps1 <span class="op">*</span> k0<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> (np.sqrt(eps1) <span class="op">*</span> k0 <span class="op">*</span> np.sin(theta))<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="ot">0j</span>)</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    kz2 <span class="op">=</span> np.sqrt(eps2 <span class="op">*</span> k0<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> (np.sqrt(eps1) <span class="op">*</span> k0 <span class="op">*</span> np.sin(theta))<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="ot">0j</span>)</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    kz3 <span class="op">=</span> np.sqrt(eps3 <span class="op">*</span> k0<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> (np.sqrt(eps1) <span class="op">*</span> k0 <span class="op">*</span> np.sin(theta))<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="ot">0j</span>)</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    r12 <span class="op">=</span> (eps2 <span class="op">*</span> kz1 <span class="op">-</span> eps1 <span class="op">*</span> kz2)<span class="op">/</span>(eps2 <span class="op">*</span> kz1 <span class="op">+</span> eps1 <span class="op">*</span> kz2)</span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    r23 <span class="op">=</span> (eps3 <span class="op">*</span> kz2 <span class="op">-</span> eps2 <span class="op">*</span> kz3)<span class="op">/</span>(eps3 <span class="op">*</span> kz2 <span class="op">+</span> eps2 <span class="op">*</span> kz3)</span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>    numerator <span class="op">=</span> r12 <span class="op">+</span> r23 <span class="op">*</span> np.exp(<span class="ot">2j</span> <span class="op">*</span> kz2 <span class="op">*</span> d)</span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>    denominator <span class="op">=</span> <span class="dv">1</span> <span class="op">+</span> r12 <span class="op">*</span> r23 <span class="op">*</span> np.exp(<span class="ot">2j</span> <span class="op">*</span> kz2 <span class="op">*</span> d)</span>
-<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> numerator<span class="op">/</span>denominator</span>
-<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters</span></span>
-<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>wavelength <span class="op">=</span> <span class="fl">532e-9</span>  <span class="co"># green laser wavelength</span></span>
-<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>k0 <span class="op">=</span> <span class="dv">2</span><span class="op">*</span>np.pi<span class="op">/</span>wavelength</span>
-<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Layer properties</span></span>
-<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>eps_glass <span class="op">=</span> <span class="fl">2.25</span>  <span class="co"># glass prism</span></span>
-<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>eps_air <span class="op">=</span> <span class="fl">1.0</span>    <span class="co"># air</span></span>
-<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> <span class="fl">50e-9</span>        <span class="co"># 50 nm film thickness</span></span>
-<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Dielectric constants at 532 nm</span></span>
-<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>eps_gold <span class="op">=</span> <span class="op">-</span><span class="fl">4.8</span> <span class="op">+</span> <span class="ot">2.4j</span>   <span class="co"># gold</span></span>
-<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>eps_silver <span class="op">=</span> <span class="op">-</span><span class="fl">11.7</span> <span class="op">+</span> <span class="ot">0.4j</span>  <span class="co"># silver</span></span>
-<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>theta_deg <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">90</span>, <span class="dv">1000</span>)</span>
-<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>theta_rad <span class="op">=</span> theta_deg <span class="op">*</span> np.pi<span class="op">/</span><span class="dv">180</span></span>
-<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a>Rp_au <span class="op">=</span> np.<span class="bu">abs</span>(fresnel_rp(theta_rad, eps_glass, eps_gold, eps_air, d, k0))<span class="op">**</span><span class="dv">2</span></span>
-<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a>Rp_ag <span class="op">=</span> np.<span class="bu">abs</span>(fresnel_rp(theta_rad, eps_glass, eps_silver, eps_air, d, k0))<span class="op">**</span><span class="dv">2</span></span>
-<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>get_size(<span class="dv">8</span>,<span class="dv">6</span>))</span>
-<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a>plt.plot(theta_deg, Rp_au, <span class="st">'g-'</span>, label<span class="op">=</span><span class="st">'Gold'</span>)</span>
-<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a>plt.plot(theta_deg, Rp_ag, <span class="st">'b-'</span>, label<span class="op">=</span><span class="st">'Silver'</span>)</span>
-<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="vs">r'incident angle $theta$ [°]'</span>)</span>
-<span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'reflectivity R'</span>)</span>
-<span id="cb9-43"><a href="#cb9-43" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
-<span id="cb9-44"><a href="#cb9-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-45"><a href="#cb9-45" aria-hidden="true" tabindex="-1"></a>theta_c <span class="op">=</span> np.arcsin(np.sqrt(eps_air<span class="op">/</span>eps_glass)) <span class="op">*</span> <span class="dv">180</span><span class="op">/</span>np.pi</span>
-<span id="cb9-46"><a href="#cb9-46" aria-hidden="true" tabindex="-1"></a>plt.axvline(theta_c, color<span class="op">=</span><span class="st">'gray'</span>, linestyle<span class="op">=</span><span class="st">':'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
-<span id="cb9-47"><a href="#cb9-47" aria-hidden="true" tabindex="-1"></a>plt.text(theta_c<span class="op">-</span><span class="dv">3</span>, <span class="fl">0.4</span>, <span class="vs">r'$\theta_c$'</span>, fontsize<span class="op">=</span><span class="dv">10</span>)</span>
-<span id="cb9-48"><a href="#cb9-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-49"><a href="#cb9-49" aria-hidden="true" tabindex="-1"></a>spr_angle_au <span class="op">=</span> theta_deg[np.argmin(Rp_au)]</span>
-<span id="cb9-50"><a href="#cb9-50" aria-hidden="true" tabindex="-1"></a>spr_angle_ag <span class="op">=</span> theta_deg[np.argmin(Rp_ag)]</span>
-<span id="cb9-51"><a href="#cb9-51" aria-hidden="true" tabindex="-1"></a>plt.plot(spr_angle_au, np.<span class="bu">min</span>(Rp_au), <span class="st">'go'</span>)</span>
-<span id="cb9-52"><a href="#cb9-52" aria-hidden="true" tabindex="-1"></a>plt.plot(spr_angle_ag, np.<span class="bu">min</span>(Rp_ag), <span class="st">'bo'</span>)</span>
-<span id="cb9-53"><a href="#cb9-53" aria-hidden="true" tabindex="-1"></a>plt.text(spr_angle_au<span class="op">+</span><span class="dv">1</span>, <span class="fl">0.4</span>, <span class="ss">f'Au: </span><span class="sc">{</span>spr_angle_au<span class="sc">:.1f}</span><span class="ss">°'</span>, fontsize<span class="op">=</span><span class="dv">10</span>)</span>
-<span id="cb9-54"><a href="#cb9-54" aria-hidden="true" tabindex="-1"></a>plt.text(spr_angle_ag<span class="op">-</span><span class="dv">12</span>, <span class="fl">0.1</span>, <span class="ss">f'Ag: </span><span class="sc">{</span>spr_angle_ag<span class="sc">:.1f}</span><span class="ss">°'</span>, fontsize<span class="op">=</span><span class="dv">10</span>)</span>
-<span id="cb9-55"><a href="#cb9-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-56"><a href="#cb9-56" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="dv">0</span>, <span class="dv">1</span>)</span>
-<span id="cb9-57"><a href="#cb9-57" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="dv">30</span>,<span class="dv">70</span>)</span>
-<span id="cb9-58"><a href="#cb9-58" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb9-59"><a href="#cb9-59" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fresnel_rp(theta, eps1, eps2, eps3, d, k0):</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    kz1 <span class="op">=</span> np.sqrt(eps1 <span class="op">*</span> k0<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> (np.sqrt(eps1) <span class="op">*</span> k0 <span class="op">*</span> np.sin(theta))<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="ot">0j</span>)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    kz2 <span class="op">=</span> np.sqrt(eps2 <span class="op">*</span> k0<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> (np.sqrt(eps1) <span class="op">*</span> k0 <span class="op">*</span> np.sin(theta))<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="ot">0j</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    kz3 <span class="op">=</span> np.sqrt(eps3 <span class="op">*</span> k0<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> (np.sqrt(eps1) <span class="op">*</span> k0 <span class="op">*</span> np.sin(theta))<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="ot">0j</span>)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    r12 <span class="op">=</span> (eps2 <span class="op">*</span> kz1 <span class="op">-</span> eps1 <span class="op">*</span> kz2)<span class="op">/</span>(eps2 <span class="op">*</span> kz1 <span class="op">+</span> eps1 <span class="op">*</span> kz2)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    r23 <span class="op">=</span> (eps3 <span class="op">*</span> kz2 <span class="op">-</span> eps2 <span class="op">*</span> kz3)<span class="op">/</span>(eps3 <span class="op">*</span> kz2 <span class="op">+</span> eps2 <span class="op">*</span> kz3)</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    numerator <span class="op">=</span> r12 <span class="op">+</span> r23 <span class="op">*</span> np.exp(<span class="ot">2j</span> <span class="op">*</span> kz2 <span class="op">*</span> d)</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>    denominator <span class="op">=</span> <span class="dv">1</span> <span class="op">+</span> r12 <span class="op">*</span> r23 <span class="op">*</span> np.exp(<span class="ot">2j</span> <span class="op">*</span> kz2 <span class="op">*</span> d)</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> numerator<span class="op">/</span>denominator</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>wavelength <span class="op">=</span> <span class="fl">532e-9</span>  <span class="co"># green laser wavelength</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>k0 <span class="op">=</span> <span class="dv">2</span><span class="op">*</span>np.pi<span class="op">/</span>wavelength</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Layer properties</span></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>eps_glass <span class="op">=</span> <span class="fl">2.25</span>  <span class="co"># glass prism</span></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>eps_air <span class="op">=</span> <span class="fl">1.0</span>    <span class="co"># air</span></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> <span class="fl">50e-9</span>        <span class="co"># 50 nm film thickness</span></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Dielectric constants at 532 nm</span></span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>eps_gold <span class="op">=</span> <span class="op">-</span><span class="fl">4.8</span> <span class="op">+</span> <span class="ot">2.4j</span>   <span class="co"># gold</span></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>eps_silver <span class="op">=</span> <span class="op">-</span><span class="fl">11.7</span> <span class="op">+</span> <span class="ot">0.4j</span>  <span class="co"># silver</span></span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>theta_deg <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">90</span>, <span class="dv">1000</span>)</span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>theta_rad <span class="op">=</span> theta_deg <span class="op">*</span> np.pi<span class="op">/</span><span class="dv">180</span></span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>Rp_au <span class="op">=</span> np.<span class="bu">abs</span>(fresnel_rp(theta_rad, eps_glass, eps_gold, eps_air, d, k0))<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a>Rp_ag <span class="op">=</span> np.<span class="bu">abs</span>(fresnel_rp(theta_rad, eps_glass, eps_silver, eps_air, d, k0))<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>get_size(<span class="dv">8</span>,<span class="dv">6</span>))</span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a>plt.plot(theta_deg, Rp_au, <span class="st">'g-'</span>, label<span class="op">=</span><span class="st">'Gold'</span>)</span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a>plt.plot(theta_deg, Rp_ag, <span class="st">'b-'</span>, label<span class="op">=</span><span class="st">'Silver'</span>)</span>
+<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="vs">r'incident angle $theta$ [°]'</span>)</span>
+<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'reflectivity R'</span>)</span>
+<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-45"><a href="#cb6-45" aria-hidden="true" tabindex="-1"></a>theta_c <span class="op">=</span> np.arcsin(np.sqrt(eps_air<span class="op">/</span>eps_glass)) <span class="op">*</span> <span class="dv">180</span><span class="op">/</span>np.pi</span>
+<span id="cb6-46"><a href="#cb6-46" aria-hidden="true" tabindex="-1"></a>plt.axvline(theta_c, color<span class="op">=</span><span class="st">'gray'</span>, linestyle<span class="op">=</span><span class="st">':'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb6-47"><a href="#cb6-47" aria-hidden="true" tabindex="-1"></a>plt.text(theta_c<span class="op">-</span><span class="dv">3</span>, <span class="fl">0.4</span>, <span class="vs">r'$\theta_c$'</span>, fontsize<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb6-48"><a href="#cb6-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-49"><a href="#cb6-49" aria-hidden="true" tabindex="-1"></a>spr_angle_au <span class="op">=</span> theta_deg[np.argmin(Rp_au)]</span>
+<span id="cb6-50"><a href="#cb6-50" aria-hidden="true" tabindex="-1"></a>spr_angle_ag <span class="op">=</span> theta_deg[np.argmin(Rp_ag)]</span>
+<span id="cb6-51"><a href="#cb6-51" aria-hidden="true" tabindex="-1"></a>plt.plot(spr_angle_au, np.<span class="bu">min</span>(Rp_au), <span class="st">'go'</span>)</span>
+<span id="cb6-52"><a href="#cb6-52" aria-hidden="true" tabindex="-1"></a>plt.plot(spr_angle_ag, np.<span class="bu">min</span>(Rp_ag), <span class="st">'bo'</span>)</span>
+<span id="cb6-53"><a href="#cb6-53" aria-hidden="true" tabindex="-1"></a>plt.text(spr_angle_au<span class="op">+</span><span class="dv">1</span>, <span class="fl">0.4</span>, <span class="ss">f'Au: </span><span class="sc">{</span>spr_angle_au<span class="sc">:.1f}</span><span class="ss">°'</span>, fontsize<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb6-54"><a href="#cb6-54" aria-hidden="true" tabindex="-1"></a>plt.text(spr_angle_ag<span class="op">-</span><span class="dv">12</span>, <span class="fl">0.1</span>, <span class="ss">f'Ag: </span><span class="sc">{</span>spr_angle_ag<span class="sc">:.1f}</span><span class="ss">°'</span>, fontsize<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb6-55"><a href="#cb6-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-56"><a href="#cb6-56" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="dv">0</span>, <span class="dv">1</span>)</span>
+<span id="cb6-57"><a href="#cb6-57" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="dv">30</span>,<span class="dv">70</span>)</span>
+<span id="cb6-58"><a href="#cb6-58" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb6-59"><a href="#cb6-59" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div id="fig-spp-reflectivity-ag-au" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
@@ -1363,6 +1471,12 @@ Figure&nbsp;8— Comparison of reflectivity versus incident angle for 50 nm gold
 </div>
 </div>
 </div>
+<div id="tbl-spr-metals" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-spr-metals-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tbl&nbsp;4— Comparison of surface plasmon resonance (SPR) characteristics for gold and silver films at 532 nm wavelength
+</figcaption>
+<div aria-describedby="tbl-spr-metals-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
 <col style="width: 10%">
@@ -1393,6 +1507,9 @@ Figure&nbsp;8— Comparison of reflectivity versus incident angle for 50 nm gold
 </tr>
 </tbody>
 </table>
+</div>
+</figure>
+</div>
 </section>
 </section>
 <section id="historical-and-modern-applications" class="level3">
