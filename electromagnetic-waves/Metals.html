@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Metals – Experimental Physics 3 Course on Optics and Quantum Mechanics</title>
+<title>Electromagnetic Waves in Metals – Experimental Physics 3 Course on Optics and Quantum Mechanics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -661,10 +661,19 @@ window.Quarto = {
   <li><a href="#drude-model" id="toc-drude-model" class="nav-link active" data-scroll-target="#drude-model">Drude Model</a>
   <ul class="collapse">
   <li><a href="#conductivity" id="toc-conductivity" class="nav-link" data-scroll-target="#conductivity">Conductivity</a></li>
-  <li><a href="#reflectivity-of-metals" id="toc-reflectivity-of-metals" class="nav-link" data-scroll-target="#reflectivity-of-metals">Reflectivity of Metals</a></li>
   </ul></li>
+  <li><a href="#optical-properties-of-metals" id="toc-optical-properties-of-metals" class="nav-link" data-scroll-target="#optical-properties-of-metals">Optical Properties of Metals</a>
+  <ul class="collapse">
+  <li><a href="#reflectivity-of-metals" id="toc-reflectivity-of-metals" class="nav-link" data-scroll-target="#reflectivity-of-metals">Reflectivity of Metals</a></li>
   <li><a href="#dispersion-relation-in-metals" id="toc-dispersion-relation-in-metals" class="nav-link" data-scroll-target="#dispersion-relation-in-metals">Dispersion Relation in Metals</a></li>
-  <li><a href="#skin-depth-analysis" id="toc-skin-depth-analysis" class="nav-link" data-scroll-target="#skin-depth-analysis">Skin Depth Analysis</a></li>
+  <li><a href="#skin-depth" id="toc-skin-depth" class="nav-link" data-scroll-target="#skin-depth">Skin Depth</a></li>
+  </ul></li>
+  <li><a href="#plasmonics" id="toc-plasmonics" class="nav-link" data-scroll-target="#plasmonics">Plasmonics</a>
+  <ul class="collapse">
+  <li><a href="#localized-surface-plasmons" id="toc-localized-surface-plasmons" class="nav-link" data-scroll-target="#localized-surface-plasmons">Localized Surface Plasmons</a></li>
+  <li><a href="#surface-plasmon-polaritons" id="toc-surface-plasmon-polaritons" class="nav-link" data-scroll-target="#surface-plasmon-polaritons">Surface Plasmon Polaritons</a></li>
+  <li><a href="#historical-and-modern-applications" id="toc-historical-and-modern-applications" class="nav-link" data-scroll-target="#historical-and-modern-applications">Historical and Modern Applications</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -673,7 +682,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Electromagnetic Optics</li><li class="breadcrumb-item"><a href="../electromagnetic-waves/Fresnel Equations.html">Lecture 16</a></li><li class="breadcrumb-item"><a href="../electromagnetic-waves/Metals.html">Metals</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Metals</h1>
+<h1 class="title">Electromagnetic Waves in Metals</h1>
 </div>
 
 
@@ -870,6 +879,9 @@ Figure&nbsp;1— Real (left) and imaginary part (right) of the dielectric functi
 \]</span></p>
 <p>which readily tells us, that we obtain information on the conductivity at high frequencies from optical measurements.</p>
 </section>
+</section>
+<section id="optical-properties-of-metals" class="level2">
+<h2 class="anchored" data-anchor-id="optical-properties-of-metals">Optical Properties of Metals</h2>
 <section id="reflectivity-of-metals" class="level3">
 <h3 class="anchored" data-anchor-id="reflectivity-of-metals">Reflectivity of Metals</h3>
 <p>The reflectivity of a metal is closely related to its dielectric function. The reflectivity <span class="math inline">\(R\)</span> of a metal can be calculated from the complex dielectric function <span class="math inline">\(\epsilon\)</span> using the Fresnel equations:</p>
@@ -1028,9 +1040,8 @@ Wavelength (nm) | R (with damping) | R (no damping)
 </div>
 </div>
 </section>
-</section>
-<section id="dispersion-relation-in-metals" class="level2">
-<h2 class="anchored" data-anchor-id="dispersion-relation-in-metals">Dispersion Relation in Metals</h2>
+<section id="dispersion-relation-in-metals" class="level3">
+<h3 class="anchored" data-anchor-id="dispersion-relation-in-metals">Dispersion Relation in Metals</h3>
 <p>To understand how electromagnetic waves propagate in metals, we need to derive the dispersion relation. Starting from Maxwell’s equations and using the dielectric function we derived from the Drude model, we can obtain the wave equation in metals:</p>
 <p><span class="math display">\[
 \nabla^2\vec{E}-\frac{1}{c^2}\frac{\partial^2\vec{E}}{\partial t^2}=\mu_0\frac{\partial\vec{j}}{\partial t}
@@ -1128,7 +1139,7 @@ Figure&nbsp;4— Dispersion relation for electromagnetic waves in a metal accord
 <p><span class="math display">\[
 k = \frac{\omega}{c}\sqrt{\epsilon_r} \approx \frac{\omega}{c}\sqrt{\frac{\omega_p^2}{\Gamma \omega}i} = \frac{\omega}{c}(1+i)\sqrt{\frac{\omega_p^2}{2\Gamma \omega}}
 \]</span></p>
-<p>This shows that both the real and imaginary parts of k are non-zero and equal in magnitude in this limit. This represents a heavily damped wave that can propagate a short distance into the metal.</p>
+<p>This shows that both the real and imaginary parts of <span class="math inline">\(k\)</span> are non-zero and equal in magnitude in this limit. This represents a heavily damped wave that can propagate a short distance into the metal.</p>
 <p>The wave in the metal has the form:</p>
 <p><span class="math display">\[
 E(x) = E_0 e^{ikx} = E_0 e^{i\text{Re}(k)x}e^{-\text{Im}(k)x}
@@ -1208,8 +1219,8 @@ Figure&nbsp;5— Skin depth as a function of frequency for a metal (Gold paramet
 </div>
 </div>
 </section>
-<section id="skin-depth-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="skin-depth-analysis">Skin Depth Analysis</h2>
+<section id="skin-depth" class="level3">
+<h3 class="anchored" data-anchor-id="skin-depth">Skin Depth</h3>
 <p>At low frequencies, the skin depth can be approximated as:</p>
 <p><span class="math display">\[
 \delta \approx \sqrt{\frac{2}{\omega_p^2\Gamma}}\frac{c}{\sqrt{\omega}} = \sqrt{\frac{2}{\sigma_0\mu_0\omega}}
@@ -1236,6 +1247,14 @@ Figure&nbsp;5— Skin depth as a function of frequency for a metal (Gold paramet
 <li>Design of electrical conductors for AC applications</li>
 <li>Plasmonic devices</li>
 </ul>
+</section>
+</section>
+<section id="plasmonics" class="level2">
+<h2 class="anchored" data-anchor-id="plasmonics">Plasmonics</h2>
+<p>One of the exciting fields of research in modern optics is plasmonics. Plasmons are collective oscillations of free electrons in a metal that can interact strongly with light. These interactions lead to fascinating phenomena, such as enhanced light-matter interactions, subwavelength imaging, and sensing applications.</p>
+<section id="localized-surface-plasmons" class="level3">
+<h3 class="anchored" data-anchor-id="localized-surface-plasmons">Localized Surface Plasmons</h3>
+<p>In metal nanoparticles, the confined electron oscillations create localized surface plasmons (LSPs). These are non-propagating excitations of the conduction electrons coupled to the electromagnetic field. The resonance condition depends strongly on the particle size, shape, and dielectric environment. A striking demonstration of LSPs can be observed in solutions of gold nanoparticles, where the interaction between light and the collective electron oscillations creates vivid colors.</p>
 <div id="fig-np-gold" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-np-gold-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -1246,8 +1265,154 @@ Figure&nbsp;6— Backscattering and transmission through a 65 nm gold nanopartic
 </figcaption>
 </figure>
 </div>
+</section>
+<section id="surface-plasmon-polaritons" class="level3">
+<h3 class="anchored" data-anchor-id="surface-plasmon-polaritons">Surface Plasmon Polaritons</h3>
+<p>Surface plasmon polaritons (SPPs) are electromagnetic excitations propagating along a metal-dielectric interface. These waves result from the coupling of the electromagnetic fields to oscillations of the conductor’s electron plasma. The dispersion relation for SPPs is given by:</p>
+<p><span class="math display">\[
+k_{SPP} = \frac{\omega}{c}\sqrt{\frac{\epsilon_m\epsilon_d}{\epsilon_m + \epsilon_d}}
+\]</span></p>
+<p>where <span class="math inline">\(\epsilon_m\)</span> and <span class="math inline">\(\epsilon_d\)</span> are the dielectric functions of the metal and dielectric, respectively. This unique dispersion relation allows SPPs to concentrate light into subwavelength volumes, enabling applications in sensing, waveguiding, and imaging beyond the diffraction limit.</p>
+<section id="surface-plasmon-polariton-sensor" class="level4">
+<h4 class="anchored" data-anchor-id="surface-plasmon-polariton-sensor">Surface Plasmon Polariton Sensor</h4>
+<p>A surface plasmon polariton sensor is a device that exploits the sensitivity of SPPs to changes in the local refractive index. By monitoring the resonance condition of the SPPs, one can detect minute changes in the dielectric environment near the metal surface. This principle forms the basis of label-free biosensing, where the binding of biomolecules to the metal surface can be detected in real-time.</p>
+<div id="fig-sppsensor" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sppsensor-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/excitation.png" class="img-fluid figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sppsensor-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7— Two different excitation schemes of surface plasmon polaritons for sensing applications. The prism coupling method (left) uses total internal reflection to excite SPPs, while the Kretschmann configuration (right) involves a thin metal film on a dielectric substrate.
+</figcaption>
+</figure>
+</div>
+<p>To observe SPPs, one can use a prism coupling method or the Kretschmann configuration. In both cases, the resonance condition is sensitive to changes in the refractive index near the metal surface, making SPP sensors highly versatile and sensitive.</p>
+<div id="cell-fig-spp-reflectivity-ag-au" class="cell" data-execution_count="7">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fresnel_rp(theta, eps1, eps2, eps3, d, k0):</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    kz1 <span class="op">=</span> np.sqrt(eps1 <span class="op">*</span> k0<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> (np.sqrt(eps1) <span class="op">*</span> k0 <span class="op">*</span> np.sin(theta))<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="ot">0j</span>)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    kz2 <span class="op">=</span> np.sqrt(eps2 <span class="op">*</span> k0<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> (np.sqrt(eps1) <span class="op">*</span> k0 <span class="op">*</span> np.sin(theta))<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="ot">0j</span>)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    kz3 <span class="op">=</span> np.sqrt(eps3 <span class="op">*</span> k0<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> (np.sqrt(eps1) <span class="op">*</span> k0 <span class="op">*</span> np.sin(theta))<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="ot">0j</span>)</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    r12 <span class="op">=</span> (eps2 <span class="op">*</span> kz1 <span class="op">-</span> eps1 <span class="op">*</span> kz2)<span class="op">/</span>(eps2 <span class="op">*</span> kz1 <span class="op">+</span> eps1 <span class="op">*</span> kz2)</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    r23 <span class="op">=</span> (eps3 <span class="op">*</span> kz2 <span class="op">-</span> eps2 <span class="op">*</span> kz3)<span class="op">/</span>(eps3 <span class="op">*</span> kz2 <span class="op">+</span> eps2 <span class="op">*</span> kz3)</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>    numerator <span class="op">=</span> r12 <span class="op">+</span> r23 <span class="op">*</span> np.exp(<span class="ot">2j</span> <span class="op">*</span> kz2 <span class="op">*</span> d)</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>    denominator <span class="op">=</span> <span class="dv">1</span> <span class="op">+</span> r12 <span class="op">*</span> r23 <span class="op">*</span> np.exp(<span class="ot">2j</span> <span class="op">*</span> kz2 <span class="op">*</span> d)</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> numerator<span class="op">/</span>denominator</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>wavelength <span class="op">=</span> <span class="fl">532e-9</span>  <span class="co"># green laser wavelength</span></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>k0 <span class="op">=</span> <span class="dv">2</span><span class="op">*</span>np.pi<span class="op">/</span>wavelength</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Layer properties</span></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>eps_glass <span class="op">=</span> <span class="fl">2.25</span>  <span class="co"># glass prism</span></span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>eps_air <span class="op">=</span> <span class="fl">1.0</span>    <span class="co"># air</span></span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> <span class="fl">50e-9</span>        <span class="co"># 50 nm film thickness</span></span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Dielectric constants at 532 nm</span></span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>eps_gold <span class="op">=</span> <span class="op">-</span><span class="fl">4.8</span> <span class="op">+</span> <span class="ot">2.4j</span>   <span class="co"># gold</span></span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>eps_silver <span class="op">=</span> <span class="op">-</span><span class="fl">11.7</span> <span class="op">+</span> <span class="ot">0.4j</span>  <span class="co"># silver</span></span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>theta_deg <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">90</span>, <span class="dv">1000</span>)</span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>theta_rad <span class="op">=</span> theta_deg <span class="op">*</span> np.pi<span class="op">/</span><span class="dv">180</span></span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a>Rp_au <span class="op">=</span> np.<span class="bu">abs</span>(fresnel_rp(theta_rad, eps_glass, eps_gold, eps_air, d, k0))<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a>Rp_ag <span class="op">=</span> np.<span class="bu">abs</span>(fresnel_rp(theta_rad, eps_glass, eps_silver, eps_air, d, k0))<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>get_size(<span class="dv">8</span>,<span class="dv">6</span>))</span>
+<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a>plt.plot(theta_deg, Rp_au, <span class="st">'g-'</span>, label<span class="op">=</span><span class="st">'Gold'</span>)</span>
+<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a>plt.plot(theta_deg, Rp_ag, <span class="st">'b-'</span>, label<span class="op">=</span><span class="st">'Silver'</span>)</span>
+<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="vs">r'incident angle $theta$ [°]'</span>)</span>
+<span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'reflectivity R'</span>)</span>
+<span id="cb9-43"><a href="#cb9-43" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb9-44"><a href="#cb9-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-45"><a href="#cb9-45" aria-hidden="true" tabindex="-1"></a>theta_c <span class="op">=</span> np.arcsin(np.sqrt(eps_air<span class="op">/</span>eps_glass)) <span class="op">*</span> <span class="dv">180</span><span class="op">/</span>np.pi</span>
+<span id="cb9-46"><a href="#cb9-46" aria-hidden="true" tabindex="-1"></a>plt.axvline(theta_c, color<span class="op">=</span><span class="st">'gray'</span>, linestyle<span class="op">=</span><span class="st">':'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb9-47"><a href="#cb9-47" aria-hidden="true" tabindex="-1"></a>plt.text(theta_c<span class="op">-</span><span class="dv">3</span>, <span class="fl">0.4</span>, <span class="vs">r'$\theta_c$'</span>, fontsize<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb9-48"><a href="#cb9-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-49"><a href="#cb9-49" aria-hidden="true" tabindex="-1"></a>spr_angle_au <span class="op">=</span> theta_deg[np.argmin(Rp_au)]</span>
+<span id="cb9-50"><a href="#cb9-50" aria-hidden="true" tabindex="-1"></a>spr_angle_ag <span class="op">=</span> theta_deg[np.argmin(Rp_ag)]</span>
+<span id="cb9-51"><a href="#cb9-51" aria-hidden="true" tabindex="-1"></a>plt.plot(spr_angle_au, np.<span class="bu">min</span>(Rp_au), <span class="st">'go'</span>)</span>
+<span id="cb9-52"><a href="#cb9-52" aria-hidden="true" tabindex="-1"></a>plt.plot(spr_angle_ag, np.<span class="bu">min</span>(Rp_ag), <span class="st">'bo'</span>)</span>
+<span id="cb9-53"><a href="#cb9-53" aria-hidden="true" tabindex="-1"></a>plt.text(spr_angle_au<span class="op">+</span><span class="dv">1</span>, <span class="fl">0.4</span>, <span class="ss">f'Au: </span><span class="sc">{</span>spr_angle_au<span class="sc">:.1f}</span><span class="ss">°'</span>, fontsize<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb9-54"><a href="#cb9-54" aria-hidden="true" tabindex="-1"></a>plt.text(spr_angle_ag<span class="op">-</span><span class="dv">12</span>, <span class="fl">0.1</span>, <span class="ss">f'Ag: </span><span class="sc">{</span>spr_angle_ag<span class="sc">:.1f}</span><span class="ss">°'</span>, fontsize<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb9-55"><a href="#cb9-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-56"><a href="#cb9-56" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="dv">0</span>, <span class="dv">1</span>)</span>
+<span id="cb9-57"><a href="#cb9-57" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="dv">30</span>,<span class="dv">70</span>)</span>
+<span id="cb9-58"><a href="#cb9-58" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb9-59"><a href="#cb9-59" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div id="fig-spp-reflectivity-ag-au" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-spp-reflectivity-ag-au-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Metals_files/figure-html/fig-spp-reflectivity-ag-au-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="458" height="336">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-spp-reflectivity-ag-au-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8— Comparison of reflectivity versus incident angle for 50 nm gold and silver films on glass at 532 nm. Silver shows a sharper and deeper resonance due to lower losses.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 19%">
+<col style="width: 26%">
+<col style="width: 43%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Metal</th>
+<th>SPR Angle (°)</th>
+<th>Minimum Reflectivity</th>
+<th>Dielectric Constant (ε) at 532 nm</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Gold</td>
+<td>48.6</td>
+<td>0.107</td>
+<td>-4.8 + 2.4i</td>
+</tr>
+<tr class="even">
+<td>Silver</td>
+<td>44.2</td>
+<td>0.044</td>
+<td>-11.7 + 0.4i</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="historical-and-modern-applications" class="level3">
+<h3 class="anchored" data-anchor-id="historical-and-modern-applications">Historical and Modern Applications</h3>
+<p>The use of plasmonic effects in materials dates back to ancient times, though the underlying physics was not understood. Perhaps the most famous example is the Lycurgus Cup from the 4th century AD. This remarkable artifact appears green in reflected light but red in transmitted light due to the presence of gold and silver nanoparticles embedded in the glass matrix.</p>
+<div id="fig-lycurgus" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-lycurgus-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/lycurgus.png" class="img-fluid figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-lycurgus-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9— The Lycurgus Cup demonstrates the dramatic optical effects of metallic nanoparticles. When viewed in reflected light (left), the cup appears green, while in transmitted light (right), it glows ruby red due to the surface plasmon resonance of embedded gold and silver nanoparticles.
+</figcaption>
+</figure>
+</div>
+<p>Modern applications of plasmonics have expanded far beyond decorative uses. Surface plasmon resonance sensors enable highly sensitive biochemical detection by monitoring changes in the local refractive index near metal surfaces. Plasmonic waveguides can guide light in dimensions far below the diffraction limit, promising applications in next-generation optical computing and telecommunications. In medicine, plasmonic nanoparticles are being developed for targeted therapy and diagnostic imaging.</p>
+<p>The field of metamaterials leverages plasmonic effects to create artificial materials with properties not found in nature, such as negative refractive indices and perfect lensing. These developments continue to push the boundaries of what’s possible in optics and photonics, leading to innovations in solar energy harvesting, quantum information processing, and ultrasensitive chemical detection.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
