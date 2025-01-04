@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,6 +64,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../quantum-mechanics/Particle_Nature_Of_Light.html" rel="next">
+<link href="../electromagnetic-waves/Optical Activity.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -128,7 +164,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">The Structure of Matter - a Historical Approach</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Electromagnetic Optics</li><li class="breadcrumb-item"><a href="../quantum-mechanics/Structure_of_matter.html">Lecture 19</a></li><li class="breadcrumb-item"><a href="../quantum-mechanics/Structure_of_matter.html">Structure of Matter</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -627,6 +663,35 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-23" role="navigation" aria-expanded="true">
+ <span class="menu-text">Lecture 19</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-23" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-23" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Structure_of_matter.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Structure of Matter</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Particle_Nature_Of_Light.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Particle Nature of Light</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Black_Body_Radiation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Black Body Radiation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
       </ul>
   </li>
     </ul>
@@ -639,8 +704,7 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#do-atoms-exist" id="toc-do-atoms-exist" class="nav-link active" data-scroll-target="#do-atoms-exist">Do atoms exist?</a></li>
-  <li><a href="#atoms-and-molecules" id="toc-atoms-and-molecules" class="nav-link" data-scroll-target="#atoms-and-molecules">Atoms and molecules</a>
+  <li><a href="#atoms-and-molecules" id="toc-atoms-and-molecules" class="nav-link active" data-scroll-target="#atoms-and-molecules">Atoms and molecules</a>
   <ul class="collapse">
   <li><a href="#daltons-law" id="toc-daltons-law" class="nav-link" data-scroll-target="#daltons-law">Dalton’s law</a></li>
   <li><a href="#the-law-of-gay-lussac" id="toc-the-law-of-gay-lussac" class="nav-link" data-scroll-target="#the-law-of-gay-lussac">The law of Gay-Lussac</a></li>
@@ -650,15 +714,17 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#indication-of-charged-particles-within-atoms" id="toc-indication-of-charged-particles-within-atoms" class="nav-link" data-scroll-target="#indication-of-charged-particles-within-atoms">Indication of charged particles within atoms</a></li>
   <li><a href="#the-thomson-model" id="toc-the-thomson-model" class="nav-link" data-scroll-target="#the-thomson-model">The Thomson model</a></li>
-  <li><a href="#the-rutherford-model" id="toc-the-rutherford-model" class="nav-link" data-scroll-target="#the-rutherford-model">The Rutherford model</a></li>
+  <li><a href="#the-rutherford-model" id="toc-the-rutherford-model" class="nav-link" data-scroll-target="#the-rutherford-model">The Rutherford Model</a></li>
+  <li><a href="#experimental-verification" id="toc-experimental-verification" class="nav-link" data-scroll-target="#experimental-verification">Experimental verification</a></li>
   </ul></li>
+  <li><a href="#rutherford-scattering-trajectories" id="toc-rutherford-scattering-trajectories" class="nav-link" data-scroll-target="#rutherford-scattering-trajectories">Rutherford Scattering Trajectories</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Electromagnetic Optics</li><li class="breadcrumb-item"><a href="../quantum-mechanics/Structure_of_matter.html">Lecture 19</a></li><li class="breadcrumb-item"><a href="../quantum-mechanics/Structure_of_matter.html">Structure of Matter</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">The Structure of Matter - a Historical Approach</h1>
 </div>
@@ -677,29 +743,50 @@ window.Quarto = {
 </header>
 
 
-<section id="do-atoms-exist" class="level2">
-<h2 class="anchored" data-anchor-id="do-atoms-exist">Do atoms exist?</h2>
-<p>We will examine historical experiments that addressed the question of atomic existence. Therefore, we will discuss Dalton’s law and the law of Gay-Lussac before we resolve the structure of atoms an the basis of Thomson’s and Rutherford’s experiments.</p>
-<p>The earliest documented concept of matter’s structure as infinitesimally small, space-filling particles comes from the Greek philosophers <em>Leucippus</em> and <em>Democritus</em> (5th century BCE). These philosophers proposed that particles differ in size and shape, and that the properties of macroscopic objects arise from the arrangement of these particles. They called these particles “<em><span class="math inline">\(\alpha \tau o \mu o \zeta\)</span>” (atoms) because they believed them to be indivisible. A century later, </em>Epicurus* expanded this atomic theory by attributing the additional characteristic of mass to these particles, beyond their spatial properties.</p>
-</section>
+<p>Building upon our study of electromagnetic waves and classical mechanics, we now turn to the fundamental structure of matter itself. Our journey will follow three key discoveries that revolutionized physics: First, we will examine evidence showing that matter is composed of discrete atoms and that atoms contain charged particles, based on groundbreaking 19th century experiments. Second, we will see how phenomena like the photoelectric effect revealed that light behaves not just as waves, but also as particles called photons. Third, we will explore how matter itself exhibits wave-like properties, leading to the Schrödinger equation and the foundations of quantum mechanics.</p>
+<p>This exploration begins with the historical experiments that first proved the existence of atoms. We will examine Dalton’s law of chemical combinations and Gay-Lussac’s law of gaseous reactions, before investigating the internal structure of atoms through Thomson’s and Rutherford’s seminal experiments.</p>
+<p>The concept of matter being composed of indivisible particles dates back to ancient Greece. The philosophers <em>Leucippus</em> and <em>Democritus</em> (5th century BCE) first proposed that all matter consists of infinitesimally small, space-filling particles that differ in size and shape. They argued that the properties of macroscopic objects arise from the arrangement of these fundamental particles, which they named “<em><span class="math inline">\(\alpha \tau o \mu o \zeta\)</span>” (atoms) meaning “indivisible.” A century later, </em>Epicurus* advanced this atomic theory by proposing that these particles also possessed mass, adding to their spatial properties.</p>
 <section id="atoms-and-molecules" class="level2">
 <h2 class="anchored" data-anchor-id="atoms-and-molecules">Atoms and molecules</h2>
 <section id="daltons-law" class="level3">
 <h3 class="anchored" data-anchor-id="daltons-law">Dalton’s law</h3>
-<p>On the basis of precise quantitative analyses of chemical reaction and the ratios of educts and products, John Dalton developed the idea that every chemical compound is composed of substances, whereas the ratio of these substance is constant for a particular compound and the ratio unambiguously identifies a compound. In 1803 Dalton developed his idea of a chemical reaction being the separation and association of atoms, and published this idea in 1808 “<em>A New System of Chemical Philosophy</em>”. This publication stated three postulates:</p>
+<p>Based on precise quantitative analyses of chemical reactions, John Dalton published “<em>A New System of Chemical Philosophy</em>” in 1808, establishing three key postulates:</p>
 <ul>
-<li>All chemical elements are composed of small particles which cannot be dismantled any further.</li>
-<li>All atoms of the same chemical element are identical in quality, size, and mass. However, these properties differ from the according properties of other elements. Consequently, the characteristics of an element are governed through the properties of its atoms.</li>
-<li>If chemical elements form a chemical compounds, their atoms associate in a ratio of integers.</li>
+<li>All chemical elements are composed of indivisible atomic particles</li>
+<li>Atoms of the same element are identical in all properties, while atoms of different elements have different properties</li>
+<li>Chemical compounds form when atoms combine in simple whole-number ratios</li>
 </ul>
 </section>
 <section id="the-law-of-gay-lussac" class="level3">
 <h3 class="anchored" data-anchor-id="the-law-of-gay-lussac">The law of Gay-Lussac</h3>
-<p>In 1805 Joseph Louis Gay-Lussac and Alexander von Humboldt discovered that hydrogen and oxygen at the same (partial-) pressure associate to water if they use volume ratios of 2:1, respectively. Later Gay-Lussac published: “If two or more gaseous substances associate at equal pressure and equal temperature, their volumes have an integer ratio”.</p>
+<p>In 1805, building upon Dalton’s atomic theory, Joseph Louis Gay-Lussac and Alexander von Humboldt discovered that hydrogen and oxygen at equal pressure and temperature combine to form water in a precise volume ratio of 2:1. This observation led Gay-Lussac to a more general law: when gases react at equal pressure and temperature, they do so in simple, whole-number volume ratios. This discovery provided further evidence for Dalton’s atomic theory, as these integer ratios suggested that gases must be composed of discrete particles combining in simple proportions.</p>
 </section>
 <section id="the-avogadro-number" class="level3">
 <h3 class="anchored" data-anchor-id="the-avogadro-number">The Avogadro number</h3>
-<p>In 1811 Amedeo Avogadro introduced the term “molecule” as the smallest particle of a gas that retains the characteristics of that gas. He hypothesized that at identical pressure and temperature, equal volumes of different gases contain the same number of molecules. From these experimental findings emerged the concept of “molar volume.” The initial definition of molar volume was the volume occupied by 1 mol of a gas at standard conditions (<span class="math inline">\(p = 1013\mbox{ hPa}, T = 0 \mbox{ °C}\)</span>), where the mass in grams corresponds to the molecular weight of the gas molecules. The modern, general definition of 1 mol is the number of particles that corresponds to 12 g of carbon <span class="math inline">\({}^{12}\mbox{C}\)</span>, which applies to both gaseous and non-gaseous substances. The molar volume is <span class="math inline">\(V_{\mathrm{M}} = 22.414\mbox{ l}\)</span> and the Avogadro number is <span class="math inline">\(N_{\mbox{A}} = 6.022 \cdot 10^{23} \mbox{ mol}^{-1}\)</span>.</p>
+<p>In 1811 Amedeo Avogadro introduced the term “molecule” as the smallest particle of a gas that retains the characteristics of that gas. He hypothesized that at identical pressure and temperature, equal volumes of different gases contain the same number of molecules. From these experimental findings emerged the concept of “molar volume.” The initial definition of molar volume was the volume occupied by 1 mol of a gas at standard conditions (<span class="math inline">\(p = 1013\mbox{ hPa}, T = 0 \mbox{ °C}\)</span>), where the mass in grams corresponds to the molecular weight of the gas molecules. The modern, general definition of 1 mol is the number of particles that corresponds to 12 g of carbon <span class="math inline">\({}^{12}\mbox{C}\)</span>, which applies to both gaseous and non-gaseous substances. The molar volume is <span class="math inline">\(V_{\mathrm{M}} = 22.414\mbox{ l}\)</span> and the Avogadro number is <span class="math inline">\(N_{\mbox{A}} = 6.022 \cdot 10^{23} \mbox{ mol}^{-1}\)</span>. This fundamental constant plays a crucial role in connecting microscopic and macroscopic properties of matter, allowing us to bridge atomic-scale phenomena with observable quantities in the laboratory.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Oil spot experiment
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>One practical method to determine the Avogadro number is the oil spot experiment. A small drop of oil with known volume <span class="math inline">\(V\)</span> spreads on a water surface to form a thin film of thickness <span class="math inline">\(h\)</span> equal to one molecule’s diameter. If <span class="math inline">\(A\)</span> is the area of the circular film, then:</p>
+<p><span class="math inline">\(h = \frac{V}{A}\)</span></p>
+<p>Since we know the oil’s density <span class="math inline">\(\rho\)</span> and molar mass <span class="math inline">\(M\)</span>, we can calculate the number of molecules in the drop:</p>
+<p><span class="math inline">\(N = \frac{\rho V}{M} N_A\)</span></p>
+<p>The volume of one molecule is:</p>
+<p><span class="math inline">\(v = \frac{V}{N} = \frac{M}{\rho N_A}\)</span></p>
+<p>Since the thickness <span class="math inline">\(h\)</span> equals the diameter of one molecule, we can write:</p>
+<p><span class="math inline">\(h^3 = \frac{6M}{\pi \rho N_A}\)</span></p>
+<p>Solving for <span class="math inline">\(N_A\)</span>:</p>
+<p><span class="math inline">\(N_A = \frac{6M}{\pi \rho h^3}\)</span></p>
+<p>Using oleic acid (<span class="math inline">\(\mathrm{C_{18}H_{34}O_2}\)</span>), this method typically yields results within an order of magnitude of the accepted value.</p>
+</div>
+</div>
 <p>These experimental findings and concepts paved the way for the modern understanding that matter is generally composed of atoms.</p>
 </section>
 </section>
@@ -707,15 +794,22 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="the-structure-of-atoms">The Structure of atoms</h2>
 <section id="indication-of-charged-particles-within-atoms" class="level3">
 <h3 class="anchored" data-anchor-id="indication-of-charged-particles-within-atoms">Indication of charged particles within atoms</h3>
-<p>At the end of the 19th century experimental findings accumulated indicating matter bears charged particles. The main results were: - Experiments on electrolytic current demonstrated that molecules can dissociate, whereas the resulting ions migrate in opposite directions and transport charges and mass. - Gas discharging phenomena are influenced through electric and magnetic fields. Thus, discharging is correlated to motion of charged particles. - Magnetic phenomena arise from electric conduction in metals and semiconductors. - <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> radiation are deflected through magnetic fields; <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> particles are positively charged, heavy particles and negatively charged, light particles, respectively. Consequently the concept of matter being composed of atoms was extended. Atoms in turn consist of positively and negatively charged particles which bear mass and charge.</p>
+<p>At the end of the 19th century experimental findings accumulated indicating matter bears charged particles. The main results were:</p>
+<ul>
+<li>Experiments on electrolytic current demonstrated that molecules can dissociate, whereas the resulting ions migrate in opposite directions and transport charges and mass.</li>
+<li>Gas discharging phenomena are influenced through electric and magnetic fields. Thus, discharging is correlated to motion of charged particles.</li>
+<li>Magnetic phenomena arise from electric conduction in metals and semiconductors.</li>
+<li><span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> radiation are deflected through magnetic fields; <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> particles are positively charged,</li>
+</ul>
+<p>heavy particles and negatively charged, light particles, respectively. Consequently the concept of matter being composed of atoms was extended. Atoms in turn consist of positively and negatively charged particles which bear mass and charge.</p>
 <p>Johann Wilhelm Hittorf observed in a gas discharge tubes that particles emitted from a cathode propagate at straight lines. Moreover, these particles can be deflected with the aid of a magnet. As a consequence of the emission from the cathode and the direction of the magnetic poles, these particles had to be negatively charged. Later in 1897, Joseph John Thomson determined the charge-to-mass ratio <span class="math inline">\(e/m\)</span> and demonstrated that this ratio is independent of the cathode material. In contrast to charged particles emitted from the cathode, Eugen Goldstein observed in 1886 a ray emitted from the anode which is propagating in the opposite direction than the cathode ray. In 1887 Wilhelm Wien reported from a <span class="math inline">\(10^{-4}\)</span> reduced charge-to-mass ratio of this anode ray and concluded that these particles are charged gas ions.</p>
-<p>In 1899 Thomson and Charles Wilson studied sinking droplets of condensed water vapor. The speed of falling was depending on the size of the droplets and the viscosity of the retarding gas. While measuring the amount of water and charges Thomson and Wilson were able to estimate the elementary charge of about <span class="math inline">\(10^{-19} \mbox{ C}\)</span>. In 1910 Robert Andrews Millikan studied oil droplets rising and falling in a capacitor. On the basis of this method, the elementary charge is determined as <span class="math inline">\(e = 1.602\cdot 10^{-19} \mbox{ C}\)</span>.</p>
+<p>In 1899 Thomson and Charles Wilson studied sinking droplets of condensed water vapor. The speed of falling was depending on the size of the droplets and the viscosity of the retarding gas. While measuring the amount of water and charges Thomson and Wilson were able to estimate the elementary charge of about <span class="math inline">\(10^{-19} \mbox{ C}\)</span>. In 1910 Robert Andrews Millikan refined this approach with his famous oil drop experiment. He sprayed tiny oil droplets into a chamber between two horizontal metal plates that could be charged to create an electric field. The droplets became electrically charged through friction and X-ray ionization. By carefully adjusting the electric field strength, Millikan could balance the gravitational force with the electromagnetic force, causing droplets to hover in place. By measuring the voltage needed to suspend droplets of different sizes, and accounting for air resistance, he discovered that the charges always occurred in discrete multiples of what we now know as the elementary charge: <span class="math inline">\(e = 1.602\cdot 10^{-19} \mbox{ C}\)</span>.</p>
 <p>Concerning the mass of an electron, its value is still only accessible via the charge-to-mass ratio. A precise measurement of the <span class="math inline">\(e/m\)</span> ratio is possible with a Wien filter. To do so, an electron is accelerated by means of a voltage, whereas perpendicular to the propagation direction an electric filed deflects the electron beam. In addition a magnetic field is used to compensate the deflection. Thus, the <span class="math inline">\(e/m\)</span> ratio depends only on the applied accelerating voltage and the electric and magnetic fields.</p>
 </section>
 <section id="the-thomson-model" class="level3">
 <h3 class="anchored" data-anchor-id="the-thomson-model">The Thomson model</h3>
 <p>At the beginning of the 20th century only negatively charged electrons as cathode rays and positively charged <span class="math inline">\(\alpha\)</span> particles were available for scattering experiments. However, if <span class="math inline">\(\alpha\)</span> particles are scattered at atoms, the electrons will have only a minor effect. The scattering depends for the most part on the spatial arrangement of positive charges within the atoms.</p>
-<p>As a first attempt, in 1904 Thompson proposed the <strong>“Plump Pudding Model”</strong>. According to this model every atom consists of a number of <span class="math inline">\(Z\)</span> electrons with a cumulative charge of <span class="math inline">\(-Z\cdot e\)</span> and a number of <span class="math inline">\(Z\)</span> positive charges. Thus, the atoms appear neutral on the macroscopic scale.</p>
+<p>As a first attempt, in 1904 Thompson proposed the <strong>“Plump Pudding Model”</strong>. According to this model every atom consists of a number of <span class="math inline">\(Z\)</span> electrons with a cumulative charge of <span class="math inline">\(-Z\cdot e\)</span> and a number of <span class="math inline">\(Z\)</span> positive charges. Thus, the atoms appear neutral on the macroscopic scale. This model aligned with Paul Drude’s earlier theory of electrical conduction in metals (1900), which treated electrons as a freely moving “gas” within a positive background charge - essentially applying Thomson’s atomic model to bulk materials. Both models shared the concept of mobile electrons moving through a positively charged background.</p>
 <div id="fig-thomson" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-thomson-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -735,44 +829,244 @@ Figure&nbsp;1
 n_e = \frac{Z}{\frac{4}{3}\pi R^3} \mathrm{.}
 \]</span> Then, the plasma frequency would result in <span class="math display">\[
 \omega_p = \sqrt{\frac{n_e \cdot e^2}{\epsilon_0 \cdot m_e}} = \sqrt{\frac{3 Z e^2}{4 \pi \epsilon_0 R^3 m_e}} \mathrm{.}
-\]</span> However, the estimated absorption and emission frequencies did not coincide with experimental results.</p>
+\]</span> This plasma frequency equation, derived from the uniform electron distribution in Thomson’s model, would predict specific absorption and emission frequencies. However, these predicted frequencies did not match the sharp spectral lines observed experimentally in atomic spectra, indicating a fundamental flaw in Thomson’s model.</p>
 </section>
 <section id="the-rutherford-model" class="level3">
-<h3 class="anchored" data-anchor-id="the-rutherford-model">The Rutherford model</h3>
-<p>In 1909 Rutherford, Geiger and Marsden conducted scattering experiments of <span class="math inline">\(\alpha\)</span> particles on gold foil. By means of a new, turnable apparatus they were able to detect angles of scattering up to <span class="math inline">\(180^{\circ}\)</span>. They recorded scattering signals at such angles which clearly contradicted the plump pudding model. In 1911 Rutherford proposed a model that explains the scattering signal. As a consequence all positive charges have to be compacted in a small volume at the center of an atom, and so most of the mass.</p>
-<p>In order to calculate how the <span class="math inline">\(\alpha\)</span> particles are scattered we define the number of particles per unit time impinging on an area <span class="math inline">\(A\)</span> of the scattering volume <span class="math inline">\(V\)</span> being <span class="math inline">\(\dot{N} \cdot A\)</span> and the number of particles per unit time being scattered into the solid angle <span class="math inline">\(\Delta \Omega\)</span> around <span class="math inline">\(\vartheta\)</span> being <span class="math inline">\(\Delta \dot{N} \left( \vartheta, \Omega \right)\)</span>. The fraction of impinging particles being scattered into the solid angle <span class="math inline">\(\Delta \Omega\)</span> then results in</p>
-<p><span class="math display">\[
-\frac{\Delta \dot{N}}{\dot{N} \cdot A} = n_B \; \frac{V}{A} \; \frac{\mathrm{d} \sigma}{\mathrm{d} \Omega} \Delta \Omega = n_B \; \Delta x \; \frac{\mathrm{d} \sigma}{\mathrm{d} \Omega} \; \Delta \Omega \mathrm{,}
+<h3 class="anchored" data-anchor-id="the-rutherford-model">The Rutherford Model</h3>
+<p>In 1908, Rutherford, Geiger, and Marsden began their famous scattering experiments of α particles (helium nuclei) on extremely thin gold foil, only a few atoms thick. Using a new, turnable apparatus, they were able to detect scattering angles up to 180°. The surprising observation that approximately 1 in 8000 α particles was scattered at large angles directly contradicted Thomson’s plum pudding model, which predicted only small-angle deflections. The fact that most particles passed straight through the foil indicated that atoms are mostly empty space.</p>
+<p>In 1911, Rutherford therefore proposed a new atomic model: all positive charge and most of the mass must be concentrated in a tiny volume (later called the nucleus) at the center of the atom, with electrons orbiting around it. Using this model, Rutherford derived the scattering formula for α particles, which successfully described the experimental data. The Rutherford scattering formula is based on the Coulomb force between the α particle and the nucleus, and it provides the differential cross section for scattering at a given angle.</p>
+<p>To look into the scatterign experiment we would like to define some basic quantitity, the differential scattering cross section, which is not only important for the Rutherford scattering but also for other scattering experiments. The differential cross section means geometrically:</p>
+<ul>
+<li>Particles with impact parameters between <span class="math inline">\(b\)</span> and <span class="math inline">\(b + db\)</span> form a ring of area <span class="math inline">\(d\sigma = 2\pi b db\)</span></li>
+<li>These particles are scattered into a ring on a sphere of radius <span class="math inline">\(R\)</span> with area <span class="math inline">\(dA = 2\pi R^2sin(\theta)d\theta\)</span></li>
+<li>The solid angle is <span class="math inline">\(d\Omega = dA/R^2 = 2\pi sin(\theta)d\theta\)</span></li>
+</ul>
+<p>The differential cross section is defined as: <span class="math display">\[
+\frac{d\sigma}{d\Omega} = \frac{b\,db}{sin(\theta)d\theta}
 \]</span></p>
-<p>which is determined through the density of scattering centers <span class="math inline">\(n_B\)</span>, the length of the scattering path <span class="math inline">\(\Delta x\)</span>, and the scattering cross section <span class="math inline">\(\frac{\mathrm{d} \sigma}{\mathrm{d} \Omega}\)</span>.</p>
-<p>Concerning scattering on a Coulomb potential with the point-like charge <span class="math inline">\(Z\cdot e\)</span> we make use of the relation between the scattering angle <span class="math inline">\(\vartheta\)</span> and impact parameter <span class="math inline">\(b\)</span></p>
-<p><span class="math display">\[
-\cot \left( \frac{\vartheta}{2} \right) = \frac{4 \pi \epsilon_0}{q Q} \mu v_0^2 b
+<p>which can be rewritten as: <span class="math display">\[
+\frac{d\sigma}{d\Omega} = \frac{b}{\sin(\theta)}\frac{db}{d\theta}
 \]</span></p>
-<p>with <span class="math inline">\(q=2e\)</span>, <span class="math inline">\(Q=Ze\)</span>, and <span class="math inline">\(\mu = \mu_{\alpha} \mu_{C}/(\mu_{\alpha}+\mu_{C})\)</span>. The latter denote the reduced mass of an <span class="math inline">\(\alpha\)</span> particle and the atomic core. In order to calculate the fraction of particles being scattered at an angle <span class="math inline">\(\vartheta \pm \frac{1}{2} \Delta \vartheta\)</span> and reaching the detector with an area of</p>
+<p>The key physical insight is that particles hitting the target within a ring of radius <span class="math inline">\(b\)</span> and width <span class="math inline">\(db\)</span> are scattered into a corresponding angular range <span class="math inline">\(d\theta\)</span>, and the cross section describes this relationship. As the scattering process involves the interaction potential between the particle and the target, the differential cross section provides a quantitative measure of the scattering process and the interaction between the particles.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Differential cross section and interaction potantial
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>For a central potential <span class="math inline">\(V(r)\)</span>, we can use conservation laws. The energy conservation gives:</p>
 <p><span class="math display">\[
-\Delta A_D = R \sin \left( \vartheta \right) \cdot R \Delta \vartheta \Delta \phi = R^2 \sin \left( \vartheta \right) \; \Delta \Omega
+E = \frac{1}{2}\mu v^2 + V(r)
 \]</span></p>
-<p>we make use of the definition of the differential scattering cross section</p>
+<p>And the angular momentum conservation yields:</p>
+<p><span class="math display">\[
+L = \mu r^2\dot{\phi} = \mu v b
+\]</span></p>
+<p>as we used in Rutherford scattering.</p>
+<p>The scattering angle <span class="math inline">\(\vartheta\)</span> can be expressed through an integral formula:</p>
+<p><span class="math display">\[
+\vartheta = \pi - 2\int_{r_{min}}^{\infty} \frac{b\,dr}{r^2\sqrt{1-\frac{b^2}{r^2}-\frac{2V(r)}{E}}}
+\]</span></p>
+<p>where <span class="math inline">\(r_{min}\)</span> is the distance of closest approach.</p>
+<p>This relates the impact parameter b to the scattering angle <span class="math inline">\(\vartheta\)</span>. For the Coulomb potential <span class="math inline">\(V(r) = \frac{kqQ}{r}\)</span>, this gives us the Rutherford result.</p>
+<p>The general relation for the differential cross section remains:</p>
+<p><span class="math display">\[
+\frac{d\sigma}{d\Omega} = \frac{b}{\sin\vartheta}\frac{db}{d\vartheta}
+\]</span></p>
+<p>Different potentials <span class="math inline">\(V(r)\)</span> will lead to different <span class="math inline">\(b(\vartheta)\)</span> relations and thus different angular dependencies of the cross section.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Rutherford scattering
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We consider the scattering of a charged particle in a Coulomb potential. The force between a particle A and the scattering center B is:</p>
+<p><span class="math display">\[
+F = \frac{q\,Q}{4\pi\varepsilon_0\,r^2} = \frac{a}{r^2}
+\]</span></p>
+<p>where <span class="math inline">\(q\)</span> is the charge of the particle and <span class="math inline">\(Q\)</span> the charge of the scattering center.</p>
+<div id="fig-rutherford" class="quarto-float quarto-figure quarto-figure-center anchored" data-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rutherford-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/Rutherford.png" class="img-fluid figure-img" style="width:50.0%" data-align="center">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rutherford-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2— Sketch of the Rutherford scattering experiment. The <span class="math inline">\(\alpha\)</span> particles A are scattered by the Coulomb potential of the nucleus (B at the origin). The parameter <span class="math inline">\(b\)</span> is called the impact parameter. The angle <span class="math inline">\(\theta\)</span> the scattering angle.
+</figcaption>
+</figure>
+</div>
+<p>In the center of mass frame the angular momentum is:</p>
+<p><span id="eq-angular-momentum"><span class="math display">\[
+L =\mu r^2 \frac{\mathrm d \varphi}{\mathrm dt} =  \mu r v \sin\varphi\stackrel{(r\rightarrow-\infty)}{=} \mu v_0 b
+\tag{1}\]</span></span></p>
+<p>with the reduced mass <span class="math inline">\(\mu=m_1 m_2/(m_1+m_2)\)</span>. The particle is deflected by the the force in <span class="math inline">\(y\)</span>-direction:</p>
+<p><span class="math display">\[
+F_y = \frac{a\,\sin\varphi}{r^2} = \mu \frac{\mathrm d v_y}{\mathrm d t}
+\]</span></p>
+<p>With <a href="#eq-angular-momentum" class="quarto-xref">Equation&nbsp;1</a> we get:</p>
+<p><span class="math display">\[
+\frac{\mathrm d v_y}{\mathrm d t} = \frac{a\,\sin\varphi}{\mu v_0 b} \frac{\mathrm d\varphi}{\mathrm d t}
+\]</span></p>
+<p>To get the total deflection <span class="math inline">\(\vartheta\)</span> we need to integrate from <span class="math inline">\(\mathrm A(-\infty)\)</span> to <span class="math inline">\(\mathrm A(+\infty)\)</span>:</p>
+<p><span class="math display">\[
+\begin{align*}
+\int\limits_{0}^{v_0 \sin\vartheta} \mathrm d v_y &amp;=
+    \frac{a}{\mu v_0 b} \int\limits_{0}^{\pi - \vartheta} \sin \varphi \; \mathrm d\varphi\\
+v_0 \sin \vartheta &amp;= \frac{a}{\mu v_0 b} \left(1 + \cos\vartheta \right)
+\end{align*}
+\]</span></p>
+<p>Using <span class="math inline">\((1 + \cos\vartheta) / \sin\vartheta = 1/(\tan(\vartheta/2))\)</span> we find:</p>
+<p><span id="eq-deflection"><span class="math display">\[
+b = \frac{a}{\mu v_0^2} \frac{1}{\tan(\vartheta/2)}
+\tag{2}\]</span></span></p>
+<p>From this, we can now calculate the differential cross section</p>
+<p><span class="math display">\[
+\frac{\mathrm d\sigma}{\mathrm d\Omega} = \frac{b}{\sin\vartheta}\frac{\mathrm db}{\mathrm d\vartheta}
+\]</span></p>
+<p>Using <span class="math inline">\(\sin\vartheta=2\sin(\vartheta/2)\cos(\vartheta/2)\)</span> we can rewrite <a href="#eq-deflection" class="quarto-xref">Equation&nbsp;2</a> as follows:</p>
+<p><span class="math display">\[
+\frac{b}{\sin\vartheta} = \frac{1}{2}\frac{a}{\mu v_0^2}\frac{1}{\sin^2(\vartheta/2)}
+\]</span></p>
+<p>The derivative of <a href="#eq-deflection" class="quarto-xref">Equation&nbsp;2</a> with respect to <span class="math inline">\(\vartheta\)</span> gives:</p>
+<p><span class="math display">\[
+\frac{\mathrm db}{\mathrm d\vartheta} = \frac{1}{2}\frac{a}{\mu v_0^2}\frac{1}{\sin^2(\vartheta/2)}
+\]</span></p>
+<p>Thus, for the differential cross section we get:</p>
+<p><span class="math display">\[
+\frac{\mathrm d\sigma}{\mathrm d\Omega} = \frac{1}{4}\left(\frac{a}{\mu v_0^2}\right)^2\frac{1}{\sin^4(\vartheta/2)} = \frac{1}{4}\left(\frac{q\,Q}{4\pi\varepsilon_0\,\mu v_0^2}\right)^2\frac{1}{\sin^4(\vartheta/2)}
+\]</span></p>
+<p>which is the Rutherford scattering formula. This formula successfully described the experimental data except at very large angles (small impact parameters), where deviations indicated that nuclei, while much smaller than atoms (&lt; <span class="math inline">\(10^{-14}\)</span> m), are not point-like. This groundbreaking experiment established the nuclear model of the atom and provided the first evidence for nuclear structure.</p>
+</div>
+</div>
+<p>In an experiment, one would send <span class="math inline">\(\alpha\)</span> particles from a source to a thin gold foil. The <span class="math inline">\(\alpha\)</span> particles are scattered at the gold atoms and detected by a detector. The detector is placed at a distance <span class="math inline">\(R\)</span> from the foil. The detector is often a scintillation counter or a photographic plate. In a scintillation counter, the <span class="math inline">\(\alpha\)</span> particles hit a scintillator, which emits light when hit by a charged particle. The light is detected by a photomultiplier tube, which converts the light into an electrical signal. The signal is then processed and counted by a computer. The number of scattered particles is counted as a function of the scattering angle <span class="math inline">\(\vartheta\)</span>. The Rutherford scattering formula describes the angular distribution of the scattered particles.</p>
+<p>To quantitatively describe the scattering in terms of detected counts on a detector, we need to consider the following quantities:</p>
+<ul>
+<li><span class="math inline">\(\dot{N} \cdot A\)</span>: number of particles per unit time hitting area <span class="math inline">\(A\)</span> of scattering volume <span class="math inline">\(V\)</span></li>
+<li><span class="math inline">\(\Delta \dot{N}(\vartheta, \Omega)\)</span>: number of particles per unit time scattered into solid angle <span class="math inline">\(\Delta \Omega\)</span> around angle <span class="math inline">\(\vartheta\)</span></li>
+</ul>
+<p>The fraction of scattered particles is given by:</p>
+<p><span class="math display">\[
+\frac{\Delta \dot{N}}{\dot{N} \cdot A} = n_B \; \Delta x \; \frac{\mathrm{d} \sigma}{\mathrm{d} \Omega} \; \Delta \Omega
+\]</span></p>
+<p>where <span class="math inline">\(n_B\)</span> is the density of scattering centers, <span class="math inline">\(\Delta x\)</span> is the scattering path length, and <span class="math inline">\(\frac{\mathrm{d} \sigma}{\mathrm{d} \Omega}\)</span> is the differential scattering cross section.</p>
+<p>The detector area at distance <span class="math inline">\(R\)</span> is:</p>
+<p><span class="math display">\[
+\Delta A_D = R^2 \sin \left( \vartheta \right) \; \Delta \Omega
+\]</span></p>
+<p>Using the differential scattering cross section:</p>
 <p><span class="math display">\[
 \frac{\mathrm{d}\sigma}{\mathrm{d}\Omega} = b \cdot \frac{\mathrm{d}b}{\mathrm{d}\vartheta}  \frac{1}{\sin \left( \vartheta \right)}
 \]</span></p>
-<p>and calculate the derivative of <span class="math inline">\(b\)</span> with respect to <span class="math inline">\(\vartheta\)</span></p>
+<p>and calculating <span class="math inline">\(\frac{\mathrm{d}b}{\mathrm{d}\vartheta}\)</span>, we obtain the Rutherford scattering formula:</p>
 <p><span class="math display">\[
-\frac{\mathrm{d}b}{\mathrm{d}\vartheta} = \frac{qQ}{8 \pi \epsilon_0 \mu v_0^2}  \frac{1}{\sin^2 \left( \frac{\vartheta}{2} \right)} \mathrm{.}
+\frac{\Delta \dot{N}}{\dot{N} \cdot A} = n_{\mathrm{Gold}} \; \Delta x \; \frac{1}{4 R^2} \; \left( \frac{qQ}{8 \pi \epsilon_0 E_{\mathrm{kin}}} \right)^2 \; \frac{\Delta A_{\mathrm{d}}}{\sin^4 \left( \frac{\vartheta}{2} \right)}
 \]</span></p>
-<p>When making again use of the relation between the scattering angle <span class="math inline">\(\vartheta\)</span> and impact parameter <span class="math inline">\(b\)</span> and the relation <span class="math inline">\(\sin \left( \vartheta \right) = 2 \sin \left( \frac{\vartheta}{2} \right)\cos \left( \frac{\vartheta}{2} \right)\)</span>, we can calculate the differential scattering cross section of a particle with charge <span class="math inline">\(q\)</span> and reduced mass <span class="math inline">\(\mu\)</span> in the Coulomb field of the charge <span class="math inline">\(Q\)</span></p>
-<p><span class="math display">\[
-\frac{\mathrm{d} \sigma}{\mathrm{d}\Omega} = \frac{1}{4} \left( \frac{qQ}{4 \pi \epsilon_0 \mu v_0^2} \right)^2 \; \frac{1}{\sin^4 \left( \frac{\vartheta}{2} \right)}
-\]</span></p>
-<p>If we use <span class="math inline">\(E_{\mathrm{kin}} = \mu \cdot v_0^2\)</span> and <span class="math inline">\(\mu \approx m_{\alpha}\)</span>, we obtain</p>
-<p><span class="math display">\[
-\frac{\Delta \dot{N}}{\dot{N} \cdot A} = n_{\mathrm{Gold}} \; \Delta x \; \frac{1}{4 R^2} \; \left( \frac{qQ}{8 \pi \epsilon_0 E_{\mathrm{kin}}} \right)^2 \; \frac{\Delta A_{\mathrm{d}}}{\sin^4 \left( \frac{\vartheta}{2} \right)} \mathrm{,}
-\]</span></p>
-<p>which is the Rutherford formula. This formula reproduced the measured data except for big angles, and thus small impact parameters. Rutherford concluded that deviations at big angles arise from the nuclei which are in fact small compared to an atom but not point-like.</p>
-
-
 </section>
+<section id="experimental-verification" class="level3">
+<h3 class="anchored" data-anchor-id="experimental-verification">Experimental verification</h3>
+<div id="fig-rutherford-experiment" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rutherford-experiment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 41.7%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/rutherford_sigma.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 58.3%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/rutherford_validity.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rutherford-experiment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3— Graphical representation of Geiger and Marsden’s experimental results for Rutherford scattering of <span class="math inline">\(\alpha\)</span>-particles on a gold foil. The scattering rate <span class="math inline">\(\dot{N}\)</span> is plotted as a function of the scattering angle <span class="math inline">\(\vartheta\)</span> for a given energy of the <span class="math inline">\(\alpha\)</span> particles in the left plot. The solid curve represents the theoretical prediction for Coulomb scattering. <span class="math inline">\(\alpha\)</span> particles with a constant scattering angle of 60 degrees deviate from Rutherford scattering above a kinetic energy of approximately 25 MeV due to a change of the scattering potential as the <span class="math inline">\(\alpha\)</span> particles penetrate the nucleus. The y-axis shows arbitrary units (scattering on gold).
+</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="rutherford-scattering-trajectories" class="level2">
+<h2 class="anchored" data-anchor-id="rutherford-scattering-trajectories">Rutherford Scattering Trajectories</h2>
+<p>The graph below shows the calculated Rutherford scattering trajectories for <span class="math inline">\(\alpha\)</span> particles scattered by a gold atom. The trajectories are calculated for different impact parameters <span class="math inline">\(b\)</span> and show the deflection of the <span class="math inline">\(\alpha\)</span> particles as they pass the gold atom using the above described forces.</p>
+<div id="a0a03d08" class="cell" data-execution_count="2">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> rutherford(state,t):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    g0<span class="op">=</span>state[<span class="dv">1</span>] <span class="co"># x velocity</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    g1<span class="op">=</span>k<span class="op">*</span>Q<span class="op">*</span>q<span class="op">*</span>state[<span class="dv">0</span>]<span class="op">/</span>m<span class="op">/</span>(state[<span class="dv">0</span>]<span class="op">**</span><span class="dv">2</span><span class="op">+</span>state[<span class="dv">2</span>]<span class="op">**</span><span class="dv">2</span>)<span class="op">**</span>(<span class="dv">3</span><span class="op">/</span><span class="dv">2</span>) <span class="co"># x-acceleration</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    g2<span class="op">=</span>state[<span class="dv">3</span>] <span class="co"># y velocity</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    g3<span class="op">=</span>k<span class="op">*</span>Q<span class="op">*</span>q<span class="op">*</span>state[<span class="dv">2</span>]<span class="op">/</span>m<span class="op">/</span>(state[<span class="dv">0</span>]<span class="op">**</span><span class="dv">2</span><span class="op">+</span>state[<span class="dv">2</span>]<span class="op">**</span><span class="dv">2</span>)<span class="op">**</span>(<span class="dv">3</span><span class="op">/</span><span class="dv">2</span>) <span class="co"># y-acceleration</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.array([g0,g1,g2,g3])</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">#define some fundamental constants</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>epsilon_0<span class="op">=</span><span class="fl">8.654e-12</span> <span class="co"># C^2 N^-1 m^-2</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>k<span class="op">=</span><span class="dv">1</span><span class="op">/</span>(<span class="dv">4</span><span class="op">*</span>np.pi<span class="op">*</span>epsilon_0) <span class="co"># force constant</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>m<span class="op">=</span><span class="fl">6.64465723e-27</span> <span class="co"># mass of the alpha particle</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>e<span class="op">=</span><span class="fl">1.6021766208e-19</span> <span class="co"># elementary charge</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>q<span class="op">=</span><span class="dv">2</span><span class="op">*</span>e <span class="co"># charge of the alpha particle</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>Q<span class="op">=</span><span class="dv">79</span><span class="op">*</span>e <span class="co"># charge of the gold atom</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>rga<span class="op">=</span><span class="fl">67.5e-12</span> <span class="co"># size of the gold atom</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co">#define the initial state</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>state<span class="op">=</span>np.zeros(<span class="dv">4</span>)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>state[<span class="dv">0</span>]<span class="op">=-</span><span class="fl">100e-12</span> <span class="co"># x starting position in m</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>state[<span class="dv">1</span>]<span class="op">=</span><span class="fl">1.55e6</span>    <span class="co"># x velocity in m/s, 5MeV</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>state[<span class="dv">2</span>]<span class="op">=-</span><span class="fl">10e-12</span>  <span class="co"># y starting position in m</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>state[<span class="dv">3</span>]<span class="op">=</span><span class="dv">0</span>        <span class="co"># y velocity in m/s</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>get_size(<span class="dv">12</span>,<span class="dv">9</span>))</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>time<span class="op">=</span>np.<span class="bu">abs</span>(<span class="dv">2</span><span class="op">*</span>state[<span class="dv">0</span>]<span class="op">/</span>state[<span class="dv">1</span>])  <span class="co"># total time to be simulated (in seconds), adopt to x-range and velocity</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>N<span class="op">=</span><span class="dv">100000</span>   <span class="co"># number of timesteps for the simulation</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>t<span class="op">=</span>np.linspace(<span class="dv">0</span>,time,N) <span class="co"># times at which the amplitudes shall be calculated</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="co"># range of impact parameters b</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>b_range<span class="op">=</span>np.linspace(<span class="op">-</span><span class="fl">30e-12</span>,<span class="fl">30e-12</span>,<span class="dv">50</span>)</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="co">#solve the differential equations</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> b <span class="kw">in</span> b_range:</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>    state[<span class="dv">2</span>]<span class="op">=</span>b</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>    answer<span class="op">=</span>odeint(rutherford,state,t)</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>    xpos<span class="op">=</span>answer[:,<span class="dv">0</span>]</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>    ypos<span class="op">=</span>answer[:,<span class="dv">2</span>]</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>    plt.plot(xpos<span class="op">*</span><span class="fl">1e12</span>,ypos<span class="op">*</span><span class="fl">1e12</span>)</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'x [pm]'</span>)</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'y [pm]'</span>)</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="op">-</span><span class="dv">100</span>,<span class="dv">100</span>)</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="op">-</span><span class="dv">100</span>,<span class="dv">100</span>)</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Structure_of_matter_files/figure-html/cell-3-output-1.png" width="676" height="492" class="figure-img"></p>
+<figcaption>Rutherford scattering trajectory simulation</figcaption>
+</figure>
+</div>
+</div>
+</div>
+
+
 </section>
 
 </main> <!-- /main -->
@@ -1196,6 +1490,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../electromagnetic-waves/Optical Activity.html" class="pagination-link" aria-label="Optical Activity">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Optical Activity</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../quantum-mechanics/Particle_Nature_Of_Light.html" class="pagination-link" aria-label="Particle Nature of Light">
+        <span class="nav-page-text">Particle Nature of Light</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 
 
