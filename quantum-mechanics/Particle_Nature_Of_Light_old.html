@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Resources – Experimental Physics 3 Course on Optics and Quantum Mechanics</title>
+<title>Particle Nature of Light – Experimental Physics 3 Course on Optics and Quantum Mechanics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../course-info/assignments.html" rel="next">
-<link href="../course-info/schedule.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -69,6 +67,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../assets/styles.css">
 </head>
@@ -101,7 +128,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../course-info/intructors.html">Course Info</a></li><li class="breadcrumb-item"><a href="../course-info/resources.html">Ressourcen</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Particle Nature of Light</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -148,7 +175,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../course-info/resources.html" class="sidebar-item-text sidebar-link active">
+  <a href="../course-info/resources.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Ressourcen</span></a>
   </div>
 </li>
@@ -635,22 +662,27 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#comments-and-feedback" id="toc-comments-and-feedback" class="nav-link active" data-scroll-target="#comments-and-feedback">Comments and Feedback</a></li>
-  <li><a href="#books" id="toc-books" class="nav-link" data-scroll-target="#books">Books</a>
+  <li><a href="#the-hallwachs-and-photoelectric-effect" id="toc-the-hallwachs-and-photoelectric-effect" class="nav-link active" data-scroll-target="#the-hallwachs-and-photoelectric-effect">The Hallwachs and Photoelectric Effect</a>
   <ul class="collapse">
-  <li><a href="#optics-and-electrodynamics" id="toc-optics-and-electrodynamics" class="nav-link" data-scroll-target="#optics-and-electrodynamics">Optics and Electrodynamics</a></li>
-  <li><a href="#quantum-mechanics" id="toc-quantum-mechanics" class="nav-link" data-scroll-target="#quantum-mechanics">Quantum Mechanics</a></li>
+  <li><a href="#hallwachs-and-lennard" id="toc-hallwachs-and-lennard" class="nav-link" data-scroll-target="#hallwachs-and-lennard">Hallwachs and Lennard</a></li>
+  <li><a href="#photoelectric-effect" id="toc-photoelectric-effect" class="nav-link" data-scroll-target="#photoelectric-effect">Photoelectric Effect</a></li>
   </ul></li>
-  <li><a href="#molecular-nanophotonics-group" id="toc-molecular-nanophotonics-group" class="nav-link" data-scroll-target="#molecular-nanophotonics-group">Molecular Nanophotonics Group</a></li>
+  <li><a href="#the-compton-effect" id="toc-the-compton-effect" class="nav-link" data-scroll-target="#the-compton-effect">The Compton Effect</a></li>
+  <li><a href="#properties-of-photons" id="toc-properties-of-photons" class="nav-link" data-scroll-target="#properties-of-photons">Properties of Photons</a>
+  <ul class="collapse">
+  <li><a href="#energy-and-momentum" id="toc-energy-and-momentum" class="nav-link" data-scroll-target="#energy-and-momentum">Energy and Momentum</a></li>
+  <li><a href="#angular-momentum" id="toc-angular-momentum" class="nav-link" data-scroll-target="#angular-momentum">Angular Momentum</a></li>
+  <li><a href="#effect-of-gravity-on-photons" id="toc-effect-of-gravity-on-photons" class="nav-link" data-scroll-target="#effect-of-gravity-on-photons">Effect of Gravity on Photons</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../course-info/intructors.html">Course Info</a></li><li class="breadcrumb-item"><a href="../course-info/resources.html">Ressourcen</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Resources</h1>
+<h1 class="title">Particle Nature of Light</h1>
 </div>
 
 
@@ -667,45 +699,325 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="comments-and-feedback" class="level2">
-<h2 class="anchored" data-anchor-id="comments-and-feedback">Comments and Feedback</h2>
+<p>At the beginning of the 20th century, experimental findings emerged that could not be explained by the electromagnetic theory of light. Several key experiments gave rise to the development of quantum physics:</p>
+<ul>
+<li>The explanation of the photoelectric effect</li>
+<li>The interpretation of the Compton effect</li>
+<li>The discrepancy between predicted and observed spectral distribution of cavity radiation (ultraviolet catastrophe)</li>
+</ul>
+<p>These findings revealed that both classical mechanics (which predicts defined particle trajectories based on initial conditions) and classical electromagnetic wave theory (based on Maxwell’s equations) needed revision for describing atomic-scale phenomena.</p>
+<p>During the 18th century, there was a fundamental dispute about the nature of light. Newton proposed a particle-like character based on straight propagation and refraction. In contrast, Huygens proposed a wave-like character based on interference and diffraction. The wave interpretation seemed confirmed when Heinrich Hertz discovered electromagnetic waves, with light being interpreted as a special spectral region governed by Maxwell’s equations. We will focus on the photoelectric effect, which demonstrates light’s particle properties.</p>
+<section id="the-hallwachs-and-photoelectric-effect" class="level2">
+<h2 class="anchored" data-anchor-id="the-hallwachs-and-photoelectric-effect">The Hallwachs and Photoelectric Effect</h2>
+<section id="hallwachs-and-lennard" class="level3">
+<h3 class="anchored" data-anchor-id="hallwachs-and-lennard">Hallwachs and Lennard</h3>
+<p>In 1888 Wilhelm Hallwachs published an experiment with charged foils connected to a metal plate which was irradiated with ultraviolet light (we did this experiment in the last lecture before Christmas). If the foils and the plate are negatively charged and electrically isolated against the surrounding, the charge does decrease upon irradiation with ultraviolet light. In contrast, if the system is positively charged, the charge does not decrease. Hallwachs concluded that the light is responsible for negative charges leaving the metal plate.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../assets/images/main/hypothesis.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<p><img src="img/Lecture21_Hallwachs.png" class="img-fluid figure-img" style="width:90.0%"></p>
+<figcaption>Scheme of the apparatus used by Hallwachs (left). Scheme of the apparatus used by Lennard and the corresponding photocurrent <span class="math inline">\(I_{\mathrm{ph}}\)</span> (center). From the onset voltage <span class="math inline">\(U_0\)</span> one can calculate the work function <span class="math inline">\(W_{\mathrm{a}}\)</span> as intercept and Planck’s constant <span class="math inline">\(h\)</span> as part of the slope (right).</figcaption>
 </figure>
 </div>
-<p>This website makes use of the hypothes.is annotation service. You can use it to leave comments and feedback on the content of this website. To do so, you need to create a hypothes.is account. You can then highlight text on the website and leave comments. You can also reply to comments left by others and create your own nodes. We use this service for the first time, so please let us know if you like that. The annotation sidebar can be reached with the icons depicted in the figure above, wich are located at the right side of the screen. Here is the <a href="https://hypothes.is/groups/5GJKk6bW/experimental-physics-3">Link to the Hypothes.is group</a> for this course.</p>
-</section>
-<section id="books" class="level2">
-<h2 class="anchored" data-anchor-id="books">Books</h2>
-<p>The course will be mainly built on a number of excellent books on electrodynamics and optics as well as on the basics of quantum mechanics.</p>
-<section id="optics-and-electrodynamics" class="level3">
-<h3 class="anchored" data-anchor-id="optics-and-electrodynamics">Optics and Electrodynamics</h3>
+<p>Later in 1902 Lennard measured the photocurrent between two plates in vacuum. The current set in already at a negative voltage <span class="math inline">\(U_0\)</span> between the plates, increased with rising voltage, and reached a plateau which depended only on the light’s intensity. He concluded:</p>
 <ul>
-<li>Demtröder: Electrodynamics and Optics, Springer, 2019</li>
-<li>Saleh/Teich: Fundamentals of Photonics, Wiley, 2007</li>
-<li>Jackson: Classical Electrodynamics, Wiley, 1998</li>
-<li>Hecht: Optics, Pearson, 2016</li>
+<li><p>The electrons must bear a minimum energy in order to overcome the oppositely directed electric field, <span class="math inline">\(E_{\mathrm{kin}} \le e \cdot U_0\)</span>.</p></li>
+<li><p>The kinetic energy <span class="math inline">\(m v^2/2\)</span> of the photoelectrons depends on the frequency <span class="math inline">\(\nu\)</span> of the light, not on the light’s intensity.</p></li>
+<li><p>The number of photoelectrons is proportional to the light’s intensity.</p></li>
+<li><p>There is no delay between light irradiation and electron emission.</p></li>
 </ul>
 </section>
-<section id="quantum-mechanics" class="level3">
-<h3 class="anchored" data-anchor-id="quantum-mechanics">Quantum Mechanics</h3>
-<ul>
-<li>Demtröder: Atoms, Molecules and Photons, Springer, 2010</li>
-<li>Haken, Wolf: The Physics of Atoms and Quanta: Introduction to Experiments and Theory, Springer, 2005</li>
-<li>Harnwel, Livingood: Experimental Atomic Physics, McGraw-Hill Book Company, Inc, 1933</li>
-</ul>
+<section id="photoelectric-effect" class="level3">
+<h3 class="anchored" data-anchor-id="photoelectric-effect">Photoelectric Effect</h3>
+<section id="expectations-for-waves" class="level4">
+<h4 class="anchored" data-anchor-id="expectations-for-waves">Expectations for Waves</h4>
+<p>If we assume a fully wave-like behavior of light, then light with a radiation power of <span class="math inline">\(P_{\mathrm{L}}\)</span> might hit a surface with an area <span class="math inline">\(A\)</span> and shares its energy equally between all electrons. For a penetration depth of <span class="math inline">\(\Delta z \approx \lambda\)</span> and a density of the conducting electrons of <span class="math inline">\(N\)</span>, then every conducting electron gets on average the energy of</p>
+<p><span class="math display">\[
+\bar{\Delta W} = \frac{P_\mathrm{L}}{N \cdot A \cdot \lambda} \; \Delta t
+\]</span> within the time interval <span class="math inline">\(\Delta t\)</span>. Thus, the work function can be compensated in the case of</p>
+<p><span class="math display">\[
+\Delta t &gt; W_{\mathrm{a}} \; \frac{N \cdot A \cdot \lambda}{P_\mathrm{L}} \mathrm{.}
+\]</span></p>
+<p>Let us consider a zinc plate with a work function of <span class="math inline">\(W_{\mathrm{a}} = 4 \, \mathrm{eV}\)</span> and a light source with a spectral filter <span class="math inline">\(\lambda = 250 \; \mathrm{nm}\)</span> emitting a power of <span class="math inline">\(P_\mathrm{L} = 1 \; \mathrm{W}\)</span> at a distance of <span class="math inline">\(R = 1 \; \mathrm{m}\)</span> away from our zinc plate, there will be an intensity of</p>
+<p><span class="math display">\[
+I_{\mathrm{L}} = \frac{P_\mathrm{L}}{4\pi R^2} \approx 8\cdot 10^{-6} \; \frac{\mathrm{W}}{\mathrm{cm}^{-2}}
+\]</span></p>
+<p>reaching the plate. For a penetration depth of <span class="math inline">\(\Delta z \approx \lambda\)</span> this intensity will be distributed between</p>
+<p><span class="math display">\[
+N = 10^{23} \cdot \mathrm{cm}^{-3}\cdot \lambda = 2.5 \cdot 10^{18} \; \frac{1}{{\mathrm{cm}^{-2}}}
+\]</span></p>
+<p>electrons, whereas each electron acquires on average a power of</p>
+<p><span class="math display">\[
+P_{\mathrm{el}} = 3 \cdot 10^{-24} \; \mathrm{W} = 2 \cdot 10^{-5} \; \mathrm{eVs}^{-1} \mathrm{.}
+\]</span></p>
+<p>Thus, it will take a time of <span class="math inline">\(\Delta t = W_{\mathrm{a}}/P_{\mathrm{el}} = 2 \cdot 10^5 \; \mathrm{s}\)</span> for one electron to acquire enough energy to leave the zinc plate. This result is in clear contrast to experimental findings.</p>
+</section>
+<section id="explanation-by-einstein" class="level4">
+<h4 class="anchored" data-anchor-id="explanation-by-einstein">Explanation by Einstein</h4>
+<p>In 1905 Einstein successfully explained these findings on the basis of the quantum model of light. According to this model every absorbed photon transfers its energy <span class="math inline">\(h \cdot \nu\)</span> completely to <strong>one</strong> electron. The maximum kinetic energy of an electron is then governed by</p>
+<p><span class="math display">\[
+E_{\mathrm{kin}}^{\mathrm{max}} = h \cdot \nu - W_{\mathrm{a}} \mathrm{,}
+\]</span></p>
+<p>with <span class="math inline">\(W_{\mathrm{a}} = -e \left( \phi_{\mathrm{vac}} - \phi \right)\)</span> being the work function of the cathode material (often the vacuum work function is set to zero, <span class="math inline">\(\phi_{\mathrm{vac}} = 0\)</span>). The work function is the amount of energy one has to compensate in order to bring one electron from bulk into vacuum against the forces binding the electron in bulk.</p>
+<p>The work function determines at which frequency or wavelength the photoelectric effect occurs. Below are typical work functions for various metals:</p>
+<div id="tbl-work-function" class="quarto-float quarto-figure quarto-figure-center anchored" data-tbl-colwidths="[30,35,35]" width="50%">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-work-function-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1— Work functions and corresponding threshold wavelengths for various metals
+</figcaption>
+<div aria-describedby="tbl-work-function-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 35%">
+<col style="width: 35%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Metal</th>
+<th style="text-align: right;">Work Function (eV)</th>
+<th style="text-align: right;">Threshold Wavelength (nm)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Cesium</td>
+<td style="text-align: right;">1.95</td>
+<td style="text-align: right;">636</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Potassium</td>
+<td style="text-align: right;">2.30</td>
+<td style="text-align: right;">539</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Sodium</td>
+<td style="text-align: right;">2.75</td>
+<td style="text-align: right;">451</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Calcium</td>
+<td style="text-align: right;">3.20</td>
+<td style="text-align: right;">388</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Zinc</td>
+<td style="text-align: right;">4.31</td>
+<td style="text-align: right;">288</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Copper</td>
+<td style="text-align: right;">4.70</td>
+<td style="text-align: right;">264</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Silver</td>
+<td style="text-align: right;">4.73</td>
+<td style="text-align: right;">262</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Platinum</td>
+<td style="text-align: right;">6.35</td>
+<td style="text-align: right;">195</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>These values show why alkali metals like cesium and potassium are particularly suitable for photoelectric devices, as they respond to visible light, while metals like platinum require ultraviolet radiation.</p>
+<p>Since one can determine the maximum kinetic energy <span class="math inline">\(E_{\mathrm{kin}}^{\mathrm{max}} = -e\cdot U_0\)</span> (<span class="math inline">\(U_0 &lt; 0\)</span>) from the voltage <span class="math inline">\(U_0\)</span> at which the photocurrent sets in and</p>
+<p><span class="math display">\[
+-e\cdot U_0 = h\cdot\nu -  W_{\mathrm{a}} \mathrm{,}
+\]</span></p>
+<p>one is able to determine the work function on the basis of the intercept of the <span class="math inline">\(-e\cdot U_0\)</span> vs.&nbsp;<span class="math inline">\(h\cdot\nu\)</span> curve and Planck’s constant from the slope of the curve.</p>
+<p>One example for an experiment proving Einstein’s explanation of the photoeffect was provided by von Joffé and Dobronrawov in 1925. They used small, charged bismuth beads held within a Millikan capacitor and irradiated those beads with low-dose X-rays. Every change of the overall charge of the beads interferes with the equilibrium in the capacitor, and can be observed by means of a change of the bead position. Using a radiation power of <span class="math inline">\(P = 10^{-12} \; \mathrm{W}\)</span> meaning an emission rate of <span class="math inline">\(\dot{N} = 10^3\)</span> photons per second with an energy of <span class="math inline">\(h \cdot \nu = 10^4 \; \mathrm{eV}\)</span> on average every 30 minutes a change of the bead charge was detected. The number of photons arriving at one bead within a time interval <span class="math inline">\(\Delta t\)</span> is <span class="math inline">\(Z = \dot{N} \cdot \Delta t \cdot \mathrm{d} \Omega/ \left( 4\pi \right)\)</span>, with <span class="math inline">\(\mathrm{d} \Omega\)</span> as the solid angle covered by the bead. The calculated time constant of <span class="math inline">\(Z\)</span> was in well agreement with the observed rate of the charge alteration. If we again assume a wave-like explanation of the photoeffect, the emitted power within the according solid angle will be absorbed by the bead and distributed between all its electrons. As a consequence the bead as a whole will have collected enough energy in order to release an electron within the same period of time. However it cannot be explained how all <span class="math inline">\(10^{12}\)</span> atoms are supposed to combine their energy in one, single electron at the very same time.</p>
 </section>
 </section>
-<section id="molecular-nanophotonics-group" class="level2">
-<h2 class="anchored" data-anchor-id="molecular-nanophotonics-group">Molecular Nanophotonics Group</h2>
-<p>Besides the books, you may also want to have a look at the following websites maintained by the group:</p>
+</section>
+<section id="the-compton-effect" class="level2">
+<h2 class="anchored" data-anchor-id="the-compton-effect">The Compton Effect</h2>
+<p>Another example for demonstrating the corpuscle (particle-like) character of light is the Compton effect. If an arbitrary material is irradiated with X-rays of wavelength <span class="math inline">\(\lambda_0\)</span>, one can detect scattered light with the same wavelength <span class="math inline">\(\lambda_0\)</span> but also scattered light with a greater wavelength <span class="math inline">\(\lambda_{\mathrm{S}} &gt; \lambda_0\)</span>. Moreover, the wavelength of the scattered light seems to depend much stronger on the scattering angle than on the scattering material.</p>
+<p><img src="img/compton_geometry.png" class="img-fluid" style="width:50.0%"></p>
+<p>This phenomenon can be explained by means of the photon model and inelastic impact. Every photon bears an energy of <span class="math inline">\(E = h \cdot \nu = \hbar \cdot \omega\)</span> and a momentum of <span class="math inline">\(p = h/\lambda = \hbar \cdot k\)</span>. If a photon impacts into a weakly bound electron with a binding energy much smaller than the photon energy (<span class="math inline">\(E_\mathrm{B} \le E\)</span>), we can neglect the binding energy and assume the electron as free electron. In addition we simplify further and assume the electron as being at rest. During the collision event</p>
+<p><span class="math display">\[
+h \nu_0 + \mathrm{e}^{-} \longrightarrow h \nu_{\mathrm{S}} + \mathrm{e}^{-} + E_{\mathrm{kin}}
+\]</span></p>
+<p>energy and momentum are conserved. The law of conservation of energy then reads as</p>
+<p><span class="math display">\[
+h \, \nu_0 = h \, \nu_\mathrm{s} + E_{\mathrm{kin}}^{\mathrm{e}}
+\]</span></p>
+<p>with <span class="math inline">\(E_{\mathrm{kin}}^{\mathrm{e}}\)</span> as the relativistic kinetic energy of the electron</p>
+<p><span class="math display">\[
+E_{\mathrm{kin}}^{\mathrm{e}} = \frac{m_0 c^2}{\sqrt{1-\beta^2}} - m_0 c^2
+\]</span></p>
+<p>and <span class="math inline">\(\beta = v/c\)</span>. If we ascribe a momentum like</p>
+<p><span class="math display">\[
+\vec{p} = \hbar \, \vec{k}
+\]</span></p>
+<p>with</p>
+<p><span class="math display">\[
+\left| \vec{p} \right| = \hbar \, \left| \vec{k} \right| = h \frac{1}{\lambda}
+\]</span></p>
+<p>to the photon, we can formulate the law of momentum conservation as follows,</p>
+<p><span class="math display">\[
+\hbar \, \vec{k_0} = \hbar \, \vec{k_{\mathrm{s}}} + \vec{p^{\mathrm{e}}}
+\]</span></p>
+<p>with</p>
+<p><span class="math display">\[
+\vec{p^{\mathrm{e}}} = \frac{m_0 \vec{v}}{\sqrt{1-\beta^2}} \mathrm{.}
+\]</span></p>
+<p>If we isolate the square of the momentum of the electron, we obtain an equation depending on the squared difference between the wavevectors of the incident and scattered photon. Calculating this difference leads to a scalar product between these two vectors and necessitates the introduction of the angle between the propagation direction of the incident and scattered photon. We denote this angle as <span class="math inline">\(\phi\)</span>,</p>
+<p><span class="math display">\[
+\begin{eqnarray}
+\frac{m_0^2 v^2}{1-\beta^2} &amp; = &amp; \hbar^2 \left( \vec{k_0} - \vec{k_{\mathrm{s}}} \right)^2\\
+{} &amp; = &amp; \hbar^2 \left( k_0^2 + k_{\mathrm{s}}^2 + 2 k_0 k_{\mathrm{s}} \cos \left( \varphi \right) \right)^2\\
+{} &amp; = &amp; \frac{h^2}{c^2} \left( \nu_0^2 + \nu_{\mathrm{s}}^2 + 2 \nu_0 \nu_{\mathrm{s}} \cos \left( \varphi \right) \right)^2
+\end{eqnarray}
+\]</span></p>
+<p>From the law of energy conservation we get</p>
+<p><span class="math display">\[
+\frac{m_0^2 v^2}{1-\beta^2} = \frac{h^2}{c^2} \left( \nu_0 - \nu_{\mathrm{s}} \right)^2 + 2 h m_0 \left( \nu_0 - \nu_{\mathrm{s}}\right) \mathrm{,}
+\]</span></p>
+<p>which we can compare with the law of momentum conservation and get</p>
+<p><span class="math display">\[
+\nu_0 - \nu_{\mathrm{s}} = \frac{h}{m_0 c^2} \,  \nu_0 \, \nu_{\mathrm{s}} \, \left(1- \cos \left( \varphi \right) \right) \mathrm{.}
+\]</span></p>
+<p>Now making use of <span class="math inline">\(1- \cos \left( \varphi \right) = 2 \sin^2 \left( \varphi/2 \right)\)</span> and <span class="math inline">\(\nu = c/\lambda\)</span> we achieve the Compton formula</p>
+<p><span class="math display">\[
+\begin{eqnarray}
+\lambda_{\mathrm{S}} &amp; = &amp; \lambda_0 + 2 \frac{h}{m_0 c} \sin^2 \left( \varphi/2 \right)\\
+{} &amp; = &amp; \lambda_0 + 2 \lambda_{\mathrm{C}} \sin^2 \left( \varphi/2 \right)\\
+\end{eqnarray}
+\]</span></p>
+<p>with <span class="math inline">\(\lambda_{\mathrm{C}}\)</span> denoting the Compton wavelength of the electron,</p>
+<p><span class="math display">\[
+\lambda_{\mathrm{C}} = \frac{h}{m_0 c} = 2.4262 \cdot 10^{-12} \; \mathrm{m.}
+\]</span></p>
+<p>The Compton wavelength is a constant and represents the change of the wavelength <span class="math inline">\(\Delta \lambda = \lambda_{\mathrm{S}} - \lambda_0\)</span> at a scattering angle of <span class="math inline">\(\varphi = 90^{\circ}\)</span>. Results from experiments almost perfectly coincide with the Compton formula. Furthermore the ratio between the wavelengths</p>
+<p><span class="math display">\[
+\frac{\lambda_{\mathrm{S}}}{\lambda_0} = \frac{h \nu_0}{m_0 c^2}
+\]</span></p>
+<p>represents the ratio between the energy of the incident photon and the energy of the electron at rest. Thus, if we know the mass of the electron, we can determine <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\lambda_{\mathrm{S}}\)</span> (and therefore <span class="math inline">\(\lambda_{\mathrm{C}}\)</span>) and calculate <span class="math inline">\(h\)</span>.</p>
+<div id="fig-compton_results" class="quarto-float quarto-figure quarto-figure-center anchored" data-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-compton_results-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/compton_results.png" class="img-fluid figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-compton_results-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1— Compton Scattering of X-rays
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="properties-of-photons" class="level2">
+<h2 class="anchored" data-anchor-id="properties-of-photons">Properties of Photons</h2>
+<p>Having established the particle nature of light through the photoelectric and Compton effects, we can now summarize the key properties of photons. These quantum particles of electromagnetic radiation exhibit remarkable characteristics that bridge the classical wave description of light with its quantum nature. Photons are massless particles that always travel at the speed of light in vacuum, carry quantized energy and momentum, and can interact with matter through absorption and emission processes. Unlike classical particles, they cannot be brought to rest and their energy is directly proportional to their frequency. Below we examine these properties in detail.</p>
+<section id="energy-and-momentum" class="level3">
+<h3 class="anchored" data-anchor-id="energy-and-momentum">Energy and Momentum</h3>
+<p>Every electromagnetic field consists of <em>quanta of energy</em> <span class="math inline">\(h \cdot \nu\)</span>, which we call <strong>photons</strong>. If we remember back for the cavity resonator, we can now state the energy density of the electromagnetic field <span class="math inline">\(\omega_{\mathrm{em}}\)</span> as the density of modes <span class="math inline">\(n\)</span> multiplied with the <em>quantum of energy</em> <span class="math inline">\(h \cdot \nu\)</span></p>
+<p><span class="math display">\[
+\omega_{\mathrm{em}} = n \cdot h \cdot \nu \mathrm{.}
+\]</span></p>
+<p>We can further comprehend the flux <span class="math inline">\(I = \varepsilon_0 c E^2\)</span> of an electromagnetic wave as a <em>particle flux</em> <span class="math inline">\(\dot{N}\)</span> of photons</p>
+<p><span class="math display">\[
+I = \dot{N} h \nu
+\]</span></p>
+<p>with <span class="math inline">\(\dot{N} = n \cdot c\)</span>. Therefore, if a light wave with a flux of <span class="math inline">\(I\)</span> is shining on an area is <em>tantamount</em> with a particle flux of photons reaching this area.</p>
+<p>As demonstrated on the basis of the Compton effect, every photon bears a momentum <span class="math inline">\(\vec{p} = \hbar \cdot \vec{k}\)</span> with the magnitude <span class="math inline">\(\left| \vec{p} \right| = p = h \nu / c\)</span>. As a consequence, if we are able to assign an energy density to the density of modes, we are also able to assign a <em>momentum density</em>,</p>
+<p><span class="math display">\[
+\pi_{\mathrm{em}} = n \cdot \hbar \cdot k \mathrm{.}
+\]</span></p>
+<p>Then, the relation between the energy density <span class="math inline">\(\omega_{\mathrm{em}}\)</span> of an electromagnetic wave and the momentum density <span class="math inline">\(\pi_{\mathrm{em}}\)</span> of the very same wave reads as</p>
+<p><span class="math display">\[
+\omega_{\mathrm{em}} = c \cdot \pi_{\mathrm{em}} {.}
+\]</span></p>
+</section>
+<section id="angular-momentum" class="level3">
+<h3 class="anchored" data-anchor-id="angular-momentum">Angular Momentum</h3>
+<p>Concerning the <em>angular momentum</em> of photons, if a free atom absorbs a photon, the angular momentum of the atom is altered by <span class="math inline">\(\hbar\)</span>. Thus, the law of the conservation of the angular momentum predicts that a photon does have an angular momentum of <span class="math inline">\(\hbar\)</span>, independent of its energy <span class="math inline">\(h \cdot \nu\)</span>. If left-handed circular polarized light (<span class="math inline">\(\sigma^{+}\)</span>) propagating along <span class="math inline">\(z\)</span> is absorbed by a free atom, its angular momentum <span class="math inline">\(J_z\)</span> is changed by <span class="math inline">\(\Delta J_z = + \hbar\)</span>. In the case of right-handed circular polarized light (<span class="math inline">\(\sigma^{-}\)</span>), the change of the angular momentum of the electron is negative <span class="math inline">\(\Delta J_z = - \hbar\)</span>. We can conclude, that for <span class="math inline">\(\sigma^{+}\)</span>-polarized light the vector of the angular momentum is oriented along the direction of propagation, whereas for <span class="math inline">\(\sigma^{-}\)</span>-polarized light the vector of the angular momentum is oriented against the direction of propagation. Since the direction of propagation is determined through the wavevector, we can conclude for the photon’s angular momentum</p>
+<p><span class="math display">\[
+\vec{L}_{Ph} = \pm \hbar \, \frac{\vec{k}}{\left| \vec{k} \right|}
+\]</span></p>
+<p>Linearly polarized light can be comprehended as superposition of <span class="math inline">\(\sigma^{+}\)</span>- and <span class="math inline">\(\sigma^{-}\)</span>-polarized light to equal parts. Thus the angular momentum of linearly polarized light adds up to <span class="math inline">\(0\)</span>.</p>
+</section>
+<section id="effect-of-gravity-on-photons" class="level3">
+<h3 class="anchored" data-anchor-id="effect-of-gravity-on-photons">Effect of Gravity on Photons</h3>
+<p>From special relativity we know that mass is affected by the relative motion of reference systems:</p>
+<p><span class="math display">\[
+m = \frac{1}{\sqrt{1-\left( \frac{v}{c}\right)^2}} \, m_0
+\]</span></p>
+<p>Only particles with a rest mass <span class="math inline">\(m_0 = 0\)</span> can travel at the speed of light, which is why photons must have zero rest mass. For the energy of a photon, we find:</p>
+<p><span class="math display">\[
+\begin{eqnarray}
+E &amp; = &amp; \sqrt{p^2c^2 + m_0^2 c^4}\\
+{} &amp; = &amp; p c\\
+{} &amp; = &amp; \frac{h}{\lambda} c\\
+{} &amp; = &amp; h \nu
+\end{eqnarray}
+\]</span></p>
+<p>in accordance with previous energy and momentum considerations. If we assign an effective mass <span class="math inline">\(m\)</span> to the photon:</p>
+<p><span class="math display">\[
+m = \frac{E}{c^2} = \frac{h \nu}{c^2}
+\]</span></p>
+<p>this photon must perform work when traveling in a gravitational field. Moving from position <span class="math inline">\(\vec{r_1}\)</span> with gravitational potential <span class="math inline">\(\Phi(\vec{r_1})\)</span> to position <span class="math inline">\(\vec{r_2}\)</span> with potential <span class="math inline">\(\Phi(\vec{r_2})\)</span>, the work is:</p>
+<p><span class="math display">\[
+W = m \cdot \Delta \Phi = \frac{h \nu}{c^2} \left( \Phi \left( \vec{r_2} \right) - \Phi \left( \vec{r_1} \right) \right)
+\]</span></p>
+<p>By energy conservation, the photon’s energy <span class="math inline">\(h\nu\)</span> must change by this amount, leading to a frequency shift:</p>
+<p><span class="math display">\[
+\nu_2 = \nu_1 \left(1-\frac{\Delta \phi}{c^2} \right)
+\]</span></p>
+<p>or in relative terms:</p>
+<p><span class="math display">\[
+\frac{\Delta \nu}{\nu} = \frac{\Delta \Phi}{c^2}
+\]</span></p>
+<p>This remarkable prediction - that photons experience a redshift (longer wavelength, smaller frequency, lower energy) when rising in a gravitational field - was first experimentally verified by Pound and Rebka in 1959. Using the Mössbauer effect, they measured the frequency shift of gamma rays from <span class="math inline">\(^{57}\)</span>Fe (14.4 keV) traveling vertically over a height of 22.5 meters at Harvard University. The expected relative frequency shift was extremely small:</p>
+<p><span class="math display">\[
+\frac{\Delta \nu}{\nu} \approx 2.5 \times 10^{-15}
+\]</span></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The Mößbauer Effect in the Pound-Rebka Experiment
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The detection of gravitational redshift requires extremely precise frequency measurements (<span class="math inline">\(\Delta \nu/\nu \approx 10^{-15}\)</span>). This was made possible by the Mößbauer effect, which allows for recoil-free emission and absorption of gamma rays in crystals.</p>
+<p>In free atoms, the emission or absorption of a gamma ray causes recoil, shifting the photon energy by about <span class="math inline">\(10^{-3}\)</span> eV. For a gamma ray of energy <span class="math inline">\(E_\gamma\)</span>, the recoil energy is:</p>
+<p><span class="math display">\[E_R = \frac{E_\gamma^2}{2Mc^2}\]</span></p>
+<p>where <span class="math inline">\(M\)</span> is the mass of the nucleus. However, in a crystal lattice, the nucleus is not free to recoil. Instead, the recoil momentum can be transferred to the entire crystal if:</p>
+<ol type="1">
+<li>The nucleus is tightly bound in the crystal lattice</li>
+<li>The recoil energy is less than the energy of the lowest lattice vibration (phonon)</li>
+<li>The entire crystal acts as a single quantum mechanical system</li>
+</ol>
+<p>In this case, the effective mass <span class="math inline">\(M\)</span> in the recoil energy formula becomes the mass of the entire crystal, making <span class="math inline">\(E_R\)</span> negligible. For <span class="math inline">\(^{57}\)</span>Fe nuclei in a crystal:</p>
 <ul>
-<li><a href="https://home.uni-leipzig.de/~physik/sites/mona/">Molecular Nanophotonics Group Website</a></li>
-<li><a href="https://fcichos.github.com/cbpm24/">Computer-based Physical Modeling Website @ MONA</a></li>
+<li>Gamma ray energy: 14.4 keV</li>
+<li>Natural linewidth: <span class="math inline">\(\approx 10^{-8}\)</span> eV</li>
+<li>No recoil broadening</li>
+<li>Extremely sharp resonance</li>
 </ul>
+<p>This allows for the detection of the tiny frequency shifts caused by gravity over the 22.5 m height difference in the Harvard tower.</p>
+</div>
+</div>
+</div>
+<p>The experiment confirmed Einstein’s prediction to about 1% accuracy, demonstrating that even massless photons are affected by gravity, with their energy decrease exactly matching the increase in gravitational potential energy <span class="math inline">\(m\Delta\Phi\)</span> where <span class="math inline">\(m = h\nu/c^2\)</span>. This result was not only the first laboratory confirmation of gravitational redshift but also provided strong support for the equivalence principle and the gravitational time dilation predicted by general relativity.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/pound_rebka.png" class="img-fluid figure-img"></p>
+<figcaption>Schematic of the Pound-Rebka experiment showing gamma ray source and detector separated vertically by 22.5 meters</figcaption>
+</figure>
+</div>
+<p>The success of this experiment shows how quantum mechanics and general relativity make consistent predictions about the behavior of photons in gravitational fields, though a complete quantum theory of gravity remains one of physics’ greatest challenges.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -1129,18 +1441,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../course-info/schedule.html" class="pagination-link" aria-label="Schedule">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Schedule</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../course-info/assignments.html" class="pagination-link" aria-label="Assignments">
-        <span class="nav-page-text">Assignments</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 
 
