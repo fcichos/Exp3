@@ -728,7 +728,10 @@ window.Quarto = {
   <li><a href="#blackbody" id="toc-blackbody" class="nav-link active" data-scroll-target="#blackbody">Blackbody</a></li>
   <li><a href="#spectral-density-of-modes" id="toc-spectral-density-of-modes" class="nav-link" data-scroll-target="#spectral-density-of-modes">Spectral density of modes</a></li>
   <li><a href="#rayleighjeans-law" id="toc-rayleighjeans-law" class="nav-link" data-scroll-target="#rayleighjeans-law">Rayleigh–Jeans law</a></li>
-  <li><a href="#plancks-law" id="toc-plancks-law" class="nav-link" data-scroll-target="#plancks-law">Planck’s law</a></li>
+  <li><a href="#plancks-law" id="toc-plancks-law" class="nav-link" data-scroll-target="#plancks-law">Planck’s law</a>
+  <ul class="collapse">
+  <li><a href="#properties-of-plancks-radiation-formula" id="toc-properties-of-plancks-radiation-formula" class="nav-link" data-scroll-target="#properties-of-plancks-radiation-formula">Properties of Planck’s Radiation Formula</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -1005,7 +1008,7 @@ S^{\ast}_{\nu} \left( \nu \right) \mathrm{d} \nu &amp; = &amp; \frac{c_0}{4 \pi}
 \end{eqnarray}
 \]</span></p>
 <p>If we now consider a temperature of about <span class="math inline">\(5000 \; \mathrm{K}\)</span> we achieve a wavelength bigger than <span class="math inline">\(2 \; \mu\mathrm{m}\)</span>, being well in the infrared region. For this spectral region the measured radiance and the theoretical prediction are in agreement. However, if we reduce the wavelength, disparities between experimental findings and the prediction appear. Moreover, if the Rayleigh-Jeans law was valid, there would be the so-called <strong>ultraviolet catastrophe</strong>! In the case of decreasing frequencies, the spectral energy density and the integrated radiance will rise until they become infinitely big for vanishing frequencies.</p>
-<div id="a56c3ebc" class="cell" data-execution_count="2">
+<div id="40accb77" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Constants</span></span>
@@ -1055,26 +1058,11 @@ S^{\ast}_{\nu} \left( \nu \right) \mathrm{d} \nu &amp; = &amp; \frac{c_0}{4 \pi}
 </section>
 <section id="plancks-law" class="level2">
 <h2 class="anchored" data-anchor-id="plancks-law">Planck’s law</h2>
-<p>In 1900 Max Planck faced the question how to avoid the ultraviolet catastrophe and describe the blackbody radiation as a whole.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/Lecture20_spectra_planck_rayleigh-jeans-wien.png" class="img-fluid figure-img" style="width:50.0%"></p>
-<figcaption>Comparison between blackbody radiation at 3000 K (solid line) and radiation as described through the Wien approximation (dashed line) and the Rayleigh-Jeans law (dash-dotted line).</figcaption>
-</figure>
-</div>
-<p>He proposed a revolutionary hypothesis called <strong>Quantum Hypothesis</strong> or <strong>Planck’s Postulate</strong>. As Rayleigh and Jeans before, Planck assumed the modes within a cavity resonator as oscillations. However, in contrast to the classical approach allowing every oscillator to acquire any arbitrary small value of energy (<span class="math inline">\(W_{\nu} = k \cdot T\)</span>), Planck postulated that these oscillators are allowed to acquire energy only in particular <strong>quanta of energy</strong>. Those quanta depend on the frequency <span class="math inline">\(\nu\)</span> of the eigen-oscillation and are multiples of a <em>smallest quantum of energy</em>. Thus it follows</p>
+<p>In 1900 Max Planck tackled the problem of how to avoid the ultraviolet catastrophe and describe the blackbody radiation as a whole. He assumed that the energy of the absorbing and emitting oscillators in the wall can release or absorb small packets of energy given by <span class="math inline">\(h \cdot \nu\)</span>, where <span class="math inline">\(h\)</span> was used as a <strong>helper constant</strong>. Taking the limit <span class="math inline">\(h\rightarrow 0\)</span> should then lead to the classical result, yet Planck found that the classical limit was not reached. Rather, the quantization of energy with $h=6.626 ^{-34} ; led to a new law of radiation, which was in perfect agreement with the experimental findings. The energy at a particular frequency <span class="math inline">\(\nu\)</span> is then quantized in terms of the number of energy packets <span class="math inline">\(n\)</span> as</p>
 <p><span class="math display">\[
-E \left( \nu \right) = n \cdot E_{\mathrm{ph}} \left( \nu \right) = n \cdot h \cdot \nu \mathrm{.}
+W_{\nu} = n \cdot h \cdot \nu
 \]</span></p>
-<p>The letter <span class="math inline">\(h\)</span> was initially chosen as <em>help constant</em>, but shortly after the success of Planck’s Postulate the constant was renamed as <em>Planck’s Constant</em> with the value</p>
-<p><span class="math display">\[
-h = 6.626 \ldots \cdot 10^{-34} \; \mathrm{Js}.
-\]</span></p>
-<p>This event of postulating a smallest quantum of energy is often referred to as the birth of quantum mechanics. Nowadays we can define the smallest quantum of the electromagnetic field bearing the energy <span class="math inline">\(h \cdot \nu\)</span> as <strong>Photon</strong>. The energy of an eigen-oscillation with <span class="math inline">\(n\)</span> photons is then</p>
-<p><span class="math display">\[
-W_{\nu} = n \cdot h \cdot \nu\mathrm{.}
-\]</span></p>
-<p>If we now consider thermal equilibrium, the likelihood <span class="math inline">\(p \left( W_{\nu} \right)\)</span> of this particular eigen-oscillation bearing the energy of <span class="math inline">\(W_{\nu}\)</span> (meaning that this particular eigenstate is occupied by <span class="math inline">\(n\)</span> photons) is proportional to the Boltzmann factor <span class="math inline">\(\mathrm{e}^{-W_{\nu}/\left( k\cdot T \right)}\)</span></p>
+<p>where <span class="math inline">\(n\)</span> is a natural number. If we now consider thermal equilibrium, the probability <span class="math inline">\(p \left( W_{\nu} \right)\)</span> of finding an oscillator with energy <span class="math inline">\(W_{\nu} = n h \nu\)</span> (meaning the eigenstate is occupied by <span class="math inline">\(n\)</span> photons) is given by the Boltzmann distribution:</p>
 <p><span class="math display">\[
 p \left( W_{\nu} \right) = \frac{
 \mathrm{e}^{- \frac{n \cdot h \cdot \nu}{k \cdot T}}
@@ -1082,11 +1070,11 @@ p \left( W_{\nu} \right) = \frac{
 \sum_{n=0}^{\infty} \mathrm{e}^{- \frac{n \cdot h \cdot \nu}{k \cdot T}}
 }
 \]</span></p>
-<p>Since we did calculate a likelihood, the relation <span class="math inline">\(\sum_{n=0}^{\infty} p \left(n \cdot h \cdot \nu \right) = 1\)</span> holds true. Furthermore, we can calculate the average energy per eigen-oscillation as the energy of this particular oscillation weighted with the likelihood that this particular eigenstate is occupied with this particular number of photons. The averaged energy per eigen-oscillation then reads as <span class="math inline">\(\bar{W}_{\nu} = \sum_{n=0}^{\infty} p\left( nh\nu \right) n \, h\, \nu\)</span> and further</p>
+<p>Note that a Boltzmann distribution provides the maximum entropy for a given energy, i.e.&nbsp;it spreads the energy as evenly as possible over the available states (modes) of the systems. The average energy per oscillator can then be calculated as the expectation value of energy, weighting each possible energy level by its probability of occupation. The averaged energy per oscillator then reads as <span class="math inline">\(\bar{W}_{\nu} = \sum_{n=0}^{\infty} p\left( nh\nu \right) n \, h\, \nu\)</span> and further</p>
 <p><span class="math display">\[
 \bar{W}_{\nu} = \frac{n \cdot \nu}{\mathrm{e}^{+\frac{n \cdot h \cdot \nu}{k \cdot T}} -1} \mathrm{.}
 \]</span></p>
-<p>The spectral energy density of a cavity radiator then is given through</p>
+<p>The spectral energy density in the cavity is thus given by</p>
 <p><span class="math display">\[
 \omega \left( \nu,T \right) = n\left(\nu \right) \cdot \bar{W_{\nu}} \left( \nu,T \right)
 \]</span></p>
@@ -1101,22 +1089,178 @@ S^{\ast}_{\nu} \mathrm{d} \nu \mathrm{d} \Omega &amp; = &amp; \frac{c_0}{4\pi} \
 {} &amp; = &amp; \frac{2 h \nu^3}{c_0^2} \, \frac{\mathrm{d} \nu \, \mathrm{d} \Omega}{\mathrm{e}^{\frac{h \nu}{k T}} -1} \mathrm{.}
 \end{eqnarray}
 \]</span></p>
-<p>So far we have expressed Planck’s law in dependence of the frequency <span class="math inline">\(\nu\)</span>. With the aid of the relation <span class="math inline">\(\lambda = c/\nu\)</span> we can also express Planck’s law in dependence of the wavelength. Therefore, we have to pay attention to <span class="math inline">\(\mathrm{d}\lambda = -\left( c / \nu^2 \right) \mathrm{d} \nu\)</span>. Then, we can describe the spectral energy density</p>
+<p>Planck’s theory posited that oscillator energy exists in discrete units or packets denoted by <span class="math inline">\(n\)</span>, following the relation <span class="math inline">\(W_{\nu} = n \cdot h \cdot \nu\)</span>. This concept was later expanded by Einstein in his explanation of the photoelectric effect, demonstrating that light itself consists of discrete energy quanta proportional to frequency <span class="math inline">\(\nu\)</span>. Einstein’s interpretation, expressing the energy of the electromagnetic field as <span class="math inline">\(E = h \nu\)</span>, established the foundation for understanding light as discrete particles called <em>photons</em>.</p>
+<p>While we’ve previously written Planck’s law in terms of frequency <span class="math inline">\(\nu\)</span>, we can alternatively express it using wavelength <span class="math inline">\(\lambda\)</span> through the relationship <span class="math inline">\(\lambda = c/\nu\)</span>. Making this conversion requires noting that <span class="math inline">\(\mathrm{d}\lambda = -\left( c / \nu^2 \right) \mathrm{d} \nu\)</span>. This allows us to express the spectral energy density</p>
 <p><span class="math display">\[
 \omega \left( \lambda,T \right) \mathrm{d} \lambda = \frac{8 \pi h c_0}{\lambda^5} \, \frac{\mathrm{d} \lambda}{\mathrm{e}^{\frac{h c_0}{\lambda k T}} -1}
 \]</span></p>
-<p>and the radiance <span class="math display">\[
+<p>and the radiance</p>
+<p><span class="math display">\[
 S^{\ast}_{\lambda} \mathrm{d} \lambda \mathrm{d} \Omega = \frac{2 h c^2}{\lambda^5} \, \frac{\mathrm{d} \lambda \, \mathrm{d} \Omega}{\mathrm{e}^{\frac{h c}{\lambda k T}} -1}
 \]</span></p>
-<p>as functions of <span class="math inline">\(\lambda\)</span> and <span class="math inline">\(T\)</span>.</p>
+<p>in terms of wavelength <span class="math inline">\(\lambda\)</span> and temperature <span class="math inline">\(T\)</span>.</p>
+<div id="9d99e722" class="cell" data-execution_count="3">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Constants</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>h <span class="op">=</span> <span class="fl">6.626e-34</span>  <span class="co"># Planck's constant (J⋅s)</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="fl">2.998e8</span>    <span class="co"># Speed of light (m/s)</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>k <span class="op">=</span> <span class="fl">1.381e-23</span>  <span class="co"># Boltzmann constant (J/K)</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Wavelength range (0.1 to 8.0 micrometers, converted to meters)</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>wavelengths <span class="op">=</span> np.linspace(<span class="fl">0.1e-6</span>, <span class="fl">5.0e-6</span>, <span class="dv">1000</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Temperature ranges</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>temperatures_1 <span class="op">=</span> np.arange(<span class="dv">800</span>, <span class="dv">2801</span>, <span class="dv">200</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>temperatures_2 <span class="op">=</span> np.arange(<span class="dv">3000</span>, <span class="dv">7001</span>, <span class="dv">500</span>)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Planck function</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> planck(wav, T):</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    a <span class="op">=</span> <span class="fl">2.0</span> <span class="op">*</span> h <span class="op">*</span> c<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    b <span class="op">=</span> h <span class="op">*</span> c <span class="op">/</span> (wav <span class="op">*</span> k <span class="op">*</span> T)</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">/</span> ((wav<span class="op">**</span><span class="dv">5</span>) <span class="op">*</span> (np.exp(b) <span class="op">-</span> <span class="fl">1.0</span>))</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the plots</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>fig, (ax1, ax2) <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>get_size(<span class="dv">12</span>, <span class="dv">8</span>))</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="co"># First subplot (800-2800 K)</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> T <span class="kw">in</span> temperatures_1:</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>    spectral_radiance <span class="op">=</span> planck(wavelengths, T)</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>    ax1.plot(wavelengths<span class="op">*</span><span class="fl">1e6</span>, spectral_radiance<span class="op">*</span><span class="fl">1e-12</span>, label<span class="op">=</span><span class="ss">f'</span><span class="sc">{</span>T<span class="sc">}</span><span class="ss"> K'</span>)</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>ax1.set_xlabel(<span class="st">'wavelength [μm]'</span>)</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>ax1.set_ylabel(<span class="vs">r'S [W⋅sr$^{-1}$⋅m$^{-3}$] ×10$^</span><span class="sc">{12}</span><span class="vs">$'</span>)</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>ax1.legend()</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>ax1.set_ylim(<span class="dv">0</span>, <span class="fl">0.8</span>)</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="co"># Second subplot (3000-7000 K)</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> T <span class="kw">in</span> temperatures_2:</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>    spectral_radiance <span class="op">=</span> planck(wavelengths, T)</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>    ax2.plot(wavelengths<span class="op">*</span><span class="fl">1e6</span>, spectral_radiance<span class="op">*</span><span class="fl">1e-12</span>, label<span class="op">=</span><span class="ss">f'</span><span class="sc">{</span>T<span class="sc">}</span><span class="ss"> K'</span>)</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>ax2.set_xlabel(<span class="st">'wavelength [μm]'</span>)</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>ax2.set_ylabel(<span class="vs">r'S [W⋅sr$^{-1}$⋅m$^{-3}$] ×10$^</span><span class="sc">{12}</span><span class="vs">$'</span>)</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>ax2.legend()</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>ax2.set_ylim(<span class="dv">0</span>, <span class="dv">80</span>)  <span class="co"># Adjusted y-axis limit for higher temperatures</span></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="img/Lecture20_spectra_planck.png" class="img-fluid figure-img" style="width:90.0%"></p>
-<figcaption>Blackbody radiation as described through Planck’s law of radiation at different temperatures.</figcaption>
+<p><img src="Black_Body_Radiation_files/figure-html/cell-4-output-1.png" width="689" height="456" class="figure-img"></p>
+<figcaption>Planck’s law of blackbody radiation at different temperatures.</figcaption>
 </figure>
+</div>
+</div>
+</div>
+<p>The sun is a blackbody radiator with a temperature of about <span class="math inline">\(5778 \; \mathrm{K}\)</span>. The spectral radiance of the sun is given by Planck’s law.</p>
+<div id="fig-sun-radiation" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sun-radiation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/sun.png" class="img-fluid figure-img" style="width:60.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sun-radiation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4— The sun spectrum at the earth as compared to Planck’s law. Due to the presence of absorption lines of water and other components in the atmosphere, the spectrum is not a perfect blackbody spectrum.
+</figcaption>
+</figure>
+</div>
+<p>Since the spectrum is completly defined by the temperature of the blackbody, it is possible to estimate the temperature of the sun or other stars by comparing the spectrum of the sun with Planck’s law.</p>
+<section id="properties-of-plancks-radiation-formula" class="level3">
+<h3 class="anchored" data-anchor-id="properties-of-plancks-radiation-formula">Properties of Planck’s Radiation Formula</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Planck’s Radiation Law
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The fundamental equation describing the spectral radiance of a black body: <span class="math display">\[S(\lambda,T) = \frac{2hc^2}{\lambda^5} \frac{1}{e^{\frac{hc}{\lambda kT}} - 1}\]</span></p>
+<p>where:</p>
+<ul>
+<li><span class="math inline">\(S(\lambda,T)\)</span> is the spectral radiance [W⋅sr⁻¹⋅m⁻³]</li>
+<li><span class="math inline">\(h\)</span> is Planck’s constant [J⋅s]</li>
+<li><span class="math inline">\(c\)</span> is the speed of light [m/s]</li>
+<li><span class="math inline">\(k\)</span> is the Boltzmann constant [J/K]</li>
+<li><span class="math inline">\(T\)</span> is absolute temperature [K]</li>
+<li><span class="math inline">\(\lambda\)</span> is wavelength [m]</li>
+</ul>
+<p>Note that Plancks radiation law is only valid for propagating electromagnet modes. Evanscence modes are not included in this formula and do not follow Plancks radiation law. This opens a number of possibilities which are used for solar energy collection beyond the Shockley limit, for example in thermophotovaltaic cells, which convert the spectrals absorbance into heat radiation, that is shaped spectrally by metametarials to match the bandgap of the solar cell.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Stefan-Boltzmann Law
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The total power radiated per unit area across all wavelengths: <span class="math display">\[E = \sigma T^4\]</span></p>
+<p>This can be derived by integrating Planck’s law over all wavelengths: <span class="math display">\[E = \int_0^\infty S(\lambda,T) d\lambda = \sigma T^4\]</span></p>
+<p>where <span class="math inline">\(\sigma = \frac{2\pi^5k^4}{15c^2h^3} \approx 5.67 \times 10^{-8}\)</span> W⋅m⁻²⋅K⁻⁴</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solar Power at Earth’s Distance: A Stefan-Boltzmann Law Calculation
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>We can calculate the solar power arriving at Earth using the Stefan-Boltzmann law and basic geometric principles. The Stefan-Boltzmann law states that the total power emitted per unit area by a black body is given by:</p>
+<p><span class="math display">\[E = \sigma T^4\]</span></p>
+<p>where <span class="math inline">\(\sigma = 5.67 \times 10^{-8}\)</span> W⋅m⁻²⋅K⁻⁴ is the Stefan-Boltzmann constant and T is the temperature in Kelvin.</p>
+<p>For our calculation, we need:</p>
+<ul>
+<li>Temperature of Sun’s surface: <span class="math inline">\(T_{sun} \approx 5778\)</span> K</li>
+<li>Radius of Sun: <span class="math inline">\(R_{sun} \approx 6.957 \times 10^8\)</span> m</li>
+<li>Distance Earth-Sun: <span class="math inline">\(d \approx 1.496 \times 10^{11}\)</span> m (1 AU)</li>
+</ul>
+<p>First, we calculate the power emitted per square meter at the Sun’s surface:</p>
+<p><span class="math display">\[E_{sun} = 5.67 \times 10^{-8} \cdot (5778)^4 = 6.32 \times 10^7 \text{ W/m²}\]</span></p>
+<p>The total power output of the Sun is this value multiplied by its surface area:</p>
+<p><span class="math display">\[P_{total} = E_{sun} \cdot 4\pi R_{sun}^2 = 6.32 \times 10^7 \cdot 4\pi (6.957 \times 10^8)^2 = 3.828 \times 10^{26} \text{ W}\]</span></p>
+<p>To find the power per square meter reaching Earth, we use the inverse square law. The total power is distributed over a sphere with radius equal to the Earth-Sun distance:</p>
+<p><span class="math display">\[E_{earth} = \frac{P_{total}}{4\pi d^2} = \frac{3.828 \times 10^{26}}{4\pi (1.496 \times 10^{11})^2} = 1361 \text{ W/m²}\]</span></p>
+<p>This value of 1361 W/m² is known as the solar constant or total solar irradiance (TSI) at the top of Earth’s atmosphere. It represents the power from the Sun reaching Earth before any atmospheric absorption. This calculated value matches well with measured values from satellites.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Wien’s Displacement Law
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The wavelength of maximum emission: <span class="math display">\[\lambda_{max} = \frac{b}{T}\]</span></p>
+<p>This is derived by finding the maximum of Planck’s law: <span class="math display">\[\frac{d}{d\lambda}S(\lambda,T) = 0\]</span></p>
+<p>where <span class="math inline">\(b = \frac{hc}{4.965k} \approx 2898\)</span> μm⋅K</p>
+<section id="rayleigh-jeans-approximation" class="level4">
+<h4 class="anchored" data-anchor-id="rayleigh-jeans-approximation">Rayleigh-Jeans Approximation</h4>
+<p>The classical limit of Planck’s law for long wavelengths: <span class="math display">\[S(\lambda,T) \approx \frac{2ckT}{\lambda^4}\]</span></p>
+<p>This approximation is valid when <span class="math inline">\(\frac{hc}{\lambda kT} \ll 1\)</span>, and historically led to the “ultraviolet catastrophe” that Planck’s law resolved.</p>
+</section>
+</div>
 </div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
