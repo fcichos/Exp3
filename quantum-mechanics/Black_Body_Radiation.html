@@ -1008,7 +1008,7 @@ S^{\ast}_{\nu} \left( \nu \right) \mathrm{d} \nu &amp; = &amp; \frac{c_0}{4 \pi}
 \end{eqnarray}
 \]</span></p>
 <p>If we now consider a temperature of about <span class="math inline">\(5000 \; \mathrm{K}\)</span> we achieve a wavelength bigger than <span class="math inline">\(2 \; \mu\mathrm{m}\)</span>, being well in the infrared region. For this spectral region the measured radiance and the theoretical prediction are in agreement. However, if we reduce the wavelength, disparities between experimental findings and the prediction appear. Moreover, if the Rayleigh-Jeans law was valid, there would be the so-called <strong>ultraviolet catastrophe</strong>! In the case of decreasing frequencies, the spectral energy density and the integrated radiance will rise until they become infinitely big for vanishing frequencies.</p>
-<div id="40accb77" class="cell" data-execution_count="2">
+<div id="10f82a10" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Constants</span></span>
@@ -1099,7 +1099,7 @@ S^{\ast}_{\nu} \mathrm{d} \nu \mathrm{d} \Omega &amp; = &amp; \frac{c_0}{4\pi} \
 S^{\ast}_{\lambda} \mathrm{d} \lambda \mathrm{d} \Omega = \frac{2 h c^2}{\lambda^5} \, \frac{\mathrm{d} \lambda \, \mathrm{d} \Omega}{\mathrm{e}^{\frac{h c}{\lambda k T}} -1}
 \]</span></p>
 <p>in terms of wavelength <span class="math inline">\(\lambda\)</span> and temperature <span class="math inline">\(T\)</span>.</p>
-<div id="9d99e722" class="cell" data-execution_count="3">
+<div id="ee17684b" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Constants</span></span>
@@ -1182,16 +1182,19 @@ Planck’s Radiation Law
 <p>The fundamental equation describing the spectral radiance of a black body: <span class="math display">\[S(\lambda,T) = \frac{2hc^2}{\lambda^5} \frac{1}{e^{\frac{hc}{\lambda kT}} - 1}\]</span></p>
 <p>where:</p>
 <ul>
-<li><span class="math inline">\(S(\lambda,T)\)</span> is the spectral radiance [W⋅sr⁻¹⋅m⁻³]</li>
-<li><span class="math inline">\(h\)</span> is Planck’s constant [J⋅s]</li>
-<li><span class="math inline">\(c\)</span> is the speed of light [m/s]</li>
-<li><span class="math inline">\(k\)</span> is the Boltzmann constant [J/K]</li>
-<li><span class="math inline">\(T\)</span> is absolute temperature [K]</li>
-<li><span class="math inline">\(\lambda\)</span> is wavelength [m]</li>
+<li><span class="math inline">\(S(\lambda,T)\)</span> is the spectral radiance <span class="math inline">\([\mathrm{W}\cdot\mathrm{sr}^{-1}\cdot\mathrm{m}^{-3}]\)</span></li>
+<li><span class="math inline">\(h\)</span> is Planck’s constant <span class="math inline">\([\mathrm{J}\cdot\mathrm{s}]\)</span></li>
+<li><span class="math inline">\(c\)</span> is the speed of light <span class="math inline">\([\mathrm{m}/\mathrm{s}]\)</span></li>
+<li><span class="math inline">\(k\)</span> is the Boltzmann constant <span class="math inline">\([\mathrm{J}/\mathrm{K}]\)</span></li>
+<li><span class="math inline">\(T\)</span> is absolute temperature <span class="math inline">\([\mathrm{K}]\)</span></li>
+<li><span class="math inline">\(\lambda\)</span> is wavelength <span class="math inline">\([\mathrm{m}]\)</span></li>
 </ul>
-<p>Note that Plancks radiation law is only valid for propagating electromagnet modes. Evanscence modes are not included in this formula and do not follow Plancks radiation law. This opens a number of possibilities which are used for solar energy collection beyond the Shockley limit, for example in thermophotovaltaic cells, which convert the spectrals absorbance into heat radiation, that is shaped spectrally by metametarials to match the bandgap of the solar cell.</p>
+<p>Note that Plancks radiation law is only valid for propagating electromagnet modes. Evanscence modes are not included in this formula and do not follow Plancks radiation law. (see e.g.&nbsp;<a href="https://www.nature.com/articles/s41467-018-06163-8">Observing of the super-Planckian near-field thermal radiation between graphene sheets</a>)</p>
+<p>::: {#fig-super planck-radiation fig-align=“center”} <img src="img/super_planck.png" class="img-fluid"></p>
+<p>A schematic of the home-made measurement setup. From top to bottom, the emitter side consists of S-magnet, heater, copper spreader, and Si/Gr and the receiver side consisting of Gr/Si, copper spreader, TEC layer, copper spreader, and H-magnet. Four photoresist posts are used to separate the emitter and the receiver. from <a href="https://www.nature.com/articles/s41467-018-06163-8">Observing of the super-Planckian near-field thermal radiation between graphene sheets</a></p>
 </div>
 </div>
+<p>This opens a number of possibilities which are used for solar energy collection beyond the Shockley limit, for example in thermophotovaltaic cells, which convert the spectrals absorbance into heat radiation, that is shaped spectrally by metametarials to match the bandgap of the solar cell. :::</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
