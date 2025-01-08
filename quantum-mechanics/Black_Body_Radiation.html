@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,6 +64,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../quantum-mechanics/Particle_Nature_of_Light.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -128,7 +163,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Black Body Radiation</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Quantum Mechanics</li><li class="breadcrumb-item"><a href="../quantum-mechanics/Structure_of_matter.html">Lecture 19</a></li><li class="breadcrumb-item"><a href="../quantum-mechanics/Black_Body_Radiation.html">Black Body Radiation</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -640,13 +675,13 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-23" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-24" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-24" role="navigation" aria-expanded="true">
  <span class="menu-text">Lecture 19</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-24" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-24" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-24" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-24" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../quantum-mechanics/Structure_of_matter.html" class="sidebar-item-text sidebar-link">
@@ -657,6 +692,12 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="../quantum-mechanics/Particle_Nature_of_Light.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Particle Nature of Light</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Black_Body_Radiation.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Black Body Radiation</span></a>
   </div>
 </li>
       </ul>
@@ -673,10 +714,8 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#spectral-density-of-modes" id="toc-spectral-density-of-modes" class="nav-link active" data-scroll-target="#spectral-density-of-modes">Spectral density of modes</a></li>
-  <li><a href="#stefan-boltzmann-law" id="toc-stefan-boltzmann-law" class="nav-link" data-scroll-target="#stefan-boltzmann-law">Stefan-Boltzmann Law</a></li>
-  <li><a href="#wiens-displacement-law" id="toc-wiens-displacement-law" class="nav-link" data-scroll-target="#wiens-displacement-law">Wien’s Displacement Law</a></li>
-  <li><a href="#wiens-distribution-law-or-wien-approximation" id="toc-wiens-distribution-law-or-wien-approximation" class="nav-link" data-scroll-target="#wiens-distribution-law-or-wien-approximation">Wien’s distribution law or Wien approximation</a></li>
+  <li><a href="#blackbody" id="toc-blackbody" class="nav-link active" data-scroll-target="#blackbody">Blackbody</a></li>
+  <li><a href="#spectral-density-of-modes" id="toc-spectral-density-of-modes" class="nav-link" data-scroll-target="#spectral-density-of-modes">Spectral density of modes</a></li>
   <li><a href="#rayleighjeans-law" id="toc-rayleighjeans-law" class="nav-link" data-scroll-target="#rayleighjeans-law">Rayleigh–Jeans law</a></li>
   <li><a href="#plancks-law" id="toc-plancks-law" class="nav-link" data-scroll-target="#plancks-law">Planck’s law</a></li>
   </ul>
@@ -685,7 +724,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Quantum Mechanics</li><li class="breadcrumb-item"><a href="../quantum-mechanics/Structure_of_matter.html">Lecture 19</a></li><li class="breadcrumb-item"><a href="../quantum-mechanics/Black_Body_Radiation.html">Black Body Radiation</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Black Body Radiation</h1>
 </div>
@@ -704,73 +743,144 @@ window.Quarto = {
 </header>
 
 
-<p><em>A blackbody radiator is a model of a radiation source whos emission depends only on its temperature.</em> Its emission, however, does neither depend on the material the radiator is made from, nor on its surface or any other potential characteristics. As a consequence the absoption of an ideal blackbody is <span class="math inline">\(A = 1\)</span>. A realization of an blackbody radiator might be constructed on the basis of a cavity within a solid body. If one drilles hole in the cavity wall with the prerequiste that the area of this hole <span class="math inline">\(\Delta A\)</span> is small compared to the overall area of the cavity <span class="math inline">\(A_{\mathrm{cav}} \gg \Delta A\)</span>, the radiation entering the cavity is reflected and absorbed multiple times before the radiation might reach the oppening agin. Practically the whole radiation is absorbed <span class="math inline">\(A \approx 1\)</span>.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/Lecture20_cavity_radiator_principle.png" class="img-fluid figure-img" style="width:35.0%"></p>
-<figcaption>Principle of a cavity resonator. Due to the geometry (the inner surface <span class="math inline">\(A_{\mathrm{cav}}\)</span> is much bigger than the area of the inlet <span class="math inline">\(\Delta A\)</span>) radiation is reflected and partially absorbed multiple times and cannot excape.</figcaption>
+<p>Black body radiation represents one of the pivotal problems that led to the birth of quantum mechanics. While seemingly a purely thermodynamic phenomenon - the electromagnetic radiation emitted by an idealized perfect absorber in thermal equilibrium - its explanation required a radical departure from classical physics.</p>
+<p>In the late 19th century, classical physics completely failed to explain the observed spectrum of black body radiation. The classical Rayleigh-Jeans law predicted that the intensity of radiation would increase indefinitely with frequency (the ‘ultraviolet catastrophe’), which clearly contradicted experimental measurements. This crisis in physics was resolved only when Max Planck introduced the revolutionary concept that electromagnetic energy could only be emitted in discrete quantities or ‘quanta’ - an idea that would become one of the fundamental principles of quantum mechanics.</p>
+<p>The study of black body radiation thus marks the historical transition point from classical to quantum physics. Planck’s solution not only explained the observed radiation spectrum but introduced the quantum of action <span class="math inline">\(h\)</span> (Planck’s constant), which would become central to all of quantum mechanics. This topic demonstrates how quantum effects emerge even in seemingly classical macroscopic systems when we examine them carefully enough.</p>
+<p>The figure below displays the emission of a light bulb with a tungsten filament. The filament is heated up to a specific temperature by different currents.</p>
+<div id="fig-light-bulb" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-light-bulb-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/emission_at_T.png" class="img-fluid figure-img" style="width:50.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-light-bulb-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1— Light emission at different temperatures. The filament of the light bulb is heated up to different temperatures by varying the current. The color of the emitted light changes with the temperature of the filament.
+</figcaption>
 </figure>
 </div>
-<p>If one heats the cavity with the cavity wall being kept at a uniform temperature, all atoms at the wall oscillate due to their thermal energy and emit electromagnetic waves as thermal radiation. Since <span class="math inline">\(\Delta A \ll A_{\mathrm{cav}}\)</span> and <span class="math inline">\(A = 1\)</span>, the emission of a blackbody radiator is greater than the emission of any other thermal radiator.</p>
-<p>We can show for cavity radiation:</p>
-<ul>
-<li><p>If the cavity walls are in a stationary state, the absorption and emission of the walls are in equilibrium. For every frequency <span class="math inline">\(\nu\)</span> the absorption and emisssion of an area element is given through <span class="math display">\[
-\frac{\mathrm{d} W_{\mathrm{A}} \left( \nu \right) }{\mathrm{d} t} = \frac{\mathrm{d} W_{\mathrm{E}} \left( \nu \right) }{\mathrm{d}t}
-\]</span></p></li>
-<li><p>Cavity radiation is isotropic. The spectral radiance at any point of the cavity does not depend on the direction of observation and is independet of the kind and shape of the walls. (If this point had not been hold true, one might have placed a black plate into the cavity and oriented it with its normal facing the stronges radiation. Thus, one side of the plate would have became hotter than the other one, which is against the second law of thermodynamics.)</p></li>
-<li><p>Cavity radiation is homogenous. The energy spectral density is independent from the particular position within the cavity. (If this had not been hold true, you might have constructed a perpetuum mobile)</p></li>
-</ul>
-<p>If we now place a body in the cavity the area element <span class="math inline">\(\mathrm{d}A\)</span> experiences a <strong>spectral radiancy</strong> of <span class="math inline">\(S^{\ast}_{\nu} \; \mathrm{d} \nu \; \mathrm{d} A \; \mathrm{d} \Omega\)</span> on the interval <span class="math inline">\(\left[ \nu; \nu + \mathrm{d} \nu \right]\)</span> from the solid angle <span class="math inline">\(\mathrm{d} \Omega\)</span>. The area <span class="math inline">\(\mathrm{d} A\)</span> then absorbs the radiant power of</p>
-<p><span class="math display">\[
-\frac{\mathrm{d} W_{A}}{\mathrm{d} t} = A_{\nu} \; S^{\ast}_{\nu} \; \mathrm{d} A \; \mathrm{d} \Omega \; \mathrm{d} \nu
-\]</span></p>
-<p>and emits the radiancy of</p>
+<p>Without dispersing the spectrum we directly notice the different color of the light emitted by the filament. While the heating mechanism is different for different materials, the emitted spectrum is always similar and solely depends on the temperature of the radiator. The emitted spectrum is called the <strong>blackbody spectrum</strong> and is universal for all materials.</p>
+<section id="blackbody" class="level2">
+<h2 class="anchored" data-anchor-id="blackbody">Blackbody</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><em>A blackbody is a model of a radiation source whose emission depends only on its temperature.</em> Its emission, however, does not depend on the material the radiator is made from, nor on its surface or any other potential characteristics.</p>
+</div>
+</div>
+<p>Consider a body with a cavity as depicted below. The body is heated to a certain temperature <span class="math inline">\(T\)</span> and the cavity is closed.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/cavity.png" class="img-fluid figure-img" style="width:35.0%"></p>
+<figcaption>A body with a cavity. The body is heated to a certain temperature <span class="math inline">\(T\)</span> and the cavity is closed.</figcaption>
+</figure>
+</div>
+<p>The system is in thermal equilibriums and thus each quadratic degree of freedom carries an energy of <span class="math inline">\(0.5 k_B T\)</span>, where <span class="math inline">\(k_B=1.21.380649 \times 10^{-23} \text{ J/K}\)</span> is the Boltzmann constant.</p>
+<p>Each surface element of the cavity emits radiation at a specific frequency <span class="math inline">\(\nu\)</span>. The amount of power that is radiated by a surface element <span class="math inline">\(\mathrm{d} A\)</span> into a solid angle element <span class="math inline">\(\mathrm{d} \Omega\)</span> at a frequency interval <span class="math inline">\(\mathrm{d} \nu\)</span> relates to the property of its surface, i.e.&nbsp;the emissivity <span class="math inline">\(E^{\ast}_{\nu}\)</span></p>
 <p><span class="math display">\[
 \frac{\mathrm{d} W_{E}}{\mathrm{d} t} = E^{\ast}_{\nu} \; \mathrm{d} A \; \mathrm{d} \Omega \; \mathrm{d} \nu
 \]</span></p>
-<p>with <span class="math inline">\(A_{\nu}\)</span> and <span class="math inline">\(E^{\ast}_{\nu}\)</span> being the absorption and emission capabilities, respectively.</p>
-<p>If the body is in thermal equilibrium the absorption and emitted power have to be equal. Furthermore, because the spectral radiancy within the cavity is isotropic, its value is constant for every orientation (<span class="math inline">\(\theta\)</span> and <span class="math inline">\(\varphi\)</span>). Thus, we immediately obtain <strong>Kirchhoff’s law of thermal radiation</strong></p>
+<p>The emissivity is thereby a number between 0 and 1. In a simular way, each surface element at the cavity absorbs a certain power under a solid angle element and frequency intervall. The absorbed power is given by</p>
 <p><span class="math display">\[
-\frac{E^{\ast}_{\nu}}{A_{\nu}} = S^{\ast}_{\nu}
+\frac{\mathrm{d} W_{A}}{\mathrm{d} t} = A_{\nu} \; S^{\ast}_{\nu} \; \mathrm{d} A \; \mathrm{d} \Omega \; \mathrm{d} \nu
 \]</span></p>
-<p>Thus, for every body being in thermal equilibrium with the cavity radiation the ratio between the emission capability and absorption capability at a given frequency <span class="math inline">\(\nu\)</span> is equal to the spectral radiancy <span class="math inline">\(S^{\ast}_{\nu} \left( T \right)\)</span> of the cavity. Since the blackbody radiator absorbs perfectly <span class="math inline">\(A = 1\)</span>, it follows that the spectral emission capability <span class="math inline">\(E^{\ast}_{\nu}\)</span> is identical to the spectral radiancy <span class="math inline">\(S^{\ast}_{\nu}\)</span>.</p>
-<section id="spectral-density-of-modes" class="level2">
-<h2 class="anchored" data-anchor-id="spectral-density-of-modes">Spectral density of modes</h2>
-<p>Now we would like to have a look on how electromagnetic wave behave within a cavity. First we discuss a one-dimensional problem. If we assume an electromagnetic wave with an electric field of <span class="math inline">\(\vec{E} \left( z, t \right) = E_0 \cos \left( \omega t - k z \right) \; \vec{e_x}\)</span> and being reflected at a conducting surface at <span class="math inline">\(z = 0\)</span>, we have to pay attention that tangtial components of <span class="math inline">\(\vec{E}\)</span> cannot exist at the interface. Thus, it follows</p>
+<p>where <span class="math inline">\(S^{\ast}_{\nu}\)</span> is the spectral radiancy, so the radiated power per unit area, per unit solid angle and per unit frequency interval. The absorption capability <span class="math inline">\(A_{\nu}\)</span> is also a number between 0 and 1.</p>
+<p>In the steady state, the body emits and absorbs the same amount of power and thus</p>
 <p><span class="math display">\[
-\vec{E} \left( z = 0, t \right) = E_{0,\mathrm{I}} \; \vec{e_x} + E_{0,\mathrm{R}} \; \vec{e_x} = 0
-\]</span> and <span class="math display">\[
-E_{0,\mathrm{I}} \; \vec{e_x} = -E_{0,\mathrm{R}} \; \vec{e_x}
+\frac{\mathrm{d} W_{E}}{\mathrm{d} t} = \frac{\mathrm{d} W_{A}}{\mathrm{d} t}
 \]</span></p>
-<p>The superposition of incident and reflected waves then result in</p>
+<p>which readily yields</p>
 <p><span class="math display">\[
-\vec{E} \left( z, t \right) = 2 E_0 \sin \left( k z \right) \sin \left( \omega t \right) \; \vec{e_x} \mathrm{,}
-\]</span> which is a standing wave.</p>
-<p>If we now discuss the three-dimensional problem, we have a look at a cuboid with ideally conducting walls and the length of the edges being <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, and <span class="math inline">\(c\)</span>. If we place one corner of the cuboid at the origin of the coordinate system and discuss the electric field for an arbitrary orientation <span class="math inline">\(\vec{E} = \left( E_x, E_y, E_z \right)^{\mathrm{T}}\)</span>, we obtain from the vanishing tangential components of the electric field at the interface the following boundary conditions <span class="math display">\[
-\begin{eqnarray}
-E_x = 0 &amp; \; \mathrm{for} \; &amp; z = 0,\; z = c,\; y = 0,\; \mathrm{and} \; y = b\\
-E_y = 0 &amp; \; \mathrm{for} \; &amp; z = 0,\; z = c,\; x = 0,\; \mathrm{and} \; x = a\\
-E_z = 0 &amp; \; \mathrm{for} \; &amp; x = 0,\; x = a,\; y = 0,\; \mathrm{and} \; y = b
-\end{eqnarray}
+E^{\ast}_{\nu} = A_{\nu} \; S^{\ast}_{\nu}
 \]</span></p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/Lecture20_cavity_resonator.png" class="img-fluid figure-img" style="width:35.0%"></p>
-<figcaption>A cuboid as resonator.</figcaption>
+<p>The spectral randiancy times the frequency dependent absorptivity is equal to the spectral emission emissivity. This is known as <strong>Kirchhoff’s law of thermal radiation</strong>.</p>
+<p>From the Kirchhoff’s law we can see that a perfectly absorbing body <span class="math inline">\(A_{\nu}=1\)</span> is also a perfect emitter. This is the case for a <em>blackbody</em>, which absorbs all radiation incident on it and emits the maximum amount of radiation possible at a given temperature.</p>
+<p>Note that in the case of a blackbody, the absorptivity does not depend anymore on the frequency <span class="math inline">\(\nu\)</span>, while it will for a real body. In the case of a blackbody, the spectral radiancy <span class="math inline">\(S^{\ast}_{\nu}\)</span> is then only a function of the temperature <span class="math inline">\(T\)</span> and needs to be calculated from teh cavity structure, i.e.&nbsp;the modes of the cavity, which we will calculate next.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The Leslie Cube Experiment
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The Leslie Cube, developed by John Leslie in 1804, was one of the first experimental demonstrations of how surface properties affect thermal radiation. The apparatus consists of a cubic vessel with different surface treatments on each face (e.g., polished metal, blackened surface, rough surface), filled with hot water.</p>
+<div id="fig-leslie-cube" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-leslie-cube-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/Leslie_Cube.png" class="img-fluid figure-img" style="width:40.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-leslie-cube-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2— Leslie Cube. The cube is filled with hot water, and each face has a different surface treatment. The radiation emitted from each face is measured using a thermopile detector. The experiment demonstrated that different surfaces emit radiation differently at the same temperature, and that good absorbers are also good emitters.
+</figcaption>
 </figure>
 </div>
-<p>Due to reflections and superpostion of the components of the wavevector <span class="math inline">\(\left( \pm k_x, \pm k_y, \pm k_z \right)\)</span>, standing waves are generated if the boundary conditions are fulfilled</p>
+<p>By measuring the radiation emitted from each face using a thermopile detector, Leslie showed that:</p>
+<ol type="1">
+<li>Different surfaces emit radiation differently at the same temperature</li>
+<li>Good absorbers are also good emitters (leading to Kirchhoff’s law)</li>
+<li>The emissivity depends on the surface properties but not on the material inside</li>
+</ol>
+<p>This simple but elegant experiment helped establish fundamental principles of thermal radiation and provided early experimental evidence for what would later be formalized as Kirchhoff’s law of thermal radiation:</p>
+<p><span class="math display">\[\frac{E^{\ast}_{\nu}}{A_{\nu}} = S^{\ast}_{\nu}\]</span></p>
+</div>
+</div>
+</section>
+<section id="spectral-density-of-modes" class="level2">
+<h2 class="anchored" data-anchor-id="spectral-density-of-modes">Spectral density of modes</h2>
+<p>To determine the spectral energy density in the cavity <span class="math inline">\(S^{\ast}_{\nu}\)</span>, we need to calculate two quantities: the number of modes in the cavity and the average energy per mode. While calculating the number of modes is relatively straightforward, determining the average energy per mode is more complex and ultimately leads to Planck’s law of radiation.</p>
+<p>The number of modes in the cavity corresponds to the number of possible standing waves that can exist in the cavity. Let’s first consider a simple one-dimensional case where the wave propagates along the z-direction, i.e.&nbsp;<span class="math inline">\(k=k_z\)</span>. When an electric field <span class="math inline">\(\vec{E} \left( z, t \right) = E_0 \cos \left( \omega t - k_z z \right) \; \vec{e_x}\)</span> is incident on a conducting surface at <span class="math inline">\(z = 0\)</span>, the tangential components of the electric field must vanish. This leads to:</p>
+<p><span class="math display">\[
+\vec{E} \left( z = 0, t \right) = E_{0,\mathrm{I}} \; \vec{e_x} + E_{0,\mathrm{R}} \; \vec{e_x} = 0
+\]</span></p>
+<p>and</p>
+<p><span class="math display">\[
+E_{0,\mathrm{I}} \; \vec{e_x} = -E_{0,\mathrm{R}} \; \vec{e_x}
+\]</span></p>
+<p>The superposition of incident and reflected waves results in a standing wave:</p>
+<p><span class="math display">\[
+\vec{E} \left( z, t \right) = 2 E_0 \sin \left( k_z z \right) \sin \left( \omega t \right) \; \vec{e_x} \mathrm{,}
+\]</span></p>
+<p>where the wavevector <span class="math inline">\(k_z\)</span> is given by <span class="math inline">\(k_z = \omega / c_0\)</span> with <span class="math inline">\(c_0\)</span> being the speed of light in vacuum. For a second conducting surface at <span class="math inline">\(z = a\)</span>, the boundary condition requires:</p>
+<p><span class="math display">\[
+\vec{E} \left( z = a, t \right) = 2 E_0 \sin \left( k a \right) \sin \left( \omega t \right) \; \vec{e_x} = 0
+\]</span></p>
+<p>leading to:</p>
+<p><span class="math display">\[
+k_z  = o \frac{\pi}{a}
+\]</span></p>
+<p>These represent the modes in a one-dimensional cavity. For a three-dimensional cavity, we can analyze each direction independently, obtaining the following conditions for the wavevector components:</p>
 <p><span class="math display">\[
 \begin{eqnarray}
-k_x &amp; = &amp; n \cdot \frac{\pi}{a}\\
-k_y &amp; = &amp; m \cdot \frac{\pi}{b}\\
-k_z &amp; = &amp; o \cdot \frac{\pi}{c}
+k_x &amp; = &amp; n \frac{\pi}{a}\\
+k_y &amp; = &amp; m \frac{\pi}{b}\\
+k_z &amp; = &amp; o \frac{\pi}{c}
 \end{eqnarray}
-\]</span> with <span class="math inline">\(m,n,o\)</span> being natural numbers. Furthermore, the magnitude of the wavevector is given through <span class="math inline">\(\left| \vec{k} \right| = \sqrt{k_x^2 + k_y^2 + k_z^2}\)</span> which directly leads to the condition for posisble frequencies</p>
-<p><span class="math display">\[
-\omega = c \cdot \pi \; \sqrt{\left(\frac{n}{a}\right)^2 + \left(\frac{m}{b}\right)^2 + \left(\frac{o}{c}\right)^2}
 \]</span></p>
-<p>Consequently, only such standing wave are allowed in our resonator that obey the conditions</p>
+<p>where <span class="math inline">\(m,n,o\)</span> are natural numbers. The magnitude of the wavevector is <span class="math inline">\(\left| \vec{k} \right| = \sqrt{k_x^2 + k_y^2 + k_z^2}\)</span>, which determines the possible frequencies <span class="math inline">\(\omega\)</span> in the cavity</p>
+<p><span class="math display">\[
+\omega = c \cdot \pi \; \sqrt{\left(\frac{o}{a}\right)^2 + \left(\frac{m}{b}\right)^2 + \left(\frac{n}{c}\right)^2}
+\]</span></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Resonator modes
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The standing waves which follow from these frequencies in our resonator are given by:</p>
 <p><span class="math display">\[
 \vec{E}_{m,n,o} = \vec{E}_{0} \left( m,n,o \right) \cdot \cos \left( \omega t\right)
 \]</span></p>
@@ -782,8 +892,11 @@ E_{0,y} &amp; = &amp; B \cdot \sin \left( n \frac{\pi}{a} x \right) \cos \left( 
 E_{0,z} &amp; = &amp; C \cdot \sin \left( n \frac{\pi}{a} x \right) \sin \left( m \frac{\pi}{b} y \right) \cos \left( o \frac{\pi}{c} z \right)\\
 \end{eqnarray}
 \]</span></p>
-<p>Such a box with ideally conducting walls is called a <em>cavity resonator</em> and the possible standing wave the resonator’s <em>principle oscillations</em> or <strong>resonator modes</strong>.</p>
-<p>In order to simplify the calculation a bit, we discuss the case of a cube instead of a cubiod. The frequency condition then result in</p>
+<p>This system, comprising a box with ideally conducting walls, is known as a <em>cavity resonator</em>, and the possible standing waves are called the resonator’s <em>principle oscillations</em> or <strong>resonator modes</strong>.</p>
+</div>
+</div>
+</div>
+<p>As mentioned before, we are interested in the number of modes that fit into the cavity. For that purpose we need to count the number of modes within a certain frequency range. In order to simplify the calculation a bit, we restrict out box to a cube with edge length <span class="math inline">\(a\)</span> such that</p>
 <p><span class="math display">\[
 \begin{eqnarray}
 \omega &amp; = &amp; c \cdot \frac{\pi}{a} \; \sqrt{ n^2 + m^2 + o^2}\\
@@ -791,49 +904,222 @@ E_{0,z} &amp; = &amp; C \cdot \sin \left( n \frac{\pi}{a} x \right) \sin \left( 
 \rightarrow n^2 + m^2 + o^2 &amp; = &amp; \left( \frac{a}{\pi}\right)^2 \cdot k^2\\
 \end{eqnarray}
 \]</span></p>
-<p>In a coordinate system in <span class="math inline">\(k\)</span>-space where <span class="math inline">\(k_x\)</span>, <span class="math inline">\(k_y\)</span>, and <span class="math inline">\(k_z\)</span> define the axes, the points <span class="math inline">\(\left( m, n, o \right)\)</span> form a lattice with the lattice constant <span class="math inline">\(\pi / a\)</span>. As the combinations of the parameters <span class="math inline">\(\left( m, n, o \right)\)</span> defines the number of modes within the resonator, as a consequence there are as much modes as lattice points in <span class="math inline">\(k\)</span>-space. The very last equation, in addition, defines a sphere with the radius $| | = /a $</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/Lecture20_cavity_resonator_k-space.png" class="img-fluid figure-img" style="width:35.0%"></p>
-<figcaption>Two-dimensional k-space with a circle representing a sphere in twodimensional space.</figcaption>
+<p>We can visualize the possible modes in k-space (where <span class="math inline">\(k_x\)</span>, <span class="math inline">\(k_y\)</span>, and <span class="math inline">\(k_z\)</span> are our axes). The points <span class="math inline">\((m,n,o)\)</span> create an evenly-spaced grid with spacing <span class="math inline">\(\pi/a\)</span> between points. Since each combination of <span class="math inline">\((m,n,o)\)</span> represents one mode in the resonator, counting the grid points, or better the number of unit cell cubes with a length <span class="math inline">\(\pi/a\)</span> tells us the number of possible modes.</p>
+<div id="fig-cavity-resonator-k-space" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-cavity-resonator-k-space-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/Lecture20_cavity_resonator_k-space.png" class="img-fluid figure-img" style="width:35.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cavity-resonator-k-space-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3— Two-dimensional k-space with a circle representing a sphere in two-dimensional space.
+</figcaption>
 </figure>
 </div>
-<p>Now we can discuss the following case. For <span class="math inline">\(\sqrt{m^2 +n^2 +o^2} \gg 1\)</span>, it follows for the radius of the sphere <span class="math inline">\(\left| \vec{k} \right| \gg \pi / a\)</span> and for the wavelength <span class="math inline">\(\lambda \ll 2a\)</span>. As a consequence the number of lattice points <span class="math inline">\(N_{\mathrm{L}}\)</span> (under the boundary condition <span class="math inline">\(m,n,o &gt; 0\)</span>) can be approximated with the number of unit cells within our sphere with the radius <span class="math inline">\(\left| \vec{k} \right|\)</span> in the first octant. The volume of the sphere in the first octant reads as</p>
+<p>When considering large values where <span class="math inline">\(\sqrt{m^2 +n^2 +o^2} \gg 1\)</span>, the sphere radius in k-space <span class="math inline">\(\left| \vec{k} \right|\)</span> becomes much larger than <span class="math inline">\(\pi / a\)</span>, corresponding to wavelengths <span class="math inline">\(\lambda\)</span> much smaller than the cavity size <span class="math inline">\(a\)</span>. In this limit, we can approximate the number of allowed modes <span class="math inline">\(N_{\mathrm{L}}\)</span> (where <span class="math inline">\(m,n,o &gt; 0\)</span>) by calculating the volume occupied by unit cells within the first octant of a sphere with radius <span class="math inline">\(\left| \vec{k} \right|\)</span>. The volume of this octant is:</p>
 <p><span class="math display">\[
 \begin{eqnarray}
 V_{\mathrm{S}} &amp; = &amp; \frac{1}{8} \; \frac{4}{3} \pi \left| \vec{k} \right|^3 \mathrm{ or }\\
 V_{\mathrm{S}} &amp; = &amp; \frac{1}{6} \pi \left( \frac{\omega}{c_0} \right)^3 \mathrm{.}
 \end{eqnarray}
 \]</span></p>
-<p>Then, we can calculate the number of lattice points on the basis the ratio of the volume of the sphere in the first octant to the volume of a unit cell (<span class="math inline">\(V_{\mathrm{UC}} = \left( \pi / a \right)^3\)</span>)</p>
+<p>The number modes corresponds then to the volume of the octant to the volume of a unit cell (<span class="math inline">\(V_{\mathrm{UC}} = \left( \pi / a \right)^3\)</span>) which is</p>
 <p><span class="math display">\[
 N_{\mathrm{L}} = \frac{V_{\mathrm{S}}}{V_{\mathrm{UC}}} = \frac{\pi}{6} \left( \frac{a \cdot \omega}{\pi \cdot c_0} \right)^3 \mathrm{.}
 \]</span></p>
-<p>If we now consider that every standing wave might have an arbitrary polarization that can be constructed as superposition of two orthogonal directions of polarization, the number of modes doubles. Thus, the number of possible modes with a frequency <span class="math inline">\(\omega\)</span> smaller than the limitting frequency <span class="math inline">\(\omega_{\mathrm{S}}\)</span> within a cavity resonator is given through</p>
+<p>Since each standing wave can have two independent polarization states, the total number of modes below frequency <span class="math inline">\(\omega_{\mathrm{S}}\)</span> is twice the previous result and we find the total number of modes up to a limiting frequency <span class="math inline">\(\omega_{\mathrm{S}}\)</span></p>
 <p><span class="math display">\[
 N \left( \omega \le \omega_{\mathrm{S}} \right) = 2 \cdot \frac{\pi}{6} \left( \frac{a \cdot \omega_{\mathrm{S}}}{\pi \cdot c_0} \right)^3 = \frac{8 \pi \nu_{\mathrm{S}} a^3}{3 c_0^3} \mathrm{.}
 \]</span></p>
-<p>Here we made use of <span class="math inline">\(\omega_{\mathrm{S}} = 2 \pi v_{\mathrm{S}}\)</span>. If we now go back to real space, we can calculate the number of modes per unit volume for <span class="math inline">\(\nu \le \nu_\mathrm{S}\)</span> as the ratio of the number of modes up to the limiting frequency <span class="math inline">\(\nu_{\mathrm{S}}\)</span> divided through the real-space volume <span class="math inline">\(V = a^3\)</span>. As a result we get the <strong>denisty of modes</strong> being</p>
+<p>Here we made use of <span class="math inline">\(\omega_{\mathrm{S}} = 2 \pi v_{\mathrm{S}}\)</span>. The number of modes in per volume of the cavity <span class="math inline">\(a^3\)</span> is thus given by</p>
 <p><span class="math display">\[
-\frac{N \left( \nu \le \nu_{\mathrm{S}} \right) }{V} = n = \frac{8 \pi \nu_{\mathrm{S}}^3}{3 c_0^3} \mathrm{.}
+\frac{N \left( \nu \le \nu_{\mathrm{S}} \right) }{a^3} = n = \frac{8 \pi \nu_{\mathrm{S}}^3}{3 c_0^3} \mathrm{.}
 \]</span></p>
-<p>Often one is interested in the <strong>spectral density of modes</strong>, that is the number of allowed modes per unit volume of the resonator within the interval <span class="math inline">\(\left[ \nu ; \nu + \Delta \nu \right]\)</span>. A straight forward calculation of the first derivative of the density of modes with respect to the frequency <span class="math inline">\(\mathrm{d}n/\mathrm{d}\nu\)</span> gives us an expression for the spectral mode density</p>
+<p>When we now increase the limiting frequency <span class="math inline">\(\nu_{\mathrm{S}}\)</span>, the number of modes increases. This increase is best represented by the <strong>spectral density of modes</strong>, that is the number of allowed modes per unit volume of the resonator within the interval <span class="math inline">\(\left[ \nu ; \nu + \Delta \nu \right]\)</span>. A straightforward calculation of the first derivative of the density of modes with respect to the frequency <span class="math inline">\(\mathrm{d}n/\mathrm{d}\nu\)</span> gives us an expression for the spectral mode density</p>
 <p><span class="math display">\[
-\frac{\mathrm{d} n }{\mathrm{d} \nu} = \frac{8 \pi \nu^2}{c_0^3} \mathrm{.}
+\frac{\mathrm{d} n }{\mathrm{d} \nu} = \frac{8 \pi \nu^2}{c_0^3}
 \]</span></p>
-<p>So far we have calculated that only under particular coditions standing waves can be established within a cubik cavity. These eigen-oscillations are called “modes of the cavity”. Furthermore, if the wavelength is small compared to the cavity dimensions, we derived the spectral density of modes, that is the number of modes within one cubic meter of volume within the interval between <span class="math inline">\(\nu\)</span> and <span class="math inline">\(\nu + \mathrm{d}\nu\)</span> is</p>
+<p>So far we have calculated that only under particular conditions standing waves can be established within a cubic cavity. These eigen-oscillations are called “modes of the cavity”. Furthermore, if the wavelength is small compared to the cavity dimensions, we derived the spectral density of modes, that is the number of modes within one cubic meter of volume within the interval between <span class="math inline">\(\nu\)</span> and <span class="math inline">\(\nu + \mathrm{d}\nu\)</span> is</p>
 <p><span class="math display">\[
-n \left( \nu \right) \; \mathrm{d}\nu = \frac{8 \pi \nu^2}{c_0^3} \mathrm{.}
+n \left( \nu \right) \; \mathrm{d}\nu = \frac{8 \pi \nu^2}{c_0^3} \mathrm{d}\nu \mathrm{.}
 \]</span></p>
-<p>If we now assume <span class="math inline">\(\bar{W}_{\nu} \left( T \right)\)</span> being the average energy per eigen-oscillation within the interval <span class="math inline">\(\mathrm{d}\nu\)</span>, we can calculate the spectral energy density <span class="math inline">\(\omega_{\nu}\mathrm{d} \nu\)</span> as</p>
+<p>This is the spectral density of optical modes per volume.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Density of optical modes per unit volume
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This equation represents the density of optical modes per unit volume and frequency interval in free space. It has important consequences for lasing:</p>
+<ol type="1">
+<li>The density of modes increases quadratically with frequency (<span class="math inline">\(\nu^2\)</span>)</li>
+<li>This means there are more available modes at higher frequencies</li>
+<li>For lasers, this affects:
+<ul>
+<li>The threshold conditions for lasing</li>
+<li>The emission probability at different frequencies</li>
+<li>The competition between modes</li>
+</ul></li>
+</ol>
+<p>In practical terms, it helps explain why it’s generally easier to achieve lasing at shorter wavelengths (higher frequencies) where there are more available modes, although other factors like gain and losses also play crucial roles.</p>
+</div>
+</div>
+<p>This spectral mode density is now the basis for any further consideration. To obtain the spectral energy density we just need to multiply the mode density with the energy stored in each mode <span class="math inline">\(\bar{W}_{\nu} \left( T \right)\)</span> and obtain the spectral energy density</p>
 <p><span class="math display">\[
-\omega_{\nu} \; \mathrm{d} \nu = n \left( \nu \right) \cdot \bar{W}_{\nu} \left( T \right) \cdot \mathrm{d}\nu
+\omega_{\nu} \; \mathrm{d} \nu = n \left( \nu \right) \cdot \bar{W}_{\nu} \left( T \right) \cdot \mathrm{d}\nu = \frac{8 \pi \nu^2}{c_0^3} \cdot \bar{W}_{\nu} \left( T \right) \cdot \mathrm{d}\nu
 \]</span></p>
-<p>Now the qestion arise how we can derive an expression for the spectral energy density <span class="math inline">\(\omega_{\nu}\mathrm{d} \nu\)</span>. We will discuss this expression in a moment, but before we have to have a look at historical results leading to the law of radiation as we know it nowadays.</p>
+<p>This spectral energy density <span class="math inline">\(\omega_{\nu}\)</span> relates to the spectral radiancy <span class="math inline">\(S^*_{\nu}\)</span> through:</p>
+<p><span class="math display">\[
+S^*_{\nu} = \frac{c_0}{4\pi} \omega_{\nu}
+\]</span></p>
 </section>
-<section id="stefan-boltzmann-law" class="level2">
-<h2 class="anchored" data-anchor-id="stefan-boltzmann-law">Stefan-Boltzmann Law</h2>
-<p>In order to derive the expression which we know today as Stefan-Boltztmann law, Stefan discovered the empirical relation in 1879 and later in 1884 Boltzmann derived the law on the basis of thermodynamics and Maxwell relations. First we want to consider the inner energy <span class="math inline">\(U\)</span> of an isolated system, which can expressed as thermodynamic potential depending on the temperature <span class="math inline">\(T\)</span>, the entropy <span class="math inline">\(S\)</span>, pressure <span class="math inline">\(p\)</span>n and volume <span class="math inline">\(V\)</span>,</p>
+<section id="rayleighjeans-law" class="level2">
+<h2 class="anchored" data-anchor-id="rayleighjeans-law">Rayleigh–Jeans law</h2>
+<p>One way to obtain a mean energy per mode is to consider classical thermal equilbrium and equipartition. In this case, each quadratic degree of freedom contains <span class="math inline">\(0.5 k_B T\)</span> energy such that</p>
+<p><span class="math display">\[
+\bar{W_{\nu}} \left( T \right) = k_B \cdot T \mathrm{,}
+\]</span></p>
+<p>with <span class="math inline">\(k_B\)</span> and <span class="math inline">\(T\)</span> being the Boltzmann constant and absolute temperature, respectively. Therefore, within the limit of the classical approach the spectral energy density,</p>
+<p><span class="math display">\[
+\omega_{\nu} \; \mathrm{d} \nu = \frac{8 \pi \nu^2}{c_0^3} \; k \; T \; \mathrm{d}\nu \mathrm{,}
+\]</span></p>
+<p>rises quadratically with respect to the frequency <span class="math inline">\(\nu\)</span>. This quadratic relation is known as <strong>Rayleigh-Jeans law</strong>. As a consequence a small hole in the cavity wall will then emit radiation into the solid angle of <span class="math inline">\(\mathrm{d} \Omega = 1 \mbox{ sr}\)</span> with the radiance of</p>
+<p><span class="math display">\[
+\begin{eqnarray}
+S^{\ast}_{\nu} \left( \nu \right) \mathrm{d} \nu &amp; = &amp; \frac{c_0}{4 \pi} \; \omega_{\nu} \left( \nu \right) \; \mathrm{d} \nu\\
+{} &amp; = &amp; \frac{2 \nu^2}{c_0^2} \; k \; T \; \mathrm{d} \nu
+\end{eqnarray}
+\]</span></p>
+<p>If we now consider a temperature of about <span class="math inline">\(5000 \; \mathrm{K}\)</span> we achieve a wavelength bigger than <span class="math inline">\(2 \; \mu\mathrm{m}\)</span>, being well in the infrared region. For this spectral region the measured radiance and the theoretical prediction are in agreement. However, if we reduce the wavelength, disparities between experimental findings and the prediction appear. Moreover, if the Rayleigh-Jeans law was valid, there would be the so-called <strong>ultraviolet catastrophe</strong>! In the case of decreasing frequencies, the spectral energy density and the integrated radiance will rise until they become infinitely big for vanishing frequencies.</p>
+<div id="9625414c" class="cell" data-execution_count="2">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Constants</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>h <span class="op">=</span> <span class="fl">6.62607015e-34</span>  <span class="co"># Planck constant (J⋅s)</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="fl">2.99792458e8</span>    <span class="co"># Speed of light (m/s)</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>k <span class="op">=</span> <span class="fl">1.380649e-23</span>    <span class="co"># Boltzmann constant (J/K)</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Wavelength range (in meters)</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>wavelength <span class="op">=</span> np.linspace(<span class="fl">0.1e-6</span>, <span class="fl">8e-6</span>, <span class="dv">1000</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Define Planck's law</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> planck(wavelength, T):</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (<span class="dv">2</span><span class="op">*</span>h<span class="op">*</span>c<span class="op">**</span><span class="dv">2</span>)<span class="op">/</span>(wavelength<span class="op">**</span><span class="dv">5</span>) <span class="op">*</span> <span class="dv">1</span><span class="op">/</span>(np.exp((h<span class="op">*</span>c)<span class="op">/</span>(wavelength<span class="op">*</span>k<span class="op">*</span>T)) <span class="op">-</span> <span class="dv">1</span>)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Define Rayleigh-Jeans law</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> rayleigh_jeans(wavelength, T):</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (<span class="dv">2</span><span class="op">*</span>c<span class="op">*</span>k<span class="op">*</span>T)<span class="op">/</span>(wavelength<span class="op">**</span><span class="dv">4</span>)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Temperatures</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>temperatures <span class="op">=</span> [<span class="dv">1200</span>, <span class="dv">1600</span>, <span class="dv">2000</span>, <span class="dv">2400</span>, <span class="dv">2800</span>]</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> [<span class="st">'blue'</span>, <span class="st">'green'</span>, <span class="st">'red'</span>, <span class="st">'purple'</span>, <span class="st">'orange'</span>]</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>get_size(<span class="dv">12</span>, <span class="dv">8</span>))</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot both laws for each temperature</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> T, color <span class="kw">in</span> <span class="bu">zip</span>(temperatures, colors):</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    plt.plot(wavelength<span class="op">*</span><span class="fl">1e6</span>, planck(wavelength, T)<span class="op">*</span><span class="fl">1e-12</span>,</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>             label<span class="op">=</span><span class="ss">f'Planck </span><span class="sc">{</span>T<span class="sc">}</span><span class="ss">K'</span>, color<span class="op">=</span>color)</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    plt.plot(wavelength<span class="op">*</span><span class="fl">1e6</span>, rayleigh_jeans(wavelength, T)<span class="op">*</span><span class="fl">1e-12</span>,</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>             <span class="st">'--'</span>, label<span class="op">=</span><span class="ss">f'Rayleigh-Jeans </span><span class="sc">{</span>T<span class="sc">}</span><span class="ss">K'</span>, color<span class="op">=</span>color)</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Wavelength [μm]'</span>)</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="vs">r'S [$× 10^</span><span class="sc">{13}</span><span class="vs"> W⋅sr^{-1}⋅m^{-3}$]'</span>)</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="dv">0</span>,<span class="dv">1</span>)</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Black_Body_Radiation_files/figure-html/cell-3-output-1.png" width="639" height="447" class="figure-img"></p>
+<figcaption>Comparison between blackbody radiation (solid lines) and radiation as described through the Rayleigh-Jeans law (dashed lines) at different temperatures.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="plancks-law" class="level2">
+<h2 class="anchored" data-anchor-id="plancks-law">Planck’s law</h2>
+<p>In 1900 Max Planck faced the question how to avoid the ultraviolet catastrophe and describe the blackbody radiation as a whole.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/Lecture20_spectra_planck_rayleigh-jeans-wien.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption>Comparison between blackbody radiation at 3000 K (solid line) and radiation as described through the Wien approximation (dashed line) and the Rayleigh-Jeans law (dash-dotted line).</figcaption>
+</figure>
+</div>
+<p>He proposed a revolutionary hypothesis called <strong>Quantum Hypothesis</strong> or <strong>Planck’s Postulate</strong>. As Rayleigh and Jeans before, Planck assumed the modes within a cavity resonator as oscillations. However, in contrast to the classical approach allowing every oscillator to acquire any arbitrary small value of energy (<span class="math inline">\(W_{\nu} = k \cdot T\)</span>), Planck postulated that these oscillators are allowed to acquire energy only in particular <strong>quanta of energy</strong>. Those quanta depend on the frequency <span class="math inline">\(\nu\)</span> of the eigen-oscillation and are multiples of a <em>smallest quantum of energy</em>. Thus it follows</p>
+<p><span class="math display">\[
+E \left( \nu \right) = n \cdot E_{\mathrm{ph}} \left( \nu \right) = n \cdot h \cdot \nu \mathrm{.}
+\]</span></p>
+<p>The letter <span class="math inline">\(h\)</span> was initially chosen as <em>help constant</em>, but shortly after the success of Planck’s Postulate the constant was renamed as <em>Planck’s Constant</em> with the value</p>
+<p><span class="math display">\[
+h = 6.626 \ldots \cdot 10^{-34} \; \mathrm{Js}.
+\]</span></p>
+<p>This event of postulating a smallest quantum of energy is often referred to as the birth of quantum mechanics. Nowadays we can define the smallest quantum of the electromagnetic field bearing the energy <span class="math inline">\(h \cdot \nu\)</span> as <strong>Photon</strong>. The energy of an eigen-oscillation with <span class="math inline">\(n\)</span> photons is then</p>
+<p><span class="math display">\[
+W_{\nu} = n \cdot h \cdot \nu\mathrm{.}
+\]</span></p>
+<p>If we now consider thermal equilibrium, the likelihood <span class="math inline">\(p \left( W_{\nu} \right)\)</span> of this particular eigen-oscillation bearing the energy of <span class="math inline">\(W_{\nu}\)</span> (meaning that this particular eigenstate is occupied by <span class="math inline">\(n\)</span> photons) is proportional to the Boltzmann factor <span class="math inline">\(\mathrm{e}^{-W_{\nu}/\left( k\cdot T \right)}\)</span></p>
+<p><span class="math display">\[
+p \left( W_{\nu} \right) = \frac{
+\mathrm{e}^{- \frac{n \cdot h \cdot \nu}{k \cdot T}}
+}{
+\sum_{n=0}^{\infty} \mathrm{e}^{- \frac{n \cdot h \cdot \nu}{k \cdot T}}
+}
+\]</span></p>
+<p>Since we did calculate a likelihood, the relation <span class="math inline">\(\sum_{n=0}^{\infty} p \left(n \cdot h \cdot \nu \right) = 1\)</span> holds true. Furthermore, we can calculate the average energy per eigen-oscillation as the energy of this particular oscillation weighted with the likelihood that this particular eigenstate is occupied with this particular number of photons. The averaged energy per eigen-oscillation then reads as <span class="math inline">\(\bar{W}_{\nu} = \sum_{n=0}^{\infty} p\left( nh\nu \right) n \, h\, \nu\)</span> and further</p>
+<p><span class="math display">\[
+\bar{W}_{\nu} = \frac{n \cdot \nu}{\mathrm{e}^{+\frac{n \cdot h \cdot \nu}{k \cdot T}} -1} \mathrm{.}
+\]</span></p>
+<p>The spectral energy density of a cavity radiator then is given through</p>
+<p><span class="math display">\[
+\omega \left( \nu,T \right) = n\left(\nu \right) \cdot \bar{W_{\nu}} \left( \nu,T \right)
+\]</span></p>
+<p>which leads us to the famous Planck’s formula</p>
+<p><span class="math display">\[
+\omega \left( \nu,T \right) \mathrm{d} \nu = \frac{8 \pi h \nu^3}{c_0^3} \, \frac{\mathrm{d} \nu}{\mathrm{e}^{\frac{h \nu}{k T}} -1} \mathrm{.}
+\]</span></p>
+<p>Here <span class="math inline">\(\omega \left( \nu,T \right) \mathrm{d}\nu\)</span> represents the spectral distribution of the energy density per frequency interval; its unit is <span class="math inline">\(\left[ \omega \left( \nu,T \right) \right] = \mbox{Jsm}^3\)</span>. The radiance of the area element <span class="math inline">\(\mathrm{d}A\)</span> emitted into the solid angle <span class="math inline">\(\mathrm{d} \Omega\)</span> then is</p>
+<p><span class="math display">\[
+\begin{eqnarray}
+S^{\ast}_{\nu} \mathrm{d} \nu \mathrm{d} \Omega &amp; = &amp; \frac{c_0}{4\pi} \omega_{\nu} \left(\nu,T\right) \, \mathrm{d} \nu \, \mathrm{d} \Omega\\
+{} &amp; = &amp; \frac{2 h \nu^3}{c_0^2} \, \frac{\mathrm{d} \nu \, \mathrm{d} \Omega}{\mathrm{e}^{\frac{h \nu}{k T}} -1} \mathrm{.}
+\end{eqnarray}
+\]</span></p>
+<p>So far we have expressed Planck’s law in dependence of the frequency <span class="math inline">\(\nu\)</span>. With the aid of the relation <span class="math inline">\(\lambda = c/\nu\)</span> we can also express Planck’s law in dependence of the wavelength. Therefore, we have to pay attention to <span class="math inline">\(\mathrm{d}\lambda = -\left( c / \nu^2 \right) \mathrm{d} \nu\)</span>. Then, we can describe the spectral energy density</p>
+<p><span class="math display">\[
+\omega \left( \lambda,T \right) \mathrm{d} \lambda = \frac{8 \pi h c_0}{\lambda^5} \, \frac{\mathrm{d} \lambda}{\mathrm{e}^{\frac{h c_0}{\lambda k T}} -1}
+\]</span></p>
+<p>and the radiance <span class="math display">\[
+S^{\ast}_{\lambda} \mathrm{d} \lambda \mathrm{d} \Omega = \frac{2 h c^2}{\lambda^5} \, \frac{\mathrm{d} \lambda \, \mathrm{d} \Omega}{\mathrm{e}^{\frac{h c}{\lambda k T}} -1}
+\]</span></p>
+<p>as functions of <span class="math inline">\(\lambda\)</span> and <span class="math inline">\(T\)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/Lecture20_spectra_planck.png" class="img-fluid figure-img" style="width:90.0%"></p>
+<figcaption>Blackbody radiation as described through Planck’s law of radiation at different temperatures.</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Stefan-Boltzmann Law
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>In order to derive the expression which we know today as Stefan-Boltzmann law, Stefan discovered the empirical relation in 1879 and later in 1884 Boltzmann derived the law on the basis of thermodynamics and Maxwell relations. First we want to consider the inner energy <span class="math inline">\(U\)</span> of an isolated system, which can be expressed as thermodynamic potential depending on the temperature <span class="math inline">\(T\)</span>, the entropy <span class="math inline">\(S\)</span>, pressure <span class="math inline">\(p\)</span>, and volume <span class="math inline">\(V\)</span>,</p>
 <p><span class="math display">\[
 \mathrm{d} U = T \mathrm{d} S - p \mathrm{d}V \mathrm{.}
 \]</span></p>
@@ -849,7 +1135,7 @@ n \left( \nu \right) \; \mathrm{d}\nu = \frac{8 \pi \nu^2}{c_0^3} \mathrm{.}
 <p><span class="math display">\[
 \left( \frac{\mathrm{d} U}{\mathrm{d} V} \right)_{T} = T \left( \frac{\mathrm{d} p}{\mathrm{d} T} \right)_{V} - p
 \]</span></p>
-<p>Previously Maxwell presented an expression for the radiation pressure being <span class="math inline">\(p = \frac{1}{3}u\)</span> with <span class="math inline">\(u\)</span> as the energy density and the total inner energy as <span class="math inline">\(U = u\cdot V\)</span>. If we use this expressions in the equtation of the derivative and integrate, we obtain <span class="math display">\[
+<p>Previously Maxwell presented an expression for the radiation pressure being <span class="math inline">\(p = \frac{1}{3}u\)</span> with <span class="math inline">\(u\)</span> as the energy density and the total inner energy as <span class="math inline">\(U = u\cdot V\)</span>. If we use these expressions in the equation of the derivative and integrate, we obtain <span class="math display">\[
 \begin{eqnarray}
 u &amp; = &amp; C_1 \cdot T^4\\
 U &amp; = &amp; C_2 \cdot V \cdot T^4 \mathrm{,}
@@ -860,10 +1146,9 @@ U &amp; = &amp; C_2 \cdot V \cdot T^4 \mathrm{,}
 P = \sigma \cdot A \cdot T^4
 \]</span></p>
 <p>being proportional to the <em>Stefan-Boltzmann constant</em> <span class="math inline">\(\sigma\)</span>, the blackbody area <span class="math inline">\(A\)</span>, and to the <strong>fourth power</strong> of the absolute temperature. This law also describes that every body with a temperature higher than <span class="math inline">\(0 \mbox{ K}\)</span> emits electromagnetic radiation.</p>
-</section>
 <section id="wiens-displacement-law" class="level2">
 <h2 class="anchored" data-anchor-id="wiens-displacement-law">Wien’s Displacement Law</h2>
-<p>In 1896 Wien published how the spectrum of cavity radiation changes with altered temperature. Today this law is often not refered to the overall shape of the spectrum, but rather to the maximum of the spectrum. In 1896 the Stefan-Boltztmann law was already published stating that the emitted radiance depends on the apparent temperatrure to the power of 4 (<span class="math inline">\(\propto T^4\)</span>). However, the actual spectral distribuition of the energy was unknown.</p>
+<p>In 1896 Wien published how the spectrum of cavity radiation changes with altered temperature. Today this law is often not referred to the overall shape of the spectrum, but rather to the maximum of the spectrum. In 1896 the Stefan-Boltzmann law was already published stating that the emitted radiance depends on the apparent temperature to the power of 4 (<span class="math inline">\(\propto T^4\)</span>). However, the actual spectral distribution of the energy was unknown.</p>
 <p>On the basis of thermodynamic concepts and the Stefan-Boltzmann law Wien derived a relation between the wavelength <span class="math inline">\(\lambda\)</span> and the spectral energy at a particular wavelength <span class="math inline">\(\varphi \left(\lambda\right)\)</span></p>
 <p><span class="math display">\[
 \varphi \cdot \mathrm{d} \lambda = \varphi_0 \cdot \mathrm{d} \lambda_0
@@ -877,15 +1162,15 @@ P = \sigma \cdot A \cdot T^4
 \lambda_{\mathrm{peak}} = b \cdot \frac{1}{T}
 \]</span></p>
 <p>with <span class="math inline">\(b\)</span> being the proportionality or <em>Wien’s displacement constant</em> (<span class="math inline">\(b = 2.898 \cdot 10^{-3} \, \mathrm{m}\cdot\mathrm{K}\)</span>).</p>
-<p>Wien further examined the integration with the result for the energy profile <span class="math inline">\(\varphi = \varphi_0 \; \frac{\mathrm{d} \lambda_0}{\mathrm{d} \lambda} = \varphi_0 \; \frac{\mathrm{d} T}{\mathrm{d} T_0}\)</span>. In addition with the known relation from the Stefan-Boltzmann law <span class="math inline">\(\varphi \propto \frac{T^4}{T_0^4}\)</span>, Wien proposed the spectral shape at a particular temperature on the basis of the spectral shape at a know temperature <span class="math inline">\(\varphi = \varphi_0 \frac{T^5}{T_0^5}\)</span>. So far the exact spectral shape still remained unknown; however, by means of adjusting the parameter <span class="math inline">\(\varphi_0\)</span> theory were successfully brought into coincidence with experimental results and the spectrum for small wavelengths could be predicted.</p>
+<p>Wien further examined the integration with the result for the energy profile <span class="math inline">\(\varphi = \varphi_0 \; \frac{\mathrm{d} \lambda_0}{\mathrm{d} \lambda} = \varphi_0 \; \frac{\mathrm{d} T}{\mathrm{d} T_0}\)</span>. In addition with the known relation from the Stefan-Boltzmann law <span class="math inline">\(\varphi \propto \frac{T^4}{T_0^4}\)</span>, Wien proposed the spectral shape at a particular temperature on the basis of the spectral shape at a known temperature <span class="math inline">\(\varphi = \varphi_0 \frac{T^5}{T_0^5}\)</span>. So far the exact spectral shape still remained unknown; however, by means of adjusting the parameter <span class="math inline">\(\varphi_0\)</span> theory was successfully brought into coincidence with experimental results and the spectrum for small wavelengths could be predicted.</p>
 </section>
 <section id="wiens-distribution-law-or-wien-approximation" class="level2">
 <h2 class="anchored" data-anchor-id="wiens-distribution-law-or-wien-approximation">Wien’s distribution law or Wien approximation</h2>
-<p>In his original publication in 1896 Wien employed the wavelength dependence of the blackbody radiation and the Mawell-Boltzmann distribution for the speed of molecules. On the basis thermodynamic arguments he derive a formula for the radiance</p>
+<p>In his original publication in 1896 Wien employed the wavelength dependence of the blackbody radiation and the Maxwell-Boltzmann distribution for the speed of molecules. On the basis of thermodynamic arguments he derived a formula for the radiance</p>
 <p><span class="math display">\[
 S^{\ast}_{\lambda} \left(\lambda, T \right) = \frac{C_1}{\lambda^5} \; \mathrm{e}^{- \frac{C_2}{\lambda T}} \mathrm{.}
 \]</span></p>
-<p>with <span class="math inline">\(C_1\)</span> and <span class="math inline">\(C_2\)</span> being constants. As to be expected the curve described by this formula exhibts a maximum. In the case of short wavelength, experimental results from cavity radiation can be well described. For long wavelengths, instead, the Wien approximation underestimated the radiance.</p>
+<p>with <span class="math inline">\(C_1\)</span> and <span class="math inline">\(C_2\)</span> being constants. As to be expected the curve described by this formula exhibits a maximum. In the case of short wavelength, experimental results from cavity radiation can be well described. For long wavelengths, instead, the Wien approximation underestimated the radiance.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/Lecture20_spectra_planck_wien_comparison.png" class="img-fluid figure-img" style="width:50.0%"></p>
@@ -893,92 +1178,8 @@ S^{\ast}_{\lambda} \left(\lambda, T \right) = \frac{C_1}{\lambda^5} \; \mathrm{e
 </figure>
 </div>
 </section>
-<section id="rayleighjeans-law" class="level2">
-<h2 class="anchored" data-anchor-id="rayleighjeans-law">Rayleigh–Jeans law</h2>
-<p>In order to calculate the average energy per eigen-oscillation Rayleigh and Jeans used the classical appraoch. Similar to the hamonic oscillators every mode bears the average energy of</p>
-<p><span class="math display">\[
-\bar{W_{\nu}} \left( T \right) = k \cdot T \mathrm{,}
-\]</span></p>
-<p>with <span class="math inline">\(k\)</span> and <span class="math inline">\(T\)</span> being the Boltzmann constant and absolute temperatur, respectively. Therefore, within the limit of the classical approach the spectral energy density,</p>
-<p><span class="math display">\[
-\omega_{\nu} \; \mathrm{d} \nu = \frac{8 \pi \nu^2}{c_0^3} \; k \; T \; \mathrm{d}\nu \mathrm{,}
-\]</span></p>
-<p>rises quadratically with respect to the frequency <span class="math inline">\(\nu\)</span>. Tis quadratic relation is know as <strong>Rayleigh-Jeans law</strong>. As a consequence a small hole in the cavity wall will then emit radiation into the solid angle of <span class="math inline">\(\mathrm{d} \Omega = 1 \mbox{ sr}\)</span> with the radiance of</p>
-<p><span class="math display">\[
-\begin{eqnarray}
-S^{\ast}_{\nu} \left( \nu \right) \mathrm{d} \nu &amp; = &amp; \frac{c_0}{4 \pi} \; \omega_{\nu} \left( \nu \right) \; \mathrm{d} \nu\\
-{} &amp; = &amp; \frac{2 \nu^2}{c_0^2} \; k \; T \; \mathrm{d} \nu
-\end{eqnarray}
-\]</span></p>
-<p>If we no consider a temperatur of about <span class="math inline">\(5000 \; \mathrm{K}\)</span> we achieve a wavelength bigger than <span class="math inline">\(2 \; \mu\mathrm{m}\)</span>, being well in the infrared region. For this spectral region the measured radiance and the theoratical prediction are in agreement. However, if we reduce the wavelength, disparities between experimental findings and the prediction appear. Moreover, if the Rayleigh-Jeans law was valid, there has been the so-called <strong>ultraviolet catastrophe</strong>! In the case of decreasing frequencies, the spectral energy density and the integrated radiance will rise until they become infinite big for vanashing frequencies.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/Lecture20_spectra_planck_rayleigh-jeans_comparison.png" class="img-fluid figure-img" style="width:50.0%"></p>
-<figcaption>Comparison between blackbody radiation (solid lines) and radiation as decribed through the Rayleigh-Jeans law (dashed lines) at different temperatures.</figcaption>
-</figure>
 </div>
-</section>
-<section id="plancks-law" class="level2">
-<h2 class="anchored" data-anchor-id="plancks-law">Planck’s law</h2>
-<p>In 1900 Max Planck faced the question how to omit the ultraviolet catastrophe and to describe the blackbody radiation as a whole.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/Lecture20_spectra_planck_rayleigh-jeans-wien.png" class="img-fluid figure-img" style="width:50.0%"></p>
-<figcaption>Comparison between blackbody radiation at 3000 K (solid line) and radiation as decribed through the Wien approximation (dashed line) and the Rayleigh-Jeans law (dash-dotteded line).</figcaption>
-</figure>
 </div>
-<p>He proposed a revolutionary hypothesis called <strong>Quantum Hypothesis</strong> or <strong>Planck’s Postulate</strong>. As Rayleigh and Jeans before, Planck assumed the modes within a cavity resonator as oscillations. However, in contrast to the classical approach allowing every oscillator to acquire every, arbitrary small value of energy (<span class="math inline">\(W_{\nu} = k \cdot T\)</span>), Planck postulated that these oscillators are allowed to acquire energy only in particular <strong>quanta of energy</strong>. Those quanta do depend on the frequency <span class="math inline">\(\nu\)</span> of the eigen-oscillation and are multiples of a <em>smallest quantum of energy</em>. Thus it follows</p>
-<p><span class="math display">\[
-E \left( \nu \right) = n \cdot E_{\mathrm{ph}} \left( \nu \right) = n \cdot h \cdot \nu \mathrm{.}
-\]</span></p>
-<p>The letter <span class="math inline">\(h\)</span> was initially chosen as <em>help constant</em>, but shortly after the success of Planck’s Postulate the constant was re-named as <em>Planck’s Constat</em> with the value</p>
-<p><span class="math display">\[
-h = 6.626 \ldots \cdot 10^{-34} \; \mathrm{Js}.
-\]</span></p>
-<p>This event of postulating a smallest quantum of energy is often referred to as the birth of quantum mechanics. Nowadays we can define the smallest quantum of the electromagnetic field bearing the energy <span class="math inline">\(h \cdot \nu\)</span> as <strong>Photon</strong>. The energy of an eigen-oscillation with <span class="math inline">\(n\)</span> photons is then</p>
-<p><span class="math display">\[
-W_{\nu} = n \cdot h \cdot \nu\mathrm{.}
-\]</span></p>
-<p>If we now consider thermal equilibrium, the likelyhood <span class="math inline">\(p \left( W_{\nu} \right)\)</span> of this particular eigen-oscillation bearing the energy of <span class="math inline">\(W_{\nu}\)</span> (meaning that this particular eigenstate is occupied by <span class="math inline">\(n\)</span> photons) is propotional to the Boltzmann factor <span class="math inline">\(\mathrm{e}^{-W_{\nu}/\left( k\cdot T \right)}\)</span></p>
-<p><span class="math display">\[
-p \left( W_{\nu} \right) = \frac{
-\mathrm{e}^{- \frac{n \cdot h \cdot \nu}{k \cdot T}}
-}{
-\sum_{n=0}^{\infty} \mathrm{e}^{- \frac{n \cdot h \cdot \nu}{k \cdot T}}
-}
-\]</span></p>
-<p>Since we did calculate a likelyhood, the relation <span class="math inline">\(\sum_{n=0}^{\infty} p \left(n \cdot h \cdot \nu \right) = 1\)</span> holds true. Furthermore, we can calculate the average energy per eigen-oscillation as the energy of this particular oscillation weighted with the likelyhood that this particular eigenstate is occupied with this particular number of photons. the averagred energy per eigen-oscillation then reads as <span class="math inline">\(\bar{W}_{\nu} = \sum_{n=0}^{\infty} p\left( nh\nu \right) n \, h\, \nu\)</span> and further</p>
-<p><span class="math display">\[
-\bar{W}_{\nu} = \frac{n \cdot \nu}{\mathrm{e}^{+\frac{n \cdot h \cdot \nu}{k \cdot T}} -1} \mathrm{.}
-\]</span></p>
-<p>The spectral energy density of a cavity radiator then is given through</p>
-<p><span class="math display">\[
-\omega \left( \nu,T \right) = n\left(\nu \right) \cdot \bar{W_{\nu}} \left( \nu,T \right)
-\]</span></p>
-<p>which leads us to the famous Planck’s formula</p>
-<p><span class="math display">\[
-\omega \left( \nu,T \right) \mathrm{d} \nu = \frac{8 \pi h \nu^3}{c_0^3} \, \frac{\mathrm{d} \nu}{\mathrm{e}^{\frac{h \nu}{k T}} -1} \mathrm{.}
-\]</span></p>
-<p>Here <span class="math inline">\(\omega \left( \nu,T \right) \mathrm{d}\nu\)</span> represents the spectra distribution of the energy density per frequency intervall; its unit is <span class="math inline">\(\left[ \omega \left( \nu,T \right) \right] = \mbox{Jsm}^3\)</span>. The radiance of the area element <span class="math inline">\(\mathrm{d}A\)</span> emitted into the solid angle <span class="math inline">\(\mathrm{d} \Omega\)</span> then is</p>
-<p><span class="math display">\[
-\begin{eqnarray}
-S^{\ast}_{\nu} \mathrm{d} \nu \mathrm{d} \Omega &amp; = &amp; \frac{c_0}{4\pi} \omega_{\nu} \left(\nu,T\right) \, \mathrm{d} \nu \, \mathrm{d} \Omega\\
-{} &amp; = &amp; \frac{2 h \nu^3}{c_0^2} \, \frac{\mathrm{d} \nu \, \mathrm{d} \Omega}{\mathrm{e}^{\frac{h \nu}{k T}} -1} \mathrm{.}
-\end{eqnarray}
-\]</span></p>
-<p>So far we have expressed Planck’s law in dependece of the frequency <span class="math inline">\(\nu\)</span>. With the aid of teh relation <span class="math inline">\(\lambda = c/\nu\)</span> we can also express Planck’s law in dependence of the wavelength. Therfor, we have to pay attantion to <span class="math inline">\(\mathrm{d}\lambda = -\left( c / \nu^2 \right) \mathrm{d} \nu\)</span>. Then, we can describe the spectral energy density</p>
-<p><span class="math display">\[
-\omega \left( \lambda,T \right) \mathrm{d} \lambda = \frac{8 \pi h c_0}{\lambda^5} \, \frac{\mathrm{d} \lambda}{\mathrm{e}^{\frac{h c_0}{\lambda k T}} -1}
-\]</span></p>
-<p>and the radiance <span class="math display">\[
-S^{\ast}_{\lambda} \mathrm{d} \lambda \mathrm{d} \Omega = \frac{2 h c^2}{\lambda^5} \, \frac{\mathrm{d} \lambda \, \mathrm{d} \Omega}{\mathrm{e}^{\frac{h c}{\lambda k T}} -1}
-\]</span></p>
-<p>as functions of <span class="math inline">\(\lambda\)</span> and <span class="math inline">\(T\)</span>.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/Lecture20_spectra_planck.png" class="img-fluid figure-img" style="width:90.0%"></p>
-<figcaption>Blackbody radiation as described through Planck’s law of radiation at different tempertures.</figcaption>
-</figure>
 </div>
 
 
@@ -1405,6 +1606,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../quantum-mechanics/Particle_Nature_of_Light.html" class="pagination-link" aria-label="Particle Nature of Light">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Particle Nature of Light</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
 </div> <!-- /content -->
 
 
