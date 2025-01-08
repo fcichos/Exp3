@@ -791,7 +791,7 @@ Note
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/cavity.png" class="img-fluid figure-img" style="width:35.0%"></p>
-<figcaption>A body with a cavity. The body is heated to a certain temperature <span class="math inline">\(T\)</span> and the cavity is closed.</figcaption>
+<figcaption>A body with a cavity. The body is heated to a certain temperature <span class="math inline">\(T\)</span> and the cavity is closed but can be equipped with a tiny hole to probe the radiation inside the cavity without perturbation.</figcaption>
 </figure>
 </div>
 <p>The system is in thermal equilibriums and thus each quadratic degree of freedom carries an energy of <span class="math inline">\(0.5 k_B T\)</span>, where <span class="math inline">\(k_B=1.21.380649 \times 10^{-23} \text{ J/K}\)</span> is the Boltzmann constant.</p>
@@ -1008,7 +1008,7 @@ S^{\ast}_{\nu} \left( \nu \right) \mathrm{d} \nu &amp; = &amp; \frac{c_0}{4 \pi}
 \end{eqnarray}
 \]</span></p>
 <p>If we now consider a temperature of about <span class="math inline">\(5000 \; \mathrm{K}\)</span> we achieve a wavelength bigger than <span class="math inline">\(2 \; \mu\mathrm{m}\)</span>, being well in the infrared region. For this spectral region the measured radiance and the theoretical prediction are in agreement. However, if we reduce the wavelength, disparities between experimental findings and the prediction appear. Moreover, if the Rayleigh-Jeans law was valid, there would be the so-called <strong>ultraviolet catastrophe</strong>! In the case of decreasing frequencies, the spectral energy density and the integrated radiance will rise until they become infinitely big for vanishing frequencies.</p>
-<div id="10f82a10" class="cell" data-execution_count="2">
+<div id="3a5e21c2" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Constants</span></span>
@@ -1099,7 +1099,7 @@ S^{\ast}_{\nu} \mathrm{d} \nu \mathrm{d} \Omega &amp; = &amp; \frac{c_0}{4\pi} \
 S^{\ast}_{\lambda} \mathrm{d} \lambda \mathrm{d} \Omega = \frac{2 h c^2}{\lambda^5} \, \frac{\mathrm{d} \lambda \, \mathrm{d} \Omega}{\mathrm{e}^{\frac{h c}{\lambda k T}} -1}
 \]</span></p>
 <p>in terms of wavelength <span class="math inline">\(\lambda\)</span> and temperature <span class="math inline">\(T\)</span>.</p>
-<div id="ee17684b" class="cell" data-execution_count="3">
+<div id="95eab4cf" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Constants</span></span>
@@ -1189,12 +1189,20 @@ Planck’s Radiation Law
 <li><span class="math inline">\(T\)</span> is absolute temperature <span class="math inline">\([\mathrm{K}]\)</span></li>
 <li><span class="math inline">\(\lambda\)</span> is wavelength <span class="math inline">\([\mathrm{m}]\)</span></li>
 </ul>
-<p>Note that Plancks radiation law is only valid for propagating electromagnet modes. Evanscence modes are not included in this formula and do not follow Plancks radiation law. (see e.g.&nbsp;<a href="https://www.nature.com/articles/s41467-018-06163-8">Observing of the super-Planckian near-field thermal radiation between graphene sheets</a>)</p>
-<p>::: {#fig-super planck-radiation fig-align=“center”} <img src="img/super_planck.png" class="img-fluid"></p>
-<p>A schematic of the home-made measurement setup. From top to bottom, the emitter side consists of S-magnet, heater, copper spreader, and Si/Gr and the receiver side consisting of Gr/Si, copper spreader, TEC layer, copper spreader, and H-magnet. Four photoresist posts are used to separate the emitter and the receiver. from <a href="https://www.nature.com/articles/s41467-018-06163-8">Observing of the super-Planckian near-field thermal radiation between graphene sheets</a></p>
+<p>Note that Plancks radiation law is only valid for propagating electromagnet modes. Evanscence modes are not included in this formula and do not follow Plancks radiation law.</p>
+<div id="fig-superplanck-radiation" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-superplanck-radiation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/super_planck.png" class="img-fluid figure-img" style="width:60.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-superplanck-radiation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5— A schematic of the home-made measurement setup. From top to bottom, the emitter side consists of S-magnet, heater, copper spreader, and Si/Gr and the receiver side consisting of Gr/Si, copper spreader, TEC layer, copper spreader, and H-magnet. Four photoresist posts are used to separate the emitter and the receiver. from <a href="https://www.nature.com/articles/s41467-018-06163-8">Observing of the super-Planckian near-field thermal radiation between graphene sheets</a>
+</figcaption>
+</figure>
+</div>
+<p>This opens a number of possibilities which are used for solar energy collection beyond the Shockley limit, for example in thermophotovaltaic cells, which convert the spectrals absorbance into heat radiation, that is shaped spectrally by metametarials to match the bandgap of the solar cell.</p>
 </div>
 </div>
-<p>This opens a number of possibilities which are used for solar energy collection beyond the Shockley limit, for example in thermophotovaltaic cells, which convert the spectrals absorbance into heat radiation, that is shaped spectrally by metametarials to match the bandgap of the solar cell. :::</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">

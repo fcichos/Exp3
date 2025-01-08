@@ -820,7 +820,7 @@ Figure&nbsp;1— Chromatic aberration. Left: Sketch of the chromatic aberration,
 </figure>
 </div>
 <p>Here is a plot for the variation of the focal distance of a lens with a radius of curvature of 100 mm as a function of the wavelength for three different glasses.</p>
-<div id="0df5e5d3" class="cell" data-execution_count="2">
+<div id="04be6571" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>bk7<span class="op">=</span>pd.read_csv(<span class="st">"data/BK7.csv"</span>,delimiter<span class="op">=</span><span class="st">","</span>)</span>
@@ -1302,7 +1302,7 @@ R_n^m(\rho) = \sum_{k=0}^{\frac{n-m}{2}} \frac{(-1)^k (n-k)!}{k! \left(\frac{n+m
 <p>The Zernike polynomials are indexed in several ways, with one common method being the Noll index, which provides a single index <span class="math inline">\(j\)</span> to each polynomial. Another method uses the pair <span class="math inline">\((n, m)\)</span> to index the polynomials, where <span class="math inline">\(n\)</span> indicates the order of the polynomial and <span class="math inline">\(m\)</span> its azimuthal frequency.</p>
 <p>These polynomials are particularly useful in optics and ophthalmology for describing the shape of optical wavefronts and the aberrations of optical systems, including the human eye. They allow for the decomposition of a complex wavefront into simpler, orthogonal components, each corresponding to a specific type of aberration, such as defocus, astigmatism, coma, etc.</p>
 <p>The plots below visualize the Zernike Polynomials up to a certain order.</p>
-<div id="05aabbbd" class="cell" data-tags="[]" data-execution_count="3">
+<div id="cb1dd7cf" class="cell" data-tags="[]" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> radial_polynomial(n, m, rho):</span>
