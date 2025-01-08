@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Exam – Experimental Physics 3 Course on Optics and Quantum Mechanics</title>
+<title>wien – Experimental Physics 3 Course on Optics and Quantum Mechanics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,7 +30,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../course-info/assignments.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -68,6 +67,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../assets/styles.css">
 </head>
@@ -100,7 +128,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../course-info/intructors.html">Course Info</a></li><li class="breadcrumb-item"><a href="../course-info/exam.html">Exam</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -159,7 +187,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../course-info/exam.html" class="sidebar-item-text sidebar-link active">
+  <a href="../course-info/exam.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exam</span></a>
   </div>
 </li>
@@ -663,50 +691,82 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../course-info/intructors.html">Course Info</a></li><li class="breadcrumb-item"><a href="../course-info/exam.html">Exam</a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title">Exam</h1>
-</div>
 
 
 
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<p>The exam will take place on February 24, 2025, 09:00–12:00 in the Large Lecture Hall. We also intent to create a mock exam to help you prepare for the exam.</p>
+<p>There have then been several attemps to explore the thermodynamics of blackbody radiation and to compare with measurements. Some of these approaches have been carried out by Stefan and Wien but also by Lord Rayleigh.</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Exam Format
+Stefan-Boltzmann Law
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>This course will end with a <strong>written exam</strong> of <strong>180 minutes</strong> duration.</p>
+<p>In order to derive the expression which we know today as Stefan-Boltzmann law, Stefan discovered the empirical relation in 1879 and later in 1884 Boltzmann derived the law on the basis of thermodynamics and Maxwell relations. First we want to consider the internal energy <span class="math inline">\(U\)</span> of an isolated system, which can be expressed as thermodynamic potential depending on the temperature <span class="math inline">\(T\)</span>, the entropy <span class="math inline">\(S\)</span>, pressure <span class="math inline">\(p\)</span>, and volume <span class="math inline">\(V\)</span>,</p>
+<p><span class="math display">\[
+\mathrm{d} U = T \mathrm{d} S - p \mathrm{d}V \mathrm{.}
+\]</span></p>
+<p>If we now calculate the derivative of the internal energy with respect to the volume at constant temperature</p>
+<p><span class="math display">\[
+\left( \frac{\mathrm{d} U}{\mathrm{d} V} \right)_{T} = T \left( \frac{\mathrm{d} S}{\mathrm{d} V} \right)_{T} - p
+\]</span></p>
+<p>and make use of one Maxwell relation, namely</p>
+<p><span class="math display">\[
+\left( \frac{\mathrm{d} S}{\mathrm{d} V} \right)_{T} = \left( \frac{\mathrm{d} p}{\mathrm{d} T} \right)_{V}
+\]</span></p>
+<p>we get</p>
+<p><span class="math display">\[
+\left( \frac{\mathrm{d} U}{\mathrm{d} V} \right)_{T} = T \left( \frac{\mathrm{d} p}{\mathrm{d} T} \right)_{V} - p
+\]</span></p>
+<p>Previously Maxwell presented an expression for the radiation pressure being <span class="math inline">\(p = \frac{1}{3}u\)</span> with <span class="math inline">\(u\)</span> as the energy density and the total internal energy as <span class="math inline">\(U = u\cdot V\)</span>. If we use these expressions in the equation of the derivative and integrate, we obtain <span class="math display">\[
+\begin{eqnarray}
+u &amp; = &amp; C_1 \cdot T^4\\
+U &amp; = &amp; C_2 \cdot V \cdot T^4 \mathrm{,}
+\end{eqnarray}
+\]</span></p>
+<p>with <span class="math inline">\(C_1\)</span> and <span class="math inline">\(C_2\)</span> denoting integration constants. In the modern form we refer to the radiation power <span class="math inline">\(P\)</span> as</p>
+<p><span class="math display">\[
+P = \sigma \cdot A \cdot T^4
+\]</span></p>
+<p>being proportional to the <em>Stefan-Boltzmann constant</em> <span class="math inline">\(\sigma\)</span>, the blackbody area <span class="math inline">\(A\)</span>, and to the <strong>fourth power</strong> of the absolute temperature. This law also describes that every body with a temperature higher than <span class="math inline">\(0 \mbox{ K}\)</span> emits electromagnetic radiation.</p>
+<section id="wiens-displacement-law" class="level2">
+<h2 class="anchored" data-anchor-id="wiens-displacement-law">Wien’s Displacement Law</h2>
+<p>In 1896 Wien published how the spectrum of cavity radiation changes with altered temperature. Today this law is often not referred to the overall shape of the spectrum, but rather to the maximum of the spectrum. In 1896 the Stefan-Boltzmann law was already published stating that the emitted radiance depends on the apparent temperature to the power of 4 (<span class="math inline">\(\propto T^4\)</span>). However, the actual spectral distribution of the energy was unknown.</p>
+<p>On the basis of thermodynamic concepts and the Stefan-Boltzmann law Wien derived a relation between the wavelength <span class="math inline">\(\lambda\)</span> and the spectral energy at a particular wavelength <span class="math inline">\(\varphi \left(\lambda\right)\)</span></p>
+<p><span class="math display">\[
+\varphi \cdot \mathrm{d} \lambda = \varphi_0 \cdot \mathrm{d} \lambda_0
+\]</span></p>
+<p>and</p>
+<p><span class="math display">\[
+\mathrm{d} \lambda = \frac{T_0}{T} \; \mathrm{d} \lambda_0 \mathrm{.}
+\]</span></p>
+<p>The last equation can be reformulated into the shape of</p>
+<p><span class="math display">\[
+\lambda_{\mathrm{peak}} = b \cdot \frac{1}{T}
+\]</span></p>
+<p>with <span class="math inline">\(b\)</span> being the proportionality or <em>Wien’s displacement constant</em> (<span class="math inline">\(b = 2.898 \cdot 10^{-3} \, \mathrm{m}\cdot\mathrm{K}\)</span>).</p>
+<p>Wien further examined the integration with the result for the energy profile <span class="math inline">\(\varphi = \varphi_0 \; \frac{\mathrm{d} \lambda_0}{\mathrm{d} \lambda} = \varphi_0 \; \frac{\mathrm{d} T}{\mathrm{d} T_0}\)</span>. In addition with the known relation from the Stefan-Boltzmann law <span class="math inline">\(\varphi \propto \frac{T^4}{T_0^4}\)</span>, Wien proposed the spectral shape at a particular temperature on the basis of the spectral shape at a known temperature <span class="math inline">\(\varphi = \varphi_0 \frac{T^5}{T_0^5}\)</span>. So far the exact spectral shape still remained unknown; however, by means of adjusting the parameter <span class="math inline">\(\varphi_0\)</span> theory was successfully brought into coincidence with experimental results and the spectrum for small wavelengths could be predicted.</p>
+</section>
+<section id="wiens-distribution-law-or-wien-approximation" class="level2">
+<h2 class="anchored" data-anchor-id="wiens-distribution-law-or-wien-approximation">Wien’s distribution law or Wien approximation</h2>
+<p>In his original publication in 1896 Wien employed the wavelength dependence of the blackbody radiation and the Maxwell-Boltzmann distribution for the speed of molecules. On the basis of thermodynamic arguments he derived a formula for the radiance</p>
+<p><span class="math display">\[
+S^{\ast}_{\lambda} \left(\lambda, T \right) = \frac{C_1}{\lambda^5} \; \mathrm{e}^{- \frac{C_2}{\lambda T}} \mathrm{.}
+\]</span></p>
+<p>with <span class="math inline">\(C_1\)</span> and <span class="math inline">\(C_2\)</span> being constants. As to be expected the curve described by this formula exhibits a maximum. In the case of short wavelength, experimental results from cavity radiation can be well described. For long wavelengths, instead, the Wien approximation underestimated the radiance.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/Lecture20_spectra_planck_wien_comparison.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption>Comparison between blackbody radiation (solid lines) and Wien approximation (dashed lines) at different temperatures.</figcaption>
+</figure>
 </div>
+</section>
 </div>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Exam Eligibility
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>To take part in the exam, you need to qualify by earning <strong>50% of the possible points</strong> from the exercises handed out weekly.</p>
 </div>
 </div>
 
@@ -1133,15 +1193,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../course-info/assignments.html" class="pagination-link" aria-label="Assignments">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Assignments</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-  </div>
-</nav>
 </div> <!-- /content -->
 
 

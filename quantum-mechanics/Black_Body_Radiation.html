@@ -163,7 +163,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Quantum Mechanics</li><li class="breadcrumb-item"><a href="../quantum-mechanics/Structure_of_matter.html">Lecture 19</a></li><li class="breadcrumb-item"><a href="../quantum-mechanics/Black_Body_Radiation.html">Black Body Radiation</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Quantum Mechanics</li><li class="breadcrumb-item"><a href="../quantum-mechanics/Black_Body_Radiation.html">Lecture 20</a></li><li class="breadcrumb-item"><a href="../quantum-mechanics/Black_Body_Radiation.html">Black Body Radiation</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -675,13 +675,13 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-23" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-24" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-24" role="navigation" aria-expanded="false">
  <span class="menu-text">Lecture 19</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-24" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-24" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-24" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-24" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../quantum-mechanics/Structure_of_matter.html" class="sidebar-item-text sidebar-link">
@@ -694,6 +694,17 @@ window.Quarto = {
  <span class="menu-text">Particle Nature of Light</span></a>
   </div>
 </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-25" role="navigation" aria-expanded="true">
+ <span class="menu-text">Lecture 20</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-25" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-25" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../quantum-mechanics/Black_Body_Radiation.html" class="sidebar-item-text sidebar-link active">
@@ -724,7 +735,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Quantum Mechanics</li><li class="breadcrumb-item"><a href="../quantum-mechanics/Structure_of_matter.html">Lecture 19</a></li><li class="breadcrumb-item"><a href="../quantum-mechanics/Black_Body_Radiation.html">Black Body Radiation</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Quantum Mechanics</li><li class="breadcrumb-item"><a href="../quantum-mechanics/Black_Body_Radiation.html">Lecture 20</a></li><li class="breadcrumb-item"><a href="../quantum-mechanics/Black_Body_Radiation.html">Black Body Radiation</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Black Body Radiation</h1>
 </div>
@@ -994,46 +1005,43 @@ S^{\ast}_{\nu} \left( \nu \right) \mathrm{d} \nu &amp; = &amp; \frac{c_0}{4 \pi}
 \end{eqnarray}
 \]</span></p>
 <p>If we now consider a temperature of about <span class="math inline">\(5000 \; \mathrm{K}\)</span> we achieve a wavelength bigger than <span class="math inline">\(2 \; \mu\mathrm{m}\)</span>, being well in the infrared region. For this spectral region the measured radiance and the theoretical prediction are in agreement. However, if we reduce the wavelength, disparities between experimental findings and the prediction appear. Moreover, if the Rayleigh-Jeans law was valid, there would be the so-called <strong>ultraviolet catastrophe</strong>! In the case of decreasing frequencies, the spectral energy density and the integrated radiance will rise until they become infinitely big for vanishing frequencies.</p>
-<div id="9625414c" class="cell" data-execution_count="2">
+<div id="a56c3ebc" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Constants</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>h <span class="op">=</span> <span class="fl">6.62607015e-34</span>  <span class="co"># Planck constant (J⋅s)</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="fl">2.99792458e8</span>    <span class="co"># Speed of light (m/s)</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>k <span class="op">=</span> <span class="fl">1.380649e-23</span>    <span class="co"># Boltzmann constant (J/K)</span></span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Constants</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>h <span class="op">=</span> <span class="fl">6.62607015e-34</span>  <span class="co"># Planck constant (J⋅s)</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="fl">2.99792458e8</span>    <span class="co"># Speed of light (m/s)</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>k <span class="op">=</span> <span class="fl">1.380649e-23</span>    <span class="co"># Boltzmann constant (J/K)</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Wavelength range (in meters)</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>wavelength <span class="op">=</span> np.linspace(<span class="fl">0.1e-6</span>, <span class="fl">8e-6</span>, <span class="dv">1000</span>)</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Wavelength range (in meters)</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>wavelength <span class="op">=</span> np.linspace(<span class="fl">0.1e-6</span>, <span class="fl">8e-6</span>, <span class="dv">1000</span>)</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Define Planck's law</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> planck(wavelength, T):</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (<span class="dv">2</span><span class="op">*</span>h<span class="op">*</span>c<span class="op">**</span><span class="dv">2</span>)<span class="op">/</span>(wavelength<span class="op">**</span><span class="dv">5</span>) <span class="op">*</span> <span class="dv">1</span><span class="op">/</span>(np.exp((h<span class="op">*</span>c)<span class="op">/</span>(wavelength<span class="op">*</span>k<span class="op">*</span>T)) <span class="op">-</span> <span class="dv">1</span>)</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Define Rayleigh-Jeans law</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> rayleigh_jeans(wavelength, T):</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (<span class="dv">2</span><span class="op">*</span>c<span class="op">*</span>k<span class="op">*</span>T)<span class="op">/</span>(wavelength<span class="op">**</span><span class="dv">4</span>)</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Temperatures</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>temperatures <span class="op">=</span> [<span class="dv">1200</span>, <span class="dv">1600</span>, <span class="dv">2000</span>, <span class="dv">2400</span>, <span class="dv">2800</span>]</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> [<span class="st">'blue'</span>, <span class="st">'green'</span>, <span class="st">'red'</span>, <span class="st">'purple'</span>, <span class="st">'orange'</span>]</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>get_size(<span class="dv">12</span>, <span class="dv">8</span>))</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot both laws for each temperature</span></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> T, color <span class="kw">in</span> <span class="bu">zip</span>(temperatures, colors):</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    plt.plot(wavelength<span class="op">*</span><span class="fl">1e6</span>, planck(wavelength, T)<span class="op">*</span><span class="fl">1e-12</span>,</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>             label<span class="op">=</span><span class="ss">f'Planck </span><span class="sc">{</span>T<span class="sc">}</span><span class="ss">K'</span>, color<span class="op">=</span>color)</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    plt.plot(wavelength<span class="op">*</span><span class="fl">1e6</span>, rayleigh_jeans(wavelength, T)<span class="op">*</span><span class="fl">1e-12</span>,</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>             <span class="st">'--'</span>, label<span class="op">=</span><span class="ss">f'Rayleigh-Jeans </span><span class="sc">{</span>T<span class="sc">}</span><span class="ss">K'</span>, color<span class="op">=</span>color)</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Wavelength [μm]'</span>)</span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="vs">r'S [$× 10^</span><span class="sc">{13}</span><span class="vs"> W⋅sr^{-1}⋅m^{-3}$]'</span>)</span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="dv">0</span>,<span class="dv">1</span>)</span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Define Planck's law</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> planck(wavelength, T):</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (<span class="dv">2</span><span class="op">*</span>h<span class="op">*</span>c<span class="op">**</span><span class="dv">2</span>)<span class="op">/</span>(wavelength<span class="op">**</span><span class="dv">5</span>) <span class="op">*</span> <span class="dv">1</span><span class="op">/</span>(np.exp((h<span class="op">*</span>c)<span class="op">/</span>(wavelength<span class="op">*</span>k<span class="op">*</span>T)) <span class="op">-</span> <span class="dv">1</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Define Rayleigh-Jeans law</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> rayleigh_jeans(wavelength, T):</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (<span class="dv">2</span><span class="op">*</span>c<span class="op">*</span>k<span class="op">*</span>T)<span class="op">/</span>(wavelength<span class="op">**</span><span class="dv">4</span>)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Temperatures</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>temperatures <span class="op">=</span> [<span class="dv">1200</span>, <span class="dv">1600</span>, <span class="dv">2000</span>, <span class="dv">2400</span>, <span class="dv">2800</span>]</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> [<span class="st">'blue'</span>, <span class="st">'green'</span>, <span class="st">'red'</span>, <span class="st">'purple'</span>, <span class="st">'orange'</span>]</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>get_size(<span class="dv">12</span>, <span class="dv">8</span>))</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot both laws for each temperature</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> T, color <span class="kw">in</span> <span class="bu">zip</span>(temperatures, colors):</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    plt.plot(wavelength<span class="op">*</span><span class="fl">1e6</span>, planck(wavelength, T)<span class="op">*</span><span class="fl">1e-12</span>,</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>             label<span class="op">=</span><span class="ss">f'Planck </span><span class="sc">{</span>T<span class="sc">}</span><span class="ss">K'</span>, color<span class="op">=</span>color)</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>    plt.plot(wavelength<span class="op">*</span><span class="fl">1e6</span>, rayleigh_jeans(wavelength, T)<span class="op">*</span><span class="fl">1e-12</span>,</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>             <span class="st">'--'</span>, label<span class="op">=</span><span class="ss">f'Rayleigh-Jeans </span><span class="sc">{</span>T<span class="sc">}</span><span class="ss">K'</span>, color<span class="op">=</span>color)</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Wavelength [μm]'</span>)</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="vs">r'S [$× 10^</span><span class="sc">{13}</span><span class="vs"> W⋅sr^{-1}⋅m^{-3}$]'</span>)</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="dv">0</span>,<span class="dv">1</span>)</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -1106,80 +1114,6 @@ S^{\ast}_{\lambda} \mathrm{d} \lambda \mathrm{d} \Omega = \frac{2 h c^2}{\lambda
 <p><img src="img/Lecture20_spectra_planck.png" class="img-fluid figure-img" style="width:90.0%"></p>
 <figcaption>Blackbody radiation as described through Planck’s law of radiation at different temperatures.</figcaption>
 </figure>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Stefan-Boltzmann Law
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>In order to derive the expression which we know today as Stefan-Boltzmann law, Stefan discovered the empirical relation in 1879 and later in 1884 Boltzmann derived the law on the basis of thermodynamics and Maxwell relations. First we want to consider the inner energy <span class="math inline">\(U\)</span> of an isolated system, which can be expressed as thermodynamic potential depending on the temperature <span class="math inline">\(T\)</span>, the entropy <span class="math inline">\(S\)</span>, pressure <span class="math inline">\(p\)</span>, and volume <span class="math inline">\(V\)</span>,</p>
-<p><span class="math display">\[
-\mathrm{d} U = T \mathrm{d} S - p \mathrm{d}V \mathrm{.}
-\]</span></p>
-<p>If we now calculate the derivative of the inner energy with respect to the volume at constant temperature</p>
-<p><span class="math display">\[
-\left( \frac{\mathrm{d} U}{\mathrm{d} V} \right)_{T} = T \left( \frac{\mathrm{d} S}{\mathrm{d} V} \right)_{T} - p
-\]</span></p>
-<p>and make use of one Maxwell relation, namely</p>
-<p><span class="math display">\[
-\left( \frac{\mathrm{d} S}{\mathrm{d} V} \right)_{T} = \left( \frac{\mathrm{d} p}{\mathrm{d} T} \right)_{V}
-\]</span></p>
-<p>we get</p>
-<p><span class="math display">\[
-\left( \frac{\mathrm{d} U}{\mathrm{d} V} \right)_{T} = T \left( \frac{\mathrm{d} p}{\mathrm{d} T} \right)_{V} - p
-\]</span></p>
-<p>Previously Maxwell presented an expression for the radiation pressure being <span class="math inline">\(p = \frac{1}{3}u\)</span> with <span class="math inline">\(u\)</span> as the energy density and the total inner energy as <span class="math inline">\(U = u\cdot V\)</span>. If we use these expressions in the equation of the derivative and integrate, we obtain <span class="math display">\[
-\begin{eqnarray}
-u &amp; = &amp; C_1 \cdot T^4\\
-U &amp; = &amp; C_2 \cdot V \cdot T^4 \mathrm{,}
-\end{eqnarray}
-\]</span></p>
-<p>with <span class="math inline">\(C_1\)</span> and <span class="math inline">\(C_2\)</span> denoting integration constants. In the modern form we refer to the radiation power <span class="math inline">\(P\)</span> as</p>
-<p><span class="math display">\[
-P = \sigma \cdot A \cdot T^4
-\]</span></p>
-<p>being proportional to the <em>Stefan-Boltzmann constant</em> <span class="math inline">\(\sigma\)</span>, the blackbody area <span class="math inline">\(A\)</span>, and to the <strong>fourth power</strong> of the absolute temperature. This law also describes that every body with a temperature higher than <span class="math inline">\(0 \mbox{ K}\)</span> emits electromagnetic radiation.</p>
-<section id="wiens-displacement-law" class="level2">
-<h2 class="anchored" data-anchor-id="wiens-displacement-law">Wien’s Displacement Law</h2>
-<p>In 1896 Wien published how the spectrum of cavity radiation changes with altered temperature. Today this law is often not referred to the overall shape of the spectrum, but rather to the maximum of the spectrum. In 1896 the Stefan-Boltzmann law was already published stating that the emitted radiance depends on the apparent temperature to the power of 4 (<span class="math inline">\(\propto T^4\)</span>). However, the actual spectral distribution of the energy was unknown.</p>
-<p>On the basis of thermodynamic concepts and the Stefan-Boltzmann law Wien derived a relation between the wavelength <span class="math inline">\(\lambda\)</span> and the spectral energy at a particular wavelength <span class="math inline">\(\varphi \left(\lambda\right)\)</span></p>
-<p><span class="math display">\[
-\varphi \cdot \mathrm{d} \lambda = \varphi_0 \cdot \mathrm{d} \lambda_0
-\]</span></p>
-<p>and</p>
-<p><span class="math display">\[
-\mathrm{d} \lambda = \frac{T_0}{T} \; \mathrm{d} \lambda_0 \mathrm{.}
-\]</span></p>
-<p>The last equation can be reformulated into the shape of</p>
-<p><span class="math display">\[
-\lambda_{\mathrm{peak}} = b \cdot \frac{1}{T}
-\]</span></p>
-<p>with <span class="math inline">\(b\)</span> being the proportionality or <em>Wien’s displacement constant</em> (<span class="math inline">\(b = 2.898 \cdot 10^{-3} \, \mathrm{m}\cdot\mathrm{K}\)</span>).</p>
-<p>Wien further examined the integration with the result for the energy profile <span class="math inline">\(\varphi = \varphi_0 \; \frac{\mathrm{d} \lambda_0}{\mathrm{d} \lambda} = \varphi_0 \; \frac{\mathrm{d} T}{\mathrm{d} T_0}\)</span>. In addition with the known relation from the Stefan-Boltzmann law <span class="math inline">\(\varphi \propto \frac{T^4}{T_0^4}\)</span>, Wien proposed the spectral shape at a particular temperature on the basis of the spectral shape at a known temperature <span class="math inline">\(\varphi = \varphi_0 \frac{T^5}{T_0^5}\)</span>. So far the exact spectral shape still remained unknown; however, by means of adjusting the parameter <span class="math inline">\(\varphi_0\)</span> theory was successfully brought into coincidence with experimental results and the spectrum for small wavelengths could be predicted.</p>
-</section>
-<section id="wiens-distribution-law-or-wien-approximation" class="level2">
-<h2 class="anchored" data-anchor-id="wiens-distribution-law-or-wien-approximation">Wien’s distribution law or Wien approximation</h2>
-<p>In his original publication in 1896 Wien employed the wavelength dependence of the blackbody radiation and the Maxwell-Boltzmann distribution for the speed of molecules. On the basis of thermodynamic arguments he derived a formula for the radiance</p>
-<p><span class="math display">\[
-S^{\ast}_{\lambda} \left(\lambda, T \right) = \frac{C_1}{\lambda^5} \; \mathrm{e}^{- \frac{C_2}{\lambda T}} \mathrm{.}
-\]</span></p>
-<p>with <span class="math inline">\(C_1\)</span> and <span class="math inline">\(C_2\)</span> being constants. As to be expected the curve described by this formula exhibits a maximum. In the case of short wavelength, experimental results from cavity radiation can be well described. For long wavelengths, instead, the Wien approximation underestimated the radiance.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/Lecture20_spectra_planck_wien_comparison.png" class="img-fluid figure-img" style="width:50.0%"></p>
-<figcaption>Comparison between blackbody radiation (solid lines) and Wien approximation (dashed lines) at different temperatures.</figcaption>
-</figure>
-</div>
-</section>
-</div>
-</div>
 </div>
 
 
