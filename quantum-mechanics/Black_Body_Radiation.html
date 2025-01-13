@@ -844,7 +844,7 @@ Note
 <p><span class="math display">\[
 \frac{\mathrm{d} W_{A}}{\mathrm{d} t} = A_{\nu} \; S^{\ast}_{\nu} \; \mathrm{d} A \; \mathrm{d} \Omega \; \mathrm{d} \nu
 \]</span></p>
-<p>where <span class="math inline">\(S^{\ast}_{\nu}\)</span> is the spectral radiancy, so the radiated power per unit area, per unit solid angle and per unit frequency interval. The absorption capability <span class="math inline">\(A_{\nu}\)</span> is also a number between 0 and 1.</p>
+<p>where <span class="math inline">\(S^{\ast}_{\nu}\)</span> is the spectral radiancy of an ideal black body, so the radiated power per unit area, per unit solid angle and per unit frequency interval. The absorption capability <span class="math inline">\(A_{\nu}\)</span> is also a number between 0 and 1.</p>
 <p>In the steady state, the body emits and absorbs the same amount of power and thus</p>
 <p><span class="math display">\[
 \frac{\mathrm{d} W_{E}}{\mathrm{d} t} = \frac{\mathrm{d} W_{A}}{\mathrm{d} t}
@@ -853,7 +853,7 @@ Note
 <p><span class="math display">\[
 E^{\ast}_{\nu} = A_{\nu} \; S^{\ast}_{\nu}
 \]</span></p>
-<p>The spectral randiancy times the frequency dependent absorptivity is equal to the spectral emission emissivity. This is known as <strong>Kirchhoff’s law of thermal radiation</strong>.</p>
+<p>The spectral randiancy times the frequency dependent absorptivity is equal to the spectral emissivity. This is known as <strong>Kirchhoff’s law of thermal radiation</strong>.</p>
 <p>From the Kirchhoff’s law we can see that a perfectly absorbing body <span class="math inline">\(A_{\nu}=1\)</span> is also a perfect emitter. This is the case for a <em>blackbody</em>, which absorbs all radiation incident on it and emits the maximum amount of radiation possible at a given temperature.</p>
 <p>Note that in the case of a blackbody, the absorptivity does not depend anymore on the frequency <span class="math inline">\(\nu\)</span>, while it will for a real body. In the case of a blackbody, the spectral radiancy <span class="math inline">\(S^{\ast}_{\nu}\)</span> is then only a function of the temperature <span class="math inline">\(T\)</span> and needs to be calculated from teh cavity structure, i.e.&nbsp;the modes of the cavity, which we will calculate next.</p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -1049,7 +1049,7 @@ S^{\ast}_{\nu} \left( \nu \right) \mathrm{d} \nu &amp; = &amp; \frac{c_0}{4 \pi}
 \end{aligned}
 \]</span></p>
 <p>If we now consider a temperature of about <span class="math inline">\(5000 \; \mathrm{K}\)</span> we achieve a wavelength bigger than <span class="math inline">\(2 \; \mu\mathrm{m}\)</span>, being well in the infrared region. For this spectral region the measured radiance and the theoretical prediction are in agreement. However, if we reduce the wavelength, disparities between experimental findings and the prediction appear. Moreover, if the Rayleigh-Jeans law was valid, there would be the so-called <strong>ultraviolet catastrophe</strong>! In the case of decreasing frequencies, the spectral energy density and the integrated radiance will rise until they become infinitely big for vanishing frequencies.</p>
-<div id="ab56b6a6" class="cell" data-execution_count="2">
+<div id="748fb6a6" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Constants</span></span>
@@ -1165,7 +1165,7 @@ h= \frac{P \lambda}{N c}
 </div>
 </div>
 </div>
-<div id="255b6eef" class="cell" data-execution_count="3">
+<div id="42593eac" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Constants</span></span>
