@@ -800,11 +800,11 @@ window.Quarto = {
 <p>After having established that particles exhibit wave-like properties through phenomena such as electron diffraction, we need to develop a mathematical framework to describe matter waves. While a simple plane wave ansatz might seem like a natural starting point, we will see that it has limitations in describing localized particles. This leads us to the concept of wave packets and ultimately to a probabilistic interpretation of matter waves proposed by Max Born.</p>
 <section id="plane-waves" class="level2">
 <h2 class="anchored" data-anchor-id="plane-waves">Plane waves</h2>
-<p>If we borrow the idea of de Broglie that particles exhibit wave-like properties, we can describe the wave character of a particle with mass <span class="math inline">\(m\)</span> and momentum <span class="math inline">\(p\)</span> by means of a plane wave ansatz propagating along the <span class="math inline">\(z\)</span> direction. The wave function <span class="math inline">\(\psi \left( z,t \right)\)</span> of this particle is then given by</p>
+<p>In order to properly describe the wave character of a particle with mass <span class="math inline">\(m\)</span> that is propagating along the <span class="math inline">\(z\)</span> direction we choose a similar ansatz as for electromagnetic light,</p>
 <p><span class="math display">\[
 \psi \left( z,t \right) = C \cdot \mathrm{e}^{i\left(\omega t - k z  \right)} \mathrm{.}
 \]</span></p>
-<p>This wave function describes matter in terms of its wave-like properties, leading to the term <strong>matter waves</strong>. Following de Broglie’s hypothesis about the wave nature of particles, we can derive expressions for the kinetic energy as</p>
+<p>Even though we are still discussing properties of matter, the above equation has the shape of a wave function. Thus, one often refers to <strong>matter waves</strong>. In accord with the de Broglie wavelength and the analogous description of atomistic particles as waves, we can derive the kinetic energy as</p>
 <p><span class="math display">\[
 E_{\mathrm{kin}} = \hbar \cdot \omega
 \]</span></p>
@@ -844,14 +844,14 @@ v_{\mathrm{ph}} = \frac{v_{\mathrm{p}}}{2}
 </section>
 <section id="wave-packets" class="level2">
 <h2 class="anchored" data-anchor-id="wave-packets">Wave packets</h2>
-<p>The major distinction between a matter wave and a classical particle is the fact that the amplitude of a plane wave does not depend on the position in space and the wave is distributed across the whole space. A classical particle, instead, is well located at any time. In the following we will locate a matter wave by means of <em>wave packets</em> (which are sometimes referred to as <em>wave trains</em>).</p>
+<p>The major distinction between a matter wave and a classical particle is the fact that the amplitude of a plane wave does not depend on the position in space and the wave is distributed across the whole space. A classical particle, instead, is well located at any time. In the following we will localize a matter wave by means of <em>wave packets</em> (which are sometimes referred to as <em>wave trains</em>).</p>
 <p>If one constructs a superposition of plane waves each having its amplitude <span class="math inline">\(C_j\)</span>, frequency <span class="math inline">\(\omega_j\)</span> close to the other frequencies, and wave vector <span class="math inline">\(\vec{k_j}\)</span> parallel to the other wave vectors and propagating along <span class="math inline">\(z\)</span>, the superposition reads as</p>
 <p><span class="math display">\[
 \psi \left( z , t \right) = \sum_j C_j \, \mathrm{e}^{i \left( \omega_j t - k_j z \right)}
 \]</span></p>
 <p>and exhibits the maximum amplitude at positions <span class="math inline">\(z_m\)</span>. This position of maximum amplitude propagates with the group velocity</p>
 <p><span class="math display">\[
-v_{\mathrm{g}} = \frac{\Delta \omega}{\Delta k}
+v_{\mathrm{g}} = \frac{d\omega}{dk}
 \]</span></p>
 <p>along the <span class="math inline">\(z\)</span> direction. If we now assume the superposition of an <em>infinite number</em> of waves whose frequency values <span class="math inline">\(\omega\)</span> cover the whole interval <span class="math inline">\(\left[ \omega_0 - \Delta \omega/2 ; \omega_0 + \Delta \omega/2 \right]\)</span> and wavenumbers <span class="math inline">\(k\)</span> are in accord to that from the interval <span class="math inline">\(\left[ k_0 - \Delta k/2 ; k_0 + \Delta k/2 \right]\)</span>, the summation becomes an integration</p>
 <p><span class="math display">\[
@@ -867,7 +867,7 @@ v_{\mathrm{g}} = \frac{\Delta \omega}{\Delta k}
 <p><span class="math display">\[
 \psi \left( z , t \right) = C \left( k_0 \right) \mathrm{e}^{i \left( \omega_0 t - k_0 z \right)} \int_{\kappa = - \Delta k/2}^{ + \Delta k/2}  \mathrm{e}^{i \left( u \kappa \right)} \, \mathrm{d} \kappa \mathrm{,}
 \]</span></p>
-<p>with <span class="math inline">\(\kappa = k - k_0\)</span> and <span class="math inline">\(u = \left(\mathrm{d} \omega / \mathrm{d} k \right)_{k_0} t - z\)</span>. The integration then results in</p>
+<p>with <span class="math inline">\(\kappa = k - k_0\)</span> and <span class="math inline">\(u = \left(\frac{\mathrm{d} \omega}{\mathrm{d} k} \right)_{k_0} t - z\)</span>. The integration then results in</p>
 <p><span class="math display">\[
 \psi \left( z , t \right) = A \left( z,t \right) \, \mathrm{e}^{i \left( \omega_0 t - k_0 z \right)}
 \]</span></p>
@@ -875,7 +875,7 @@ v_{\mathrm{g}} = \frac{\Delta \omega}{\Delta k}
 <p><span class="math display">\[
 A \left(z,t \right) = 2 C \left( k_0 \right) \, \frac{\sin \left(\Delta k \ u /2  \right)}{u} \mathrm{.}
 \]</span></p>
-<div id="1cb1de08" class="cell" data-execution_count="2">
+<div id="8596c6de" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters</span></span>
@@ -930,7 +930,7 @@ A \left(z,t \right) = 2 C \left( k_0 \right) \, \frac{\sin \left(\Delta k \ u /2
 </div>
 </div>
 </div>
-<p>The function <span class="math inline">\(\psi \left( z , t \right)\)</span> represents a plane wave whose amplitude <span class="math inline">\(A\)</span> exhibits a maximum at <span class="math inline">\(u=0\)</span>, and therefore <span class="math inline">\(z_{\mathrm{m}} = \left(\mathrm{d} \omega / \mathrm{d} k \right)_{k_0} \cdot t\)</span>. We call this function <span class="math inline">\(\psi\)</span> a <strong>wave packet</strong>. Its shape, namely height and distance to side lobes, does depend on the width of the interval <span class="math inline">\(\Delta k\)</span> and the distribution of the amplitude <span class="math inline">\(C \left( k \right)\)</span>. The wave packet’s maximum propagates with the group velocity</p>
+<p>The function <span class="math inline">\(\psi \left( z , t \right)\)</span> represents a plane wave whose amplitude <span class="math inline">\(A\)</span> exhibits a maximum at <span class="math inline">\(u=0\)</span>, and therefore <span class="math inline">\(z_{\mathrm{m}} = \left(\frac{\mathrm{d} \omega}{\mathrm{d} k} \right)_{k_0} \cdot t\)</span>. We call this function <span class="math inline">\(\psi\)</span> a <strong>wave packet</strong>. Its shape, namely height and distance to side lobes, does depend on the width of the interval <span class="math inline">\(\Delta k\)</span> and the distribution of the amplitude <span class="math inline">\(C \left( k \right)\)</span>. The wave packet’s maximum propagates with the group velocity</p>
 <p><span class="math display">\[
 v_{\mathrm{g}} = \left(\frac{\mathrm{d} \omega}{\mathrm{d}k}\right)_{k_0}
 \]</span></p>
@@ -953,9 +953,9 @@ v_{\mathrm{g}} = \left(\frac{\mathrm{d} \omega}{\mathrm{d}k}\right)_{k_0} = \fra
 <h3 class="anchored" data-anchor-id="gaussian-wave-packets">Gaussian wave packets</h3>
 <p>Concerning side lobes we can improve the description of particles through wave packets if we use a Gaussian distribution for the amplitude instead of a constant value,</p>
 <p><span class="math display">\[
-C \left( k_0 \right) \longrightarrow C \left( k_0 \right) \, \mathrm{e}^{- \frac{\left( k-k_0\right)^2}{2 \Delta k^2}} \mathrm{.}
+C \left( k \right) = C \left( k_0 \right) \, \mathrm{e}^{- \frac{\left( k-k_0\right)^2}{2 \Delta k^2}} \mathrm{.}
 \]</span></p>
-<div id="ea675227" class="cell" data-execution_count="3">
+<div id="f6777053" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters</span></span>
@@ -1044,7 +1044,7 @@ P\left( z, t \right) \mathrm{d}z \propto \left| \psi \left( z, t \right) \right|
 <p><span class="math display">\[
 P\left( z, t \right) \mathrm{d}z = \left| \psi \left( z, t \right) \right|^2 \mathrm{d}z \mathrm{.}
 \]</span></p>
-<div id="542c8fc7" class="cell" data-execution_count="4">
+<div id="b47e103d" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters</span></span>
