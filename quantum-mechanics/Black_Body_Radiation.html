@@ -1039,17 +1039,17 @@ S^*_{\nu} = \frac{c_0}{4\pi} \omega_{\nu}
 \]</span></p>
 <p>with <span class="math inline">\(k_B\)</span> and <span class="math inline">\(T\)</span> being the Boltzmann constant and absolute temperature, respectively. Therefore, within the limit of the classical approach the spectral energy density,</p>
 <p><span class="math display">\[
-\omega_{\nu} \; \mathrm{d} \nu = \frac{8 \pi \nu^2}{c_0^3} \; k \; T \; \mathrm{d}\nu \mathrm{,}
+\omega_{\nu} \; \mathrm{d} \nu = \frac{8 \pi \nu^2}{c_0^3} k_B T  \mathrm{d}\nu \mathrm{,}
 \]</span></p>
 <p>rises quadratically with respect to the frequency <span class="math inline">\(\nu\)</span>. This quadratic relation is known as <strong>Rayleigh-Jeans law</strong>. As a consequence a small hole in the cavity wall will then emit radiation into the solid angle of <span class="math inline">\(\mathrm{d} \Omega = 1 \mbox{ sr}\)</span> with the radiance of</p>
 <p><span class="math display">\[
 \begin{aligned}
-S^{\ast}_{\nu} \left( \nu \right) \mathrm{d} \nu &amp; = &amp; \frac{c_0}{4 \pi} \; \omega_{\nu} \left( \nu \right) \; \mathrm{d} \nu\\
-{} &amp; = &amp; \frac{2 \nu^2}{c_0^2} \; k \; T \; \mathrm{d} \nu
+S^{\ast}_{\nu} \left( \nu \right) \mathrm{d} \nu &amp; = &amp; \frac{c_0}{4 \pi} \omega_{\nu} \left( \nu \right)  \mathrm{d} \nu\\
+{} &amp; = &amp; \frac{2 \nu^2}{c_0^2} k_B T \mathrm{d} \nu
 \end{aligned}
 \]</span></p>
 <p>If we now consider a temperature of about <span class="math inline">\(5000 \; \mathrm{K}\)</span> we achieve a wavelength bigger than <span class="math inline">\(2 \; \mu\mathrm{m}\)</span>, being well in the infrared region. For this spectral region the measured radiance and the theoretical prediction are in agreement. However, if we reduce the wavelength, disparities between experimental findings and the prediction appear. Moreover, if the Rayleigh-Jeans law was valid, there would be the so-called <strong>ultraviolet catastrophe</strong>! In the case of decreasing frequencies, the spectral energy density and the integrated radiance will rise until they become infinitely big for vanishing frequencies.</p>
-<div id="8647e59c" class="cell" data-execution_count="2">
+<div id="1bed0570" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Constants</span></span>
@@ -1106,9 +1106,9 @@ W_{\nu} = n \cdot h \cdot \nu
 <p>where <span class="math inline">\(n\)</span> is a natural number. If we now consider thermal equilibrium, the probability <span class="math inline">\(p \left( W_{\nu} \right)\)</span> of finding an oscillator with energy <span class="math inline">\(W_{\nu} = n h \nu\)</span> (meaning the eigenstate is occupied by <span class="math inline">\(n\)</span> photons) is given by the Boltzmann distribution:</p>
 <p><span class="math display">\[
 p \left( W_{\nu} \right) = \frac{
-\mathrm{e}^{- \frac{n \cdot h \cdot \nu}{k \cdot T}}
+\mathrm{e}^{- \frac{n \cdot h \cdot \nu}{k_B\cdot T}}
 }{
-\sum_{n=0}^{\infty} \mathrm{e}^{- \frac{n \cdot h \cdot \nu}{k \cdot T}}
+\sum_{n=0}^{\infty} \mathrm{e}^{- \frac{n \cdot h \cdot \nu}{k_B \cdot T}}
 }
 \]</span></p>
 <p>Note that a Boltzmann distribution provides the maximum entropy for a given energy, i.e.&nbsp;it spreads the energy as evenly as possible over the available states (modes) of the systems. The average energy per oscillator can then be calculated as the expectation value of energy, weighting each possible energy level by its probability of occupation. The averaged energy per oscillator then reads as <span class="math inline">\(\bar{W}_{\nu} = \sum_{n=0}^{\infty} p\left( nh\nu \right) n \, h\, \nu\)</span> and further</p>
@@ -1121,23 +1121,23 @@ p \left( W_{\nu} \right) = \frac{
 \]</span></p>
 <p>which leads us to the famous Planck’s formula</p>
 <p><span class="math display">\[
-\omega \left( \nu,T \right) \mathrm{d} \nu = \frac{8 \pi h \nu^3}{c_0^3} \, \frac{\mathrm{d} \nu}{\mathrm{e}^{\frac{h \nu}{k T}} -1} \mathrm{.}
+\omega \left( \nu,T \right) \mathrm{d} \nu = \frac{8 \pi h \nu^3}{c_0^3} \, \frac{\mathrm{d} \nu}{\mathrm{e}^{\frac{h \nu}{k_B T}} -1} \mathrm{.}
 \]</span></p>
 <p>Here <span class="math inline">\(\omega \left( \nu,T \right) \mathrm{d}\nu\)</span> represents the spectral distribution of the energy density per frequency interval; its unit is <span class="math inline">\(\left[ \omega \left( \nu,T \right) \right] = \mbox{Jsm}^3\)</span>. The radiance of the area element <span class="math inline">\(\mathrm{d}A\)</span> emitted into the solid angle <span class="math inline">\(\mathrm{d} \Omega\)</span> then is</p>
 <p><span class="math display">\[
 \begin{aligned}
 S^{\ast}_{\nu} \mathrm{d} \nu \mathrm{d} \Omega &amp; = &amp; \frac{c_0}{4\pi} \omega_{\nu} \left(\nu,T\right) \, \mathrm{d} \nu \, \mathrm{d} \Omega\\
-{} &amp; = &amp; \frac{2 h \nu^3}{c_0^2} \, \frac{\mathrm{d} \nu \, \mathrm{d} \Omega}{\mathrm{e}^{\frac{h \nu}{k T}} -1} \mathrm{.}
+{} &amp; = &amp; \frac{2 h \nu^3}{c_0^2} \, \frac{\mathrm{d} \nu \, \mathrm{d} \Omega}{\mathrm{e}^{\frac{h \nu}{k_B T}} -1} \mathrm{.}
 \end{aligned}
 \]</span></p>
 <p>Planck’s theory posited that oscillator energy exists in discrete units or packets denoted by <span class="math inline">\(n\)</span>, following the relation <span class="math inline">\(W_{\nu} = n \cdot h \cdot \nu\)</span>. This concept was later expanded by Einstein in his explanation of the photoelectric effect, demonstrating that light itself consists of discrete energy quanta proportional to frequency <span class="math inline">\(\nu\)</span>. Einstein’s interpretation, expressing the energy of the electromagnetic field as <span class="math inline">\(E = h \nu\)</span>, established the foundation for understanding light as discrete particles called <em>photons</em>.</p>
 <p>While we’ve previously written Planck’s law in terms of frequency <span class="math inline">\(\nu\)</span>, we can alternatively express it using wavelength <span class="math inline">\(\lambda\)</span> through the relationship <span class="math inline">\(\lambda = c/\nu\)</span>. Making this conversion requires noting that <span class="math inline">\(\mathrm{d}\lambda = -\left( c / \nu^2 \right) \mathrm{d} \nu\)</span>. This allows us to express the spectral energy density</p>
 <p><span class="math display">\[
-\omega \left( \lambda,T \right) \mathrm{d} \lambda = \frac{8 \pi h c_0}{\lambda^5} \, \frac{\mathrm{d} \lambda}{\mathrm{e}^{\frac{h c_0}{\lambda k T}} -1}
+\omega \left( \lambda,T \right) \mathrm{d} \lambda = \frac{8 \pi h c_0}{\lambda^5} \, \frac{\mathrm{d} \lambda}{\mathrm{e}^{\frac{h c_0}{\lambda k_B T}} -1}
 \]</span></p>
 <p>and the radiance</p>
 <p><span class="math display">\[
-S^{\ast}_{\lambda} \mathrm{d} \lambda \mathrm{d} \Omega = \frac{2 h c^2}{\lambda^5} \, \frac{\mathrm{d} \lambda \, \mathrm{d} \Omega}{\mathrm{e}^{\frac{h c}{\lambda k T}} -1}
+S^{\ast}_{\lambda} \mathrm{d} \lambda \mathrm{d} \Omega = \frac{2 h c^2}{\lambda^5} \, \frac{\mathrm{d} \lambda \, \mathrm{d} \Omega}{\mathrm{e}^{\frac{h c}{\lambda k_B T}} -1}
 \]</span></p>
 <p>in terms of wavelength <span class="math inline">\(\lambda\)</span> and temperature <span class="math inline">\(T\)</span>.</p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -1165,7 +1165,7 @@ h= \frac{P \lambda}{N c}
 </div>
 </div>
 </div>
-<div id="9eff4030" class="cell" data-execution_count="3">
+<div id="de56eece" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Constants</span></span>
@@ -1245,13 +1245,13 @@ Planck’s Radiation Law
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The fundamental equation describing the spectral radiance of a black body: <span class="math display">\[S(\lambda,T) = \frac{2hc^2}{\lambda^5} \frac{1}{e^{\frac{hc}{\lambda kT}} - 1}\]</span></p>
+<p>The fundamental equation describing the spectral radiance of a black body: <span class="math display">\[S(\lambda,T) = \frac{2hc^2}{\lambda^5} \frac{1}{e^{\frac{hc}{\lambda  k_B T}} - 1}\]</span></p>
 <p>where:</p>
 <ul>
 <li><span class="math inline">\(S(\lambda,T)\)</span> is the spectral radiance <span class="math inline">\([\mathrm{W}\cdot\mathrm{sr}^{-1}\cdot\mathrm{m}^{-3}]\)</span></li>
 <li><span class="math inline">\(h\)</span> is Planck’s constant <span class="math inline">\([\mathrm{J}\cdot\mathrm{s}]\)</span></li>
 <li><span class="math inline">\(c\)</span> is the speed of light <span class="math inline">\([\mathrm{m}/\mathrm{s}]\)</span></li>
-<li><span class="math inline">\(k\)</span> is the Boltzmann constant <span class="math inline">\([\mathrm{J}/\mathrm{K}]\)</span></li>
+<li><span class="math inline">\(k_B\)</span> is the Boltzmann constant <span class="math inline">\([\mathrm{J}/\mathrm{K}]\)</span></li>
 <li><span class="math inline">\(T\)</span> is absolute temperature <span class="math inline">\([\mathrm{K}]\)</span></li>
 <li><span class="math inline">\(\lambda\)</span> is wavelength <span class="math inline">\([\mathrm{m}]\)</span></li>
 </ul>
@@ -1298,7 +1298,7 @@ Solar Power at Earth’s Distance: A Stefan-Boltzmann Law Calculation
 <div class="callout-body-container callout-body">
 <p>We can calculate the solar power arriving at Earth using the Stefan-Boltzmann law and basic geometric principles. The Stefan-Boltzmann law states that the total power emitted per unit area by a black body is given by:</p>
 <p><span class="math display">\[E = \sigma T^4\]</span></p>
-<p>where <span class="math inline">\(\sigma = 5.67 \times 10^{-8}\)</span> W⋅m⁻²⋅K⁻⁴ is the Stefan-Boltzmann constant and T is the temperature in Kelvin.</p>
+<p>where <span class="math inline">\(\sigma = 5.67 \times 10^{-8} \; \mathrm{W} \cdot \mathrm{m}^{-2} \cdot \mathrm{K}^{-4}\)</span> is the Stefan-Boltzmann constant and <span class="math inline">\(T\)</span> is the temperature in Kelvin.</p>
 <p>For our calculation, we need:</p>
 <ul>
 <li>Temperature of Sun’s surface: <span class="math inline">\(T_{sun} \approx 5778\)</span> K</li>
