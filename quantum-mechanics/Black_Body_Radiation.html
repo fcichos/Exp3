@@ -840,7 +840,7 @@ Note
 <p><span class="math display">\[
 \frac{\mathrm{d} W_{E}}{\mathrm{d} t} = E^{\ast}_{\nu} \; \mathrm{d} A \; \mathrm{d} \Omega \; \mathrm{d} \nu
 \]</span></p>
-<p>The emissivity is thereby a number between 0 and 1. In a simular way, each surface element at the cavity absorbs a certain power under a solid angle element and frequency intervall. The absorbed power is given by</p>
+<p>The emissivity is thereby the spectral radiance (energy emitted per unit area, per unit solid angle, per unit frequency), which has units of <span class="math inline">\(W⋅m^-2⋅sr^{-1}⋅Hz^{-1}\)</span>. In a simular way, each surface element at the cavity absorbs a certain power under a solid angle element and frequency intervall. The absorbed power is given by</p>
 <p><span class="math display">\[
 \frac{\mathrm{d} W_{A}}{\mathrm{d} t} = A_{\nu} \; S^{\ast}_{\nu} \; \mathrm{d} A \; \mathrm{d} \Omega \; \mathrm{d} \nu
 \]</span></p>
@@ -1049,7 +1049,7 @@ S^{\ast}_{\nu} \left( \nu \right) \mathrm{d} \nu &amp; = &amp; \frac{c_0}{4 \pi}
 \end{aligned}
 \]</span></p>
 <p>If we now consider a temperature of about <span class="math inline">\(5000 \; \mathrm{K}\)</span> we achieve a wavelength bigger than <span class="math inline">\(2 \; \mu\mathrm{m}\)</span>, being well in the infrared region. For this spectral region the measured radiance and the theoretical prediction are in agreement. However, if we reduce the wavelength, disparities between experimental findings and the prediction appear. Moreover, if the Rayleigh-Jeans law was valid, there would be the so-called <strong>ultraviolet catastrophe</strong>! In the case of decreasing frequencies, the spectral energy density and the integrated radiance will rise until they become infinitely big for vanishing frequencies.</p>
-<div id="08567e87" class="cell" data-execution_count="2">
+<div id="ab56b6a6" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Constants</span></span>
@@ -1165,7 +1165,7 @@ h= \frac{P \lambda}{N c}
 </div>
 </div>
 </div>
-<div id="6dee6af5" class="cell" data-execution_count="3">
+<div id="255b6eef" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Constants</span></span>
