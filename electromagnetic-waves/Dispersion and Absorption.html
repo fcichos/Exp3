@@ -709,12 +709,6 @@ window.Quarto = {
  <span class="menu-text">Structure of Matter</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../quantum-mechanics/Particle_Nature_of_Light.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Particle Nature of Light</span></a>
-  </div>
-</li>
       </ul>
   </li>
           <li class="sidebar-item sidebar-item-section">
@@ -745,8 +739,8 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-26" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../quantum-mechanics/Black_Body_Radiation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Black Body Radiation</span></a>
+  <a href="../quantum-mechanics/Particle_Nature_of_Light.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Particle Nature of Light</span></a>
   </div>
 </li>
       </ul>
@@ -760,6 +754,23 @@ window.Quarto = {
           </a> 
       </div>
       <ul id="quarto-sidebar-section-27" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Black_Body_Radiation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Black Body Radiation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-28" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 23</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-28" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-28" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../quantum-mechanics/Wave_character_of_particles.html" class="sidebar-item-text sidebar-link">
@@ -864,7 +875,7 @@ n=1+\frac{Nq^2}{2\epsilon_0 m}\frac{(\omega_0^2-\omega^2)-i\sigma\omega}{(\omega
 <p>and</p>
 <p><span class="math display">\[\kappa = A\frac{\sigma\omega}{(\omega_0^2-\omega^2)^2+\omega^2\sigma^2}\]</span></p>
 <p>with <span class="math inline">\(A=\frac{Nq^2}{2\epsilon_0 m}\)</span>.</p>
-<div id="988ddd62" class="cell" data-execution_count="2">
+<div id="bc725d4d" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> <span class="dv">1</span>  <span class="co"># Number density</span></span>
@@ -1022,7 +1033,7 @@ Absorption Measurements
 <p>The above logarithm can be used to define the absorbance <span class="math inline">\(A\)</span> as</p>
 <p><span class="math display">\[A = -\ln\left(\frac{I}{I_0}\right)/\ln(10)\]</span></p>
 <p>which is the typical quantity that is plotted against concentration in absorption measurements and linearly depends on the concentration. According to Lambert Beers law, the absorbance is calculated from <span class="math display">\[A = \epsilon c L\]</span> and provides the molar extinction coefficient <span class="math inline">\(\epsilon\)</span> for the material at a given wavelength.</p>
-<div id="f6567c7f" class="cell" data-execution_count="3">
+<div id="2915d278" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -1035,7 +1046,7 @@ Absorption Measurements
 <section id="concentration-measurements" class="level3">
 <h3 class="anchored" data-anchor-id="concentration-measurements">Concentration Measurements</h3>
 <p>The linear relationship between absorbance and concentration enables quantitative analysis:</p>
-<div id="dd43a8b7" class="cell" data-execution_count="4">
+<div id="67bf2db5" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>concentrations <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">10</span>)</span>
@@ -1123,7 +1134,7 @@ v=\frac{\omega}{k}=\frac{c}{n_r}
 v_g=\frac{d\omega}{dk}
 \tag{group velocity}
 \]</span></p>
-<div id="9f87671d" class="cell" data-execution_count="5">
+<div id="344ee442" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up the spatial grid</span></span>
@@ -1182,7 +1193,7 @@ v_g=\frac{c}{n_r+\omega \frac{dn_r}{d\omega}}
 \tag{group velocity dispersion}
 \]</span></p>
 <p>The group velocity is distinct from the phase velocity and represents how fast the envelope of a wave packet propagates through space. In a dispersive medium, where the refractive index depends on frequency, the group velocity can differ significantly from the phase velocity. This is particularly important in optical communications where information is carried by wave packets rather than single-frequency waves.</p>
-<div id="3dfe688d" class="cell" data-execution_count="6">
+<div id="56774afb" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Constants (working in scaled units)</span></span>
