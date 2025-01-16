@@ -832,8 +832,8 @@ Figure&nbsp;2— Top: accelerator system overview. Bottom left: DLA100 476 μm o
 <h2 class="anchored" data-anchor-id="experiment-by-davisson-and-germer">Experiment by Davisson and Germer</h2>
 <p>In 1926, Davisson and Germer provided experimental proof of de Broglie’s hypothesis of matter waves by observing electron diffraction through crystalline material. In their experiment, electrons were accelerated by a voltage <span class="math inline">\(U\)</span>, giving them kinetic energy <span class="math inline">\(E_{\mathrm{kin}} = e \cdot U\)</span>. According to de Broglie’s relation, these electrons would have a wavelength of</p>
 <p><span class="math display">\[\lambda = \frac{h}{\sqrt{2 m e U}}\]</span></p>
-<p>where <span class="math inline">\(h\)</span> is Planck’s constant, <span class="math inline">\(m\)</span> is the electron mass, and <span class="math inline">\(e\)</span> is the elementary charge. The electrons were directed through a thin crystalline foil, producing diffraction rings whose diameter decreased with increasing accelerating voltage.</p>
-<p>A second experiment by Davission and Germer was performed by reflecting electrons on a nickel crystal. The results of this experiment are shown in the following figure.</p>
+<p>where <span class="math inline">\(h\)</span> is Planck’s constant, <span class="math inline">\(m\)</span> is the electron mass, and <span class="math inline">\(e\)</span> is the elementary charge.</p>
+<p>Their key experiment involved reflecting electrons from a nickel crystal. The results are shown in the following figures:</p>
 <div id="fig-davisson-germer-1" class="quarto-float quarto-figure quarto-figure-center anchored" data-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-davisson-germer-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -844,7 +844,6 @@ Figure&nbsp;3— Sketch of an experiment by <a href="https://www.pnas.org/doi/ep
 </figcaption>
 </figure>
 </div>
-<p>Davisson and Germer observed the reflection of the electrons on one side under the reflection angle theta and found intensity maxima at certain angles. The results of this experiment are shown in the following figure.</p>
 <div id="fig-davisson-germer-2" class="quarto-float quarto-figure quarto-figure-center anchored" data-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-davisson-germer-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -855,7 +854,6 @@ Figure&nbsp;4— Distribution-in-angle of electrons of all speeds issuing from a
 </figcaption>
 </figure>
 </div>
-<p>Further they studied the reflection of electrons from the nickel crystal under fixed angle of incidence and found intensity maxima at certain speeds of the electrons. The results of this experiment are shown in the following figure.</p>
 <div id="fig-davisson-germer-3" class="quarto-float quarto-figure quarto-figure-center anchored" data-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-davisson-germer-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -866,23 +864,11 @@ Figure&nbsp;5— Variation of the intensity of the regularly reflected electron 
 </figcaption>
 </figure>
 </div>
-<p>We can explain the results of Davisson and Germer as follows. If we accelerate electrons by means of a voltage <span class="math inline">\(U\)</span> to a speed <span class="math inline">\(v\)</span> (<span class="math inline">\(v \ll c\)</span>), the kinetic energy of the electrons is given through</p>
-<p><span class="math display">\[
-E_{\mathrm{kin}} = e \cdot U
-\]</span></p>
-<p>and their wavelength is given through</p>
-<p><span class="math display">\[
-\lambda = \frac{h}{\sqrt{2 m e U}} \mathrm{.}
-\]</span></p>
-<p>Thus, the wavelength of the electrons depends inversely on the square root of the accelerating voltage. If waves are now reflected on a crystal lattice, the reflection from different lattice planes can interfere constructively or destructively depending on the wavelength of the waves and the angle of incidence. The sine of the angle of reflection <span class="math inline">\(\theta\)</span> with constructive interference from the lattice planes is given through</p>
+<p>The wavelength of the electrons depends inversely on the square root of the accelerating voltage. When waves reflect on a crystal lattice, the reflection from different lattice planes can interfere constructively or destructively depending on the wavelength and angle of incidence. The sine of the reflection angle <span class="math inline">\(\theta\)</span> with constructive interference follows Bragg’s law:</p>
 <p><span class="math display">\[
 2d\sin \theta = n \cdot \lambda \tag{Bragg's law}
 \]</span></p>
-<p>where <span class="math inline">\(n\)</span> is the order of the maximum and <span class="math inline">\(d\)</span> is the distance between the lattice planes. In the Davisson-Germer experiment, a nickel crystal was used. They observed the reflection of electrons specifically on the [111] face of this nickel crystal. For this crystal structure, the distance between the lattice planes of the [111] face is given by the relation <span class="math inline">\(d = \frac{a}{\sqrt{3}}\)</span>, where <span class="math inline">\(a = 0.352 \;\mathrm{nm}\)</span> is the lattice constant of nickel. Therefore, the distance between the lattice planes of the [111] face was calculated to be <span class="math inline">\(d = 0.203 \;\mathrm{nm}\)</span>.</p>
-<p>According to this lattice plane distance d, they observed maxima in the reflected electron intensity under the reflection angle <span class="math inline">\(\theta\)</span> at the following wavelengths</p>
-<p><span class="math display">\[
-\sin \theta = \frac{n\lambda}{2d}
-\]</span></p>
+<p>where <span class="math inline">\(n\)</span> is the order of the maximum and <span class="math inline">\(d\)</span> is the distance between lattice planes. For the [111] face of the nickel crystal used, <span class="math inline">\(d = \frac{a}{\sqrt{3}}\)</span>, where <span class="math inline">\(a = 0.352 \;\mathrm{nm}\)</span> is the lattice constant, giving <span class="math inline">\(d = 0.203 \;\mathrm{nm}\)</span>.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -896,19 +882,15 @@ Angle in Bragg’s law
 <p>Note that the angle <span class="math inline">\(\theta\)</span> in Bragg’s law is the angle between the incident electron beam and the lattice plane. The angle of reflection <span class="math inline">\(\theta\)</span> is thus twice the angle between the incident electron beam and the lattice plane. This is in contrast to optics and the drawing of Davisson and Germer, where the angle of reflection <span class="math inline">\(\theta\)</span> is the angle between the incident electron beam and the normal of the lattice plane.</p>
 </div>
 </div>
-<p>If we now insert the voltage dependence of the wavelength into Bragg’s law, we obtain the sine of the diffraction angle as</p>
+<p>Combining the voltage dependence of wavelength with Bragg’s law:</p>
 <p><span class="math display">\[
 \sin(\theta) = \frac{h}{\sqrt{2 m e U}} \cdot \frac{n}{2 d}
 \]</span></p>
-<p>If we transform to get the voltage for which constructive interference for a given reflection angle <span class="math inline">\(\theta\)</span> occurs, we obtain</p>
+<p>Solving for the voltage giving constructive interference at angle <span class="math inline">\(\theta\)</span>:</p>
 <p><span class="math display">\[
 \sqrt{U} = \frac{h}{\sqrt{2 m e}} \cdot \frac{n}{2 d \sin(\theta)} = n a
 \]</span></p>
-<p>where</p>
-<p><span class="math display">\[
-a= \frac{h}{\sqrt{2 m e}} \cdot \frac{1}{2 d \sin(\theta)}
-\]</span></p>
-<p>is just a constant value. Thus plotting the reflection intensity of the electrons as a function of the square root of the accelerating voltage, we obtain a linear dependence of the location of the reflection maxima on the accelerating voltage. This is in perfect agreement with the results of the Davisson-Germer experiment. This clearly shows that the electrons have a wave-like character and that the wavelength of the electrons is given through the de Broglie relation.</p>
+<p>where <span class="math inline">\(a= \frac{h}{\sqrt{2 m e}} \cdot \frac{1}{2 d \sin(\theta)}\)</span> is constant. This predicts a linear relationship between reflection maxima and square root of accelerating voltage, matching experimental results and confirming the wave nature of electrons as described by de Broglie.</p>
 </section>
 <section id="atomic-and-molecular-diffraction" class="level2">
 <h2 class="anchored" data-anchor-id="atomic-and-molecular-diffraction">Atomic and molecular diffraction</h2>
