@@ -101,6 +101,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script type="module" src="../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -783,6 +785,7 @@ window.Quarto = {
   <li><a href="#gaussian-wave-packets" id="toc-gaussian-wave-packets" class="nav-link" data-scroll-target="#gaussian-wave-packets">Gaussian wave packets</a></li>
   </ul></li>
   <li><a href="#the-statistical-interpretation-of-matter-waves" id="toc-the-statistical-interpretation-of-matter-waves" class="nav-link" data-scroll-target="#the-statistical-interpretation-of-matter-waves">The statistical interpretation of matter waves</a></li>
+  <li><a href="#relation-to-measurement" id="toc-relation-to-measurement" class="nav-link" data-scroll-target="#relation-to-measurement">Relation to measurement</a></li>
   </ul>
 </nav>
     </div>
@@ -843,31 +846,62 @@ E = E_{\mathrm{kin}} = \frac{1}{2m}p^2
 <p><span class="math display">\[
 \omega = \frac{\hbar}{2m}k^2 \mathrm{.}
 \]</span></p>
-<p>If we now make use of the definition of the phase velocity <span class="math inline">\(v_{\mathrm{ph}} = \omega / k\)</span>, it becomes evident that the dispersion</p>
+<p>If we now make use of the definition of the phase velocity <span class="math inline">\(v_{\mathrm{ph}} = \omega / k\)</span>, it becomes evident that the dispersion relation gives:</p>
 <p><span class="math display">\[
-\frac{\mathrm{d}v_{\mathrm{ph}}}{\mathrm{d} \omega} = \frac{1}{2k} \ne 0 \mathrm{.}
+v_{\mathrm{ph}} = \frac{\omega}{k} = \frac{\hbar k}{2m}
 \]</span></p>
-<p>Matter waves show a dispersion and their phase velocity <strong>does depend</strong> on the wavevector and thus on the momentum of the particle. If the particle moves with the velocity <span class="math inline">\(v_{\mathrm{p}} = p/m = \hbar k / m\)</span>, then</p>
+<p>Matter waves show dispersion and their phase velocity <strong>does depend</strong> on the wavevector and thus on the momentum of the particle. If the particle moves with the velocity <span class="math inline">\(v_{\mathrm{p}} = p/m = \hbar k / m\)</span>, then</p>
 <p><span class="math display">\[
 v_{\mathrm{ph}} = \frac{v_{\mathrm{p}}}{2}
 \]</span></p>
-<p>and the phase velocity of the matter waves corresponds to half the velocity of the particle. As a consequence, a matter wave and the according phase velocity is not suited to describe the motion of particles <em>without further considerations</em>. Having in mind that a plane wave is distributed across the whole space, whereas a particle is somehow located, we provide remedy through the introduction of wave packets.</p>
+<p>and the phase velocity of the matter waves corresponds to half the velocity of the particle. As a consequence, a matter wave and its phase velocity is not suited to describe the motion of particles <em>without further considerations</em>. Having in mind that a plane wave is distributed across the whole space, whereas a particle is somehow located, we provide remedy through the introduction of wave packets.</p>
 </section>
 <section id="wave-packets" class="level2">
 <h2 class="anchored" data-anchor-id="wave-packets">Wave packets</h2>
-<p>The major distinction between a matter wave and a classical particle is the fact that the amplitude of a plane wave does not depend on the position in space and the wave is distributed across the whole space. A classical particle, instead, is well located at any time. In the following we will localize a matter wave by means of <em>wave packets</em> (which are sometimes referred to as <em>wave trains</em>).</p>
+<p>The major distinction between a plane wave and a classical particle is the fact that the amplitude of a plane wave does not depend on the position in space and the wave is distributed across the whole space. A classical particle, instead, is well localized at any time. In the following we will localize a matter wave by means of <em>wave packets</em> (which are sometimes referred to as <em>wave trains</em>).</p>
 <p>If one constructs a superposition of plane waves each having its amplitude <span class="math inline">\(C_j\)</span>, frequency <span class="math inline">\(\omega_j\)</span> close to the other frequencies, and wave vector <span class="math inline">\(\vec{k_j}\)</span> parallel to the other wave vectors and propagating along <span class="math inline">\(z\)</span>, the superposition reads as</p>
 <p><span class="math display">\[
 \psi \left( z , t \right) = \sum_j C_j \, \mathrm{e}^{i \left( \omega_j t - k_j z \right)}
 \]</span></p>
-<p>and exhibits the maximum amplitude at positions <span class="math inline">\(z_m\)</span>. This position of maximum amplitude propagates with the group velocity</p>
+<p>and exhibits the maximum amplitude at positions <span class="math inline">\(z_m = \left(\frac{\mathrm{d} \omega}{\mathrm{d} k} \right)_{k_0} \cdot t\)</span>.This position of maximum amplitude propagates with the group velocity</p>
 <p><span class="math display">\[
 v_{\mathrm{g}} = \frac{d\omega}{dk}
 \]</span></p>
-<p>along the <span class="math inline">\(z\)</span> direction. If we now assume the superposition of an <em>infinite number</em> of waves whose frequency values <span class="math inline">\(\omega\)</span> cover the whole interval <span class="math inline">\(\left[ \omega_0 - \Delta \omega/2 ; \omega_0 + \Delta \omega/2 \right]\)</span> and wavenumbers <span class="math inline">\(k\)</span> are in accord to that from the interval <span class="math inline">\(\left[ k_0 - \Delta k/2 ; k_0 + \Delta k/2 \right]\)</span>, the summation becomes an integration</p>
+<p>along the <span class="math inline">\(z\)</span> direction. If we now assume the superposition of a large number of waves whose frequency values <span class="math inline">\(\omega\)</span> are in a finite interval <span class="math inline">\(\left[ \omega_0 - \Delta \omega/2 ; \omega_0 + \Delta \omega/2 \right]\)</span> and wavenumbers <span class="math inline">\(k\)</span> are in accord to that from the interval <span class="math inline">\(\left[ k_0 - \Delta k/2 ; k_0 + \Delta k/2 \right]\)</span>, the summation can be approximated by an integration</p>
 <p><span class="math display">\[
 \psi \left( z , t \right) = \int_{k = k_0 - \Delta k/2}^{k_0 + \Delta k/2}  C\left(k\right) \, \mathrm{e}^{i \left( \omega t - k z \right)} \, \mathrm{d}k \mathrm{.}
 \]</span></p>
+<p>The <span class="math inline">\(C\left(k\right)\)</span> function is the amplitude distribution of the wave packet in momentum space. The wave packet’s width <span class="math inline">\(\Delta k\)</span> and the distribution of the amplitude <span class="math inline">\(C\left(k\right)\)</span> determine the shape of the wave packet. The wave packet’s maximum propagates with the group velocity <span class="math inline">\(v_{\mathrm{g}}\)</span> along the <span class="math inline">\(z\)</span> direction.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Position of Maximum Amplitude
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>If we rewrite frequencies and wave vectors as deviations from central values:</p>
+<p><span class="math display">\[\omega_j = \omega_0 + \Delta \omega_j \quad \text{and} \quad k_j = k_0 + \Delta k_j\]</span></p>
+<p>The phase in the exponential then becomes <span class="math inline">\((\omega_0 + \Delta \omega_j)t - (k_0 + \Delta k_j)z\)</span>. For constructive interference, the phases must be equal:</p>
+<p><span class="math display">\[(\omega_0 + \Delta \omega_j)t - (k_0 + \Delta k_j)z = \text{constant}\]</span></p>
+<p>For neighboring waves <span class="math inline">\((j \text{ and } j+1)\)</span>, this means:</p>
+<p><span class="math display">\[(\omega_0 + \Delta \omega_j)t - (k_0 + \Delta k_j)z = (\omega_0 + \Delta \omega_{j+1})t - (k_0 + \Delta k_{j+1})z\]</span></p>
+<p>Subtracting the common terms <span class="math inline">\(\omega_0t - k_0z\)</span> from both sides gives:</p>
+<p><span class="math display">\[\Delta\omega_j t - \Delta k_j z = \Delta\omega_{j+1} t - \Delta k_{j+1} z\]</span></p>
+<p>This finally leads to the relation:</p>
+<p><span class="math display">\[\mathrm{d}\omega \cdot t = \mathrm{d}k \cdot z\]</span></p>
+<p>Therefore:</p>
+<p><span class="math display">\[z = \frac{\mathrm{d}\omega}{\mathrm{d}k} \cdot t\]</span></p>
+<p>This <span class="math inline">\(z\)</span> gives the position of constructive interference, which is where the amplitude is maximum:</p>
+<p><span class="math display">\[z_m = \left(\frac{\mathrm{d}\omega}{\mathrm{d}k}\right)_{k_0} \cdot t\]</span></p>
+<p>The derivative <span class="math inline">\(\mathrm{d}\omega/\mathrm{d}k\)</span> evaluated at <span class="math inline">\(k_0\)</span> is the group velocity, showing that the maximum of the wave packet moves with the group velocity.</p>
+</div>
+</div>
+</div>
 <section id="constant-amplitude-wave-packets" class="level3">
 <h3 class="anchored" data-anchor-id="constant-amplitude-wave-packets">Constant amplitude wave packets</h3>
 <p>If the width of the wavenumber interval <span class="math inline">\(\Delta k\)</span> is small compared to the wavenumber <span class="math inline">\(k_0 \gg \Delta k\)</span>, we can expand <span class="math inline">\(\omega \left( k \right)\)</span> in a Taylor series and neglect higher terms than the linear one resulting in</p>
@@ -886,7 +920,7 @@ v_{\mathrm{g}} = \frac{d\omega}{dk}
 <p><span class="math display">\[
 A \left(z,t \right) = 2 C \left( k_0 \right) \, \frac{\sin \left(\Delta k \ u /2  \right)}{u} \mathrm{.}
 \]</span></p>
-<div id="ab678abf" class="cell" data-execution_count="2">
+<div id="8fe550bf" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters</span></span>
@@ -959,6 +993,62 @@ v_{\mathrm{g}} = \left(\frac{\mathrm{d} \omega}{\mathrm{d}k}\right)_{k_0} = \fra
 <li><p>The wavevector of the packet’s center <span class="math inline">\(\vec{k_0}\)</span> determines the momentum of the particle <span class="math inline">\(p_{\mathrm{p}} = \hbar k_0\)</span>.</p></li>
 <li><p>A wave packet is localized (in contrast to a plane wave) and the wave packet’s amplitude has maximum values only in a limited range <span class="math inline">\(\Delta z\)</span>. In the case <span class="math inline">\(t=0\)</span> we can calculate the width of the central maximum as distance between the roots <span class="math inline">\(\Delta z = 4\pi/\Delta k \le 2\pi/k_0 = \lambda_{\mathrm{p}}\)</span>. Thus, the width of the particle is at least as big as its de Broglie wavelength.</p></li>
 </ul>
+<div id="7614b948" class="cell" data-execution_count="3">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> <span class="dv">1000</span>  <span class="co"># number of points</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">20</span>, <span class="dv">20</span>, N)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>dx <span class="op">=</span> x[<span class="dv">1</span>] <span class="op">-</span> x[<span class="dv">0</span>]</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>k <span class="op">=</span> <span class="dv">2</span><span class="op">*</span>np.pi<span class="op">*</span>np.fft.fftfreq(N, dx)  <span class="co"># momentum space grid</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>k <span class="op">=</span> np.fft.fftshift(k)  <span class="co"># shift k-space grid</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>times <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">2</span>,<span class="dv">4</span>]  <span class="co"># three different times</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Create rectangular amplitude distribution in k-space</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>k0 <span class="op">=</span> <span class="fl">0.0</span>  <span class="co"># center wavevector</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>dk <span class="op">=</span> <span class="fl">2.0</span>  <span class="co"># width in k-space</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>psi_k <span class="op">=</span> np.zeros(N, dtype<span class="op">=</span><span class="bu">complex</span>)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>mask <span class="op">=</span> (k <span class="op">&gt;</span> k0<span class="op">-</span>dk<span class="op">/</span><span class="dv">2</span>) <span class="op">&amp;</span> (k <span class="op">&lt;</span> k0<span class="op">+</span>dk<span class="op">/</span><span class="dv">2</span>)</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>psi_k[mask] <span class="op">=</span> <span class="fl">1.0</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to calculate wavepacket at time t</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_wavepacket(t):</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Apply time evolution in k-space with dispersion</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># E = ℏ²k²/2m (using ℏ=m=1)</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    E_k <span class="op">=</span> <span class="fl">0.5</span> <span class="op">*</span> k<span class="op">**</span><span class="dv">2</span>  <span class="co"># quadratic dispersion relation</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    psi_k_t <span class="op">=</span> psi_k <span class="op">*</span> np.exp(<span class="op">-</span><span class="ot">1j</span> <span class="op">*</span> E_k <span class="op">*</span> t)</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Transform to position space</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>    psi_x <span class="op">=</span> np.fft.ifftshift(np.fft.ifft(np.fft.ifftshift(psi_k_t)))</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.<span class="bu">abs</span>(psi_x)<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Create three subplots</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>fig, (ax1, ax2, ax3) <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">3</span>, figsize<span class="op">=</span>get_size(<span class="dv">12</span>, <span class="dv">5</span>))</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>axes <span class="op">=</span> [ax1, ax2, ax3]</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot wavepacket at different times</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ax, t <span class="kw">in</span> <span class="bu">zip</span>(axes, times):</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> get_wavepacket(t)</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>    ax.plot(x, y<span class="op">/</span>y.<span class="bu">max</span>(), <span class="st">'b-'</span>)</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>    ax.set_xlim(<span class="op">-</span><span class="dv">20</span>, <span class="dv">20</span>)</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>    ax.set_ylim(<span class="dv">0</span>, <span class="fl">1.2</span>)</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>    ax.set_xlabel(<span class="st">'position'</span>)</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> t <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>        ax.set_ylabel(<span class="st">'prob. density'</span>)</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>    ax.set_title(<span class="ss">f't = </span><span class="sc">{</span>t<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Matter_waves_files/figure-html/cell-4-output-1.png" width="694" height="279" class="figure-img"></p>
+<figcaption>Constant amplitude wavepacket propagating in time and changing shape due to dispersion.</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
 <section id="gaussian-wave-packets" class="level3">
 <h3 class="anchored" data-anchor-id="gaussian-wave-packets">Gaussian wave packets</h3>
@@ -966,96 +1056,10 @@ v_{\mathrm{g}} = \left(\frac{\mathrm{d} \omega}{\mathrm{d}k}\right)_{k_0} = \fra
 <p><span class="math display">\[
 C \left( k \right) = C \left( k_0 \right) \, \mathrm{e}^{- \frac{\left( k-k_0\right)^2}{2 \Delta k^2}} \mathrm{.}
 \]</span></p>
-<div id="e5624b4a" class="cell" data-execution_count="3">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>k0 <span class="op">=</span> <span class="fl">10.0</span>  <span class="co"># central wave number</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>omega0 <span class="op">=</span> <span class="fl">2.0</span>  <span class="co"># central frequency</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>C <span class="op">=</span> <span class="fl">1.0</span>  <span class="co"># amplitude constant</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> <span class="dv">0</span>  <span class="co"># time (starting at t=0)</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Spatial grid</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">1000</span>)</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Create figure with two subplots side by side</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>fig, (ax1, ax2) <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>get_size(<span class="dv">12</span>, <span class="dv">6</span>))</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to create Gaussian wave packet</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> gaussian_wavepacket(z, t, Delta_k):</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    k <span class="op">=</span> np.linspace(k0 <span class="op">-</span> <span class="dv">3</span><span class="op">*</span>Delta_k, k0 <span class="op">+</span> <span class="dv">3</span><span class="op">*</span>Delta_k, <span class="dv">1000</span>)</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    dk <span class="op">=</span> k[<span class="dv">1</span>] <span class="op">-</span> k[<span class="dv">0</span>]</span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Gaussian amplitude distribution</span></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    C_k <span class="op">=</span> C <span class="op">*</span> np.exp(<span class="op">-</span>(k <span class="op">-</span> k0)<span class="op">**</span><span class="dv">2</span> <span class="op">/</span> (<span class="dv">2</span> <span class="op">*</span> Delta_k<span class="op">**</span><span class="dv">2</span>))</span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Calculate wave packet through integration</span></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    psi <span class="op">=</span> np.zeros(<span class="bu">len</span>(z), dtype<span class="op">=</span><span class="bu">complex</span>)</span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i, ki <span class="kw">in</span> <span class="bu">enumerate</span>(k):</span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>        psi <span class="op">+=</span> C_k[i] <span class="op">*</span> np.exp(<span class="ot">1j</span> <span class="op">*</span> (omega0 <span class="op">*</span> t <span class="op">-</span> ki <span class="op">*</span> z)) <span class="op">*</span> dk</span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> psi</span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot for Delta_k = π/2</span></span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>Delta_k1 <span class="op">=</span> np.pi<span class="op">/</span><span class="dv">2</span></span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>psi1 <span class="op">=</span> gaussian_wavepacket(z, t, Delta_k1)</span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>envelope1 <span class="op">=</span> np.<span class="bu">abs</span>(psi1)</span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>ax1.plot(z, np.real(psi1), <span class="st">'k-'</span>, label<span class="op">=</span><span class="st">'Re(ψ)'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>ax1.plot(z, envelope1, <span class="st">'r--'</span>, label<span class="op">=</span><span class="st">'Envelope |ψ|'</span>, linewidth<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>ax1.plot(z, <span class="op">-</span>envelope1, <span class="st">'r--'</span>, linewidth<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>ax1.set_xlabel(<span class="st">'z'</span>)</span>
-<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>ax1.set_ylabel(<span class="st">'ψ(z,t)'</span>)</span>
-<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>ax1.set_title(<span class="ss">f'Gaussian Wave Packet at t=0</span><span class="ch">\n</span><span class="ss">Δk = π/2'</span>)</span>
-<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot for Delta_k = π</span></span>
-<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>Delta_k2 <span class="op">=</span> np.pi</span>
-<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>psi2 <span class="op">=</span> gaussian_wavepacket(z, t, Delta_k2)</span>
-<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>envelope2 <span class="op">=</span> np.<span class="bu">abs</span>(psi2)</span>
-<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>ax2.plot(z, np.real(psi2), <span class="st">'k-'</span>, label<span class="op">=</span><span class="st">'Re(ψ)'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
-<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>ax2.plot(z, envelope2, <span class="st">'r--'</span>, label<span class="op">=</span><span class="st">'Envelope |ψ|'</span>, linewidth<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>ax2.plot(z, <span class="op">-</span>envelope2, <span class="st">'r--'</span>, linewidth<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>ax2.set_xlabel(<span class="st">'z'</span>)</span>
-<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>ax2.set_ylabel(<span class="st">'ψ(z,t)'</span>)</span>
-<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>ax2.set_title(<span class="ss">f'Gaussian Wave Packet at t=0</span><span class="ch">\n</span><span class="ss">Δk = π'</span>)</span>
-<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="Matter_waves_files/figure-html/cell-4-output-1.png" width="694" height="336" class="figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Despite the correspondences we have figured out so far, a wave packet is not directly the wave equivalent model of a particle. Reasons are:</p>
-<ul>
-<li><p>The wave function <span class="math inline">\(\psi \left( z, t \right)\)</span> might adopt a negative or complex value. Those values cannot be directly correlated with real measurands.</p></li>
-<li><p>Due to the dispersion of matter waves, the width of the wave packet will increase with time. Thus, the wave packet alters, whereas the shape of a classical particle remains constant.</p></li>
-<li><p>An elementary particle like an electron is supposed to be indivisible. A wave, however, might be split into two or more partial waves that propagate independently.</p></li>
-</ul>
-<p>These arguments then motivated Max Born to propose a statistical interpretation of matter waves.</p>
-</section>
-</section>
-<section id="the-statistical-interpretation-of-matter-waves" class="level2">
-<h2 class="anchored" data-anchor-id="the-statistical-interpretation-of-matter-waves">The statistical interpretation of matter waves</h2>
-<p>When a particle arrives at an interface, it will be either reflected or transmitted. Therefore, it appears reasonable to correlate the reflected and transmitted parts of a matter wave with the according likelihoods of a particle being reflected or transmitted, respectively. Because likelihood itself is a real number which adopts values between <span class="math inline">\(0\)</span> and <span class="math inline">\(1\)</span>, the amplitude of a matter wave is not suited for this purpose. Instead, one introduced the square of the complex wave function <span class="math inline">\(\left| \psi \left( z, t \right) \right|^2\)</span> as <strong>probability density</strong>. The probability that the particle is located within the interval <span class="math inline">\(\left[z, z+\mathrm{d}z \right]\)</span> at time <span class="math inline">\(t\)</span> is proportional to the square of the wave function <span class="math inline">\(\psi \left( z, t \right)\)</span> representing this particle,</p>
-<p><span class="math display">\[
-P\left( z, t \right) \mathrm{d}z \propto \left| \psi \left( z, t \right) \right|^2 \mathrm{d}z
-\]</span></p>
-<p>A particle which propagates along <span class="math inline">\(z\)</span> direction is supposed to be located between <span class="math inline">\(z = -\infty\)</span> and <span class="math inline">\(z=+\infty\)</span>, hence the probability to find our particle between <span class="math inline">\(-\infty\)</span> and <span class="math inline">\(+\infty\)</span> is <span class="math inline">\(P = 1\)</span>. That is why the normalization condition reads as</p>
-<p><span class="math display">\[
-\int_{z = -\infty}^{+\infty} \left| \psi \left( z, t \right) \right|^2 \, \mathrm{d}z = 1
-\]</span></p>
-<p>thus, the factor of proportionality is <span class="math inline">\(1\)</span> and we are allowed to state</p>
-<p><span class="math display">\[
-P\left( z, t \right) \mathrm{d}z = \left| \psi \left( z, t \right) \right|^2 \mathrm{d}z \mathrm{.}
-\]</span></p>
-<div id="e8ae41fe" class="cell" data-execution_count="4">
+<p>such that</p>
+<p><span class="math display">\[\psi(z,t) = \int_{-\infty}^{\infty} C(k_0) \exp\left(-\frac{(k-k_0)^2}{2\Delta k^2}\right) \exp\left(i(kz - \omega(k)t)\right) dk\]</span></p>
+<p>This wavefunction with the envelope is depicted below.</p>
+<div id="d90ada6f" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters</span></span>
@@ -1065,7 +1069,7 @@ P\left( z, t \right) \mathrm{d}z = \left| \psi \left( z, t \right) \right|^2 \ma
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> <span class="dv">0</span>  <span class="co"># time (starting at t=0)</span></span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Spatial grid</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">1000</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">1000</span>)</span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Create figure with two subplots side by side</span></span>
 <span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>fig, (ax1, ax2) <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>get_size(<span class="dv">12</span>, <span class="dv">6</span>))</span>
@@ -1088,32 +1092,293 @@ P\left( z, t \right) \mathrm{d}z = \left| \psi \left( z, t \right) \right|^2 \ma
 <span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot for Delta_k = π/2</span></span>
 <span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>Delta_k1 <span class="op">=</span> np.pi<span class="op">/</span><span class="dv">2</span></span>
 <span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>psi1 <span class="op">=</span> gaussian_wavepacket(z, t, Delta_k1)</span>
-<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>prob_density1 <span class="op">=</span> np.<span class="bu">abs</span>(psi1)<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>envelope1 <span class="op">=</span> np.<span class="bu">abs</span>(psi1)</span>
 <span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>ax1.plot(z, prob_density1, <span class="st">'b-'</span>, label<span class="op">=</span><span class="st">'|ψ|²'</span>)</span>
-<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>ax1.fill_between(z, prob_density1, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
-<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>ax1.set_xlabel(<span class="st">'z'</span>)</span>
-<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>ax1.set_ylabel(<span class="st">'|ψ(z,t)|²'</span>)</span>
-<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>ax1.set_title(<span class="ss">f'Probability Density at t=0</span><span class="ch">\n</span><span class="ss">Δk = π/2'</span>)</span>
-<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot for Delta_k = π</span></span>
-<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>Delta_k2 <span class="op">=</span> np.pi</span>
-<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>psi2 <span class="op">=</span> gaussian_wavepacket(z, t, Delta_k2)</span>
-<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>prob_density2 <span class="op">=</span> np.<span class="bu">abs</span>(psi2)<span class="op">**</span><span class="dv">2</span></span>
-<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>ax2.plot(z, prob_density2, <span class="st">'b-'</span>, label<span class="op">=</span><span class="st">'|ψ|²'</span>)</span>
-<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>ax2.fill_between(z, prob_density2, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
-<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>ax2.set_xlabel(<span class="st">'z'</span>)</span>
-<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>ax2.set_ylabel(<span class="st">'|ψ(z,t)|²'</span>)</span>
-<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>ax2.set_title(<span class="ss">f'Probability Density at t=0</span><span class="ch">\n</span><span class="ss">Δk = π'</span>)</span>
-<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>ax1.plot(z, np.real(psi1), <span class="st">'k-'</span>, label<span class="op">=</span><span class="st">'Re(ψ)'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>ax1.plot(z, envelope1, <span class="st">'r--'</span>, label<span class="op">=</span><span class="st">'Envelope |ψ|'</span>, linewidth<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>ax1.plot(z, <span class="op">-</span>envelope1, <span class="st">'r--'</span>, linewidth<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>ax1.set_xlabel(<span class="st">'z'</span>)</span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>ax1.set_ylabel(<span class="st">'ψ(z,t)'</span>)</span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>ax1.set_title(<span class="ss">f'Gaussian Wave Packet at t=0</span><span class="ch">\n</span><span class="ss">Δk = π/2'</span>)</span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot for Delta_k = π</span></span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>Delta_k2 <span class="op">=</span> np.pi</span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>psi2 <span class="op">=</span> gaussian_wavepacket(z, t, Delta_k2)</span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>envelope2 <span class="op">=</span> np.<span class="bu">abs</span>(psi2)</span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>ax2.plot(z, np.real(psi2), <span class="st">'k-'</span>, label<span class="op">=</span><span class="st">'Re(ψ)'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>ax2.plot(z, envelope2, <span class="st">'r--'</span>, label<span class="op">=</span><span class="st">'Envelope |ψ|'</span>, linewidth<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>ax2.plot(z, <span class="op">-</span>envelope2, <span class="st">'r--'</span>, linewidth<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>ax2.set_xlabel(<span class="st">'z'</span>)</span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>ax2.set_ylabel(<span class="st">'ψ(z,t)'</span>)</span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>ax2.set_title(<span class="ss">f'Gaussian Wave Packet at t=0</span><span class="ch">\n</span><span class="ss">Δk = π'</span>)</span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="Matter_waves_files/figure-html/cell-5-output-1.png" width="676" height="336" class="figure-img"></p>
+<p><img src="Matter_waves_files/figure-html/cell-5-output-1.png" width="694" height="336" class="figure-img"></p>
+<figcaption>Gaussian wavpacket with different width in momentum space.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The integral over all wavevectors can be carried out and leads to the wave packet in position space with the envelope</p>
+<p><span class="math display">\[
+|\psi(z,t)| = \frac{1}{\sqrt{\sigma(t)\sqrt{2\pi}}} \exp\left(-\frac{(z-v_gt)^2}{4\sigma^2(t)}\right)
+\]</span></p>
+<p>where <span class="math display">\[
+\sigma(t) = \sigma_0\sqrt{1 + \left(\frac{\hbar t}{2m\sigma_0^2}\right)^2}
+\]</span></p>
+<p>is the time-dependent width, <span class="math inline">\(v_g = \hbar k_0/m\)</span> is the group velocity, and the initial width <span class="math inline">\(\sigma_0\)</span> is related to the k-space width by <span class="math inline">\(\sigma_0 = 1/(2\Delta k)\)</span>. The width increases quadratically with time as</p>
+<p><span class="math display">\[
+\sigma^2(t) = \sigma_0^2\left(1 + \frac{\hbar^2t^2}{4m^2\sigma_0^4}\right)
+\]</span></p>
+<p>where the spreading rate depends on the initial width <span class="math inline">\(\sigma_0\)</span> (narrower packets spread faster), Planck’s constant <span class="math inline">\(\hbar\)</span>, and the particle mass <span class="math inline">\(m\)</span> (heavier particles spread more slowly). For <span class="math inline">\(t = 0\)</span>, we recover the initial variance <span class="math inline">\(\sigma_0^2\)</span>, while for large times, the variance grows quadratically as <span class="math inline">\(\sigma^2(t) \approx \frac{\hbar^2t^2}{4m^2\sigma_0^2}\)</span>.</p>
+<div id="52d39c3f" class="cell" data-execution_count="5">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>hbar <span class="op">=</span> <span class="fl">1.0</span>  <span class="co"># reduced Planck's constant</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> <span class="fl">1.0</span>    <span class="co"># mass</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>sigma0 <span class="op">=</span> <span class="fl">1.0</span>  <span class="co"># initial width</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>k0 <span class="op">=</span> <span class="fl">2.0</span>    <span class="co"># initial wave number</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">1000</span>)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>times <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">4</span>]  <span class="co"># three different times</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to calculate wave packet at time t</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> gaussian_packet(x, t):</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Complex time-dependent width</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    sigma_t <span class="op">=</span> sigma0 <span class="op">*</span> np.sqrt(<span class="dv">1</span> <span class="op">+</span> (<span class="ot">1j</span><span class="op">*</span>hbar<span class="op">*</span>t)<span class="op">/</span>(<span class="dv">2</span><span class="op">*</span>m<span class="op">*</span>sigma0<span class="op">**</span><span class="dv">2</span>))</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Normalization</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    norm <span class="op">=</span> <span class="dv">1</span><span class="op">/</span>np.sqrt(np.sqrt(<span class="dv">2</span><span class="op">*</span>np.pi)<span class="op">*</span>sigma_t)</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Gaussian envelope with phase</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>    psi <span class="op">=</span> norm <span class="op">*</span> np.exp(<span class="op">-</span>(x<span class="op">**</span><span class="dv">2</span>)<span class="op">/</span>(<span class="dv">4</span><span class="op">*</span>sigma_t<span class="op">**</span><span class="dv">2</span>)) <span class="op">*</span> np.exp(<span class="ot">1j</span><span class="op">*</span>k0<span class="op">*</span>x)</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.<span class="bu">abs</span>(psi)<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Create three subplots</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>fig, (ax1, ax2, ax3) <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">3</span>, figsize<span class="op">=</span>get_size(<span class="dv">12</span>, <span class="dv">5</span>))</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>axes <span class="op">=</span> [ax1, ax2, ax3]</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot wavepacket at different times</span></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ax, t <span class="kw">in</span> <span class="bu">zip</span>(axes, times):</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> gaussian_packet(x, t)</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>    ax.plot(x, y, <span class="st">'b-'</span>,)</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>    ax.set_xlim(<span class="op">-</span><span class="dv">10</span>, <span class="dv">10</span>)</span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>    ax.set_ylim(<span class="dv">0</span>, <span class="fl">0.5</span>)</span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>    ax.set_xlabel(<span class="st">'position'</span>)</span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> t <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>        ax.set_ylabel(<span class="st">'prob density'</span>)</span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>    ax.set_title(<span class="ss">f't = </span><span class="sc">{</span>t<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Matter_waves_files/figure-html/cell-6-output-1.png" width="694" height="279" class="figure-img"></p>
+<figcaption>Gaussian wavepacket propagation. The width of the wavepacket changes in time due to the dispersion of massive particles.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold hidden">
+<summary>Code</summary>
+<div class="sourceCode cell-code hidden" id="cb5" data-startfrom="466" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 465;"><span id="cb5-466"><a href="#cb5-466" aria-hidden="true" tabindex="-1"></a><span class="co">// Create plot container</span></span>
+<span id="cb5-467"><a href="#cb5-467" aria-hidden="true" tabindex="-1"></a>viewof plot <span class="op">=</span> {</span>
+<span id="cb5-468"><a href="#cb5-468" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Setup parameters</span></span>
+<span id="cb5-469"><a href="#cb5-469" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> width <span class="op">=</span> <span class="dv">600</span><span class="op">;</span></span>
+<span id="cb5-470"><a href="#cb5-470" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> height <span class="op">=</span> <span class="dv">200</span><span class="op">;</span></span>
+<span id="cb5-471"><a href="#cb5-471" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> margin <span class="op">=</span> {<span class="dt">top</span><span class="op">:</span> <span class="dv">20</span><span class="op">,</span> <span class="dt">right</span><span class="op">:</span> <span class="dv">20</span><span class="op">,</span> <span class="dt">bottom</span><span class="op">:</span> <span class="dv">40</span><span class="op">,</span> <span class="dt">left</span><span class="op">:</span> <span class="dv">60</span>}<span class="op">;</span></span>
+<span id="cb5-472"><a href="#cb5-472" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-473"><a href="#cb5-473" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Physical constants (in natural units)</span></span>
+<span id="cb5-474"><a href="#cb5-474" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> hbar <span class="op">=</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb5-475"><a href="#cb5-475" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> m <span class="op">=</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb5-476"><a href="#cb5-476" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> sigma0 <span class="op">=</span> <span class="fl">0.1</span><span class="op">;</span>  <span class="co">// initial width</span></span>
+<span id="cb5-477"><a href="#cb5-477" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> k0 <span class="op">=</span> <span class="dv">50</span><span class="op">;</span>  <span class="co">// central wavevector</span></span>
+<span id="cb5-478"><a href="#cb5-478" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> period <span class="op">=</span> <span class="fl">0.2</span><span class="op">;</span>  <span class="co">// time period for the loop</span></span>
+<span id="cb5-479"><a href="#cb5-479" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-480"><a href="#cb5-480" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Create SVG</span></span>
+<span id="cb5-481"><a href="#cb5-481" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> svg <span class="op">=</span> d3<span class="op">.</span><span class="fu">create</span>(<span class="st">"svg"</span>)</span>
+<span id="cb5-482"><a href="#cb5-482" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"width"</span><span class="op">,</span> width)</span>
+<span id="cb5-483"><a href="#cb5-483" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"height"</span><span class="op">,</span> height)<span class="op">;</span></span>
+<span id="cb5-484"><a href="#cb5-484" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-485"><a href="#cb5-485" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Setup scales</span></span>
+<span id="cb5-486"><a href="#cb5-486" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> x <span class="op">=</span> d3<span class="op">.</span><span class="fu">scaleLinear</span>()</span>
+<span id="cb5-487"><a href="#cb5-487" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">domain</span>([<span class="op">-</span><span class="dv">2</span><span class="op">,</span> <span class="dv">15</span>])</span>
+<span id="cb5-488"><a href="#cb5-488" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">range</span>([margin<span class="op">.</span><span class="at">left</span><span class="op">,</span> width <span class="op">-</span> margin<span class="op">.</span><span class="at">right</span>])<span class="op">;</span></span>
+<span id="cb5-489"><a href="#cb5-489" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-490"><a href="#cb5-490" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> y <span class="op">=</span> d3<span class="op">.</span><span class="fu">scaleLinear</span>()</span>
+<span id="cb5-491"><a href="#cb5-491" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">domain</span>([<span class="dv">0</span><span class="op">,</span> <span class="dv">3</span>])</span>
+<span id="cb5-492"><a href="#cb5-492" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">range</span>([height <span class="op">-</span> margin<span class="op">.</span><span class="at">bottom</span><span class="op">,</span> margin<span class="op">.</span><span class="at">top</span>])<span class="op">;</span></span>
+<span id="cb5-493"><a href="#cb5-493" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-494"><a href="#cb5-494" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Add axes</span></span>
+<span id="cb5-495"><a href="#cb5-495" aria-hidden="true" tabindex="-1"></a>  svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"g"</span>)</span>
+<span id="cb5-496"><a href="#cb5-496" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"transform"</span><span class="op">,</span> <span class="vs">`translate(0,</span><span class="sc">${</span>height <span class="op">-</span> margin<span class="op">.</span><span class="at">bottom</span><span class="sc">}</span><span class="vs">)`</span>)</span>
+<span id="cb5-497"><a href="#cb5-497" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">call</span>(d3<span class="op">.</span><span class="fu">axisBottom</span>(x)<span class="op">.</span><span class="fu">ticks</span>(<span class="dv">10</span>))</span>
+<span id="cb5-498"><a href="#cb5-498" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">append</span>(<span class="st">"text"</span>)</span>
+<span id="cb5-499"><a href="#cb5-499" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"x"</span><span class="op">,</span> width<span class="op">/</span><span class="dv">2</span>)</span>
+<span id="cb5-500"><a href="#cb5-500" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"y"</span><span class="op">,</span> <span class="dv">35</span>)</span>
+<span id="cb5-501"><a href="#cb5-501" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> <span class="st">"black"</span>)</span>
+<span id="cb5-502"><a href="#cb5-502" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">text</span>(<span class="st">"Position"</span>)<span class="op">;</span></span>
+<span id="cb5-503"><a href="#cb5-503" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-504"><a href="#cb5-504" aria-hidden="true" tabindex="-1"></a>  svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"g"</span>)</span>
+<span id="cb5-505"><a href="#cb5-505" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"transform"</span><span class="op">,</span> <span class="vs">`translate(</span><span class="sc">${</span>margin<span class="op">.</span><span class="at">left</span><span class="sc">}</span><span class="vs">,0)`</span>)</span>
+<span id="cb5-506"><a href="#cb5-506" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">call</span>(d3<span class="op">.</span><span class="fu">axisLeft</span>(y)<span class="op">.</span><span class="fu">ticks</span>(<span class="dv">5</span>))</span>
+<span id="cb5-507"><a href="#cb5-507" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">append</span>(<span class="st">"text"</span>)</span>
+<span id="cb5-508"><a href="#cb5-508" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"transform"</span><span class="op">,</span> <span class="st">"rotate(-90)"</span>)</span>
+<span id="cb5-509"><a href="#cb5-509" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"x"</span><span class="op">,</span> <span class="op">-</span>height<span class="op">/</span><span class="dv">3</span>)</span>
+<span id="cb5-510"><a href="#cb5-510" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"y"</span><span class="op">,</span> <span class="op">-</span><span class="dv">40</span>)</span>
+<span id="cb5-511"><a href="#cb5-511" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> <span class="st">"black"</span>)</span>
+<span id="cb5-512"><a href="#cb5-512" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">text</span>(<span class="st">"Probability Density"</span>)<span class="op">;</span></span>
+<span id="cb5-513"><a href="#cb5-513" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-514"><a href="#cb5-514" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Function to calculate wavepacket at time t</span></span>
+<span id="cb5-515"><a href="#cb5-515" aria-hidden="true" tabindex="-1"></a>  <span class="kw">function</span> <span class="fu">gaussianPacket</span>(x<span class="op">,</span> t) {</span>
+<span id="cb5-516"><a href="#cb5-516" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> sigma_t <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">sqrt</span>(sigma0<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> (hbar<span class="op">*</span>t<span class="op">/</span>(<span class="dv">2</span><span class="op">*</span>m<span class="op">*</span>sigma0))<span class="op">**</span><span class="dv">2</span>)<span class="op">;</span></span>
+<span id="cb5-517"><a href="#cb5-517" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> vg <span class="op">=</span> hbar<span class="op">*</span>k0<span class="op">/</span>m<span class="op">;</span></span>
+<span id="cb5-518"><a href="#cb5-518" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> x_shifted <span class="op">=</span> x <span class="op">-</span> (vg<span class="op">*</span>t <span class="op">%</span> <span class="dv">20</span>)<span class="op">;</span> <span class="co">// modulo for looping</span></span>
+<span id="cb5-519"><a href="#cb5-519" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">exp</span>(<span class="op">-</span>x_shifted<span class="op">*</span>x_shifted<span class="op">/</span>(<span class="dv">4</span><span class="op">*</span>sigma_t<span class="op">*</span>sigma_t))<span class="op">/</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">sqrt</span>(<span class="dv">2</span><span class="op">*</span><span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span><span class="op">*</span>sigma_t<span class="op">*</span>sigma_t))<span class="op">;</span></span>
+<span id="cb5-520"><a href="#cb5-520" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb5-521"><a href="#cb5-521" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-522"><a href="#cb5-522" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Create line generator</span></span>
+<span id="cb5-523"><a href="#cb5-523" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> line <span class="op">=</span> d3<span class="op">.</span><span class="fu">line</span>()</span>
+<span id="cb5-524"><a href="#cb5-524" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">x</span>(d <span class="kw">=&gt;</span> <span class="fu">x</span>(d<span class="op">.</span><span class="at">x</span>))</span>
+<span id="cb5-525"><a href="#cb5-525" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">y</span>(d <span class="kw">=&gt;</span> <span class="fu">y</span>(d<span class="op">.</span><span class="at">y</span>))<span class="op">;</span></span>
+<span id="cb5-526"><a href="#cb5-526" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-527"><a href="#cb5-527" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Animation</span></span>
+<span id="cb5-528"><a href="#cb5-528" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> t <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb5-529"><a href="#cb5-529" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> dt <span class="op">=</span> <span class="fl">0.001</span><span class="op">;</span></span>
+<span id="cb5-530"><a href="#cb5-530" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-531"><a href="#cb5-531" aria-hidden="true" tabindex="-1"></a>  <span class="kw">function</span> <span class="fu">update</span>() {</span>
+<span id="cb5-532"><a href="#cb5-532" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Calculate wavepacket</span></span>
+<span id="cb5-533"><a href="#cb5-533" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> points <span class="op">=</span> d3<span class="op">.</span><span class="fu">range</span>(<span class="op">-</span><span class="dv">2</span><span class="op">,</span> <span class="dv">15</span><span class="op">,</span> <span class="fl">0.1</span>)<span class="op">.</span><span class="fu">map</span>(x <span class="kw">=&gt;</span> ({</span>
+<span id="cb5-534"><a href="#cb5-534" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> x<span class="op">,</span></span>
+<span id="cb5-535"><a href="#cb5-535" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> <span class="fu">gaussianPacket</span>(x<span class="op">,</span> t <span class="op">%</span> period)  <span class="co">// use modulo for time looping</span></span>
+<span id="cb5-536"><a href="#cb5-536" aria-hidden="true" tabindex="-1"></a>    }))<span class="op">;</span></span>
+<span id="cb5-537"><a href="#cb5-537" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-538"><a href="#cb5-538" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Update or create path</span></span>
+<span id="cb5-539"><a href="#cb5-539" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> path <span class="op">=</span> svg<span class="op">.</span><span class="fu">selectAll</span>(<span class="st">"path.wavepacket"</span>)</span>
+<span id="cb5-540"><a href="#cb5-540" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">data</span>([points])<span class="op">;</span></span>
+<span id="cb5-541"><a href="#cb5-541" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-542"><a href="#cb5-542" aria-hidden="true" tabindex="-1"></a>    path<span class="op">.</span><span class="fu">enter</span>()</span>
+<span id="cb5-543"><a href="#cb5-543" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">append</span>(<span class="st">"path"</span>)</span>
+<span id="cb5-544"><a href="#cb5-544" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"class"</span><span class="op">,</span> <span class="st">"wavepacket"</span>)</span>
+<span id="cb5-545"><a href="#cb5-545" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">merge</span>(path)</span>
+<span id="cb5-546"><a href="#cb5-546" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> <span class="st">"none"</span>)</span>
+<span id="cb5-547"><a href="#cb5-547" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke"</span><span class="op">,</span> <span class="st">"blue"</span>)</span>
+<span id="cb5-548"><a href="#cb5-548" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke-width"</span><span class="op">,</span> <span class="dv">2</span>)</span>
+<span id="cb5-549"><a href="#cb5-549" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"d"</span><span class="op">,</span> line)<span class="op">;</span></span>
+<span id="cb5-550"><a href="#cb5-550" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-551"><a href="#cb5-551" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Update time display</span></span>
+<span id="cb5-552"><a href="#cb5-552" aria-hidden="true" tabindex="-1"></a>    svg<span class="op">.</span><span class="fu">selectAll</span>(<span class="st">"text.time"</span>)</span>
+<span id="cb5-553"><a href="#cb5-553" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">data</span>([<span class="vs">`t = </span><span class="sc">${</span>(t <span class="op">%</span> period)<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">3</span>)<span class="sc">}</span><span class="vs">`</span>])</span>
+<span id="cb5-554"><a href="#cb5-554" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">join</span>(<span class="st">"text"</span>)</span>
+<span id="cb5-555"><a href="#cb5-555" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"class"</span><span class="op">,</span> <span class="st">"time"</span>)</span>
+<span id="cb5-556"><a href="#cb5-556" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"x"</span><span class="op">,</span> width <span class="op">-</span> <span class="dv">4</span><span class="op">*</span>margin<span class="op">.</span><span class="at">right</span>)</span>
+<span id="cb5-557"><a href="#cb5-557" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"y"</span><span class="op">,</span> margin<span class="op">.</span><span class="at">top</span>)</span>
+<span id="cb5-558"><a href="#cb5-558" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">text</span>(d <span class="kw">=&gt;</span> d)<span class="op">;</span></span>
+<span id="cb5-559"><a href="#cb5-559" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-560"><a href="#cb5-560" aria-hidden="true" tabindex="-1"></a>    t <span class="op">+=</span> dt<span class="op">;</span></span>
+<span id="cb5-561"><a href="#cb5-561" aria-hidden="true" tabindex="-1"></a>    <span class="fu">requestAnimationFrame</span>(update)<span class="op">;</span>  <span class="co">// removed conditional to make it loop</span></span>
+<span id="cb5-562"><a href="#cb5-562" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb5-563"><a href="#cb5-563" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-564"><a href="#cb5-564" aria-hidden="true" tabindex="-1"></a>  <span class="fu">update</span>()<span class="op">;</span></span>
+<span id="cb5-565"><a href="#cb5-565" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> svg<span class="op">.</span><span class="fu">node</span>()<span class="op">;</span></span>
+<span id="cb5-566"><a href="#cb5-566" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<p>Despite the correspondences we have figured out so far, a wave packet is not directly the wave equivalent model of a particle. Reasons are:</p>
+<ul>
+<li><p>The wave function <span class="math inline">\(\psi \left( z, t \right)\)</span> might adopt a negative or complex value. Those values cannot be directly correlated with real measurands.</p></li>
+<li><p>Due to the dispersion of matter waves, the width of the wave packet will increase with time. Thus, the wave packet alters, whereas the shape of a classical particle remains constant.</p></li>
+<li><p>An elementary particle like an electron is supposed to be indivisible. A wave, however, might be split into two or more partial waves that propagate independently.</p></li>
+</ul>
+<p>These arguments then motivated Max Born to propose a statistical interpretation of matter waves.</p>
+</section>
+</section>
+<section id="the-statistical-interpretation-of-matter-waves" class="level2">
+<h2 class="anchored" data-anchor-id="the-statistical-interpretation-of-matter-waves">The statistical interpretation of matter waves</h2>
+<p>Max Born proposed a probabilistic interpretation of quantum mechanics where the wavefunction itself does not represent a physical quantity, but rather its absolute square gives the probability density for finding a particle at a particular position. For a particle described by a wavefunction <span class="math inline">\(\psi(z,t)\)</span>, the probability of finding it within an infinitesimal interval <span class="math inline">\([z, z+dz]\)</span> at time <span class="math inline">\(t\)</span> is given by:</p>
+<p><span class="math display">\[
+P(z,t)dz = |\psi(z,t)|^2 dz
+\]</span></p>
+<p>This interpretation arose from Born’s analysis of scattering problems, where he recognized that <span class="math inline">\(|\psi|^2\)</span> gives the probability of a particular scattering outcome. The wavefunction itself can take complex values, but its squared modulus is always real and non-negative, making it suitable as a probability density.</p>
+<p>Since the particle must exist somewhere in space, the total probability of finding it anywhere must equal 1, leading to the normalization condition:</p>
+<p><span class="math display">\[
+\int_{-\infty}^{+\infty} |\psi(z,t)|^2 dz = 1
+\]</span></p>
+<div id="b4bc98b4" class="cell" data-execution_count="6">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>k0 <span class="op">=</span> <span class="fl">10.0</span>  <span class="co"># central wave number</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>omega0 <span class="op">=</span> <span class="fl">2.0</span>  <span class="co"># central frequency</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>C <span class="op">=</span> <span class="fl">1.0</span>  <span class="co"># amplitude constant</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> <span class="dv">0</span>  <span class="co"># time (starting at t=0)</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Spatial grid</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">1000</span>)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Create figure with two subplots side by side</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>fig, (ax1, ax2) <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>get_size(<span class="dv">12</span>, <span class="dv">6</span>))</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to create Gaussian wave packet</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> gaussian_wavepacket(z, t, Delta_k):</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>    k <span class="op">=</span> np.linspace(k0 <span class="op">-</span> <span class="dv">3</span><span class="op">*</span>Delta_k, k0 <span class="op">+</span> <span class="dv">3</span><span class="op">*</span>Delta_k, <span class="dv">1000</span>)</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>    dk <span class="op">=</span> k[<span class="dv">1</span>] <span class="op">-</span> k[<span class="dv">0</span>]</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Gaussian amplitude distribution</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>    C_k <span class="op">=</span> C <span class="op">*</span> np.exp(<span class="op">-</span>(k <span class="op">-</span> k0)<span class="op">**</span><span class="dv">2</span> <span class="op">/</span> (<span class="dv">2</span> <span class="op">*</span> Delta_k<span class="op">**</span><span class="dv">2</span>))</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Calculate wave packet through integration</span></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>    psi <span class="op">=</span> np.zeros(<span class="bu">len</span>(z), dtype<span class="op">=</span><span class="bu">complex</span>)</span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i, ki <span class="kw">in</span> <span class="bu">enumerate</span>(k):</span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>        psi <span class="op">+=</span> C_k[i] <span class="op">*</span> np.exp(<span class="ot">1j</span> <span class="op">*</span> (omega0 <span class="op">*</span> t <span class="op">-</span> ki <span class="op">*</span> z)) <span class="op">*</span> dk</span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> psi</span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot for Delta_k = π/2</span></span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>Delta_k1 <span class="op">=</span> np.pi<span class="op">/</span><span class="dv">2</span></span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>psi1 <span class="op">=</span> gaussian_wavepacket(z, t, Delta_k1)</span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>prob_density1 <span class="op">=</span> np.<span class="bu">abs</span>(psi1)<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>ax1.plot(z, prob_density1, <span class="st">'b-'</span>, label<span class="op">=</span><span class="st">'|ψ|²'</span>)</span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>ax1.fill_between(z, prob_density1, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a>ax1.set_xlabel(<span class="st">'z'</span>)</span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a>ax1.set_ylabel(<span class="st">'|ψ(z,t)|²'</span>)</span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a>ax1.set_title(<span class="ss">f'Probability Density at t=0</span><span class="ch">\n</span><span class="ss">Δk = π/2'</span>)</span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot for Delta_k = π</span></span>
+<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a>Delta_k2 <span class="op">=</span> np.pi</span>
+<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a>psi2 <span class="op">=</span> gaussian_wavepacket(z, t, Delta_k2)</span>
+<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a>prob_density2 <span class="op">=</span> np.<span class="bu">abs</span>(psi2)<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a>ax2.plot(z, prob_density2, <span class="st">'b-'</span>, label<span class="op">=</span><span class="st">'|ψ|²'</span>)</span>
+<span id="cb6-45"><a href="#cb6-45" aria-hidden="true" tabindex="-1"></a>ax2.fill_between(z, prob_density2, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb6-46"><a href="#cb6-46" aria-hidden="true" tabindex="-1"></a>ax2.set_xlabel(<span class="st">'z'</span>)</span>
+<span id="cb6-47"><a href="#cb6-47" aria-hidden="true" tabindex="-1"></a>ax2.set_ylabel(<span class="st">'|ψ(z,t)|²'</span>)</span>
+<span id="cb6-48"><a href="#cb6-48" aria-hidden="true" tabindex="-1"></a>ax2.set_title(<span class="ss">f'Probability Density at t=0</span><span class="ch">\n</span><span class="ss">Δk = π'</span>)</span>
+<span id="cb6-49"><a href="#cb6-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-50"><a href="#cb6-50" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb6-51"><a href="#cb6-51" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Matter_waves_files/figure-html/cell-7-output-1.png" width="676" height="336" class="figure-img"></p>
 <figcaption>The squared wave packet with a Gaussian amplitude distribution (black line) and probability density (area under the curve, shaded gray).</figcaption>
 </figure>
 </div>
@@ -1131,11 +1396,34 @@ P\left( z, t \right) \mathrm{d}z = \left| \psi \left( z, t \right) \right|^2 \ma
 <li><p>The center of the wave packet propagates with the group velocity <span class="math inline">\(v_{\mathrm{g}}\)</span> which is identical to the classical particle velocity <span class="math inline">\(v_{\mathrm{p}}\)</span>.</p></li>
 <li><p>The probability to find the particle within an infinite volume <strong>is not <span class="math inline">\(0\)</span></strong>. This means one cannot locate the particle in a single spot <span class="math inline">\(\left( x,y,z \right)\)</span>. The particle’s location is smeared which corresponds to the distribution of the wave packet and obeys an uncertainty.</p></li>
 </ul>
+</section>
+<section id="relation-to-measurement" class="level2">
+<h2 class="anchored" data-anchor-id="relation-to-measurement">Relation to measurement</h2>
+<p>The probabilistic interpretation of the wave function has profound implications for the measurement process in quantum mechanics. When we perform a measurement on a quantum system:</p>
+<ul>
+<li>The act of measurement causes the wave function to “collapse” from its spread-out state to a localized state</li>
+<li>Before measurement, the particle exists in a superposition described by the wave function <span class="math inline">\(\psi(x,y,z,t)\)</span></li>
+<li>The measurement outcome will be random, but governed by the probability distribution <span class="math inline">\(|\psi|^2\)</span></li>
+<li>After measurement, the wave function collapses to a new state centered on the measured position</li>
+<li>Subsequent measurements will find the particle near this new position until the wave packet spreads out again due to time evolution</li>
+</ul>
+<p>This measurement-induced collapse of the wave function is a key feature that distinguishes quantum mechanics from classical physics. It represents the transition from quantum probabilities to definite classical outcomes. The spreading of wave packets between measurements represents the return to quantum uncertainty.</p>
 
 
 </section>
 
 </main> <!-- /main -->
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxuLy8gQ3JlYXRlIHBsb3QgY29udGFpbmVyXG52aWV3b2YgcGxvdCA9IHtcbiAgLy8gU2V0dXAgcGFyYW1ldGVyc1xuICBjb25zdCB3aWR0aCA9IDYwMDtcbiAgY29uc3QgaGVpZ2h0ID0gMjAwO1xuICBjb25zdCBtYXJnaW4gPSB7dG9wOiAyMCwgcmlnaHQ6IDIwLCBib3R0b206IDQwLCBsZWZ0OiA2MH07XG5cbiAgLy8gUGh5c2ljYWwgY29uc3RhbnRzIChpbiBuYXR1cmFsIHVuaXRzKVxuICBjb25zdCBoYmFyID0gMTtcbiAgY29uc3QgbSA9IDE7XG4gIGNvbnN0IHNpZ21hMCA9IDAuMTsgIC8vIGluaXRpYWwgd2lkdGhcbiAgY29uc3QgazAgPSA1MDsgIC8vIGNlbnRyYWwgd2F2ZXZlY3RvclxuICBjb25zdCBwZXJpb2QgPSAwLjI7ICAvLyB0aW1lIHBlcmlvZCBmb3IgdGhlIGxvb3BcblxuICAvLyBDcmVhdGUgU1ZHXG4gIGNvbnN0IHN2ZyA9IGQzLmNyZWF0ZShcInN2Z1wiKVxuICAgIC5hdHRyKFwid2lkdGhcIiwgd2lkdGgpXG4gICAgLmF0dHIoXCJoZWlnaHRcIiwgaGVpZ2h0KTtcblxuICAvLyBTZXR1cCBzY2FsZXNcbiAgY29uc3QgeCA9IGQzLnNjYWxlTGluZWFyKClcbiAgICAuZG9tYWluKFstMiwgMTVdKVxuICAgIC5yYW5nZShbbWFyZ2luLmxlZnQsIHdpZHRoIC0gbWFyZ2luLnJpZ2h0XSk7XG5cbiAgY29uc3QgeSA9IGQzLnNjYWxlTGluZWFyKClcbiAgICAuZG9tYWluKFswLCAzXSlcbiAgICAucmFuZ2UoW2hlaWdodCAtIG1hcmdpbi5ib3R0b20sIG1hcmdpbi50b3BdKTtcblxuICAvLyBBZGQgYXhlc1xuICBzdmcuYXBwZW5kKFwiZ1wiKVxuICAgIC5hdHRyKFwidHJhbnNmb3JtXCIsIGB0cmFuc2xhdGUoMCwke2hlaWdodCAtIG1hcmdpbi5ib3R0b219KWApXG4gICAgLmNhbGwoZDMuYXhpc0JvdHRvbSh4KS50aWNrcygxMCkpXG4gICAgLmFwcGVuZChcInRleHRcIilcbiAgICAuYXR0cihcInhcIiwgd2lkdGgvMilcbiAgICAuYXR0cihcInlcIiwgMzUpXG4gICAgLmF0dHIoXCJmaWxsXCIsIFwiYmxhY2tcIilcbiAgICAudGV4dChcIlBvc2l0aW9uXCIpO1xuXG4gIHN2Zy5hcHBlbmQoXCJnXCIpXG4gICAgLmF0dHIoXCJ0cmFuc2Zvcm1cIiwgYHRyYW5zbGF0ZSgke21hcmdpbi5sZWZ0fSwwKWApXG4gICAgLmNhbGwoZDMuYXhpc0xlZnQoeSkudGlja3MoNSkpXG4gICAgLmFwcGVuZChcInRleHRcIilcbiAgICAuYXR0cihcInRyYW5zZm9ybVwiLCBcInJvdGF0ZSgtOTApXCIpXG4gICAgLmF0dHIoXCJ4XCIsIC1oZWlnaHQvMylcbiAgICAuYXR0cihcInlcIiwgLTQwKVxuICAgIC5hdHRyKFwiZmlsbFwiLCBcImJsYWNrXCIpXG4gICAgLnRleHQoXCJQcm9iYWJpbGl0eSBEZW5zaXR5XCIpO1xuXG4gIC8vIEZ1bmN0aW9uIHRvIGNhbGN1bGF0ZSB3YXZlcGFja2V0IGF0IHRpbWUgdFxuICBmdW5jdGlvbiBnYXVzc2lhblBhY2tldCh4LCB0KSB7XG4gICAgY29uc3Qgc2lnbWFfdCA9IE1hdGguc3FydChzaWdtYTAqKjIgKyAoaGJhcip0LygyKm0qc2lnbWEwKSkqKjIpO1xuICAgIGNvbnN0IHZnID0gaGJhciprMC9tO1xuICAgIGNvbnN0IHhfc2hpZnRlZCA9IHggLSAodmcqdCAlIDIwKTsgLy8gbW9kdWxvIGZvciBsb29waW5nXG4gICAgcmV0dXJuIE1hdGguZXhwKC14X3NoaWZ0ZWQqeF9zaGlmdGVkLyg0KnNpZ21hX3Qqc2lnbWFfdCkpLyhNYXRoLnNxcnQoMipNYXRoLlBJKnNpZ21hX3Qqc2lnbWFfdCkpO1xuICB9XG5cbiAgLy8gQ3JlYXRlIGxpbmUgZ2VuZXJhdG9yXG4gIGNvbnN0IGxpbmUgPSBkMy5saW5lKClcbiAgICAueChkID0+IHgoZC54KSlcbiAgICAueShkID0+IHkoZC55KSk7XG5cbiAgLy8gQW5pbWF0aW9uXG4gIGxldCB0ID0gMDtcbiAgY29uc3QgZHQgPSAwLjAwMTtcblxuICBmdW5jdGlvbiB1cGRhdGUoKSB7XG4gICAgLy8gQ2FsY3VsYXRlIHdhdmVwYWNrZXRcbiAgICBjb25zdCBwb2ludHMgPSBkMy5yYW5nZSgtMiwgMTUsIDAuMSkubWFwKHggPT4gKHtcbiAgICAgIHg6IHgsXG4gICAgICB5OiBnYXVzc2lhblBhY2tldCh4LCB0ICUgcGVyaW9kKSAgLy8gdXNlIG1vZHVsbyBmb3IgdGltZSBsb29waW5nXG4gICAgfSkpO1xuXG4gICAgLy8gVXBkYXRlIG9yIGNyZWF0ZSBwYXRoXG4gICAgY29uc3QgcGF0aCA9IHN2Zy5zZWxlY3RBbGwoXCJwYXRoLndhdmVwYWNrZXRcIilcbiAgICAgIC5kYXRhKFtwb2ludHNdKTtcblxuICAgIHBhdGguZW50ZXIoKVxuICAgICAgLmFwcGVuZChcInBhdGhcIilcbiAgICAgIC5hdHRyKFwiY2xhc3NcIiwgXCJ3YXZlcGFja2V0XCIpXG4gICAgICAubWVyZ2UocGF0aClcbiAgICAgIC5hdHRyKFwiZmlsbFwiLCBcIm5vbmVcIilcbiAgICAgIC5hdHRyKFwic3Ryb2tlXCIsIFwiYmx1ZVwiKVxuICAgICAgLmF0dHIoXCJzdHJva2Utd2lkdGhcIiwgMilcbiAgICAgIC5hdHRyKFwiZFwiLCBsaW5lKTtcblxuICAgIC8vIFVwZGF0ZSB0aW1lIGRpc3BsYXlcbiAgICBzdmcuc2VsZWN0QWxsKFwidGV4dC50aW1lXCIpXG4gICAgICAuZGF0YShbYHQgPSAkeyh0ICUgcGVyaW9kKS50b0ZpeGVkKDMpfWBdKVxuICAgICAgLmpvaW4oXCJ0ZXh0XCIpXG4gICAgICAuYXR0cihcImNsYXNzXCIsIFwidGltZVwiKVxuICAgICAgLmF0dHIoXCJ4XCIsIHdpZHRoIC0gNCptYXJnaW4ucmlnaHQpXG4gICAgICAuYXR0cihcInlcIiwgbWFyZ2luLnRvcClcbiAgICAgIC50ZXh0KGQgPT4gZCk7XG5cbiAgICB0ICs9IGR0O1xuICAgIHJlcXVlc3RBbmltYXRpb25GcmFtZSh1cGRhdGUpOyAgLy8gcmVtb3ZlZCBjb25kaXRpb25hbCB0byBtYWtlIGl0IGxvb3BcbiAgfVxuXG4gIHVwZGF0ZSgpO1xuICByZXR1cm4gc3ZnLm5vZGUoKTtcbn1cbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgncGxvdCcpIn1dfQ==
+</script>
+<script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+window._ojs.paths.runtimeToDoc = "../../quantum-mechanics";
+window._ojs.paths.runtimeToRoot = "../..";
+window._ojs.paths.docToRoot = "..";
+window._ojs.selfContained = false;
+window._ojs.runtime.interpretFromScriptTags();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

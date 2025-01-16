@@ -1064,7 +1064,7 @@ E_{\mathrm{kin}}^{\mathrm{e}} = \frac{m_0 c^2}{\sqrt{1-\beta^2}} - m_0 c^2
 <p>(replace with ?? <span class="math display">\[
 \frac{\nu_s}{\nu_0} = \frac{1}{1 + \frac{h\nu_0}{m_0c^2}(1-\cos(\varphi))}
 \]</span> ) represents the ratio between the energy of the incident photon and the energy of the electron at rest. Thus, if we know the mass of the electron, we can determine <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\lambda_{\mathrm{S}}\)</span> (and therefore <span class="math inline">\(\lambda_{\mathrm{C}}\)</span>) and calculate <span class="math inline">\(h\)</span>.</p>
-<div id="d8911756" class="cell" data-execution_count="2">
+<div id="e5eff89e" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -1122,7 +1122,7 @@ E_{\mathrm{kin}}^{\mathrm{e}} = \frac{m_0 c^2}{\sqrt{1-\beta^2}} - m_0 c^2
 <img src="img/compton_results.png" class="img-fluid figure-img" style="width:70.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-compton_results-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3— Compton Scattering of X-rays
+Figure&nbsp;3— Compton Scattering of X-rays. The spectra contain an elastic peak at the incident wavelength and an inelastic peak at a longer wavelength. The elastic peak occurs since the sample contains also tightly bound electrons which do not contribute to the Compton effect.
 </figcaption>
 </figure>
 </div>
@@ -1135,7 +1135,7 @@ Figure&nbsp;3— Compton Scattering of X-rays
 <li><span class="math inline">\(E_0\)</span> is the initial photon energy</li>
 <li><span class="math inline">\(\theta\)</span> is the scattering angle</li>
 </ul>
-<div id="a6a72c6f" class="cell" data-execution_count="3">
+<div id="f76e0fef" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> constants</span>
@@ -1311,10 +1311,10 @@ m = \frac{1}{\sqrt{1-\left( \frac{v}{c}\right)^2}} \, m_0
 <p>Only particles with a rest mass <span class="math inline">\(m_0 = 0\)</span> can travel at the speed of light, which is why photons must have zero rest mass. For the energy of a photon, we find:</p>
 <p><span class="math display">\[
 \begin{aligned}
-E &amp; = &amp; \sqrt{p^2c^2 + m_0^2 c^4}\\
-{} &amp; = &amp; p c\\
-{} &amp; = &amp; \frac{h}{\lambda} c\\
-{} &amp; = &amp; h \nu
+E &amp; =  \sqrt{p^2c^2 + m_0^2 c^4}\\
+{} &amp; =  p c\\
+{} &amp; =  \frac{h}{\lambda} c\\
+{} &amp; =  h \nu
 \end{aligned}
 \]</span></p>
 <p>in accordance with previous energy and momentum considerations. If we assign an effective mass <span class="math inline">\(m\)</span> to the photon:</p>

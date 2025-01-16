@@ -923,7 +923,7 @@ E_{0,\mathrm{I}} \; \vec{e_x} = -E_{0,\mathrm{R}} \; \vec{e_x}
 k_z  = o \frac{\pi}{a}
 \]</span></p>
 <p>These represent the modes in a one-dimensional cavity.</p>
-<div id="de7cc9db" class="cell" data-execution_count="2">
+<div id="97e80582" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create x values (position along cavity)</span></span>
@@ -964,9 +964,9 @@ k_z  = o \frac{\pi}{a}
 <p>For a three-dimensional cavity, we can analyze each direction independently, obtaining the following conditions for the wavevector components:</p>
 <p><span class="math display">\[
 \begin{aligned}
-k_x &amp; =  n \frac{\pi}{a}\\
-k_y &amp; =  m \frac{\pi}{b}\\
-k_z &amp; =  o \frac{\pi}{c}
+k_x &amp; = &amp; n \frac{\pi}{a}\\
+k_y &amp; = &amp; m \frac{\pi}{b}\\
+k_z &amp; = &amp; o \frac{\pi}{c}
 \end{aligned}
 \]</span></p>
 <p>where <span class="math inline">\(m,n,o\)</span> are natural numbers. The magnitude of the wavevector is <span class="math inline">\(\left| \vec{k} \right| = \sqrt{k_x^2 + k_y^2 + k_z^2}\)</span>, which determines the possible frequencies <span class="math inline">\(\omega\)</span> in the cavity</p>
@@ -1004,9 +1004,9 @@ E_{0,z} &amp; = &amp; C \cdot \sin \left( n \frac{\pi}{a} x \right) \sin \left( 
 <p>As mentioned before, we are interested in the number of modes that fit into the cavity. For that purpose we need to count the number of modes within a certain frequency range. In order to simplify the calculation a bit, we restrict out box to a cube with edge length <span class="math inline">\(a\)</span> such that</p>
 <p><span class="math display">\[
 \begin{aligned}
-\omega &amp; =  c \cdot \frac{\pi}{a} \; \sqrt{ n^2 + m^2 + o^2}\\
-\rightarrow n^2 + m^2 + o^2 &amp; =  \left( \frac{a \omega}{\pi c}\right)^2\\
-\rightarrow n^2 + m^2 + o^2 &amp; =  \left( \frac{a}{\pi}\right)^2 \cdot k^2\\
+\omega &amp; = &amp; c \cdot \frac{\pi}{a} \; \sqrt{ n^2 + m^2 + o^2}\\
+\rightarrow n^2 + m^2 + o^2 &amp; = &amp; \left( \frac{a \omega}{\pi c}\right)^2\\
+\rightarrow n^2 + m^2 + o^2 &amp; = &amp; \left( \frac{a}{\pi}\right)^2 \cdot k^2\\
 \end{aligned}
 \]</span></p>
 <p>We can visualize the possible modes in k-space (where <span class="math inline">\(k_x\)</span>, <span class="math inline">\(k_y\)</span>, and <span class="math inline">\(k_z\)</span> are our axes). The points <span class="math inline">\((m,n,o)\)</span> create an evenly-spaced grid with spacing <span class="math inline">\(\pi/a\)</span> between points. Since each combination of <span class="math inline">\((m,n,o)\)</span> represents one mode in the resonator, counting the grid points, or better the number of unit cell cubes with a length <span class="math inline">\(\pi/a\)</span> tells us the number of possible modes.</p>
@@ -1023,8 +1023,8 @@ Figure&nbsp;3— Two-dimensional k-space with a circle representing a sphere in 
 <p>When considering large values where <span class="math inline">\(\sqrt{m^2 +n^2 +o^2} \gg 1\)</span>, the sphere radius in k-space <span class="math inline">\(\left| \vec{k} \right|\)</span> becomes much larger than <span class="math inline">\(\pi / a\)</span>, corresponding to wavelengths <span class="math inline">\(\lambda\)</span> much smaller than the cavity size <span class="math inline">\(a\)</span>. In this limit, we can approximate the number of allowed modes <span class="math inline">\(N_{\mathrm{L}}\)</span> (where <span class="math inline">\(m,n,o &gt; 0\)</span>) by calculating the volume occupied by unit cells within the first octant of a sphere with radius <span class="math inline">\(\left| \vec{k} \right|\)</span>. The volume of this octant is:</p>
 <p><span class="math display">\[
 \begin{aligned}
-V_{\mathrm{S}} &amp; = \frac{1}{8} \; \frac{4}{3} \pi \left| \vec{k} \right|^3 \mathrm{ or }\\
-V_{\mathrm{S}} &amp; = \frac{1}{6} \pi \left( \frac{\omega}{c_0} \right)^3 \mathrm{.}
+V_{\mathrm{S}} &amp; = &amp; \frac{1}{8} \; \frac{4}{3} \pi \left| \vec{k} \right|^3 \mathrm{ or }\\
+V_{\mathrm{S}} &amp; = &amp; \frac{1}{6} \pi \left( \frac{\omega}{c_0} \right)^3 \mathrm{.}
 \end{aligned}
 \]</span></p>
 <p>The number modes corresponds then to the volume of the octant to the volume of a unit cell (<span class="math inline">\(V_{\mathrm{UC}} = \left( \pi / a \right)^3\)</span>) which is</p>
@@ -1041,7 +1041,7 @@ N \left( \omega \le \omega_{\mathrm{S}} \right) = 2 \cdot \frac{\pi}{6} \left( \
 \]</span></p>
 <p>When we now increase the limiting frequency <span class="math inline">\(\nu_{\mathrm{S}}\)</span>, the number of modes increases. This increase is best represented by the <strong>spectral density of modes</strong>, that is the number of allowed modes per unit volume of the resonator within the interval <span class="math inline">\(\left[ \nu ; \nu + \mathrm{d}\nu \right]\)</span>. A straightforward calculation of the first derivative of the density of modes with respect to the frequency gives us an expression for the spectral mode density</p>
 <p><span class="math display">\[
-\mathrm{d}n(\nu) = \frac{8 \pi \nu^2}{c_0^3} \mathrm{d}\nu
+\mathrm{d}n = \frac{8 \pi \nu^2}{c_0^3} \mathrm{d}\nu
 \]</span></p>
 <p>So far we have calculated that only under particular conditions standing waves can be established within a cubic cavity. These eigen-oscillations are called “modes of the cavity”. Furthermore, if the wavelength is small compared to the cavity dimensions, we derived the spectral density of modes, that is the number of modes within one cubic meter of volume within the interval between <span class="math inline">\(\nu\)</span> and <span class="math inline">\(\nu + \mathrm{d}\nu\)</span> is given by the equation above. This is the spectral density of optical modes per volume.</p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -1070,9 +1070,9 @@ Density of optical modes per unit volume
 </div>
 <p>This spectral mode density is now the basis for any further consideration. To obtain the spectral energy density we just need to multiply the mode density with the energy stored in each mode <span class="math inline">\(\bar{W}_{\nu} \left( T \right)\)</span> and obtain the spectral energy density</p>
 <p><span class="math display">\[
-\omega_{\nu} \; \mathrm{d} \nu = dn \left( \nu \right) \cdot \bar{W}_{\nu} \left( T \right) \cdot \mathrm{d}\nu = \frac{8 \pi \nu^2}{c_0^3} \cdot \bar{W}_{\nu} \left( T \right) \cdot \mathrm{d}\nu
+\omega_{\nu} \; \mathrm{d} \nu = n \left( \nu \right) \cdot \bar{W}_{\nu} \left( T \right) \cdot \mathrm{d}\nu = \frac{8 \pi \nu^2}{c_0^3} \cdot \bar{W}_{\nu} \left( T \right) \cdot \mathrm{d}\nu
 \]</span></p>
-<p>This is the energy density at a frequency <span class="math inline">\(\nu\)</span> in a tiny interval <span class="math inline">\(d\nu\)</span> and the temperature <span class="math inline">\(T\)</span>. This spectral energy density <span class="math inline">\(\omega_{\nu}\)</span> relates to the spectral radiancy <span class="math inline">\(S^*_{\nu}\)</span> through:</p>
+<p>This spectral energy density <span class="math inline">\(\omega_{\nu}\)</span> relates to the spectral radiancy <span class="math inline">\(S^*_{\nu}\)</span> through:</p>
 <p><span class="math display">\[
 S^*_{\nu} = \frac{c_0}{4\pi} \omega_{\nu}
 \]</span></p>
@@ -1095,7 +1095,7 @@ S^{\ast}_{\nu} \left( \nu \right) \mathrm{d} \nu &amp; = &amp; \frac{c_0}{4 \pi}
 \end{aligned}
 \]</span></p>
 <p>If we now consider a temperature of about <span class="math inline">\(5000 \; \mathrm{K}\)</span> we achieve a wavelength bigger than <span class="math inline">\(2 \; \mu\mathrm{m}\)</span>, being well in the infrared region. For this spectral region the measured radiance and the theoretical prediction are in agreement. However, if we reduce the wavelength, disparities between experimental findings and the prediction appear. Moreover, if the Rayleigh-Jeans law was valid, there would be the so-called <strong>ultraviolet catastrophe</strong>! In the case of decreasing frequencies, the spectral energy density and the integrated radiance will rise until they become infinitely big for vanishing frequencies.</p>
-<div id="ec987471" class="cell" data-execution_count="3">
+<div id="6785155d" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Constants</span></span>
@@ -1158,17 +1158,13 @@ p \left( W_{\nu} \right) = \frac{
 \sum_{n=0}^{\infty} \mathrm{e}^{- \frac{n \cdot h \cdot \nu}{k_B \cdot T}}
 }
 \]</span></p>
-<p>Note that a Boltzmann distribution provides the maximum entropy for a given energy, i.e.&nbsp;it spreads the energy as evenly as possible over the available states (modes) of the systems. The average energy per oscillator can then be calculated as the expectation value of energy, weighting each possible energy level by its probability of occupation. The averaged energy per oscillator then reads as</p>
+<p>Note that a Boltzmann distribution provides the maximum entropy for a given energy, i.e.&nbsp;it spreads the energy as evenly as possible over the available states (modes) of the systems. The average energy per oscillator can then be calculated as the expectation value of energy, weighting each possible energy level by its probability of occupation. The averaged energy per oscillator then reads as <span class="math inline">\(\bar{W}_{\nu} = \sum_{n=0}^{\infty} p\left( nh\nu \right) n \, h\, \nu\)</span> and further</p>
 <p><span class="math display">\[
-\bar{W}_{\nu} = \sum_{n=0}^{\infty} p\left( nh\nu \right) n \, h\, \nu
-\]</span></p>
-<p>and further</p>
-<p><span class="math display">\[
-\bar{W}_{\nu} = \frac{h \cdot \nu}{\mathrm{e}^{\frac{h \cdot \nu}{k_B \cdot T}} -1} \mathrm{.}
+\bar{W}_{\nu} = \frac{n \cdot \nu}{\mathrm{e}^{+\frac{n \cdot h \cdot \nu}{k \cdot T}} -1} \mathrm{.}
 \]</span></p>
 <p>The spectral energy density in the cavity is thus given by</p>
 <p><span class="math display">\[
-\omega \left( \nu,T \right) = dn\left(\nu \right) \cdot \bar{W_{\nu}} \left( \nu,T \right)
+\omega \left( \nu,T \right) = n\left(\nu \right) \cdot \bar{W_{\nu}} \left( \nu,T \right)
 \]</span></p>
 <p>which leads us to the famous Planck’s formula</p>
 <p><span class="math display">\[
@@ -1192,7 +1188,7 @@ S^{\ast}_{\lambda} \mathrm{d} \lambda \mathrm{d} \Omega = \frac{2 h c^2}{\lambda
 \]</span></p>
 <p>in terms of wavelength <span class="math inline">\(\lambda\)</span> and temperature <span class="math inline">\(T\)</span>.</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1201,7 +1197,7 @@ Measuring Planck’s Constant
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse show">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Planck’s constant <span class="math inline">\(h\)</span> is a fundamental constant of nature, and its precise value is crucial for many areas of physics. The most accurate method for measuring <span class="math inline">\(h\)</span> is through the photoelectric effect, as demonstrated by Einstein. One could also determine <span class="math inline">\(h\)</span> by measuring the Compton edge in X-ray scattering experiments or estimating by measuring the uncertainty in the particle momentum and position from a diffraction experiment.</p>
 <p>Another possibility arises from counting single photons from a laser beam. The particle nature of light now delivers the definition of light power by the relation</p>
@@ -1213,7 +1209,7 @@ P = N \cdot E_{\textrm{photon}} = N \cdot h \cdot \nu = N \cdot h \cdot \frac{c}
 h= \frac{P \lambda}{N c}
 \]</span></p>
 <p>In reality, measuring the photon arrival rate is a challenging task. For coherent laser light, the photon arrivals follow Poisson statistics, meaning the time intervals between consecutive photons are exponentially distributed. While this makes the measurements theoretically straightforward, the uncertainty in counting photons (which follows the square root of the mean count rate according to Poisson statistics) is usually the limiting factor in the precision of the measurement. Yet, we can dim the laser light to a point where only one photon is present at a time. Note that while diming the laser light with an appropriate filter, the photon rate decreases, but the photon statistics remain Poissonian. Only the average rate of photon arrivals decreases such that most of the time no photon arrives.</p>
-<div id="652062b0" class="cell" data-execution_count="4">
+<div id="33bdbcc1" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)</span>
@@ -1288,7 +1284,7 @@ Figure&nbsp;4— An APD is a special type of photodiode that can detect single p
 </div>
 </div>
 </div>
-<div id="fe846228" class="cell" data-execution_count="5">
+<div id="5faf3fb1" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Constants</span></span>
@@ -1404,7 +1400,7 @@ Stefan-Boltzmann Law
 <div class="callout-body-container callout-body">
 <p>The total power radiated per unit area across all wavelengths: <span class="math display">\[E = \sigma T^4\]</span></p>
 <p>This can be derived by integrating Planck’s law over all wavelengths: <span class="math display">\[E = \int_0^\infty S(\lambda,T) d\lambda = \sigma T^4\]</span></p>
-<p>where <span class="math inline">\(\sigma = \frac{2\pi^5k^4}{15c^2h^3} \approx 5.67 \times 10^{-8}\, W m^{-2} K^{-4}\)</span></p>
+<p>where <span class="math inline">\(\sigma = \frac{2\pi^5k^4}{15c^2h^3} \approx 5.67 \times 10^{-8}\)</span> W⋅m⁻²⋅K⁻⁴</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -1450,7 +1446,7 @@ Wien’s Displacement Law
 <div class="callout-body-container callout-body">
 <p>The wavelength of maximum emission: <span class="math display">\[\lambda_{max} = \frac{b}{T}\]</span></p>
 <p>This is derived by finding the maximum of Planck’s law: <span class="math display">\[\frac{d}{d\lambda}S(\lambda,T) = 0\]</span></p>
-<p>where <span class="math inline">\(b = \frac{hc}{4.965k} \approx 2898\, \mu m K\)</span></p>
+<p>where <span class="math inline">\(b = \frac{hc}{4.965k} \approx 2898\)</span> μm⋅K</p>
 <section id="rayleigh-jeans-approximation" class="level4">
 <h4 class="anchored" data-anchor-id="rayleigh-jeans-approximation">Rayleigh-Jeans Approximation</h4>
 <p>The classical limit of Planck’s law for long wavelengths: <span class="math display">\[S(\lambda,T) \approx \frac{2ckT}{\lambda^4}\]</span></p>
@@ -1556,7 +1552,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/fcichos\.github\.io\/Exp3_2024\/");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
