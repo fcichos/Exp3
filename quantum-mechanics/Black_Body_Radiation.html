@@ -923,7 +923,7 @@ E_{0,\mathrm{I}} \; \vec{e_x} = -E_{0,\mathrm{R}} \; \vec{e_x}
 k_z  = o \frac{\pi}{a}
 \]</span></p>
 <p>These represent the modes in a one-dimensional cavity.</p>
-<div id="3b4f98b2" class="cell" data-execution_count="2">
+<div id="d66943a0" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create x values (position along cavity)</span></span>
@@ -1095,7 +1095,7 @@ S^{\ast}_{\nu} \left( \nu \right) \mathrm{d} \nu &amp; = &amp; \frac{c_0}{4 \pi}
 \end{aligned}
 \]</span></p>
 <p>If we now consider a temperature of about <span class="math inline">\(5000 \; \mathrm{K}\)</span> we achieve a wavelength bigger than <span class="math inline">\(2 \; \mu\mathrm{m}\)</span>, being well in the infrared region. For this spectral region the measured radiance and the theoretical prediction are in agreement. However, if we reduce the wavelength, disparities between experimental findings and the prediction appear. Moreover, if the Rayleigh-Jeans law was valid, there would be the so-called <strong>ultraviolet catastrophe</strong>! In the case of decreasing frequencies, the spectral energy density and the integrated radiance will rise until they become infinitely big for vanishing frequencies.</p>
-<div id="db1eb7b5" class="cell" data-execution_count="3">
+<div id="ca713eab" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Constants</span></span>
@@ -1213,7 +1213,7 @@ P = N \cdot E_{\textrm{photon}} = N \cdot h \cdot \nu = N \cdot h \cdot \frac{c}
 h= \frac{P \lambda}{N c}
 \]</span></p>
 <p>In reality, measuring the photon arrival rate is a challenging task. For coherent laser light, the photon arrivals follow Poisson statistics, meaning the time intervals between consecutive photons are exponentially distributed. While this makes the measurements theoretically straightforward, the uncertainty in counting photons (which follows the square root of the mean count rate according to Poisson statistics) is usually the limiting factor in the precision of the measurement. Yet, we can dim the laser light to a point where only one photon is present at a time. Note that while diming the laser light with an appropriate filter, the photon rate decreases, but the photon statistics remain Poissonian. Only the average rate of photon arrivals decreases such that most of the time no photon arrives.</p>
-<div id="a84d15fd" class="cell" data-execution_count="4">
+<div id="fa32e9ea" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)</span>
@@ -1288,7 +1288,7 @@ Figure&nbsp;4— An APD is a special type of photodiode that can detect single p
 </div>
 </div>
 </div>
-<div id="27c5c82c" class="cell" data-execution_count="5">
+<div id="919b35cf" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Constants</span></span>
@@ -1435,6 +1435,98 @@ Solar Power at Earth’s Distance: A Stefan-Boltzmann Law Calculation
 <p>To find the power per square meter reaching Earth, we use the inverse square law. The total power is distributed over a sphere with radius equal to the Earth-Sun distance:</p>
 <p><span class="math display">\[E_{earth} = \frac{P_{total}}{4\pi d^2} = \frac{3.828 \times 10^{26}}{4\pi (1.496 \times 10^{11})^2} = 1361 \text{ W/m²}\]</span></p>
 <p>This value of 1361 W/m² is known as the solar constant or total solar irradiance (TSI) at the top of Earth’s atmosphere. It represents the power from the Sun reaching Earth before any atmospheric absorption. This calculated value matches well with measured values from satellites.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Real-World Examples of Blackbody Radiation
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<section id="astronomical-objects" class="level3">
+<h3 class="anchored" data-anchor-id="astronomical-objects">Astronomical Objects</h3>
+<p>Beyond our sun, blackbody radiation plays a crucial role in astronomy. Stars of different classifications exhibit distinct blackbody spectra based on their surface temperatures. Red dwarf stars, with temperatures around 3000K, appear reddish in color due to Wien’s law governing their peak wavelength emission. In contrast, blue giant stars burn much hotter at approximately 20,000K, resulting in their characteristic bluish appearance.</p>
+<p>Perhaps the most remarkable astronomical example of blackbody radiation comes from the Cosmic Microwave Background (CMB). The universe itself behaves as an almost perfect blackbody radiator with a temperature of 2.725K. This omnipresent radiation serves as a remnant from the early universe, and its discovery provided compelling evidence supporting the Big Bang theory.</p>
+<div id="fig-cmb" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-cmb-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/CMB_spectrum.jpg" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>Spectrum of CMB radiation</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/WMAP_2012.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>Map of CMB radiation</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cmb-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7— The measured spectrum of the cosmic microwave background radiation fits perfectly to a blackbody spectrum at T = 2.725K. This is considered one of the most precise measurements in physics.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="industrial-applications" class="level3">
+<h3 class="anchored" data-anchor-id="industrial-applications">Industrial Applications</h3>
+<p>In industrial settings, blackbody radiation enables a wide range of temperature measurement applications. Pyrometers serve as non-contact temperature measurement devices, utilizing the principles of blackbody radiation to determine surface temperatures from a distance. Similar technology powers infrared thermometers, which find widespread use across medical applications, cooking processes, and industrial monitoring. Thermal imaging cameras extend these capabilities further, providing detailed temperature mapping for applications ranging from building inspection to night vision systems and medical diagnostics.</p>
+<p>Manufacturing processes rely heavily on blackbody radiation principles for temperature control and monitoring. In steel production, experienced metalworkers can gauge temperature by observing the color of heated metal, as these colors follow predictable patterns based on blackbody radiation laws. Glass blowing artisans similarly depend on their understanding of these color-temperature relationships to perfect their craft. In semiconductor processing, precise temperature control guided by blackbody radiation principles ensures proper crystal growth and development.</p>
+<div id="fig-steel-colors" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-steel-colors-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/steel_colors.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-steel-colors-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8— The color of heated steel changes with temperature following blackbody radiation principles. This allows experienced metalworkers to estimate temperature visually.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="everyday-examples" class="level3">
+<h3 class="anchored" data-anchor-id="everyday-examples">Everyday Examples</h3>
+<p>Common electric heating elements in household appliances demonstrate blackbody radiation principles in everyday life. Toasters contain metal elements that glow according to blackbody radiation laws when heated. Electric stove burners similarly show a characteristic red glow that indicates their temperature. Incandescent light bulbs, though less common today, produce light through blackbody radiation from their heated filaments.</p>
+<p>Natural phenomena provide abundant examples of blackbody radiation in the environment. Molten lava, at temperatures around 1200K, emits visible radiation following blackbody principles. While not perfect blackbodies, flames approximate blackbody radiation in their emission spectra. Even our planet Earth acts as a blackbody radiator, emitting infrared radiation at an effective temperature of approximately 288K.</p>
+<p>Modern technology frequently employs principles of blackbody radiation. LED display manufacturers calibrate their screens’ color output based on blackbody radiation curves. Digital cameras rely on color temperature settings derived from blackbody principles for proper white balance adjustment. In advanced manufacturing, 3D printing systems use blackbody radiation principles for precise temperature monitoring during metal printing processes.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Color Temperature in Photography
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The concept of color temperature, derived from blackbody radiation, is fundamental in photography and lighting. Different light sources correspond to different blackbody temperatures: natural daylight approximates 5500K, while incandescent bulbs emit light equivalent to about 2700K, and candle flames produce light characteristic of roughly 1800K. Photographers use these color temperature values to adjust their camera’s white balance for accurate color reproduction.</p>
+<div id="fig-color-temperature" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-color-temperature-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/cie_chromaticity.png" class="img-fluid figure-img" style="width:60.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-color-temperature-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9— The CIE chromaticity diagram, also containing chromaticity values for blackbody radiation. <a href="https://en.wikipedia.org/wiki/Chromaticity#/media/File:PlanckianLocus.png">Source</a>
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>These examples demonstrate how blackbody radiation principles appear in various aspects of science, technology, and daily life. Understanding these applications helps connect theoretical physics to practical experiences.</p>
+</section>
 </div>
 </div>
 </div>
