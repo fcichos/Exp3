@@ -64,6 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../quantum-mechanics/Heisenbergs_uncertainty_relation.html" rel="next">
 <link href="../quantum-mechanics/Wave_character_of_particles.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -766,6 +767,35 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-29" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 24</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-29" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-29" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Heisenbergs_uncertainty_relation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Heisenberg Uncertainty Principle</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Dummy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Structure of Atoms</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Dummy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Schrödinger Equation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
       </ul>
   </li>
     </ul>
@@ -862,7 +892,7 @@ v_{\mathrm{ph}} = \frac{v_{\mathrm{p}}}{2}
 <p><span class="math display">\[
 \psi \left( z , t \right) = \sum_j C_j \, \mathrm{e}^{i \left( \omega_j t - k_j z \right)}
 \]</span></p>
-<div id="4e183285" class="cell" data-execution_count="2">
+<div id="588d54e1" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -964,7 +994,7 @@ Position of Maximum Amplitude
 <p><span class="math display">\[
 A \left(z,t \right) = 2 C \left( k_0 \right) \, \frac{\sin \left(\Delta k \ u /2  \right)}{u} \mathrm{.}
 \]</span></p>
-<div id="351db2c0" class="cell" data-execution_count="3">
+<div id="f38c7ed5" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters</span></span>
@@ -1037,7 +1067,7 @@ v_{\mathrm{g}} = \left(\frac{\mathrm{d} \omega}{\mathrm{d}k}\right)_{k_0} = \fra
 <li><p>The wavevector of the packet’s center <span class="math inline">\(\vec{k_0}\)</span> determines the momentum of the particle <span class="math inline">\(p_{\mathrm{p}} = \hbar k_0\)</span>.</p></li>
 <li><p>A wave packet is localized (in contrast to a plane wave) and the wave packet’s amplitude has maximum values only in a limited range <span class="math inline">\(\Delta z\)</span>. In the case <span class="math inline">\(t=0\)</span> we can calculate the width of the central maximum as distance between the roots <span class="math inline">\(\Delta z = 4\pi/\Delta k\)</span>. While this is sometimes incorrectly compared to the particle’s de Broglie wavelength <span class="math inline">\(\lambda_{\mathrm{p}} = 2\pi/k_0\)</span>, the actual width depends on the momentum spread <span class="math inline">\(\Delta k\)</span> and is not fundamentally limited by the wavelength.</p></li>
 </ul>
-<div id="2db7e4d2" class="cell" data-execution_count="4">
+<div id="13e02be7" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters</span></span>
@@ -1103,7 +1133,7 @@ C \left( k \right) = C \left( k_0 \right) \, \mathrm{e}^{- \frac{\left( k-k_0\ri
 <p>The full wave function is then given by:</p>
 <p><span class="math display">\[\psi(z,t) = \int_{-\infty}^{\infty} C(k_0) \exp\left(-\frac{(k-k_0)^2}{2\Delta k^2}\right) \exp\left(i(kz - \omega(k)t)\right) dk\]</span></p>
 <p>This wavefunction with the envelope is depicted below.</p>
-<div id="c8583058" class="cell" data-execution_count="5">
+<div id="bac74b6c" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters</span></span>
@@ -1183,7 +1213,7 @@ C \left( k \right) = C \left( k_0 \right) \, \mathrm{e}^{- \frac{\left( k-k_0\ri
 \sigma^2(t) = \sigma_0^2\left(1 + \frac{\hbar^2t^2}{4m^2\sigma_0^4}\right)
 \]</span></p>
 <p>The spreading rate is governed by the initial width <span class="math inline">\(\sigma_0\)</span>, Planck’s constant <span class="math inline">\(\hbar\)</span>, and particle mass <span class="math inline">\(m\)</span>. Narrower packets and lighter particles spread more rapidly.</p>
-<div id="f309aa80" class="cell" data-execution_count="6">
+<div id="42de9ca6" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters</span></span>
@@ -1365,7 +1395,7 @@ P(z,t)dz = |\psi(z,t)|^2 dz
 <p><span class="math display">\[
 \int_{-\infty}^{+\infty} |\psi(z,t)|^2 dz = 1
 \]</span></p>
-<div id="582b4e09" class="cell" data-execution_count="7">
+<div id="b2b886b6" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters</span></span>
@@ -1453,6 +1483,20 @@ P(z,t)dz = |\psi(z,t)|^2 dz
 <li>Subsequent measurements will find the particle near this new position until the wave packet spreads out again due to time evolution</li>
 </ul>
 <p>This measurement-induced collapse of the wave function is a key feature that distinguishes quantum mechanics from classical physics. It represents the transition from quantum probabilities to definite classical outcomes. The spreading of wave packets between measurements represents the return to quantum uncertainty.</p>
+<p>The question of whether wavefunction collapse occurs during non-destructive measurements is actually still debated in quantum mechanics. While traditional Copenhagen interpretation suggests collapse occurs with any measurement, modern perspectives like quantum decoherence offer alternative views.</p>
+<p>Non-destructive measurements (also called QND - Quantum Non-Demolition measurements) can preserve the quantum state while still extracting some information. However, they still cause some level of interaction/entanglement between the system and measuring apparatus.</p>
+<p>Below is a figure from a recent publication on <a href="https://www.science.org/doi/epdf/10.1126/science.1246164">Nondestructive Detection of an Optical Photon</a> by Reiser, Ritter an Rempe from 2013.</p>
+<p>The authors developed a specific measurement scheme, that allows to detect the presence of a single photon without destroying it.</p>
+<div id="fig-non-destructive-measurement" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-non-destructive-measurement-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/non_destructive.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-non-destructive-measurement-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1— Nondestructive photon detection. (A and B) Sketch of the setup and atomic level scheme. A single atom, (1), is trapped in an optical cavity that consists of a high-reflector, (2), and a coupling mirror, (3). A resonant photon is impinging on, (4), and reflected off, (5), the cavity. (A) If the atom is in state <span class="math inline">\(|1\rangle_a\)</span>, the photon (red wavy arrow) enters the cavity (blue semicircles) before being reflected. In this process, the combined atom-photon state acquires a phase shift of <span class="math inline">\(\pi\)</span>. (B) If the atom is in <span class="math inline">\(|2\rangle_a\)</span>, the strong coupling on the <span class="math inline">\(|2\rangle_a \leftrightarrow|3\rangle_a\)</span> transition leads to a normal-mode splitting of <span class="math inline">\(2 g\)</span>, so that the photon cannot enter the cavity and is directly reflected without a phase shift. (C to F) Procedure to measure whether a photon has been reflected. (C) The atomic state, visualized on the Bloch sphere, is prepared in the superposition state <span class="math inline">\(\frac{1}{\sqrt{2}}\left(|1\rangle_a+|2\rangle_a\right)\)</span>. ( D ) If a photon impinges, the atomic state is flipped to <span class="math inline">\(\frac{1}{\sqrt{2}}\left(|1\rangle_a-|2\rangle_a\right)\)</span>. (E) The atomic state is rotated by <span class="math inline">\(\frac{\pi}{2}\)</span>. (F) Fluorescence detection is used to discriminate between the states <span class="math inline">\(|1\rangle_a\)</span> and <span class="math inline">\(|2\rangle_a\)</span>. Taken from <a href="https://www.science.org/doi/epdf/10.1126/science.1246164">Nondestructive Detection of an Optical Photon</a>
+</figcaption>
+</figure>
+</div>
 
 
 </section>
@@ -1896,6 +1940,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="../quantum-mechanics/Heisenbergs_uncertainty_relation.html" class="pagination-link" aria-label="Heisenberg Uncertainty Principle">
+        <span class="nav-page-text">Heisenberg Uncertainty Principle</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
