@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,6 +64,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../quantum-mechanics/Dummy.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -128,7 +163,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">The Schrödinger Equation</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Quantum Mechanics</li><li class="breadcrumb-item"><a href="../quantum-mechanics/Dummy.html">Lecture 25</a></li><li class="breadcrumb-item"><a href="../quantum-mechanics/Schroedinger_equation.html">Schrödinger Equation</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -744,6 +779,17 @@ window.Quarto = {
  <span class="menu-text">Heisenberg Uncertainty Principle</span></a>
   </div>
 </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-30" role="navigation" aria-expanded="true">
+ <span class="menu-text">Lecture 25</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-30" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-30" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../quantum-mechanics/Dummy.html" class="sidebar-item-text sidebar-link">
@@ -752,7 +798,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../quantum-mechanics/Dummy.html" class="sidebar-item-text sidebar-link">
+  <a href="../quantum-mechanics/Schroedinger_equation.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Schrödinger Equation</span></a>
   </div>
 </li>
@@ -770,10 +816,12 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#a-potential-barrier" id="toc-a-potential-barrier" class="nav-link active" data-scroll-target="#a-potential-barrier">A potential barrier</a>
+  <li><a href="#stationary-schrödinger-equation" id="toc-stationary-schrödinger-equation" class="nav-link active" data-scroll-target="#stationary-schrödinger-equation">Stationary Schrödinger Equation</a></li>
+  <li><a href="#solutions-of-the-schrödinger-equation" id="toc-solutions-of-the-schrödinger-equation" class="nav-link" data-scroll-target="#solutions-of-the-schrödinger-equation">Solutions of the Schrödinger equation</a>
   <ul class="collapse">
-  <li><a href="#the-case-e-e_0" id="toc-the-case-e-e_0" class="nav-link" data-scroll-target="#the-case-e-e_0">The case <span class="math inline">\(E &lt; E_0\)</span></a></li>
-  <li><a href="#the-case-e-e_0-1" id="toc-the-case-e-e_0-1" class="nav-link" data-scroll-target="#the-case-e-e_0-1">The case <span class="math inline">\(E &gt; E_0\)</span></a></li>
+  <li><a href="#a-potential-barrier" id="toc-a-potential-barrier" class="nav-link" data-scroll-target="#a-potential-barrier">A potential barrier</a></li>
+  <li><a href="#the-case-e-v_0" id="toc-the-case-e-v_0" class="nav-link" data-scroll-target="#the-case-e-v_0">The case <span class="math inline">\(E &lt; V_0\)</span></a></li>
+  <li><a href="#the-case-e-v_0-1" id="toc-the-case-e-v_0-1" class="nav-link" data-scroll-target="#the-case-e-v_0-1">The case <span class="math inline">\(E &gt; V_0\)</span></a></li>
   </ul></li>
   </ul>
 </nav>
@@ -781,7 +829,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Quantum Mechanics</li><li class="breadcrumb-item"><a href="../quantum-mechanics/Dummy.html">Lecture 25</a></li><li class="breadcrumb-item"><a href="../quantum-mechanics/Schroedinger_equation.html">Schrödinger Equation</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">The Schrödinger Equation</h1>
 </div>
@@ -800,221 +848,383 @@ window.Quarto = {
 </header>
 
 
-<p>First we discuss the simple case of a <em>free</em> particle with mass <span class="math inline">\(m\)</span> at uniform motion with velocity <span class="math inline">\(u\)</span> along the <span class="math inline">\(x\)</span> direction. We set the motion at a constant potential (<span class="math inline">\(E_{\mathrm{pot}} = 0\)</span>) and get a matter wave like</p>
+<p>We have previously considered the wave function <span class="math inline">\(\psi(x,t)\)</span> and its analogy to plane waves.</p>
 <p><span class="math display">\[
 \psi \left(x,t\right) = A \cdot \mathrm{e}^{i\left( k x - \omega t\right)} = A \cdot \mathrm{e}^{\frac{i}{\hbar}\left(p x - E t\right)} \mathrm{,}
 \]</span></p>
-<p>whith <span class="math inline">\(E = E_{\mathrm{kin}} = \hbar \cdot \omega\)</span> and <span class="math inline">\(p = \hbar \cdot k\)</span>. Because the formula is analogue with an electromagnetic wave, we use the same formula as for an electromagnetic wave propagating with a phase velocity of <span class="math inline">\(u\)</span> along <span class="math inline">\(x\)</span>,</p>
+<p>Our considerations revealed that plane waves are good elementary waves but not suitable for describing particles, which are localized in space. In order to describe particles, we have to consider wave packets, which are superpositions of plane waves.</p>
+<p>We would like to obtain now a differential equation that governs the time evolution of the wave function <span class="math inline">\(\psi(x,t)\)</span>. We start from the fundamental principle of energy conservation in classical mechanics:</p>
+<p><span class="math inline">\(E = E_{\text{kin}} + E_{\text{pot}}\)</span></p>
+<p>For a particle of mass m: <span class="math inline">\(E = \frac{p^2}{2m} + V(x)\)</span></p>
+<p>To transition to quantum mechanics, we combine the plane wave description of the wave function with the energy conservation principle: If we apply the following differential operators to the wave function <span class="math inline">\(\psi(x,t)\)</span>:</p>
+<ul>
+<li>Energy: <span class="math inline">\(E \rightarrow i\hbar\frac{\partial}{\partial t}\)</span></li>
+<li>Momentum: <span class="math inline">\(p \rightarrow -i\hbar\frac{\partial}{\partial x}\)</span></li>
+</ul>
+<p>we obtain the time-dependent Schrödinger equation in one dimension:</p>
+<p><span class="math inline">\(i\hbar\frac{\partial}{\partial t}\psi = -\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2}\psi + V(x)\psi\)</span></p>
+<p>This is the time-dependent Schrödinger equation in one dimension. It looks different from a wave equation, but it is a wave equation. The time-dependent Schrödinger equation is a wave equation for the wave function <span class="math inline">\(\psi(x,t)\)</span>, that shall describe the flow of probability density in space and time.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Why First-Order in Time?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>From optics, we are used to the wave equation containing a second order time derivative. This is not existing in the time dependent Schrödinger equations, which is supposed to be a wave equation as well. To understand why the Schrödinger equation contains only a first-order time derivative, let us compare three fundamental equations in physics:</p>
+<p>The classical wave equation involves a second time derivative: <span class="math display">\[\frac{\partial^2 \psi}{\partial t^2} = v^2 \frac{\partial^2 \psi}{\partial x^2}\]</span></p>
+<p>The diffusion equation contains a first-order time derivative with real coefficients: <span class="math display">\[\frac{\partial \psi}{\partial t} = D \frac{\partial^2 \psi}{\partial x^2}\]</span></p>
+<p>The Schrödinger equation has a first-order time derivative with a complex coefficient: <span class="math display">\[i\hbar\frac{\partial \psi}{\partial t} = -\frac{\hbar^2}{2m}\frac{\partial^2 \psi}{\partial x^2}\]</span></p>
+<p>A key requirement for quantum mechanics is the conservation of probability, expressed mathematically as</p>
+<p><span class="math display">\[\frac{d}{dt}\int |\psi|^2 dx = 0\]</span>.</p>
+<p>Let us examine this condition for the Schrödinger equation:</p>
+<p><span class="math display">\[\frac{d}{dt}\int |\psi|^2 dx = \int (\psi^* \frac{\partial \psi}{\partial t} + \psi \frac{\partial \psi^*}{\partial t}) dx\]</span></p>
+<p>Using the Schrödinger equation and its complex conjugate:</p>
+<p><span class="math display">\[i\hbar\frac{\partial \psi}{\partial t} = -\frac{\hbar^2}{2m}\frac{\partial^2 \psi}{\partial x^2}\]</span> <span class="math display">\[-i\hbar\frac{\partial \psi^*}{\partial t} = -\frac{\hbar^2}{2m}\frac{\partial^2 \psi^*}{\partial x^2}\]</span></p>
+<p>The terms cancel exactly, giving <span class="math inline">\(\frac{d}{dt}\int |\psi|^2 dx = 0\)</span>. This conservation of probability does not hold for the diffusion equation, where <span class="math inline">\(\frac{d}{dt}\int |\psi|^2 dx \neq 0\)</span>. Furthermore, a second-order time derivative would not preserve the phase relationships necessary for quantum interference.</p>
+<p>The complex nature of the Schrödinger equation, particularly the imaginary unit ‘i’, is therefore essential for maintaining probability conservation, enabling wave-like solutions, and preserving quantum phase relationships.</p>
+</div>
+</div>
+</div>
+<section id="stationary-schrödinger-equation" class="level2">
+<h2 class="anchored" data-anchor-id="stationary-schrödinger-equation">Stationary Schrödinger Equation</h2>
+<p>For states with definite energy (stationary states), we can separate the time dependence using: <span class="math inline">\(\psi(x,t) = \psi(x)e^{-iEt/\hbar}\)</span></p>
+<p>Inserting this into the time-dependent Schrödinger equation:</p>
+<p><span class="math inline">\(i\hbar\frac{\partial}{\partial t}\psi = -\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2}\psi + V(x)\psi\)</span></p>
+<p>The time derivative gives <span class="math inline">\(E\psi\)</span> on the left side, leading to the stationary Schrödinger equation:</p>
+<p><span class="math display">\[-\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2}\psi + V(x)\psi = E\psi\]</span></p>
+<p>This is the stationary Schrödinger equation in one dimension. It is a wave equation for the wave function <span class="math inline">\(\psi(x)\)</span>, that shall describe the spatial distribution of probability density. It compares to the Helmholz equation in optics. Therefore, solutions we have found for the Helmholz equation can be applied to the Schrödinger equation as well.</p>
+</section>
+<section id="solutions-of-the-schrödinger-equation" class="level2">
+<h2 class="anchored" data-anchor-id="solutions-of-the-schrödinger-equation">Solutions of the Schrödinger equation</h2>
+<p>To solve the stationary Schrödinger equation, we should take care of a number of boundary conditions:</p>
+<ol type="1">
+<li>The wave function <span class="math inline">\(\psi(x)\)</span> must be continuous.</li>
+<li>The first derivative of the wave function <span class="math inline">\(\frac{\partial \psi}{\partial x}\)</span> must be continuous.</li>
+<li>The wave function <span class="math inline">\(\psi(x)\)</span> must be square integrable, i.e.&nbsp;<span class="math inline">\(\int |\psi(x)|^2 dx &lt; \infty\)</span>.</li>
+</ol>
+<p>These are the main conditions, which help us to solve the Schrödinger equation. We will now discuss some examples of solutions of the Schrödinger equation.</p>
+<section id="a-potential-barrier" class="level3">
+<h3 class="anchored" data-anchor-id="a-potential-barrier">A potential barrier</h3>
+<p>Let’s consider a quantum particle encountering a potential step: for <span class="math inline">\(x &lt; 0\)</span>, the potential <span class="math inline">\(V(x) = 0\)</span>, while for <span class="math inline">\(x ≥ 0\)</span>, <span class="math inline">\(V(x) = E_0\)</span>. This is similar to a light wave hitting the interface between two different materials.</p>
+<div id="fig-potential-barrier-1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-potential-barrier-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/potential_barrier.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-potential-barrier-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1— Sketch of the potential barrier. A wave with a kinetic energy <span class="math inline">\(E_{\mathrm{kin}}\)</span> approaches a potential barrier <span class="math inline">\(E_0\)</span> with <span class="math inline">\(E_0 &gt; E_{\mathrm{kin}}\)</span>. The wave is completely reflected (amplitudes <span class="math inline">\(\left|A\right|\)</span> = <span class="math inline">\(\left|B\right|\)</span>), but intrudes the barrier where the amplitude decays exponentially.
+</figcaption>
+</figure>
+</div>
+<p>To solve this problem, we need to look at two regions separately and match their solutions at <span class="math inline">\(x = 0\)</span>.</p>
+<section id="region-1---x-0" class="level4">
+<h4 class="anchored" data-anchor-id="region-1---x-0">Region 1 - <span class="math inline">\(x &lt; 0\)</span>:</h4>
+<p>In the first region where <span class="math inline">\(V = 0\)</span>, the stationary Schrödinger equation is:</p>
 <p><span class="math display">\[
-\frac{\partial^2 \psi}{\partial x^2} - \frac{1}{u^2} \frac{\partial^2 \psi}{\partial t^2} = 0 \mathrm{.}
+- \frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} \psi\left( x \right) = E \psi \left( x \right)
 \]</span></p>
-<p>In order to describe stationary quantum states, namly the momentum <span class="math inline">\(p\)</span> and enegery <span class="math inline">\(E\)</span> do not depent on time, we are seeking for a stationary solution of the above equation. Since they are indepent of time, we can write the genernal solution for the wave equation <span class="math inline">\(\psi \left(x,t\right)\)</span> as a product of a <em>position-dependent</em> factor <span class="math inline">\(\mathrm{e}^{+ikx}\)</span> and a <em>time-dependent</em> phase <span class="math inline">\(\mathrm{e}^{-i \omega t}\)</span>, such like</p>
+<p>The solution is a combination of incoming and reflected waves:</p>
 <p><span class="math display">\[
-\begin{aligned}
-\psi \left(x,t\right) &amp; =  A \cdot \mathrm{e}^{i k x} \cdot \mathrm{e}^{-i \omega t}\\
-{} &amp; =  \psi \left(x\right) \cdot \mathrm{e}^{-i \omega t}\mathrm{.}
-\end{aligned}
+\psi_1(x) = A e^{ikx} + B e^{-ikx}
 \]</span></p>
-<p>If we now use this ansatz in the wave equation, we obtain for the derivative in space</p>
+<p>where <span class="math inline">\(k = \sqrt{2mE}/\hbar\)</span></p>
+</section>
+<section id="region-2---x-ge-0" class="level4">
+<h4 class="anchored" data-anchor-id="region-2---x-ge-0">Region 2 - <span class="math inline">\(x \ge 0\)</span>:</h4>
+<p>In the second region where <span class="math inline">\(V = V_0\)</span>, the Schrödinger equation becomes:</p>
 <p><span class="math display">\[
-\frac{\partial^2 \psi}{\partial x^2} = -k^2 \psi = - \frac{p^2}{\hbar^2} \psi = - \frac{2 m}{\hbar^2} E_{\mathrm{kin}} \psi \mathrm{.}
+- \frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} \psi + V_0 \psi = E \psi
 \]</span></p>
-<p>In the general case our particle might move within a force field. If it is a conservative field, we can assign a potential energy <span class="math inline">\(E_{\mathrm{pot}}\)</span> to every point in space keeping the total energy constant <span class="math inline">\(E = E_{\mathrm{kin}} + E_{\mathrm{pot}}\)</span>. Then, we directly obtain the <em>one-dimension stationary Schrödinger equation</em></p>
+<p>The solution here is:</p>
 <p><span class="math display">\[
-- \frac{\hbar^2}{2 m} \, \frac{\partial^2 \psi}{\partial x^2} + E_{\mathrm{pot}} \psi = E \psi
+\psi_2(x) = C e^{\alpha x} + D e^{-\alpha x}
 \]</span></p>
-<p>In the case of a three-dimensional motion of our particle we can analogously use the three-dimensional wave equation,</p>
-<p><span class="math display">\[
-\Delta \psi- \frac{1}{u^2} \frac{\partial^2 \psi}{\partial t^2} = 0 \mathrm{,}
-\]</span></p>
-<p>and an ansatz in three dimensions,</p>
-<p><span class="math display">\[
-\psi \left(x,y,z,t\right) = \psi \left(x,y,z\right) \cdot \mathrm{e}^{-i \omega t} \mathrm{,}
-\]</span></p>
-<p>in order to obtain the <em>three-dimensional stationary Schrödinger equation</em></p>
-<p><span class="math display">\[
-- \frac{\hbar^2}{2 m} \, \Delta \psi + E_{\mathrm{pot}} \psi = E \psi \mathrm{.}
-\]</span></p>
-<p>If we, in addition, calculate the first order derivative of our matter wave with respect to time, we obtain (for <span class="math inline">\(E_{\mathrm{pot}} = 0\)</span>)</p>
-<p><span class="math display">\[
-\frac{\partial \psi}{\partial t} = - \frac{i}{\hbar} E_{\mathrm{kin}} \, \psi \mathrm{.}
-\]</span></p>
-<p>In the case of a free particle, the condition <span class="math inline">\(E_{\mathrm{pot}} = 0\)</span> implies <span class="math inline">\(E_{\mathrm{kin}} = \; \mathrm{const.}\)</span> and we can combine the derivative in space and in time in order to derive this <em>three-dimensionsial time-dependent equation</em></p>
-<p><span class="math display">\[
-- \frac{\hbar^2}{2 m} \, \Delta \psi = i \hbar \frac{\partial \psi}{\partial t} \mathrm{.}
-\]</span></p>
-<p>Please note, in the case of <strong>non-stationary</strong> problems, namely where <span class="math inline">\(E = E \left( t \right)\)</span> and <span class="math inline">\(p = p \left( t \right)\)</span>, the simple derivative <span class="math inline">\(\partial^2 \psi / \partial t^2 = - \omega^2 \psi\)</span> <strong>does not hold true</strong> anymore and more time-dependent parameters have to be considered. However, Schrödinger proposed for a <em>time-dependent</em> potential energy <span class="math inline">\(E_{\mathrm{pot}} = E_{\mathrm{pot}} \left(r, t \right)\)</span> the equation</p>
-<p><span class="math display">\[
-- \frac{\hbar^2}{2 m} \, \Delta \psi\left(r, t \right) + E_{\mathrm{pot}} \left(r, t \right) \psi\left(r, t \right) = i \hbar \frac{\partial}{\partial t} \psi\left(r, t \right) \mathrm{,}
-\]</span></p>
-<p>which was confirmed by numerous experiments. For stationary problems, one can again separate the wave function into a position- and a time-dependent factor and get the stationary Schrödinger equation as stated above.</p>
-<section id="a-potential-barrier" class="level2">
-<h2 class="anchored" data-anchor-id="a-potential-barrier">A potential barrier</h2>
-<p>The free particle with <span class="math inline">\(E_{\mathrm{pot}} = 0\)</span> as we discussed it previously might propagate in <span class="math inline">\(+x\)</span> direction and enter a region with a different potential <span class="math inline">\(\phi \left( x \ge 0 \right) =\phi_0 &gt; 0\)</span>. Thus, the particle experiences a shift in its potential energy from <span class="math inline">\(E_{\mathrm{pot}} = 0\)</span> for <span class="math inline">\(x &lt; 0\)</span> to <span class="math inline">\(E_{\mathrm{pot}} = E_0\)</span> for <span class="math inline">\(x \ge 0\)</span>. This scenario is similar to a light wave at the air-glass interface.</p>
-<p>In order to solve the Schrödinger equation for this problem, we split the space <span class="math inline">\(-\infty &lt; x &lt; \infty\)</span> into two regions. In region 1, where <span class="math inline">\(E_{\mathrm{pot}} = 0\)</span>, we can state the general solution for the one-dimensional stationary Schrödinger equation as</p>
-<p><span class="math display">\[
-- \frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} \psi\left( x \right) + E_{\mathrm{pot}} \psi\left( x \right) = E \psi \left( x \right) \mathrm{.}
-\]</span></p>
-<p>Because <span class="math inline">\(E_{\mathrm{pot}} = 0\)</span> and <span class="math inline">\(E = E_{\mathrm{kin}} + E_{\mathrm{pot}}\)</span>, we can simplify <span class="math inline">\(E = E_{\mathrm{kin}} =  p^2/\left( 2 m \right) = \hbar^2 k^2 / 2 m\)</span> and get</p>
-<p><span class="math display">\[
-\begin{aligned}
-- \frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} \psi\left( x \right) &amp; =  \frac{\hbar^2 k^2}{2 m} \psi \left( x \right)\\
-\rightarrow \frac{\partial^2}{\partial x^2} \psi\left( x \right) &amp; =  - k^2 \psi \left( x \right) \mathrm{.}
-\end{aligned}
-\]</span></p>
-<p>The general solution of <span class="math inline">\(\psi\left( x \right)\)</span> has the shape</p>
-<p><span class="math display">\[
-\psi\left( x \right) = A \cdot \mathrm{e}^{+i k x} + B \cdot \mathrm{e}^{-i k x}
-\]</span></p>
-<p>and the time-dependent solution for the wave function</p>
-<p><span class="math display">\[
-\begin{aligned}
-\psi \left( x,t \right) &amp; =  \psi \left( x \right) \cdot \mathrm{e}^{-i \omega t}\\
-{} &amp; =  A \cdot \mathrm{e}^{i \left( k x - \omega t \right)} + B \cdot \mathrm{e}^{-i \left( k x + \omega t \right)}
-\end{aligned}
-\]</span></p>
-<p>is a superposition of a plane wave propagating in <span class="math inline">\(+x\)</span> direction and a plane wave propagating in <span class="math inline">\(-x\)</span> direction. Here, the wave with coefficient <span class="math inline">\(A\)</span> in propagation along <span class="math inline">\(+x\)</span> direction and the wave with the coefficient <span class="math inline">\(B\)</span> is propagation along the <span class="math inline">\(-x\)</span> direction. The coefficients <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are the amplitudes of both waves and are determined on the basis of boundary conditions. If we now concentrate again on our potantial barrier, we can state for the position-dependent solution in region 1</p>
-<p><span class="math display">\[
-\psi_{\mathrm{1}} \left( x \right) = A \cdot \mathrm{e}^{+i k x} + B \cdot \mathrm{e}^{-i k x} \mathrm{.}
-\]</span></p>
-<p>For region 2 where <span class="math inline">\(E_{\mathrm{pot}} = E_0\)</span> we can state the Schrödinger equation as follows</p>
-<p><span class="math display">\[
-\begin{aligned}
-- \frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} \psi\left( x \right) + E_0 \psi\left( x \right) &amp; =  E \psi \left( x \right) \\
-\rightarrow \frac{\partial^2}{\partial x^2} \psi\left( x \right) - \frac{2m}{\hbar^2} \left(E_0 - E \right) \psi\left( x \right) &amp; =  0\\
-\frac{\partial^2}{\partial x^2} \psi\left( x \right) - \alpha^2 \psi\left( x \right) &amp; = &amp; 0\mathrm{,}
-\end{aligned}
-\]</span></p>
-<p>with <span class="math inline">\(\alpha = \sqrt{2m\left(E_0 - E \right)}/\hbar\)</span>. The solution for region 2 then reads as</p>
-<p><span class="math display">\[
-\psi_{\mathrm{2}} \left( x \right) = C \cdot \mathrm{e}^{+\alpha x} + D \cdot \mathrm{e}^{-\alpha x}
-\]</span></p>
-<p>and the general solution for the position-dependent factor of the one-dimensional stationary Schrödinger equation reads as</p>
-<p><span class="math display">\[
-\psi \left( x \right) =
-    \begin{cases}
-      \psi_{\mathrm{1}} \left( x \right) &amp; \text{, if $x &lt; 0$}\\
-      \psi_{\mathrm{2}} \left( x \right) &amp; \text{, if $x \ge 0$}
-    \end{cases} \mathrm{.}
-\]</span></p>
-<p>The general solution does represent a solution of the Schrödinger equation for the whole space <span class="math inline">\(- \infty &lt; x &lt; \infty\)</span> if and only if <span class="math inline">\(\psi \left( x \right)\)</span> is continuously differentiable over the whole space. Otherwise the second derivative $ ^2 ( x ) / x^2$ in the Schrödinger equation will be undefined. From this prerequisite the boundary conditions at <span class="math inline">\(x = 0\)</span> directly follow,</p>
-<p><span class="math display">\[
-\begin{aligned}
-\psi_{\mathrm{1}} \left( x = 0 \right) &amp; =  \psi_{\mathrm{2}} \left( x = 0 \right)\\
-\rightarrow A + B &amp; =  C +D
-\end{aligned}
-\]</span></p>
-<p>and</p>
-<p><span class="math display">\[
-\begin{aligned}
-\frac{\partial}{\partial x} \psi_{\mathrm{1}} \left( x = 0 \right) &amp; =   \frac{\partial}{\partial x} \psi_{\mathrm{2}} \left( x = 0 \right)\\
-\rightarrow i k \left(A - B \right) &amp; =  \alpha \left( C - D \right) \mathrm{.}
-\end{aligned}
-\]</span></p>
-<section id="the-case-e-e_0" class="level3">
-<h3 class="anchored" data-anchor-id="the-case-e-e_0">The case <span class="math inline">\(E &lt; E_0\)</span></h3>
-<p>In the case <span class="math inline">\(E&lt;E_0\)</span>, <span class="math inline">\(\alpha\)</span> is a real number. Moreover the coefficient <span class="math inline">\(C\)</span> has to be <span class="math inline">\(0\)</span>, otherwise <span class="math inline">\(\psi_{\mathrm{2}}\)</span> will approach <span class="math inline">\(+\infty\)</span> for <span class="math inline">\(x \longrightarrow +\infty\)</span>. From the boundary conditions we get</p>
+<p>where <span class="math inline">\(\alpha = \sqrt{2m(V_0 - E)}/\hbar\)</span></p>
+<p>To connect these solutions, we need two boundary conditions at x = 0:</p>
+<ol type="1">
+<li><p>The wave function must be continuous: <span class="math display">\[A + B = C + D\]</span></p></li>
+<li><p>Its derivative must be continuous: <span class="math display">\[ik(A - B) = \alpha(C - D)\]</span></p></li>
+</ol>
+</section>
+</section>
+<section id="the-case-e-v_0" class="level3">
+<h3 class="anchored" data-anchor-id="the-case-e-v_0">The case <span class="math inline">\(E &lt; V_0\)</span></h3>
+<p>In the case <span class="math inline">\(E&lt;V_0\)</span>, <span class="math inline">\(\alpha\)</span> is real and we set <span class="math inline">\(C=0\)</span> to prevent <span class="math inline">\(\psi_2\)</span> diverging as <span class="math inline">\(x \to \infty\)</span>. The boundary conditions give:</p>
 <p><span class="math display">\[
 \begin{aligned}
 B &amp; =  \frac{i k + \alpha}{i k - \alpha} A\\
 D &amp; =  \frac{2 i k}{i k - \alpha} A
 \end{aligned}
 \]</span></p>
-<p>and thus the wave function in region 1 (<span class="math inline">\(x &lt; 0\)</span>) reads as</p>
+<p>The wave function in region 1 (<span class="math inline">\(x &lt; 0\)</span>) is:</p>
 <p><span class="math display">\[
 \psi_{\mathrm{1}} \left( x \right) = A \left( \mathrm{e}^{+i k x} + \frac{i k + \alpha}{i k - \alpha} \mathrm{e}^{-i k x} \right)\mathrm{.}
 \]</span></p>
-<p>Because we do know the wave function and its amplitudes, we can calculate the <strong>reflection coefficient</strong> as the ratio of the squared reflected and initial waves,</p>
+<p>The reflection coefficient, comparing reflected and initial wave intensities, is:</p>
 <p><span class="math display">\[
-R = \frac{\left| B \cdot \mathrm{e}^{-i k x} \right|^2}{\left| A \cdot \mathrm{e}^{+i k x} \right|^2} = \frac{\left| B \right|^2}{\left| A \right|^2} = \frac{\left| i k + \alpha \right|^2}{\left| i k - \alpha \right|^2} = 1 \mathrm{.}
+R = \frac{\left| B \cdot \mathrm{e}^{-i k x} \right|^2}{\left| A \cdot \mathrm{e}^{+i k x} \right|^2} = \frac{\left| i k + \alpha \right|^2}{\left| i k - \alpha \right|^2} = 1 \mathrm{.}
 \]</span></p>
-<p>From this result it is evedent that in the case <span class="math inline">\(E &lt; E_0\)</span> every particle is reflected at the barrier as to be expected in the framework of classical mechanics. However, the particles do not change their direction of propagation diretly at the edge of the barrier (<span class="math inline">\(x = 0\)</span>). Instead, they are able to intrude into region 2 (<span class="math inline">\(x \ge 0\)</span>) to some extend, even though their energy is not sufficient ( if discussed in the classical framework).</p>
-<p>The probibility density <span class="math inline">\(P \left( x \right)\)</span> to find a particle at the position <span class="math inline">\(x\)</span> (with <span class="math inline">\(x &gt; 0\)</span>) then is given through</p>
-<p><span class="math display">\[
-P \left( x \right) = \left| \psi_2 \left( x \right) \right|^2 = \left| D \cdot \mathrm{e}^{- \alpha x} \right|^2 = \frac{4 k^2}{\alpha^2 + k^2} \mathrm{e}^{-2 \alpha x} = \frac{4 k^2}{k_0^2} \mathrm{e}^{-2 \alpha x} \mathrm{,}
-\]</span></p>
-<p>where <span class="math inline">\(k^2 = 2 m E / \hbar^2\)</span> and <span class="math inline">\(k_0^2 = 2 m E_0 / \hbar^2\)</span>. We see, at a depth of penetration of <span class="math inline">\(x = 1/\left(2\alpha\right)\)</span> the propability density to find the particle at this position is decreased about the fractor <span class="math inline">\(1/\mathrm{e}\)</span> compared to the propability density at <span class="math inline">\(x=0\)</span>. This phenomenon we allready know as evanescent waves during total internal reflection.</p>
+<p>This shows total reflection, as expected for <span class="math inline">\(E &lt; V_0\)</span>. However, quantum mechanics reveals that particles still penetrate slightly into region 2 (<span class="math inline">\(x \ge 0\)</span>).</p>
+<div id="cell-fig-potential-barrier-1" class="cell" data-execution_count="2">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>hbar <span class="op">=</span> <span class="fl">1.0</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> <span class="fl">1.0</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>V0 <span class="op">=</span> <span class="fl">1.0</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>E <span class="op">=</span> <span class="fl">0.5</span>  <span class="co"># Energy less than V0</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> <span class="fl">0.3</span>  <span class="co"># Incident amplitude (reduced for clarity)</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Wave numbers</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>k <span class="op">=</span> np.sqrt(<span class="dv">2</span><span class="op">*</span>m<span class="op">*</span>E)<span class="op">/</span>hbar</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>alpha <span class="op">=</span> np.sqrt(<span class="dv">2</span><span class="op">*</span>m<span class="op">*</span>(V0 <span class="op">-</span> E))<span class="op">/</span>hbar</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Coefficients</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>B <span class="op">=</span> (<span class="ot">1j</span><span class="op">*</span>k <span class="op">+</span> alpha)<span class="op">/</span>(<span class="ot">1j</span><span class="op">*</span>k <span class="op">-</span> alpha) <span class="op">*</span> A</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>D <span class="op">=</span> <span class="dv">2</span><span class="op">*</span><span class="ot">1j</span><span class="op">*</span>k<span class="op">/</span>(<span class="ot">1j</span><span class="op">*</span>k <span class="op">-</span> alpha) <span class="op">*</span> A</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Position arrays</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>x1 <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">10</span>, <span class="dv">0</span>, <span class="dv">1000</span>)  <span class="co"># Region 1</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>x2 <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">1000</span>)   <span class="co"># Region 2</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Wavefunctions (offset by energy E)</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>psi1 <span class="op">=</span> A <span class="op">*</span> np.exp(<span class="ot">1j</span><span class="op">*</span>k<span class="op">*</span>x1) <span class="op">+</span> B <span class="op">*</span> np.exp(<span class="op">-</span><span class="ot">1j</span><span class="op">*</span>k<span class="op">*</span>x1) <span class="op">+</span> E</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>psi2 <span class="op">=</span> D <span class="op">*</span> np.exp(<span class="op">-</span>alpha<span class="op">*</span>x2) <span class="op">+</span> E</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Potential step</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>V <span class="op">=</span> np.zeros_like(np.concatenate([x1, x2]))</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>V[<span class="bu">len</span>(x1):] <span class="op">=</span> V0</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>get_size(<span class="dv">12</span>, <span class="dv">6</span>))</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot potential</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>plt.plot(np.concatenate([x1, x2]), V, <span class="st">'k-'</span>, label<span class="op">=</span><span class="st">'Potential V(x)'</span>)</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot wavefunctions</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>plt.plot(x1, np.real(psi1), <span class="st">'b-'</span>, label<span class="op">=</span><span class="st">'Region 1'</span>)</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>plt.plot(x2, np.real(psi2), <span class="st">'r-'</span>, label<span class="op">=</span><span class="st">'Region 2'</span>)</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="co"># Add vertical line at boundary</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>plt.axvline(x<span class="op">=</span><span class="dv">0</span>, color<span class="op">=</span><span class="st">'k'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>plt.axhline(y<span class="op">=</span><span class="dv">0</span>, color<span class="op">=</span><span class="st">'k'</span>, linestyle<span class="op">=</span><span class="st">'-'</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>plt.axhline(y<span class="op">=</span><span class="fl">0.5</span>, color<span class="op">=</span><span class="st">'k'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'position x'</span>)</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'energy'</span>)</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="op">-</span><span class="fl">0.2</span>, <span class="fl">1.2</span>)</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
 <div id="fig-potential-barrier-1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-potential-barrier-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/L25_potential_barrier_1.png" class="img-fluid figure-img" style="width:75.0%">
+<img src="Schroedinger_equation_files/figure-html/fig-potential-barrier-1-output-1.png" width="653" height="356" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-potential-barrier-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1— A wave with a kinetic energy <span class="math inline">\(E_{\mathrm{kin}}\)</span> approaches a potential barrier <span class="math inline">\(E_0\)</span> with <span class="math inline">\(E_0 &gt; E_{\mathrm{kin}}\)</span>. The wave is completely reflacted (amplitudes <span class="math inline">\(\left|A\right|\)</span> = <span class="math inline">\(\left|B\right|\)</span>), but intrudes the barrier where the amplitude decays exponentially.
+Figure&nbsp;2— Plot the wavefunctions for E &lt; V0
 </figcaption>
 </figure>
 </div>
-</section>
-<section id="the-case-e-e_0-1" class="level3">
-<h3 class="anchored" data-anchor-id="the-case-e-e_0-1">The case <span class="math inline">\(E &gt; E_0\)</span></h3>
-<p>In this case the kinetic energy is greater than the shift in the potential energy. In the framework of classical mechanics, every particle is allowed to enter region 2 (<span class="math inline">\(x&gt;0\)</span>) and to propagate there, but with a reduced velocity due to their decreased kinetic energy (<span class="math inline">\(E_{\mathrm{kin}} = E - E_0\)</span>).</p>
-<p>In the framwork of matter waves the parameter <span class="math inline">\(\alpha\)</span> now is an imaginary number. Therefore, we introduce a real number,</p>
+</div>
+</div>
+<p>The probability density <span class="math inline">\(P(x)\)</span> for <span class="math inline">\(x &gt; 0\)</span> is:</p>
 <p><span class="math display">\[
-\kappa = i \alpha = \frac{\sqrt{2 m \left( E - E_0 \right)}}{\hbar} \mathrm{.}
+P \left( x \right) = \left| \psi_2 \left( x \right) \right|^2 = \left| D \cdot \mathrm{e}^{- \alpha x} \right|^2 = \frac{4 k^2}{\alpha^2 + k^2} \mathrm{e}^{-2 \alpha x} = \frac{4 k^2}{k_0^2} \mathrm{e}^{-2 \alpha x} \mathrm{,}
 \]</span></p>
-<p>The solution for the position-dependent amplitude <span class="math inline">\(\psi_2 \left( x \right)\)</span> in region 2 then reads as</p>
+<p>where <span class="math inline">\(k^2 = 2 m E / \hbar^2\)</span> and <span class="math inline">\(k_0^2 = 2 m V_0 / \hbar^2\)</span>. At <span class="math inline">\(x = 1/(2\alpha)\)</span>, the probability density drops to <span class="math inline">\(1/e\)</span> of its value at <span class="math inline">\(x=0\)</span>, similar to evanescent waves in total internal reflection. This is plotted below and demonstrates that there is still a small probability of finding the particle in region 2, even when <span class="math inline">\(E &lt; V_0\)</span>, which is later the basis for tunneling.</p>
+<div id="cell-fig-decay-length" class="cell" data-execution_count="3">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>hbar <span class="op">=</span> <span class="fl">1.0</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> <span class="fl">1.0</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>V0 <span class="op">=</span> <span class="dv">1</span>  <span class="co"># Fixed energy</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>E <span class="op">=</span> np.linspace(<span class="dv">0</span>, V0<span class="op">-</span><span class="fl">1e-2</span>, <span class="dv">1000</span>)  <span class="co"># Range of potential values</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate decay length</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>decay_length <span class="op">=</span> <span class="dv">1</span><span class="op">/</span>(<span class="dv">2</span><span class="op">*</span>np.sqrt(<span class="dv">2</span><span class="op">*</span>m<span class="op">*</span>(V0 <span class="op">-</span> E))<span class="op">/</span>hbar)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>get_size(<span class="dv">12</span>, <span class="dv">6</span>))</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>plt.plot(V0<span class="op">-</span>E, decay_length, <span class="st">'b-'</span>)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'V₀ - E'</span>)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Decay Length 1/(2α)'</span>)</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div id="fig-decay-length" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-decay-length-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Schroedinger_equation_files/figure-html/fig-decay-length-output-1.png" width="619" height="349" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-decay-length-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3— Decay length as a function of potential barrier height minus energy
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="the-case-e-v_0-1" class="level3">
+<h3 class="anchored" data-anchor-id="the-case-e-v_0-1">The case <span class="math inline">\(E &gt; V_0\)</span></h3>
+<p>When <span class="math inline">\(E &gt; V_0\)</span>, particles can classically enter region 2 with reduced kinetic energy <span class="math inline">\(E_{kin} = E - V_0\)</span>. In quantum mechanics, α becomes imaginary, so we define a real wave number:</p>
+<p><span class="math display">\[
+\kappa = i \alpha = \frac{\sqrt{2 m \left( E - V_0 \right)}}{\hbar} \mathrm{.}
+\]</span></p>
+<p>The wave function in region 2 becomes:</p>
 <p><span class="math display">\[
 \psi_2 \left( x \right) = C \cdot \mathrm{e}^{-i \kappa x} + D \cdot \mathrm{e}^{+i \kappa x} \mathrm{,}
 \]</span></p>
-<p>whereas the solution <span class="math inline">\(\psi_1 \left( x \right)\)</span> for the stationary equation in region 1 remains the same as stated above.</p>
-<p>As in the case of the first example, we state the boundary conditions at <span class="math inline">\(x = 0\)</span> as</p>
+<p>with <span class="math inline">\(\psi_1(x)\)</span> unchanged from before.</p>
+<p>The boundary conditions at <span class="math inline">\(x = 0\)</span> require:</p>
 <p><span class="math display">\[
 \begin{aligned}
 \psi_{\mathrm{1}} \left( x = 0 \right) &amp; =  \psi_{\mathrm{2}} \left( x = 0 \right)\\
 \rightarrow A + B &amp; =  C +D
 \end{aligned}
 \]</span></p>
-<p>and</p>
 <p><span class="math display">\[
 \begin{aligned}
 \frac{\partial}{\partial x} \psi_{\mathrm{1}} \left( x = 0 \right) &amp; =   \frac{\partial}{\partial x} \psi_{\mathrm{2}} \left( x = 0 \right)\\
-\rightarrow i k \left(A - B \right) &amp; =  i \kappa \left( -C + D \right) \mathrm{.}
+\rightarrow i k \left(A - B \right) &amp; =  -i \kappa C + i \kappa D \mathrm{.}
 \end{aligned}
 \]</span></p>
-<p>Furthermore, in region 2 there is no wave propagating along the <span class="math inline">\(-x\)</span> direction since there is no boundary located in region 2 in order to reflect the wave. Thus, we can set <span class="math inline">\(C = 0\)</span>. From the boundary conditions it follows</p>
+<p>Since no wave reflects from infinity, <span class="math inline">\(C = 0\)</span>. This gives:</p>
 <p><span class="math display">\[
 \begin{aligned}
 B &amp; =  \frac{k - \kappa}{k + \kappa} A\\
-D &amp; =  \frac{2}{k + \kappa} A\\
+D &amp; =  \frac{2 k}{k + \kappa} A\\
 \end{aligned}
 \]</span></p>
-<p>and the wave functions read as</p>
+<p>resulting in:</p>
 <p><span class="math display">\[
 \begin{aligned}
 \psi_{\mathrm{1}} \left( x \right) &amp; =  A \left( \mathrm{e}^{+i k x} + \frac{k - \kappa}{ k + \kappa} \mathrm{e}^{-i k x} \right)\\
 \psi_{\mathrm{2}} \left( x \right) &amp; =  A \frac{2 k}{ k + \kappa} \mathrm{e}^{+i \kappa x} \mathrm{.}
 \end{aligned}
 \]</span></p>
-<p>For the reflection coefficient it follows</p>
-<p><span class="math display">\[
-R = \frac{\left| B \right|^2}{\left| A \right|^2} = \frac{\left| k - \kappa \right|^2}{\left| k + \kappa \right|^2}
-\]</span></p>
-<p>and we see, even though the kinetic energy of our pairticle is sufficient enough to overcome the potential barrier, a part of the wave is reflected. Furthermore, since the wavenumber is directly connected to the refrective index <span class="math inline">\(k = n_1 \cdot k_0\)</span> and <span class="math inline">\(\kappa = n_2 \cdot k_0\)</span>, we can immediately calculate the reflectance,</p>
-<p><span class="math display">\[
-R = \frac{\left| n_1 - n_2 \right|^2}{\left| n_1 + n_2 \right|^2}\mathrm{.}
-\]</span></p>
-<p>In order to calculate the transmission coefficient, or how many particles pass a unit area at <span class="math inline">\(x=x_0&gt;0\)</span> per time devided through how many incident particles pass a unit area at <span class="math inline">\(x=-x_0&lt;0\)</span> per time, we have to bear in mind the different propagation velocities in region 1 and 2. The ratio of the velocities is governed by the ratio of the wavenumbers</p>
-<p><span class="math display">\[
-\frac{v_2}{v_1} = \frac{\lambda_2}{\lambda_1} = \frac{k}{\kappa}  \mathrm{.}
-\]</span></p>
-<p>The transmission coefficient then reads as</p>
-<p><span class="math display">\[
-T = \frac{v_1 \cdot \left| D \right|^2}{v_2 \cdot \left| A \right|^2} = \frac{4 \kappa k}{\left( k + \kappa \right)^2}\mathrm{.}
-\]</span></p>
-<p>Moreover, it is evident that</p>
-<p><span class="math display">\[
-R + T = 1 \mathrm{,}
-\]</span></p>
-<p>which represents the conservation of the number of particles. Please note, for the limiting case <span class="math inline">\(E = E_0\)</span> every exponent becomes <span class="math inline">\(0\)</span> (<span class="math inline">\(\alpha = 0\)</span> as well as <span class="math inline">\(\kappa = 0\)</span>) and the reflection coefficient becomes <span class="math inline">\(R=1\)</span>.</p>
+<p>The plot below shows the wave functions for <span class="math inline">\(E &gt; V_0\)</span>. The wave function in region 2 is oscillatory, indicating that the particle can penetrate the barrier region.</p>
+<div id="cell-fig-potential-barrier-2" class="cell" data-execution_count="4">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>hbar <span class="op">=</span> <span class="fl">1.0</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> <span class="fl">1.0</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>V0 <span class="op">=</span> <span class="fl">1.0</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>E <span class="op">=</span> <span class="fl">1.5</span>  <span class="co"># Energy greater than V0</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> <span class="fl">0.3</span>  <span class="co"># Incident amplitude (reduced for clarity)</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Wave numbers</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>k <span class="op">=</span> np.sqrt(<span class="dv">2</span><span class="op">*</span>m<span class="op">*</span>E)<span class="op">/</span>hbar</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>kappa <span class="op">=</span> np.sqrt(<span class="dv">2</span><span class="op">*</span>m<span class="op">*</span>(E <span class="op">-</span> V0))<span class="op">/</span>hbar  <span class="co"># Changed from alpha to kappa for E &gt; V0</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Coefficients</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>B <span class="op">=</span> (k <span class="op">-</span> kappa)<span class="op">/</span>(k <span class="op">+</span> kappa) <span class="op">*</span> A  <span class="co"># Modified for E &gt; V0</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>D <span class="op">=</span> <span class="dv">2</span><span class="op">*</span>k<span class="op">/</span>(k <span class="op">+</span> kappa) <span class="op">*</span> A  <span class="co"># Modified for E &gt; V0</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Position arrays</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>x1 <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">10</span>, <span class="dv">0</span>, <span class="dv">1000</span>)  <span class="co"># Region 1</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>x2 <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">1000</span>)   <span class="co"># Region 2</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Wavefunctions (offset by energy E)</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>psi1 <span class="op">=</span> A <span class="op">*</span> np.exp(<span class="ot">1j</span><span class="op">*</span>k<span class="op">*</span>x1) <span class="op">+</span> B <span class="op">*</span> np.exp(<span class="op">-</span><span class="ot">1j</span><span class="op">*</span>k<span class="op">*</span>x1) <span class="op">+</span> E</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>psi2 <span class="op">=</span> D <span class="op">*</span> np.exp(<span class="ot">1j</span><span class="op">*</span>kappa<span class="op">*</span>x2) <span class="op">+</span> E  <span class="co"># Changed to oscillatory solution</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Potential step</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>V <span class="op">=</span> np.zeros_like(np.concatenate([x1, x2]))</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>V[<span class="bu">len</span>(x1):] <span class="op">=</span> V0</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>get_size(<span class="dv">12</span>, <span class="dv">6</span>))</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot potential</span></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>plt.plot(np.concatenate([x1, x2]), V, <span class="st">'k-'</span>, label<span class="op">=</span><span class="st">'Potential V(x)'</span>)</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot wavefunctions</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>plt.plot(x1, np.real(psi1), <span class="st">'b-'</span>, label<span class="op">=</span><span class="st">'Region 1'</span>)</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>plt.plot(x2, np.real(psi2), <span class="st">'r-'</span>, label<span class="op">=</span><span class="st">'Region 2'</span>)</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a><span class="co"># Add vertical line at boundary</span></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>plt.axvline(x<span class="op">=</span><span class="dv">0</span>, color<span class="op">=</span><span class="st">'k'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>plt.axhline(y<span class="op">=</span><span class="dv">0</span>, color<span class="op">=</span><span class="st">'k'</span>, linestyle<span class="op">=</span><span class="st">'-'</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>plt.axhline(y<span class="op">=</span>E, color<span class="op">=</span><span class="st">'k'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'position x'</span>)</span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'energy'</span>)</span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="op">-</span><span class="fl">0.2</span>, <span class="fl">2.0</span>)</span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
 <div id="fig-potential-barrier-2" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-potential-barrier-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/L25_potential_barrier_2.png" class="img-fluid figure-img" style="width:75.0%">
+<img src="Schroedinger_equation_files/figure-html/fig-potential-barrier-2-output-1.png" width="637" height="356" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-potential-barrier-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2— A wave with a kinetic energy <span class="math inline">\(E_{\mathrm{kin}}\)</span> approaches potential barrier <span class="math inline">\(E_0\)</span> with $E_{} &gt; E_0 $. The wave is partially reflected and partially transmitted.
+Figure&nbsp;4— Plot the wavefunctions for E &gt; V0
 </figcaption>
 </figure>
+</div>
+</div>
+</div>
+<p>Let’s understand what these coefficients mean physically. The reflection coefficient R represents the probability that an incoming particle will be reflected at the potential barrier. We calculate it by comparing the squared magnitudes of the reflected wave (B) to the incident wave (A):</p>
+<p><span class="math display">\[
+R = \frac{\left| B \right|^2}{\left| A \right|^2} = \frac{\left| k - \kappa \right|^2}{\left| k + \kappa \right|^2}
+\]</span></p>
+<p>This expression is analogous to the reflection of light at an interface between two media with different refractive indices (<span class="math inline">\(k = n_1 k_0\)</span>, <span class="math inline">\(\kappa = n_2 k_0\)</span>):</p>
+<p><span class="math display">\[
+R = \frac{\left| n_1 - n_2 \right|^2}{\left| n_1 + n_2 \right|^2}\mathrm{.}
+\]</span></p>
+<p>The transmission coefficient T tells us the probability that a particle will pass through the barrier. Because the particle velocities are different on either side of the barrier (<span class="math inline">\(v_2/v_1 = k/\kappa\)</span>), we must account for this in our calculation:</p>
+<p><span class="math display">\[
+T = \frac{v_1 \cdot \left| D \right|^2}{v_2 \cdot \left| A \right|^2} = \frac{4 \kappa k}{\left( k + \kappa \right)^2}\mathrm{.}
+\]</span></p>
+<p>Since every particle must either reflect or transmit, these probabilities must sum to one:</p>
+<p><span class="math display">\[
+R + T = 1 \mathrm{.}
+\]</span></p>
+<p>When the particle’s energy exactly equals the barrier height (<span class="math inline">\(E = V_0\)</span>), both <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\kappa\)</span> become zero, resulting in total reflection (<span class="math inline">\(R = 1\)</span>). The plot below shows the trans</p>
+<div id="cell-fig-transmission-reflection" class="cell" data-execution_count="5">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>hbar <span class="op">=</span> <span class="fl">1.0</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> <span class="fl">1.0</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>V0 <span class="op">=</span> <span class="fl">1.0</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>E <span class="op">=</span> np.linspace(V0, <span class="dv">5</span><span class="op">*</span>V0, <span class="dv">1000</span>)  <span class="co"># Energy range from V0 to 2*V0</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Wave numbers</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>k <span class="op">=</span> np.sqrt(<span class="dv">2</span><span class="op">*</span>m<span class="op">*</span>E)<span class="op">/</span>hbar</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>kappa <span class="op">=</span> np.sqrt(<span class="dv">2</span><span class="op">*</span>m<span class="op">*</span>(E <span class="op">-</span> V0))<span class="op">/</span>hbar</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate coefficients</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>R <span class="op">=</span> ((k <span class="op">-</span> kappa)<span class="op">/</span>(k <span class="op">+</span> kappa))<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>T <span class="op">=</span> <span class="dv">4</span><span class="op">*</span>k<span class="op">*</span>kappa<span class="op">/</span>((k <span class="op">+</span> kappa)<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>get_size(<span class="dv">10</span>,<span class="dv">8</span>))</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>plt.plot(E<span class="op">/</span>V0, R, <span class="st">'b-'</span>, label<span class="op">=</span><span class="st">'Reflection R'</span>)</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>plt.plot(E<span class="op">/</span>V0, T, <span class="st">'r-'</span>, label<span class="op">=</span><span class="st">'Transmission T'</span>)</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>plt.plot(E<span class="op">/</span>V0, R <span class="op">+</span> T, <span class="st">'k--'</span>, label<span class="op">=</span><span class="st">'R + T = 1'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'E/V₀'</span>)</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Coefficient'</span>)</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div id="fig-transmission-reflection" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-transmission-reflection-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Schroedinger_equation_files/figure-html/fig-transmission-reflection-output-1.png" width="545" height="440" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-transmission-reflection-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5— Transmission and reflection coefficients as functions of energy
+</figcaption>
+</figure>
+</div>
+</div>
 </div>
 
 
@@ -1442,6 +1652,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../quantum-mechanics/Dummy.html" class="pagination-link" aria-label="Structure of Atoms">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Structure of Atoms</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
 </div> <!-- /content -->
 
 

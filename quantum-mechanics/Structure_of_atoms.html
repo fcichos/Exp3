@@ -744,6 +744,17 @@ window.Quarto = {
  <span class="menu-text">Heisenberg Uncertainty Principle</span></a>
   </div>
 </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-30" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 25</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-30" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-30" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../quantum-mechanics/Dummy.html" class="sidebar-item-text sidebar-link">
@@ -752,7 +763,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../quantum-mechanics/Dummy.html" class="sidebar-item-text sidebar-link">
+  <a href="../quantum-mechanics/Schroedinger_equation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Schrödinger Equation</span></a>
   </div>
 </li>
@@ -798,15 +809,15 @@ window.Quarto = {
 </header>
 
 
-<p>So far we have discussed the models of the structural organization of atoms as proposed by <em>Thomson</em> also called <em>Plum Pudding Model</em> and proposed by <em>Rutherford</em>. We know that charges are not equally distributed across the volume of the atom (as assumed in the plum pudding model). Positive charges are rather comprised within a tiny volume, whereas negative charges form a shell around the positive core. In detail, positive charges form the core with a diameter of <span class="math inline">\(R_{\mathrm{C}} &lt; 10^{-14} \; \mathrm{m}\)</span> and a total charge of <span class="math inline">\(Q = Z\cdot e\)</span>, where <span class="math inline">\(Q\)</span>, <span class="math inline">\(Z\)</span>, and <span class="math inline">\(e\)</span> denote the charge of the core or <em>nucleus</em>, the atomic number, and the elementary charge, respectively. In addition, the nucleus bears almost the whole mass of the atom. In contrast to the positive charges forming heavy but small nucleus, the number of <span class="math inline">\(Z\)</span> electrons with a charge of <span class="math inline">\(-e\)</span> each form the <em>atomic shell</em>. The volume of the shell measures <span class="math inline">\(10^{12}\)</span> to <span class="math inline">\(10^{15}\)</span> times the volume of the nucleus and thus almost the whole volume of the atom. In contrast, the mass of the shell is almost vanishing.</p>
-<p>Now, we will discuss how the atomic shell might be structured. One question is, whether the distribution of electrons is a static distribution of charges or whether the electrons move. The first case is not stable, because of the electrostatic attraction between the positive nucleus and the negative electrons. The second case, however, is puzzling as well, because accelerated and decelerated charges are supposed to emit electromagnetic waves which is not observed.</p>
+<p>Having already explored the Plum Pudding model and Rutherford’s nuclear atom model through the Geiger-Marsden experiments, we know that the atom consists of a tiny, dense, positively-charged nucleus (<span class="math inline">\(R_{\mathrm{C}} &lt; 10^{-14} \; \mathrm{m}\)</span>, charge <span class="math inline">\(Q = Z\cdot e\)</span>) containing most of the atomic mass, surrounded by a much larger electron cloud (<span class="math inline">\(10^{12}\)</span> to <span class="math inline">\(10^{15}\)</span> times the nuclear volume). This electron cloud contains <span class="math inline">\(Z\)</span> electrons, each with charge <span class="math inline">\(-e\)</span>, but contributes negligibly to the total mass.</p>
+<p>A key question emerges about the structure of this electron cloud: are the electrons statically distributed or in motion? A static distribution is unstable due to electrostatic attraction to the nucleus. However, moving electrons present their own puzzle - classical electrodynamics predicts that accelerating charges should continuously emit electromagnetic radiation, which would cause them to spiral into the nucleus. This contradicts the observed stability of atoms. Understanding this paradox requires us to consider quantum mechanical effects.</p>
 <section id="atomic-spectra" class="level2">
 <h2 class="anchored" data-anchor-id="atomic-spectra">Atomic spectra</h2>
-<p>In 1859 Kirchhoff and Bunsen observed that atoms absorb light only for particular values of the wavelength. Moreover these wavelength values are specific for the particular kind of atoms and form the absorption and emission spectra of these atoms. Early instruments for recording spectra made use of a prism as diffracting element and a photo plate for recording. The prism gave rise to a rainbow-colored stripe at the plate and narrow lines of reduced intensity appeared exactly at those positions that correspond to the particular wavelengths of atom absorption. Thus, the negative of the photo plates showed bright lines at these positions and those compositions of lines were called <em>line spectra</em>. On the basis of further experiments one was able to state:</p>
+<p>In 1859 Kirchhoff and Bunsen observed that atoms absorb light only for particular values of the wavelength. Moreover these wavelength values are specific for the particular kind of atoms and form the absorption and emission spectra of these atoms. Early instruments for recording spectra made use of a prism as diffracting element and a photo plate for recording. The prism gave rise to a rainbow-colored stripe at the plate and narrow dark lines appeared exactly at those positions that correspond to the particular wavelengths of atom absorption. Thus, the photo plates showed dark lines at these positions and those compositions of lines were called <em>line spectra</em>. On the basis of further experiments one was able to state:</p>
 <ul>
-<li><p>For every wavelength at which an atom absorbs emission of light is possible, if the atom was previously supplied with enough energy</p></li>
-<li><p>The absorption and emission spectra are specific for every kind of atoms. Thus, one is able to determine the chemical element absorbing or emitting the radiation on the basis of the line spectrum.</p></li>
-<li><p>The values of wavelength (spectral lines) are not arbitrarily narrow. They rather exhibit a distribution of intensity. This indicates that atoms do not emit monochromatic radiation.</p></li>
+<li><p>For every wavelength at which an atom absorbs light, emission of light is possible if the atom was previously supplied with enough energy</p></li>
+<li><p>The absorption and emission spectra are specific for every kind of atom. Thus, one is able to determine the chemical element absorbing or emitting the radiation on the basis of the line spectrum.</p></li>
+<li><p>The values of wavelength (spectral lines) are not arbitrarily narrow. They rather exhibit a distribution of intensity. This indicates that atoms do not emit strictly monochromatic radiation.</p></li>
 </ul>
 <p>In 1885 Balmer discovered that the emission spectrum of hydrogen is composed of a series of lines that obey a specific law, namely</p>
 <p><span class="math display">\[
@@ -846,7 +857,7 @@ v = n \cdot \frac{h}{2 \pi \mu r} \mathrm{.}
 <p><span class="math display">\[
 \begin{aligned}
 r \left(n\right) &amp; =  \frac{\varepsilon_0 h^2}{\pi \mu e^2} \frac{n^2}{Z}\\
-{} &amp; = &amp; a_0 \frac{n^2}{Z} \mathrm{.}
+{} &amp; =  a_0 \frac{n^2}{Z} \mathrm{.}
 \end{aligned}
 \]</span></p>
 <p>The constant <span class="math inline">\(a_0\)</span>,</p>
@@ -883,15 +894,15 @@ Ry^{\ast} &amp; =  \frac{\mu e^4}{8 \varepsilon_0^2 h^2}\\
 \]</span></p>
 <p>It is evident that the electron can adopt only particular values of energy <span class="math inline">\(E_{\mathrm{n}}\)</span>, which might be expressed in terms of a <em>quantum number</em> <span class="math inline">\(n = 1, 2, 3 \ldots\)</span>. These stationary energetic states are also called <em>quantum states</em> of the atom and the quantum number <span class="math inline">\(n\)</span> is called the <em>principal quantum number</em>.</p>
 <p>Moreover, it is evident that <strong>the energy is negative</strong> and approaches <span class="math inline">\(0\)</span> if the orbital radius approaches <span class="math inline">\(+\infty\)</span>, which corresponds to the principal quantum number approaching <span class="math inline">\(+\infty\)</span>.</p>
-<div id="fig-bohr-model" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-bohr-model-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/L25_Bohr_model.png" class="img-fluid figure-img" style="width:90.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bohr-model-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2— Kinetic energy, potential energy, and total energy of an electron within the Coulomb potential. Left shows classical mechanics and electrodynamics framework. Right shows quantum mechanical correction resulting in minimum total energy.
-</figcaption>
+<div id="447a5bd1" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Structure_of_atoms_files/figure-html/cell-3-output-1.png" width="703" height="347" class="figure-img"></p>
+<figcaption>Kinetic energy, potential energy, and total energy of an electron within the Coulomb potential. Left shows classical mechanics and electrodynamics framework. Right shows quantum mechanical correction resulting in minimum total energy.</figcaption>
 </figure>
+</div>
+</div>
 </div>
 <p>Please note:</p>
 <ul>
@@ -903,6 +914,64 @@ Figure&nbsp;2— Kinetic energy, potential energy, and total energy of an electr
 <p><span class="math display">\[
 h \cdot \nu = E_{\mathrm{k}} - E_{\mathrm{i}} \mathrm{.}
 \]</span></p>
+<p>The spectral series of hydrogen correspond to transitions between different energy levels. The main series are:</p>
+<div id="tbl-spectral-series" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-spectral-series-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1— Spectral series of the hydrogen atom showing the initial and final states for each transition series along with the corresponding spectral region.
+</figcaption>
+<div aria-describedby="tbl-spectral-series-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 30%">
+<col style="width: 28%">
+<col style="width: 23%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Series Name</th>
+<th>Initial State (<span class="math inline">\(n_i\)</span>)</th>
+<th>Final States (<span class="math inline">\(n_k\)</span>)</th>
+<th>Spectral Region</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Lyman</td>
+<td>1</td>
+<td>2,3,4,…</td>
+<td>Ultraviolet</td>
+</tr>
+<tr class="even">
+<td>Balmer</td>
+<td>2</td>
+<td>3,4,5,…</td>
+<td>Visible</td>
+</tr>
+<tr class="odd">
+<td>Paschen</td>
+<td>3</td>
+<td>4,5,6,…</td>
+<td>Infrared</td>
+</tr>
+<tr class="even">
+<td>Brackett</td>
+<td>4</td>
+<td>5,6,7,…</td>
+<td>Infrared</td>
+</tr>
+<tr class="odd">
+<td>Pfund</td>
+<td>5</td>
+<td>6,7,8,…</td>
+<td>Far Infrared</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
 <p>The energy of the photon is used to compensate the energy difference between state <span class="math inline">\(E_{\mathrm{k}}\)</span> and state <span class="math inline">\(E_{\mathrm{i}}\)</span>, <span class="math inline">\(\Delta E = E_{\mathrm{k}} - E_{\mathrm{i}}\)</span>. From the relation <span class="math inline">\(E_{\mathrm{n}} = - Ry^{\ast} \cdot \frac{Z^2}{n^2}\)</span> we obtain</p>
 <p><span class="math display">\[
 \nu = \frac{Ry^{\ast}}{h} Z^2 \left( \frac{1}{n_{\mathrm{i}}^2} - \frac{1}{n_{\mathrm{k}}^2} \right) \mathrm{.}
@@ -912,6 +981,16 @@ h \cdot \nu = E_{\mathrm{k}} - E_{\mathrm{i}} \mathrm{.}
 \frac{1}{\lambda} = Ry \cdot Z^2 \left( \frac{1}{n_{\mathrm{i}}^2} - \frac{1}{n_{\mathrm{k}}^2} \right) \mathrm{,}
 \]</span></p>
 <p>which is the general equation for the lines of a line spectrum and comprises the equation stated by Balmer for the special case of hydrogen (<span class="math inline">\(Z = 1\)</span>).</p>
+<div id="8e16c7dc" class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Structure_of_atoms_files/figure-html/cell-4-output-1.png" width="647" height="434" class="figure-img"></p>
+<figcaption>Energy levels and transitions in the hydrogen atom according to the Bohr model.</figcaption>
+</figure>
+</div>
+</div>
+</div>
 <p>In summary we can state:</p>
 <ul>
 <li>Electrons propagate in circular orbitals around the nucleus. The radii of the orbital are quantized and the particular radius increases <em>quadratically</em> with the principal quantum number <span class="math inline">\(n\)</span>,</li>
@@ -930,6 +1009,41 @@ E_{\mathrm{n}} = - Ry^{\ast} \frac{Z^2}{n^2} \mathrm{.}
 <li><p>The energy for <span class="math inline">\(n \longrightarrow \infty\)</span> and thus <span class="math inline">\(r \longrightarrow \infty\)</span> is set as <span class="math inline">\(0\)</span>. The difference between <span class="math inline">\(E_{\mathrm{n}}\)</span> and <span class="math inline">\(E_{\infty}\)</span> is the ionization energy (the energy the electron needs to escape from the Coulomb potential).</p></li>
 <li><p>Through absorbing a photon of energy <span class="math inline">\(h\cdot \nu\)</span> the atom goes from a lower energetic state <span class="math inline">\(E_{\mathrm{i}}\)</span> into a higher energetic state <span class="math inline">\(E_{\mathrm{k}}\)</span>, if conservation of energy is fulfilled.</p></li>
 </ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The Bohr-Sommerfeld Model: A Quantum Mechanical Bridge
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The Bohr-Sommerfeld model (1916) represented a crucial extension of Bohr’s atomic theory by incorporating relativistic effects and elliptical orbits through Wilson-Sommerfeld quantization rules.</p>
+<section id="orbital-extensions" class="level3">
+<h3 class="anchored" data-anchor-id="orbital-extensions">Orbital Extensions</h3>
+<p>Rather than restricting electrons to circular orbits, Sommerfeld introduced elliptical orbits characterized by their semi-major axis <span class="math inline">\(a\)</span>, semi-minor axis <span class="math inline">\(b\)</span>, and eccentricity <span class="math inline">\(e = \sqrt{1-\frac{b^2}{a^2}}\)</span>. This generalization required additional quantum numbers beyond Bohr’s principal quantum number: the azimuthal quantum number <span class="math inline">\(l\)</span> for angular momentum, the magnetic quantum number <span class="math inline">\(m\)</span> for spatial orientation, and a relativistic quantum number <span class="math inline">\(nr\)</span> for radial motion.</p>
+</section>
+<section id="quantization-rules" class="level3">
+<h3 class="anchored" data-anchor-id="quantization-rules">Quantization Rules</h3>
+<p>The cornerstone of the theory lies in the generalized Wilson-Sommerfeld quantization condition. For any periodic coordinate <span class="math inline">\(q_i\)</span> and its conjugate momentum <span class="math inline">\(p_i\)</span>:</p>
+<p><span class="math display">\[\oint p_i dq_i = n_ih\]</span></p>
+<p>This manifests specifically in two key forms:</p>
+<p><strong>Radial quantization:</strong> <span class="math display">\[\oint p_r dr = n_rh\]</span></p>
+<p><strong>Angular quantization:</strong> <span class="math display">\[\oint p_\phi d\phi = n_\phi h\]</span></p>
+</section>
+<section id="relativistic-energy-levels" class="level3">
+<h3 class="anchored" data-anchor-id="relativistic-energy-levels">Relativistic Energy Levels</h3>
+<p>The model produced a refined energy level formula incorporating relativistic effects:</p>
+<p><span class="math display">\[E_{n,k} = -\frac{mc^2\alpha^2}{2n^2}\left[1 + \frac{\alpha^2}{n^2}\left(\frac{n}{k} - \frac{3}{4}\right)\right]\]</span></p>
+<p>where α is the fine structure constant, m is electron mass, c is speed of light, and k = n - |j + 1/2| + 1/2.</p>
+<p>The model successfully explained several phenomena that Bohr’s original theory could not address, including the fine structure of spectral lines and basic aspects of the Zeeman effect. However, it still fell short of explaining the anomalous Zeeman effect, intensity rules, and electron spin. Despite these limitations, the Bohr-Sommerfeld model served as a vital bridge between early quantum theory and modern quantum mechanics, introducing fundamental concepts like phase space quantization that would prove essential to later developments.</p>
+</section>
+</div>
+</div>
+</div>
 <p>So far the Bohr model can successfully describe the line spectra. However, since electrons are assumed to propagate at circular orbits, they are supposed to permanently irradiate electromagnetic waves. This gives rise to the questions why does the electron not emit radiation and therefore lose energy and collapse into the nucleus? Or why are atoms stable?</p>
 </section>
 <section id="about-the-stability-of-atoms" class="level2">
@@ -940,7 +1054,7 @@ E_{\mathrm{n}} = - Ry^{\ast} \frac{Z^2}{n^2} \mathrm{.}
 \]</span></p>
 <p>since we know the electron has to be somewhere within the atom. As a consequence the radial component <span class="math inline">\(p_r\)</span> of the electron’s momentum becomes</p>
 <p><span class="math display">\[
-\Delta p_r \ge \frac{\hbar}{a} \mathrm{.}
+\Delta p_r \ge \frac{\hbar}{a} \mathrm{,}
 \]</span></p>
 <p>Because of that, the overall electron momentum has to be bigger than the uncertainty</p>
 <p><span class="math display">\[
@@ -958,7 +1072,7 @@ E_{\mathrm{pot}} = - \frac{e^2}{4 \pi \varepsilon_0 a} \mathrm{,}
 <p><span class="math display">\[
 E \ge \frac{\hbar^2}{2ma^2} - \frac{e^2}{4 \pi \varepsilon_0 a}
 \]</span></p>
-<p>The probability to find an electron at the radius <span class="math inline">\(a_{\mathrm{min}}\)</span> is biggest, for the minimum of the energy <span class="math inline">\(\mathrm{d}E/\mathrm{d}a = 0\)</span>, which leads us to</p>
+<p>The probability to find an electron at the radius <span class="math inline">\(a_{\mathrm{min}}\)</span> is highest when the energy is at a minimum, which occurs at <span class="math inline">\(\mathrm{d}E/\mathrm{d}a = 0\)</span>. This leads us to</p>
 <p><span class="math display">\[
 a_{\mathrm{min}} = \frac{4 \pi \varepsilon_0 \hbar^2}{m e^2} = \frac{\varepsilon_0 h^2}{\pi m e^2} = a_0 \mathrm{.}
 \]</span></p>
@@ -966,7 +1080,7 @@ a_{\mathrm{min}} = \frac{4 \pi \varepsilon_0 \hbar^2}{m e^2} = \frac{\varepsilon
 <p><span class="math display">\[
 E_{\mathrm{min}} = - \frac{m e^4}{8 \varepsilon_0^2 h^2} = - Ry^{\ast} \mathrm{.}
 \]</span></p>
-<p>This result is in accord with observations from the Bohr model stating the energy of the lowest state in a hydrogen atom is <span class="math inline">\(E = - Ry^{\ast}\)</span>. Because of this discussion, we can state there is a finite distance <span class="math inline">\(a_{\mathrm{min}}\)</span> from the nucleus associated with the lowest energetic state. Due to the uncertainty relation the kinetic energy increases stronger than the potential energy decreases, if the electron moves closer to the nucleus than <span class="math inline">\(a_{\mathrm{min}}\)</span>.</p>
+<p>This result is in accord with observations from the Bohr model stating the energy of the lowest state in a hydrogen atom is <span class="math inline">\(E = - Ry^{\ast}\)</span>. Because of this discussion, we can state there is a finite distance <span class="math inline">\(a_{\mathrm{min}}\)</span> from the nucleus associated with the lowest energetic state. Due to the uncertainty relation the kinetic energy increases more rapidly than the potential energy decreases, if the electron moves closer to the nucleus than <span class="math inline">\(a_{\mathrm{min}}\)</span>.</p>
 
 
 </section>
