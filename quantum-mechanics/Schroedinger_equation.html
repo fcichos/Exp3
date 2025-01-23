@@ -854,16 +854,22 @@ window.Quarto = {
 \]</span></p>
 <p>Our considerations revealed that plane waves are good elementary waves but not suitable for describing particles, which are localized in space. In order to describe particles, we have to consider wave packets, which are superpositions of plane waves.</p>
 <p>We would like to obtain now a differential equation that governs the time evolution of the wave function <span class="math inline">\(\psi(x,t)\)</span>. We start from the fundamental principle of energy conservation in classical mechanics:</p>
-<p><span class="math inline">\(E = E_{\text{kin}} + E_{\text{pot}}\)</span></p>
-<p>For a particle of mass m: <span class="math inline">\(E = \frac{p^2}{2m} + V(x)\)</span></p>
+<p><span class="math display">\[E = E_{\text{kin}} + E_{\text{pot}}\]</span></p>
+<p>For a particle of mass m:</p>
+<p><span class="math display">\[E = \frac{p^2}{2m} + V(x)\]</span></p>
 <p>To transition to quantum mechanics, we combine the plane wave description of the wave function with the energy conservation principle: If we apply the following differential operators to the wave function <span class="math inline">\(\psi(x,t)\)</span>:</p>
 <ul>
 <li>Energy: <span class="math inline">\(E \rightarrow i\hbar\frac{\partial}{\partial t}\)</span></li>
 <li>Momentum: <span class="math inline">\(p \rightarrow -i\hbar\frac{\partial}{\partial x}\)</span></li>
 </ul>
 <p>we obtain the time-dependent Schrödinger equation in one dimension:</p>
-<p><span class="math inline">\(i\hbar\frac{\partial}{\partial t}\psi = -\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2}\psi + V(x)\psi\)</span></p>
-<p>This is the time-dependent Schrödinger equation in one dimension. It looks different from a wave equation, but it is a wave equation. The time-dependent Schrödinger equation is a wave equation for the wave function <span class="math inline">\(\psi(x,t)\)</span>, that shall describe the flow of probability density in space and time.</p>
+<p><span class="math display">\[i\hbar\frac{\partial}{\partial t}\psi = -\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2}\psi + V(x)\psi\]</span></p>
+<p>The Schrödinger equation governs the quantum mechanical behavior of particles through time. The equation balances two key components:</p>
+<ul>
+<li>A kinetic energy component (<span class="math inline">\(-\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2}\psi\)</span>) which determines how the wave packet spreads in space</li>
+<li>A potential energy component (<span class="math inline">\(V(x)\psi\)</span>) which shows how external forces influence the wave function</li>
+</ul>
+<p>While this time-dependent Schrödinger equation appears distinct from traditional wave equations, it serves as a fundamental wave equation for quantum mechanics. It describes how the probability of finding a particle at any point evolves through both space and time.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -877,7 +883,8 @@ Why First-Order in Time?
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>From optics, we are used to the wave equation containing a second order time derivative. This is not existing in the time dependent Schrödinger equations, which is supposed to be a wave equation as well. To understand why the Schrödinger equation contains only a first-order time derivative, let us compare three fundamental equations in physics:</p>
-<p>The classical wave equation involves a second time derivative: <span class="math display">\[\frac{\partial^2 \psi}{\partial t^2} = v^2 \frac{\partial^2 \psi}{\partial x^2}\]</span></p>
+<p>The classical wave equation involves a second time derivative:</p>
+<p><span class="math display">\[\frac{\partial^2 \psi}{\partial t^2} = v^2 \frac{\partial^2 \psi}{\partial x^2}\]</span></p>
 <p>The diffusion equation contains a first-order time derivative with real coefficients: <span class="math display">\[\frac{\partial \psi}{\partial t} = D \frac{\partial^2 \psi}{\partial x^2}\]</span></p>
 <p>The Schrödinger equation has a first-order time derivative with a complex coefficient: <span class="math display">\[i\hbar\frac{\partial \psi}{\partial t} = -\frac{\hbar^2}{2m}\frac{\partial^2 \psi}{\partial x^2}\]</span></p>
 <p>A key requirement for quantum mechanics is the conservation of probability, expressed mathematically as</p>
@@ -893,12 +900,13 @@ Why First-Order in Time?
 </div>
 <section id="stationary-schrödinger-equation" class="level2">
 <h2 class="anchored" data-anchor-id="stationary-schrödinger-equation">Stationary Schrödinger Equation</h2>
-<p>For states with definite energy (stationary states), we can separate the time dependence using: <span class="math inline">\(\psi(x,t) = \psi(x)e^{-iEt/\hbar}\)</span></p>
+<p>For states with definite energy (stationary states), we can separate the time dependence using:</p>
+<p><span class="math display">\[\psi(x,t) = \psi(x)e^{-iEt/\hbar}\]</span></p>
 <p>Inserting this into the time-dependent Schrödinger equation:</p>
-<p><span class="math inline">\(i\hbar\frac{\partial}{\partial t}\psi = -\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2}\psi + V(x)\psi\)</span></p>
+<p><span class="math display">\[i\hbar\frac{\partial}{\partial t}\psi = -\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2}\psi + V(x)\psi\]</span></p>
 <p>The time derivative gives <span class="math inline">\(E\psi\)</span> on the left side, leading to the stationary Schrödinger equation:</p>
 <p><span class="math display">\[-\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2}\psi + V(x)\psi = E\psi\]</span></p>
-<p>This is the stationary Schrödinger equation in one dimension. It is a wave equation for the wave function <span class="math inline">\(\psi(x)\)</span>, that shall describe the spatial distribution of probability density. It compares to the Helmholz equation in optics. Therefore, solutions we have found for the Helmholz equation can be applied to the Schrödinger equation as well.</p>
+<p>This time-independent equation describes standing wave solutions, similar to standing waves on a string, but in terms of probability distributions. The solutions give us the allowed energy states of the system, explaining why atomic energy levels are quantized. It compares to the Helmholz equation in optics. Therefore, solutions we have found for the Helmholz equation can be applied to the Schrödinger equation as well.</p>
 </section>
 <section id="solutions-of-the-schrödinger-equation" class="level2">
 <h2 class="anchored" data-anchor-id="solutions-of-the-schrödinger-equation">Solutions of the Schrödinger equation</h2>
@@ -911,7 +919,7 @@ Why First-Order in Time?
 <p>These are the main conditions, which help us to solve the Schrödinger equation. We will now discuss some examples of solutions of the Schrödinger equation.</p>
 <section id="a-potential-barrier" class="level3">
 <h3 class="anchored" data-anchor-id="a-potential-barrier">A potential barrier</h3>
-<p>Let’s consider a quantum particle encountering a potential step: for <span class="math inline">\(x &lt; 0\)</span>, the potential <span class="math inline">\(V(x) = 0\)</span>, while for <span class="math inline">\(x ≥ 0\)</span>, <span class="math inline">\(V(x) = E_0\)</span>. This is similar to a light wave hitting the interface between two different materials.</p>
+<p>Let’s consider a quantum particle encountering a potential step: for <span class="math inline">\(x &lt; 0\)</span>, the potential <span class="math inline">\(V(x) = 0\)</span>, while for <span class="math inline">\(x ≥ 0\)</span>, <span class="math inline">\(V(x) = E_0\)</span>. This is similar to a light wave hitting the interface between two different materials. This simple case of a potential step helps us understand how quantum particles behave differently from classical particles when encountering potential changes. We’ll see in the next lecture how these principles lead to the remarkable phenomenon of quantum tunneling.</p>
 <div id="fig-potential-barrier-1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-potential-barrier-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -1226,6 +1234,7 @@ Figure&nbsp;5— Transmission and reflection coefficients as functions of energy
 </div>
 </div>
 </div>
+<p>We have seen how particles behave quantum mechanically at a potential barrier, showing both wave-like interference and exponential decay properties. These fundamental concepts will form the basis for understanding quantum tunneling, which we’ll explore in our next lecture.</p>
 
 
 </section>

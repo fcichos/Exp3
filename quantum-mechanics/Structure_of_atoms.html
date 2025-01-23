@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -781,9 +815,16 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#atomic-spectra" id="toc-atomic-spectra" class="nav-link active" data-scroll-target="#atomic-spectra">Atomic spectra</a></li>
+  <li><a href="#the-quantum-origin-of-atomic-stability" id="toc-the-quantum-origin-of-atomic-stability" class="nav-link active" data-scroll-target="#the-quantum-origin-of-atomic-stability">The Quantum Origin of Atomic Stability</a>
+  <ul class="collapse">
+  <li><a href="#position-momentum-uncertainty" id="toc-position-momentum-uncertainty" class="nav-link" data-scroll-target="#position-momentum-uncertainty">Position-Momentum Uncertainty</a></li>
+  <li><a href="#energy-considerations" id="toc-energy-considerations" class="nav-link" data-scroll-target="#energy-considerations">Energy Considerations</a></li>
+  <li><a href="#finding-the-ground-state" id="toc-finding-the-ground-state" class="nav-link" data-scroll-target="#finding-the-ground-state">Finding the Ground State</a></li>
+  <li><a href="#physical-interpretation" id="toc-physical-interpretation" class="nav-link" data-scroll-target="#physical-interpretation">Physical Interpretation</a></li>
+  </ul></li>
+  <li><a href="#atomic-spectra" id="toc-atomic-spectra" class="nav-link" data-scroll-target="#atomic-spectra">Atomic spectra</a></li>
   <li><a href="#the-bohr-model" id="toc-the-bohr-model" class="nav-link" data-scroll-target="#the-bohr-model">The Bohr model</a></li>
-  <li><a href="#about-the-stability-of-atoms" id="toc-about-the-stability-of-atoms" class="nav-link" data-scroll-target="#about-the-stability-of-atoms">About the stability of atoms</a></li>
+  <li><a href="#franck-hertz-experiment" id="toc-franck-hertz-experiment" class="nav-link" data-scroll-target="#franck-hertz-experiment">Franck-Hertz Experiment</a></li>
   </ul>
 </nav>
     </div>
@@ -811,6 +852,66 @@ window.Quarto = {
 
 <p>Having already explored the Plum Pudding model and Rutherford’s nuclear atom model through the Geiger-Marsden experiments, we know that the atom consists of a tiny, dense, positively-charged nucleus (<span class="math inline">\(R_{\mathrm{C}} &lt; 10^{-14} \; \mathrm{m}\)</span>, charge <span class="math inline">\(Q = Z\cdot e\)</span>) containing most of the atomic mass, surrounded by a much larger electron cloud (<span class="math inline">\(10^{12}\)</span> to <span class="math inline">\(10^{15}\)</span> times the nuclear volume). This electron cloud contains <span class="math inline">\(Z\)</span> electrons, each with charge <span class="math inline">\(-e\)</span>, but contributes negligibly to the total mass.</p>
 <p>A key question emerges about the structure of this electron cloud: are the electrons statically distributed or in motion? A static distribution is unstable due to electrostatic attraction to the nucleus. However, moving electrons present their own puzzle - classical electrodynamics predicts that accelerating charges should continuously emit electromagnetic radiation, which would cause them to spiral into the nucleus. This contradicts the observed stability of atoms. Understanding this paradox requires us to consider quantum mechanical effects.</p>
+<section id="the-quantum-origin-of-atomic-stability" class="level2">
+<h2 class="anchored" data-anchor-id="the-quantum-origin-of-atomic-stability">The Quantum Origin of Atomic Stability</h2>
+<p>A fundamental question in atomic physics is why electrons don’t spiral into the nucleus due to electromagnetic attraction. The answer lies in Heisenberg’s uncertainty principle, which provides a natural explanation for atomic stability.</p>
+<section id="position-momentum-uncertainty" class="level3">
+<h3 class="anchored" data-anchor-id="position-momentum-uncertainty">Position-Momentum Uncertainty</h3>
+<p>Consider a hydrogen atom where the electron is confined within a radius <span class="math inline">\(a\)</span>. By definition, the uncertainty in position must be at most the atomic radius:</p>
+<p><span class="math display">\[
+\Delta r \le a
+\]</span></p>
+<p>The uncertainty principle then requires a minimum uncertainty in momentum:</p>
+<p><span class="math display">\[
+\Delta p_r \ge \frac{\hbar}{a}
+\]</span></p>
+<p>Since this represents the minimum possible momentum uncertainty, the actual momentum must be at least this large:</p>
+<p><span class="math display">\[
+p \ge \frac{\hbar}{a}
+\]</span></p>
+</section>
+<section id="energy-considerations" class="level3">
+<h3 class="anchored" data-anchor-id="energy-considerations">Energy Considerations</h3>
+<p>This quantum mechanical constraint on momentum leads to a minimum kinetic energy:</p>
+<p><span class="math display">\[
+E_{\mathrm{kin}} = \frac{p^2}{2m} \ge \frac{\hbar^2}{2ma^2}
+\]</span></p>
+<p>Meanwhile, the classical electrostatic potential energy is:</p>
+<p><span class="math display">\[
+E_{\mathrm{pot}} = - \frac{e^2}{4 \pi \varepsilon_0 a}
+\]</span></p>
+<p>The total energy is therefore bounded by:</p>
+<p><span class="math display">\[
+E \ge \frac{\hbar^2}{2ma^2} - \frac{e^2}{4 \pi \varepsilon_0 a}
+\]</span></p>
+</section>
+<section id="finding-the-ground-state" class="level3">
+<h3 class="anchored" data-anchor-id="finding-the-ground-state">Finding the Ground State</h3>
+<p>The atom will naturally settle into its lowest possible energy state. We can find this by minimizing the total energy (<span class="math inline">\(\mathrm{d}E/\mathrm{d}a = 0\)</span>)</p>
+<p><span class="math display">\[
+\frac{dE}{da} = -\frac{\hbar^2}{ma^3} + \frac{e^2}{4 \pi \varepsilon_0 a^2} = 0
+\]</span></p>
+<p>which gives:</p>
+<p><span class="math display">\[
+a_{\mathrm{min}} = \frac{4 \pi \varepsilon_0 \hbar^2}{m e^2} = a_0
+\]</span></p>
+<p>This minimum radius exactly matches the Bohr radius <span class="math inline">\(a_0\)</span>! The corresponding minimum energy is:</p>
+<p><span class="math display">\[
+E_{\mathrm{min}} = - \frac{m e^4}{8 \varepsilon_0^2 h^2} = - Ry^{\ast}
+\]</span></p>
+<p>which is precisely the ground state energy (Rydberg energy) that we’ll encounter in the Bohr model.</p>
+</section>
+<section id="physical-interpretation" class="level3">
+<h3 class="anchored" data-anchor-id="physical-interpretation">Physical Interpretation</h3>
+<p>The stability of atoms emerges from a fundamental quantum mechanical balance:</p>
+<ul>
+<li>If the electron gets too close to the nucleus (<span class="math inline">\(a &lt; a_0\)</span>), the uncertainty principle forces its kinetic energy to increase dramatically (<span class="math inline">\(\sim 1/a^2\)</span>)</li>
+<li>This increase outpaces the decrease in potential energy (<span class="math inline">\(\sim 1/a\)</span>)</li>
+<li>The result is a stable minimum at the Bohr radius</li>
+</ul>
+<p>This quantum mechanical explanation of atomic stability, derived purely from the uncertainty principle and electrostatics, provides a beautiful preview of the more detailed atomic models we’ll explore next.</p>
+</section>
+</section>
 <section id="atomic-spectra" class="level2">
 <h2 class="anchored" data-anchor-id="atomic-spectra">Atomic spectra</h2>
 <p>In 1859 Kirchhoff and Bunsen observed that atoms absorb light only for particular values of the wavelength. Moreover these wavelength values are specific for the particular kind of atoms and form the absorption and emission spectra of these atoms. Early instruments for recording spectra made use of a prism as diffracting element and a photo plate for recording. The prism gave rise to a rainbow-colored stripe at the plate and narrow dark lines appeared exactly at those positions that correspond to the particular wavelengths of atom absorption. Thus, the photo plates showed dark lines at these positions and those compositions of lines were called <em>line spectra</em>. On the basis of further experiments one was able to state:</p>
@@ -894,7 +995,7 @@ Ry^{\ast} &amp; =  \frac{\mu e^4}{8 \varepsilon_0^2 h^2}\\
 \]</span></p>
 <p>It is evident that the electron can adopt only particular values of energy <span class="math inline">\(E_{\mathrm{n}}\)</span>, which might be expressed in terms of a <em>quantum number</em> <span class="math inline">\(n = 1, 2, 3 \ldots\)</span>. These stationary energetic states are also called <em>quantum states</em> of the atom and the quantum number <span class="math inline">\(n\)</span> is called the <em>principal quantum number</em>.</p>
 <p>Moreover, it is evident that <strong>the energy is negative</strong> and approaches <span class="math inline">\(0\)</span> if the orbital radius approaches <span class="math inline">\(+\infty\)</span>, which corresponds to the principal quantum number approaching <span class="math inline">\(+\infty\)</span>.</p>
-<div id="447a5bd1" class="cell" data-execution_count="2">
+<div id="bde6c192" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -981,7 +1082,7 @@ Table&nbsp;1— Spectral series of the hydrogen atom showing the initial and fin
 \frac{1}{\lambda} = Ry \cdot Z^2 \left( \frac{1}{n_{\mathrm{i}}^2} - \frac{1}{n_{\mathrm{k}}^2} \right) \mathrm{,}
 \]</span></p>
 <p>which is the general equation for the lines of a line spectrum and comprises the equation stated by Balmer for the special case of hydrogen (<span class="math inline">\(Z = 1\)</span>).</p>
-<div id="8e16c7dc" class="cell" data-execution_count="3">
+<div id="39edcdca" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -1045,42 +1146,141 @@ The Bohr-Sommerfeld Model: A Quantum Mechanical Bridge
 </div>
 </div>
 <p>So far the Bohr model can successfully describe the line spectra. However, since electrons are assumed to propagate at circular orbits, they are supposed to permanently irradiate electromagnetic waves. This gives rise to the questions why does the electron not emit radiation and therefore lose energy and collapse into the nucleus? Or why are atoms stable?</p>
+<div id="88a10d1a" class="cell" data-execution_count="4">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate and plot spectral lines for hydrogen</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>wavelengths <span class="op">=</span> []</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> []</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate Balmer series wavelengths (n1=2)</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> n2 <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>, <span class="dv">10</span>):</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    wavelength <span class="op">=</span> <span class="dv">1</span><span class="op">/</span>(<span class="fl">1.097e7</span> <span class="op">*</span> (<span class="dv">1</span><span class="op">/</span><span class="dv">4</span> <span class="op">-</span> <span class="dv">1</span><span class="op">/</span>n2<span class="op">**</span><span class="dv">2</span>))  <span class="co"># meters</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    wavelength_nm <span class="op">=</span> wavelength <span class="op">*</span> <span class="fl">1e9</span>  <span class="co"># convert to nm</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="dv">200</span> <span class="op">&lt;=</span> wavelength_nm <span class="op">&lt;=</span> <span class="dv">1200</span>:</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>        wavelengths.append(wavelength_nm)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>        colors.append(plt.cm.nipy_spectral(wavelength_nm<span class="op">/</span><span class="dv">1200</span>))</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate Paschen series wavelengths (n1=3)</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> n2 <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">4</span>, <span class="dv">10</span>):</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    wavelength <span class="op">=</span> <span class="dv">1</span><span class="op">/</span>(<span class="fl">1.097e7</span> <span class="op">*</span> (<span class="dv">1</span><span class="op">/</span><span class="dv">9</span> <span class="op">-</span> <span class="dv">1</span><span class="op">/</span>n2<span class="op">**</span><span class="dv">2</span>))  <span class="co"># meters</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    wavelength_nm <span class="op">=</span> wavelength <span class="op">*</span> <span class="fl">1e9</span>  <span class="co"># convert to nm</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="dv">200</span> <span class="op">&lt;=</span> wavelength_nm <span class="op">&lt;=</span> <span class="dv">1200</span>:</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>        wavelengths.append(wavelength_nm)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>        colors.append(plt.cm.nipy_spectral(wavelength_nm<span class="op">/</span><span class="dv">1200</span>))</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>get_size(<span class="dv">12</span>, <span class="dv">3</span>))</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> w, c <span class="kw">in</span> <span class="bu">zip</span>(wavelengths, colors):</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    plt.vlines(w, <span class="dv">0</span>, <span class="fl">1.0</span>, color<span class="op">=</span>c, linewidth<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'wavelength [nm]'</span>)</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'intensity [a.u.]'</span>)</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="dv">200</span>, <span class="dv">1200</span>)</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="dv">0</span>, <span class="fl">1.2</span>)</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Structure_of_atoms_files/figure-html/cell-5-output-1.png" width="661" height="212" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
-<section id="about-the-stability-of-atoms" class="level2">
-<h2 class="anchored" data-anchor-id="about-the-stability-of-atoms">About the stability of atoms</h2>
-<p>The stability of atoms in their lowest energetic state can be explained on the basis of the uncertainty principle. If we assume <span class="math inline">\(a\)</span> being the average radius of a hydrogen atom, we can state the orbit radius with the uncertainty</p>
-<p><span class="math display">\[
-\Delta r \le a \mathrm{,}
-\]</span></p>
-<p>since we know the electron has to be somewhere within the atom. As a consequence the radial component <span class="math inline">\(p_r\)</span> of the electron’s momentum becomes</p>
-<p><span class="math display">\[
-\Delta p_r \ge \frac{\hbar}{a} \mathrm{,}
-\]</span></p>
-<p>Because of that, the overall electron momentum has to be bigger than the uncertainty</p>
-<p><span class="math display">\[
-p \ge \frac{\hbar}{a} \mathrm{,}
-\]</span></p>
-<p>otherwise we would know the momentum with a smaller uncertainty than <span class="math inline">\(\Delta p_r\)</span>. For the electron’s average kinetic and potential energy it follows</p>
-<p><span class="math display">\[
-E_{\mathrm{kin}} = \frac{p^2}{2m} \ge \frac{\Delta p^2}{2m} \ge \frac{\hbar^2}{2ma^2}
-\]</span></p>
-<p>and</p>
-<p><span class="math display">\[
-E_{\mathrm{pot}} = - \frac{e^2}{4 \pi \varepsilon_0 a} \mathrm{,}
-\]</span></p>
-<p>respectively. The total energy <span class="math inline">\(E = E_{\mathrm{kin}} + E_{\mathrm{pot}}\)</span> then is given through</p>
-<p><span class="math display">\[
-E \ge \frac{\hbar^2}{2ma^2} - \frac{e^2}{4 \pi \varepsilon_0 a}
-\]</span></p>
-<p>The probability to find an electron at the radius <span class="math inline">\(a_{\mathrm{min}}\)</span> is highest when the energy is at a minimum, which occurs at <span class="math inline">\(\mathrm{d}E/\mathrm{d}a = 0\)</span>. This leads us to</p>
-<p><span class="math display">\[
-a_{\mathrm{min}} = \frac{4 \pi \varepsilon_0 \hbar^2}{m e^2} = \frac{\varepsilon_0 h^2}{\pi m e^2} = a_0 \mathrm{.}
-\]</span></p>
-<p>As a consequence, there is a state of minimum energy with the lower limit</p>
-<p><span class="math display">\[
-E_{\mathrm{min}} = - \frac{m e^4}{8 \varepsilon_0^2 h^2} = - Ry^{\ast} \mathrm{.}
-\]</span></p>
-<p>This result is in accord with observations from the Bohr model stating the energy of the lowest state in a hydrogen atom is <span class="math inline">\(E = - Ry^{\ast}\)</span>. Because of this discussion, we can state there is a finite distance <span class="math inline">\(a_{\mathrm{min}}\)</span> from the nucleus associated with the lowest energetic state. Due to the uncertainty relation the kinetic energy increases more rapidly than the potential energy decreases, if the electron moves closer to the nucleus than <span class="math inline">\(a_{\mathrm{min}}\)</span>.</p>
+<section id="franck-hertz-experiment" class="level2">
+<h2 class="anchored" data-anchor-id="franck-hertz-experiment">Franck-Hertz Experiment</h2>
+<p>The Franck-Hertz experiment (1914, James Franck, Gustav Hertz) provided direct experimental confirmation of quantized atomic <a href="https://web.archive.org/web/20170202002826/https://www.dpg-physik.de/presse/veranstaltungen/tagungen/2014/pdf/Franck-Hertz-Experiment-VH1914.pdf">energy levels</a>. The setup uses a vacuum tube containing mercury vapor with three electrodes: cathode, grid anode, and collector. Electrons from a heated cathode are accelerated toward the grid, colliding with mercury atoms.</p>
+<p>When electrons reach 4.9 eV, they transfer this energy to mercury atoms through inelastic collisions, causing a drop in the measured current. As voltage increases further, the current rises until reaching 9.8 V, where a second drop occurs. This pattern repeats at 4.9 V intervals, each minimum representing electron excitation of mercury atoms to their first excited state. The excited atoms return to ground state by emitting 253.7 nm photons.</p>
+<div id="fig-frank-hertz" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-frank-hertz-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/frank_hertz.gif" class="img-fluid figure-img" style="width:75.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-frank-hertz-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2— Schematic setup of the Franck-Hertz experiment. The electrons emitted from the cathode are accelerated towards the grid anode and finally collected at the collector where the current is measured.
+</figcaption>
+</figure>
+</div>
+<p>A retarding voltage between grid and collector ensures only electrons with sufficient energy reach the collector, preventing secondary electron emission that could distort measurements.</p>
+<p>The theoretical analysis of the Franck-Hertz experiment can be understood through energy conservation and quantum mechanics:</p>
+<p>When an electron with kinetic energy <span class="math inline">\(E_k = eV\)</span> (where V is the accelerating voltage) collides with a mercury atom, several outcomes are possible:</p>
+<ol type="1">
+<li>Elastic collision: The electron retains most of its kinetic energy</li>
+<li>Inelastic collision: The electron transfers energy to excite the mercury atom</li>
+</ol>
+<p>For inelastic collisions, energy conservation requires:</p>
+<p><span class="math display">\[eV = E_2 - E_1 + E'_k\]</span></p>
+<p>where:</p>
+<ul>
+<li><span class="math inline">\(E_2 - E_1\)</span> is the energy difference between mercury atom states</li>
+<li><span class="math inline">\(E'_k\)</span> is the electron’s remaining kinetic energy</li>
+</ul>
+<p>The current minima occur when:</p>
+<p><span class="math display">\[eV = n(E_2 - E_1)\]</span></p>
+<p>where n is an integer, indicating electrons have lost all their kinetic energy through n successive collisions.</p>
+<p>The observed 4.9 eV spacing corresponds to the first excitation energy of mercury:</p>
+<p><span class="math display">\[E_2 - E_1 = \frac{hc}{\lambda} = 4.9 \text{ eV}\]</span></p>
+<p>This quantized energy transfer provides direct evidence for discrete atomic energy levels, confirming Bohr’s model predictions.</p>
+<div id="cell-fig-frank-hertz" class="cell" data-execution_count="5">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create DataFrame (using the previously defined data)</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'voltage'</span>: [</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>        <span class="fl">0.0</span>, <span class="fl">0.25</span>, <span class="fl">0.5</span>, <span class="fl">0.75</span>, <span class="fl">1.0</span>, <span class="fl">1.25</span>, <span class="fl">1.5</span>, <span class="fl">1.75</span>, <span class="fl">2.0</span>, <span class="fl">2.25</span>, <span class="fl">2.5</span>, <span class="fl">2.75</span>, <span class="fl">3.0</span>,</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>        <span class="fl">3.25</span>, <span class="fl">3.5</span>, <span class="fl">3.75</span>, <span class="fl">4.0</span>, <span class="fl">4.25</span>, <span class="fl">4.5</span>, <span class="fl">4.75</span>, <span class="fl">5.0</span>, <span class="fl">5.25</span>, <span class="fl">5.5</span>, <span class="fl">5.75</span>, <span class="fl">6.0</span>, <span class="fl">6.25</span>,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>        <span class="fl">6.5</span>, <span class="fl">6.75</span>, <span class="fl">7.0</span>, <span class="fl">7.25</span>, <span class="fl">7.5</span>, <span class="fl">7.75</span>, <span class="fl">8.0</span>, <span class="fl">8.25</span>, <span class="fl">8.5</span>, <span class="fl">8.75</span>, <span class="fl">9.0</span>, <span class="fl">9.25</span>, <span class="fl">9.5</span>,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>        <span class="fl">9.75</span>, <span class="fl">10.0</span>, <span class="fl">10.25</span>, <span class="fl">10.5</span>, <span class="fl">10.75</span>, <span class="fl">11.0</span>, <span class="fl">11.25</span>, <span class="fl">11.5</span>, <span class="fl">11.75</span>, <span class="fl">12.0</span>, <span class="fl">12.25</span>,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>        <span class="fl">12.5</span>, <span class="fl">12.75</span>, <span class="fl">13.0</span>, <span class="fl">13.25</span>, <span class="fl">13.5</span>, <span class="fl">13.75</span>, <span class="fl">14.0</span>, <span class="fl">14.25</span>, <span class="fl">14.5</span>, <span class="fl">14.75</span>, <span class="fl">15.0</span>,</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>        <span class="fl">15.25</span>, <span class="fl">15.5</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    ],</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">'current'</span>: [</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>        <span class="fl">0.0</span>, <span class="fl">0.2</span>, <span class="fl">0.4</span>, <span class="fl">0.6</span>, <span class="fl">0.8</span>, <span class="fl">1.3</span>, <span class="fl">1.8</span>, <span class="fl">2.2</span>, <span class="fl">2.6</span>, <span class="fl">3.3</span>, <span class="fl">4.0</span>, <span class="fl">5.25</span>, <span class="fl">6.5</span>,</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>        <span class="fl">8.25</span>, <span class="fl">10.0</span>, <span class="fl">12.1</span>, <span class="fl">14.2</span>, <span class="fl">15.5</span>, <span class="fl">16.5</span>, <span class="fl">17.1</span>, <span class="fl">12.0</span>, <span class="fl">6.2</span>, <span class="fl">4.0</span>, <span class="fl">4.4</span>, <span class="fl">4.8</span>, <span class="fl">6.15</span>,</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>        <span class="fl">7.5</span>, <span class="fl">9.0</span>, <span class="fl">10.5</span>, <span class="fl">11.75</span>, <span class="fl">13.0</span>, <span class="fl">14.35</span>, <span class="fl">15.7</span>, <span class="fl">18.1</span>, <span class="fl">20.5</span>, <span class="fl">22.75</span>, <span class="fl">25.0</span>, <span class="fl">26.3</span>, <span class="fl">27.6</span>,</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>        <span class="fl">28.4</span>, <span class="fl">22.5</span>, <span class="fl">18.0</span>, <span class="fl">14.0</span>, <span class="fl">11.25</span>, <span class="fl">8.5</span>, <span class="fl">7.8</span>, <span class="fl">7.5</span>, <span class="fl">9.0</span>, <span class="fl">11.5</span>, <span class="fl">13.75</span>,</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>        <span class="fl">16.0</span>, <span class="fl">18.9</span>, <span class="fl">21.8</span>, <span class="fl">24.9</span>, <span class="fl">28.0</span>, <span class="fl">30.4</span>, <span class="fl">32.8</span>, <span class="fl">33.75</span>, <span class="fl">34.7</span>, <span class="fl">37.0</span>, <span class="fl">39.3</span>,</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>        <span class="fl">40.5</span>, <span class="fl">22.0</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    ]</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(data)</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the plot</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>get_size(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>plt.plot(df[<span class="st">'voltage'</span>], df[<span class="st">'current'</span>], <span class="st">'k-'</span>)</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>plt.scatter(df[<span class="st">'voltage'</span>], df[<span class="st">'current'</span>], color<span class="op">=</span><span class="st">'red'</span>, s<span class="op">=</span><span class="dv">30</span>, facecolors<span class="op">=</span><span class="st">'none'</span>)</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Add labels and title</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'accelerating voltage [V]'</span>)</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'electon current [a.u.]'</span>)</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="co"># Add grid</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Set axis limits with some padding</span></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="op">-</span><span class="fl">0.5</span>, <span class="dv">16</span>)</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="op">-</span><span class="dv">2</span>, <span class="dv">45</span>)</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div id="fig-frank-hertz" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-frank-hertz-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Structure_of_atoms_files/figure-html/fig-frank-hertz-output-1.png" width="539" height="349" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-frank-hertz-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3— Experimental result of a Franck-Hertz experiment. The current through the tube shows a characteristic curve with peaks at specific voltages corresponding to the excitation of mercury atoms.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The Franck-Hertz experiment demonstrates the atoms can be excited by collision with electrons besides the excitation with photons. This is important as electron may transfer energy to energy level differences where photons cannot transfer energy. We will later consider so-called transition probabilities for the excitation of atoms, which depend on the way of excitation.</p>
 
 
 </section>
