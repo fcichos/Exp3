@@ -959,8 +959,7 @@ Figure&nbsp;1— Coulomb potential V(r) = -e²/4πε₀r for hydrogen
 <p>Before we dive into the spherically symmetric potential solution, we would like to discuss some fundamental concepts of the quantum mechanics calculus, such as operators, commutators, and expectation values.</p>
 <section id="operators" class="level3">
 <h3 class="anchored" data-anchor-id="operators">Operators</h3>
-<p>In quantum mechanics, physical observables like position, momentum, energy and angular momentum are represented by operators - mathematical objects that act on wavefunctions to give us measurable quantities. The key operators we’ll encounter frequently are:</p>
-<p>Common quantum mechanical operators are summarized in the following table:</p>
+<p>In quantum mechanics, physical observables like position, momentum, energy and angular momentum are represented by operators - mathematical objects that act on wavefunctions to give us measurable quantities. If you do a measurement in quantum mechanics, you apply an operator to a wavefunction to get a number as the outcome of your measurement. The most important operators in quantum mechanics are:</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 20%">
@@ -1006,7 +1005,10 @@ Figure&nbsp;1— Coulomb potential V(r) = -e²/4πε₀r for hydrogen
 <p>These operators have several important properties:</p>
 <ol type="1">
 <li><p>Linearity: For any constants <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> and wavefunctions <span class="math inline">\(\psi_1\)</span> and <span class="math inline">\(\psi_2\)</span>: <span class="math display">\[\hat{A}(a\psi_1 + b\psi_2) = a\hat{A}\psi_1 + b\hat{A}\psi_2\]</span></p></li>
-<li><p>Hermiticity: The expectation value of a physical observable must be real <span class="math display">\[\langle \hat{A}\rangle = \int \psi^*\hat{A}\psi d\tau = \left(\int \psi^*\hat{A}\psi d\tau\right)^*\]</span></p></li>
+<li><p>Hermiticity: The expectation value of a physical observable must be real</p></li>
+</ol>
+<p><span class="math display">\[\langle \hat{A}\rangle = \int \psi^*\hat{A}\psi d\tau = \left(\int \psi^*\hat{A}\psi d\tau\right)^*\]</span></p>
+<ol start="3" type="1">
 <li><p>Eigenvalue equations: When an operator acts on certain special wavefunctions (eigenfunctions), it returns the same function multiplied by a constant (eigenvalue)</p>
 <p><span class="math display">\[\hat{A}\psi = a\psi\]</span></p>
 <p>The eigenvalues represent the possible measured values of the corresponding physical observable. This is why energy levels are quantized - they correspond to eigenvalues of the Hamiltonian operator.</p>
@@ -1016,7 +1018,7 @@ Figure&nbsp;1— Coulomb potential V(r) = -e²/4πε₀r for hydrogen
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+Uncertainty of an observable in an eigenstate
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1029,10 +1031,11 @@ Note
 <p><span class="math display">\[\langle A^2 \rangle = \int \psi^* \hat{A}^2 \psi dx = \int \psi^* (a^2\psi) dx = a^2 \int |\psi|^2 dx = a^2\]</span></p>
 <p>Therefore:</p>
 <p><span class="math display">\[\Delta A = \sqrt{a^2 - a^2} = 0\]</span></p>
-<p>This proves that there is no uncertainty in measuring an observable when the system is in an eigenstate of that observable.</p>
+<p>This proves that there is no uncertainty in measuring an observable when the system is in an eigenstate of that observable. Thus when doing and experiment on a system that is in the eigenstate of the observable you are measuring, you will always get the same value for the observable.</p>
 </div>
 </div></li>
-<li><p>Orthogonality: Eigenfunctions of Hermitian operators are orthogonal <span class="math display">\[\langle\psi_i|\psi_j\rangle = \delta_{ij}\]</span></p></li>
+<li><p>Orthogonality: Eigenfunctions of Hermitian operators are orthogonal</p>
+<p><span class="math display">\[\langle\psi_i|\psi_j\rangle = \delta_{ij}\]</span></p></li>
 </ol>
 </section>
 <section id="commutators" class="level3">
