@@ -64,6 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../quantum-mechanics/parametric_dc.html" rel="next">
 <link href="../quantum-mechanics/potential_barrier.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -838,6 +839,29 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-33" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 28</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-33" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-33" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/parametric_dc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Photon Entanglement</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Spherical_potential.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Spherically Symmetric Problems</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
       </ul>
   </li>
     </ul>
@@ -851,10 +875,7 @@ window.Quarto = {
    
   <ul>
   <li><a href="#harmonic-oscillator" id="toc-harmonic-oscillator" class="nav-link active" data-scroll-target="#harmonic-oscillator">Harmonic oscillator</a></li>
-  <li><a href="#correspondence-principle" id="toc-correspondence-principle" class="nav-link" data-scroll-target="#correspondence-principle">Correspondence principle</a>
-  <ul class="collapse">
-  <li><a href="#physical-interpretation" id="toc-physical-interpretation" class="nav-link" data-scroll-target="#physical-interpretation">Physical Interpretation</a></li>
-  </ul></li>
+  <li><a href="#correspondence-principle" id="toc-correspondence-principle" class="nav-link" data-scroll-target="#correspondence-principle">Correspondence principle</a></li>
   </ul>
 </nav>
     </div>
@@ -1260,6 +1281,60 @@ Analogy to Gaussian beam optics
 E(x,y,z) = u(x,y,z)e^{-ikz}
 \]</span></p>
 <p>where <span class="math inline">\(u(x,y,z)\)</span> describes the spatial structure of the beam and varies slowly with <span class="math inline">\(z\)</span>.</p>
+<p>The solution is a Gaussian beam:</p>
+<div id="cell-fig-hermite-Gaussian1" class="cell" data-execution_count="5">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>w0 <span class="op">=</span> <span class="fl">1e-6</span>  <span class="co"># beam waist radius</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>wavelength <span class="op">=</span> <span class="fl">532e-9</span>  <span class="co"># wavelength</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>k <span class="op">=</span> <span class="dv">2</span><span class="op">*</span>np.pi<span class="op">/</span>wavelength  <span class="co"># wave number</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>z_R <span class="op">=</span> np.pi <span class="op">*</span> w0<span class="op">**</span><span class="dv">2</span> <span class="op">/</span> wavelength  <span class="co"># Rayleigh range</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Create coordinate grid</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">2</span><span class="op">*</span>z_R, <span class="dv">2</span><span class="op">*</span>z_R, <span class="dv">400</span>)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">5</span><span class="op">*</span>w0, <span class="dv">5</span><span class="op">*</span>w0, <span class="dv">400</span>)</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>Z, X <span class="op">=</span> np.meshgrid(z, x)</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate beam width</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>w <span class="op">=</span> w0 <span class="op">*</span> np.sqrt(<span class="dv">1</span> <span class="op">+</span> (Z<span class="op">/</span>z_R)<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate radius of curvature</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>R <span class="op">=</span> Z <span class="op">*</span> (<span class="dv">1</span> <span class="op">+</span> (z_R<span class="op">/</span>Z)<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>R[Z <span class="op">==</span> <span class="dv">0</span>] <span class="op">=</span> np.inf  <span class="co"># Handle division by zero at z=0</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate Gouy phase</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>gouy_phase <span class="op">=</span> np.arctan(Z<span class="op">/</span>z_R)</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate complete phase</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>phase <span class="op">=</span> k<span class="op">*</span>Z <span class="op">-</span> gouy_phase <span class="op">+</span> k<span class="op">*</span>(X<span class="op">**</span><span class="dv">2</span>)<span class="op">/</span>(<span class="dv">2</span><span class="op">*</span>R)</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate complete complex field</span></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>E <span class="op">=</span> (w0<span class="op">/</span>w) <span class="op">*</span> np.exp(<span class="op">-</span>X<span class="op">**</span><span class="dv">2</span><span class="op">/</span>w<span class="op">**</span><span class="dv">2</span>) <span class="op">*</span> np.exp(<span class="ot">1j</span><span class="op">*</span>phase)</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the real part of the field to show wavefronts</span></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>get_size(<span class="dv">14</span>, <span class="dv">6</span>))</span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>plt.imshow(np.real(E), extent<span class="op">=</span>[z.<span class="bu">min</span>()<span class="op">/</span>z_R, z.<span class="bu">max</span>()<span class="op">/</span>z_R, x.<span class="bu">min</span>()<span class="op">/</span>w0, x.<span class="bu">max</span>()<span class="op">/</span>w0],</span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>           aspect<span class="op">=</span><span class="st">'auto'</span>, cmap<span class="op">=</span><span class="st">'seismic'</span>)</span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>plt.colorbar(label<span class="op">=</span><span class="vs">r'$Re(E)$'</span>)</span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="vs">r'$z/z_R$'</span>)</span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="vs">r'$x/w_0$'</span>)</span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div id="fig-hermite-gaussian1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-hermite-gaussian1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="harmonic_oscillator_files/figure-html/fig-hermite-gaussian1-output-1.png" width="717" height="349" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hermite-gaussian1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6— Electric Field of a Gaussian Beam in a Parabolic Resonator
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
 <section id="resonator-with-parabolic-mirrors" class="level3">
 <h3 class="anchored" data-anchor-id="resonator-with-parabolic-mirrors">Resonator with Parabolic Mirrors</h3>
@@ -1281,44 +1356,42 @@ E(x,y,z) = u(x,y,z)e^{-ikz}
 u_{mn}(x,y,z) = H_m(\sqrt{2}x/w(z))H_n(\sqrt{2}y/w(z))e^{-\frac{x^2+y^2}{w^2(z)}}
 \]</span></p>
 <p>These modes form a complete set of solutions, analogous to the energy eigenstates of the quantum oscillator. The physical meaning differs: instead of describing probability distributions, these functions describe the spatial distribution of the electric field.</p>
-<p>::: {#cell-fig-hermite Gaussian .cell execution_count=5}</p>
+<div id="cell-fig-hermite-Gaussian" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> hermite_gaussian_2d(x, y, m, n, w0<span class="op">=</span><span class="fl">1.0</span>):</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Generate 2D Hermite-Gaussian mode."""</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    Hm <span class="op">=</span> hermite(m)</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    Hn <span class="op">=</span> hermite(n)</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Normalized coordinates</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    X <span class="op">=</span> np.sqrt(<span class="dv">2</span>) <span class="op">*</span> x <span class="op">/</span> w0</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    Y <span class="op">=</span> np.sqrt(<span class="dv">2</span>) <span class="op">*</span> y <span class="op">/</span> w0</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Mode calculation</span></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    mode <span class="op">=</span> (Hm(X) <span class="op">*</span> Hn(Y) <span class="op">*</span></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>           np.exp(<span class="op">-</span>(X<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> Y<span class="op">**</span><span class="dv">2</span>)<span class="op">/</span><span class="dv">2</span>))</span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> mode<span class="op">**</span><span class="dv">2</span>  <span class="co"># Return intensity distribution</span></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Create coordinate grid</span></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">100</span>)</span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">100</span>)</span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>X, Y <span class="op">=</span> np.meshgrid(x, y)</span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Create subplot grid</span></span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">4</span>, <span class="dv">4</span>, figsize<span class="op">=</span>get_size(<span class="dv">12</span>, <span class="dv">12</span>))</span>
-<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate modes</span></span>
-<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> m <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">4</span>):</span>
-<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> n <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">4</span>):</span>
-<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>        intensity <span class="op">=</span> hermite_gaussian_2d(X, Y, m, n)</span>
-<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>        im <span class="op">=</span> axs[m, n].imshow(intensity, cmap<span class="op">=</span><span class="st">'gray'</span>, extent<span class="op">=</span>[<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>, <span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>])</span>
-<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>        axs[m, n].set_title(<span class="ss">f'TEM</span><span class="sc">{</span>m<span class="sc">}{</span>n<span class="sc">}</span><span class="ss">'</span>)</span>
-<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>        axs[m, n].axis(<span class="st">'off'</span>)</span>
-<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> hermite_gaussian_2d(x, y, m, n, w0<span class="op">=</span><span class="fl">1.0</span>):</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Generate 2D Hermite-Gaussian mode."""</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    Hm <span class="op">=</span> hermite(m)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    Hn <span class="op">=</span> hermite(n)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Normalized coordinates</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    X <span class="op">=</span> np.sqrt(<span class="dv">2</span>) <span class="op">*</span> x <span class="op">/</span> w0</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    Y <span class="op">=</span> np.sqrt(<span class="dv">2</span>) <span class="op">*</span> y <span class="op">/</span> w0</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Mode calculation</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    mode <span class="op">=</span> (Hm(X) <span class="op">*</span> Hn(Y) <span class="op">*</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>           np.exp(<span class="op">-</span>(X<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> Y<span class="op">**</span><span class="dv">2</span>)<span class="op">/</span><span class="dv">2</span>))</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> mode<span class="op">**</span><span class="dv">2</span>  <span class="co"># Return intensity distribution</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Create coordinate grid</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">100</span>)</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">100</span>)</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>X, Y <span class="op">=</span> np.meshgrid(x, y)</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Create subplot grid</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">4</span>, <span class="dv">4</span>, figsize<span class="op">=</span>get_size(<span class="dv">12</span>, <span class="dv">12</span>))</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate modes</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> m <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">4</span>):</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> n <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">4</span>):</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>        intensity <span class="op">=</span> hermite_gaussian_2d(X, Y, m, n)</span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>        im <span class="op">=</span> axs[m, n].imshow(intensity, cmap<span class="op">=</span><span class="st">'gray'</span>, extent<span class="op">=</span>[<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>, <span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>])</span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>        axs[m, n].set_title(<span class="ss">f'TEM</span><span class="sc">{</span>m<span class="sc">}{</span>n<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>        axs[m, n].axis(<span class="st">'off'</span>)</span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div id="fig-hermite-gaussian" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -1327,14 +1400,13 @@ u_{mn}(x,y,z) = H_m(\sqrt{2}x/w(z))H_n(\sqrt{2}y/w(z))e^{-\frac{x^2+y^2}{w^2(z)}
 <img src="harmonic_oscillator_files/figure-html/fig-hermite-gaussian-output-1.png" width="666" height="692" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hermite-gaussian-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6— Intensity distribution of the first 16 Hermite-Gaussian modes
+Figure&nbsp;7— Intensity distribution of the first 16 Hermite-Gaussian modes
 </figcaption>
 </figure>
 </div>
 </div>
+</div>
 </section>
-</div>
-</div>
 <section id="physical-interpretation" class="level3">
 <h3 class="anchored" data-anchor-id="physical-interpretation">Physical Interpretation</h3>
 <p>The analogy provides physical insights in both directions:</p>
@@ -1343,10 +1415,12 @@ Figure&nbsp;6— Intensity distribution of the first 16 Hermite-Gaussian modes
 <li>The beam’s width oscillations correspond to the classical oscillatory motion</li>
 <li>Higher-order modes show more complex spatial patterns, just as excited states have more nodes</li>
 </ol>
-<p>This mathematical similarity has practical implications in laser physics and helps explain why Gaussian beams are so fundamental in optics, just as the harmonic oscillator is fundamental in quantum mechanics. :::</p>
-
-
+<p>This mathematical similarity has practical implications in laser physics and helps explain why Gaussian beams are so fundamental in optics, just as the harmonic oscillator is fundamental in quantum mechanics.</p>
 </section>
+</div>
+</div>
+
+
 </section>
 
 </main> <!-- /main -->
@@ -1777,6 +1851,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="../quantum-mechanics/parametric_dc.html" class="pagination-link" aria-label="Photon Entanglement">
+        <span class="nav-page-text">Photon Entanglement</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
