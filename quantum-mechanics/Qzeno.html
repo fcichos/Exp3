@@ -20,27 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -922,7 +902,7 @@ window.Quarto = {
 
 <section id="introduction-and-historical-background" class="level2">
 <h2 class="anchored" data-anchor-id="introduction-and-historical-background">Introduction and Historical Background</h2>
-<p>The Quantum Zeno Effect (QZE) was named after the ancient Greek philosopher Zeno of Elea, famous for his paradoxes about motion and change. The effect was first formally described by Alan Turing in 1954 but was named and thoroughly analyzed by George Sudarshan and Baidyanath Misra in 1977 <span class="citation" data-cites="misra1977">(<a href="#ref-misra1977" role="doc-biblioref">Misra and Sudarshan 1977</a>)</span>. The name refers to Zeno’s arrow paradox, which argues that a flying arrow must be motionless because at any given instant it occupies a space equal to its length - drawing a parallel with how quantum measurements can “freeze” the evolution of a quantum system.</p>
+<p>The Quantum Zeno Effect (QZE) was named after the ancient Greek philosopher Zeno of Elea, famous for his paradoxes about motion and change. The effect was first formally described by Alan Turing in 1954 but was named and thoroughly analyzed by George Sudarshan and Baidyanath <a href="https://pubs.aip.org/aip/jmp/article-abstract/18/4/756/225634/The-Zeno-s-paradox-in-quantum-theory?redirectedFrom=fulltext">Misra</a> in 1977. The name refers to Zeno’s arrow paradox, which argues that a flying arrow must be motionless because at any given instant it occupies a space equal to its length - drawing a parallel with how quantum measurements can “freeze” the evolution of a quantum system.</p>
 <p>The Quantum Zeno Effect describes how frequent measurements of a quantum system can inhibit its evolution. In essence, repeatedly measuring an unstable quantum system can prevent it from decaying or changing state. This phenomenon emerges from the fundamental principles of quantum measurement theory and highlights the profound role that observation plays in quantum mechanics.</p>
 </section>
 <section id="theoretical-framework" class="level2">
@@ -980,7 +960,7 @@ Adiabatic Evolution
 </section>
 <section id="experimental-results-and-current-research" class="level3">
 <h3 class="anchored" data-anchor-id="experimental-results-and-current-research">Experimental Results and Current Research</h3>
-<p>The first definitive experimental verification of the QZE was achieved by Itano and colleagues in 1990 <span class="citation" data-cites="itano1990">(<a href="#ref-itano1990" role="doc-biblioref">Itano et al. 1990</a>)</span>. Their groundbreaking experiment utilized trapped beryllium ions to demonstrate that frequent measurements could indeed inhibit the transition between two atomic levels. Since then, modern experimental investigations have expanded dramatically, demonstrating the effect in ultracold atoms, superconducting quantum circuits, nuclear magnetic resonance systems, and Bose-Einstein condensates.</p>
+<p>The first definitive experimental verification of the QZE was achieved by Itano and colleagues in 1990 <a href="https://journals.aps.org/pra/abstract/10.1103/PhysRevA.41.2295">Itano</a>. Their groundbreaking experiment utilized trapped beryllium ions to demonstrate that frequent measurements could indeed inhibit the transition between two atomic levels. Since then, modern experimental investigations have expanded dramatically, demonstrating the effect in ultracold atoms, superconducting quantum circuits, nuclear magnetic resonance systems, and Bose-Einstein condensates.</p>
 <p>Contemporary theoretical work has expanded our understanding beyond the basic Quantum Zeno Effect, including the discovery of the Anti-Zeno Effect, where frequent measurements can actually accelerate decay rather than inhibit it. The effect has found significant applications in quantum technology, particularly in quantum computation for error prevention and decoherence control. Current research focuses on understanding the boundaries between Zeno and Anti-Zeno behavior, the role of measurement strength, and potential applications in quantum control protocols.</p>
 <p>The behavior of twisted nematic liquid crystal displays demonstrates adiabatic evolution similar to the polarizer example discussed above, rather than the Quantum Zeno Effect.</p>
 <div id="fig-zeno" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -998,10 +978,10 @@ Figure&nbsp;1— Sketch of different liquid crystal phases. The cholesteric phas
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-lc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 30.0%;justify-content: center;">
+<div class="quarto-layout-cell" style="flex-basis: 23.1%;justify-content: center;">
 <p><img src="img/seiko.png" class="img-fluid figure-img"></p>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 70.0%;justify-content: center;">
+<div class="quarto-layout-cell" style="flex-basis: 76.9%;justify-content: center;">
 <p><img src="img/lc_disp.jpg" class="img-fluid figure-img"></p>
 </div>
 </div>
@@ -1013,14 +993,6 @@ Figure&nbsp;2— Working principle of a liquid crystal display. The light is fir
 </div>
 <p>The adiabatic evolution described for the many polarizers above occurs here through the continuous rotation of the liquid crystal molecules. The twisted nematic liquid crystal structure gradually rotates the light’s polarization by 90°. The light is then blocked by the second crossed polarizer. When an electric field is applied, the liquid crystal molecules align parallel to the field and the light is not rotated anymore. The light can pass through the second polarizer and the pixel is switched on.</p>
 <p>For a deeper understanding of the Quantum Zeno Effect, several comprehensive resources are available. Bouwmeester et al.’s “The Physics of Quantum Information” provides an excellent overview of the effect in the context of quantum information science. Wiseman and Milburn’s “Quantum Measurement and Control” offers a detailed theoretical treatment, while Haroche and Raimond’s “Exploring the Quantum” presents both theoretical and experimental perspectives.</p>
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-itano1990" class="csl-entry" role="listitem">
-Itano, Wayne M, Daniel J Heinzen, JJ Bollinger, and DJ Wineland. 1990. <span>“Quantum Zeno Effect.”</span> <em>Physical Review A</em> 41 (5): 2295. <a href="https://journals.aps.org/pra/abstract/10.1103/PhysRevA.41.2295">https://journals.aps.org/pra/abstract/10.1103/PhysRevA.41.2295</a>.
-</div>
-<div id="ref-misra1977" class="csl-entry" role="listitem">
-Misra, B, and ECG Sudarshan. 1977. <span>“The Zeno’s Paradox in Quantum Theory.”</span> <em>Journal of Mathematical Physics</em> 18 (4): 756–63. <a href="https://pubs.aip.org/aip/jmp/article-abstract/18/4/756/225634/The-Zeno-s-paradox-in-quantum-theory?redirectedFrom=fulltext">https://pubs.aip.org/aip/jmp/article-abstract/18/4/756/225634/The-Zeno-s-paradox-in-quantum-theory?redirectedFrom=fulltext</a>.
-</div>
-</div>
 
 
 </section>

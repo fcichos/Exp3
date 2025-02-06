@@ -940,7 +940,7 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="the-hydrogen-atom">The Hydrogen Atom</h2>
 <p>Now that we’ve discussed the angular momentum operator, we can tackle one of the most important problems in quantum mechanics: the hydrogen atom. The hydrogen atom consists of a proton and an electron bound together by the Coulomb force. This system is particularly important because:</p>
 <ol type="1">
-<li>It is the simpliest atomic system and can be solved analytically</li>
+<li>It is the simplest atomic system and can be solved analytically</li>
 <li>More complex atoms can be understood as perturbations of the hydrogen atom</li>
 <li>It demonstrates key quantum mechanical concepts like quantization and orbital angular momentum</li>
 </ol>
@@ -950,12 +950,12 @@ window.Quarto = {
 <p>For a spherically symmetric potential, the time-independent Schrödinger equation takes the form:</p>
 <p><span class="math display">\[
 \begin{aligned}
-0 &amp; = &amp; H \psi \left( r,\vartheta,\varphi \right) - E H \psi \left( r,\vartheta,\varphi \right)\\
-0 &amp; = &amp; \frac{1}{r^2} \frac{\partial}{\partial r} \left( r^2 \frac{\partial}{\partial r} \psi \right)
-+ \frac{1}{r^2 \sin \left( \vartheta \right)} \frac{\partial}{\partial \vartheta}
-\left( \sin \left( \vartheta \right) \frac{\partial}{\partial \vartheta} \psi \right) \\
-&amp; &amp; + \frac{1}{r^2 \sin^2 \left( \vartheta \right)} \frac{\partial^2}{\partial \varphi^2} \psi
-+ \frac{2m}{\hbar^2} \left( E - V\left( r \right) \right) \psi  \mathrm{.}
+0 &amp; =  \hat{H} \psi \left( r,\vartheta,\varphi \right) - E \psi \left( r,\vartheta,\varphi \right)\\[1mm]
+0 &amp; =  \frac{1}{r^2} \frac{\partial}{\partial r} \left( r^2 \frac{\partial \psi}{\partial r} \right)
++ \frac{1}{r^2 \sin \vartheta} \frac{\partial}{\partial \vartheta}
+\left( \sin \vartheta \frac{\partial \psi}{\partial \vartheta} \right) \\[1mm]
+&amp;  + \frac{1}{r^2 \sin^2 \vartheta} \frac{\partial^2 \psi}{\partial \varphi^2}
++ \frac{2m}{\hbar^2} \left( E - V\left( r \right) \right) \psi \,.
 \end{aligned}
 \]</span></p>
 <p>This equation looks intimidating, but we can break it down into manageable pieces using a powerful mathematical technique called separation of variables.</p>
@@ -966,7 +966,7 @@ window.Quarto = {
 <p><span class="math display">\[
 \psi \left( r,\vartheta,\varphi \right) = R \left( r \right) \cdot \Theta \left(\vartheta\right) \cdot \Phi \left(\varphi \right) \mathrm{.}
 \]</span></p>
-<p>This separation ansatz reflects the spherical symmetry of the problem. Each function will describe a different aspect of the electron’s behavior: - R(r) describes how the probability density varies with distance from the nucleus - Θ(θ) and Φ(φ) together describe the angular distribution of the electron</p>
+<p>This separation ansatz reflects the spherical symmetry of the problem. Each function will describe a different aspect of the electron’s behavior: - <span class="math inline">\(R(r)\)</span> describes how the probability density varies with distance from the nucleus - <span class="math inline">\(\Theta(\theta)\)</span> and <span class="math inline">\(\Phi(\phi)\)</span> together describe the angular distribution of the electron</p>
 <p>Substituting this into the Schrödinger equation and rearranging terms:</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -990,7 +990,7 @@ window.Quarto = {
 + \frac{2m}{\hbar^2} \left( E - V\left(r\right)\right)r^2\sin^2\left(\vartheta\right) \mathrm{.}
 \end{aligned}
 \]</span></p>
-<p>We can now separate the φ-dependent terms:</p>
+<p>We can now separate the <span class="math inline">\(\phi\)</span>-dependent terms:</p>
 <p><span class="math display">\[
 \begin{aligned}
 -\frac{1}{\Phi} \frac{\mathrm{d}^2 \Phi}{\mathrm{d} \varphi^2}
@@ -1002,11 +1002,11 @@ window.Quarto = {
 &amp; &amp; + \frac{2m}{\hbar^2} \left( E - V\left( r \right) \right) r^2 \sin^2 \left( \vartheta \right)
 \end{aligned}
 \]</span></p>
-<p>This equation has a remarkable property: the left side depends only on φ, while the right side depends only on r and θ. For this equality to hold for all values of the coordinates, both sides must equal a separation constant, which we’ll call <span class="math inline">\(C_1\)</span>.</p>
+<p>This equation has a remarkable property: the left side depends only on <span class="math inline">\(\phi\)</span>, while the right side depends only on <span class="math inline">\(r\)</span> and <span class="math inline">\(\vartheta\)</span>. For this equality to hold for all values of the coordinates, both sides must equal a separation constant, which we’ll call <span class="math inline">\(C_1\)</span>.</p>
 </section>
 <section id="the-azimuthal-equation" class="level3">
 <h3 class="anchored" data-anchor-id="the-azimuthal-equation">The Azimuthal Equation</h3>
-<p>The equation for Φ(φ) is:</p>
+<p>The equation for <span class="math inline">\(\Phi(\varphi)\)</span> is:</p>
 <p><span class="math display">\[
 \frac{\mathrm{d}^2 \Phi \left(\varphi \right)}{\mathrm{d} \varphi^2} = - C_1 \cdot \Phi \left(\varphi \right)
 \]</span></p>
@@ -1014,7 +1014,7 @@ window.Quarto = {
 <p><span class="math display">\[
 \Phi \left(\varphi \right) = A \cdot \mathrm{e}^{\pm i \sqrt{C_1}\varphi} \mathrm{.}
 \]</span></p>
-<p>Because the wavefunction must be single-valued when φ changes by 2π:</p>
+<p>Because the wavefunction must be single-valued when <span class="math inline">\(\varphi\)</span> changes by <span class="math inline">\(2\pi\)</span>:</p>
 <p><span class="math display">\[
 \begin{aligned}
 \Phi \left(\varphi + n \cdot 2 \pi \right) &amp; = &amp; \Phi \left(\varphi \right)\\
@@ -1033,7 +1033,7 @@ window.Quarto = {
 </section>
 <section id="the-polar-angle-equation" class="level3">
 <h3 class="anchored" data-anchor-id="the-polar-angle-equation">The Polar Angle Equation</h3>
-<p>For the θ-dependent part, we get:</p>
+<p>For the <span class="math inline">\(\vartheta\)</span>-dependent part, we get:</p>
 <p><span class="math display">\[
 \begin{aligned}
 C_1 &amp; = &amp;
@@ -1052,40 +1052,40 @@ C_1 &amp; = &amp;
 + \frac{2m}{\hbar^2} \left( E - V\left( r \right) \right) r^2
 \end{aligned} \mathrm{,}
 \]</span></p>
-<p>Again, the left side depends only on θ while the right side depends only on r, introducing another separation constant <span class="math inline">\(C_2\)</span>. For the θ equation:</p>
+<p>Again, the left side depends only on <span class="math inline">\(\vartheta\)</span> while the right side depends only on r, introducing another separation constant <span class="math inline">\(C_2\)</span>. For the <span class="math inline">\(\vartheta\)</span> equation:</p>
 <p><span class="math display">\[
 \begin{aligned}
 - C_2 &amp; = &amp; \frac{1}{\sin \left( \vartheta \right) \, \Theta \left(\vartheta\right) } \frac{\mathrm{d}}{\mathrm{d} \vartheta} \left( \sin \left( \vartheta \right) \frac{\mathrm{d} \Theta \left(\vartheta\right)}{\mathrm{d} \vartheta} \right)
 - \frac{C_1}{\sin^2 \left( \vartheta \right)}
 \end{aligned} \mathrm{.}
 \]</span></p>
-<p>When m = 0, using ξ = cos(θ), this becomes the Legendre equation:</p>
+<p>When <span class="math inline">\(m = 0\)</span>, using <span class="math inline">\(\xi = \cos(\vartheta)\)</span>, this becomes the Legendre equation:</p>
 <p><span class="math display">\[
-\frac{\mathrm{d}}{\mathrm{d} \xi} \left[ \left(1-\xi^2 \right) \frac{\mathrm{d} \theta \left( \vartheta \right)}{\mathrm{d} \xi} \right] + C_2 \theta = 0 \mathrm{.}
+\frac{\mathrm{d}}{\mathrm{d} \xi} \left[ \left(1-\xi^2 \right) \frac{\mathrm{d} \Theta \left(\vartheta \right)}{\mathrm{d} \xi} \right] + C_2 \Theta = 0 \mathrm{.}
 \]</span></p>
 <p>The solutions are Legendre polynomials:</p>
 <p><span class="math display">\[
-\theta = \sum_{k=0}^{\infty} a_k \xi^k
+\Theta = \sum_{k=0}^{\infty} a_k \xi^k
 \]</span></p>
 <p>With the recursion relation:</p>
 <p><span class="math display">\[
 a_{k+2} = \frac{k \left( k+1 \right) - C_2}{\left(k+2\right) \left(k+1\right)} \, a_k \mathrm{.}
 \]</span></p>
 <p>For finite solutions, we need <span class="math inline">\(C_2 = l(l+1)\)</span> where l is an integer ≥ 0. This gives us our second quantum number l, which represents the total angular momentum.</p>
-<p>For m ≠ 0, we get associated Legendre polynomials:</p>
+<p>For <span class="math inline">\(m \neq 0\)</span>, we get associated Legendre polynomials:</p>
 <p><span class="math display">\[
 P_l^m \left( \cos \left( \vartheta \right) \right)
-= const. \cdot \left( 1-\xi^2\right)^{\left|\frac{m}{2}\right|}
+= const. \cdot \left(1-\xi^2\right)^{\left|\frac{m}{2}\right|}
 \frac{\mathrm{d}^{\left|m\right|}}{\mathrm{d} \xi^{\left|m\right|}} P_l \left( \cos \left( \vartheta \right) \right)
 \]</span></p>
-<p>With the condition |m| ≤ l and normalization:</p>
+<p>With the condition <span class="math inline">\(|m| \leq l\)</span> and normalization:</p>
 <p><span class="math display">\[
 \int_{\vartheta = 0}^{\pi} \left| P_l^m \left( \cos \left( \vartheta \right) \right) \right|^2 \sin \left( \vartheta \right) \mathrm{d} \vartheta = 1 \mathrm{.}
 \]</span></p>
 </section>
 <section id="spherical-harmonics" class="level3">
 <h3 class="anchored" data-anchor-id="spherical-harmonics">Spherical Harmonics</h3>
-<p>The angular part of the solution combines Θ and Φ into spherical harmonics:</p>
+<p>The angular part of the solution combines <span class="math inline">\(\Theta\)</span> and <span class="math inline">\(\Phi\)</span> into spherical harmonics:</p>
 <p><span class="math display">\[
 Y_l^m \left(\vartheta,\varphi\right) =  P_l^m \left( \cos \left( \vartheta \right) \right) \cdot \Phi \cos \left( \varphi \right)
 \]</span></p>
@@ -1227,7 +1227,7 @@ C_2 &amp; = &amp; l \left( l+1 \right) \\
 <p><span class="math display">\[
 V \left( r \right) = - \frac{Z e^2}{4 \pi \varepsilon_0 r}
 \]</span></p>
-<p>Where Z is the atomic number (Z=1 for hydrogen) and <span class="math inline">\(\varepsilon_0\)</span> is the vacuum permittivity. We also use the reduced mass <span class="math inline">\(\mu\)</span> instead of the electron mass <span class="math inline">\(m\)</span> to account for the finite nuclear mass:</p>
+<p>Where <span class="math inline">\(Z\)</span> is the atomic number (<span class="math inline">\(Z=1\)</span> for hydrogen) and <span class="math inline">\(\varepsilon_0\)</span> is the vacuum permittivity. We also use the reduced mass <span class="math inline">\(\mu\)</span> instead of the electron mass <span class="math inline">\(m\)</span> to account for the finite nuclear mass:</p>
 <p><span class="math display">\[\frac{1}{\mu} = \frac{1}{m_e} + \frac{1}{m_n}\]</span></p>
 <p>After some algebra, we get the radial equation:</p>
 <p><span class="math display">\[
@@ -1237,7 +1237,7 @@ V \left( r \right) = - \frac{Z e^2}{4 \pi \varepsilon_0 r}
 + \left( \frac{2\mu}{\hbar^2} \left( E + \frac{Z e^2}{4 \pi \varepsilon_0 r} \right)  - \frac{l \left( l+1 \right)}{r^2} \right) R \left( r \right)
 \end{aligned} \mathrm{.}
 \]</span></p>
-<p>This is a second-order differential equation. For bound states (E &lt; 0), we can simplify it by making the ansatz:</p>
+<p>This is a second-order differential equation. For bound states (<span class="math inline">\(E &lt; 0\)</span>), we can simplify it by making the ansatz:</p>
 <p><span class="math display">\[
 R \left( r \right) = u \left( r \right) \cdot \mathrm{e}^{- \kappa r} \mathrm{,}
 \]</span></p>
@@ -1245,7 +1245,7 @@ R \left( r \right) = u \left( r \right) \cdot \mathrm{e}^{- \kappa r} \mathrm{,}
 <p><span class="math display">\[
 a = \frac{\mu Z e^2}{4 \pi \varepsilon_0 \hbar^2}
 \]</span></p>
-<p>This gives us a simpler equation for u(r):</p>
+<p>This gives us a simpler equation for <span class="math inline">\(u(r)\)</span>:</p>
 <p><span class="math display">\[
 \begin{aligned}
 0 &amp; = &amp;
@@ -1277,7 +1277,7 @@ E = - \frac{a^2 Z^2}{2 \mu n^2} &amp; = &amp; - \frac{\mu e^4}{8 \varepsilon_0^2
 {} &amp; = &amp; - Ry^{\ast} \frac{Z^2}{n^2} = E_n \mathrm{.}
 \end{aligned}
 \]</span></p>
-<p>This is the famous Bohr formula for the energy levels of hydrogen-like atoms! Here <span class="math inline">\(Ry^*\)</span> is the Rydberg energy. The quantum number n must be a positive integer, explaining why atomic energy levels are quantized.</p>
+<p>This is the famous Bohr formula for the energy levels of hydrogen-like atoms! Here <span class="math inline">\(Ry^*\)</span> is the Rydberg energy. The quantum number <span class="math inline">\(n\)</span> must be a positive integer, explaining why atomic energy levels are quantized.</p>
 <p>From the denominator of our recursive formula, we also get:</p>
 <p><span class="math display">\[
 l \le j \le n-1
@@ -1286,7 +1286,7 @@ l \le j \le n-1
 <p><span class="math display">\[
 l \le n-1 \mathrm{.}
 \]</span></p>
-<p>The complete radial function <span class="math inline">\(R_{n,l}(r)\)</span> therefore depends on two quantum numbers: - n (principal quantum number) - l (angular momentum quantum number)</p>
+<p>The complete radial function <span class="math inline">\(R_{n,l}(r)\)</span> therefore depends on two quantum numbers: - <span class="math inline">\(n\)</span> (principal quantum number) - <span class="math inline">\(l\)</span> (angular momentum quantum number)</p>
 <p>The first few normalized radial functions are shown in the table below (<span class="math inline">\(N = \left(Z/\left( a_0 n\right)\right)^{3/2}\)</span>, <span class="math inline">\(x = Z r / \left(a_0 n\right)\)</span>, <span class="math inline">\(a_0 = 4 \pi \varepsilon_0 \hbar^2 / \left(\mu e^2 \right)\)</span> is the Bohr radius):</p>
 <table class="caption-top table">
 <thead>
@@ -1417,7 +1417,7 @@ Figure&nbsp;2— Radial wavefunctions R(r) for n=1,2,3
 <p><span class="math display">\[
 \psi_{n,l,m} \left( r,\vartheta,\varphi \right) = R_{n,l} \left(r\right) \cdot Y_l^m \left(\vartheta,\varphi \right)
 \]</span>.</p>
-<div id="9b972724" class="cell" data-execution_count="4">
+<div id="59412be8" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>

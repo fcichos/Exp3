@@ -966,12 +966,12 @@ Figure&nbsp;1— Coulomb potential V(r) = -e²/4πε₀r for hydrogen
 </div>
 </div>
 </div>
-<p>This type of potential exhibits spherical symmetry, meaning it depends only on the radial distance from the origin and is independent of angular coordinates - similar to the gravitational or Coulomb potential.</p>
-<p>The Schördinger equation has then the form in cartesian coordinates</p>
+<p>This type of potential exhibits spherical symmetry, meaning it depends only on the radial distance from the origin and is independent of angular coordinates — similar to the gravitational or Coulomb potential.</p>
+<p>The Schrödinger equation then has the form in Cartesian coordinates</p>
 <p><span class="math display">\[
 \begin{aligned}
-0 &amp; =  H \psi \left( x,y,z \right) - E H \psi \left( x,y,z \right)\\
-0 &amp; =  -\frac{\hbar^2}{2m} \nabla^2 \psi \left( x,y,z \right) + V \left( x,y,z \right) \psi \left( x,y,z \right) - E \psi \left( x,y,z \right) \mathrm{.}
+0 &amp; = \hat{H} \, \psi \left( x,y,z \right) - E \, \psi \left( x,y,z \right)\\
+0 &amp; = -\frac{\hbar^2}{2m} \nabla^2 \psi \left( x,y,z \right) + V \left( x,y,z \right) \psi \left( x,y,z \right) - E \, \psi \left( x,y,z \right) \mathrm{.}
 \end{aligned}
 \]</span></p>
 <p>Ultimately this will allow us to analyze the hydrogen atom. The spherical symmetry of the potential brings along new conservation laws. According to Noether’s theorem, the conservation of angular momentum is a direct consequence of the spherical symmetry of the potential.</p>
@@ -1027,7 +1027,9 @@ Figure&nbsp;1— Coulomb potential V(r) = -e²/4πε₀r for hydrogen
 <ol type="1">
 <li><p>Linearity: For any constants <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> and wavefunctions <span class="math inline">\(\psi_1\)</span> and <span class="math inline">\(\psi_2\)</span>: <span class="math display">\[\hat{A}(a\psi_1 + b\psi_2) = a\hat{A}\psi_1 + b\hat{A}\psi_2\]</span></p></li>
 <li><p>Hermiticity: The expectation value of a physical observable must be real</p>
-<p><span class="math display">\[\langle \hat{A}\rangle = \int \psi^*\hat{A}\psi d\tau = \left(\int \psi^*\hat{A}\psi d\tau\right)^*\]</span></p></li>
+<p>The expected value of an operator <span class="math inline">\(\hat{A}\)</span> is defined by the integral</p>
+<p><span class="math display">\[\mathrm{E}[\hat{A}] = \int \psi^*(x)\,\hat{A}\,\psi(x)d\tau = \left(\int \psi^*(x)\,\hat{A}\,\psi(x)d\tau\right)^*,\]</span></p>
+<p>which shows that the result must be equal to its own complex conjugate.</p></li>
 <li><p>Eigenvalue equations: When an operator acts on certain special wavefunctions (eigenfunctions), it returns the same function multiplied by a constant (eigenvalue)</p>
 <p><span class="math display">\[\hat{A}\psi = a\psi\]</span></p>
 <p>The eigenvalues represent the possible measured values of the corresponding physical observable. This is why energy levels are quantized - they correspond to eigenvalues of the Hamiltonian operator.</p>
@@ -1043,14 +1045,14 @@ Uncertainty of an observable in an eigenstate
 <div class="callout-body-container callout-body">
 <p>When an operator <span class="math inline">\(\hat{A}\)</span> has eigenvalues <span class="math inline">\(a\)</span>, the wavefunction <span class="math inline">\(\psi\)</span> is an eigenfunction of <span class="math inline">\(\hat{A}\)</span>:</p>
 <p><span class="math display">\[\hat{A}\psi = a\psi\]</span></p>
-<p>The uncertainty in measuring <span class="math inline">\(A\)</span> is given by:</p>
+<p>The uncertainty in measuring <span class="math inline">\(\hat{A}\)</span> is given by:</p>
 <p><span class="math display">\[\Delta A = \sqrt{\langle A^2 \rangle - \langle A \rangle^2}\]</span></p>
 <p>For an eigenfunction, we can evaluate these expectation values:</p>
-<p><span class="math display">\[\langle A \rangle = \int \psi^* \hat{A} \psi dx = \int \psi^* (a\psi) dx = a \int |\psi|^2 dx = a\]</span></p>
-<p><span class="math display">\[\langle A^2 \rangle = \int \psi^* \hat{A}^2 \psi dx = \int \psi^* (a^2\psi) dx = a^2 \int |\psi|^2 dx = a^2\]</span></p>
+<p><span class="math display">\[\langle A \rangle = \int \psi^* \hat{A} \psi \, dx = \int \psi^* (a\psi) \, dx = a \int |\psi|^2 \, dx = a\]</span></p>
+<p><span class="math display">\[\langle A^2 \rangle = \int \psi^* \hat{A}^2 \psi \, dx = \int \psi^* (a^2\psi) \, dx = a^2 \int |\psi|^2 \, dx = a^2\]</span></p>
 <p>Therefore:</p>
 <p><span class="math display">\[\Delta A = \sqrt{a^2 - a^2} = 0\]</span></p>
-<p>This proves that there is no uncertainty in measuring an observable when the system is in an eigenstate of that observable. Thus when doing and experiment on a system that is in the eigenstate of the observable you are measuring, you will always get the same value for the observable.</p>
+<p>This proves that there is no uncertainty in measuring an observable when the system is in an eigenstate of that observable. Thus when doing an experiment on a system that is in the eigenstate of the observable you are measuring, you will always get the same value for the observable.</p>
 </div>
 </div></li>
 <li><p>Orthogonality: Eigenfunctions of Hermitian operators are orthogonal</p>
@@ -1075,33 +1077,30 @@ Uncertainty of an observable in an eigenstate
 <p><span class="math display">\[\langle\hat{A}\rangle = \langle\psi|\hat{A}|\psi\rangle\]</span></p>
 <p>This is the average value of the observable <span class="math inline">\(\hat{A}\)</span> in the state <span class="math inline">\(\psi\)</span>. For example, if we want to measure the position of a particle, we use the position operator <span class="math inline">\(\hat{x}\)</span>. While any single measurement will yield one specific position value, if we repeat the measurement many times we will find the average position is given by:</p>
 <p><span class="math display">\[\langle x \rangle = \int \psi^*(x) x \psi(x) dx\]</span></p>
-<p>The uncertainty in the distribution of these measurements can be calculated using:</p>
-<p><span class="math display">\[(\Delta A)^2 = \langle A^2 \rangle - \langle A \rangle^2\]</span></p>
-<p>where <span class="math inline">\(\langle A^2 \rangle = \int \psi^*(x) \hat{A}^2 \psi(x) dx\)</span></p>
 <p>The expectation value of the momentum operator is particularly important, as it is related to the group velocity of the wavefunction:</p>
 <p><span class="math display">\[\langle\hat{p}\rangle = \int\psi^*\hat{p}\psi dx = -i\hbar\int\psi^*\frac{\partial\psi}{\partial x}dx\]</span></p>
-<p>Note that an eigenvalue can be an expectation value when the systems wavefunction is an eigenfunction, but an expectation value is not necessarily an eigenvalue.</p>
+<p>Note that an eigenvalue can be an expectation value when the system’s wavefunction is an eigenfunction, but an expectation value is not necessarily an eigenvalue.</p>
 </section>
 <section id="example-angular-momentum-operator" class="level3">
 <h3 class="anchored" data-anchor-id="example-angular-momentum-operator">Example: Angular Momentum Operator</h3>
 <p>The angular momentum plays a key role in such spherically symmetric systems, as it is a conserved quantity due to the rotational symmetry of the potential. We will therefore discuss the angular momentum operator in more detail. The angular momentum operator is defined as the cross product of the position and momentum operators:</p>
-<p><span class="math display">\[\vec{L} = \vec{r} \times \vec{p}\]</span></p>
+<p><span class="math display">\[\vec{\hat{L}} = \vec{r} \times \vec{\hat{p}}\]</span></p>
 <p>This relationship makes sense intuitively since classically, angular momentum is defined as <span class="math inline">\(\vec{L} = \vec{r} \times \vec{p}\)</span>. The quantum mechanical momentum is given by:</p>
-<p><span class="math display">\[\vec{p} = -i\hbar\nabla\]</span></p>
+<p><span class="math display">\[\vec{\hat{p}} = -i\hbar\nabla\]</span></p>
 <p>When we calculate the cross product explicitly, we obtain the expressions for the components of the angular momentum that we’ll use extensively in solving the spherically symmetric potential:</p>
 <p><span class="math display">\[
 \begin{aligned}
-L_x &amp;= -i\hbar(y\frac{\partial}{\partial z} - z\frac{\partial}{\partial y}) \\
-L_y &amp;= -i\hbar(z\frac{\partial}{\partial x} - x\frac{\partial}{\partial z}) \\
-L_z &amp;= -i\hbar(x\frac{\partial}{\partial y} - y\frac{\partial}{\partial x})
+\hat{L}_x &amp;= -i\hbar\left(y\frac{\partial}{\partial z} - z\frac{\partial}{\partial y}\right) \\
+\hat{L}_y &amp;= -i\hbar\left(z\frac{\partial}{\partial x} - x\frac{\partial}{\partial z}\right) \\
+\hat{L}_z &amp;= -i\hbar\left(x\frac{\partial}{\partial y} - y\frac{\partial}{\partial x}\right)
 \end{aligned}
 \]</span></p>
-<p>The angular momentum squared operator <span class="math inline">\(L^2\)</span> is defined as: <span class="math display">\[
-L^2 = L_x^2 + L_y^2 + L_z^2
+<p>The angular momentum squared operator <span class="math inline">\(\hat{L}^2\)</span> is defined as: <span class="math display">\[
+\hat{L}^2 = \hat{L}_x^2 + \hat{L}_y^2 + \hat{L}_z^2
 \]</span></p>
-<p>and we can write down the square of the anular momentum operator in spherical coordinates:</p>
+<p>and we can write down the square of the angular momentum operator in spherical coordinates:</p>
 <p><span class="math display">\[
-L^2 = -\hbar^2\left[\frac{1}{\sin \left( \vartheta \right)} \frac{\partial}{\partial \vartheta}
+\hat{L}^2 = -\hbar^2\left[\frac{1}{\sin \left( \vartheta \right)} \frac{\partial}{\partial \vartheta}
 \left( \sin \left( \vartheta \right) \frac{\partial}{\partial \vartheta} \right) +
 \frac{1}{\sin^2 \left( \vartheta \right)} \frac{\partial^2}{\partial \varphi^2}\right]
 \]</span></p>
@@ -1123,7 +1122,7 @@ y &amp; =  r \sin \left( \vartheta \right) \sin \left( \varphi \right)\\
 z &amp; =  r \cos \left( \vartheta \right) \mathrm{.}
 \end{aligned}
 \]</span></p>
-<p>and reverse transformation is given by</p>
+<p>and the reverse transformation is given by</p>
 <p><span class="math display">\[
 \begin{aligned}
 r &amp; =  \sqrt{x^2 + y^2 + z^2}\\
@@ -1134,45 +1133,45 @@ r &amp; =  \sqrt{x^2 + y^2 + z^2}\\
 </div>
 </div>
 <p>The eigenfunctions of the angular momentum operator are the spherical harmonics <span class="math inline">\(Y_l^m \left( \vartheta, \varphi \right)\)</span>, which we will discuss in more detail later. The quantum number <span class="math inline">\(l\)</span> denotes the magnitude of the angular momentum, while <span class="math inline">\(m\)</span> is the projection of the angular momentum along the <span class="math inline">\(z\)</span>-axis.</p>
-<p>The eigenvalues of the angular momentum squared operator <span class="math inline">\(L^2\)</span> are given by</p>
+<p>The eigenvalues of the angular momentum squared operator <span class="math inline">\(\hat{L}^2\)</span> are given by</p>
 <p><span class="math display">\[
-L^2 Y_l^m \left( \vartheta, \varphi \right) = \hbar^2 l \left( l+1 \right) Y_l^m \left( \vartheta, \varphi \right)
+\hat{L}^2 Y_l^m \left( \vartheta, \varphi \right) = \hbar^2 l \left( l+1 \right) Y_l^m \left( \vartheta, \varphi \right)
 \]</span></p>
 <p>such that the magnitude of the angular momentum is quantized in units of <span class="math inline">\(\hbar\)</span>, i.e.</p>
 <p><span class="math display">\[
-\left| \vec{L} \right| = \sqrt{l \left( l+1 \right)} \hbar
+\left| \vec{\hat{L}} \right| = \sqrt{l \left( l+1 \right)} \hbar
 \]</span></p>
-<p>such that we know precisely the magnitude of the angular momentum.</p>
+<p>so that we know precisely the magnitude of the angular momentum.</p>
 <p>The projection of the angular momentum along the <span class="math inline">\(z\)</span>-axis is quantized in units of <span class="math inline">\(\hbar\)</span> as well, i.e.</p>
 <p><span class="math display">\[
-L_z Y_l^m \left( \vartheta, \varphi \right) = \hbar m Y_l^m \left( \vartheta, \varphi \right)
+\hat{L}_z Y_l^m \left( \vartheta, \varphi \right) = \hbar m Y_l^m \left( \vartheta, \varphi \right)
 \]</span></p>
-<p>where <span class="math inline">\(m\)</span> can take on values from <span class="math inline">\(-l\)</span> to <span class="math inline">\(l\)</span> in integer steps. Thus both, the magnitude and the projection of the angular momentum are quantized in units of <span class="math inline">\(\hbar\)</span> and can be measured precisely. Yet, the components of the angular momentum along the <span class="math inline">\(x\)</span>- and <span class="math inline">\(y\)</span>-axis are not precisely known, since the angular momentum is quantized along the <span class="math inline">\(z\)</span>-axis.</p>
-<p>Both, the <span class="math inline">\(L_x\)</span> and the <span class="math inline">\(L_y\)</span> operator do not commute with the <span class="math inline">\(L_z\)</span> operator, i.e.</p>
-<p><span class="math display">\[[L_x, L_z] = L_x L_z - L_z L_x\]</span></p>
-<p>Using the expressions for <span class="math inline">\(L_x\)</span> and <span class="math inline">\(L_z\)</span>:</p>
-<p><span class="math display">\[L_x = -i\hbar(y\frac{\partial}{\partial z} - z\frac{\partial}{\partial y})\]</span></p>
-<p><span class="math display">\[L_z = -i\hbar(x\frac{\partial}{\partial y} - y\frac{\partial}{\partial x})\]</span></p>
-<p>First computing <span class="math inline">\(L_x L_z\)</span>: <span class="math display">\[L_x L_z = (-i\hbar)^2(y\frac{\partial}{\partial z} - z\frac{\partial}{\partial y})(x\frac{\partial}{\partial y} - y\frac{\partial}{\partial x})\]</span></p>
-<p>And <span class="math inline">\(L_z L_x\)</span>:</p>
-<p><span class="math display">\[L_z L_x = (-i\hbar)^2(x\frac{\partial}{\partial y} - y\frac{\partial}{\partial x})(y\frac{\partial}{\partial z} - z\frac{\partial}{\partial y})\]</span></p>
+<p>where <span class="math inline">\(m\)</span> can take on values from <span class="math inline">\(-l\)</span> to <span class="math inline">\(l\)</span> in integer steps. Thus both the magnitude and the projection of the angular momentum are quantized in units of <span class="math inline">\(\hbar\)</span> and can be measured precisely. Yet, the components of the angular momentum along the <span class="math inline">\(x\)</span>- and <span class="math inline">\(y\)</span>-axis are not precisely known, since the angular momentum is quantized along the <span class="math inline">\(z\)</span>-axis.</p>
+<p>Both the <span class="math inline">\(\hat{L}_x\)</span> and the <span class="math inline">\(\hat{L}_y\)</span> operators do not commute with the <span class="math inline">\(\hat{L}_z\)</span> operator, i.e.</p>
+<p><span class="math display">\[[\hat{L}_x, \hat{L}_z] = \hat{L}_x \hat{L}_z - \hat{L}_z \hat{L}_x\]</span></p>
+<p>Using the expressions for <span class="math inline">\(\hat{L}_x\)</span> and <span class="math inline">\(\hat{L}_z\)</span>:</p>
+<p><span class="math display">\[\hat{L}_x = -i\hbar\left(y\frac{\partial}{\partial z} - z\frac{\partial}{\partial y}\right)\]</span></p>
+<p><span class="math display">\[\hat{L}_z = -i\hbar\left(x\frac{\partial}{\partial y} - y\frac{\partial}{\partial x}\right)\]</span></p>
+<p>First computing <span class="math inline">\(\hat{L}_x \hat{L}_z\)</span>: <span class="math display">\[\hat{L}_x \hat{L}_z = (-i\hbar)^2\left(y\frac{\partial}{\partial z} - z\frac{\partial}{\partial y}\right)\left(x\frac{\partial}{\partial y} - y\frac{\partial}{\partial x}\right)\]</span></p>
+<p>And <span class="math inline">\(\hat{L}_z \hat{L}_x\)</span>:</p>
+<p><span class="math display">\[\hat{L}_z \hat{L}_x = (-i\hbar)^2\left(x\frac{\partial}{\partial y} - y\frac{\partial}{\partial x}\right)\left(y\frac{\partial}{\partial z} - z\frac{\partial}{\partial y}\right)\]</span></p>
 <p>Subtracting and collecting terms leads to</p>
-<p><span class="math display">\[[L_x,L_z] = i\hbar(-i\hbar)(y\frac{\partial}{\partial x} - x\frac{\partial}{\partial y}) = i\hbar L_y\]</span></p>
-<p>which directly shows that the <span class="math inline">\(L_x\)</span> and <span class="math inline">\(L_z\)</span> operators do not commute. The same is also true for the other components of the angular momentum.</p>
+<p><span class="math display">\[[\hat{L}_x,\hat{L}_z] = i\hbar(-i\hbar)\left(y\frac{\partial}{\partial x} - x\frac{\partial}{\partial y}\right) = i\hbar \hat{L}_y\]</span></p>
+<p>which directly shows that the <span class="math inline">\(\hat{L}_x\)</span> and <span class="math inline">\(\hat{L}_z\)</span> operators do not commute. The same is also true for the other components of the angular momentum.</p>
 <p><span class="math display">\[
-\left[ L_x, L_z \right] = i\hbar L_y
+\left[ \hat{L}_x, \hat{L}_z \right] = i\hbar \hat{L}_y
 \]</span></p>
 <p><span class="math display">\[
-\left[ L_y, L_z \right] = -i\hbar L_x
+\left[ \hat{L}_y, \hat{L}_z \right] = -i\hbar \hat{L}_x
 \]</span></p>
 <p><span class="math display">\[
-\left[ L_x, L_y \right] = i\hbar L_z
+\left[ \hat{L}_x, \hat{L}_y \right] = i\hbar \hat{L}_z
 \]</span></p>
-<p>This non-commutativity of the angular momentum components is a direct consequence of the quantization of the angular momentum along the <span class="math inline">\(z\)</span>-axis. The sum of the x and y components of the angular momentum is not precisely known, since the angular momentum is quantized along the z-axis.</p>
+<p>This non-commutativity of the angular momentum components arises fundamentally from the algebra of the angular momentum operators; it reflects the fact that only one component (typically the <span class="math inline">\(z\)</span>-component) can be determined precisely at a time. While <span class="math inline">\(\hat{L}_z\)</span> is quantized and its value is well defined, the <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> components remain uncertain. Specifically, the relation</p>
 <p><span class="math display">\[
-L^2-L_z^2 = L_x^2 + L_y^2 = \hbar^2 \left (l \left( l+1 \right) - m^2 \right)
+\hat{L}^2-\hat{L}_z^2 = \hat{L}_x^2 + \hat{L}_y^2 = \hbar^2 \left(l(l+1)-m^2\right)
 \]</span></p>
-<p>which is the projection of the angular momentum to the xy-plane. We will later use the angular momentum operator to solve the Schrödinger equation for the hydrogen atom. In this solution, the angular momentum operator and the quantum numbers <span class="math inline">\(l\)</span> and <span class="math inline">\(m\)</span> play a key role and are used to determine the energy levels and wavefunctions of the hydrogen atom.</p>
+<p>represents the magnitude of the angular momentum projected onto the <span class="math inline">\(xy\)</span>-plane. This formulation is correct and will be crucial later when using the angular momentum operator to solve the Schrödinger equation for the hydrogen atom. In that context, the quantum numbers <span class="math inline">\(l\)</span> and <span class="math inline">\(m\)</span> play a key role in determining the energy levels and wavefunctions.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
