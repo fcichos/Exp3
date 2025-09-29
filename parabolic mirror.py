@@ -68,3 +68,95 @@ plt.axis('equal')
 plt.xlim(-10, 10)
 plt.ylim(0, 10)
 plt.show()
+
+
+
+```python
+import numpy as np
+
+class HopfieldNetwork:
+    def __init__(self, size):
+        self.size = size
+        # Initialize weights matrix with zeros
+        self.weights = np.zeros((size, size))
+
+    def train(self, patterns):
+        """Train the network with a list of patterns"""
+        # Clear previous weights
+        self.weights = np.zeros((self.size, self.size))
+
+        # For each pattern
+        for pattern in patterns:
+            # Convert to bipolar (-1, 1)
+            pattern = np.array(pattern) * 2 - 1
+            # Outer product of pattern with itself
+            self.weights += np.outer(pattern, pattern)
+
+        # Set diagonal to zero and divide by number of patterns
+        np.fill_diagonal(self.weights, 0)
+        self.weights /= len(patterns)
+
+    def recall(self, pattern, max_iterations=10):
+        """Recall a pattern from the network"""
+        # Convert to bipolar
+        state = np.array(pattern) * 2 - 1
+
+        # Iterate until convergence or max iterations
+        for _ in range(max_iterations):
+            state_old = state.copy()
+
+            # Update each neuron
+            for i in range(self.size):
+                # Calculate activation
+                activation = np.dot(self.weights[i], state)
+                # Apply threshold function
+                state[i] = 1 if activation >= 0 else -1
+
+            # Check if network has converged
+            if np.array_equal(state, state_old):
+                break
+
+        # Convert back to binary
+        return (state + 1) // 2
+
+# Example usage
+def main():
+    # Create patterns (3x3 binary patterns)
+    patterns = [
+        [1,1,1,
+         0,0,0,
+         1,1,1],  # Pattern 1: horizontal lines
+
+        [1,0,1,
+         1,0,1,
+         1,0,1]   # Pattern 2: vertical lines
+    ]
+
+    # Create network
+    network = HopfieldNetwork(9)
+
+    # Train network
+    network.train(patterns)
+
+    # Test with noisy pattern (corrupted version of pattern 1)
+    test_pattern = [1,1,0,  # Last bit of first row flipped
+                   0,0,0,
+                   1,1,1]
+
+    # Recall pattern
+    result = network.recall(test_pattern)
+
+    # Print results
+    print("Test Pattern:")
+    print_pattern(test_pattern)
+    print("\nRecalled Pattern:")
+    print_pattern(result)
+
+def print_pattern(pattern):
+    """Helper function to print 3x3 patterns"""
+    for i in range(0, 9, 3):
+        print(pattern[i:i+3])
+
+
+main()
+```

@@ -1,0 +1,2031 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.34">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Matter Waves – Experimental Physics 3 Course on Optics and Quantum Mechanics</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../quantum-mechanics/Heisenbergs_uncertainty_relation.html" rel="next">
+<link href="../quantum-mechanics/Wave_character_of_particles.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-9344fb9851b4da3cab95007ef9d770dc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script type="module" src="../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Experimental Physics 3 Course on Optics and Quantum Mechanics</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Quantum Mechanics</li><li class="breadcrumb-item"><a href="../quantum-mechanics/Wave_character_of_particles.html">Lecture 23</a></li><li class="breadcrumb-item"><a href="../quantum-mechanics/Matter_waves.html">Matter Waves</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../mona_logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Course Info</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-info/intructors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instructor</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-info/schedule.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Schedule</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-info/resources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ressourcen</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-info/assignments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Assignments</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-info/exam.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exam</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Geometrical Optics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 1</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/reflection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Reflection</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/refraction-total-internal-reflection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Refraction</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 2</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Optical Elements I.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optical Elements I - Mirrors</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 3</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Optical Elements II.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optical Elements II - Prims</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Optical Elements III.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optical Elements III - Lenses</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 4</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Eye.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optical Instruments- Eye</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 5</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Magnifying Glass.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optical Instruments- Magnifying Glass</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Microscope.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optical Instruments- Microscope</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Telescope.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optical Instruments- Telescope</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 6</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/ContentsL6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Contents</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
+ <span class="menu-text">Wave Optics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 7</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Wave Optics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Wave Optics</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 8</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Interference.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Interference and Coherence</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Double Slit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Double Slit Interference</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 9</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Thin Film Interference.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Thin Film Interference</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/MultiWave Interference.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Multi Wave Interference</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 10</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Dummy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fabry Perot Interferometer</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Diffraction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Diffraction</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 11</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Diffraction2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Diffraction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Fresnel Zones.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fresnel Zone Plate</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Dummy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Diffraction Integral</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Interferometers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Interferometers</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="true">
+ <span class="menu-text">Electromagnetic Optics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 12</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-16" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Electromagnetic Optics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Electromagnetic Optics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Polarization of EM Waves.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Polarization of EM Waves</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-17" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 13</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-17" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-17" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Energy Transport.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Energy Transport</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-18" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 14</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-18" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-18" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/EM Waves in Matter.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Waves in Matter</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Dispersion and Absorption.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Origin of Refractive Index</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-19" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 15</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-19" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-19" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Reflection and Refraction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Reflection and Refraction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Fresnel Equations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fresnel Equations</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-20" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 16</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-20" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-20" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Fresnel Equations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fresnel Equations</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-21" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 17</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-21" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-21" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Metals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Electromagnetic Waves in Metals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Anisotropic Materials.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Anisotropic Materials</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-22" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 18</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-22" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-22" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Optical Activity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optical Activity</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Dummy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dipole Radiation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-23" role="navigation" aria-expanded="true">
+ <span class="menu-text">Quantum Mechanics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-23" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-23" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-24" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 19</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-24" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-24" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Structure_of_matter.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Structure of Matter</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-25" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 20</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-25" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-25" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Particle_Nature_of_Light.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Particle Nature of Light</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-26" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 21</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-26" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-26" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Particle_Nature_of_Light.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Particle Nature of Light</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-27" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 22</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-27" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-27" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Black_Body_Radiation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Black Body Radiation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-28" role="navigation" aria-expanded="true">
+ <span class="menu-text">Lecture 23</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-28" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-28" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Wave_character_of_particles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Wave Character of Particles</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Matter_waves.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Matter Waves</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-29" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 24</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-29" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-29" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Heisenbergs_uncertainty_relation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Heisenberg Uncertainty Principle</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-30" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 25</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-30" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-30" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Dummy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Structure of Atoms</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Schroedinger_equation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Schrödinger Equation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-31" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 26</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-31" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-31" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/potential_barrier.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Potential Barriers and Wells</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-32" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 27</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-32" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-32" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/harmonic_oscillator.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Harmonic Oscillator</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-33" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 28</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-33" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-33" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/parametric_dc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Photon Entanglement</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Spherical_potential.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Spherically Symmetric Problems</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-34" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 29</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-34" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-34" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Qzeno.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quantum Zeno Effect</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Spherical_potential.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Spherically Symmetric Problems</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/hydrogen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Hydrogen Atom</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#plane-waves" id="toc-plane-waves" class="nav-link active" data-scroll-target="#plane-waves">Plane waves</a></li>
+  <li><a href="#wave-packets" id="toc-wave-packets" class="nav-link" data-scroll-target="#wave-packets">Wave packets</a>
+  <ul class="collapse">
+  <li><a href="#constant-amplitude-wave-packets" id="toc-constant-amplitude-wave-packets" class="nav-link" data-scroll-target="#constant-amplitude-wave-packets">Constant amplitude wave packets</a></li>
+  <li><a href="#gaussian-wave-packets" id="toc-gaussian-wave-packets" class="nav-link" data-scroll-target="#gaussian-wave-packets">Gaussian wave packets</a></li>
+  </ul></li>
+  <li><a href="#the-statistical-interpretation-of-matter-waves" id="toc-the-statistical-interpretation-of-matter-waves" class="nav-link" data-scroll-target="#the-statistical-interpretation-of-matter-waves">The statistical interpretation of matter waves</a></li>
+  <li><a href="#relation-to-measurement" id="toc-relation-to-measurement" class="nav-link" data-scroll-target="#relation-to-measurement">Relation to measurement</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Quantum Mechanics</li><li class="breadcrumb-item"><a href="../quantum-mechanics/Wave_character_of_particles.html">Lecture 23</a></li><li class="breadcrumb-item"><a href="../quantum-mechanics/Matter_waves.html">Matter Waves</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Matter Waves</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>After having established that particles exhibit wave-like properties through phenomena such as electron diffraction, we need to develop a mathematical framework to describe matter waves. While a simple plane wave ansatz might seem like a natural starting point, we will see that it has limitations in describing localized particles. This leads us to the concept of wave packets and ultimately to a probabilistic interpretation of matter waves proposed by Max Born.</p>
+<section id="plane-waves" class="level2">
+<h2 class="anchored" data-anchor-id="plane-waves">Plane waves</h2>
+<p>In order to properly describe the wave character of a particle with mass <span class="math inline">\(m\)</span> that is propagating along the <span class="math inline">\(z\)</span> direction we choose a similar ansatz as for electromagnetic light,</p>
+<p><span class="math display">\[
+\psi \left( z,t \right) = C \cdot \mathrm{e}^{i\left(\omega t - k z  \right)} \mathrm{.}
+\]</span></p>
+<p>Even though we are still discussing properties of matter, the above equation has the shape of a wave function. Thus, one often refers to <strong>matter waves</strong>. In accord with the de Broglie wavelength and the analogous description of atomistic particles as waves, we can derive the kinetic energy as</p>
+<p><span class="math display">\[
+E_{\mathrm{kin}} = \hbar \cdot \omega
+\]</span></p>
+<p>and the momentum as</p>
+<p><span class="math display">\[
+p = \hbar k \mathrm{,}
+\]</span></p>
+<p>which allows us to reformulate the wave equation as</p>
+<p><span class="math display">\[
+\psi \left( z,t \right) = C \cdot \mathrm{e}^{\frac{i}{\hbar} \left(E t - p z  \right)} \mathrm{.}
+\]</span></p>
+<p>However, there is still an important distinction between photons of electromagnetic waves and corpuscles of matter waves. In the case of electromagnetic waves the phase velocity <strong>does not depend</strong> on the wave’s frequency. From the condition</p>
+<p><span class="math display">\[
+\frac{\mathrm{d}}{\mathrm{d}t} \left( \omega t - k z \right) = 0
+\]</span></p>
+<p>it becomes evident that</p>
+<p><span class="math display">\[
+\frac{\mathrm{d}z}{\mathrm{d}t} = \frac{\omega}{k} = v_{\mathrm{ph}} = c
+\]</span></p>
+<p>and represents the vanishing dispersion of electromagnetic waves in vacuum <span class="math inline">\(\mathrm{d}v_{\mathrm{ph}}/ \mathrm{d} \omega = 0\)</span>. This relation does not hold true for matter waves. For a free particle (force-free motion in constant potential) we know</p>
+<p><span class="math display">\[
+E = E_{\mathrm{kin}} = \frac{1}{2m}p^2
+\]</span></p>
+<p>and</p>
+<p><span class="math display">\[
+\omega = \frac{\hbar}{2m}k^2 \mathrm{.}
+\]</span></p>
+<p>If we now make use of the definition of the phase velocity <span class="math inline">\(v_{\mathrm{ph}} = \omega / k\)</span>, it becomes evident that the dispersion relation gives:</p>
+<p><span class="math display">\[
+v_{\mathrm{ph}} = \frac{\omega}{k} = \frac{\hbar k}{2m}
+\]</span></p>
+<p>Matter waves show dispersion and their phase velocity <strong>does depend</strong> on the wavevector and thus on the momentum of the particle. If the particle moves with the velocity <span class="math inline">\(v_{\mathrm{p}} = p/m = \hbar k / m\)</span>, then</p>
+<p><span class="math display">\[
+v_{\mathrm{ph}} = \frac{v_{\mathrm{p}}}{2}
+\]</span></p>
+<p>and the phase velocity of the matter waves corresponds to half the velocity of the particle. As a consequence, a matter wave and its phase velocity is not suited to describe the motion of particles <em>without further considerations</em>. Having in mind that a plane wave is distributed across the whole space, whereas a particle is somehow located, we provide remedy through the introduction of wave packets.</p>
+</section>
+<section id="wave-packets" class="level2">
+<h2 class="anchored" data-anchor-id="wave-packets">Wave packets</h2>
+<p>Unlike plane waves which extend infinitely in space, classical particles are localized. We can bridge this gap using <em>wave packets</em> (or <em>wave trains</em>) - superpositions of plane waves with similar frequencies and wavevectors:</p>
+<p><span class="math display">\[
+\psi \left( z , t \right) = \sum_j C_j \, \mathrm{e}^{i \left( \omega_j t - k_j z \right)}
+\]</span></p>
+<div id="7c650ea6" class="cell" data-execution_count="2">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up the z-axis</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> np.linspace(<span class="op">-</span><span class="fl">2.7</span>, <span class="fl">2.7</span>, <span class="dv">1000</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Define 5 different wavenumbers</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>k <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate individual waves and their superposition</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>waves <span class="op">=</span> []</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>superposition <span class="op">=</span> np.zeros_like(z)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ki <span class="kw">in</span> k:</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    wave <span class="op">=</span> np.cos(ki <span class="op">*</span> z)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    waves.append(wave)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    superposition <span class="op">+=</span> wave</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>get_size(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot individual waves</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, wave <span class="kw">in</span> <span class="bu">enumerate</span>(waves):</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    plt.plot(z, wave, <span class="st">'--'</span>, alpha<span class="op">=</span><span class="fl">0.3</span>, label<span class="op">=</span><span class="ss">f'k=</span><span class="sc">{</span>k[i]<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot superposition</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>plt.plot(z, superposition, <span class="st">'k-'</span>, linewidth<span class="op">=</span><span class="dv">1</span>, label<span class="op">=</span><span class="st">'Superposition'</span>)</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'z'</span>)</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'amplitude'</span>)</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Matter_waves_files/figure-html/cell-3-output-1.png" width="543" height="349" class="figure-img"></p>
+<figcaption>Superposition of five waves with different wavenumbers.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The wave packet has maximum amplitude at position <span class="math inline">\(z_m = \left(\frac{\mathrm{d} \omega}{\mathrm{d} k} \right)_{k_0} \cdot t\)</span>, which propagates with the group velocity:</p>
+<p><span class="math display">\[
+v_{\mathrm{g}} = \frac{d\omega}{dk}
+\]</span></p>
+<p>For a large number of waves with frequencies in <span class="math inline">\(\left[ \omega_0 - \Delta \omega/2 ; \omega_0 + \Delta \omega/2 \right]\)</span> and wavenumbers in <span class="math inline">\(\left[ k_0 - \Delta k/2 ; k_0 + \Delta k/2 \right]\)</span>, the sum becomes an integral:</p>
+<p><span class="math display">\[
+\psi \left( z , t \right) = \int_{k = k_0 - \Delta k/2}^{k_0 + \Delta k/2}  C\left(k\right) \, \mathrm{e}^{i \left( \omega t - k z \right)} \, \mathrm{d}k \mathrm{.}
+\]</span></p>
+<p>The amplitude distribution <span class="math inline">\(C\left(k\right)\)</span> and width <span class="math inline">\(\Delta k\)</span> determine the wave packet’s shape in momentum space.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Position of Maximum Amplitude
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>If we rewrite frequencies and wave vectors as deviations from central values:</p>
+<p><span class="math display">\[\omega_j = \omega_0 + \Delta \omega_j \quad \text{and} \quad k_j = k_0 + \Delta k_j\]</span></p>
+<p>The phase in the exponential then becomes <span class="math inline">\((\omega_0 + \Delta \omega_j)t - (k_0 + \Delta k_j)z\)</span>. For constructive interference, the phases must be equal:</p>
+<p><span class="math display">\[(\omega_0 + \Delta \omega_j)t - (k_0 + \Delta k_j)z = \text{constant}\]</span></p>
+<p>For neighboring waves <span class="math inline">\((j \text{ and } j+1)\)</span>, this means:</p>
+<p><span class="math display">\[(\omega_0 + \Delta \omega_j)t - (k_0 + \Delta k_j)z = (\omega_0 + \Delta \omega_{j+1})t - (k_0 + \Delta k_{j+1})z\]</span></p>
+<p>Subtracting the common terms <span class="math inline">\(\omega_0t - k_0z\)</span> from both sides gives:</p>
+<p><span class="math display">\[\Delta\omega_j t - \Delta k_j z = \Delta\omega_{j+1} t - \Delta k_{j+1} z\]</span></p>
+<p>This finally leads to the relation:</p>
+<p><span class="math display">\[\mathrm{d}\omega \cdot t = \mathrm{d}k \cdot z\]</span></p>
+<p>Therefore:</p>
+<p><span class="math display">\[z = \frac{\mathrm{d}\omega}{\mathrm{d}k} \cdot t\]</span></p>
+<p>This <span class="math inline">\(z\)</span> gives the position of constructive interference, which is where the amplitude is maximum:</p>
+<p><span class="math display">\[z_m = \left(\frac{\mathrm{d}\omega}{\mathrm{d}k}\right)_{k_0} \cdot t\]</span></p>
+<p>The derivative <span class="math inline">\(\mathrm{d}\omega/\mathrm{d}k\)</span> evaluated at <span class="math inline">\(k_0\)</span> is the group velocity, showing that the maximum of the wave packet moves with the group velocity.</p>
+</div>
+</div>
+</div>
+<section id="constant-amplitude-wave-packets" class="level3">
+<h3 class="anchored" data-anchor-id="constant-amplitude-wave-packets">Constant amplitude wave packets</h3>
+<p>If the width of the wavenumber interval <span class="math inline">\(\Delta k\)</span> is small compared to the wavenumber <span class="math inline">\(k_0 \gg \Delta k\)</span>, we can expand <span class="math inline">\(\omega \left( k \right)\)</span> in a Taylor series and neglect higher terms than the linear one resulting in</p>
+<p><span class="math display">\[
+\omega \left( k \right) = \omega_0 + \left( \frac{\partial \omega}{\partial k} \right)_{k_0} \cdot \left( k - k_0 \right) + \ldots
+\]</span></p>
+<p>If further the amplitude <span class="math inline">\(C_j\)</span> does not change significantly on the interval <span class="math inline">\(\Delta k\)</span> (<span class="math inline">\(\ll k_0\)</span>), we can replace <span class="math inline">\(C_j\)</span> through a constant <span class="math inline">\(C \left( k_0 \right)\)</span>. Now we get</p>
+<p><span class="math display">\[
+\psi \left( z , t \right) = C \left( k_0 \right) \mathrm{e}^{i \left( \omega_0 t - k_0 z \right)} \int_{\kappa = - \Delta k/2}^{ + \Delta k/2}  \mathrm{e}^{i \left( u \kappa \right)} \, \mathrm{d} \kappa \mathrm{,}
+\]</span></p>
+<p>with <span class="math inline">\(\kappa = k - k_0\)</span> and <span class="math inline">\(u = \left(\frac{\mathrm{d} \omega}{\mathrm{d} k} \right)_{k_0} t - z\)</span>. (<strong>Note:</strong> I had a typo in the integral equation on the blackboard. It was correct here.) The integration then results in</p>
+<p><span class="math display">\[
+\psi \left( z , t \right) = A \left( z,t \right) \, \mathrm{e}^{i \left( \omega_0 t - k_0 z \right)}
+\]</span></p>
+<p>with</p>
+<p><span class="math display">\[
+A \left(z,t \right) = 2 C \left( k_0 \right) \, \frac{\sin \left(\Delta k \ u /2  \right)}{u} \mathrm{.}
+\]</span></p>
+<div id="30a1d6f4" class="cell" data-execution_count="3">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>k0 <span class="op">=</span> <span class="fl">10.0</span>  <span class="co"># central wave number</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>omega0 <span class="op">=</span> <span class="fl">2.0</span>  <span class="co"># central frequency</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>C <span class="op">=</span> <span class="fl">1.0</span>  <span class="co"># amplitude constant</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> <span class="dv">0</span>  <span class="co"># time (starting at t=0)</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Spatial grid</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">1000</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Create figure with two subplots side by side</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>fig, (ax1, ax2) <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>get_size(<span class="dv">12</span>, <span class="dv">6</span>))</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot for Delta_k = π/2</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>Delta_k1 <span class="op">=</span> np.pi<span class="op">/</span><span class="dv">2</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>u1 <span class="op">=</span> omega0<span class="op">/</span>k0 <span class="op">*</span> t <span class="op">-</span> z</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>A1 <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> C <span class="op">*</span> np.sinc(Delta_k1 <span class="op">*</span> u1 <span class="op">/</span> (<span class="dv">2</span> <span class="op">*</span> np.pi))</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>psi1 <span class="op">=</span> A1 <span class="op">*</span> np.exp(<span class="ot">1j</span> <span class="op">*</span> (omega0 <span class="op">*</span> t <span class="op">-</span> k0 <span class="op">*</span> z))</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>ax1.plot(z, np.real(psi1), <span class="st">'k-'</span>, label<span class="op">=</span><span class="st">'Re(ψ)'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>ax1.plot(z, A1, <span class="st">'r--'</span>, label<span class="op">=</span><span class="st">'Envelope A(z,t)'</span>, linewidth<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>ax1.plot(z, <span class="op">-</span>A1, <span class="st">'r--'</span>, linewidth<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>ax1.set_xlabel(<span class="st">'z'</span>)</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>ax1.set_ylabel(<span class="st">'ψ(z,t)'</span>)</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>ax1.set_title(<span class="ss">f'Wave Packet at t=0</span><span class="ch">\n</span><span class="ss">Δk = π/2'</span>)</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="co">#ax1.legend()</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot for Delta_k = π</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>Delta_k2 <span class="op">=</span> np.pi</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>u2 <span class="op">=</span> omega0<span class="op">/</span>k0 <span class="op">*</span> t <span class="op">-</span> z</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>A2 <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> C <span class="op">*</span> np.sinc(Delta_k2 <span class="op">*</span> u2 <span class="op">/</span> (<span class="dv">2</span> <span class="op">*</span> np.pi))</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>psi2 <span class="op">=</span> A2 <span class="op">*</span> np.exp(<span class="ot">1j</span> <span class="op">*</span> (omega0 <span class="op">*</span> t <span class="op">-</span> k0 <span class="op">*</span> z))</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>ax2.plot(z, np.real(psi2), <span class="st">'k-'</span>, label<span class="op">=</span><span class="st">'Re(ψ)'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>ax2.plot(z, A2, <span class="st">'r--'</span>, label<span class="op">=</span><span class="st">'Envelope A(z,t)'</span>, linewidth<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>ax2.plot(z, <span class="op">-</span>A2, <span class="st">'r--'</span>, linewidth<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>ax2.set_xlabel(<span class="st">'z'</span>)</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>ax2.set_ylabel(<span class="st">'ψ(z,t)'</span>)</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>ax2.set_title(<span class="ss">f'Wave Packet at t=0</span><span class="ch">\n</span><span class="ss">Δk = π'</span>)</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a><span class="co">#ax2.legend()</span></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Matter_waves_files/figure-html/cell-4-output-1.png" width="694" height="336" class="figure-img"></p>
+<figcaption>Constant amplitude wave packets for two different values of <span class="math inline">\(\Delta k\)</span>.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The function <span class="math inline">\(\psi \left( z , t \right)\)</span> represents a plane wave whose amplitude <span class="math inline">\(A\)</span> exhibits a maximum at <span class="math inline">\(u=0\)</span>, and therefore <span class="math inline">\(z_{\mathrm{m}} = \left(\frac{\mathrm{d} \omega}{\mathrm{d} k} \right)_{k_0} \cdot t\)</span>. We call this function <span class="math inline">\(\psi\)</span> a <strong>wave packet</strong>. Its shape, namely height and distance to side lobes, does depend on the width of the interval <span class="math inline">\(\Delta k\)</span> and the distribution of the amplitude <span class="math inline">\(C \left( k \right)\)</span>. The wave packet’s maximum propagates with the group velocity</p>
+<p><span class="math display">\[
+v_{\mathrm{g}} = \left(\frac{\mathrm{d} \omega}{\mathrm{d}k}\right)_{k_0}
+\]</span></p>
+<p>along the <span class="math inline">\(z\)</span> direction. Moreover, we can make use of the relation</p>
+<p><span class="math display">\[
+\omega = \frac{1}{\hbar} \, E = \frac{1}{\hbar} \, \frac{p^2}{2m} = \frac{1}{\hbar} \, \frac{\hbar^2 k^2}{2m} = \frac{\hbar}{2m} k^2
+\]</span></p>
+<p>and derive for the group velocity</p>
+<p><span class="math display">\[
+v_{\mathrm{g}} = \left(\frac{\mathrm{d} \omega}{\mathrm{d}k}\right)_{k_0} = \frac{\hbar}{2m} \left(\frac{\mathrm{d}}{\mathrm{d}k} \, k^2 \right)_{k_0} = \frac{\hbar k}{m} = \frac{p}{m} \mathrm{.}
+\]</span></p>
+<p>Thus, a wave packet is better suited than a plane wave for describing a particle on the microscopic scale, because characteristics of a wave packet can be interlinked with the according properties of a particle in the classical sense.</p>
+<ul>
+<li><p>The wave packet’s group velocity <span class="math inline">\(v_{\mathrm{g}}\)</span> corresponds to the particle’s velocity <span class="math inline">\(v_{\mathrm{p}}\)</span>.</p></li>
+<li><p>The wavevector of the packet’s center <span class="math inline">\(\vec{k_0}\)</span> determines the momentum of the particle <span class="math inline">\(p_{\mathrm{p}} = \hbar k_0\)</span>.</p></li>
+<li><p>A wave packet is localized (in contrast to a plane wave) and the wave packet’s amplitude has maximum values only in a limited range <span class="math inline">\(\Delta z\)</span>. In the case <span class="math inline">\(t=0\)</span> we can calculate the width of the central maximum as distance between the roots <span class="math inline">\(\Delta z = 4\pi/\Delta k\)</span>. While this is sometimes incorrectly compared to the particle’s de Broglie wavelength <span class="math inline">\(\lambda_{\mathrm{p}} = 2\pi/k_0\)</span>, the actual width depends on the momentum spread <span class="math inline">\(\Delta k\)</span> and is not fundamentally limited by the wavelength.</p></li>
+</ul>
+<div id="2ab3a2a3" class="cell" data-execution_count="4">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> <span class="dv">1000</span>  <span class="co"># number of points</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">20</span>, <span class="dv">20</span>, N)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>dx <span class="op">=</span> x[<span class="dv">1</span>] <span class="op">-</span> x[<span class="dv">0</span>]</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>k <span class="op">=</span> <span class="dv">2</span><span class="op">*</span>np.pi<span class="op">*</span>np.fft.fftfreq(N, dx)  <span class="co"># momentum space grid</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>k <span class="op">=</span> np.fft.fftshift(k)  <span class="co"># shift k-space grid</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>times <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">2</span>,<span class="dv">4</span>]  <span class="co"># three different times</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Create rectangular amplitude distribution in k-space</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>k0 <span class="op">=</span> <span class="fl">0.0</span>  <span class="co"># center wavevector</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>dk <span class="op">=</span> <span class="fl">2.0</span>  <span class="co"># width in k-space</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>psi_k <span class="op">=</span> np.zeros(N, dtype<span class="op">=</span><span class="bu">complex</span>)</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>mask <span class="op">=</span> (k <span class="op">&gt;</span> k0<span class="op">-</span>dk<span class="op">/</span><span class="dv">2</span>) <span class="op">&amp;</span> (k <span class="op">&lt;</span> k0<span class="op">+</span>dk<span class="op">/</span><span class="dv">2</span>)</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>psi_k[mask] <span class="op">=</span> <span class="fl">1.0</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to calculate wavepacket at time t</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_wavepacket(t):</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Apply time evolution in k-space with dispersion</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># E = ℏ²k²/2m (using ℏ=m=1)</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    E_k <span class="op">=</span> <span class="fl">0.5</span> <span class="op">*</span> k<span class="op">**</span><span class="dv">2</span>  <span class="co"># quadratic dispersion relation</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>    psi_k_t <span class="op">=</span> psi_k <span class="op">*</span> np.exp(<span class="op">-</span><span class="ot">1j</span> <span class="op">*</span> E_k <span class="op">*</span> t)</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Transform to position space</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>    psi_x <span class="op">=</span> np.fft.ifftshift(np.fft.ifft(np.fft.ifftshift(psi_k_t)))</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.<span class="bu">abs</span>(psi_x)<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Create three subplots</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>fig, (ax1, ax2, ax3) <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">3</span>, figsize<span class="op">=</span>get_size(<span class="dv">12</span>, <span class="dv">5</span>))</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>axes <span class="op">=</span> [ax1, ax2, ax3]</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot wavepacket at different times</span></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ax, t <span class="kw">in</span> <span class="bu">zip</span>(axes, times):</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> get_wavepacket(t)</span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>    ax.plot(x, y<span class="op">/</span>y.<span class="bu">max</span>(), <span class="st">'b-'</span>)</span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>    ax.set_xlim(<span class="op">-</span><span class="dv">20</span>, <span class="dv">20</span>)</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>    ax.set_ylim(<span class="dv">0</span>, <span class="fl">1.2</span>)</span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>    ax.set_xlabel(<span class="st">'position'</span>)</span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> t <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>        ax.set_ylabel(<span class="st">'prob. density'</span>)</span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>    ax.set_title(<span class="ss">f't = </span><span class="sc">{</span>t<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Matter_waves_files/figure-html/cell-5-output-1.png" width="694" height="279" class="figure-img"></p>
+<figcaption>Constant amplitude wavepacket propagating in time and changing shape due to dispersion.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="gaussian-wave-packets" class="level3">
+<h3 class="anchored" data-anchor-id="gaussian-wave-packets">Gaussian wave packets</h3>
+<p>A Gaussian distribution for the amplitude provides an improved description of wave packets compared to constant amplitude:</p>
+<p><span class="math display">\[
+C \left( k \right) = C \left( k_0 \right) \, \mathrm{e}^{- \frac{\left( k-k_0\right)^2}{2 \Delta k^2}} \mathrm{.}
+\]</span></p>
+<p>The full wave function is then given by:</p>
+<p><span class="math display">\[\psi(z,t) = \int_{-\infty}^{\infty} C(k_0) \exp\left(-\frac{(k-k_0)^2}{2\Delta k^2}\right) \exp\left(i(kz - \omega(k)t)\right) dk\]</span></p>
+<p>This wavefunction with the envelope is depicted below.</p>
+<div id="9c3673b9" class="cell" data-execution_count="5">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>k0 <span class="op">=</span> <span class="fl">10.0</span>  <span class="co"># central wave number</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>omega0 <span class="op">=</span> <span class="fl">2.0</span>  <span class="co"># central frequency</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>C <span class="op">=</span> <span class="fl">1.0</span>  <span class="co"># amplitude constant</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> <span class="dv">0</span>  <span class="co"># time (starting at t=0)</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Spatial grid</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">1000</span>)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Create figure with two subplots side by side</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>fig, (ax1, ax2) <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>get_size(<span class="dv">12</span>, <span class="dv">6</span>))</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to create Gaussian wave packet</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> gaussian_wavepacket(z, t, Delta_k):</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    k <span class="op">=</span> np.linspace(k0 <span class="op">-</span> <span class="dv">3</span><span class="op">*</span>Delta_k, k0 <span class="op">+</span> <span class="dv">3</span><span class="op">*</span>Delta_k, <span class="dv">1000</span>)</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    dk <span class="op">=</span> k[<span class="dv">1</span>] <span class="op">-</span> k[<span class="dv">0</span>]</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Gaussian amplitude distribution</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>    C_k <span class="op">=</span> C <span class="op">*</span> np.exp(<span class="op">-</span>(k <span class="op">-</span> k0)<span class="op">**</span><span class="dv">2</span> <span class="op">/</span> (<span class="dv">2</span> <span class="op">*</span> Delta_k<span class="op">**</span><span class="dv">2</span>))</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Calculate wave packet through integration</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>    psi <span class="op">=</span> np.zeros(<span class="bu">len</span>(z), dtype<span class="op">=</span><span class="bu">complex</span>)</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i, ki <span class="kw">in</span> <span class="bu">enumerate</span>(k):</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>        psi <span class="op">+=</span> C_k[i] <span class="op">*</span> np.exp(<span class="ot">1j</span> <span class="op">*</span> (omega0 <span class="op">*</span> t <span class="op">-</span> ki <span class="op">*</span> z)) <span class="op">*</span> dk</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> psi</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot for Delta_k = π/2</span></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>Delta_k1 <span class="op">=</span> np.pi<span class="op">/</span><span class="dv">2</span></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>psi1 <span class="op">=</span> gaussian_wavepacket(z, t, Delta_k1)</span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>envelope1 <span class="op">=</span> np.<span class="bu">abs</span>(psi1)</span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>ax1.plot(z, np.real(psi1), <span class="st">'k-'</span>, label<span class="op">=</span><span class="st">'Re(ψ)'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>ax1.plot(z, envelope1, <span class="st">'r--'</span>, label<span class="op">=</span><span class="st">'Envelope |ψ|'</span>, linewidth<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>ax1.plot(z, <span class="op">-</span>envelope1, <span class="st">'r--'</span>, linewidth<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>ax1.set_xlabel(<span class="st">'z'</span>)</span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>ax1.set_ylabel(<span class="st">'ψ(z,t)'</span>)</span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>ax1.set_title(<span class="ss">f'Gaussian Wave Packet at t=0</span><span class="ch">\n</span><span class="ss">Δk = π/2'</span>)</span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot for Delta_k = π</span></span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a>Delta_k2 <span class="op">=</span> np.pi</span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a>psi2 <span class="op">=</span> gaussian_wavepacket(z, t, Delta_k2)</span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a>envelope2 <span class="op">=</span> np.<span class="bu">abs</span>(psi2)</span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a>ax2.plot(z, np.real(psi2), <span class="st">'k-'</span>, label<span class="op">=</span><span class="st">'Re(ψ)'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
+<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a>ax2.plot(z, envelope2, <span class="st">'r--'</span>, label<span class="op">=</span><span class="st">'Envelope |ψ|'</span>, linewidth<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a>ax2.plot(z, <span class="op">-</span>envelope2, <span class="st">'r--'</span>, linewidth<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a>ax2.set_xlabel(<span class="st">'z'</span>)</span>
+<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a>ax2.set_ylabel(<span class="st">'ψ(z,t)'</span>)</span>
+<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a>ax2.set_title(<span class="ss">f'Gaussian Wave Packet at t=0</span><span class="ch">\n</span><span class="ss">Δk = π'</span>)</span>
+<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Matter_waves_files/figure-html/cell-6-output-1.png" width="694" height="336" class="figure-img"></p>
+<figcaption>Gaussian wavpacket with different width in momentum space.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>When integrated, the wave packet in position space has the envelope:</p>
+<p><span class="math display">\[
+|\psi(z,t)| = \frac{1}{\sqrt{\sigma(t)\sqrt{2\pi}}} \exp\left(-\frac{(z-v_gt)^2}{4\sigma^2(t)}\right)
+\]</span></p>
+<p>The time-dependent width <span class="math inline">\(\sigma(t)\)</span> evolves as:</p>
+<p><span class="math display">\[
+\sigma(t) = \sigma_0\sqrt{1 + \left(\frac{\hbar t}{2m\sigma_0^2}\right)^2}
+\]</span></p>
+<p>where <span class="math inline">\(v_g = \hbar k_0/m\)</span> is the group velocity and <span class="math inline">\(\sigma_0 = 1/(2\Delta k)\)</span> is the initial width. The width spreads quadratically in time according to:</p>
+<p><span class="math display">\[
+\sigma^2(t) = \sigma_0^2\left(1 + \frac{\hbar^2t^2}{4m^2\sigma_0^4}\right)
+\]</span></p>
+<p>The spreading rate is governed by the initial width <span class="math inline">\(\sigma_0\)</span>, Planck’s constant <span class="math inline">\(\hbar\)</span>, and particle mass <span class="math inline">\(m\)</span>. Narrower packets and lighter particles spread more rapidly.</p>
+<div id="cebe2029" class="cell" data-execution_count="6">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>hbar <span class="op">=</span> <span class="fl">1.0</span>  <span class="co"># reduced Planck's constant</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> <span class="fl">1.0</span>    <span class="co"># mass</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>sigma0 <span class="op">=</span> <span class="fl">1.0</span>  <span class="co"># initial width</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>k0 <span class="op">=</span> <span class="fl">2.0</span>    <span class="co"># initial wave number</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">1000</span>)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>times <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">4</span>]  <span class="co"># three different times</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to calculate wave packet at time t</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> gaussian_packet(x, t):</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Complex time-dependent width</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    sigma_t <span class="op">=</span> sigma0 <span class="op">*</span> np.sqrt(<span class="dv">1</span> <span class="op">+</span> (<span class="ot">1j</span><span class="op">*</span>hbar<span class="op">*</span>t)<span class="op">/</span>(<span class="dv">2</span><span class="op">*</span>m<span class="op">*</span>sigma0<span class="op">**</span><span class="dv">2</span>))</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Normalization</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    norm <span class="op">=</span> <span class="dv">1</span><span class="op">/</span>np.sqrt(np.sqrt(<span class="dv">2</span><span class="op">*</span>np.pi)<span class="op">*</span>sigma_t)</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Gaussian envelope with phase</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>    psi <span class="op">=</span> norm <span class="op">*</span> np.exp(<span class="op">-</span>(x<span class="op">**</span><span class="dv">2</span>)<span class="op">/</span>(<span class="dv">4</span><span class="op">*</span>sigma_t<span class="op">**</span><span class="dv">2</span>)) <span class="op">*</span> np.exp(<span class="ot">1j</span><span class="op">*</span>k0<span class="op">*</span>x)</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.<span class="bu">abs</span>(psi)<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Create three subplots</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>fig, (ax1, ax2, ax3) <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">3</span>, figsize<span class="op">=</span>get_size(<span class="dv">12</span>, <span class="dv">5</span>))</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>axes <span class="op">=</span> [ax1, ax2, ax3]</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot wavepacket at different times</span></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ax, t <span class="kw">in</span> <span class="bu">zip</span>(axes, times):</span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> gaussian_packet(x, t)</span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>    ax.plot(x, y, <span class="st">'b-'</span>,)</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>    ax.set_xlim(<span class="op">-</span><span class="dv">10</span>, <span class="dv">10</span>)</span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>    ax.set_ylim(<span class="dv">0</span>, <span class="fl">0.5</span>)</span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>    ax.set_xlabel(<span class="st">'position'</span>)</span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> t <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>        ax.set_ylabel(<span class="st">'prob density'</span>)</span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>    ax.set_title(<span class="ss">f't = </span><span class="sc">{</span>t<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Matter_waves_files/figure-html/cell-7-output-1.png" width="694" height="279" class="figure-img"></p>
+<figcaption>Gaussian wavepacket propagation. The width of the wavepacket changes in time due to the dispersion of massive particles.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold hidden">
+<summary>Code</summary>
+<div class="sourceCode cell-code hidden" id="cb6" data-startfrom="504" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 503;"><span id="cb6-504"><a href="#cb6-504" aria-hidden="true" tabindex="-1"></a><span class="co">// Create plot container</span></span>
+<span id="cb6-505"><a href="#cb6-505" aria-hidden="true" tabindex="-1"></a>viewof plot <span class="op">=</span> {</span>
+<span id="cb6-506"><a href="#cb6-506" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Setup parameters</span></span>
+<span id="cb6-507"><a href="#cb6-507" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> width <span class="op">=</span> <span class="dv">600</span><span class="op">;</span></span>
+<span id="cb6-508"><a href="#cb6-508" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> height <span class="op">=</span> <span class="dv">200</span><span class="op">;</span></span>
+<span id="cb6-509"><a href="#cb6-509" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> margin <span class="op">=</span> {<span class="dt">top</span><span class="op">:</span> <span class="dv">20</span><span class="op">,</span> <span class="dt">right</span><span class="op">:</span> <span class="dv">20</span><span class="op">,</span> <span class="dt">bottom</span><span class="op">:</span> <span class="dv">40</span><span class="op">,</span> <span class="dt">left</span><span class="op">:</span> <span class="dv">60</span>}<span class="op">;</span></span>
+<span id="cb6-510"><a href="#cb6-510" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-511"><a href="#cb6-511" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Physical constants (in natural units)</span></span>
+<span id="cb6-512"><a href="#cb6-512" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> hbar <span class="op">=</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb6-513"><a href="#cb6-513" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> m <span class="op">=</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb6-514"><a href="#cb6-514" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> sigma0 <span class="op">=</span> <span class="fl">0.1</span><span class="op">;</span>  <span class="co">// initial width</span></span>
+<span id="cb6-515"><a href="#cb6-515" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> k0 <span class="op">=</span> <span class="dv">50</span><span class="op">;</span>  <span class="co">// central wavevector</span></span>
+<span id="cb6-516"><a href="#cb6-516" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> period <span class="op">=</span> <span class="fl">0.2</span><span class="op">;</span>  <span class="co">// time period for the loop</span></span>
+<span id="cb6-517"><a href="#cb6-517" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-518"><a href="#cb6-518" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Create SVG</span></span>
+<span id="cb6-519"><a href="#cb6-519" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> svg <span class="op">=</span> d3<span class="op">.</span><span class="fu">create</span>(<span class="st">"svg"</span>)</span>
+<span id="cb6-520"><a href="#cb6-520" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"width"</span><span class="op">,</span> width)</span>
+<span id="cb6-521"><a href="#cb6-521" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"height"</span><span class="op">,</span> height)<span class="op">;</span></span>
+<span id="cb6-522"><a href="#cb6-522" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-523"><a href="#cb6-523" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Setup scales</span></span>
+<span id="cb6-524"><a href="#cb6-524" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> x <span class="op">=</span> d3<span class="op">.</span><span class="fu">scaleLinear</span>()</span>
+<span id="cb6-525"><a href="#cb6-525" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">domain</span>([<span class="op">-</span><span class="dv">2</span><span class="op">,</span> <span class="dv">15</span>])</span>
+<span id="cb6-526"><a href="#cb6-526" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">range</span>([margin<span class="op">.</span><span class="at">left</span><span class="op">,</span> width <span class="op">-</span> margin<span class="op">.</span><span class="at">right</span>])<span class="op">;</span></span>
+<span id="cb6-527"><a href="#cb6-527" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-528"><a href="#cb6-528" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> y <span class="op">=</span> d3<span class="op">.</span><span class="fu">scaleLinear</span>()</span>
+<span id="cb6-529"><a href="#cb6-529" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">domain</span>([<span class="dv">0</span><span class="op">,</span> <span class="dv">3</span>])</span>
+<span id="cb6-530"><a href="#cb6-530" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">range</span>([height <span class="op">-</span> margin<span class="op">.</span><span class="at">bottom</span><span class="op">,</span> margin<span class="op">.</span><span class="at">top</span>])<span class="op">;</span></span>
+<span id="cb6-531"><a href="#cb6-531" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-532"><a href="#cb6-532" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Add axes</span></span>
+<span id="cb6-533"><a href="#cb6-533" aria-hidden="true" tabindex="-1"></a>  svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"g"</span>)</span>
+<span id="cb6-534"><a href="#cb6-534" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"transform"</span><span class="op">,</span> <span class="vs">`translate(0,</span><span class="sc">${</span>height <span class="op">-</span> margin<span class="op">.</span><span class="at">bottom</span><span class="sc">}</span><span class="vs">)`</span>)</span>
+<span id="cb6-535"><a href="#cb6-535" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">call</span>(d3<span class="op">.</span><span class="fu">axisBottom</span>(x)<span class="op">.</span><span class="fu">ticks</span>(<span class="dv">10</span>))</span>
+<span id="cb6-536"><a href="#cb6-536" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">append</span>(<span class="st">"text"</span>)</span>
+<span id="cb6-537"><a href="#cb6-537" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"x"</span><span class="op">,</span> width<span class="op">/</span><span class="dv">2</span>)</span>
+<span id="cb6-538"><a href="#cb6-538" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"y"</span><span class="op">,</span> <span class="dv">35</span>)</span>
+<span id="cb6-539"><a href="#cb6-539" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> <span class="st">"black"</span>)</span>
+<span id="cb6-540"><a href="#cb6-540" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">text</span>(<span class="st">"Position"</span>)<span class="op">;</span></span>
+<span id="cb6-541"><a href="#cb6-541" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-542"><a href="#cb6-542" aria-hidden="true" tabindex="-1"></a>  svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"g"</span>)</span>
+<span id="cb6-543"><a href="#cb6-543" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"transform"</span><span class="op">,</span> <span class="vs">`translate(</span><span class="sc">${</span>margin<span class="op">.</span><span class="at">left</span><span class="sc">}</span><span class="vs">,0)`</span>)</span>
+<span id="cb6-544"><a href="#cb6-544" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">call</span>(d3<span class="op">.</span><span class="fu">axisLeft</span>(y)<span class="op">.</span><span class="fu">ticks</span>(<span class="dv">5</span>))</span>
+<span id="cb6-545"><a href="#cb6-545" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">append</span>(<span class="st">"text"</span>)</span>
+<span id="cb6-546"><a href="#cb6-546" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"transform"</span><span class="op">,</span> <span class="st">"rotate(-90)"</span>)</span>
+<span id="cb6-547"><a href="#cb6-547" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"x"</span><span class="op">,</span> <span class="op">-</span>height<span class="op">/</span><span class="dv">3</span>)</span>
+<span id="cb6-548"><a href="#cb6-548" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"y"</span><span class="op">,</span> <span class="op">-</span><span class="dv">40</span>)</span>
+<span id="cb6-549"><a href="#cb6-549" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> <span class="st">"black"</span>)</span>
+<span id="cb6-550"><a href="#cb6-550" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">text</span>(<span class="st">"Probability Density"</span>)<span class="op">;</span></span>
+<span id="cb6-551"><a href="#cb6-551" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-552"><a href="#cb6-552" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Function to calculate wavepacket at time t</span></span>
+<span id="cb6-553"><a href="#cb6-553" aria-hidden="true" tabindex="-1"></a>  <span class="kw">function</span> <span class="fu">gaussianPacket</span>(x<span class="op">,</span> t) {</span>
+<span id="cb6-554"><a href="#cb6-554" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> sigma_t <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">sqrt</span>(sigma0<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> (hbar<span class="op">*</span>t<span class="op">/</span>(<span class="dv">2</span><span class="op">*</span>m<span class="op">*</span>sigma0))<span class="op">**</span><span class="dv">2</span>)<span class="op">;</span></span>
+<span id="cb6-555"><a href="#cb6-555" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> vg <span class="op">=</span> hbar<span class="op">*</span>k0<span class="op">/</span>m<span class="op">;</span></span>
+<span id="cb6-556"><a href="#cb6-556" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> x_shifted <span class="op">=</span> x <span class="op">-</span> (vg<span class="op">*</span>t <span class="op">%</span> <span class="dv">20</span>)<span class="op">;</span> <span class="co">// modulo for looping</span></span>
+<span id="cb6-557"><a href="#cb6-557" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">exp</span>(<span class="op">-</span>x_shifted<span class="op">*</span>x_shifted<span class="op">/</span>(<span class="dv">4</span><span class="op">*</span>sigma_t<span class="op">*</span>sigma_t))<span class="op">/</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">sqrt</span>(<span class="dv">2</span><span class="op">*</span><span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span><span class="op">*</span>sigma_t<span class="op">*</span>sigma_t))<span class="op">;</span></span>
+<span id="cb6-558"><a href="#cb6-558" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb6-559"><a href="#cb6-559" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-560"><a href="#cb6-560" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Create line generator</span></span>
+<span id="cb6-561"><a href="#cb6-561" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> line <span class="op">=</span> d3<span class="op">.</span><span class="fu">line</span>()</span>
+<span id="cb6-562"><a href="#cb6-562" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">x</span>(d <span class="kw">=&gt;</span> <span class="fu">x</span>(d<span class="op">.</span><span class="at">x</span>))</span>
+<span id="cb6-563"><a href="#cb6-563" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">y</span>(d <span class="kw">=&gt;</span> <span class="fu">y</span>(d<span class="op">.</span><span class="at">y</span>))<span class="op">;</span></span>
+<span id="cb6-564"><a href="#cb6-564" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-565"><a href="#cb6-565" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Animation</span></span>
+<span id="cb6-566"><a href="#cb6-566" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> t <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb6-567"><a href="#cb6-567" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> dt <span class="op">=</span> <span class="fl">0.001</span><span class="op">;</span></span>
+<span id="cb6-568"><a href="#cb6-568" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-569"><a href="#cb6-569" aria-hidden="true" tabindex="-1"></a>  <span class="kw">function</span> <span class="fu">update</span>() {</span>
+<span id="cb6-570"><a href="#cb6-570" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Calculate wavepacket</span></span>
+<span id="cb6-571"><a href="#cb6-571" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> points <span class="op">=</span> d3<span class="op">.</span><span class="fu">range</span>(<span class="op">-</span><span class="dv">2</span><span class="op">,</span> <span class="dv">15</span><span class="op">,</span> <span class="fl">0.1</span>)<span class="op">.</span><span class="fu">map</span>(x <span class="kw">=&gt;</span> ({</span>
+<span id="cb6-572"><a href="#cb6-572" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> x<span class="op">,</span></span>
+<span id="cb6-573"><a href="#cb6-573" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> <span class="fu">gaussianPacket</span>(x<span class="op">,</span> t <span class="op">%</span> period)  <span class="co">// use modulo for time looping</span></span>
+<span id="cb6-574"><a href="#cb6-574" aria-hidden="true" tabindex="-1"></a>    }))<span class="op">;</span></span>
+<span id="cb6-575"><a href="#cb6-575" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-576"><a href="#cb6-576" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Update or create path</span></span>
+<span id="cb6-577"><a href="#cb6-577" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> path <span class="op">=</span> svg<span class="op">.</span><span class="fu">selectAll</span>(<span class="st">"path.wavepacket"</span>)</span>
+<span id="cb6-578"><a href="#cb6-578" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">data</span>([points])<span class="op">;</span></span>
+<span id="cb6-579"><a href="#cb6-579" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-580"><a href="#cb6-580" aria-hidden="true" tabindex="-1"></a>    path<span class="op">.</span><span class="fu">enter</span>()</span>
+<span id="cb6-581"><a href="#cb6-581" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">append</span>(<span class="st">"path"</span>)</span>
+<span id="cb6-582"><a href="#cb6-582" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"class"</span><span class="op">,</span> <span class="st">"wavepacket"</span>)</span>
+<span id="cb6-583"><a href="#cb6-583" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">merge</span>(path)</span>
+<span id="cb6-584"><a href="#cb6-584" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> <span class="st">"none"</span>)</span>
+<span id="cb6-585"><a href="#cb6-585" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke"</span><span class="op">,</span> <span class="st">"blue"</span>)</span>
+<span id="cb6-586"><a href="#cb6-586" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke-width"</span><span class="op">,</span> <span class="dv">2</span>)</span>
+<span id="cb6-587"><a href="#cb6-587" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"d"</span><span class="op">,</span> line)<span class="op">;</span></span>
+<span id="cb6-588"><a href="#cb6-588" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-589"><a href="#cb6-589" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Update time display</span></span>
+<span id="cb6-590"><a href="#cb6-590" aria-hidden="true" tabindex="-1"></a>    svg<span class="op">.</span><span class="fu">selectAll</span>(<span class="st">"text.time"</span>)</span>
+<span id="cb6-591"><a href="#cb6-591" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">data</span>([<span class="vs">`t = </span><span class="sc">${</span>(t <span class="op">%</span> period)<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">3</span>)<span class="sc">}</span><span class="vs">`</span>])</span>
+<span id="cb6-592"><a href="#cb6-592" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">join</span>(<span class="st">"text"</span>)</span>
+<span id="cb6-593"><a href="#cb6-593" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"class"</span><span class="op">,</span> <span class="st">"time"</span>)</span>
+<span id="cb6-594"><a href="#cb6-594" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"x"</span><span class="op">,</span> width <span class="op">-</span> <span class="dv">4</span><span class="op">*</span>margin<span class="op">.</span><span class="at">right</span>)</span>
+<span id="cb6-595"><a href="#cb6-595" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"y"</span><span class="op">,</span> margin<span class="op">.</span><span class="at">top</span>)</span>
+<span id="cb6-596"><a href="#cb6-596" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">text</span>(d <span class="kw">=&gt;</span> d)<span class="op">;</span></span>
+<span id="cb6-597"><a href="#cb6-597" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-598"><a href="#cb6-598" aria-hidden="true" tabindex="-1"></a>    t <span class="op">+=</span> dt<span class="op">;</span></span>
+<span id="cb6-599"><a href="#cb6-599" aria-hidden="true" tabindex="-1"></a>    <span class="fu">requestAnimationFrame</span>(update)<span class="op">;</span>  <span class="co">// removed conditional to make it loop</span></span>
+<span id="cb6-600"><a href="#cb6-600" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb6-601"><a href="#cb6-601" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-602"><a href="#cb6-602" aria-hidden="true" tabindex="-1"></a>  <span class="fu">update</span>()<span class="op">;</span></span>
+<span id="cb6-603"><a href="#cb6-603" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> svg<span class="op">.</span><span class="fu">node</span>()<span class="op">;</span></span>
+<span id="cb6-604"><a href="#cb6-604" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<p>Despite these improvements, a wave packet still has limitations in modeling particles:</p>
+<ul>
+<li>The wave function can take negative or complex values that don’t correspond to physical measurements</li>
+<li>Wave packets spread over time due to dispersion, unlike classical particles</li>
+<li>Waves can split into multiple parts, while elementary particles are indivisible</li>
+</ul>
+<p>These limitations led Max Born to develop a statistical interpretation of matter waves.</p>
+</section>
+</section>
+<section id="the-statistical-interpretation-of-matter-waves" class="level2">
+<h2 class="anchored" data-anchor-id="the-statistical-interpretation-of-matter-waves">The statistical interpretation of matter waves</h2>
+<p>Max Born proposed a probabilistic interpretation of quantum mechanics where the wavefunction itself does not represent a physical quantity, but rather its absolute square gives the probability density for finding a particle at a particular position. For a particle described by a wavefunction <span class="math inline">\(\psi(z,t)\)</span>, the probability of finding it within an infinitesimal interval <span class="math inline">\([z, z+dz]\)</span> at time <span class="math inline">\(t\)</span> is given by:</p>
+<p><span class="math display">\[
+P(z,t)dz = |\psi(z,t)|^2 dz
+\]</span></p>
+<p>This interpretation arose from Born’s analysis of scattering problems, where he recognized that <span class="math inline">\(|\psi|^2\)</span> gives the probability of a particular scattering outcome. The wavefunction itself can take complex values, but its squared modulus is always real and non-negative, making it suitable as a probability density.</p>
+<p>Since the particle must exist somewhere in space, the total probability of finding it anywhere must equal 1, leading to the normalization condition:</p>
+<p><span class="math display">\[
+\int_{-\infty}^{+\infty} |\psi(z,t)|^2 dz = 1
+\]</span></p>
+<div id="75f892c9" class="cell" data-execution_count="7">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>k0 <span class="op">=</span> <span class="fl">10.0</span>  <span class="co"># central wave number</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>omega0 <span class="op">=</span> <span class="fl">2.0</span>  <span class="co"># central frequency</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>C <span class="op">=</span> <span class="fl">1.0</span>  <span class="co"># amplitude constant</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> <span class="dv">0</span>  <span class="co"># time (starting at t=0)</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Spatial grid</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">1000</span>)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Create figure with two subplots side by side</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>fig, (ax1, ax2) <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>get_size(<span class="dv">12</span>, <span class="dv">6</span>))</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to create Gaussian wave packet</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> gaussian_wavepacket(z, t, Delta_k):</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>    k <span class="op">=</span> np.linspace(k0 <span class="op">-</span> <span class="dv">3</span><span class="op">*</span>Delta_k, k0 <span class="op">+</span> <span class="dv">3</span><span class="op">*</span>Delta_k, <span class="dv">1000</span>)</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>    dk <span class="op">=</span> k[<span class="dv">1</span>] <span class="op">-</span> k[<span class="dv">0</span>]</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Gaussian amplitude distribution</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>    C_k <span class="op">=</span> C <span class="op">*</span> np.exp(<span class="op">-</span>(k <span class="op">-</span> k0)<span class="op">**</span><span class="dv">2</span> <span class="op">/</span> (<span class="dv">2</span> <span class="op">*</span> Delta_k<span class="op">**</span><span class="dv">2</span>))</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Calculate wave packet through integration</span></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>    psi <span class="op">=</span> np.zeros(<span class="bu">len</span>(z), dtype<span class="op">=</span><span class="bu">complex</span>)</span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i, ki <span class="kw">in</span> <span class="bu">enumerate</span>(k):</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>        psi <span class="op">+=</span> C_k[i] <span class="op">*</span> np.exp(<span class="ot">1j</span> <span class="op">*</span> (omega0 <span class="op">*</span> t <span class="op">-</span> ki <span class="op">*</span> z)) <span class="op">*</span> dk</span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> psi</span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot for Delta_k = π/2</span></span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>Delta_k1 <span class="op">=</span> np.pi<span class="op">/</span><span class="dv">2</span></span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>psi1 <span class="op">=</span> gaussian_wavepacket(z, t, Delta_k1)</span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>prob_density1 <span class="op">=</span> np.<span class="bu">abs</span>(psi1)<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>ax1.plot(z, prob_density1, <span class="st">'b-'</span>, label<span class="op">=</span><span class="st">'|ψ|²'</span>)</span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>ax1.fill_between(z, prob_density1, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a>ax1.set_xlabel(<span class="st">'z'</span>)</span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>ax1.set_ylabel(<span class="st">'|ψ(z,t)|²'</span>)</span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a>ax1.set_title(<span class="ss">f'Probability Density at t=0</span><span class="ch">\n</span><span class="ss">Δk = π/2'</span>)</span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot for Delta_k = π</span></span>
+<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a>Delta_k2 <span class="op">=</span> np.pi</span>
+<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a>psi2 <span class="op">=</span> gaussian_wavepacket(z, t, Delta_k2)</span>
+<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a>prob_density2 <span class="op">=</span> np.<span class="bu">abs</span>(psi2)<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a>ax2.plot(z, prob_density2, <span class="st">'b-'</span>, label<span class="op">=</span><span class="st">'|ψ|²'</span>)</span>
+<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a>ax2.fill_between(z, prob_density2, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a>ax2.set_xlabel(<span class="st">'z'</span>)</span>
+<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a>ax2.set_ylabel(<span class="st">'|ψ(z,t)|²'</span>)</span>
+<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a>ax2.set_title(<span class="ss">f'Probability Density at t=0</span><span class="ch">\n</span><span class="ss">Δk = π'</span>)</span>
+<span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-50"><a href="#cb7-50" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Matter_waves_files/figure-html/cell-8-output-1.png" width="676" height="336" class="figure-img"></p>
+<figcaption>The squared wave packet with a Gaussian amplitude distribution (black line) and probability density (area under the curve, shaded gray).</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>In the case the particle propagates within a three-dimensional space, we can assign a three-dimensional wave packet <span class="math inline">\(\psi \left( x,y,z, t \right)\)</span> to this particle. As discussed above, the particle has to be located somewhere in space and as a consequence the probability to find it within the whole space is <span class="math inline">\(1\)</span> and we can state the normalization condition</p>
+<p><span class="math display">\[
+\int\int\int \left| \psi \left( x,y,z, t \right) \right|^2 \, \mathrm{d}x \, \mathrm{d}y \, \mathrm{d}z = 1 \mathrm{.}
+\]</span></p>
+<p>Thus, we can conclude:</p>
+<ul>
+<li><p>Every particle can be represented through a matter wave <span class="math inline">\(\psi \left( x,y,z, t \right)\)</span> being determined through the wave function <span class="math inline">\(\psi \left( x,y,z, t \right)\)</span>.</p></li>
+<li><p>The quantity <span class="math inline">\(P \left( x,y,z, t \right) \, \mathrm{d}x \, \mathrm{d}y \, \mathrm{d}z = \left| \psi \left( x,y,z, t \right) \right|^2 \, \mathrm{d}x \, \mathrm{d}y \, \mathrm{d}z\)</span> with its normalization <span class="math inline">\(\int\int\int \left| \psi \left( x,y,z, t \right) \right|^2 \, \mathrm{d}x \, \mathrm{d}y \, \mathrm{d}z = 1\)</span> represents the probability to find the particle within the volume element <span class="math inline">\(\mathrm{d} V = \mathrm{d}x \, \mathrm{d}y \, \mathrm{d}z\)</span> at the particular time <span class="math inline">\(t\)</span>.</p></li>
+<li><p>The probability to find the particle is biggest at the center of the wave packet.</p></li>
+<li><p>The center of the wave packet propagates with the group velocity <span class="math inline">\(v_{\mathrm{g}}\)</span> which is identical to the classical particle velocity <span class="math inline">\(v_{\mathrm{p}}\)</span>.</p></li>
+<li><p>The probability to find the particle within an infinite volume <strong>is not <span class="math inline">\(0\)</span></strong>. This means one cannot locate the particle in a single spot <span class="math inline">\(\left( x,y,z \right)\)</span>. The particle’s location is smeared which corresponds to the distribution of the wave packet and obeys an uncertainty.</p></li>
+</ul>
+</section>
+<section id="relation-to-measurement" class="level2">
+<h2 class="anchored" data-anchor-id="relation-to-measurement">Relation to measurement</h2>
+<p>The probabilistic interpretation of the wave function has profound implications for the measurement process in quantum mechanics. When we perform a measurement on a quantum system:</p>
+<ul>
+<li>The act of measurement causes the wave function to “collapse” from its spread-out state to a localized state</li>
+<li>Before measurement, the particle exists in a superposition described by the wave function <span class="math inline">\(\psi(x,y,z,t)\)</span></li>
+<li>The measurement outcome will be random, but governed by the probability distribution <span class="math inline">\(|\psi|^2\)</span></li>
+<li>After measurement, the wave function collapses to a new state centered on the measured position</li>
+<li>Subsequent measurements will find the particle near this new position until the wave packet spreads out again due to time evolution</li>
+</ul>
+<p>This measurement-induced collapse of the wave function is a key feature that distinguishes quantum mechanics from classical physics. It represents the transition from quantum probabilities to definite classical outcomes. The spreading of wave packets between measurements represents the return to quantum uncertainty.</p>
+<p>The question of whether wavefunction collapse occurs during non-destructive measurements is actually still debated in quantum mechanics. While traditional Copenhagen interpretation suggests collapse occurs with any measurement, modern perspectives like quantum decoherence offer alternative views.</p>
+<p>Non-destructive measurements (also called QND - Quantum Non-Demolition measurements) can preserve the quantum state while still extracting some information. However, they still cause some level of interaction/entanglement between the system and measuring apparatus.</p>
+<p>Below is a figure from a recent publication on <a href="https://www.science.org/doi/epdf/10.1126/science.1246164">Nondestructive Detection of an Optical Photon</a> by Reiser, Ritter an Rempe from 2013.</p>
+<p>The authors developed a specific measurement scheme, that allows to detect the presence of a single photon without destroying it.</p>
+<div id="fig-non-destructive-measurement" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-non-destructive-measurement-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/non_destructive.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-non-destructive-measurement-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1— Nondestructive photon detection. (A and B) Sketch of the setup and atomic level scheme. A single atom, (1), is trapped in an optical cavity that consists of a high-reflector, (2), and a coupling mirror, (3). A resonant photon is impinging on, (4), and reflected off, (5), the cavity. (A) If the atom is in state <span class="math inline">\(|1\rangle_a\)</span>, the photon (red wavy arrow) enters the cavity (blue semicircles) before being reflected. In this process, the combined atom-photon state acquires a phase shift of <span class="math inline">\(\pi\)</span>. (B) If the atom is in <span class="math inline">\(|2\rangle_a\)</span>, the strong coupling on the <span class="math inline">\(|2\rangle_a \leftrightarrow|3\rangle_a\)</span> transition leads to a normal-mode splitting of <span class="math inline">\(2 g\)</span>, so that the photon cannot enter the cavity and is directly reflected without a phase shift. (C to F) Procedure to measure whether a photon has been reflected. (C) The atomic state, visualized on the Bloch sphere, is prepared in the superposition state <span class="math inline">\(\frac{1}{\sqrt{2}}\left(|1\rangle_a+|2\rangle_a\right)\)</span>. ( D ) If a photon impinges, the atomic state is flipped to <span class="math inline">\(\frac{1}{\sqrt{2}}\left(|1\rangle_a-|2\rangle_a\right)\)</span>. (E) The atomic state is rotated by <span class="math inline">\(\frac{\pi}{2}\)</span>. (F) Fluorescence detection is used to discriminate between the states <span class="math inline">\(|1\rangle_a\)</span> and <span class="math inline">\(|2\rangle_a\)</span>. Taken from <a href="https://www.science.org/doi/epdf/10.1126/science.1246164">Nondestructive Detection of an Optical Photon</a>
+</figcaption>
+</figure>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxuLy8gQ3JlYXRlIHBsb3QgY29udGFpbmVyXG52aWV3b2YgcGxvdCA9IHtcbiAgLy8gU2V0dXAgcGFyYW1ldGVyc1xuICBjb25zdCB3aWR0aCA9IDYwMDtcbiAgY29uc3QgaGVpZ2h0ID0gMjAwO1xuICBjb25zdCBtYXJnaW4gPSB7dG9wOiAyMCwgcmlnaHQ6IDIwLCBib3R0b206IDQwLCBsZWZ0OiA2MH07XG5cbiAgLy8gUGh5c2ljYWwgY29uc3RhbnRzIChpbiBuYXR1cmFsIHVuaXRzKVxuICBjb25zdCBoYmFyID0gMTtcbiAgY29uc3QgbSA9IDE7XG4gIGNvbnN0IHNpZ21hMCA9IDAuMTsgIC8vIGluaXRpYWwgd2lkdGhcbiAgY29uc3QgazAgPSA1MDsgIC8vIGNlbnRyYWwgd2F2ZXZlY3RvclxuICBjb25zdCBwZXJpb2QgPSAwLjI7ICAvLyB0aW1lIHBlcmlvZCBmb3IgdGhlIGxvb3BcblxuICAvLyBDcmVhdGUgU1ZHXG4gIGNvbnN0IHN2ZyA9IGQzLmNyZWF0ZShcInN2Z1wiKVxuICAgIC5hdHRyKFwid2lkdGhcIiwgd2lkdGgpXG4gICAgLmF0dHIoXCJoZWlnaHRcIiwgaGVpZ2h0KTtcblxuICAvLyBTZXR1cCBzY2FsZXNcbiAgY29uc3QgeCA9IGQzLnNjYWxlTGluZWFyKClcbiAgICAuZG9tYWluKFstMiwgMTVdKVxuICAgIC5yYW5nZShbbWFyZ2luLmxlZnQsIHdpZHRoIC0gbWFyZ2luLnJpZ2h0XSk7XG5cbiAgY29uc3QgeSA9IGQzLnNjYWxlTGluZWFyKClcbiAgICAuZG9tYWluKFswLCAzXSlcbiAgICAucmFuZ2UoW2hlaWdodCAtIG1hcmdpbi5ib3R0b20sIG1hcmdpbi50b3BdKTtcblxuICAvLyBBZGQgYXhlc1xuICBzdmcuYXBwZW5kKFwiZ1wiKVxuICAgIC5hdHRyKFwidHJhbnNmb3JtXCIsIGB0cmFuc2xhdGUoMCwke2hlaWdodCAtIG1hcmdpbi5ib3R0b219KWApXG4gICAgLmNhbGwoZDMuYXhpc0JvdHRvbSh4KS50aWNrcygxMCkpXG4gICAgLmFwcGVuZChcInRleHRcIilcbiAgICAuYXR0cihcInhcIiwgd2lkdGgvMilcbiAgICAuYXR0cihcInlcIiwgMzUpXG4gICAgLmF0dHIoXCJmaWxsXCIsIFwiYmxhY2tcIilcbiAgICAudGV4dChcIlBvc2l0aW9uXCIpO1xuXG4gIHN2Zy5hcHBlbmQoXCJnXCIpXG4gICAgLmF0dHIoXCJ0cmFuc2Zvcm1cIiwgYHRyYW5zbGF0ZSgke21hcmdpbi5sZWZ0fSwwKWApXG4gICAgLmNhbGwoZDMuYXhpc0xlZnQoeSkudGlja3MoNSkpXG4gICAgLmFwcGVuZChcInRleHRcIilcbiAgICAuYXR0cihcInRyYW5zZm9ybVwiLCBcInJvdGF0ZSgtOTApXCIpXG4gICAgLmF0dHIoXCJ4XCIsIC1oZWlnaHQvMylcbiAgICAuYXR0cihcInlcIiwgLTQwKVxuICAgIC5hdHRyKFwiZmlsbFwiLCBcImJsYWNrXCIpXG4gICAgLnRleHQoXCJQcm9iYWJpbGl0eSBEZW5zaXR5XCIpO1xuXG4gIC8vIEZ1bmN0aW9uIHRvIGNhbGN1bGF0ZSB3YXZlcGFja2V0IGF0IHRpbWUgdFxuICBmdW5jdGlvbiBnYXVzc2lhblBhY2tldCh4LCB0KSB7XG4gICAgY29uc3Qgc2lnbWFfdCA9IE1hdGguc3FydChzaWdtYTAqKjIgKyAoaGJhcip0LygyKm0qc2lnbWEwKSkqKjIpO1xuICAgIGNvbnN0IHZnID0gaGJhciprMC9tO1xuICAgIGNvbnN0IHhfc2hpZnRlZCA9IHggLSAodmcqdCAlIDIwKTsgLy8gbW9kdWxvIGZvciBsb29waW5nXG4gICAgcmV0dXJuIE1hdGguZXhwKC14X3NoaWZ0ZWQqeF9zaGlmdGVkLyg0KnNpZ21hX3Qqc2lnbWFfdCkpLyhNYXRoLnNxcnQoMipNYXRoLlBJKnNpZ21hX3Qqc2lnbWFfdCkpO1xuICB9XG5cbiAgLy8gQ3JlYXRlIGxpbmUgZ2VuZXJhdG9yXG4gIGNvbnN0IGxpbmUgPSBkMy5saW5lKClcbiAgICAueChkID0+IHgoZC54KSlcbiAgICAueShkID0+IHkoZC55KSk7XG5cbiAgLy8gQW5pbWF0aW9uXG4gIGxldCB0ID0gMDtcbiAgY29uc3QgZHQgPSAwLjAwMTtcblxuICBmdW5jdGlvbiB1cGRhdGUoKSB7XG4gICAgLy8gQ2FsY3VsYXRlIHdhdmVwYWNrZXRcbiAgICBjb25zdCBwb2ludHMgPSBkMy5yYW5nZSgtMiwgMTUsIDAuMSkubWFwKHggPT4gKHtcbiAgICAgIHg6IHgsXG4gICAgICB5OiBnYXVzc2lhblBhY2tldCh4LCB0ICUgcGVyaW9kKSAgLy8gdXNlIG1vZHVsbyBmb3IgdGltZSBsb29waW5nXG4gICAgfSkpO1xuXG4gICAgLy8gVXBkYXRlIG9yIGNyZWF0ZSBwYXRoXG4gICAgY29uc3QgcGF0aCA9IHN2Zy5zZWxlY3RBbGwoXCJwYXRoLndhdmVwYWNrZXRcIilcbiAgICAgIC5kYXRhKFtwb2ludHNdKTtcblxuICAgIHBhdGguZW50ZXIoKVxuICAgICAgLmFwcGVuZChcInBhdGhcIilcbiAgICAgIC5hdHRyKFwiY2xhc3NcIiwgXCJ3YXZlcGFja2V0XCIpXG4gICAgICAubWVyZ2UocGF0aClcbiAgICAgIC5hdHRyKFwiZmlsbFwiLCBcIm5vbmVcIilcbiAgICAgIC5hdHRyKFwic3Ryb2tlXCIsIFwiYmx1ZVwiKVxuICAgICAgLmF0dHIoXCJzdHJva2Utd2lkdGhcIiwgMilcbiAgICAgIC5hdHRyKFwiZFwiLCBsaW5lKTtcblxuICAgIC8vIFVwZGF0ZSB0aW1lIGRpc3BsYXlcbiAgICBzdmcuc2VsZWN0QWxsKFwidGV4dC50aW1lXCIpXG4gICAgICAuZGF0YShbYHQgPSAkeyh0ICUgcGVyaW9kKS50b0ZpeGVkKDMpfWBdKVxuICAgICAgLmpvaW4oXCJ0ZXh0XCIpXG4gICAgICAuYXR0cihcImNsYXNzXCIsIFwidGltZVwiKVxuICAgICAgLmF0dHIoXCJ4XCIsIHdpZHRoIC0gNCptYXJnaW4ucmlnaHQpXG4gICAgICAuYXR0cihcInlcIiwgbWFyZ2luLnRvcClcbiAgICAgIC50ZXh0KGQgPT4gZCk7XG5cbiAgICB0ICs9IGR0O1xuICAgIHJlcXVlc3RBbmltYXRpb25GcmFtZSh1cGRhdGUpOyAgLy8gcmVtb3ZlZCBjb25kaXRpb25hbCB0byBtYWtlIGl0IGxvb3BcbiAgfVxuXG4gIHVwZGF0ZSgpO1xuICByZXR1cm4gc3ZnLm5vZGUoKTtcbn1cbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgncGxvdCcpIn1dfQ==
+</script>
+<script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+window._ojs.paths.runtimeToDoc = "../../quantum-mechanics";
+window._ojs.paths.runtimeToRoot = "../..";
+window._ojs.paths.docToRoot = "..";
+window._ojs.selfContained = false;
+window._ojs.runtime.interpretFromScriptTags();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/fcichos\.github\.io\/Exp3\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../quantum-mechanics/Wave_character_of_particles.html" class="pagination-link" aria-label="Wave Character of Particles">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Wave Character of Particles</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../quantum-mechanics/Heisenbergs_uncertainty_relation.html" class="pagination-link" aria-label="Heisenberg Uncertainty Principle">
+        <span class="nav-page-text">Heisenberg Uncertainty Principle</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

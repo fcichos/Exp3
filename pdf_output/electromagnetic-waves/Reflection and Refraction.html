@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.34">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>29&nbsp; Reflection and Refraction of Electromagnetic Waves – Experimental Physics 3 Course on Optics and Quantum Mechanics</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../electromagnetic-waves/Fresnel Equations.html" rel="next">
+<link href="../electromagnetic-waves/Dispersion and Absorption.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-485d01fc63b59abcd3ee1bf1e8e2748d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../electromagnetic-waves/Electromagnetic Optics.html">Electromagnetic Optics</a></li><li class="breadcrumb-item"><a href="../electromagnetic-waves/Reflection and Refraction.html"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Reflection and Refraction of Electromagnetic Waves</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Experimental Physics 3 Course on Optics and Quantum Mechanics</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Experimental Physics 3</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Geometrical Optics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Geometrical Optics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/reflection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Reflection</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/refraction-total-internal-reflection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Refraction and Total Internal Reflection</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Optical Elements I.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Optical Elements Part I</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Optical Elements II.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Optical Elements Part II</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Optical Elements III.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Optical Elements Part III</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Eye.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Optical Instruments</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Magnifying Glass.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Optical Instruments</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Microscope.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Optical Instruments</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Telescope.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Telescopes</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Rainbow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Rainbow</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Imaging Errors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Imaging Errors</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Wave Optics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Wave Optics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Wave Optics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Double Slit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Double Slit Interference</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Thin Film Interference.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Thin Film Interference</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/MultiWave Interference.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Multiple Wave Interference</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/FabryPerot.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Fabry Perot Interferometer</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Diffraction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Diffraction</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Diffraction2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Diffraction in Applications</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Fresnel Zones.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Fresnel Zones</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Diffraction Integral.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Diffraction Integral</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Interferometers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Interferometers and other Coherence Applications</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Electromagnetic Optics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Electromagnetic Optics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Electromagnetic Optics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Polarization of EM Waves.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Polarization of EM Waves</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Energy Transport.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Energy Transport and Momentum Transport of EM Waves</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/EM Waves in Matter.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Electromagnetic Waves in Matter</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Dispersion and Absorption.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Dispersion &amp; Absorption</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Reflection and Refraction.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Reflection and Refraction of Electromagnetic Waves</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Fresnel Equations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Fresnel Equations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Metals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Electromagnetic Waves in Metals</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Anisotropic Materials.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Anisotropic Materials</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Optical Activity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Optical Activity and Rotatory Dispersion</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Dipole Radiation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Dipole Radiation</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Quantum Mechanics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Structure_of_matter.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">The Structure of Matter - Historical Experiments</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Particle_Nature_of_Light.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Particle Nature of Light</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Black_Body_Radiation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Black Body Radiation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Wave_character_of_particles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">The Wave Character of Particles</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Matter_waves.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Matter Waves</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Heisenbergs_uncertainty_relation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">Heisenbergs Uncertainty Relation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Structure_of_atoms.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">The Structure of Atoms and the Bohr Model</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Schroedinger_equation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">The Schrödinger Equation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/potential_barrier.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">Potential barriers and wells</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/harmonic_oscillator.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">The harmonic oscillator</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/parametric_dc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">Parametric Downconversion</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Spherical_potential.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">Angular Momentum and Spherical Potentials</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Qzeno.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">The Quantum Zeno Effect</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/hydrogen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">48</span>&nbsp; <span class="chapter-title">Towards the Hydrogen Atom</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#effect-of-the-refractive-index" id="toc-effect-of-the-refractive-index" class="nav-link active" data-scroll-target="#effect-of-the-refractive-index"><span class="header-section-number">29.1</span> Effect of the Refractive Index</a></li>
+  <li><a href="#general-description-of-reflection-and-refraction" id="toc-general-description-of-reflection-and-refraction" class="nav-link" data-scroll-target="#general-description-of-reflection-and-refraction"><span class="header-section-number">29.2</span> General Description of Reflection and Refraction</a>
+  <ul class="collapse">
+  <li><a href="#boundary-conditions" id="toc-boundary-conditions" class="nav-link" data-scroll-target="#boundary-conditions"><span class="header-section-number">29.2.1</span> Boundary Conditions</a></li>
+  <li><a href="#reflectionrefraction" id="toc-reflectionrefraction" class="nav-link" data-scroll-target="#reflectionrefraction"><span class="header-section-number">29.2.2</span> Reflection/Refraction</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../electromagnetic-waves/Electromagnetic Optics.html">Electromagnetic Optics</a></li><li class="breadcrumb-item"><a href="../electromagnetic-waves/Reflection and Refraction.html"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Reflection and Refraction of Electromagnetic Waves</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Reflection and Refraction of Electromagnetic Waves</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="effect-of-the-refractive-index" class="level2" data-number="29.1">
+<h2 data-number="29.1" class="anchored" data-anchor-id="effect-of-the-refractive-index"><span class="header-section-number">29.1</span> Effect of the Refractive Index</h2>
+<p>The effect of the material on the wave propagation can be understood when considering a plane wave <span class="math inline">\(E_s\)</span> incident on a thin material slab of thickness <span class="math inline">\(\Delta z\)</span>.</p>
+<p><span id="eq-wave-slab"><span class="math display">\[
+\begin{aligned}
+E &amp; =E_0 \cdot e^{-i(\omega t-k z-(n-1) k \cdot \Delta z)} \\
+&amp; =E_0 e^{-i(n-1) k \Delta z} e^{i(\omega t-k z)} \\
+&amp; =e^{-i \theta} E_s \quad \text { with } \theta=k(n-1) \Delta z
+\end{aligned}
+\tag{29.1}\]</span></span></p>
+<p>For small values of <span class="math inline">\(\theta\)</span> the exponential function can be approximated by</p>
+<p><span id="eq-exp-approx"><span class="math display">\[e^x \sim 1+x+\frac{x^2}{2} \tag{29.2}\]</span></span></p>
+<p>such that we obtain</p>
+<p><span id="eq-wave-approx"><span class="math display">\[e^{-i k(n-1) \Delta z} \approx 1-i k(n-1) \Delta z-\frac{k^2(n-1)^2 \Delta z^2}{2} \tag{29.3}\]</span></span></p>
+<p>The total field behind the thin slab therefore is</p>
+<p><span id="eq-total-field"><span class="math display">\[E(z)=\underbrace{E_0 e^{i(\omega t-k z)}}_{E_e}-\underbrace{i k(n-1) \Delta z E_0 e^{i(\omega t-k z)}}_{E_{\text {medium}}} \tag{29.4}\]</span></span></p>
+<p>As shown in <a href="#fig-components" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-components</span></a>, the resulting wave is delayed by a phase factor <span class="math inline">\(k(n-1) \Delta z\)</span> (see <a href="#eq-wave-slab" class="quarto-xref">Equation&nbsp;<span class="quarto-unresolved-ref">eq-wave-slab</span></a>) and the amplitude is reduced by a factor <span class="math inline">\(k(n-1) \Delta z\)</span>.</p>
+<div id="cell-fig-components" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display">
+<div id="fig-components" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-components-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Reflection and Refraction_files/figure-html/fig-components-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="653" height="440">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-components-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;29.1— Components of the electric field in medium
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="general-description-of-reflection-and-refraction" class="level2" data-number="29.2">
+<h2 data-number="29.2" class="anchored" data-anchor-id="general-description-of-reflection-and-refraction"><span class="header-section-number">29.2</span> General Description of Reflection and Refraction</h2>
+<p>Before we examine the behavior of electromagnetic waves at boundaries, we need to define the geometry and examine the electric and magnetic fields present. <a href="#fig-setup-k" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-setup-k</span></a> shows the wavevectors of the incident <span class="math inline">\(\vec{k}_I\)</span>, reflected <span class="math inline">\(\vec{k}_R\)</span> and transmitted <span class="math inline">\(\vec{k}_T\)</span> waves in the two materials with the refractive indices <span class="math inline">\(n_1\)</span> and <span class="math inline">\(n_2\)</span>.</p>
+<div id="fig-setup-k" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-setup-k-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/setup_k.png" class="img-fluid figure-img" style="width:40.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-setup-k-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;29.2— Reflection and refraction of an electromagnetic wave at a boundary.
+</figcaption>
+</figure>
+</div>
+<p>These wavevectors are connected to the following plane waves:</p>
+<p><span id="eq-incident"><span class="math display">\[
+\vec{E}_{ inc}=\vec{E}_I e^{i(\omega_I t -\vec{k}_I\cdot \vec{r})}
+\tag{29.5}\]</span></span></p>
+<p><span id="eq-reflected"><span class="math display">\[
+\vec{E}_{ ref}=\vec{E}_R e^{i(\omega_R t -\vec{k}_R\cdot \vec{r})}
+\tag{29.6}\]</span></span></p>
+<p><span id="eq-transmitted"><span class="math display">\[
+\vec{E}_{ tra}=\vec{E}_T e^{i(\omega_T t -\vec{k}_T\cdot \vec{r})}
+\tag{29.7}\]</span></span></p>
+<p>As discussed in <a href="#eq-incident" class="quarto-xref">Equation&nbsp;<span class="quarto-unresolved-ref">eq-incident</span></a> through <a href="#eq-transmitted" class="quarto-xref">Equation&nbsp;<span class="quarto-unresolved-ref">eq-transmitted</span></a>, we must consider the direction of polarization of their electric or magnetic fields. We differentiate between:</p>
+<ul>
+<li><strong>p-polarized light:</strong> electric field is in the plane of incidence (given by the <span class="math inline">\(k\)</span>-vector and the surface normal), also called transverse magnetic (TM)</li>
+<li><strong>s-polarized light:</strong> electric field is perpendicular to the plane of incidence, also called transverse electric (TE)</li>
+</ul>
+<div id="fig-pol-decomp" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pol-decomp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/pol_decomp.png" class="img-fluid figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pol-decomp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;29.3— Decomposition of the incident electric field into components normal and tangential to the dielectric boundary.
+</figcaption>
+</figure>
+</div>
+<p>As shown in <a href="#fig-pol-decomp" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-pol-decomp</span></a> , we need to split these polarisation vectors into components that are <strong>parallel</strong> (<span class="math inline">\(||\)</span>) or <strong>perpendicular</strong> (<span class="math inline">\(\perp\)</span>) to the interface. This is required for applying boundary conditions for the electric and magnetic fields.</p>
+<section id="boundary-conditions" class="level3" data-number="29.2.1">
+<h3 data-number="29.2.1" class="anchored" data-anchor-id="boundary-conditions"><span class="header-section-number">29.2.1</span> Boundary Conditions</h3>
+<p>The boundary conditions for the electric or magnetic field passing an interface are derived from the Maxwell equations.</p>
+<div id="fig-boundary" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-boundary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/boundary.png" class="img-fluid figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-boundary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;29.4— Integration over a closed surface (left) and close path (right) to obtain the boundary conditions for the electric field components.
+</figcaption>
+</figure>
+</div>
+<p>Let us take the divergence of the displacement field <span class="math inline">\(\nabla \cdot \vec{D}=\rho_f\)</span> which is equal to the density of free charges. When integrating both sides over the volume:</p>
+<p><span id="eq-divergence"><span class="math display">\[
+\int\nabla \vec{D} dV=\int \rho_f dV
+\tag{29.8}\]</span></span></p>
+<p>we can apply Gauss’ theorem and replace the volume integral over the divergence with an integral over closed surface of that volume:</p>
+<p><span id="eq-gauss"><span class="math display">\[
+\oint \vec{D} d\vec{A}= q_f
+\tag{29.9}\]</span></span></p>
+<p>where <span class="math inline">\(d\vec{A}\)</span> is a vector standing perpendicular on the surface element <span class="math inline">\(dA\)</span> and <span class="math inline">\(q_f\)</span> are the free charges in the volume. When we consider a pillbox-shaped volume straddling the interface between two materials, the surface integral can be broken down into three parts:</p>
+<ol type="1">
+<li>Top surface (in material 1)</li>
+<li>Bottom surface (in material 2)</li>
+<li>Side surface (cylindrical part)</li>
+</ol>
+<p>The total surface integral becomes:</p>
+<p><span class="math display">\[
+\oint \vec{D} \cdot d\vec{A} = \int_{\text{top}} \vec{D}_1 \cdot d\vec{A} + \int_{\text{bottom}} \vec{D}_2 \cdot d\vec{A} + \int_{\text{side}} \vec{D} \cdot d\vec{A}
+\]</span></p>
+<p>For a pillbox of height <span class="math inline">\(h\)</span> and radius <span class="math inline">\(r\)</span>:</p>
+<ul>
+<li><p>The top surface contributes: <span class="math inline">\(\vec{D}_1 \cdot \hat{n}A\)</span> (negative because <span class="math inline">\(d\vec{A}\)</span> points along <span class="math inline">\(\hat{n}\)</span>)</p></li>
+<li><p>The bottom surface contributes: <span class="math inline">\(-\vec{D}_2 \cdot \hat{n}A\)</span></p></li>
+<li><p>The side surface contribution goes to zero as <span class="math inline">\(h \to 0\)</span> (as area <span class="math inline">\(\sim 2\pi rh\)</span>)</p></li>
+</ul>
+<p>Therefore:</p>
+<p><span class="math display">\[
+\oint \vec{D} \cdot d\vec{A} = A(\vec{D}_1 - \vec{D}_2) \cdot \hat{n} = q_f
+\]</span></p>
+<p><strong>Key Points</strong></p>
+<ol type="1">
+<li><p>The side surface contribution vanishes as <span class="math inline">\(h \to 0\)</span> because:</p>
+<ul>
+<li>Its area scales with <span class="math inline">\(h\)</span> (<span class="math inline">\(2\pi rh\)</span>)</li>
+<li>The field components remain finite</li>
+</ul></li>
+<li><p>Only the normal components of <span class="math inline">\(\vec{D}\)</span> contribute because:</p>
+<ul>
+<li><span class="math inline">\(d\vec{A}\)</span> is parallel to <span class="math inline">\(\hat{n}\)</span> for top and bottom surfaces</li>
+<li>The tangential components don’t contribute to the dot product</li>
+</ul></li>
+<li><p>The ratio <span class="math inline">\(q_f/A\)</span> becomes the surface charge density <span class="math inline">\(\sigma_f\)</span> as <span class="math inline">\(h \to 0\)</span></p></li>
+</ol>
+<p>Following that, we obtain the boundary condition for the normal component of the displacement field:</p>
+<p><span id="eq-d-perpendicular"><span class="math display">\[
+D_{1\perp}=D_{1\perp}
+\tag{29.10}\]</span></span></p>
+<p>This implies a jump in the normal electric field component:</p>
+<p><span id="eq-e-perpendicular"><span class="math display">\[
+\frac{E_{1\perp}}{E_{2\perp}}=\frac{\epsilon_2}{\epsilon_1}
+\tag{29.11}\]</span></span></p>
+<p>as <span class="math inline">\(D=\epsilon E\)</span>. Another boundary condition arises from the curl of the electric field. Using the Maxwell equation:</p>
+<p><span id="eq-maxwell-faraday"><span class="math display">\[
+\nabla \times \vec{E}=-\frac{\partial \vec{B}}{\partial t}
+\tag{29.12}\]</span></span></p>
+<p>Integrating both sides over an area and applying Stokes theorem:</p>
+<p><span id="eq-stokes"><span class="math display">\[
+\oint \vec{E} d\vec{l}=-\frac{\partial}{\partial t}\int \vec{B}d\vec{A}
+\tag{29.13}\]</span></span></p>
+<p>Consider a rectangular loop straddling the interface between two media, with a height <span class="math inline">\(h\)</span> a width <span class="math inline">\(w\)</span> and a normal to the interface <span class="math inline">\(\hat{n}\)</span> the line integral can be broken down into four parts:</p>
+<ol type="1">
+<li>Top segment (in medium 1)</li>
+<li>Bottom segment (in medium 2)</li>
+<li>Two vertical segments connecting them</li>
+</ol>
+<p>The line integral becomes:</p>
+<p><span class="math display">\[
+\oint \vec{E} \cdot d\vec{l} = w\vec{E}_1 \cdot \hat{t} - w\vec{E}_2 \cdot \hat{t} + \text{(vertical segments)}
+\]</span></p>
+<p>where <span class="math inline">\(\hat{t}\)</span> is the unit vector tangent to the interface.</p>
+<p>As <span class="math inline">\(h \to 0\)</span>:</p>
+<ol type="1">
+<li>The contribution from vertical segments vanishes (as <span class="math inline">\(h \to 0\)</span>)</li>
+<li>The area of the loop approaches zero, making the right-hand side zero: <span class="math display">\[-\frac{\partial}{\partial t}\int \vec{B}\cdot d\vec{A} \to 0\]</span></li>
+</ol>
+<p>Therefore:</p>
+<p><span class="math display">\[
+w(\vec{E}_1 - \vec{E}_2) \cdot \hat{t} = 0
+\]</span></p>
+<p>Since <span class="math inline">\(w \neq 0\)</span>, this implies:</p>
+<p><span class="math display">\[
+(\vec{E}_1 - \vec{E}_2) \cdot \hat{t} = 0
+\]</span></p>
+<p>This can be rewritten in terms of the cross product with the normal vector:</p>
+<p><span id="eq-boundary-tangential"><span class="math display">\[
+\hat{n} \times (\vec{E}_2-\vec{E}_1)=0
+\tag{29.14}\]</span></span></p>
+<p>Therefore:</p>
+<p><span id="eq-e-parallel"><span class="math display">\[
+E_{2||}=E_{1||}
+\tag{29.15}\]</span></span></p>
+<p>indicating that the tangential component of the electric field is conserved.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Boundary Conditions for the Magnetic Field
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>For the magnetic field, we can derive boundary conditions using similar approaches. Starting with Ampère’s law:</p>
+<p><span class="math display">\[
+\nabla \times \vec{H}=\vec{J}+\frac{\partial \vec{D}}{\partial t}
+\]</span></p>
+<p>Integrating over an area and applying Stokes’ theorem:</p>
+<p><span class="math display">\[
+\oint \vec{H} \cdot d\vec{l}=\int \vec{J} \cdot d\vec{A}+\frac{\partial}{\partial t}\int \vec{D} \cdot d\vec{A}
+\]</span></p>
+<p>Using the same rectangular loop approach as with the electric field, but now in the limit as <span class="math inline">\(h \to 0\)</span>:</p>
+<ol type="1">
+<li>The area integral of the displacement current (<span class="math inline">\(\partial \vec{D}/\partial t\)</span>) vanishes</li>
+<li>The surface current density <span class="math inline">\(\vec{K}=\vec{J}dA\)</span> remains finite</li>
+</ol>
+<p>This yields:</p>
+<p><span class="math display">\[
+\hat{n} \times (\vec{H}_2-\vec{H}_1)=\vec{K}
+\]</span></p>
+<p>In the absence of surface currents (<span class="math inline">\(\vec{K}=0\)</span>), we have:</p>
+<p><span id="eq-h-parallel"><span class="math display">\[
+H_{2||}=H_{1||}
+\tag{29.16}\]</span></span></p>
+<p>For the normal component, starting from <span class="math inline">\(\nabla \cdot \vec{B}=0\)</span> and using the pillbox approach as with the electric field:</p>
+<p><span class="math display">\[
+\oint \vec{B} \cdot d\vec{A}=0
+\]</span></p>
+<p>This leads directly to:</p>
+<p><span id="eq-b-perpendicular"><span class="math display">\[
+B_{1\perp}=B_{2\perp}
+\tag{29.17}\]</span></span></p>
+<p>Since <span class="math inline">\(\vec{B}=\mu\vec{H}\)</span>, this implies a jump in the normal component of the H-field:</p>
+<p><span id="eq-h-perpendicular"><span class="math display">\[
+\frac{H_{1\perp}}{H_{2\perp}}=\frac{\mu_2}{\mu_1}
+\tag{29.18}\]</span></span></p>
+<p>These boundary conditions for the magnetic field complement those for the electric field and are essential for determining the reflection and transmission coefficients at interfaces.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Summary Boundary Conditions at an Interface
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For a boundary between two media (1 and 2) with surface normal <span class="math inline">\(\hat{n}\)</span>:</p>
+<p><strong>Electric Field</strong></p>
+<ul>
+<li>Normal component (with surface charge density <span class="math inline">\(\sigma_f\)</span>): <span class="math display">\[\epsilon_1 E_{1\perp} - \epsilon_2 E_{2\perp} = \sigma_f\]</span></li>
+<li>Tangential component: <span class="math display">\[E_{1||} = E_{2||}\]</span></li>
+</ul>
+<p><strong>Magnetic Field</strong></p>
+<ul>
+<li>Normal component: <span class="math display">\[B_{1\perp} = B_{2\perp}\]</span></li>
+<li>Tangential component (with surface current density <span class="math inline">\(\vec{K}\)</span>): <span class="math display">\[\hat{n} \times (\vec{H}_2-\vec{H}_1)=\vec{K}\]</span></li>
+</ul>
+<p>In the absence of free charges (<span class="math inline">\(\sigma_f = 0\)</span>) and currents (<span class="math inline">\(\vec{K} = 0\)</span>), these reduce to:</p>
+<ul>
+<li><span class="math inline">\(\epsilon_1 E_{1\perp} = \epsilon_2 E_{2\perp}\)</span></li>
+<li><span class="math inline">\(E_{1||} = E_{2||}\)</span></li>
+<li><span class="math inline">\(B_{1\perp} = B_{2\perp}\)</span></li>
+<li><span class="math inline">\(H_{1||} = H_{2||}\)</span></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="reflectionrefraction" class="level3" data-number="29.2.2">
+<h3 data-number="29.2.2" class="anchored" data-anchor-id="reflectionrefraction"><span class="header-section-number">29.2.2</span> Reflection/Refraction</h3>
+<section id="frequency-and-wavevector-matching" class="level4" data-number="29.2.2.1">
+<h4 data-number="29.2.2.1" class="anchored" data-anchor-id="frequency-and-wavevector-matching"><span class="header-section-number">29.2.2.1</span> Frequency and Wavevector Matching</h4>
+<p>Referring to <a href="#fig-coordinates" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-coordinates</span></a>, we can explicitly write down the components of the wavevectors of the three waves in our coordinate system:</p>
+<div id="fig-coordinates" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-coordinates-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/coordinates.png" class="img-fluid figure-img" style="width:40.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-coordinates-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;29.5— Coordinate system for wave at interfaces.
+</figcaption>
+</figure>
+</div>
+<p>According to the coordinate system shown in <a href="#fig-coordinates" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-coordinates</span></a>, we have:</p>
+<p><span id="eq-wavevectors"><span class="math display">\[
+\begin{aligned}
+  \vec{k}_I &amp;=  k_I \cos(\theta_I)\hat{e}_x+k_I \sin(\theta_I)\hat{e}_z \\
+  \vec{k}_R &amp;=  -k_R \cos(\theta_R)\hat{e}_x+k_R \sin(\theta_R)\hat{e}_z \\
+  \vec{k}_T &amp;=  k_T \cos(\theta_T)\hat{e}_x+k_T \sin(\theta_T)\hat{e}_z
+\end{aligned}
+\tag{29.19}\]</span></span></p>
+<p>Note that the component <span class="math inline">\(\hat{e}_x\)</span> always provides the wavevector component perpendicular to the interface, while <span class="math inline">\(\hat{e}_z\)</span> is the tangential (parallel) component. The total field on both sides is given by:</p>
+<p><span id="eq-total-field-left"><span class="math display">\[
+\vec{E}=\vec{E}_{inc}+\vec{E}_{ref}
+\quad \text{(for } x&lt;0 \text{)}
+\tag{29.20}\]</span></span></p>
+<p>and</p>
+<p><span id="eq-total-field-right"><span class="math display">\[
+\vec{E}=\vec{E}_{tra}
+\quad \text{(for } x&gt;0 \text{)}
+\tag{29.21}\]</span></span></p>
+<p>For these fields to match according to our previously described boundary conditions, we require:</p>
+<p><span id="eq-frequency-matching"><span class="math display">\[
+\omega_I=\omega_R=\omega_T
+\tag{29.22}\]</span></span></p>
+<p>This frequency matching confirms our initial intuition. Along the interface, we also need phase matching of the waves as discussed in the wave optics chapter:</p>
+<p><span id="eq-phase-matching"><span class="math display">\[
+\vec{k}_I\cdot \vec{r}=\vec{k}_R\cdot \vec{r}=\vec{k}_T\cdot \vec{r}
+\tag{29.23}\]</span></span></p>
+<p>at all positions <span class="math inline">\(\vec{r}\)</span> that belong to the interface (i.e., <span class="math inline">\(x=0\)</span>). Therefore <span class="math inline">\(\vec{r}=\lbrace 0,y,z \rbrace\)</span> and the equalities yield:</p>
+<p><span id="eq-snell-prelim"><span class="math display">\[
+k_I\sin(\theta_I)=k_R\sin(\theta_R)=k_T\sin(\theta_T)
+\tag{29.24}\]</span></span></p>
+<p>Since the magnitude of the wavevector of the incident and the reflected light is the same (both waves travel in the same material), we find:</p>
+<p><span id="eq-reflection-angle"><span class="math display">\[
+\theta_I=\theta_R
+\tag{29.25}\]</span></span></p>
+<p>For the incident and transmitted waves, we must account for the change in wavenumber:</p>
+<p><span id="eq-snell"><span class="math display">\[
+\begin{aligned}
+n_1 k_0\sin(\theta_I) &amp;= n_2 k_0\sin(\theta_T) \\
+n_1 \sin(\theta_I) &amp;= n_2 \sin(\theta_T)
+\end{aligned}
+\tag{29.26}\]</span></span></p>
+<p><a href="#eq-snell" class="quarto-xref">Equation&nbsp;<span class="quarto-unresolved-ref">eq-snell</span></a> represents Snell’s law, which results from the conservation of the parallel component of the wavevector across an interface, while the normal component must have a jump according to the refractive indices.</p>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../electromagnetic-waves/Dispersion and Absorption.html" class="pagination-link" aria-label="Dispersion &amp; Absorption">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Dispersion &amp; Absorption</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../electromagnetic-waves/Fresnel Equations.html" class="pagination-link" aria-label="Fresnel Equations">
+        <span class="nav-page-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Fresnel Equations</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

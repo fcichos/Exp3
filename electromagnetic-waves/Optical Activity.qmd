@@ -1,0 +1,139 @@
+---
+title: "Optical Activity and Rotatory Dispersion"
+jupyter: python3
+format:
+  html:
+    code-fold: true
+crossref:
+  fig-title: Figure     # (default is "Figure")
+  tbl-title: Tbl     # (default is "Table")
+  title-delim: "—"   # (default is ":")
+  fig-prefix: "Figure"
+  eq-prefix: Eq.
+  chapters: true
+---
+
+Optical activity is a phenomenon where certain molecules rotate the plane of polarized light. While this basic definition is widely known, the underlying quantum mechanical and electromagnetic mechanisms reveal a fascinating interplay between molecular structure and light interaction.
+
+When light interacts with chiral molecules, it induces both electric ($\vec{p}$) and magnetic ($\vec{m}$) dipole moments. These moments are coupled through the molecule's electronic structure:
+
+$$\vec{p} = \alpha \vec{E} + G\vec{B}$$
+$$\vec{m} = G\vec{E} + \beta \vec{B}$$
+
+where:
+
+- $\alpha$ is the electric polarizability tensor
+- $\beta$ is the magnetic polarizability tensor
+- $G$ is the mixed electric-magnetic polarizability tensor
+- $\vec{E}$ and $\vec{B}$ are the electric and magnetic fields of light
+
+The crucial parameter $G$ exists only in chiral molecules and directly leads to circular birefringence.
+
+### Circular Birefringence and Its Electronic Origin
+
+The mixed polarizability $G$ creates different responses for left and right circularly polarized light. Plane-polarized light can be decomposed into these circular components:
+
+$$\vec{E}_{plane} = \vec{E}_{right} + \vec{E}_{left}$$
+
+The refractive indices for right (R) and left (L) circular polarization are:
+
+$$n_R = n_0 + \frac{2\pi N}{n_0}(G' - iG'')$$
+$$n_L = n_0 - \frac{2\pi N}{n_0}(G' - iG'')$$
+
+where:
+
+- $n_0$ is the average refractive index
+- $N$ is the number density of molecules
+- $G'$ and $G''$ are the real and imaginary parts of $G$
+
+The rotation angle per unit length is:
+
+$$\alpha = \frac{\pi}{\lambda}(n_L - n_R) = \frac{4\pi^2 Nl}{\lambda n_0}G'$$
+
+::: {.callout-note collapse=true}
+### Quantum Mechanical Foundation
+
+At a quantum level, the mixed polarizability $G$ arises from electronic transitions:
+
+$$G = \frac{1}{\hbar}\sum_n \frac{\omega_{n0}}{{\omega_{n0}}^2 - \omega^2}\Im(\langle 0|\vec{\mu}|n\rangle \cdot \langle n|\vec{m}|0\rangle)$$
+
+This expression connects molecular electronic structure to circular birefringence through:
+
+1. Electronic transitions ($\omega_{n0}$)
+2. Spatial arrangement of electrons (through $\vec{\mu}$ and $\vec{m}$)
+3. Molecular chirality (required for non-zero $G$)
+:::
+
+## Wavelength Dependence and the Cotton Effect
+
+The wavelength dependence of optical rotation becomes more complex near electronic absorption bands, leading to the Cotton effect. This phenomenon is described mathematically by the sum of two terms:
+
+$$[\alpha]_\lambda = \sum_i \frac{A_i\lambda}{\lambda^2 - \lambda_i^2} + \sum_j \frac{B_j\lambda^3}{(\lambda^2 - \lambda_j^2)^2}$$
+
+In this expression, $A_i$ and $B_j$ represent amplitude constants that determine the strength of the optical rotation, while $\lambda_i$ and $\lambda_j$ correspond to the wavelengths of electronic absorption transitions in the molecule. The first term describes the normal optical rotatory dispersion away from absorption bands, while the second term becomes particularly important near absorption wavelengths, where it accounts for anomalous dispersion effects. When approaching an electronic transition, the optical rotation can change dramatically, even reversing sign, creating what is known as a Cotton curve. This behavior arises from the coupling between electronic transitions and the chiral structure of the molecule. The Cotton effect is a characteristic feature of optically active molecules and provides valuable information about their electronic structure, making it an important tool for investigating molecular conformations and electronic states in chiral systems.
+
+
+## Sugar Solutions
+
+In sugar molecules, the optical activity arises from their asymmetric carbon centers and specific electronic structure:
+
+1. **Coupled Chromophores**: The oxygen atoms and hydroxyl groups create a network of coupled electronic transitions.
+
+2. **Helical Electron Displacement**: During light interaction, electrons follow a helical path:
+
+$$\Psi_{electron}(t) = \sum_i c_i\Psi_i e^{i(\vec{k}\cdot\vec{r} - \omega t + \phi_i)}$$
+
+
+
+:::{#fig-sugar}
+![](img/sugar.png){width=80%}
+
+The complex interplay between molecular rotation, light scattering, and multiple scattering events leads to the observed color effects in sugar solutions.
+:::
+
+
+The colored scattering in sugar solutions results from three combined effects:
+
+
+1. **Wavelength-Dependent Rotation**: As light passes through a sugar solution, different wavelengths experience different amounts of rotation. This wavelength dependence follows a modified Drude equation:
+
+$$\alpha(\lambda) = \frac{K}{\lambda^2}\left(1 + \frac{a}{\lambda^2} + \frac{b}{\lambda^4}\right)$$
+
+where $K$ is related to the specific rotation of the sugar molecule, while $a$ and $b$ are correction terms accounting for electronic transitions. This relationship means that blue light (shorter wavelength) experiences significantly more rotation than red light (longer wavelength).
+
+2. **Differential Scattering**: Different wavelengths scatter at different angles due to varying rotation angles. This creates a spatial separation of colors, as each wavelength emerges from the solution at a slightly different angle. The scattering angle $\theta$ for each wavelength is related to the rotation angle by:
+
+$$\theta(\lambda) \propto \alpha(\lambda)$$
+
+This relationship leads to a rainbow-like separation of colors in the scattered light.
+
+3. **Multiple Scattering Effects**: In real sugar solutions, light often undergoes multiple scattering events. The intensity of scattered light follows:
+
+$$\vec{I}_{scattered}(\lambda) = \vec{I}_0(\lambda)e^{-\mu(\lambda)l}[1 - e^{-\sigma(\lambda)l}]$$
+
+where $\mu(\lambda)$ is the absorption coefficient, $\sigma(\lambda)$ is the scattering coefficient, and $l$ is the path length. Multiple scattering enhances the color separation effect and creates a more complex pattern of scattered light. The wavelength dependence of both $\mu$ and $\sigma$ further contributes to the observed color effects.
+
+
+
+
+
+## Temperature Effects
+
+Temperature influences these processes through:
+
+1. Molecular rotation rates:
+$$\tau_c = \frac{4\pi\eta r^3}{3k_BT}$$
+
+2. Conformational distribution:
+$$N_i \propto e^{-E_i/k_BT}$$
+
+## Applications and Practical Implications
+
+Understanding these mechanisms is crucial for:
+
+1. Design of polarimetric instruments
+2. Industrial crystallization processes
+3. Chiral separation techniques
+4. Pharmaceutical analysis methods
+
+The complex interplay between electronic structure, circular birefringence, and light scattering explains both the fundamental nature of optical activity and its practical applications in various fields.

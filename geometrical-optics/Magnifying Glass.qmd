@@ -14,7 +14,6 @@ Consider the sketch below. The sketch shows an object of a size $A$ which is at 
 
 ![Magnifying glass at the focal distance.](img/magnifying_glass_focal.png){width=60%}
 
-
 The magnification of this magnifying glass can the be calculated from the angles $\epsilon\approx A/f$ and $\epsilon_0\approx A/s_0$:
 
 $$

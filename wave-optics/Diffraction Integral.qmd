@@ -1,0 +1,225 @@
+---
+title: Diffraction Integral
+jupyter: python3
+format:
+  html:
+    code-fold: true
+crossref:
+  fig-title: Figure     # (default is "Figure")
+  tbl-title: Tbl     # (default is "Table")
+  title-delim: "—"   # (default is ":")
+  fig-prefix: "Figure"
+  eq-prefix: Eq.
+  chapters: true
+---
+
+
+
+```{python}
+#| echo: false
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+from time import sleep,time
+from ipycanvas import MultiCanvas, hold_canvas,Canvas
+import matplotlib as mpl
+import matplotlib.cm as cm
+from matplotlib.patches import Arc
+from matplotlib.transforms import Bbox, IdentityTransform, TransformedBbox
+
+plt.rcParams.update({'font.size': 10,
+                     'lines.linewidth': 1,
+                     'lines.markersize': 5,
+                     'axes.labelsize': 10,
+                     'axes.labelpad':0,
+                     'xtick.labelsize' : 9,
+                     'ytick.labelsize' : 9,
+                     'legend.fontsize' : 8,
+                     'contour.linewidth' : 1,
+                     'xtick.top' : True,
+                     'xtick.direction' : 'in',
+                     'ytick.right' : True,
+                     'ytick.direction' : 'in',
+                     'figure.figsize': (4, 3),
+                     'axes.titlesize':8})
+
+def get_size(w,h):
+    return((w/2.54,h/2.54))
+
+```
+
+In the last section about Fresnel zones and the zone plate, we considered how different paths contribute to the intensity at a point on the optical axis. We would like to generalize this idea to an integral formulation that allows us to calculate any kind of diffraction pattern.
+
+![Diffraction integral.](img/sketch.png){ width=80% }
+
+Assume we have a light source $S$ as shown in the image above, which emits a spherical wave (though it does not necessarily have to be a spherical wave). The spatial amplitude of this wave at the point $P(x,y)$ at a tiny aperture element $d\sigma$ is given by:
+
+$$
+U_s(x,y) = U_0(x,y)e^{i\phi(x,y)}
+$$
+
+where
+
+$$
+U_0 = \frac{A}{R} = \frac{A}{\sqrt{g^2 + x^2 + y^2}}
+$$
+
+and
+
+$$
+\phi(x,y) = -kR
+$$
+
+This represents the amplitude of the Huygens wave, which emanates from the point $P(x,y)$ and propagates towards the screen at $P(x',y')$. This Huygens wave contributes a fraction of an amplitude $dU_p$ to the total amplitude at point $P(x',y')$, which is given by:
+
+$$
+dU_p = C \frac{U_s d\sigma}{r} e^{-ikr}
+$$
+
+with $C = \frac{i \cos(\theta)}{\lambda}$, known as the obliquity factor, found through a more detailed calculation.
+
+The total amplitude at the point $P(x',y')$ is then given by the integral over all contributions:
+
+$$
+U_p = \iint C U_s \frac{e^{-ikr}}{r} dx dy
+$$
+
+where $dx dy = d\sigma$. The integral runs over all positions in the aperture plane $(x,y)$ where there is an opening. This integral is called the **Fresnel-Kirchhoff diffraction integral** and allows us to calculate complex scalar diffraction patterns.
+
+This formulation generalizes the concept of Fresnel zones and provides a powerful tool for analyzing and predicting diffraction patterns for various aperture shapes and configurations.
+
+## Fresnel Approximation
+
+The diffraction integral does not always need to be calculated in full; we can use approximations to obtain diffraction patterns in different regimes. One such approximation is the **Fresnel approximation**, which yields the diffraction pattern in the **near field**.
+
+The distance $r$ from the point $P(x,y)$ to the point $P(x',y')$ can be written as:
+
+$$
+r = \sqrt{z_0^2 + (x - x')^2 + (y - y')^2}
+$$
+
+Using a binomial expansion for small angles, we can approximate this as:
+
+$$
+r \approx z_0 \left(1 + \frac{(x - x')^2}{2z_0^2} + \frac{(y - y')^2}{2z_0^2} + \ldots \right)
+$$
+
+In this approximation, we assume that $\cos(\theta) = z_0 / r \approx 1$ and $C = i / \lambda$, considering small diffraction angles. Using this approximation, we find the amplitude of the wave at a point $P(x',y')$:
+
+$$
+U(x', y', z_0) = i \frac{e^{-ikz_0}}{\lambda z_0} \iint U_s(x, y) \exp \left[ -\frac{ik}{2z_0} \left( (x - x')^2 + (y - y')^2 \right) \right] dx dy
+$$
+
+As the integration is over $x$ and $y$, we can factor out all screen coordinate elements, yielding:
+
+$$
+U(x', y', z_0) = i \frac{e^{-ikz_0}}{\lambda z_0} e^{-\frac{ik}{2z_0}(x'^2 + y'^2)} \iint U_s(x, y) e^{-\frac{ik}{2z_0}(x^2 + y^2)} e^{\frac{ik}{2z_0}(xx' + yy')} dx dy
+$$
+
+This is the **Fresnel approximation**. It simplifies the calculation of the diffraction pattern in the near field by making reasonable assumptions about the geometry and angles involved.
+
+## Fraunhofer Approximation
+
+If we further assume that the aperture is small as compared to the distance at which we observe the diffraction pattern, we can further simplify the Fresnel approximation to yield the Fraunhofer approximation giving the diffraction patter in the far field. The condition is
+
+$$
+z_0\gg\frac{1}{\lambda}(x^2+y^2)
+$$
+
+In this case we can neglect the term
+
+$$
+e^{ -\frac{ik}{2z_0}(x^2+y^2)} \approx 1
+$$
+
+which results in
+
+$$
+U(x^{\prime},y^{\prime},z_0)=i\frac{e^{-ikz_0}}{\lambda z_0} e^{-\frac{ik}{2z_0}(x^{\prime 2}+y^{\prime 2})}
+\iint U_{s}(x,y)
+e^{\frac{ik}{2z_0}(xx^{\prime}+yy^{\prime})} dx dy
+$$
+
+![Diffraction pattern of a slit in the near field (Fresnel diffraction, left) and the far field (Fraunhofer diffraction, right).](img/near_far_field.png){ width=90% }
+
+While these formulas provide the mathematical tools, we may obtain a more intuitive idea about the different approximation in the following way. Consider the image below, where we would like to know about the diffraction intensity of a slit of width $b$ at the optical axis at a distance $D$.
+
+![Illustration of the importance of additional geometrical path length difference for the discrimination of Fresnel (near-field) and Fraunhofer (far-field) diffraction.](img/diffraction.png){ width=55% }
+
+The waves from the center of the slit and the edge have to travel towards that point a different pathlength, whcih we may calculate to
+
+\begin{eqnarray}
+\Delta s &=&  \sqrt{\frac{b^2}{4}+D^2}-D\\
+&=& D\sqrt{\frac{b^2}{4D^2}+1}-D
+\end{eqnarray}
+
+We may develop the square root into a Taylor series and obtain
+
+\begin{eqnarray}
+\Delta s &=& \frac{b^2}{8D}-\frac{b^4}{128 D^3}+O(4)\\
+&\approx & \frac{b^2}{8D}
+\end{eqnarray}
+
+The second order correction term $\frac{b^2}{8D}$ decreases quadratic with the distance $D$ of the point, which means that at large distances, we can safely assume $\Delta s=0$ on the axis, i.e. all waves arriving at that point have to travel the same distance. This corresponds to the far-field approximation. To be more specific we require
+
+$$
+\frac{b^2}{8D^2}<\frac{\lambda}{8}
+$$
+
+or
+
+$$
+\frac{b^2}{\lambda D}<1
+$$
+
+to be fullfilled to be in the far field.
+
+
+$$
+F=\frac{b^2}{\lambda D}
+\begin{cases}
+\ll 1 ,&\textrm{Fraunhofer}\\
+\approx 1,& \textrm{Fresnel}\\
+\gg 1, & \textrm{Full vector}
+\end{cases}
+$$
+
+This number $F$ is called the Frensel number and gives us an idea by how far the dimensions of the opening contribute to the diffraction pattern rather than the direction of the wave propagation only.
+
+## Babinet's Principle
+
+The above considerations of diffraction have some intruiging consequence. Consider the two apertures in the image below.
+
+![Two complementary apertures, which have the same diffraction pattern in the far field.](img/babinet.png){ width=60% }
+
+
+The left aperture will create in the far field an amplitude distribution $U_h$, while the inverse aperture on the right will cause an amplitude $U_d$. If we combine both amplitudes in the far field, we obtain a total amplitude distribution
+
+$$
+U=U_h+U_d
+$$
+
+In the case when we have two complementary apertures, that total amplitude has to be zeor, when hole and dot are placed at the same position. We therefore obtain
+
+$$
+U_h=-U_d
+$$
+
+and therefore
+
+$$
+I_h=I_d
+$$
+
+This is the Principle of Babinet which states:
+
+::: {.callout-note}
+## Babinet's Principle
+
+Babinet's principle states that the far-field diffraction intensity distribution of complementary apertures is identical. This means that an opaque object and its complementary aperture (where the object is replaced by a transparent region and vice versa) produce the same diffraction pattern in the far field.
+:::
+
+The images below show an experimental demonstration of Babinet's principle on a slit and a wire.
+
+![Babinet's principle demonstrated experimentally on a slit (left) and a wire (right).](img/babinet_exp.png){ width=90% }

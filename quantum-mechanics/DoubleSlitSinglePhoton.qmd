@@ -1,0 +1,31 @@
+To demonstrate how measurement destroys interference in the double-slit experiment:
+
+1. Without measurement, the wave function is a superposition:
+   $\psi = \psi_1 + \psi_2$
+   where $\psi_1$ and $\psi_2$ are the wave functions through slit 1 and 2
+
+2. The probability density is:
+   $P = |\psi|^2 = |\psi_1 + \psi_2|^2 = |\psi_1|^2 + |\psi_2|^2 + \psi_1^*\psi_2 + \psi_1\psi_2^*$
+
+3. The cross terms $\psi_1^*\psi_2 + \psi_1\psi_2^*$ create the interference pattern
+
+4. When measuring which slit, the wave function collapses:
+
+   If photon goes through slit 1: $\psi = \psi_1$
+   If photon goes through slit 2: $\psi = \psi_2$
+
+5. The probability density becomes:
+
+   $P = |\psi_1|^2$ or $P = |\psi_2|^2$
+
+6. No cross terms exist, therefore:
+
+   $P_{total} = |\psi_1|^2 + |\psi_2|^2$
+   This is just the sum of individual intensities without interference
+
+7. The visibility of interference fringes can be quantified:
+
+   $V = \frac{I_{max} - I_{min}}{I_{max} + I_{min}}$
+   where $V=1$ for perfect interference and $V=0$ with measurement
+
+Mathematical proof that measurement eliminates the cross terms that produce interference.

@@ -23,13 +23,58 @@ book:
         - geometrical-optics/Eye.qmd
         - geometrical-optics/Magnifying Glass.qmd
         - geometrical-optics/Microscope.qmd
+        - geometrical-optics/Telescope.qmd
+        - geometrical-optics/Rainbow.qmd
+        - geometrical-optics/Imaging Errors.qmd
+    - part: "Wave Optics"
+      chapters:
+        - wave-optics/Wave Optics.qmd
+        - wave-optics/Double Slit.qmd
+        - wave-optics/Thin Film Interference.qmd
+        - wave-optics/MultiWave Interference.qmd
+        - wave-optics/FabryPerot.qmd
+        - wave-optics/Diffraction.qmd
+        - wave-optics/Diffraction2.qmd
+        - wave-optics/Fresnel Zones.qmd
+        - wave-optics/Diffraction Integral.qmd
+        - wave-optics/Interferometers.qmd
+    - part: "Electromagnetic Optics"
+      chapters:
+        - electromagnetic-waves/Electromagnetic Optics.qmd
+        - electromagnetic-waves/Polarization of EM Waves.qmd
+        - electromagnetic-waves/Energy Transport.qmd
+        - electromagnetic-waves/EM Waves in Matter.qmd
+        - electromagnetic-waves/Dispersion and Absorption.qmd
+        - electromagnetic-waves/Reflection and Refraction.qmd
+        - electromagnetic-waves/Fresnel Equations.qmd
+        - electromagnetic-waves/Metals.qmd
+        - electromagnetic-waves/Anisotropic Materials.qmd
+        - electromagnetic-waves/Optical Activity.qmd
+        - electromagnetic-waves/Dipole Radiation.qmd
+    - part: "Quantum Mechanics"
+      chapters:
+        - quantum-mechanics/Structure_of_matter.qmd
+        - quantum-mechanics/Particle_Nature_of_Light.qmd
+        - quantum-mechanics/Black_Body_Radiation.qmd
+        - quantum-mechanics/Wave_character_of_particles.qmd
+        - quantum-mechanics/Matter_waves.qmd
+        - quantum-mechanics/Heisenbergs_uncertainty_relation.qmd
+        - quantum-mechanics/Structure_of_atoms.qmd
+        - quantum-mechanics/Schroedinger_equation.qmd
+        - quantum-mechanics/potential_barrier.qmd
+        - quantum-mechanics/harmonic_oscillator.qmd
+        - quantum-mechanics/parametric_dc.qmd
+        - quantum-mechanics/Spherical_potential.qmd
+        - quantum-mechanics/Qzeno.qmd
+        - quantum-mechanics/hydrogen.qmd
+
 format:
   pdf:
     documentclass: book
     papersize: a4
     toc: true
     number-sections: true
-    number-depth: 2
+    number-depth: 1
     colorlinks: true
     geometry:
       - top=30mm

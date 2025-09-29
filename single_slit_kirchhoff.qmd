@@ -1,0 +1,104 @@
+
+### Derivation of Single Slit Diffraction Pattern Using Kirchhoff Diffraction Integral
+
+#### Setup
+
+Consider a monochromatic plane wave of wavelength $\lambda$ incident on a single slit of width $b$. We want to find the diffraction pattern at a point $P$ on a screen located at a distance $z$ from the slit.
+
+#### Kirchhoff Diffraction Integral
+
+The Kirchhoff diffraction integral for the wave amplitude $U(P)$ at point $P$ is given by:
+
+$$
+U(P) = \frac{1}{i\lambda} \int_{\text{aperture}} \left( \frac{\partial U(Q)}{\partial n} \frac{e^{ikr}}{r} - U(Q) \frac{\partial}{\partial n} \left( \frac{e^{ikr}}{r} \right) \right) dS
+$$
+
+For simplicity, we assume the incident wave is a plane wave $U_0$ and the observation point $P$ is in the far field (Fraunhofer approximation).
+
+#### Simplifications
+
+1. **Far-Field Approximation**: In the far field, the distance $r$ from any point $Q$ on the slit to the point $P$ can be approximated as:
+
+   $$
+   r \approx z \left( 1 + \frac{x^2}{2z^2} \right) \approx z \left( 1 + \frac{x \sin \theta}{z} \right) = z + x \sin \theta
+   $$
+
+   where $x$ is the coordinate along the slit width, and $\theta$ is the angle of diffraction.
+
+2. **Plane Wave Approximation**: The incident plane wave $U(Q)$ can be taken as a constant $U_0$.
+
+3. **Neglecting Edge Effects**: For simplicity, we neglect the edge effects and focus on the main term.
+
+#### Integral Simplification
+
+The Kirchhoff integral simplifies to:
+
+$$
+U(P) \approx \frac{U_0}{i\lambda z} \int_{-b/2}^{b/2} e^{ikr} dx
+$$
+
+Substituting $r \approx z + x \sin \theta$:
+
+$$
+U(P) \approx \frac{U_0 e^{ikz}}{i\lambda z} \int_{-b/2}^{b/2} e^{ik(x \sin \theta)} dx
+$$
+
+Since $k = \frac{2\pi}{\lambda}$:
+
+$$
+U(P) \approx \frac{U_0 e^{ikz}}{i\lambda z} \int_{-b/2}^{b/2} e^{i\left(\frac{2\pi}{\lambda}\right)x \sin \theta} dx
+$$
+
+#### Evaluating the Integral
+
+The integral is:
+
+$$
+\int_{-b/2}^{b/2} e^{ikx \sin \theta} dx
+$$
+
+This is a standard integral of the form:
+
+$$
+\int_{-a}^{a} e^{iux} dx = \frac{2 \sin(ua)}{u}
+$$
+
+Here, $a = \frac{b}{2}$ and $u = k \sin \theta$:
+
+$$
+\int_{-b/2}^{b/2} e^{ikx \sin \theta} dx = \frac{2 \sin\left( \frac{kb \sin \theta}{2} \right)}{k \sin \theta / 2}
+$$
+
+Simplifying:
+
+$$
+\int_{-b/2}^{b/2} e^{ikx \sin \theta} dx = \frac{2 \sin\left( \frac{\pi b \sin \theta}{\lambda} \right)}{2 \pi \sin \theta / \lambda} = \frac{\lambda \sin\left( \frac{\pi b \sin \theta}{\lambda} \right)}{\pi \sin \theta}
+$$
+
+#### Final Expression
+
+Substituting back into the expression for $U(P)$:
+
+$$
+U(P) \approx \frac{U_0 e^{ikz}}{i\lambda z} \cdot \frac{\sin\left( \frac{\pi b \sin \theta}{\lambda} \right)}{\pi \sin \theta}
+$$
+
+Simplifying:
+
+$$
+U(P) \approx \frac{U_0 e^{ikz}}{i z} \cdot \frac{\sin\left( \frac{\pi b \sin \theta}{\lambda} \right)}{\pi \sin \theta}
+$$
+
+The intensity $I(\theta)$ is proportional to the square of the amplitude $U(P)$:
+
+$$
+I(\theta) \propto \left| U(P) \right|^2 \propto \left( \frac{\sin\left( \frac{\pi b \sin \theta}{\lambda} \right)}{\pi \sin \theta} \right)^2
+$$
+
+Thus, the intensity distribution for single slit diffraction is:
+
+$$
+I(\theta) = I_0 \left( \frac{\sin\left( \frac{\pi b \sin \theta}{\lambda} \right)}{\pi \sin \theta} \right)^2
+$$
+
+where $I_0$ is the maximum intensity at $\theta = 0$.

@@ -1,0 +1,2103 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.34">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Black Body Radiation – Experimental Physics 3 Course on Optics and Quantum Mechanics</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../quantum-mechanics/Wave_character_of_particles.html" rel="next">
+<link href="../quantum-mechanics/Particle_Nature_of_Light.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-9344fb9851b4da3cab95007ef9d770dc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Experimental Physics 3 Course on Optics and Quantum Mechanics</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Quantum Mechanics</li><li class="breadcrumb-item"><a href="../quantum-mechanics/Black_Body_Radiation.html">Lecture 22</a></li><li class="breadcrumb-item"><a href="../quantum-mechanics/Black_Body_Radiation.html">Black Body Radiation</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../mona_logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Course Info</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-info/intructors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instructor</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-info/schedule.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Schedule</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-info/resources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ressourcen</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-info/assignments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Assignments</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-info/exam.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exam</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Geometrical Optics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 1</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/reflection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Reflection</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/refraction-total-internal-reflection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Refraction</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 2</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Optical Elements I.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optical Elements I - Mirrors</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 3</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Optical Elements II.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optical Elements II - Prims</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Optical Elements III.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optical Elements III - Lenses</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 4</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Eye.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optical Instruments- Eye</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 5</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Magnifying Glass.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optical Instruments- Magnifying Glass</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Microscope.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optical Instruments- Microscope</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Telescope.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optical Instruments- Telescope</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 6</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/ContentsL6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Contents</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
+ <span class="menu-text">Wave Optics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 7</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Wave Optics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Wave Optics</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 8</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Interference.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Interference and Coherence</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Double Slit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Double Slit Interference</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 9</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Thin Film Interference.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Thin Film Interference</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/MultiWave Interference.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Multi Wave Interference</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 10</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Dummy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fabry Perot Interferometer</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Diffraction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Diffraction</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 11</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Diffraction2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Diffraction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Fresnel Zones.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fresnel Zone Plate</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Dummy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Diffraction Integral</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Interferometers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Interferometers</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="true">
+ <span class="menu-text">Electromagnetic Optics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 12</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-16" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Electromagnetic Optics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Electromagnetic Optics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Polarization of EM Waves.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Polarization of EM Waves</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-17" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 13</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-17" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-17" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Energy Transport.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Energy Transport</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-18" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 14</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-18" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-18" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/EM Waves in Matter.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Waves in Matter</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Dispersion and Absorption.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Origin of Refractive Index</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-19" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 15</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-19" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-19" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Reflection and Refraction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Reflection and Refraction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Fresnel Equations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fresnel Equations</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-20" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 16</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-20" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-20" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Fresnel Equations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fresnel Equations</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-21" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 17</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-21" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-21" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Metals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Electromagnetic Waves in Metals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Anisotropic Materials.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Anisotropic Materials</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-22" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 18</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-22" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-22" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Optical Activity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optical Activity</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Dummy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dipole Radiation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-23" role="navigation" aria-expanded="true">
+ <span class="menu-text">Quantum Mechanics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-23" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-23" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-24" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 19</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-24" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-24" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Structure_of_matter.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Structure of Matter</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-25" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 20</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-25" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-25" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Particle_Nature_of_Light.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Particle Nature of Light</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-26" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 21</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-26" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-26" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Particle_Nature_of_Light.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Particle Nature of Light</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-27" role="navigation" aria-expanded="true">
+ <span class="menu-text">Lecture 22</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-27" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-27" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Black_Body_Radiation.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Black Body Radiation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-28" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 23</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-28" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-28" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Wave_character_of_particles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Wave Character of Particles</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Matter_waves.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Matter Waves</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-29" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 24</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-29" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-29" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Heisenbergs_uncertainty_relation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Heisenberg Uncertainty Principle</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-30" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 25</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-30" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-30" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Dummy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Structure of Atoms</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Schroedinger_equation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Schrödinger Equation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-31" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 26</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-31" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-31" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/potential_barrier.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Potential Barriers and Wells</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-32" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 27</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-32" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-32" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/harmonic_oscillator.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Harmonic Oscillator</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-33" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 28</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-33" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-33" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/parametric_dc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Photon Entanglement</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Spherical_potential.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Spherically Symmetric Problems</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-34" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 29</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-34" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-34" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Qzeno.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quantum Zeno Effect</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Spherical_potential.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Spherically Symmetric Problems</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/hydrogen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Hydrogen Atom</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#blackbody" id="toc-blackbody" class="nav-link active" data-scroll-target="#blackbody">Blackbody</a></li>
+  <li><a href="#spectral-density-of-modes" id="toc-spectral-density-of-modes" class="nav-link" data-scroll-target="#spectral-density-of-modes">Spectral density of modes</a></li>
+  <li><a href="#rayleighjeans-law" id="toc-rayleighjeans-law" class="nav-link" data-scroll-target="#rayleighjeans-law">Rayleigh–Jeans law</a></li>
+  <li><a href="#plancks-law" id="toc-plancks-law" class="nav-link" data-scroll-target="#plancks-law">Planck’s law</a>
+  <ul class="collapse">
+  <li><a href="#properties-of-plancks-radiation-formula" id="toc-properties-of-plancks-radiation-formula" class="nav-link" data-scroll-target="#properties-of-plancks-radiation-formula">Properties of Planck’s Radiation Formula</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Quantum Mechanics</li><li class="breadcrumb-item"><a href="../quantum-mechanics/Black_Body_Radiation.html">Lecture 22</a></li><li class="breadcrumb-item"><a href="../quantum-mechanics/Black_Body_Radiation.html">Black Body Radiation</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Black Body Radiation</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Black body radiation represents one of the pivotal problems that led to the birth of quantum mechanics. While seemingly a purely thermodynamic phenomenon - the electromagnetic radiation emitted by an idealized perfect absorber in thermal equilibrium - its explanation required a radical departure from classical physics.</p>
+<p>In the late 19th century, classical physics completely failed to explain the observed spectrum of black body radiation. The classical Rayleigh-Jeans law predicted that the intensity of radiation would increase indefinitely with frequency (the ‘ultraviolet catastrophe’), which clearly contradicted experimental measurements. This crisis in physics was resolved only when Max Planck introduced the revolutionary concept that electromagnetic energy could only be emitted in discrete quantities or ‘quanta’ - an idea that would become one of the fundamental principles of quantum mechanics.</p>
+<p>The study of black body radiation thus marks the historical transition point from classical to quantum physics. Planck’s solution not only explained the observed radiation spectrum but introduced the quantum of action <span class="math inline">\(h\)</span> (Planck’s constant), which would become central to all of quantum mechanics. This topic demonstrates how quantum effects emerge even in seemingly classical macroscopic systems when we examine them carefully enough.</p>
+<p>The figure below displays the emission of a light bulb with a tungsten filament. The filament is heated up to a specific temperature by different currents.</p>
+<div id="fig-light-bulb" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-light-bulb-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/emission_at_T.png" class="img-fluid figure-img" style="width:50.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-light-bulb-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1— Light emission at different temperatures. The filament of the light bulb is heated up to different temperatures by varying the current. The color of the emitted light changes with the temperature of the filament.
+</figcaption>
+</figure>
+</div>
+<p>Without dispersing the spectrum we directly notice the different color of the light emitted by the filament. While the heating mechanism is different for different materials, the emitted spectrum is always similar and solely depends on the temperature of the radiator. The emitted spectrum is called the <strong>blackbody spectrum</strong> and is universal for all materials.</p>
+<section id="blackbody" class="level2">
+<h2 class="anchored" data-anchor-id="blackbody">Blackbody</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><em>A blackbody is a model of a radiation source whose emission depends only on its temperature.</em> Its emission, however, does not depend on the material the radiator is made from, nor on its surface or any other potential characteristics.</p>
+</div>
+</div>
+<p>Consider a body with a cavity as depicted below. The body is heated to a certain temperature <span class="math inline">\(T\)</span> and the cavity is closed.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/cavity.png" class="img-fluid figure-img" style="width:35.0%"></p>
+<figcaption>A body with a cavity. The body is heated to a certain temperature <span class="math inline">\(T\)</span> and the cavity is closed but can be equipped with a tiny hole to probe the radiation inside the cavity without perturbation.</figcaption>
+</figure>
+</div>
+<p>The system is in thermal equilibriums and thus each quadratic degree of freedom carries an energy of <span class="math inline">\(0.5 k_B T\)</span>, where <span class="math inline">\(k_B=1.21.380649 \times 10^{-23} \text{ J/K}\)</span> is the Boltzmann constant.</p>
+<p>Each surface element of the cavity emits radiation at a specific frequency <span class="math inline">\(\nu\)</span>. The amount of power that is radiated by a surface element <span class="math inline">\(\mathrm{d} A\)</span> into a solid angle element <span class="math inline">\(\mathrm{d} \Omega\)</span> at a frequency interval <span class="math inline">\(\mathrm{d} \nu\)</span> relates to the property of its surface, i.e.&nbsp;the emissivity <span class="math inline">\(E^{\ast}_{\nu}\)</span></p>
+<p><span class="math display">\[
+\frac{\mathrm{d} W_{E}}{\mathrm{d} t} = E^{\ast}_{\nu} \; \mathrm{d} A \; \mathrm{d} \Omega \; \mathrm{d} \nu
+\]</span></p>
+<p>The emissivity is thereby the spectral radiance (energy emitted per unit area, per unit solid angle, per unit frequency), which has units of <span class="math inline">\(W⋅m^-2⋅sr^{-1}⋅Hz^{-1}\)</span>. In a simular way, each surface element at the cavity absorbs a certain power under a solid angle element and frequency intervall. The absorbed power is given by</p>
+<p><span class="math display">\[
+\frac{\mathrm{d} W_{A}}{\mathrm{d} t} = A_{\nu} \; S^{\ast}_{\nu} \; \mathrm{d} A \; \mathrm{d} \Omega \; \mathrm{d} \nu
+\]</span></p>
+<p>where <span class="math inline">\(S^{\ast}_{\nu}\)</span> is the spectral radiancy of an ideal black body, so the radiated power per unit area, per unit solid angle and per unit frequency interval. The absorption capability <span class="math inline">\(A_{\nu}\)</span> is also a number between 0 and 1.</p>
+<p>In the steady state, the body emits and absorbs the same amount of power and thus</p>
+<p><span class="math display">\[
+\frac{\mathrm{d} W_{E}}{\mathrm{d} t} = \frac{\mathrm{d} W_{A}}{\mathrm{d} t}
+\]</span></p>
+<p>which readily yields</p>
+<p><span class="math display">\[
+E^{\ast}_{\nu} = A_{\nu} \; S^{\ast}_{\nu}
+\]</span></p>
+<p>The spectral randiancy times the frequency dependent absorptivity is equal to the spectral emissivity. This is known as <strong>Kirchhoff’s law of thermal radiation</strong>.</p>
+<p>From the Kirchhoff’s law we can see that a perfectly absorbing body <span class="math inline">\(A_{\nu}=1\)</span> is also a perfect emitter. This is the case for a <em>blackbody</em>, which absorbs all radiation incident on it and emits the maximum amount of radiation possible at a given temperature.</p>
+<p>Note that in the case of a blackbody, the absorptivity does not depend anymore on the frequency <span class="math inline">\(\nu\)</span>, while it will for a real body. In the case of a blackbody, the spectral radiancy <span class="math inline">\(S^{\ast}_{\nu}\)</span> is then only a function of the temperature <span class="math inline">\(T\)</span> and needs to be calculated from teh cavity structure, i.e.&nbsp;the modes of the cavity, which we will calculate next.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The Leslie Cube Experiment
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The Leslie Cube, developed by John Leslie in 1804, was one of the first experimental demonstrations of how surface properties affect thermal radiation. The apparatus consists of a cubic vessel with different surface treatments on each face (e.g., polished metal, blackened surface, rough surface), filled with hot water.</p>
+<div id="fig-leslie-cube" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-leslie-cube-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/Leslie_Cube.png" class="img-fluid figure-img" style="width:40.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-leslie-cube-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2— Leslie Cube. The cube is filled with hot water, and each face has a different surface treatment. The radiation emitted from each face is measured using a thermopile detector. The experiment demonstrated that different surfaces emit radiation differently at the same temperature, and that good absorbers are also good emitters.
+</figcaption>
+</figure>
+</div>
+<p>By measuring the radiation emitted from each face using a thermopile detector, Leslie showed that:</p>
+<ol type="1">
+<li>Different surfaces emit radiation differently at the same temperature</li>
+<li>Good absorbers are also good emitters (leading to Kirchhoff’s law)</li>
+<li>The emissivity depends on the surface properties but not on the material inside</li>
+</ol>
+<p>This simple but elegant experiment helped establish fundamental principles of thermal radiation and provided early experimental evidence for what would later be formalized as Kirchhoff’s law of thermal radiation:</p>
+<p><span class="math display">\[\frac{E^{\ast}_{\nu}}{A_{\nu}} = S^{\ast}_{\nu}\]</span></p>
+</div>
+</div>
+</section>
+<section id="spectral-density-of-modes" class="level2">
+<h2 class="anchored" data-anchor-id="spectral-density-of-modes">Spectral density of modes</h2>
+<p>To determine the spectral energy density in the cavity <span class="math inline">\(S^{\ast}_{\nu}\)</span>, we need to calculate two quantities: the number of modes in the cavity and the average energy per mode. While calculating the number of modes is relatively straightforward, determining the average energy per mode is more complex and ultimately leads to Planck’s law of radiation.</p>
+<p>The number of modes in the cavity corresponds to the number of possible standing waves that can exist in the cavity. Let’s first consider a simple one-dimensional case where the wave propagates along the z-direction, i.e.&nbsp;<span class="math inline">\(k=k_z\)</span>. When an electric field <span class="math inline">\(\vec{E} \left( z, t \right) = E_0 \cos \left( \omega t - k_z z \right) \; \vec{e_x}\)</span> is incident on a conducting surface at <span class="math inline">\(z = 0\)</span>, the tangential components of the electric field must vanish. This leads to:</p>
+<p><span class="math display">\[
+\vec{E} \left( z = 0, t \right) = E_{0,\mathrm{I}} \; \vec{e_x} + E_{0,\mathrm{R}} \; \vec{e_x} = 0
+\]</span></p>
+<p>and</p>
+<p><span class="math display">\[
+E_{0,\mathrm{I}} \; \vec{e_x} = -E_{0,\mathrm{R}} \; \vec{e_x}
+\]</span></p>
+<p>The superposition of incident and reflected waves results in a standing wave:</p>
+<p><span class="math display">\[
+\vec{E} \left( z, t \right) = 2 E_0 \sin \left( k_z z \right) \sin \left( \omega t \right) \; \vec{e_x} \mathrm{,}
+\]</span></p>
+<p>where the wavevector <span class="math inline">\(k_z\)</span> is given by <span class="math inline">\(k_z = \omega / c_0\)</span> with <span class="math inline">\(c_0\)</span> being the speed of light in vacuum. For a second conducting surface at <span class="math inline">\(z = a\)</span>, the boundary condition requires:</p>
+<p><span class="math display">\[
+\vec{E} \left( z = a, t \right) = 2 E_0 \sin \left( k a \right) \sin \left( \omega t \right) \; \vec{e_x} = 0
+\]</span></p>
+<p>leading to:</p>
+<p><span class="math display">\[
+k_z  = o \frac{\pi}{a}
+\]</span></p>
+<p>These represent the modes in a one-dimensional cavity.</p>
+<div id="8051082a" class="cell" data-execution_count="2">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create x values (position along cavity)</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>L <span class="op">=</span> <span class="fl">1.0</span>  <span class="co"># cavity length</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, L, <span class="dv">1000</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Create figure</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>get_size(<span class="dv">10</span>, <span class="dv">8</span>))  <span class="co"># Adjusted figure size to accommodate legend</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot first 10 modes</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> n <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">11</span>):</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Calculate wave function for mode n</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    psi <span class="op">=</span> np.sin(n <span class="op">*</span> np.pi <span class="op">*</span> x <span class="op">/</span> L)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Plot with offset for clarity</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    plt.plot(x, psi <span class="op">+</span> n<span class="op">*</span><span class="dv">2</span>, label<span class="op">=</span><span class="ss">f'n=</span><span class="sc">{</span>n<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>plt.axvline(<span class="dv">0</span>,ls<span class="op">=</span><span class="st">'--'</span>,color<span class="op">=</span><span class="st">'black'</span>,label<span class="op">=</span><span class="st">'Cavity wall'</span>)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>plt.axvline(<span class="dv">1</span>,ls<span class="op">=</span><span class="st">'--'</span>,color<span class="op">=</span><span class="st">'black'</span>,label<span class="op">=</span><span class="st">'Cavity wall'</span>)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'position (x/a)'</span>)</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'amplitude (with offset)'</span>)</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Place legend outside</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>plt.legend(bbox_to_anchor<span class="op">=</span>(<span class="fl">1.05</span>, <span class="dv">1</span>), loc<span class="op">=</span><span class="st">'upper left'</span>)</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Adjust layout to prevent legend cutoff</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Black_Body_Radiation_files/figure-html/cell-3-output-1.png" width="568" height="457" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>For a three-dimensional cavity, we can analyze each direction independently, obtaining the following conditions for the wavevector components:</p>
+<p><span class="math display">\[
+\begin{aligned}
+k_x &amp; =  n \frac{\pi}{a}\\
+k_y &amp; =  m \frac{\pi}{b}\\
+k_z &amp; =  o \frac{\pi}{c}
+\end{aligned}
+\]</span></p>
+<p>where <span class="math inline">\(m,n,o\)</span> are natural numbers. The magnitude of the wavevector is <span class="math inline">\(\left| \vec{k} \right| = \sqrt{k_x^2 + k_y^2 + k_z^2}\)</span>, which determines the possible frequencies <span class="math inline">\(\omega\)</span> in the cavity</p>
+<p><span class="math display">\[
+\omega = c \cdot \pi \; \sqrt{\left(\frac{o}{a}\right)^2 + \left(\frac{m}{b}\right)^2 + \left(\frac{n}{c}\right)^2}
+\]</span></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Resonator modes
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The standing waves which follow from these frequencies in our resonator are given by:</p>
+<p><span class="math display">\[
+\vec{E}_{m,n,o} = \vec{E}_{0} \left( m,n,o \right) \cdot \cos \left( \omega t\right)
+\]</span></p>
+<p>with <span class="math inline">\(\vec{E}_{0} \left( m,n,o \right) = \left( E_{0,x},E_{0,y},E_{0,z} \right)^{\mathrm{T}}\)</span> and</p>
+<p><span class="math display">\[
+\begin{aligned}
+E_{0,x} &amp; = &amp; A \cdot \cos \left( n \frac{\pi}{a} x \right) \sin \left( m \frac{\pi}{b} y \right) \sin \left( o \frac{\pi}{c} z \right)\\
+E_{0,y} &amp; = &amp; B \cdot \sin \left( n \frac{\pi}{a} x \right) \cos \left( m \frac{\pi}{b} y \right) \sin \left( o \frac{\pi}{c} z \right)\\
+E_{0,z} &amp; = &amp; C \cdot \sin \left( n \frac{\pi}{a} x \right) \sin \left( m \frac{\pi}{b} y \right) \cos \left( o \frac{\pi}{c} z \right)\\
+\end{aligned}
+\]</span></p>
+<p>This system, comprising a box with ideally conducting walls, is known as a <em>cavity resonator</em>, and the possible standing waves are called the resonator’s <em>principle oscillations</em> or <strong>resonator modes</strong>.</p>
+</div>
+</div>
+</div>
+<p>As mentioned before, we are interested in the number of modes that fit into the cavity. For that purpose we need to count the number of modes within a certain frequency range. In order to simplify the calculation a bit, we restrict out box to a cube with edge length <span class="math inline">\(a\)</span> such that</p>
+<p><span class="math display">\[
+\begin{aligned}
+\omega &amp; =  c \cdot \frac{\pi}{a} \; \sqrt{ n^2 + m^2 + o^2}\\
+\rightarrow n^2 + m^2 + o^2 &amp; =  \left( \frac{a \omega}{\pi c}\right)^2\\
+\rightarrow n^2 + m^2 + o^2 &amp; =  \left( \frac{a}{\pi}\right)^2 \cdot k^2\\
+\end{aligned}
+\]</span></p>
+<p>We can visualize the possible modes in k-space (where <span class="math inline">\(k_x\)</span>, <span class="math inline">\(k_y\)</span>, and <span class="math inline">\(k_z\)</span> are our axes). The points <span class="math inline">\((m,n,o)\)</span> create an evenly-spaced grid with spacing <span class="math inline">\(\pi/a\)</span> between points. Since each combination of <span class="math inline">\((m,n,o)\)</span> represents one mode in the resonator, counting the grid points, or better the number of unit cell cubes with a length <span class="math inline">\(\pi/a\)</span> tells us the number of possible modes.</p>
+<div id="fig-cavity-resonator-k-space" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-cavity-resonator-k-space-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/Lecture20_cavity_resonator_k-space.png" class="img-fluid figure-img" style="width:35.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cavity-resonator-k-space-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3— Two-dimensional k-space with a circle representing a sphere in two-dimensional space.
+</figcaption>
+</figure>
+</div>
+<p>When considering large values where <span class="math inline">\(\sqrt{m^2 +n^2 +o^2} \gg 1\)</span>, the sphere radius in k-space <span class="math inline">\(\left| \vec{k} \right|\)</span> becomes much larger than <span class="math inline">\(\pi / a\)</span>, corresponding to wavelengths <span class="math inline">\(\lambda\)</span> much smaller than the cavity size <span class="math inline">\(a\)</span>. In this limit, we can approximate the number of allowed modes <span class="math inline">\(N_{\mathrm{L}}\)</span> (where <span class="math inline">\(m,n,o &gt; 0\)</span>) by calculating the volume occupied by unit cells within the first octant of a sphere with radius <span class="math inline">\(\left| \vec{k} \right|\)</span>. The volume of this octant is:</p>
+<p><span class="math display">\[
+\begin{aligned}
+V_{\mathrm{S}} &amp; = \frac{1}{8} \; \frac{4}{3} \pi \left| \vec{k} \right|^3 \mathrm{ or }\\
+V_{\mathrm{S}} &amp; = \frac{1}{6} \pi \left( \frac{\omega}{c_0} \right)^3 \mathrm{.}
+\end{aligned}
+\]</span></p>
+<p>The number modes corresponds then to the volume of the octant to the volume of a unit cell (<span class="math inline">\(V_{\mathrm{UC}} = \left( \pi / a \right)^3\)</span>) which is</p>
+<p><span class="math display">\[
+N_{\mathrm{L}} = \frac{V_{\mathrm{S}}}{V_{\mathrm{UC}}} = \frac{\pi}{6} \left( \frac{a \cdot \omega}{\pi \cdot c_0} \right)^3 \mathrm{.}
+\]</span></p>
+<p>Since each standing wave can have two independent polarization states, the total number of modes below frequency <span class="math inline">\(\omega_{\mathrm{S}}\)</span> is twice the previous result and we find the total number of modes up to a limiting frequency <span class="math inline">\(\omega_{\mathrm{S}}\)</span></p>
+<p><span class="math display">\[
+N \left( \omega \le \omega_{\mathrm{S}} \right) = 2 \cdot \frac{\pi}{6} \left( \frac{a \cdot \omega_{\mathrm{S}}}{\pi \cdot c_0} \right)^3 = \frac{8 \pi \nu_{\mathrm{S}}^3}{3 c_0^3} \mathrm{.}
+\]</span></p>
+<p>Here we made use of <span class="math inline">\(\omega_{\mathrm{S}} = 2 \pi \nu_{\mathrm{S}}\)</span>. The number of modes per volume of the cavity <span class="math inline">\(a^3\)</span> is thus given by</p>
+<p><span class="math display">\[
+\frac{N \left( \nu \le \nu_{\mathrm{S}} \right) }{a^3} = n = \frac{8 \pi \nu_{\mathrm{S}}^3}{3 c_0^3} \mathrm{.}
+\]</span></p>
+<p>When we now increase the limiting frequency <span class="math inline">\(\nu_{\mathrm{S}}\)</span>, the number of modes increases. This increase is best represented by the <strong>spectral density of modes</strong>, that is the number of allowed modes per unit volume of the resonator within the interval <span class="math inline">\(\left[ \nu ; \nu + \mathrm{d}\nu \right]\)</span>. A straightforward calculation of the first derivative of the density of modes with respect to the frequency gives us an expression for the spectral mode density</p>
+<p><span class="math display">\[
+\mathrm{d}n(\nu) = \frac{8 \pi \nu^2}{c_0^3} \mathrm{d}\nu
+\]</span></p>
+<p>So far we have calculated that only under particular conditions standing waves can be established within a cubic cavity. These eigen-oscillations are called “modes of the cavity”. Furthermore, if the wavelength is small compared to the cavity dimensions, we derived the spectral density of modes, that is the number of modes within one cubic meter of volume within the interval between <span class="math inline">\(\nu\)</span> and <span class="math inline">\(\nu + \mathrm{d}\nu\)</span> is given by the equation above. This is the spectral density of optical modes per volume.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Density of optical modes per unit volume
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This equation represents the density of optical modes per unit volume and frequency interval in free space. It has important consequences for lasing:</p>
+<ol type="1">
+<li>The density of modes increases quadratically with frequency (<span class="math inline">\(\nu^2\)</span>)</li>
+<li>This means there are more available modes at higher frequencies</li>
+<li>For lasers, this affects:
+<ul>
+<li>The threshold conditions for lasing</li>
+<li>The emission probability at different frequencies</li>
+<li>The competition between modes</li>
+</ul></li>
+</ol>
+<p>In practical terms, it helps explain why it’s generally easier to achieve lasing at shorter wavelengths (higher frequencies) where there are more available modes, although other factors like gain and losses also play crucial roles.</p>
+</div>
+</div>
+<p>This spectral mode density is now the basis for any further consideration. To obtain the spectral energy density we just need to multiply the mode density with the energy stored in each mode <span class="math inline">\(\bar{W}_{\nu} \left( T \right)\)</span> and obtain the spectral energy density</p>
+<p><span class="math display">\[
+\omega_{\nu} \; \mathrm{d} \nu = dn \left( \nu \right) \cdot \bar{W}_{\nu} \left( T \right) \cdot \mathrm{d}\nu = \frac{8 \pi \nu^2}{c_0^3} \cdot \bar{W}_{\nu} \left( T \right) \cdot \mathrm{d}\nu
+\]</span></p>
+<p>This is the energy density at a frequency <span class="math inline">\(\nu\)</span> in a tiny interval <span class="math inline">\(d\nu\)</span> and the temperature <span class="math inline">\(T\)</span>. This spectral energy density <span class="math inline">\(\omega_{\nu}\)</span> relates to the spectral radiancy <span class="math inline">\(S^*_{\nu}\)</span> through:</p>
+<p><span class="math display">\[
+S^*_{\nu} = \frac{c_0}{4\pi} \omega_{\nu}
+\]</span></p>
+</section>
+<section id="rayleighjeans-law" class="level2">
+<h2 class="anchored" data-anchor-id="rayleighjeans-law">Rayleigh–Jeans law</h2>
+<p>One way to obtain a mean energy per mode is to consider classical thermal equilbrium and equipartition. In this case, each quadratic degree of freedom contains <span class="math inline">\(0.5 k_B T\)</span> energy such that</p>
+<p><span class="math display">\[
+\bar{W_{\nu}} \left( T \right) = k_B \cdot T \mathrm{,}
+\]</span></p>
+<p>with <span class="math inline">\(k_B\)</span> and <span class="math inline">\(T\)</span> being the Boltzmann constant and absolute temperature, respectively. Therefore, within the limit of the classical approach the spectral energy density,</p>
+<p><span class="math display">\[
+\omega_{\nu} \; \mathrm{d} \nu = \frac{8 \pi \nu^2}{c_0^3} k_B T  \mathrm{d}\nu \mathrm{,}
+\]</span></p>
+<p>rises quadratically with respect to the frequency <span class="math inline">\(\nu\)</span>. This quadratic relation is known as <strong>Rayleigh-Jeans law</strong>. As a consequence a small hole in the cavity wall will then emit radiation into the solid angle of <span class="math inline">\(\mathrm{d} \Omega = 1 \mbox{ sr}\)</span> with the radiance of</p>
+<p><span class="math display">\[
+\begin{aligned}
+S^{\ast}_{\nu} \left( \nu \right) \mathrm{d} \nu &amp; = &amp; \frac{c_0}{4 \pi} \omega_{\nu} \left( \nu \right)  \mathrm{d} \nu\\
+{} &amp; = &amp; \frac{2 \nu^2}{c_0^2} k_B T \mathrm{d} \nu
+\end{aligned}
+\]</span></p>
+<p>If we now consider a temperature of about <span class="math inline">\(5000 \; \mathrm{K}\)</span> we achieve a wavelength bigger than <span class="math inline">\(2 \; \mu\mathrm{m}\)</span>, being well in the infrared region. For this spectral region the measured radiance and the theoretical prediction are in agreement. However, if we reduce the wavelength, disparities between experimental findings and the prediction appear. Moreover, if the Rayleigh-Jeans law was valid, there would be the so-called <strong>ultraviolet catastrophe</strong>! In the case of decreasing frequencies, the spectral energy density and the integrated radiance will rise until they become infinitely big for vanishing frequencies.</p>
+<div id="139af619" class="cell" data-execution_count="3">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Constants</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>h <span class="op">=</span> <span class="fl">6.62607015e-34</span>  <span class="co"># Planck constant (J⋅s)</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="fl">2.99792458e8</span>    <span class="co"># Speed of light (m/s)</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>k <span class="op">=</span> <span class="fl">1.380649e-23</span>    <span class="co"># Boltzmann constant (J/K)</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Wavelength range (in meters)</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>wavelength <span class="op">=</span> np.linspace(<span class="fl">0.1e-6</span>, <span class="fl">8e-6</span>, <span class="dv">1000</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Define Planck's law</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> planck(wavelength, T):</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (<span class="dv">2</span><span class="op">*</span>h<span class="op">*</span>c<span class="op">**</span><span class="dv">2</span>)<span class="op">/</span>(wavelength<span class="op">**</span><span class="dv">5</span>) <span class="op">*</span> <span class="dv">1</span><span class="op">/</span>(np.exp((h<span class="op">*</span>c)<span class="op">/</span>(wavelength<span class="op">*</span>k<span class="op">*</span>T)) <span class="op">-</span> <span class="dv">1</span>)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Define Rayleigh-Jeans law</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> rayleigh_jeans(wavelength, T):</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (<span class="dv">2</span><span class="op">*</span>c<span class="op">*</span>k<span class="op">*</span>T)<span class="op">/</span>(wavelength<span class="op">**</span><span class="dv">4</span>)</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Temperatures</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>temperatures <span class="op">=</span> [<span class="dv">1200</span>, <span class="dv">1600</span>, <span class="dv">2000</span>, <span class="dv">2400</span>, <span class="dv">2800</span>]</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> [<span class="st">'blue'</span>, <span class="st">'green'</span>, <span class="st">'red'</span>, <span class="st">'purple'</span>, <span class="st">'orange'</span>]</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>get_size(<span class="dv">12</span>, <span class="dv">8</span>))</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot both laws for each temperature</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> T, color <span class="kw">in</span> <span class="bu">zip</span>(temperatures, colors):</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>    plt.plot(wavelength<span class="op">*</span><span class="fl">1e6</span>, planck(wavelength, T)<span class="op">*</span><span class="fl">1e-12</span>,</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>             label<span class="op">=</span><span class="ss">f'Planck </span><span class="sc">{</span>T<span class="sc">}</span><span class="ss">K'</span>, color<span class="op">=</span>color)</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>    plt.plot(wavelength<span class="op">*</span><span class="fl">1e6</span>, rayleigh_jeans(wavelength, T)<span class="op">*</span><span class="fl">1e-12</span>,</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>             <span class="st">'--'</span>, label<span class="op">=</span><span class="ss">f'Rayleigh-Jeans </span><span class="sc">{</span>T<span class="sc">}</span><span class="ss">K'</span>, color<span class="op">=</span>color)</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Wavelength [μm]'</span>)</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="vs">r'S </span><span class="pp">[$× 10^{13} W⋅sr^{-1}⋅m^{-3}$]</span><span class="vs">'</span>)</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="dv">0</span>,<span class="dv">1</span>)</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Black_Body_Radiation_files/figure-html/cell-4-output-1.png" width="639" height="447" class="figure-img"></p>
+<figcaption>Comparison between blackbody radiation (solid lines) and radiation as described through the Rayleigh-Jeans law (dashed lines) at different temperatures.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>While the Rayleigh Jeans Law is corrected with Planck’s law, it demonstrates the failure of classical physics to describe the blackbody radiation. The Rayleigh-Jeans law predicts that the spectral energy density increases with frequency, leading to the ultraviolet catastrophe. This discrepancy between theory and experiment was one of the key motivations for the development of quantum mechanics.</p>
+</section>
+<section id="plancks-law" class="level2">
+<h2 class="anchored" data-anchor-id="plancks-law">Planck’s law</h2>
+<p>In 1900 Max Planck tackled the problem of how to avoid the ultraviolet catastrophe and describe the blackbody radiation as a whole. He assumed that the energy of the absorbing and emitting oscillators in the wall can release or absorb small packets of energy given by <span class="math inline">\(h \cdot \nu\)</span>, where <span class="math inline">\(h\)</span> was used as a <strong>helper constant</strong>. Taking the limit <span class="math inline">\(h\rightarrow 0\)</span> should then lead to the classical result, yet Planck found that the classical limit was not reached. Rather, the quantization of energy with <span class="math inline">\(h=6.626 \ldots \cdot 10^{-34} \; \mathrm{Js}\)</span> led to a new law of radiation, which was in perfect agreement with the experimental findings. The energy at a particular frequency <span class="math inline">\(\nu\)</span> is then quantized in terms of the number of energy packets <span class="math inline">\(n\)</span> as</p>
+<p><span class="math display">\[
+W_{\nu} = n \cdot h \cdot \nu
+\]</span></p>
+<p>where <span class="math inline">\(n\)</span> is a natural number. If we now consider thermal equilibrium, the probability <span class="math inline">\(p \left( W_{\nu} \right)\)</span> of finding an oscillator with energy <span class="math inline">\(W_{\nu} = n h \nu\)</span> (meaning the eigenstate is occupied by <span class="math inline">\(n\)</span> photons) is given by the Boltzmann distribution:</p>
+<p><span class="math display">\[
+p \left( W_{\nu} \right) = \frac{
+\mathrm{e}^{- \frac{n \cdot h \cdot \nu}{k_B\cdot T}}
+}{
+\sum_{n=0}^{\infty} \mathrm{e}^{- \frac{n \cdot h \cdot \nu}{k_B \cdot T}}
+}
+\]</span></p>
+<p>Note that a Boltzmann distribution provides the maximum entropy for a given energy, i.e.&nbsp;it spreads the energy as evenly as possible over the available states (modes) of the systems. The average energy per oscillator can then be calculated as the expectation value of energy, weighting each possible energy level by its probability of occupation. The averaged energy per oscillator then reads as</p>
+<p><span class="math display">\[
+\bar{W}_{\nu} = \sum_{n=0}^{\infty} p\left( nh\nu \right) n \, h\, \nu
+\]</span></p>
+<p>and further</p>
+<p><span class="math display">\[
+\bar{W}_{\nu} = \frac{h \cdot \nu}{\mathrm{e}^{\frac{h \cdot \nu}{k_B \cdot T}} -1} \mathrm{.}
+\]</span></p>
+<p>The spectral energy density in the cavity is thus given by</p>
+<p><span class="math display">\[
+\omega \left( \nu,T \right) = dn\left(\nu \right) \cdot \bar{W_{\nu}} \left( \nu,T \right)
+\]</span></p>
+<p>which leads us to the famous Planck’s formula</p>
+<p><span class="math display">\[
+\omega \left( \nu,T \right) \mathrm{d} \nu = \frac{8 \pi h \nu^3}{c_0^3} \, \frac{\mathrm{d} \nu}{\mathrm{e}^{\frac{h \nu}{k_B T}} -1} \mathrm{.}
+\]</span></p>
+<p>Here <span class="math inline">\(\omega \left( \nu,T \right) \mathrm{d}\nu\)</span> represents the spectral distribution of the energy density per frequency interval; its unit is <span class="math inline">\(\left[ \omega \left( \nu,T \right) \right] = \mbox{Jsm}^3\)</span>. The radiance of the area element <span class="math inline">\(\mathrm{d}A\)</span> emitted into the solid angle <span class="math inline">\(\mathrm{d} \Omega\)</span> then is</p>
+<p><span class="math display">\[
+\begin{aligned}
+S^{\ast}_{\nu} \mathrm{d} \nu \mathrm{d} \Omega &amp; = &amp; \frac{c_0}{4\pi} \omega_{\nu} \left(\nu,T\right) \, \mathrm{d} \nu \, \mathrm{d} \Omega\\
+{} &amp; = &amp; \frac{2 h \nu^3}{c_0^2} \, \frac{\mathrm{d} \nu \, \mathrm{d} \Omega}{\mathrm{e}^{\frac{h \nu}{k_B T}} -1} \mathrm{.}
+\end{aligned}
+\]</span></p>
+<p>Planck’s theory posited that oscillator energy exists in discrete units or packets denoted by <span class="math inline">\(n\)</span>, following the relation <span class="math inline">\(W_{\nu} = n \cdot h \cdot \nu\)</span>. This concept was later expanded by Einstein in his explanation of the photoelectric effect, demonstrating that light itself consists of discrete energy quanta proportional to frequency <span class="math inline">\(\nu\)</span>. Einstein’s interpretation, expressing the energy of the electromagnetic field as <span class="math inline">\(E = h \nu\)</span>, established the foundation for understanding light as discrete particles called <em>photons</em>.</p>
+<p>While we’ve previously written Planck’s law in terms of frequency <span class="math inline">\(\nu\)</span>, we can alternatively express it using wavelength <span class="math inline">\(\lambda\)</span> through the relationship <span class="math inline">\(\lambda = c/\nu\)</span>. Making this conversion requires noting that <span class="math inline">\(\mathrm{d}\lambda = -\left( c / \nu^2 \right) \mathrm{d} \nu\)</span>. This allows us to express the spectral energy density</p>
+<p><span class="math display">\[
+\omega \left( \lambda,T \right) \mathrm{d} \lambda = \frac{8 \pi h c_0}{\lambda^5} \, \frac{\mathrm{d} \lambda}{\mathrm{e}^{\frac{h c_0}{\lambda k_B T}} -1}
+\]</span></p>
+<p>and the radiance</p>
+<p><span class="math display">\[
+S^{\ast}_{\lambda} \mathrm{d} \lambda \mathrm{d} \Omega = \frac{2 h c^2}{\lambda^5} \, \frac{\mathrm{d} \lambda \, \mathrm{d} \Omega}{\mathrm{e}^{\frac{h c}{\lambda k_B T}} -1}
+\]</span></p>
+<p>in terms of wavelength <span class="math inline">\(\lambda\)</span> and temperature <span class="math inline">\(T\)</span>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Measuring Planck’s Constant
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>Planck’s constant <span class="math inline">\(h\)</span> is a fundamental constant of nature, and its precise value is crucial for many areas of physics. The most accurate method for measuring <span class="math inline">\(h\)</span> is through the photoelectric effect, as demonstrated by Einstein. One could also determine <span class="math inline">\(h\)</span> by measuring the Compton edge in X-ray scattering experiments or estimating by measuring the uncertainty in the particle momentum and position from a diffraction experiment.</p>
+<p>Another possibility arises from counting single photons from a laser beam. The particle nature of light now delivers the definition of light power by the relation</p>
+<p><span class="math display">\[
+P = N \cdot E_{\textrm{photon}} = N \cdot h \cdot \nu = N \cdot h \cdot \frac{c}{\lambda}
+\]</span></p>
+<p>where <span class="math inline">\(N\)</span> is the number of photons per second. If we know the wavelength of the laser light, we can determine Planck’s constant by measuring the power of the laser beam and the number of photons per second. We can easily arive at the relation</p>
+<p><span class="math display">\[
+h= \frac{P \lambda}{N c}
+\]</span></p>
+<p>In reality, measuring the photon arrival rate is a challenging task. For coherent laser light, the photon arrivals follow Poisson statistics, meaning the time intervals between consecutive photons are exponentially distributed. While this makes the measurements theoretically straightforward, the uncertainty in counting photons (which follows the square root of the mean count rate according to Poisson statistics) is usually the limiting factor in the precision of the measurement. Yet, we can dim the laser light to a point where only one photon is present at a time. Note that while diming the laser light with an appropriate filter, the photon rate decreases, but the photon statistics remain Poissonian. Only the average rate of photon arrivals decreases such that most of the time no photon arrives.</p>
+<div id="bb16ae62" class="cell" data-execution_count="4">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>rate <span class="op">=</span> <span class="dv">5</span>  <span class="co"># photons per second</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>n_photons <span class="op">=</span> <span class="dv">20</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate inter-arrival times (exponentially distributed)</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>inter_arrival_times <span class="op">=</span> np.random.exponential(<span class="dv">1</span><span class="op">/</span>rate, n_photons)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate arrival times (cumulative sum of inter-arrival times)</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>arrival_times <span class="op">=</span> np.cumsum(inter_arrival_times)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the plot</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>get_size(<span class="dv">10</span>, <span class="fl">1.5</span>))</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> t <span class="kw">in</span> arrival_times:</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    plt.axvline(x<span class="op">=</span>t, color<span class="op">=</span><span class="st">'b'</span>, linestyle<span class="op">=</span><span class="st">'-'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'time [s]'</span>)</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="op">-</span><span class="fl">0.1</span>, <span class="fl">1.1</span>)</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove y axis and ticks</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>plt.gca().get_yaxis().set_visible(<span class="va">False</span>)</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove top and right spines</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>plt.gca().spines[<span class="st">'top'</span>].set_visible(<span class="va">False</span>)</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>plt.gca().spines[<span class="st">'right'</span>].set_visible(<span class="va">False</span>)</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>plt.gca().spines[<span class="st">'left'</span>].set_visible(<span class="va">False</span>)</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove top ticks</span></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>plt.tick_params(top<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Black_Body_Radiation_files/figure-html/cell-5-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="492" height="144"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>By measuring the time between two photon arrivals, we can determine the photon rate and thus Planck’s constant. Single photons are typically detected with the help of an Avalanche Photodiode (APD). The APD is a semiconductor device that can detect single photons by amplifying the signal from a single electron-hole pair created by the photon.</p>
+<div id="fig-apd" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-apd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/APD_scheme.png" class="img-fluid figure-img"></p>
+<figcaption>Schematic of an APD detector</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/APD_foto.png" class="img-fluid figure-img"></p>
+<figcaption>Picture of a typical APD detector</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-apd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4— An APD is a special type of photodiode that can detect single photons by amplifying the signal from a single electron-hole pair created by the photon.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="4845139f" class="cell" data-execution_count="5">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Constants</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>h <span class="op">=</span> <span class="fl">6.626e-34</span>  <span class="co"># Planck's constant (J⋅s)</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="fl">2.998e8</span>    <span class="co"># Speed of light (m/s)</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>k <span class="op">=</span> <span class="fl">1.381e-23</span>  <span class="co"># Boltzmann constant (J/K)</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Wavelength range (0.1 to 8.0 micrometers, converted to meters)</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>wavelengths <span class="op">=</span> np.linspace(<span class="fl">0.1e-6</span>, <span class="fl">5.0e-6</span>, <span class="dv">1000</span>)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Temperature ranges</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>temperatures_1 <span class="op">=</span> np.arange(<span class="dv">800</span>, <span class="dv">2801</span>, <span class="dv">200</span>)</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>temperatures_2 <span class="op">=</span> np.arange(<span class="dv">3000</span>, <span class="dv">7001</span>, <span class="dv">500</span>)</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Planck function</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> planck(wav, T):</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    a <span class="op">=</span> <span class="fl">2.0</span> <span class="op">*</span> h <span class="op">*</span> c<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    b <span class="op">=</span> h <span class="op">*</span> c <span class="op">/</span> (wav <span class="op">*</span> k <span class="op">*</span> T)</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">/</span> ((wav<span class="op">**</span><span class="dv">5</span>) <span class="op">*</span> (np.exp(b) <span class="op">-</span> <span class="fl">1.0</span>))</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the plots</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>fig, (ax1, ax2) <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>get_size(<span class="dv">12</span>, <span class="dv">8</span>))</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a><span class="co"># First subplot (800-2800 K)</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> T <span class="kw">in</span> temperatures_1:</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>    spectral_radiance <span class="op">=</span> planck(wavelengths, T)</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>    ax1.plot(wavelengths<span class="op">*</span><span class="fl">1e6</span>, spectral_radiance<span class="op">*</span><span class="fl">1e-12</span>, label<span class="op">=</span><span class="ss">f'</span><span class="sc">{</span>T<span class="sc">}</span><span class="ss"> K'</span>)</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>ax1.set_xlabel(<span class="st">'wavelength [μm]'</span>)</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>ax1.set_ylabel(<span class="vs">r'S </span><span class="pp">[W⋅sr$^{-1}$⋅m$^{-3}$]</span><span class="vs"> ×10</span><span class="dv">$^</span><span class="op">{12}</span><span class="dv">$</span><span class="vs">'</span>)</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>ax1.legend()</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>ax1.set_ylim(<span class="dv">0</span>, <span class="fl">0.8</span>)</span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a><span class="co"># Second subplot (3000-7000 K)</span></span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> T <span class="kw">in</span> temperatures_2:</span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>    spectral_radiance <span class="op">=</span> planck(wavelengths, T)</span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>    ax2.plot(wavelengths<span class="op">*</span><span class="fl">1e6</span>, spectral_radiance<span class="op">*</span><span class="fl">1e-12</span>, label<span class="op">=</span><span class="ss">f'</span><span class="sc">{</span>T<span class="sc">}</span><span class="ss"> K'</span>)</span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>ax2.set_xlabel(<span class="st">'wavelength [μm]'</span>)</span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>ax2.set_ylabel(<span class="vs">r'S </span><span class="pp">[W⋅sr$^{-1}$⋅m$^{-3}$]</span><span class="vs"> ×10</span><span class="dv">$^</span><span class="op">{12}</span><span class="dv">$</span><span class="vs">'</span>)</span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a>ax2.legend()</span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a>ax2.set_ylim(<span class="dv">0</span>, <span class="dv">80</span>)  <span class="co"># Adjusted y-axis limit for higher temperatures</span></span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Black_Body_Radiation_files/figure-html/cell-6-output-1.png" width="689" height="456" class="figure-img"></p>
+<figcaption>Planck’s law of blackbody radiation at different temperatures.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The sun is a blackbody radiator with a temperature of about <span class="math inline">\(5778 \; \mathrm{K}\)</span>. The spectral radiance of the sun is given by Planck’s law.</p>
+<div id="fig-sun-radiation" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sun-radiation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/sun.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sun-radiation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5— The sun spectrum at the earth as compared to Planck’s law. Due to the presence of absorption lines of water and other components in the atmosphere, the spectrum is not a perfect blackbody spectrum.
+</figcaption>
+</figure>
+</div>
+<p>Since the spectrum is completly defined by the temperature of the blackbody, it is possible to estimate the temperature of the sun or other stars by comparing the spectrum of the sun with Planck’s law.</p>
+<section id="properties-of-plancks-radiation-formula" class="level3">
+<h3 class="anchored" data-anchor-id="properties-of-plancks-radiation-formula">Properties of Planck’s Radiation Formula</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Planck’s Radiation Law
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The fundamental equation describing the spectral radiance of a black body: <span class="math display">\[S(\lambda,T) = \frac{2hc^2}{\lambda^5} \frac{1}{e^{\frac{hc}{\lambda  k_B T}} - 1}\]</span></p>
+<p>where:</p>
+<ul>
+<li><span class="math inline">\(S(\lambda,T)\)</span> is the spectral radiance <span class="math inline">\([\mathrm{W}\cdot\mathrm{sr}^{-1}\cdot\mathrm{m}^{-3}]\)</span></li>
+<li><span class="math inline">\(h\)</span> is Planck’s constant <span class="math inline">\([\mathrm{J}\cdot\mathrm{s}]\)</span></li>
+<li><span class="math inline">\(c\)</span> is the speed of light <span class="math inline">\([\mathrm{m}/\mathrm{s}]\)</span></li>
+<li><span class="math inline">\(k_B\)</span> is the Boltzmann constant <span class="math inline">\([\mathrm{J}/\mathrm{K}]\)</span></li>
+<li><span class="math inline">\(T\)</span> is absolute temperature <span class="math inline">\([\mathrm{K}]\)</span></li>
+<li><span class="math inline">\(\lambda\)</span> is wavelength <span class="math inline">\([\mathrm{m}]\)</span></li>
+</ul>
+<p>Note that Plancks radiation law is only valid for propagating electromagnet modes. Evanscence modes are not included in this formula and do not follow Plancks radiation law.</p>
+<div id="fig-superplanck-radiation" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-superplanck-radiation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/super_planck.png" class="img-fluid figure-img" style="width:60.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-superplanck-radiation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6— A schematic of the home-made measurement setup. From top to bottom, the emitter side consists of S-magnet, heater, copper spreader, and Si/Gr and the receiver side consisting of Gr/Si, copper spreader, TEC layer, copper spreader, and H-magnet. Four photoresist posts are used to separate the emitter and the receiver. from <a href="https://www.nature.com/articles/s41467-018-06163-8">Observing of the super-Planckian near-field thermal radiation between graphene sheets</a>
+</figcaption>
+</figure>
+</div>
+<p>This opens a number of possibilities which are used for solar energy collection beyond the Shockley limit, for example in thermophotovaltaic cells, which convert the spectrals absorbance into heat radiation, that is shaped spectrally by metametarials to match the bandgap of the solar cell.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Stefan-Boltzmann Law
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The total power radiated per unit area across all wavelengths: <span class="math display">\[E = \sigma T^4\]</span></p>
+<p>This can be derived by integrating Planck’s law over all wavelengths: <span class="math display">\[E = \int_0^\infty S(\lambda,T) d\lambda = \sigma T^4\]</span></p>
+<p>where <span class="math inline">\(\sigma = \frac{2\pi^5k^4}{15c^2h^3} \approx 5.67 \times 10^{-8}\, W m^{-2} K^{-4}\)</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solar Power at Earth’s Distance: A Stefan-Boltzmann Law Calculation
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>We can calculate the solar power arriving at Earth using the Stefan-Boltzmann law and basic geometric principles. The Stefan-Boltzmann law states that the total power emitted per unit area by a black body is given by:</p>
+<p><span class="math display">\[E = \sigma T^4\]</span></p>
+<p>where <span class="math inline">\(\sigma = 5.67 \times 10^{-8} \; \mathrm{W} \cdot \mathrm{m}^{-2} \cdot \mathrm{K}^{-4}\)</span> is the Stefan-Boltzmann constant and <span class="math inline">\(T\)</span> is the temperature in Kelvin.</p>
+<p>For our calculation, we need:</p>
+<ul>
+<li>Temperature of Sun’s surface: <span class="math inline">\(T_{sun} \approx 5778\)</span> K</li>
+<li>Radius of Sun: <span class="math inline">\(R_{sun} \approx 6.957 \times 10^8\)</span> m</li>
+<li>Distance Earth-Sun: <span class="math inline">\(d \approx 1.496 \times 10^{11}\)</span> m (1 AU)</li>
+</ul>
+<p>First, we calculate the power emitted per square meter at the Sun’s surface:</p>
+<p><span class="math display">\[E_{sun} = 5.67 \times 10^{-8} \cdot (5778)^4 = 6.32 \times 10^7 \text{ W/m²}\]</span></p>
+<p>The total power output of the Sun is this value multiplied by its surface area:</p>
+<p><span class="math display">\[P_{total} = E_{sun} \cdot 4\pi R_{sun}^2 = 6.32 \times 10^7 \cdot 4\pi (6.957 \times 10^8)^2 = 3.828 \times 10^{26} \text{ W}\]</span></p>
+<p>To find the power per square meter reaching Earth, we use the inverse square law. The total power is distributed over a sphere with radius equal to the Earth-Sun distance:</p>
+<p><span class="math display">\[E_{earth} = \frac{P_{total}}{4\pi d^2} = \frac{3.828 \times 10^{26}}{4\pi (1.496 \times 10^{11})^2} = 1361 \text{ W/m²}\]</span></p>
+<p>This value of 1361 W/m² is known as the solar constant or total solar irradiance (TSI) at the top of Earth’s atmosphere. It represents the power from the Sun reaching Earth before any atmospheric absorption. This calculated value matches well with measured values from satellites.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Real-World Examples of Blackbody Radiation
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<section id="astronomical-objects" class="level3">
+<h3 class="anchored" data-anchor-id="astronomical-objects">Astronomical Objects</h3>
+<p>Beyond our sun, blackbody radiation plays a crucial role in astronomy. Stars of different classifications exhibit distinct blackbody spectra based on their surface temperatures. Red dwarf stars, with temperatures around 3000K, appear reddish in color due to Wien’s law governing their peak wavelength emission. In contrast, blue giant stars burn much hotter at approximately 20,000K, resulting in their characteristic bluish appearance.</p>
+<p>Perhaps the most remarkable astronomical example of blackbody radiation comes from the Cosmic Microwave Background (CMB). The universe itself behaves as an almost perfect blackbody radiator with a temperature of 2.725K. This omnipresent radiation serves as a remnant from the early universe, and its discovery provided compelling evidence supporting the Big Bang theory.</p>
+<div id="fig-cmb" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-cmb-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/CMB_spectrum.jpg" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>Spectrum of CMB radiation</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/WMAP_2012.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>Map of CMB radiation</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cmb-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7— The measured spectrum of the cosmic microwave background radiation fits perfectly to a blackbody spectrum at T = 2.725K. This is considered one of the most precise measurements in physics.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="industrial-applications" class="level3">
+<h3 class="anchored" data-anchor-id="industrial-applications">Industrial Applications</h3>
+<p>In industrial settings, blackbody radiation enables a wide range of temperature measurement applications. Pyrometers serve as non-contact temperature measurement devices, utilizing the principles of blackbody radiation to determine surface temperatures from a distance. Similar technology powers infrared thermometers, which find widespread use across medical applications, cooking processes, and industrial monitoring. Thermal imaging cameras extend these capabilities further, providing detailed temperature mapping for applications ranging from building inspection to night vision systems and medical diagnostics.</p>
+<p>Manufacturing processes rely heavily on blackbody radiation principles for temperature control and monitoring. In steel production, experienced metalworkers can gauge temperature by observing the color of heated metal, as these colors follow predictable patterns based on blackbody radiation laws. Glass blowing artisans similarly depend on their understanding of these color-temperature relationships to perfect their craft. In semiconductor processing, precise temperature control guided by blackbody radiation principles ensures proper crystal growth and development.</p>
+<div id="fig-steel-colors" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-steel-colors-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/steel_colors.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-steel-colors-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8— The color of heated steel changes with temperature following blackbody radiation principles. This allows experienced metalworkers to estimate temperature visually.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="everyday-examples" class="level3">
+<h3 class="anchored" data-anchor-id="everyday-examples">Everyday Examples</h3>
+<p>Common electric heating elements in household appliances demonstrate blackbody radiation principles in everyday life. Toasters contain metal elements that glow according to blackbody radiation laws when heated. Electric stove burners similarly show a characteristic red glow that indicates their temperature. Incandescent light bulbs, though less common today, produce light through blackbody radiation from their heated filaments.</p>
+<p>Natural phenomena provide abundant examples of blackbody radiation in the environment. Molten lava, at temperatures around 1200K, emits visible radiation following blackbody principles. While not perfect blackbodies, flames approximate blackbody radiation in their emission spectra. Even our planet Earth acts as a blackbody radiator, emitting infrared radiation at an effective temperature of approximately 288K.</p>
+<p>Modern technology frequently employs principles of blackbody radiation. LED display manufacturers calibrate their screens’ color output based on blackbody radiation curves. Digital cameras rely on color temperature settings derived from blackbody principles for proper white balance adjustment. In advanced manufacturing, 3D printing systems use blackbody radiation principles for precise temperature monitoring during metal printing processes.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Color Temperature in Photography
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The concept of color temperature, derived from blackbody radiation, is fundamental in photography and lighting. Different light sources correspond to different blackbody temperatures: natural daylight approximates 5500K, while incandescent bulbs emit light equivalent to about 2700K, and candle flames produce light characteristic of roughly 1800K. Photographers use these color temperature values to adjust their camera’s white balance for accurate color reproduction.</p>
+<div id="fig-color-temperature" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-color-temperature-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/cie_chromaticity.png" class="img-fluid figure-img" style="width:60.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-color-temperature-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9— The CIE chromaticity diagram, also containing chromaticity values for blackbody radiation. <a href="https://en.wikipedia.org/wiki/Chromaticity#/media/File:PlanckianLocus.png">Source</a>
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>These examples demonstrate how blackbody radiation principles appear in various aspects of science, technology, and daily life. Understanding these applications helps connect theoretical physics to practical experiences.</p>
+</section>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Wien’s Displacement Law
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The wavelength of maximum emission: <span class="math display">\[\lambda_{max} = \frac{b}{T}\]</span></p>
+<p>This is derived by finding the maximum of Planck’s law: <span class="math display">\[\frac{d}{d\lambda}S(\lambda,T) = 0\]</span></p>
+<p>where <span class="math inline">\(b = \frac{hc}{4.965k} \approx 2898\, \mu m K\)</span></p>
+<section id="rayleigh-jeans-approximation" class="level4">
+<h4 class="anchored" data-anchor-id="rayleigh-jeans-approximation">Rayleigh-Jeans Approximation</h4>
+<p>The classical limit of Planck’s law for long wavelengths: <span class="math display">\[S(\lambda,T) \approx \frac{2ckT}{\lambda^4}\]</span></p>
+<p>This approximation is valid when <span class="math inline">\(\frac{hc}{\lambda kT} \ll 1\)</span>, and historically led to the “ultraviolet catastrophe” that Planck’s law resolved.</p>
+</section>
+</div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/fcichos\.github\.io\/Exp3\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../quantum-mechanics/Particle_Nature_of_Light.html" class="pagination-link" aria-label="Particle Nature of Light">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Particle Nature of Light</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../quantum-mechanics/Wave_character_of_particles.html" class="pagination-link" aria-label="Wave Character of Particles">
+        <span class="nav-page-text">Wave Character of Particles</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

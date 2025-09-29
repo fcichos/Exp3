@@ -1,0 +1,182 @@
+Lehre Frank:
+
+WS
+    - Exp.3 V+V (Bachelor)
+    - EMPP V+S (Bachelor)
+    - Active Matter V+P: Key Lecture (Master)
+
+SS
+    - Photonic I V+V Key Lecture
+    - CBPM V+S
+
+
+Photonics I Topics
+
+1. Fundamentals
+   - Maxwell's Equations Review
+   - Wave Optics
+   - Light-Matter Interactions
+   - Optical Materials and Properties
+
+2. Fourier Optics
+   - Diffraction Theory
+   - Transfer Functions
+   - Spatial Filtering
+   - Holography Basics
+
+3. Nonlinear Optics
+   - Nonlinear Susceptibility
+   - Second Harmonic Generation (SHG)
+   - Third Harmonic Generation (THG)
+   - Four Wave Mixing (FWM)
+   - Optical Parametric Processes (OPO, OPA)
+   - Phase Matching Conditions
+
+4. Active Optical Elements
+   - Acousto-Optic Devices
+     • Modulators
+     • Deflectors
+     • Tunable Filters
+   - Electro-Optic Devices
+     • Modulators
+     • Deflectors
+     • Pockels and Kerr Effects
+
+5. Modern Optical Materials
+   - Plasmonics
+     • Surface Plasmon Resonance (SPR)
+     • Localized Surface Plasmon Resonance (LSPR)
+     • Plasmonic Nanoparticles
+   - Metamaterials
+     • Electromagnetic Properties
+     • Negative Refractive Index
+     • Applications
+
+6. Advanced Microscopy
+   - Conventional Techniques
+     • Wide Field
+     • Confocal
+     • Darkfield
+     • Phase Contrast
+   - Super Resolution Methods
+     • SIM
+     • LLSM
+     • STED
+     • STORM/PALM
+   - Single Molecule Detection & Spectroscopy
+     • Fluorescence Correlation Spectroscopy (FCS)
+     • Single Molecule FRET
+     • Fluorescence Lifetime Imaging (FLIM)
+     • Anti-bunching Measurements
+     • Blinking and Bleaching Analysis
+     • Single Particle Tracking
+   - Special Techniques
+     • Photothermal Microscopy
+
+
+
+Photonics I Topics (12 Lectures)
+
+1. Fundamentals (2 lectures)
+   - Light-Matter Interactions
+   - Wave Optics Review
+   - Optical Materials Properties
+
+2. Fourier Optics (2 lectures)
+   - Diffraction Theory
+   - Transfer Functions
+   - Spatial Filtering
+
+3. Nonlinear Optics (3 lectures)
+   - Nonlinear Susceptibility
+   - Second Harmonic Generation (SHG)
+   - Third Harmonic Generation (THG)
+   - Four Wave Mixing (FWM)
+   - Phase Matching Conditions
+
+4. Modern Optical Materials (2 lectures)
+   - Plasmonics
+     • Surface Plasmon Resonance (SPR)
+     • Plasmonic Nanoparticles
+   - Metamaterials Basics
+     • Electromagnetic Properties
+     • Negative Refractive Index
+
+5. Advanced Microscopy (3 lectures)
+   - Conventional & Confocal Microscopy
+   - Super Resolution Methods
+     • STED
+     • STORM/PALM
+   - Single Molecule Detection
+     • Fluorescence Correlation Spectroscopy (FCS)
+     • Single Particle Tracking
+
+
+
+
+Photonics I (First Semester)
+---------------------------
+1. Fundamentals (3 lectures)
+   - Maxwell's Equations Review
+   - Wave Optics
+   - Light-Matter Interactions
+   - Optical Materials Properties
+
+2. Fourier Optics (3 lectures)
+   - Diffraction Theory
+   - Transfer Functions
+   - Spatial Filtering
+   - Holography Basics
+
+3. Nonlinear Optics (4 lectures)
+   - Nonlinear Susceptibility
+   - Second Harmonic Generation (SHG)
+   - Third Harmonic Generation (THG)
+   - Four Wave Mixing (FWM)
+   - Phase Matching Conditions
+   - Optical Parametric Processes (OPO, OPA)
+
+4. Modern Optical Materials (3 lectures)
+   - Plasmonics
+     • Surface Plasmon Resonance (SPR)
+     • Localized Surface Plasmon Resonance (LSPR)
+     • Plasmonic Nanoparticles
+   - Metamaterials Introduction
+     • Basic Electromagnetic Properties
+     • Negative Refractive Index
+
+
+Photonics II (Second Semester)
+----------------------------
+1. Active Optical Elements (3 lectures)
+   - Acousto-Optic Devices
+     • Modulators
+     • Deflectors
+     • Tunable Filters
+   - Electro-Optic Devices
+     • Modulators
+     • Pockels and Kerr Effects
+
+2. Advanced Microscopy I (3 lectures)
+   - Conventional Techniques
+     • Wide Field
+     • Confocal
+     • Darkfield
+     • Phase Contrast
+   - Special Techniques
+     • Photothermal Microscopy
+     • Near-field Scanning Optical Microscopy (NSOM)
+
+3. Advanced Microscopy II (3 lectures)
+   - Super Resolution Methods
+     • Structured Illumination Microscopy (SIM)
+     • Lattice Light Sheet Microscopy (LLSM)
+     • STED
+     • STORM/PALM
+
+4. Single Molecule Techniques (3 lectures)
+   - Fluorescence Correlation Spectroscopy (FCS)
+   - Single Molecule FRET
+   - Fluorescence Lifetime Imaging (FLIM)
+   - Anti-bunching Measurements
+   - Single Particle Tracking

@@ -1,0 +1,832 @@
+---
+title: Fresnel Equations
+jupyter: python3
+format:
+  html:
+    code-fold: true
+crossref:
+  fig-title: Figure     # (default is "Figure")
+  tbl-title: Tbl     # (default is "Table")
+  title-delim: "—"   # (default is ":")
+  fig-prefix: "Figure"
+  eq-prefix: Eq.
+  chapters: true
+---
+
+In the last lecture, we have discussed the matching of the frequency and the wavevector at an interface between two materials. We now also need to have a look at the matching of the electric field amplitudes at the boundaries.
+
+```{python}
+# | echo: false
+## just for plotting later
+import numpy as np
+import matplotlib.pyplot as plt
+from time import sleep,time
+from ipycanvas import MultiCanvas, hold_canvas,Canvas
+import matplotlib as mpl
+import matplotlib.cm as cm
+
+
+plt.rcParams.update({'font.size': 10,
+                     'lines.linewidth': 1,
+                     'lines.markersize': 5,
+                     'axes.labelsize': 10,
+                     'axes.labelpad':0,
+                     'xtick.labelsize' : 9,
+                     'ytick.labelsize' : 9,
+                     'legend.fontsize' : 8,
+                     'contour.linewidth' : 1,
+                     'xtick.top' : True,
+                     'xtick.direction' : 'in',
+                     'ytick.right' : True,
+                     'ytick.direction' : 'in',
+                     'figure.figsize': (4, 3),
+                     'axes.titlesize':8,
+                     'figure.dpi': 150 })
+
+def get_size(w,h):
+    return((w/2.54,h/2.54))
+```
+
+In the last lecture, we have discussed the mathcing of the frequency and the wavevector at an interface between the two materials. We no also need to have a look at the matching of the electric field amplitudes at the boundaries.
+
+## Reflection
+
+**s-polarized light**
+
+We would first like to have a look at light that is polarized perpendicular to the incident plane - so-called s-polarized light.
+According to our previous definition, s-polarized light is directed along the y-axis of our coordinate system. The incident light amplitude
+is therefore written as
+
+$$
+\vec{E}_I=E_I\hat{e}_y
+$$
+
+This electric field vector is perpendicular to the plane of incidence. With this polarization the reflected and the refracted electric field also have to have this polarizations and thus
+
+$$
+\vec{E}_R=E_{R}\hat{e}_y
+$$
+
+and
+
+$$
+\vec{E}_T=E_{T}\hat{e}_y
+$$
+
+From this it also follows that at the boundary, the incident and the reflected field must be the same as the transmitted field in our matching condition. This is due to the fact that s-polarized light it always parallel to the interface.
+
+$$
+E_I+E_R=E_T
+\tag{matching}
+$$
+
+The magnetic field lies then in the plane of incidence as it is perpendicular to $\vec{k}_I$ and $\vec{E}_I$. It has components parallel $||$ and perpendicular $\perp$ to the interface. The tangential components as well as the perpendicular ones are conserved so we can write for the tangential ones
+
+$$
+B_I\cos(\theta_I)-B_R\cos(\theta_R)=B_T\cos(\theta_T)
+$$
+
+Given the fact that
+
+$$
+\vec{B}=\frac{1}{v}(\hat{v}\times \vec{E})
+$$
+
+and that all three vectors are orthogonal we can use the relation $B=E/v$ for the magnetic and electric field amplitudes and  $\theta_I=\theta_R$ to obtain
+
+$$
+\frac{E_I-E_R}{v_1}\cos(\theta_I)=\frac{E_T}{v_2}\cos(\theta_T)
+$$
+
+With the help of the condition *matching* above we can replace the transmitted electric field $E_T$ and using $v_1=c/n_1$ and $v_2=c/n_2$ we finally find
+
+$$
+\frac{E_R}{E_I}=\frac{n_1\cos(\theta_I)-n_2\cos(\theta_T)}{n_1\cos(\theta_I)+n_2\cos(\theta_T)}=r_s
+$$
+
+This is the **Fresnel coefficient for the reflection of s-polarized light** $r_s$. If we replace not the transmitted but the reflected electric field in the formula above, we may obtain the **Fresnel coefficient for the transmission of s-polarized light** $t_s$
+
+$$
+\frac{E_T}{E_I}=\frac{2n_1\cos(\theta_I)}{n_1\cos(\theta_I)+n_2\cos(\theta_T)}=t_s
+$$
+
+**p-polarized light**
+
+If the electric field is parallel to the plane of incidence, the we need to split it into parallel $||$ and perpendicular $\perp$ components. The incident field may be written as
+
+$$
+\vec{E}_I=E_I\sin(\theta_I)\hat{e}_x+E_I\cos(\theta_I)\hat{e}_z
+$$
+
+where $\hat{e}_z$ and $\hat{e}_x$ are the unit vectors in the z- and x-direction, respectively. The first term is the normal component to the boundary and the second the parallel component. We may pick our the parallel part, for which we know that the electric field is just continuous across the interface.
+
+$$
+E_I\cos(\theta_I)+E_R\cos(\theta_R)=E_T\cos(\theta_T)
+$$
+
+Now the magnetic field is perpendicular to the plane of incidence and we may write
+
+$$
+B_I-B_R=B_T
+$$
+
+for the matching condition of the magnetic field. From this follows that
+
+$$
+\frac{E_I-E_R}{v_1}=\frac{E_T}{v_2}
+$$
+
+We may now replace again the transmitted field, which results finally in the **Fresnel coefficient for the reflection of p-polarized light** $r_p$
+
+$$
+\frac{E_R}{E_I}=\frac{n_2\cos(\theta_I)-n_1\cos(\theta_T)}{n_1\cos(\theta_T)+n_2\cos(\theta_I)}=r_p
+$$
+
+Finally, we may also do the same for the **Fresnel coefficient of the transmission of p-polarized light** $t_p$
+
+$$
+\frac{E_T}{E_I}=\frac{2n_1\cos(\theta_I)}{n_1\cos(\theta_T)+n_2\cos(\theta_I)}=t_p
+$$
+
+::: {.callout-note}
+**Fresnel Equations**
+
+The Fresnel equations give the relations for the amplitude of the transmitted and reflected electric fields to the incident electric field amplitude as a function of the angle of incident and the light polarization.
+
+**s-polarization**
+
+$$
+\frac{E_R}{E_I}=\frac{n_1\cos(\theta_I)-n_2\cos(\theta_T)}{n_1\cos(\theta_I)+n_2\cos(\theta_T)}=r_s
+\tag{Fresnel Coefficient $r_s$}
+$$
+
+$$
+\frac{E_T}{E_I}=\frac{2n_1\cos(\theta_I)}{n_1\cos(\theta_I)+n_2\cos(\theta_T)}=t_s
+\tag{Fresnel Coefficient $t_s$}
+$$
+
+
+**p-polarization**
+
+$$
+\frac{E_R}{E_I}=\frac{n_2\cos(\theta_I)-n_1\cos(\theta_T)}{n_1\cos(\theta_T)+n_2\cos(\theta_I)}=r_p
+\tag{Fresnel Coefficient $r_p$}
+$$
+
+$$
+\frac{E_T}{E_I}=\frac{2n_1\cos(\theta_I)}{n_1\cos(\theta_T)+n_2\cos(\theta_I)}=t_p
+\tag{Fresnel Coefficient $t_p$}
+$$
+:::
+
+### Air to Glass
+
+Lets discuss the results we obtained with the help of specifc examples. We will consider the interface between air ($n_1=1$) and glass ($n_2=1.5$) and vary the angle of incidence. The transmission angle can the be obtained from Snell's law $n_1\sin(\theta_I)=n_2\sin(\theta_T)$. Besides the Frensel coefficients, we plot also the phase. This phase gives us an idea about possible phase changes upon reflection and refraction. We have previously assume for example, that under normal incidence we obtain a phase jump of $\pi$ upon reflection when coming from air to glass. This is something we may check now.
+
+To do so, we just represent the complex Fresnel coefficients as $r_s=|r_s|e^{i\phi}$
+
+```{python}
+#| label: fig-fresnel-air-glass
+#| fig-cap: "Fresnel coefficients (left) and phase (right) of the reflected light observed for the reflection at an air($n_1=1$)/glass($n_2=1.5$) interface."
+#| code-fold: true
+#| fig-align: center
+
+def fresnel_r(theta_i, n1, n2):
+    theta_i = np.deg2rad(theta_i)
+
+    theta_t = np.arcsin(n1*np.sin(theta_i)/n2)
+
+    r_s = (n1*np.cos(theta_i) - n2*np.cos(theta_t))/(n1*np.cos(theta_i) + n2*np.cos(theta_t))
+    r_p = (n2*np.cos(theta_i) - n1*np.cos(theta_t))/(n2*np.cos(theta_i) + n1*np.cos(theta_t))
+
+    return r_s, r_p
+
+n1 = 1.0    # Air
+n2 = 1.5    # Glass
+theta = np.linspace(0, 89, 1000)  # Angle of incidence in degrees
+
+r_s, r_p = fresnel_r(theta, n1, n2)
+
+
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=get_size(12, 6))
+
+# Plot signed coefficients
+ax1.plot(theta, r_s, 'b-', label='$r_s$')
+ax1.plot(theta, r_p, 'r-', label='$r_p$')
+ax1.set_xlabel(r'$\theta_{I}$')
+ax1.set_ylabel(r'$r_s,r_p$')
+ax1.set_ylim(-1, 1)
+ax1.legend()
+
+# Plot phase
+ax2.plot(theta, np.angle(r_s, deg=True), 'b-', label='$\\phi_s$')
+ax2.plot(theta, np.angle(r_p, deg=True), 'r-', label='$\\phi_p$')
+ax2.set_xlabel(r'$\theta_{I}$')
+ax2.set_ylabel(r'phase $\phi$')
+ax2.set_ylim(-10, 190)
+ax2.legend()
+
+plt.tight_layout()
+plt.show()
+```
+
+The above graph displays the reflection coefficients $r_s,r_p$ as a function of the angle of incidence. The value of $r_s$ is negative for the whole range indicating the there is a phase jump by an angle of $\pi$ as we assumed already in the thin film interference section. This phase jump is also confirmed in the second plot on the right.
+Note that that reflection coefficient for the parallel polarization $r_p$ is positive up to an angle of about $56^{\circ}$. This also means that there is no phase jump for this component up to this angle. Beyond this angle we find also a phase jump of $\phi$. Note that normal incidence $\theta_I=0$ is a special point, where all incident electric field are tangential to the interface. So also $r_p$ will be negative at that point and for this incident angle there is no plane of incidence definition.
+
+The special angle where the $r_p=0$ is called the **Brewster Angle**. It is special since at this angle of incidence unpolarized light will be turned into completely s-polarized light in reflection. This also means that you can get rid of a reflection from an air/glass interface, when observing this interface with a linear polarizer.
+
+
+![Reflections observed with linear polarizer.](img/Brewster.png){width=40%}
+
+Following the Fresnel formula for $r_p$, the reflection coefficient becomes zero when $n_2\cos(\theta_I)=n_1\cos(\theta_T)$. Using Snells law as well, we find that
+
+$$
+\theta_I+\theta_T=\frac{\pi}{2}
+$$
+
+and thus the following definition for the Brewster angle ($\theta_B$)
+
+$$
+\tan(\theta_B)=\frac{n_2}{n_1}
+$$
+
+The Brewster angle arises from the fact that the dipoles which are induced by the incident light in the material oscillate along the direction of the reflected light. We will see later that dipoles do not emit light along its oscillation direction and hence, there is no reflection for the in plane polarization.
+
+
+
+::: {.callout-note}
+**Brewster Angle**
+
+The Brewster angle is the angle under which the reflection of light with a polarization in the plane of incidence vanishes.
+
+$$
+\tan(\theta_B)=\frac{n_2}{n_1}
+$$
+
+:::
+
+**Brewsters Pyramid**
+
+::: {#fig-brewster-exp layout-ncol=2}
+![](img/brewster_exp1.png){width=40%}
+
+![](img/brewster_exp2.png){width=40%}
+
+Reflections from a pyramid observed with linear polarizer. The pyramid sides are arranged at an angle, which corresponds to the Brewster angle. If polarized light in a certain direction is falling on the pyramid faces, the reflection disappears.
+:::
+
+::: {.callout-note collapse=true}
+### Brewster Angle Microscopy
+
+Brewster angle microscopy (BAM) is a powerful surface-sensitive technique that takes advantage of the Brewster angle phenomenon. At the Brewster angle, p-polarized light is completely transmitted through an interface, resulting in zero reflection. However, if there are molecules or thin films present at the interface, they will disturb this condition and create a reflection that can be detected.
+
+::: {#fig-brewster-microscopy layout-ncol=2}
+![](img/brewster_angle.png){#fig-bam-setup width=90%}
+
+![](img/brewster_image.png){#fig-bam-example width=90%}
+
+MODEL SKIN LIPIDS a) without and b) with 40 % addition of oleic acid at 10 mN/m imaged with KSV NIMA BAM. The size of the images is ~720 μm (W) × 400 μm (H). With permission from Langmuir 2013, 29 (15), pp 4857–4865. Copyright 2013 American Chemical Society.
+:::
+
+:::
+
+
+**Reflection Removal**
+
+::: {#fig-brewster show-in="default"}
+
+![](img/brewster1.png){width=50%}
+
+Reflections from surfaces which are observed under an angle are often partially polarized such that the observation with the help of a polarizer (e.g. in photography), can greatly reduce the highlights from reflections and make objects behind windows visible.
+:::
+
+### Glass to Air
+
+If we invert the order of the materials and have light incindent to a glass/air interface we observe a new effect in the **total internal reflection of light**. First of all the p-polarization obtains now a phase shift by $pi$ up to the Brewster angle, which is now at $33^{\circ}$, when it gets back in phase with the incident light. The s-polarized light has no phase jump at the interface, yet both components reach a magnitude of $1$ at the critical angle of total internal reflection $\theta_C$. Starting from this incident angle, all light is reflected by the glass/air interface. As we know from the geometrical optics, the angle of total internal reflection is obtained when the transmission angle becomes $90^{\circ}$.
+
+$$
+\sin(\theta_C)=\frac{n_2}{n_1}
+\tag{$n_2<n_1$}
+$$
+
+
+For the glass/air interface as shown below, this total internal reflection occurs for an angle $\theta_C=41.8^{\circ}$. While the magnitude of the reflections coefficient is then $1$, the phase of the reflected light changes continuously from $0^{\circ}$ to $90^{\circ}$.
+
+
+
+
+```{python}
+#| label: fig-fresnel-glass-air
+#| fig-cap: "Fresnel coefficients (left) and phase (right) of the reflected light observed for the reflection at an air($n_1=1$)/glass($n_2=1.5$) interface."
+#| code-fold: true
+#| fig-align: center
+
+def fresnel_r(theta_i, n1, n2):
+    theta_i = np.deg2rad(theta_i)
+
+    theta_t = np.arcsin(n1*np.sin(theta_i)/n2 +0j)
+
+    r_s = (n1*np.cos(theta_i) - n2*np.cos(theta_t))/(n1*np.cos(theta_i) + n2*np.cos(theta_t))
+    r_p = (n2*np.cos(theta_i) - n1*np.cos(theta_t))/(n2*np.cos(theta_i) + n1*np.cos(theta_t))
+
+    return r_s, r_p
+
+n1 = 1.5    # Glass
+n2 = 1.0    # Air
+theta = np.linspace(0, 41.8, 1000)  # Angle of incidence in degrees
+
+r_s, r_p = fresnel_r(theta, n1, n2)
+
+
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=get_size(12, 6))
+
+# Plot signed coefficients
+ax1.plot(theta, np.real(r_s)+np.imag(r_s), 'b-', label='$r_s$')
+ax1.plot(theta, np.real(r_p)+np.imag(r_s), 'r-', label='$r_p$')
+ax1.set_xlabel(r'$\theta_{I}$')
+ax1.set_ylabel(r'$r_s,r_p$')
+ax1.set_xlim(0,90)
+ax1.set_ylim(-1, 1)
+ax1.legend()
+
+# Plot phase
+ax2.plot(theta, np.angle(r_s, deg=True), 'b-', label='$\\phi_s$')
+ax2.plot(theta, np.angle(r_p, deg=True), 'r-', label='$\\phi_p$')
+ax2.set_xlabel(r'$\theta_{I}$')
+ax2.set_ylabel(r'phase $\phi$')
+ax2.set_xlim(0,90)
+ax2.set_ylim(-10, 190)
+ax2.legend()
+
+plt.tight_layout()
+plt.show()
+```
+
+We will investigate the transmitted light in the case of total internal reflection below in the transmission section. You will see in the images below also, that the on the reflection side a standing interference pattern is observed, due to the superposition of incident and reflected wave.
+
+![Total internal reflection of microwaves by a prism.](img/tir_exp1.png){width=60%}
+
+## Transmission
+
+As compared to the reflection, the transmission of light is more or less boring.
+
+### Air to Glass
+
+The transmission of light from air to glass only changes weakly the intensity, except for large angles of incidence. Also the phase angle is not changed at all upon transmission.
+
+
+```{python}
+#| label: fig-fresnel-transmission-air-glass
+#| fig-cap: "Fresnel coefficients (left) and phase (right) of the transmitted light observed for the transmission at an air($n_1=1$)/glass($n_2=1.5$) interface."
+#| code-fold: true
+#| fig-align: center
+
+def fresnel_t(theta_i, n1, n2):
+    theta_i = np.deg2rad(theta_i)
+
+    theta_t = np.arcsin(n1*np.sin(theta_i)/n2)
+
+    t_s = 2*n1*np.cos(theta_i)/(n1*np.cos(theta_i) + n2*np.cos(theta_t))
+    t_p = 2*n1*np.cos(theta_i)/(n2*np.cos(theta_i) + n1*np.cos(theta_t))
+
+    return t_s, t_p
+
+n1 = 1.0    # Air
+n2 = 1.5    # Glass
+theta = np.linspace(0, 89, 1000)  # Angle of incidence in degrees
+
+t_s, t_p = fresnel_t(theta, n1, n2)
+
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=get_size(12, 6))
+
+# Plot signed coefficients
+ax1.plot(theta, t_s, 'b-', label='$t_s$')
+ax1.plot(theta, t_p, 'r-', label='$t_p$')
+ax1.set_xlabel(r'$\theta_{I}$')
+ax1.set_ylabel(r'$t_s,t_p$')
+ax1.set_ylim(0, 2)
+ax1.legend()
+
+# Plot phase
+ax2.plot(theta, np.angle(t_s, deg=True), 'b-', label='$\\phi_s$')
+ax2.plot(theta, np.angle(t_p, deg=True), 'r-', label='$\\phi_p$')
+ax2.set_xlabel(r'$\theta_{I}$')
+ax2.set_ylabel(r'phase $\phi$')
+ax2.set_ylim(-10, 10)
+ax2.legend()
+
+plt.tight_layout()
+plt.show()
+```
+
+### Glass to Air
+
+The situation, however, becomes a bit more interesting the the case of the transmission of light from glass to air. The first thing we notice here is that the Fresnel coefficients for transmission $t_s,t_p$ are both bigger than one and even grow to larger values at the edge of total internal reflection. This seems to say that the amplitude of the electric field that is transmitted is bigger than the one incident. This is in fact true, but does not violate energy conservation, but is rather resulting from the changed speed of light in the glass. We will have a closer look at the intensities down below.
+
+
+```{python}
+#| label: fig-fresnel-transmission-glass-air
+#| fig-cap: "Fresnel coefficients (left) and phase (right) of the transmitted light observed for the transmission at a glass($n_1=1.5$)/air($n_2=1.0$) interface."
+#| code-fold: true
+#| fig-align: center
+
+def fresnel_t(theta_i, n1, n2):
+    theta_i = np.deg2rad(theta_i)
+
+    theta_t = np.arcsin(n1*np.sin(theta_i)/n2 + 0j)
+
+    t_s = 2*n1*np.cos(theta_i)/(n1*np.cos(theta_i) + n2*np.cos(theta_t))
+    t_p = 2*n1*np.cos(theta_i)/(n2*np.cos(theta_i) + n1*np.cos(theta_t))
+
+    return t_s, t_p
+
+n1 = 1.5    # Glass
+n2 = 1.0    # Air
+theta = np.linspace(0, 41.8, 1000)  # Angle of incidence in degrees
+
+t_s, t_p = fresnel_t(theta, n1, n2)
+
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=get_size(12, 6))
+
+# Plot signed coefficients
+ax1.plot(theta, np.real(t_s)+np.imag(t_s), 'b-', label='$t_s$')
+ax1.plot(theta, np.real(t_p)+np.imag(t_p), 'r-', label='$t_p$')
+ax1.set_xlabel(r'$\theta_{I}$')
+ax1.set_ylabel(r'$t_s,t_p$')
+ax1.set_xlim(0,90)
+ax1.set_ylim(0, 2)
+ax1.legend()
+
+# Plot phase
+ax2.plot(theta, np.angle(t_s, deg=True), 'b-', label='$\\phi_s$')
+ax2.plot(theta, np.angle(t_p, deg=True), 'r-', label='$\\phi_p$')
+ax2.set_xlabel(r'$\theta_{I}$')
+ax2.set_ylabel(r'phase $\phi$')
+ax2.set_xlim(0,90)
+ax2.set_ylim(-10, 10)
+ax2.legend()
+
+plt.tight_layout()
+plt.show()
+```
+Another thing that is occuring but not directly visible is the electric field amplitude in the region directly behind the glass interface in air. Even though all of the light is reflected, this does not mean that no electric field may exist on the transmission side. In fact, an electric field is present and will decay in amplitude exponentially. To see what is happing directly behind the interface we
+
+What is interesting for the total internal reflection is now the electric field that exists on the side, where usually the transmission would go. Here is our coordinate system again such that we can have a look at the wavevectors in the different regions.
+
+![Coordinate system for wave at interfaces.](img/coordinates.png){width=40%}
+
+The wavevector in the transmission region is given by
+
+$$
+\vec{k}_T=k_{Tx} \hat{e}_x+k_{Tz} \hat{e}_z
+$$
+Accordining to the condition that the tangential component of the wavevector is conserved we can write down
+
+$$
+k_{Iz}=\vec{k}_I\cdot \hat{e}_z=\vec{k}_T\cdot \hat{e}_z=k_{Tz}=\frac{\omega}{v_1}\sin(\theta_I)\hat{e}_z
+$$
+
+where $\omega$ is the frequency of light and $v_1$ the phase velocity in medium 1, which is in this case glass. Besides the tangential component of the wavevector we can also calculate the magnitude square of the wavevector that is transmitted, which is
+
+$$
+|\vec{k}_T|^2=\frac{\omega^2}{v_2^2}
+$$
+
+Since the wavevector is in the x-z plane we may calculate the x-component from
+
+\begin{eqnarray}
+\vec{k}_T\cdot \hat{e}_x&=&\pm \sqrt{|\vec{k}_T|^2-(\vec{k}_T\cdot \hat{e}_z)^2}\\
+&=&\pm \frac{\omega}{v_2}\sqrt{1-\frac{v_2^2\sin^2(\theta_I)}{v_1^2}}\\
+&=&\pm \frac{\omega}{v_2}\sqrt{1-\frac{n_1^2\sin^2(\theta_I)}{n_2^2}}
+\end{eqnarray}
+
+
+
+The last equation will yield a negative value under the square root
+
+$$
+\frac{n_1}{n_2}\sin(\theta_I)>1
+$$
+
+which is in fact the region, where total internal reflection occurs. If this is the case, the transmitted wavevector along the x-direction will be imaginary and we may write
+
+
+$$
+k_{Tx}=\vec{k}_T\cdot \hat{e}_x=\pm i \frac{\omega}{v_2}\alpha
+$$
+
+where $\alpha$ is the given by
+
+$$
+\alpha=\sqrt{\frac{n_1^2\sin^2(\theta_I)}{n_2^2}-1}
+$$
+
+and is a positive number due to a little trick taking the negative value of the previous square root term. We may now use this wavevector with the x- and the z-component and insert that in our plane wave, which would be propagating in the transmission region (here air).
+
+$$
+\vec{E}_{\rm trans}=\vec{E}_T e^{i(\omega t -k_{Tx}x-k_{Tz}z)}
+$$
+
+Inserting the results for the components of the wavevector obtained above yields
+
+$$
+\vec{E}_{\rm trans}=\vec{E}_T e^{i(\omega t -n_1 k_0\sin(\theta_I) z)}e^{-n_2k_0 \alpha x}
+$$
+
+The imaginary -xcomponent of the wavevector is creating a real valued factor for the amplitude of the electric field in the transmission region. The electric field in this region is decaying exponentially with the distance $x$ from the interface. Yet, the field is only osciallting along the interface but not in the x-direction. Such an exponentially decaying field without oscillation is called **evanescent wave**. Equivalent exponential decays do also exist in quantum mechanics, however, they concern in this case the decay of the probability to find a particle inside a region.
+
+The image below shows the electric field (left) and the intensity (right) for the total internal reflection at a boundary between glass and air, which the exponential decay is nicely visible for the electric field. To calculate the intensity, we would have to calculate the Poynting vector. As it turns our, the Pyonting vector is zero in the transmission region and hence there is no energy flow in the transmission region. Nevertheless, there is a time oscillating electric field and we may calculate the magnitude square of the electric field decay, which is shown in the right figure.
+
+```{python}
+#| label: fig-TIR-glass-air
+#| fig-cap: "Electric field amplitude (left) and intensity (right) at a glass($n_1=1.5$)/air($n_2=1.0$) interface."
+#| code-fold: true
+#| fig-align: center
+
+def plane_wave(k,omega,r,t):
+    return(np.exp(1j*(np.dot(k,r)-omega*t)))
+
+## snells law
+def snell(n1,n2,alpha):
+    tmp=n1*np.sin(alpha)/n2
+    return(np.arcsin(tmp,dtype=complex))
+
+## reflection coefficient
+def rs(n1,n2,alpha,beta):
+    return((n1*np.cos(alpha)-n2*np.cos(beta))/((n1*np.cos(alpha)+n2*np.cos(beta))))
+
+## transmission coefficient
+def ts(n1,n2,alpha,beta):
+    return(2*n1*np.cos(alpha)/((n1*np.cos(alpha)+n2*np.cos(beta))))
+
+wavelength=532e-9
+k0=2*np.pi/wavelength
+c=299792458
+omega0=k0*c
+n1=1.5
+n2=1.0
+vec=np.array([0.0,0.,1.])
+vec=vec/np.sqrt(np.dot(vec,vec))
+
+k=k0*vec
+
+
+x=np.linspace(-5e-6,5e-6,500)
+z1,z2=np.linspace(-5e-6,0,250),np.linspace(0,5e-6,250)
+X,Z1=np.meshgrid(x,z1)
+
+
+X,Z2=np.meshgrid(x,z2)
+r1=np.array([X,0,Z1],dtype=object)
+r2=np.array([X,0,Z2],dtype=object)
+
+alpha=45*np.pi/180
+
+vec=np.array([np.sin(alpha),0.,np.cos(alpha)])
+k1=n1*k0*vec
+k2=n1*k0*vec
+k2[2]=k2[2]*-1
+k3=np.zeros([3],dtype=complex)
+k3[0]=k1[0]
+k3[2]=np.sqrt(n2**2*k1[2]**2+(n2**2-n1**2)*k1[0]**2,dtype=complex)/n1
+
+field=np.zeros([500,500],dtype=complex)
+field1=plane_wave(k1,omega0,r1,0)
+field2=plane_wave(k2,omega0,r1,0)
+field3=plane_wave(k3,omega0,r2,0)
+
+beta=snell(n1,n2,alpha)
+r=rs(n1,n2,alpha,beta)
+t=ts(n1,n2,alpha,beta)
+
+field[:250,:]=field1+r*field2
+field[250:,:]=t*field3
+
+plt.figure(figsize=get_size(12,6))
+extent = np.min(z1)*1e6, np.max(z2)*1e6,np.max(x)*1e6, np.min(x)*1e6
+plt.subplot(1,2,1)
+plt.imshow(np.real(field.transpose()),extent=extent,cmap='seismic')
+plt.title('electric field')
+plt.xlabel('z [µm]')
+plt.ylabel('x [µm]')
+
+plt.subplot(1,2,2)
+plt.imshow(np.abs(field.transpose())**2,extent=extent,cmap='gray')
+plt.title('intensity')
+plt.xlabel('z [µm]')
+plt.ylabel('x [µm]')
+
+plt.tight_layout()
+plt.show()
+
+```
+
+
+
+
+To gain a bit more insight into the lengthscale on which the electric field in Figure @fig-components is decaying, we may have a look at the prefactor in the above exponential term.
+
+```{python}
+# | label: fig-components
+# | fig-cap: "Electric field amplitude (left) and intensity (right) along the propagation direction at a glass($n_1=1.5$)/air($n_2=1.0$) interface."
+# | code-fold: true
+# | fig-align: center
+
+fig,(ax1,ax2)=plt.subplots(1,2,figsize=get_size(12,6))
+ax1.plot(x*1e6,np.abs(field.transpose()[250,:])**2)
+ax1.set_xlabel('z [µm]')
+ax1.set_ylabel('intensity')
+
+
+ax2.semilogy(x*1e6,np.abs(field.transpose()[250,:])**2)
+ax2.set_xlabel('z [µm]')
+ax2.set_ylabel('intensity')
+plt.tight_layout()
+plt.show()
+```
+
+This prefactor denotes an inverse length scale, i.e.
+
+
+$$
+\delta=\frac{1}{n_2k_0 \alpha}
+$$
+
+and measures the distance on which the electric field decayed to $1/e$. The plot below shows that the decay length for the electric field amplitude quickly drops with increasing incident angle
+
+```{python}
+#| label: fig-decay-length
+#| fig-cap: "Decay length of the evanescent wave in air for total internal reflection at a glass/air interface (wavelength = 532nm)."
+#| code-fold: true
+#| fig-align: center
+
+# Parameters
+wavelength = 532e-9  # green light
+n1 = 1.5  # glass
+n2 = 1.0  # air
+k0 = 2*np.pi/wavelength
+
+# Critical angle
+theta_c = np.arcsin(n2/n1)
+#print(f"Critical angle: {np.rad2deg(theta_c):.1f}°")
+
+# Angles from critical angle to 89 degrees
+theta_i = np.linspace(np.rad2deg(theta_c)+0.1, 89, 1000)
+alpha = np.sqrt((n1*np.sin(np.deg2rad(theta_i)))**2/n2**2 - 1)
+
+# Calculate decay length
+decay_length = 1/(n2*k0*alpha)
+
+# Plot
+plt.figure(figsize=get_size(8, 6))
+plt.plot(theta_i, decay_length*1e9)  # convert to nm
+plt.axvline(np.rad2deg(theta_c), color='r', linestyle='--', label='Critical angle')
+plt.xlabel(r'incident angle $\theta_I$ [°]')
+plt.ylabel(r'decay length $\delta$ [nm]')
+plt.legend()
+plt.tight_layout()
+plt.show()
+```
+
+The evanescent field in the transmission region can be converted back into a propagating wave if a second interface is brought in the range of the evanescent wave. This can be demonstrated easily with microwaves, since their wavelength is long.
+
+![Total internal reflection of microwaves by a prism (left).](img/tir_exp2.png){width=60%}
+
+In the visible region, this decay length is on the order of a few 100 nanometers. Evanescent field play an important role for optical microscopy for example, where they are either used in total internal reflection fluorescence microscopy (TIRF), exciting only a tiny sheet above an interface and thus reducing fluorescence background. Other techniques use the evanescent field on tiny tips as sources for excitation of fluorescence or scattering (NSOM). Evanescent waves are also used for coupling light into small mechanical resonators to cool them to extremely low temperatures (opto-mechanics).
+
+## Intensities of Reflected and Transmitted Waves
+
+So far we calculated the Fresnel coefficients, from which we may obtain the electric and magnetic field amplitudes of the reflected and transmitted waves. We now want to calculate the intensities. The Poynting vector of a wave is given by
+
+$$
+\vec{S}=\vec{E}\times \vec{H}=\frac{1}{\mu_r \mu_0}(\vec{E}\times \vec{B})=\epsilon_r \epsilon_0 v^2(\vec{E}\times \vec{B})
+$$
+
+The magnitude of the Pyonting vector is therefore given by
+
+$$
+S=\epsilon_r\epsilon_0 v|\vec{E}|^2=n^2\epsilon_0 c|\vec{E}|^2
+$$
+
+The intensity is then obtained from the integration over one cycle of oscialltion, which finally results in
+
+$$
+I=\frac{1}{2}n\epsilon_0 c|\vec{E}|^2
+$$
+
+With the help of this equation it can be seen that the reflected intensity and the incident intensity contain the same refractive index. thus only the magnitude square of the Fresnel coefficients for the reflection is importnat giving
+
+$$
+R=|r|^2
+$$
+
+which is valid for either s- or p-polarization.
+
+For the transmission we have to be a bit more careful as first of all the light propagates with different phase velocities (refractive index $n$) and the cross section of a beam changes due to the refraction at the interface as shown in the image below.
+
+
+![Relevant areas for the calculation of the intensities from the transmission Fresnel coefficients.](img/tir_transmission.png){width=40%}
+
+The two cross-section behave as
+
+$$
+\frac{A''}{A}=\frac{\cos(\theta_T)}{\cos(\theta_I)}
+$$
+
+The intensities directly contain the refractive index and this
+
+$$
+T=\frac{n_2\cos(\theta_T)}{n_1\cos(\theta_I)}|t|^2
+$$
+
+As energy conservation is valid, the reflected energy and the transmitted energy have to sum up to the incident energy in nonabsorbing media, which states that
+
+$$
+R+T=1
+\tag{nonabsorbing media}
+$$
+
+
+```{python}
+#| label: fig-fresnel-intensities
+#| fig-cap: "Reflected and transmitted intensities for air to glass (left) and glass to air (right) interfaces."
+#| code-fold: true
+#| fig-align: center
+
+def fresnel_intensities(theta_i, n1, n2):
+    theta_i = np.deg2rad(theta_i)
+
+    # Calculate transmitted angle (complex for TIR)
+    theta_t = np.arcsin(n1*np.sin(theta_i)/n2 + 0j)
+
+    # Reflection coefficients
+    r_s = (n1*np.cos(theta_i) - n2*np.cos(theta_t))/(n1*np.cos(theta_i) + n2*np.cos(theta_t))
+    r_p = (n2*np.cos(theta_i) - n1*np.cos(theta_t))/(n2*np.cos(theta_i) + n1*np.cos(theta_t))
+
+    # Transmission coefficients
+    t_s = 2*n1*np.cos(theta_i)/(n1*np.cos(theta_i) + n2*np.cos(theta_t))
+    t_p = 2*n1*np.cos(theta_i)/(n2*np.cos(theta_i) + n1*np.cos(theta_t))
+
+    # Intensity reflection coefficients
+    R_s = np.abs(r_s)**2
+    R_p = np.abs(r_p)**2
+
+    # Intensity transmission coefficients
+    T_s = np.real(n2*np.cos(theta_t)/(n1*np.cos(theta_i))) * np.abs(t_s)**2
+    T_p = np.real(n2*np.cos(theta_t)/(n1*np.cos(theta_i))) * np.abs(t_p)**2
+
+    return R_s, R_p, T_s, T_p
+
+# Create figure
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=get_size(12, 6))
+
+# Air to glass
+theta1 = np.linspace(0, 89, 1000)
+n1, n2 = 1.0, 1.5  # Air to glass
+R_s1, R_p1, T_s1, T_p1 = fresnel_intensities(theta1, n1, n2)
+
+ax1.plot(theta1, R_s1, 'b-', label='$R_s$')
+ax1.plot(theta1, R_p1, 'r-', label='$R_p$')
+ax1.plot(theta1, T_s1, 'b--', label='$T_s$')
+ax1.plot(theta1, T_p1, 'r--', label='$T_p$')
+ax1.set_xlabel(r'$\theta_{I}$')
+ax1.set_ylabel('R,T')
+ax1.set_ylim(0, 1)
+ax1.legend()
+
+# Glass to air
+theta2 = np.linspace(0, 90, 1000)
+n1, n2 = 1.5, 1.0  # Glass to air
+R_s2, R_p2, T_s2, T_p2 = fresnel_intensities(theta2, n1, n2)
+
+ax2.plot(theta2, R_s2, 'b-', label='$R_s$')
+ax2.plot(theta2, R_p2, 'r-', label='$R_p$')
+ax2.plot(theta2, T_s2, 'b--', label='$T_s$')
+ax2.plot(theta2, T_p2, 'r--', label='$T_p$')
+ax2.set_xlabel(r'$\theta_{I}$')
+ax2.set_ylabel('R,T')
+ax2.set_xlim(0, 90)
+ax2.set_ylim(0, 1)
+ax2.legend()
+
+plt.tight_layout()
+plt.show()
+```
+
+The displayed reflection and transmission coefficients will reappear in quantum mechanics for the tunneling effect on a potential energy barrier.
+
+::: {.callout-note collapse=true}
+### Total Internal Reflection Fluorescence (TIRF) Microscopy
+
+TIRF microscopy is a powerful imaging technique that exploits the properties of evanescent waves to achieve exceptional signal-to-noise ratio in fluorescence imaging. When light undergoes total internal reflection at a glass-water interface (typically a microscope coverslip-sample interface), the resulting evanescent field only penetrates about 100-200 nm into the sample. This shallow excitation depth provides an excellent optical sectioning capability, as only fluorophores within this thin layer are excited. This makes TIRF microscopy particularly well-suited for studying processes at or near the cell membrane, such as:
+
+- Membrane protein dynamics
+- Endocytosis and exocytosis
+- Cell adhesion
+- Single-molecule tracking
+
+The signal-to-background ratio in TIRF microscopy can be 100-1000 times better than conventional fluorescence microscopy because out-of-focus fluorescence is virtually eliminated. The technique has become indispensable in cell biology, especially for studying membrane-associated processes in living cells. The exponential decay of the evanescent field intensity with distance from the interface provides an additional advantage: the fluorescence intensity can be used to estimate the distance of fluorescent molecules from the surface with nanometer precision.
+
+![](img/tirf-2.png){width=60% fig-align=center}
+
+:::

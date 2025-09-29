@@ -1,155 +1,379 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://fcichos.github.io/Exp3_2024/electromagnetic-waves/reflection-and-transmission.html</loc>
-    <lastmod>2024-09-14T20:38:15.000Z</lastmod>
+    <loc>https://fcichos.github.io/Exp3/electromagnetic-waves/Energy Transport.html</loc>
+    <lastmod>2024-11-27T19:55:02.000Z</lastmod>
   </url>
   <url>
-    <loc>https://fcichos.github.io/Exp3_2024/electromagnetic-waves/electromagnetic-spectrum.html</loc>
-    <lastmod>2024-09-14T20:37:25.000Z</lastmod>
+    <loc>https://fcichos.github.io/Exp3/electromagnetic-waves/Anisotropic Materials.html</loc>
+    <lastmod>2025-09-29T08:46:14.760Z</lastmod>
   </url>
   <url>
-    <loc>https://fcichos.github.io/Exp3_2024/electromagnetic-waves/hertz-dipole.html</loc>
-    <lastmod>2024-09-14T20:38:44.000Z</lastmod>
+    <loc>https://fcichos.github.io/Exp3/electromagnetic-waves/Dielectric Spectroscopy.html</loc>
+    <lastmod>2024-12-11T12:38:25.000Z</lastmod>
   </url>
   <url>
-    <loc>https://fcichos.github.io/Exp3_2024/electromagnetic-waves/total-internal-reflection.html</loc>
-    <lastmod>2024-09-14T20:38:23.000Z</lastmod>
+    <loc>https://fcichos.github.io/Exp3/electromagnetic-waves/Electromagnetic Optics.html</loc>
+    <lastmod>2024-11-28T08:22:57.000Z</lastmod>
   </url>
   <url>
-    <loc>https://fcichos.github.io/Exp3_2024/electromagnetic-waves/plane-and-spherical-waves.html</loc>
-    <lastmod>2024-09-14T20:37:37.000Z</lastmod>
+    <loc>https://fcichos.github.io/Exp3/electromagnetic-waves/ABbe.html</loc>
+    <lastmod>2024-12-04T16:40:18.000Z</lastmod>
   </url>
   <url>
-    <loc>https://fcichos.github.io/Exp3_2024/about.html</loc>
+    <loc>https://fcichos.github.io/Exp3/electromagnetic-waves/Metals.html</loc>
+    <lastmod>2024-12-16T13:17:27.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/electromagnetic-waves/Dipole Radiation.html</loc>
+    <lastmod>2024-12-16T06:52:17.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/electromagnetic-waves/Polarization of EM Waves.html</loc>
+    <lastmod>2024-12-04T05:42:32.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/test.html</loc>
+    <lastmod>2024-10-23T08:07:29.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/qa_example.html</loc>
+    <lastmod>2025-09-22T15:25:42.895Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/about.html</loc>
     <lastmod>2024-09-14T19:37:45.000Z</lastmod>
   </url>
   <url>
-    <loc>https://fcichos.github.io/Exp3_2024/geometrical-optics/Microscope.html</loc>
-    <lastmod>2024-10-24T06:43:46.034Z</lastmod>
+    <loc>https://fcichos.github.io/Exp3/geometrical-optics/Microscope.html</loc>
+    <lastmod>2024-10-28T15:11:08.000Z</lastmod>
   </url>
   <url>
-    <loc>https://fcichos.github.io/Exp3_2024/geometrical-optics/Lens Systems and Optical Instruments.html</loc>
+    <loc>https://fcichos.github.io/Exp3/geometrical-optics/Lens Systems and Optical Instruments.html</loc>
     <lastmod>2024-10-07T18:25:36.000Z</lastmod>
   </url>
   <url>
-    <loc>https://fcichos.github.io/Exp3_2024/geometrical-optics/introduction.html</loc>
+    <loc>https://fcichos.github.io/Exp3/geometrical-optics/introduction.html</loc>
     <lastmod>2024-10-14T11:53:10.000Z</lastmod>
   </url>
   <url>
-    <loc>https://fcichos.github.io/Exp3_2024/geometrical-optics/Rainbow.html</loc>
-    <lastmod>2024-10-23T14:40:38.133Z</lastmod>
+    <loc>https://fcichos.github.io/Exp3/geometrical-optics/Rainbow.html</loc>
+    <lastmod>2024-10-28T06:35:22.000Z</lastmod>
   </url>
   <url>
-    <loc>https://fcichos.github.io/Exp3_2024/geometrical-optics/Optical Elements I.html</loc>
-    <lastmod>2024-10-22T13:25:49.616Z</lastmod>
+    <loc>https://fcichos.github.io/Exp3/geometrical-optics/Magnifying Glass.html</loc>
+    <lastmod>2024-10-28T15:31:17.000Z</lastmod>
   </url>
   <url>
-    <loc>https://fcichos.github.io/Exp3_2024/geometrical-optics/mirrors-lenses-prisms.html</loc>
-    <lastmod>2024-09-14T20:34:24.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fcichos.github.io/Exp3_2024/course-info/schedule.html</loc>
-    <lastmod>2024-10-16T14:36:57.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fcichos.github.io/Exp3_2024/course-info/exam.html</loc>
-    <lastmod>2024-10-09T06:30:47.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fcichos.github.io/Exp3_2024/course-info/assignments.html</loc>
-    <lastmod>2024-10-17T11:29:55.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fcichos.github.io/Exp3_2024/foundations-of-quantum-physics/index.html</loc>
-    <lastmod>2024-09-14T19:40:57.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fcichos.github.io/Exp3_2024/foundations-of-quantum-physics/particle-properties-of-light.html</loc>
-    <lastmod>2024-09-14T20:39:26.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fcichos.github.io/Exp3_2024/wave-optics/huygens-principle.html</loc>
-    <lastmod>2024-09-14T20:37:06.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fcichos.github.io/Exp3_2024/wave-optics/wave-equation.html</loc>
-    <lastmod>2024-09-14T19:42:03.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fcichos.github.io/Exp3_2024/wave-optics/interference.html</loc>
-    <lastmod>2024-09-14T20:36:48.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fcichos.github.io/Exp3_2024/wave-optics/index.html</loc>
-    <lastmod>2024-09-14T19:41:03.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fcichos.github.io/Exp3_2024/foundations-of-quantum-physics/structure-of-matter.html</loc>
-    <lastmod>2024-09-14T20:39:43.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fcichos.github.io/Exp3_2024/foundations-of-quantum-physics/matter-waves.html</loc>
-    <lastmod>2024-09-14T20:39:50.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fcichos.github.io/Exp3_2024/course-info/intructors.html</loc>
-    <lastmod>2024-10-16T10:14:04.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fcichos.github.io/Exp3_2024/course-info/resources.html</loc>
-    <lastmod>2024-10-08T08:35:26.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fcichos.github.io/Exp3_2024/geometrical-optics/refraction-total-internal-reflection.html</loc>
-    <lastmod>2024-10-24T17:23:52.601Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fcichos.github.io/Exp3_2024/geometrical-optics/reflection.html</loc>
-    <lastmod>2024-10-23T12:17:28.369Z</lastmod>
-  </url>
-  <url>
-    <loc>https://fcichos.github.io/Exp3_2024/geometrical-optics/NA Derivation.html</loc>
+    <loc>https://fcichos.github.io/Exp3/geometrical-optics/NA Derivation.html</loc>
     <lastmod>2024-10-13T18:52:02.000Z</lastmod>
   </url>
   <url>
-    <loc>https://fcichos.github.io/Exp3_2024/geometrical-optics/Magnifying Glass.html</loc>
-    <lastmod>2024-10-23T06:46:20.949Z</lastmod>
+    <loc>https://fcichos.github.io/Exp3/geometrical-optics/Telescope.html</loc>
+    <lastmod>2024-10-27T18:36:29.000Z</lastmod>
   </url>
   <url>
-    <loc>https://fcichos.github.io/Exp3_2024/geometrical-optics/Optical Elements III.html</loc>
-    <lastmod>2024-10-24T07:01:19.329Z</lastmod>
+    <loc>https://fcichos.github.io/Exp3/geometrical-optics/ContentsL6.html</loc>
+    <lastmod>2024-11-03T21:20:59.000Z</lastmod>
   </url>
   <url>
-    <loc>https://fcichos.github.io/Exp3_2024/geometrical-optics/Optical Elements II.html</loc>
-    <lastmod>2024-10-23T14:30:47.775Z</lastmod>
+    <loc>https://fcichos.github.io/Exp3/geometrical-optics/mirrors-lenses-prisms.html</loc>
+    <lastmod>2024-09-14T20:34:24.000Z</lastmod>
   </url>
   <url>
-    <loc>https://fcichos.github.io/Exp3_2024/geometrical-optics/Eye.html</loc>
-    <lastmod>2024-10-25T15:33:30.839Z</lastmod>
+    <loc>https://fcichos.github.io/Exp3/quantum-mechanics/Matter_waves.html</loc>
+    <lastmod>2025-01-19T18:12:52.000Z</lastmod>
   </url>
   <url>
-    <loc>https://fcichos.github.io/Exp3_2024/index.html</loc>
+    <loc>https://fcichos.github.io/Exp3/quantum-mechanics/Schroedinger_equation copy.html</loc>
+    <lastmod>2025-01-22T13:17:57.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/quantum-mechanics/Wave_character_of_particles.html</loc>
+    <lastmod>2025-01-16T12:19:40.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/quantum-mechanics/Particle_Nature_Of_Light_old.html</loc>
+    <lastmod>2025-01-04T19:34:38.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/quantum-mechanics/Rutherford Trajectories.html</loc>
+    <lastmod>2025-01-03T17:01:19.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/quantum-mechanics/wien.html</loc>
+    <lastmod>2025-01-08T18:56:51.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/quantum-mechanics/Schroedinger_equation.html</loc>
+    <lastmod>2025-01-29T16:43:26.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/quantum-mechanics/hydrogen.html</loc>
+    <lastmod>2025-02-06T10:00:09.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/quantum-mechanics/DoubleSlitSinglePhoton.html</loc>
+    <lastmod>2025-02-03T09:32:03.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/quantum-mechanics/potential_barrier.html</loc>
+    <lastmod>2025-02-03T17:33:57.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/quantum-mechanics/Particle_Nature_of_Light.html</loc>
+    <lastmod>2025-01-16T09:33:24.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/quantum-mechanics/parametric_dc.html</loc>
+    <lastmod>2025-02-03T12:49:13.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/quantum-mechanics/Dummy.html</loc>
+    <lastmod>2024-11-15T15:56:35.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/course-info/schedule.html</loc>
+    <lastmod>2024-10-16T14:36:57.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/course-info/exam.html</loc>
+    <lastmod>2024-10-09T06:30:47.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/course-info/assignments.html</loc>
+    <lastmod>2024-11-04T09:53:38.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/foundations-of-quantum-physics/index.html</loc>
+    <lastmod>2024-09-14T19:40:57.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/foundations-of-quantum-physics/particle-properties-of-light.html</loc>
+    <lastmod>2024-09-14T20:39:26.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/wave-optics/Diffraction.html</loc>
+    <lastmod>2024-11-20T19:53:52.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/wave-optics/LIGO.html</loc>
+    <lastmod>2024-11-20T19:45:01.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/wave-optics/Diffraction Integral Dummy.html</loc>
+    <lastmod>2024-11-20T18:26:42.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/wave-optics/Fourier.html</loc>
+    <lastmod>2024-11-17T19:02:51.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/wave-optics/Diffraction2.html</loc>
+    <lastmod>2024-11-20T20:02:05.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/wave-optics/FabryPerot.html</loc>
+    <lastmod>2024-11-14T08:54:49.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/wave-optics/Wave Optics.html</loc>
+    <lastmod>2024-11-07T09:42:43.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/wave-optics/Interferometers.html</loc>
+    <lastmod>2024-11-21T09:26:40.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/wave-optics/Double Slit.html</loc>
+    <lastmod>2024-11-13T11:07:11.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/wave-optics/Interference.html</loc>
+    <lastmod>2024-11-10T16:32:22.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/thin_film_test.html</loc>
+    <lastmod>2024-11-10T16:53:57.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/wave-optics/Thin Film Interference.html</loc>
+    <lastmod>2024-11-13T11:22:44.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/wave-optics/Dummy.html</loc>
+    <lastmod>2024-11-15T15:56:35.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/wave-optics/huygens-principle.html</loc>
+    <lastmod>2024-09-14T20:37:06.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/wave-optics/Diffraction Grating.html</loc>
+    <lastmod>2024-11-17T16:44:04.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/wave-optics/FabryPerotDummy.html</loc>
+    <lastmod>2024-11-17T19:15:20.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/wave-optics/index.html</loc>
+    <lastmod>2024-09-14T19:41:03.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/wave-optics/Fresnel Zones.html</loc>
+    <lastmod>2024-11-21T07:36:45.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/wave-optics/Sagnac_Interferometer.html</loc>
+    <lastmod>2024-11-20T19:45:17.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/wave-optics/MultiWave Interference.html</loc>
+    <lastmod>2024-11-14T08:48:19.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/wave-optics/Diffraction Integral.html</loc>
+    <lastmod>2024-11-20T19:54:08.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/wave-optics/PC.html</loc>
+    <lastmod>2024-11-06T06:24:54.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/foundations-of-quantum-physics/structure-of-matter.html</loc>
+    <lastmod>2024-09-14T20:39:43.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/foundations-of-quantum-physics/matter-waves.html</loc>
+    <lastmod>2024-09-14T20:39:50.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/course-info/intructors.html</loc>
+    <lastmod>2024-10-16T10:14:04.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/course-info/resources.html</loc>
+    <lastmod>2024-10-08T08:35:26.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/quantum-mechanics/Black_Body_Radiation.html</loc>
+    <lastmod>2025-01-16T13:29:47.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/quantum-mechanics/BB Radiation Examples.html</loc>
+    <lastmod>2025-01-16T13:14:24.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/quantum-mechanics/Structure_of_matter.html</loc>
+    <lastmod>2025-01-05T19:21:47.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/quantum-mechanics/Heisenbergs_uncertainty_relation.html</loc>
+    <lastmod>2025-01-20T07:22:25.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/quantum-mechanics/beam_splitter.html</loc>
+    <lastmod>2025-01-20T07:18:58.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/quantum-mechanics/spreading.html</loc>
+    <lastmod>2025-01-19T19:23:02.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/quantum-mechanics/harmonic_oscillator.html</loc>
+    <lastmod>2025-02-02T16:35:09.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/quantum-mechanics/Black_Body_Radiation copy.html</loc>
+    <lastmod>2025-01-08T14:59:57.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/quantum-mechanics/Qzeno.html</loc>
+    <lastmod>2025-02-06T08:31:37.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/quantum-mechanics/Structure_of_atoms.html</loc>
+    <lastmod>2025-01-23T09:23:33.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/quantum-mechanics/Franck_Hertz.html</loc>
+    <lastmod>2025-01-03T21:06:49.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/quantum-mechanics/Spherical_potential.html</loc>
+    <lastmod>2025-02-06T09:15:28.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/geometrical-optics/refraction-total-internal-reflection.html</loc>
+    <lastmod>2024-10-23T17:35:41.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/geometrical-optics/reflection.html</loc>
+    <lastmod>2024-10-23T12:17:19.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/geometrical-optics/Optical Elements I.html</loc>
+    <lastmod>2024-10-22T13:24:59.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/geometrical-optics/Imaging Errors.html</loc>
+    <lastmod>2024-11-04T07:36:04.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/geometrical-optics/Optical Elements III.html</loc>
+    <lastmod>2024-11-05T15:25:41.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/geometrical-optics/Optical Elements II.html</loc>
+    <lastmod>2024-11-04T06:58:06.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/geometrical-optics/Eye.html</loc>
+    <lastmod>2024-10-27T17:26:14.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/index.html</loc>
     <lastmod>2024-10-08T06:44:16.000Z</lastmod>
   </url>
   <url>
-    <loc>https://fcichos.github.io/Exp3_2024/test.html</loc>
-    <lastmod>2024-10-23T08:07:29.662Z</lastmod>
+    <loc>https://fcichos.github.io/Exp3/single_slit_kirchhoff.html</loc>
+    <lastmod>2024-11-17T16:24:41.000Z</lastmod>
   </url>
   <url>
-    <loc>https://fcichos.github.io/Exp3_2024/electromagnetic-waves/fresnel-formulas.html</loc>
-    <lastmod>2024-09-14T20:38:35.000Z</lastmod>
+    <loc>https://fcichos.github.io/Exp3/llm_integration/github_pages_solution.html</loc>
+    <lastmod>2025-09-22T15:36:18.058Z</lastmod>
   </url>
   <url>
-    <loc>https://fcichos.github.io/Exp3_2024/electromagnetic-waves/index.html</loc>
-    <lastmod>2024-09-14T19:40:54.000Z</lastmod>
+    <loc>https://fcichos.github.io/Exp3/electromagnetic-waves/Fresnel Equations.html</loc>
+    <lastmod>2024-12-12T18:42:29.000Z</lastmod>
   </url>
   <url>
-    <loc>https://fcichos.github.io/Exp3_2024/electromagnetic-waves/energy-transport-poynting-vector.html</loc>
-    <lastmod>2024-09-14T20:37:55.000Z</lastmod>
+    <loc>https://fcichos.github.io/Exp3/electromagnetic-waves/Dispersion and Absorption.html</loc>
+    <lastmod>2024-12-11T22:50:29.000Z</lastmod>
   </url>
   <url>
-    <loc>https://fcichos.github.io/Exp3_2024/electromagnetic-waves/polarization.html</loc>
-    <lastmod>2024-09-14T20:38:07.000Z</lastmod>
+    <loc>https://fcichos.github.io/Exp3/electromagnetic-waves/EM Waves in Matter_old.html</loc>
+    <lastmod>2024-12-04T13:20:10.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/electromagnetic-waves/EM Waves in Matter.html</loc>
+    <lastmod>2024-12-04T20:07:30.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/electromagnetic-waves/Reflection and Refraction.html</loc>
+    <lastmod>2024-12-12T07:40:21.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/electromagnetic-waves/Dispersion and Absorption Examples.html</loc>
+    <lastmod>2024-12-04T16:31:16.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/electromagnetic-waves/Speed of Light Measurements.html</loc>
+    <lastmod>2024-12-04T05:46:32.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://fcichos.github.io/Exp3/electromagnetic-waves/Optical Activity.html</loc>
+    <lastmod>2024-12-12T07:43:00.000Z</lastmod>
   </url>
 </urlset>

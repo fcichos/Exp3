@@ -1,0 +1,1437 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.34">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>36&nbsp; Particle Nature of Light – Experimental Physics 3 Course on Optics and Quantum Mechanics</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../quantum-mechanics/Black_Body_Radiation.html" rel="next">
+<link href="../quantum-mechanics/Structure_of_matter.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-485d01fc63b59abcd3ee1bf1e8e2748d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../quantum-mechanics/Structure_of_matter.html">Quantum Mechanics</a></li><li class="breadcrumb-item"><a href="../quantum-mechanics/Particle_Nature_of_Light.html"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Particle Nature of Light</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Experimental Physics 3 Course on Optics and Quantum Mechanics</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Experimental Physics 3</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Geometrical Optics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Geometrical Optics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/reflection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Reflection</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/refraction-total-internal-reflection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Refraction and Total Internal Reflection</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Optical Elements I.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Optical Elements Part I</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Optical Elements II.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Optical Elements Part II</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Optical Elements III.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Optical Elements Part III</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Eye.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Optical Instruments</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Magnifying Glass.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Optical Instruments</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Microscope.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Optical Instruments</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Telescope.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Telescopes</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Rainbow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Rainbow</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Imaging Errors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Imaging Errors</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Wave Optics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Wave Optics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Wave Optics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Double Slit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Double Slit Interference</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Thin Film Interference.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Thin Film Interference</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/MultiWave Interference.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Multiple Wave Interference</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/FabryPerot.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Fabry Perot Interferometer</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Diffraction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Diffraction</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Diffraction2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Diffraction in Applications</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Fresnel Zones.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Fresnel Zones</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Diffraction Integral.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Diffraction Integral</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Interferometers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Interferometers and other Coherence Applications</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Electromagnetic Optics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Electromagnetic Optics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Electromagnetic Optics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Polarization of EM Waves.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Polarization of EM Waves</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Energy Transport.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Energy Transport and Momentum Transport of EM Waves</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/EM Waves in Matter.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Electromagnetic Waves in Matter</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Dispersion and Absorption.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Dispersion &amp; Absorption</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Reflection and Refraction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Reflection and Refraction of Electromagnetic Waves</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Fresnel Equations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Fresnel Equations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Metals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Electromagnetic Waves in Metals</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Anisotropic Materials.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Anisotropic Materials</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Optical Activity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Optical Activity and Rotatory Dispersion</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Dipole Radiation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Dipole Radiation</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Quantum Mechanics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Structure_of_matter.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">The Structure of Matter - Historical Experiments</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Particle_Nature_of_Light.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Particle Nature of Light</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Black_Body_Radiation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Black Body Radiation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Wave_character_of_particles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">The Wave Character of Particles</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Matter_waves.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Matter Waves</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Heisenbergs_uncertainty_relation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">Heisenbergs Uncertainty Relation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Structure_of_atoms.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">The Structure of Atoms and the Bohr Model</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Schroedinger_equation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">The Schrödinger Equation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/potential_barrier.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">Potential barriers and wells</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/harmonic_oscillator.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">The harmonic oscillator</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/parametric_dc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">Parametric Downconversion</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Spherical_potential.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">Angular Momentum and Spherical Potentials</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Qzeno.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">The Quantum Zeno Effect</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/hydrogen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">48</span>&nbsp; <span class="chapter-title">Towards the Hydrogen Atom</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#the-wave-particle-nature-of-light" id="toc-the-wave-particle-nature-of-light" class="nav-link active" data-scroll-target="#the-wave-particle-nature-of-light"><span class="header-section-number">36.1</span> The Wave-Particle Nature of Light</a></li>
+  <li><a href="#the-photoelectric-effect" id="toc-the-photoelectric-effect" class="nav-link" data-scroll-target="#the-photoelectric-effect"><span class="header-section-number">36.2</span> The Photoelectric Effect</a>
+  <ul class="collapse">
+  <li><a href="#hallwachs-and-lennards-discoveries" id="toc-hallwachs-and-lennards-discoveries" class="nav-link" data-scroll-target="#hallwachs-and-lennards-discoveries"><span class="header-section-number">36.2.1</span> Hallwachs and Lennard’s Discoveries</a></li>
+  <li><a href="#classical-wave-theory-expectations" id="toc-classical-wave-theory-expectations" class="nav-link" data-scroll-target="#classical-wave-theory-expectations"><span class="header-section-number">36.2.2</span> Classical Wave Theory Expectations</a></li>
+  <li><a href="#einsteins-quantum-explanation" id="toc-einsteins-quantum-explanation" class="nav-link" data-scroll-target="#einsteins-quantum-explanation"><span class="header-section-number">36.2.3</span> Einstein’s Quantum Explanation</a></li>
+  <li><a href="#experimental-verification" id="toc-experimental-verification" class="nav-link" data-scroll-target="#experimental-verification"><span class="header-section-number">36.2.4</span> Experimental Verification</a></li>
+  </ul></li>
+  <li><a href="#the-compton-effect" id="toc-the-compton-effect" class="nav-link" data-scroll-target="#the-compton-effect"><span class="header-section-number">36.3</span> The Compton Effect</a>
+  <ul class="collapse">
+  <li><a href="#theoretical-analysis" id="toc-theoretical-analysis" class="nav-link" data-scroll-target="#theoretical-analysis"><span class="header-section-number">36.3.1</span> Theoretical Analysis</a></li>
+  <li><a href="#experimental-results" id="toc-experimental-results" class="nav-link" data-scroll-target="#experimental-results"><span class="header-section-number">36.3.2</span> Experimental Results</a></li>
+  </ul></li>
+  <li><a href="#properties-of-photons" id="toc-properties-of-photons" class="nav-link" data-scroll-target="#properties-of-photons"><span class="header-section-number">36.4</span> Properties of Photons</a>
+  <ul class="collapse">
+  <li><a href="#energy-and-momentum" id="toc-energy-and-momentum" class="nav-link" data-scroll-target="#energy-and-momentum"><span class="header-section-number">36.4.1</span> Energy and Momentum</a></li>
+  <li><a href="#angular-momentum" id="toc-angular-momentum" class="nav-link" data-scroll-target="#angular-momentum"><span class="header-section-number">36.4.2</span> Angular Momentum</a></li>
+  <li><a href="#effect-of-gravity-on-photons" id="toc-effect-of-gravity-on-photons" class="nav-link" data-scroll-target="#effect-of-gravity-on-photons"><span class="header-section-number">36.4.3</span> Effect of Gravity on Photons</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../quantum-mechanics/Structure_of_matter.html">Quantum Mechanics</a></li><li class="breadcrumb-item"><a href="../quantum-mechanics/Particle_Nature_of_Light.html"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Particle Nature of Light</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Particle Nature of Light</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="the-wave-particle-nature-of-light" class="level2" data-number="36.1">
+<h2 data-number="36.1" class="anchored" data-anchor-id="the-wave-particle-nature-of-light"><span class="header-section-number">36.1</span> The Wave-Particle Nature of Light</h2>
+<p>The nature of light has been a subject of scientific debate since the 17th century. Newton proposed a particle theory based on light’s straight propagation and refraction, while Huygens advocated a wave theory supported by interference and diffraction phenomena. The wave interpretation gained strong support when Heinrich Hertz discovered electromagnetic waves, with light being interpreted as a special spectral region governed by Maxwell’s equations.</p>
+<p>However, at the beginning of the 20th century, several experimental findings emerged that could not be explained by classical electromagnetic theory:</p>
+<ul>
+<li>The photoelectric effect, where light ejects electrons from metals</li>
+<li>The Compton effect, showing light scattering like particles</li>
+<li>The ultraviolet catastrophe in black body radiation</li>
+</ul>
+<p>These observations revealed fundamental limitations in both classical mechanics and electromagnetic wave theory for describing atomic-scale phenomena. This document examines the experimental evidence that established light’s particle nature while maintaining its wave characteristics.</p>
+</section>
+<section id="the-photoelectric-effect" class="level2" data-number="36.2">
+<h2 data-number="36.2" class="anchored" data-anchor-id="the-photoelectric-effect"><span class="header-section-number">36.2</span> The Photoelectric Effect</h2>
+<section id="hallwachs-and-lennards-discoveries" class="level3" data-number="36.2.1">
+<h3 data-number="36.2.1" class="anchored" data-anchor-id="hallwachs-and-lennards-discoveries"><span class="header-section-number">36.2.1</span> Hallwachs and Lennard’s Discoveries</h3>
+<p>In 1888, Wilhelm Hallwachs discovered that ultraviolet light could cause negatively charged metal plates to lose their charge. Using charged foils connected to an irradiated metal plate, he observed that: - Negative charges decreased upon UV irradiation - Positive charges remained unchanged</p>
+<p>This suggested that light was somehow causing electrons to leave the metal surface. ### Hallwachs and Lennard</p>
+<p>In 1888 Wilhelm Hallwachs published an experiment with charged foils connected to a metal plate which was irradiated with ultraviolet light (we did this experiment in the last lecture before Christmas). If the foils and the plate are negatively charged and electrically isolated against the surrounding, the charge does decrease upon irradiation with ultraviolet light. In contrast, if the system is positively charged, the charge does not decrease. Hallwachs concluded that the light is responsible for negative charges leaving the metal plate.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/Lecture21_Hallwachs.png" class="img-fluid figure-img" style="width:90.0%"></p>
+<figcaption>Scheme of the apparatus used by Hallwachs (left). Scheme of the apparatus used by Lennard and the corresponding photocurrent <span class="math inline">\(I_{\mathrm{ph}}\)</span> (center). From the onset voltage <span class="math inline">\(U_0\)</span> one can calculate the work function <span class="math inline">\(W_{\mathrm{a}}\)</span> as intercept and Planck’s constant <span class="math inline">\(h\)</span> as part of the slope (right).</figcaption>
+</figure>
+</div>
+<p>Later in 1902 Lennard measured the photocurrent between two plates in vacuum. The current set in already at a negative voltage <span class="math inline">\(U_0\)</span> between the plates, increased with rising voltage, and reached a plateau which depended only on the light’s intensity. He concluded:</p>
+<ul>
+<li><p>The electrons must bear a minimum energy in order to overcome the oppositely directed electric field, <span class="math inline">\(E_{\mathrm{kin}} \le e \cdot U_0\)</span>.</p></li>
+<li><p>The kinetic energy <span class="math inline">\(m v^2/2\)</span> of the photoelectrons depends on the frequency <span class="math inline">\(\nu\)</span> of the light, not on the light’s intensity.</p></li>
+<li><p>The number of photoelectrons is proportional to the light’s intensity.</p></li>
+<li><p>There is no delay between light irradiation and electron emission.</p></li>
+</ul>
+</section>
+<section id="classical-wave-theory-expectations" class="level3" data-number="36.2.2">
+<h3 data-number="36.2.2" class="anchored" data-anchor-id="classical-wave-theory-expectations"><span class="header-section-number">36.2.2</span> Classical Wave Theory Expectations</h3>
+<p>If we assume a fully wave-like behavior of light, then light with a radiation power of <span class="math inline">\(P_{\mathrm{L}}\)</span> might hit a surface with an area <span class="math inline">\(A\)</span> and shares its energy equally between all electrons. For a penetration depth of <span class="math inline">\(\Delta z \approx \lambda\)</span> and a density of the conducting electrons of <span class="math inline">\(N\)</span>, then every conducting electron gets on average the energy of</p>
+<p><span class="math display">\[
+\bar{\Delta W} = \frac{P_\mathrm{L}}{N \cdot A \cdot \lambda} \; \Delta t
+\]</span> within the time interval <span class="math inline">\(\Delta t\)</span>. Thus, the work function can be compensated in the case of</p>
+<p><span class="math display">\[
+\Delta t &gt; W_{\mathrm{a}} \; \frac{N \cdot A \cdot \lambda}{P_\mathrm{L}} \mathrm{.}
+\]</span></p>
+<p>Let us consider a zinc plate with a work function of <span class="math inline">\(W_{\mathrm{a}} = 4 \, \mathrm{eV}\)</span> and a light source with a spectral filter <span class="math inline">\(\lambda = 250 \; \mathrm{nm}\)</span> emitting a power of <span class="math inline">\(P_\mathrm{L} = 1 \; \mathrm{W}\)</span> at a distance of <span class="math inline">\(R = 1 \; \mathrm{m}\)</span> away from our zinc plate, there will be an intensity of</p>
+<p><span class="math display">\[
+I_{\mathrm{L}} = \frac{P_\mathrm{L}}{4\pi R^2} \approx 8\cdot 10^{-6} \; \frac{\mathrm{W}}{\mathrm{cm}^{-2}}
+\]</span></p>
+<p>reaching the plate. For a penetration depth of <span class="math inline">\(\Delta z \approx \lambda\)</span> this intensity will be distributed between</p>
+<p><span class="math display">\[
+N = 10^{23} \cdot \mathrm{cm}^{-3}\cdot \lambda = 2.5 \cdot 10^{18} \; \frac{1}{{\mathrm{cm}^{-2}}}
+\]</span></p>
+<p>electrons, whereas each electron acquires on average a power of</p>
+<p><span class="math display">\[
+P_{\mathrm{el}} = 3 \cdot 10^{-24} \; \mathrm{W} = 2 \cdot 10^{-5} \; \mathrm{eVs}^{-1} \mathrm{.}
+\]</span></p>
+<p>Thus, it will take a time of <span class="math inline">\(\Delta t = W_{\mathrm{a}}/P_{\mathrm{el}} = 2 \cdot 10^5 \; \mathrm{s}\)</span> for one electron to acquire enough energy to leave the zinc plate. This result is in clear contrast to experimental findings.</p>
+</section>
+<section id="einsteins-quantum-explanation" class="level3" data-number="36.2.3">
+<h3 data-number="36.2.3" class="anchored" data-anchor-id="einsteins-quantum-explanation"><span class="header-section-number">36.2.3</span> Einstein’s Quantum Explanation</h3>
+<p>In 1905, Einstein proposed a revolutionary explanation based on light quanta (photons). According to this model: - Light energy is transmitted in discrete packets of energy <span class="math inline">\(E = h\nu\)</span> - Each photon interacts with a single electron - The photon’s entire energy transfers to the electron</p>
+<p>This led to Einstein’s photoelectric equation:</p>
+<p><span class="math display">\[
+E_{\mathrm{kin}}^{\mathrm{max}} = h \cdot \nu - W_{\mathrm{a}} \mathrm{,}
+\]</span></p>
+<p>with <span class="math inline">\(W_{\mathrm{a}} = -e \left( \phi_{\mathrm{vac}} - \phi \right)\)</span> being the work function of the cathode material (often the vacuum work function is set to zero, <span class="math inline">\(\phi_{\mathrm{vac}} = 0\)</span>). The work function is the amount of energy one has to compensate in order to bring one electron from bulk into vacuum against the forces binding the electron in bulk.</p>
+<p>The work function determines at which frequency or wavelength the photoelectric effect occurs. Below are typical work functions for various metals:</p>
+<div id="tbl-work-function" class="quarto-float quarto-figure quarto-figure-center anchored" data-tbl-colwidths="[20,20,20]">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-work-function-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;36.1— Work functions and corresponding threshold wavelengths for various metals
+</figcaption>
+<div aria-describedby="tbl-work-function-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Metal</th>
+<th style="text-align: right;">Work Function (eV)</th>
+<th style="text-align: right;">Threshold Wavelength (nm)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Cesium</td>
+<td style="text-align: right;">1.95</td>
+<td style="text-align: right;">636</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Potassium</td>
+<td style="text-align: right;">2.30</td>
+<td style="text-align: right;">539</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Sodium</td>
+<td style="text-align: right;">2.75</td>
+<td style="text-align: right;">451</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Calcium</td>
+<td style="text-align: right;">3.20</td>
+<td style="text-align: right;">388</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Zinc</td>
+<td style="text-align: right;">4.31</td>
+<td style="text-align: right;">288</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Copper</td>
+<td style="text-align: right;">4.70</td>
+<td style="text-align: right;">264</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Silver</td>
+<td style="text-align: right;">4.73</td>
+<td style="text-align: right;">262</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Platinum</td>
+<td style="text-align: right;">6.35</td>
+<td style="text-align: right;">195</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>These values show why alkali metals like cesium and potassium are particularly suitable for photoelectric devices, as they respond to visible light, while metals like platinum require ultraviolet radiation.</p>
+<p>Since one can determine the maximum kinetic energy <span class="math inline">\(E_{\mathrm{kin}}^{\mathrm{max}} = -e\cdot U_0\)</span> (<span class="math inline">\(U_0 &lt; 0\)</span>) from the voltage <span class="math inline">\(U_0\)</span> at which the photocurrent sets in and</p>
+<p><span class="math display">\[
+-e\cdot U_0 = h\cdot\nu -  W_{\mathrm{a}} \mathrm{,}
+\]</span></p>
+<p>one is able to determine the work function on the basis of the intercept of the <span class="math inline">\(-e\cdot U_0\)</span> vs.&nbsp;<span class="math inline">\(h\cdot\nu\)</span> curve and Planck’s constant from the slope of the curve.</p>
+</section>
+<section id="experimental-verification" class="level3" data-number="36.2.4">
+<h3 data-number="36.2.4" class="anchored" data-anchor-id="experimental-verification"><span class="header-section-number">36.2.4</span> Experimental Verification</h3>
+<p>The definitive test of Einstein’s photon theory came from Joffé and Dobronrawov in 1925. They used small, charged bismuth beads held within a Millikan capacitor and irradiated those beads with low-dose X-rays. Every change of the overall charge of the beads interferes with the equilibrium in the capacitor, and can be observed by means of a change of the bead position. Using a radiation power of <span class="math inline">\(P = 10^{-12} \; \mathrm{W}\)</span> meaning an emission rate of <span class="math inline">\(\dot{N} = 10^3\)</span> photons per second with an energy of <span class="math inline">\(h \cdot \nu = 10^4 \; \mathrm{eV}\)</span> on average every 30 minutes a change of the bead charge was detected. The number of photons arriving at one bead within a time interval <span class="math inline">\(\Delta t\)</span> is <span class="math inline">\(Z = \dot{N} \cdot \Delta t \cdot \mathrm{d} \Omega/ \left( 4\pi \right)\)</span>, with <span class="math inline">\(\mathrm{d} \Omega\)</span> as the solid angle covered by the bead. The calculated time constant of <span class="math inline">\(Z\)</span> was in well agreement with the observed rate of the charge alteration. If we again assume a wave-like explanation of the photoeffect, the emitted power within the according solid angle will be absorbed by the bead and distributed between all its electrons. As a consequence the bead as a whole will have collected enough energy in order to release an electron within the same period of time. However it cannot be explained how all <span class="math inline">\(10^{12}\)</span> atoms are supposed to combine their energy in one, single electron at the very same time.</p>
+</section>
+</section>
+<section id="the-compton-effect" class="level2" data-number="36.3">
+<h2 data-number="36.3" class="anchored" data-anchor-id="the-compton-effect"><span class="header-section-number">36.3</span> The Compton Effect</h2>
+<p>The particle nature of light received further confirmation through X-ray scattering experiments. When X-rays of wavelength <span class="math inline">\(\lambda_0\)</span> strike a material, the scattered radiation shows two components:</p>
+<ul>
+<li>Unshifted radiation with the original wavelength <span class="math inline">\(\lambda_0\)</span></li>
+<li>Shifted radiation with increased wavelength <span class="math inline">\(\lambda_S &gt; \lambda_0\)</span></li>
+</ul>
+<p>Remarkably, the wavelength shift depends primarily on the scattering angle rather than the target material, suggesting a fundamental interaction mechanism. Experiments concerning the Compoton effect were first conducted by Arthur Compton in 1923. He used X-rays with a wavelength of <span class="math inline">\(\lambda_0 = 0.154 \; \mathrm{nm}\)</span> and observed scattered radiation with a wavelength of <span class="math inline">\(\lambda_S = 0.165 \; \mathrm{nm}\)</span> at a scattering angle of <span class="math inline">\(\theta = 60^\circ\)</span>.</p>
+<div id="fig-compton_exp" class="quarto-float quarto-figure quarto-figure-center anchored" data-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-compton_exp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/compton_exp.png" class="img-fluid figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-compton_exp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;36.1— General setup for Compton scattering experiments.
+</figcaption>
+</figure>
+</div>
+<div id="fig-compton_geometry" class="quarto-float quarto-figure quarto-figure-center anchored" data-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-compton_geometry-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/compton_geometry.png" class="img-fluid figure-img" style="width:50.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-compton_geometry-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;36.2— Compton Scattering Geometry
+</figcaption>
+</figure>
+</div>
+<section id="theoretical-analysis" class="level3" data-number="36.3.1">
+<h3 data-number="36.3.1" class="anchored" data-anchor-id="theoretical-analysis"><span class="header-section-number">36.3.1</span> Theoretical Analysis</h3>
+<p>This phenomenon can be explained by treating light as particles (photons) colliding with electrons. Each photon carries: - Energy <span class="math inline">\(E = h\nu = \hbar\omega\)</span> - Momentum <span class="math inline">\(p = h/\lambda = \hbar k\)</span></p>
+<p>If a photon impacts into a weakly bound electron with a binding energy much smaller than the photon energy (<span class="math inline">\(E_\mathrm{B} \le E\)</span>), we can neglect the binding energy and assume the electron as free electron. In addition we simplify further and assume the electron as being at rest. During the collision event</p>
+<p><span class="math display">\[
+h \nu_0 + \mathrm{e}^{-} \longrightarrow h \nu_{\mathrm{S}} + \mathrm{e}^{-} + E_{\mathrm{kin}}
+\]</span></p>
+<p>energy and momentum are conserved. The law of conservation of energy then reads as</p>
+<p><span class="math display">\[
+h \, \nu_0 = h \, \nu_\mathrm{s} + E_{\mathrm{kin}}^{\mathrm{e}}
+\]</span></p>
+<p>with <span class="math inline">\(E_{\mathrm{kin}}^{\mathrm{e}}\)</span> as the relativistic kinetic energy of the electron</p>
+<p><span class="math display">\[
+E_{\mathrm{kin}}^{\mathrm{e}} = \frac{m_0 c^2}{\sqrt{1-\beta^2}} - m_0 c^2
+\]</span></p>
+<p>and <span class="math inline">\(\beta = v/c\)</span>. If we ascribe a momentum like</p>
+<p><span class="math display">\[
+\vec{p} = \hbar \, \vec{k}
+\]</span></p>
+<p>with</p>
+<p><span class="math display">\[
+\left| \vec{p} \right| = \hbar \, \left| \vec{k} \right| = h \frac{1}{\lambda}
+\]</span></p>
+<p>to the photon, we can formulate the law of momentum conservation as follows,</p>
+<p><span class="math display">\[
+\hbar \, \vec{k_0} = \hbar \, \vec{k_{\mathrm{s}}} + \vec{p^{\mathrm{e}}}
+\]</span></p>
+<p>with</p>
+<p><span class="math display">\[
+\vec{p^{\mathrm{e}}} = \frac{m_0 \vec{v}}{\sqrt{1-\beta^2}} \mathrm{.}
+\]</span></p>
+<p>If we isolate the square of the momentum of the electron, we obtain an equation depending on the squared difference between the wavevectors of the incident and scattered photon. Calculating this difference leads to a scalar product between these two vectors and necessitates the introduction of the angle between the propagation direction of the incident and scattered photon. We denote this angle as <span class="math inline">\(\phi\)</span>,</p>
+<p><span class="math display">\[
+\begin{aligned}
+\frac{m_0^2 v^2}{1-\beta^2} &amp;= \hbar^2 (\vec{k_0} - \vec{k_{\mathrm{s}}})^2 \\
+&amp;= \hbar^2(k_0^2 + k_{\mathrm{s}}^2 - 2k_0k_{\mathrm{s}}\cos(\varphi)) \\
+&amp;= \frac{h^2}{c^2}(\nu_0^2 + \nu_{\mathrm{s}}^2 - 2\nu_0\nu_{\mathrm{s}}\cos(\varphi))
+\end{aligned}
+\]</span></p>
+<p>where:</p>
+<ul>
+<li><span class="math inline">\(m_0\)</span> is the rest mass</li>
+<li><span class="math inline">\(v\)</span> is velocity</li>
+<li><span class="math inline">\(\beta = v/c\)</span></li>
+<li><span class="math inline">\(k_0, k_s\)</span> are initial and scattered wave vectors</li>
+<li><span class="math inline">\(\nu_0, \nu_s\)</span> are initial and scattered frequencies</li>
+<li><span class="math inline">\(\varphi\)</span> is the scattering angle</li>
+</ul>
+<p>From the law of energy conservation we get</p>
+<p><span class="math display">\[
+\frac{m_0^2 v^2}{1-\beta^2} = \frac{h^2}{c^2} \left( \nu_0 - \nu_{\mathrm{s}} \right)^2 + 2 h m_0 \left( \nu_0 - \nu_{\mathrm{s}}\right) \mathrm{,}
+\]</span></p>
+<p>which we can compare with the law of momentum conservation and get</p>
+<p><span class="math display">\[
+\nu_0 - \nu_{\mathrm{s}} = \frac{h}{m_0 c^2} \,  \nu_0 \, \nu_{\mathrm{s}} \, \left(1- \cos \left( \varphi \right) \right) \mathrm{.}
+\]</span></p>
+<p>Now making use of <span class="math inline">\(1- \cos \left( \varphi \right) = 2 \sin^2 \left( \varphi/2 \right)\)</span> and <span class="math inline">\(\nu = c/\lambda\)</span> we achieve the Compton formula</p>
+<p><span class="math display">\[
+\begin{aligned}
+\lambda_{\mathrm{S}} &amp; = &amp; \lambda_0 + 2 \frac{h}{m_0 c} \sin^2 \left( \varphi/2 \right)\\
+{} &amp; = &amp; \lambda_0 + 2 \lambda_{\mathrm{C}} \sin^2 \left( \varphi/2 \right)\\
+\end{aligned}
+\]</span></p>
+<p>with <span class="math inline">\(\lambda_{\mathrm{C}}\)</span> denoting the Compton wavelength of the electron,</p>
+<p><span class="math display">\[
+\lambda_{\mathrm{C}} = \frac{h}{m_0 c} = 2.4262 \cdot 10^{-12} \; \mathrm{m.}
+\]</span></p>
+<p>The Compton wavelength is a constant and represents the change of the wavelength <span class="math inline">\(\Delta \lambda = \lambda_{\mathrm{S}} - \lambda_0\)</span> at a scattering angle of <span class="math inline">\(\varphi = 90^{\circ}\)</span>. Results from experiments almost perfectly coincide with the Compton formula. Furthermore the ratio between the wavelengths</p>
+<p><span class="math display">\[
+\frac{\lambda_{\mathrm{S}}}{\lambda_0} = \frac{h \nu_0}{m_0 c^2}
+\]</span></p>
+<p>(replace with ?? <span class="math display">\[
+\frac{\nu_s}{\nu_0} = \frac{1}{1 + \frac{h\nu_0}{m_0c^2}(1-\cos(\varphi))}
+\]</span> ) represents the ratio between the energy of the incident photon and the energy of the electron at rest. Thus, if we know the mass of the electron, we can determine <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\lambda_{\mathrm{S}}\)</span> (and therefore <span class="math inline">\(\lambda_{\mathrm{C}}\)</span>) and calculate <span class="math inline">\(h\)</span>.</p>
+<div id="824d460b" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Particle_Nature_of_Light_files/figure-html/cell-3-output-1.png" width="551" height="351" class="figure-img"></p>
+<figcaption>Photon and Electron Energies in Compton Scattering</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="experimental-results" class="level3" data-number="36.3.2">
+<h3 data-number="36.3.2" class="anchored" data-anchor-id="experimental-results"><span class="header-section-number">36.3.2</span> Experimental Results</h3>
+<p>The plots below show the observed relative scattering intensity of photons at different wavelength for different scattering angles from an experiment using XXX photons scattered on a YYY target. The plots comprise an elastic scattering peak at the wavelength of the incident photons and an inelastic scattering peak at a longer wavelength, in agreement with the Compton formula.</p>
+<div id="fig-compton_results" class="quarto-float quarto-figure quarto-figure-center anchored" data-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-compton_results-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/compton_results.png" class="img-fluid figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-compton_results-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;36.3— Compton Scattering of X-rays. The spectra contain an elastic peak at the incident wavelength and an inelastic peak at a longer wavelength. The elastic peak occurs since the sample contains also tightly bound electrons which do not contribute to the Compton effect.
+</figcaption>
+</figure>
+</div>
+<p>The Klein-Nishina formula describes the differential cross-section of the Compton effect, showing how the intensity of scattered photons depends on the scattering angle and wavelength:</p>
+<p><span class="math display">\[\frac{d\sigma}{d\Omega} = \frac{r_e^2}{2}\left(\frac{E'}{E_0}\right)^2\left(\frac{E'}{E_0} + \frac{E_0}{E'} - \sin^2\theta\right)\]</span></p>
+<p>where:</p>
+<ul>
+<li><span class="math inline">\(r_e\)</span> is the classical electron radius</li>
+<li><span class="math inline">\(E'\)</span> is the scattered photon energy</li>
+<li><span class="math inline">\(E_0\)</span> is the initial photon energy</li>
+<li><span class="math inline">\(\theta\)</span> is the scattering angle</li>
+</ul>
+<div id="cd9b2131" class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Particle_Nature_of_Light_files/figure-html/cell-4-output-1.png" width="545" height="349" class="figure-img"></p>
+<figcaption>Klein-Nishina Differential Cross-Section for the Compton Effect at different scattering angles of 30°, 60°, 90°, and 120°</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Detection of <span class="math inline">\(\gamma\)</span> rays
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>High energy photons, i.e.&nbsp;<span class="math inline">\(\gamma\)</span> rays can be detected by a scintillation counter. The scintillation counter consists of a scintillator, a photomultiplier tube, and a discriminator. The scintillator is a material that emits visible light when struck by high-energy photons. The emitted light is then converted into an electrical signal by the photomultiplier tube. The photomultiplier amplifies the signal through acceleration of photoelectrons (generated by the photoelectric effect) in an electric field, creating cascades of secondary electrons upon collision with metallic dynodes. The discriminator filters the output signals to reject noise and select events within specific energy ranges of interest.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/scintillator.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption>Sketch of a Scintillator</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Compton Continuum and Compton Edge
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<section id="compton-edge" class="level3" data-number="36.3.3">
+<h3 data-number="36.3.3" class="anchored" data-anchor-id="compton-edge"><span class="header-section-number">36.3.3</span> Compton Edge</h3>
+<p>The Compton edge represents the maximum energy transfer possible in a single Compton scattering event, occurring at a scattering angle of <span class="math inline">\(180°\)</span> (backscatter). The energy of the Compton edge <span class="math inline">\((E_{CE})\)</span> can be calculated as:</p>
+<p><span class="math display">\[E_{CE} = E_0 - E'_{min} = E_0\left(1 - \frac{1}{1 + \frac{2E_0}{m_ec^2}}\right)\]</span></p>
+<p>where <span class="math inline">\(E_0\)</span> is the initial photon energy and <span class="math inline">\(E'_{min}\)</span> is the minimum energy of the scattered photon.</p>
+</section>
+<section id="compton-continuum" class="level3" data-number="36.3.4">
+<h3 data-number="36.3.4" class="anchored" data-anchor-id="compton-continuum"><span class="header-section-number">36.3.4</span> Compton Continuum</h3>
+<p>The Compton continuum is the energy distribution of scattered photons between:</p>
+<ul>
+<li>The photopeak (original energy <span class="math inline">\(E_0\)</span>)</li>
+<li>The minimum energy after scattering (<span class="math inline">\(E'_{min}\)</span> at <span class="math inline">\(180°\)</span>)</li>
+</ul>
+<p>The intensity distribution across this continuum is described by the Klein-Nishina formula:</p>
+<p><span class="math display">\[\frac{d\sigma}{d\Omega} = \frac{r_e^2}{2}\left(\frac{E'}{E_0}\right)^2\left(\frac{E'}{E_0} + \frac{E_0}{E'} - \sin^2\theta\right)\]</span></p>
+<p>In gamma-ray spectroscopy, this appears as a broad feature in the energy spectrum, with:</p>
+<ol type="1">
+<li>A sharp cutoff at the Compton edge</li>
+<li>Declining intensity towards lower energies</li>
+<li>A backscatter peak at low energies corresponding to <span class="math inline">\(180°\)</span> scattering</li>
+</ol>
+</section>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="properties-of-photons" class="level2" data-number="36.4">
+<h2 data-number="36.4" class="anchored" data-anchor-id="properties-of-photons"><span class="header-section-number">36.4</span> Properties of Photons</h2>
+<p>Having established light’s particle nature through the photoelectric and Compton effects, we can now summarize the fundamental properties of photons. These quantum particles unite the classical wave description of light with its particle behavior.</p>
+<section id="energy-and-momentum" class="level3" data-number="36.4.1">
+<h3 data-number="36.4.1" class="anchored" data-anchor-id="energy-and-momentum"><span class="header-section-number">36.4.1</span> Energy and Momentum</h3>
+<p>Every electromagnetic field consists of energy quanta <span class="math inline">\(h\nu\)</span>, which we call photons. For a cavity resonator, the electromagnetic energy density is:</p>
+<p><span class="math display">\[
+\omega_{\mathrm{em}} = n \cdot h \cdot \nu \mathrm{.}
+\]</span></p>
+<p>We can further comprehend the flux <span class="math inline">\(I = \varepsilon_0 c E^2\)</span> of an electromagnetic wave as a <em>particle flux</em> <span class="math inline">\(\dot{N}\)</span> of photons</p>
+<p><span class="math display">\[
+I = \dot{N} h \nu
+\]</span></p>
+<p>with <span class="math inline">\(\dot{N} = n \cdot c\)</span>. Therefore, if a light wave with a flux of <span class="math inline">\(I\)</span> is shining on an area is <em>tantamount</em> with a particle flux of photons reaching this area.</p>
+<p>As demonstrated on the basis of the Compton effect, every photon bears a momentum <span class="math inline">\(\vec{p} = \hbar \cdot \vec{k}\)</span> with the magnitude <span class="math inline">\(\left| \vec{p} \right| = p = h \nu / c\)</span>. As a consequence, if we are able to assign an energy density to the density of modes, we are also able to assign a <em>momentum density</em>,</p>
+<p><span class="math display">\[
+\pi_{\mathrm{em}} = n \cdot \hbar \cdot k \mathrm{.}
+\]</span></p>
+<p>Then, the relation between the energy density <span class="math inline">\(\omega_{\mathrm{em}}\)</span> of an electromagnetic wave and the momentum density <span class="math inline">\(\pi_{\mathrm{em}}\)</span> of the very same wave reads as</p>
+<p><span class="math display">\[
+\omega_{\mathrm{em}} = c \cdot \pi_{\mathrm{em}} {.}
+\]</span></p>
+</section>
+<section id="angular-momentum" class="level3" data-number="36.4.2">
+<h3 data-number="36.4.2" class="anchored" data-anchor-id="angular-momentum"><span class="header-section-number">36.4.2</span> Angular Momentum</h3>
+<p>Photons carry two distinct types of angular momentum: spin angular momentum (SAM) associated with polarization, and orbital angular momentum (OAM) associated with the spatial distribution of the wavefront.</p>
+<section id="spin-angular-momentum" class="level4" data-number="36.4.2.1">
+<h4 data-number="36.4.2.1" class="anchored" data-anchor-id="spin-angular-momentum"><span class="header-section-number">36.4.2.1</span> Spin Angular Momentum</h4>
+<p>The spin angular momentum is related to the polarization state of light. When a circularly polarized photon is absorbed by a free atom, the atom’s angular momentum changes by ±ħ. For left-handed circular polarized light (<span class="math inline">\(\sigma^{+}\)</span>) propagating along <span class="math inline">\(z\)</span>, the change is <span class="math inline">\(\Delta J_z = + \hbar\)</span>, while for right-handed polarization (<span class="math inline">\(\sigma^{-}\)</span>), it’s <span class="math inline">\(\Delta J_z = - \hbar\)</span>. The spin angular momentum vector is:</p>
+<p><span class="math display">\[
+\vec{S}_{Ph} = \pm \hbar \, \frac{\vec{k}}{\left| \vec{k} \right|}
+\]</span></p>
+<p>Linearly polarized light, being a superposition of equal amounts of <span class="math inline">\(\sigma^{+}\)</span> and <span class="math inline">\(\sigma^{-}\)</span> light, has zero net spin angular momentum.</p>
+</section>
+<section id="orbital-angular-momentum" class="level4" data-number="36.4.2.2">
+<h4 data-number="36.4.2.2" class="anchored" data-anchor-id="orbital-angular-momentum"><span class="header-section-number">36.4.2.2</span> Orbital Angular Momentum</h4>
+<p>Photons can also carry orbital angular momentum, characterized by a quantum number <span class="math inline">\(l\)</span>:</p>
+<p><span class="math display">\[
+\vec{L}_{Ph} = l\hbar \, \frac{\vec{k}}{\left| \vec{k} \right|}
+\]</span></p>
+<p>where <span class="math inline">\(l\)</span> can be any integer. This OAM is associated with helical wavefronts and is important in applications like optical tweezers and quantum information.</p>
+<p>The total angular momentum of a photon is the sum of both contributions:</p>
+<p><span class="math display">\[
+\vec{J}_{Ph} = \vec{S}_{Ph} + \vec{L}_{Ph}
+\]</span></p>
+</section>
+</section>
+<section id="effect-of-gravity-on-photons" class="level3" data-number="36.4.3">
+<h3 data-number="36.4.3" class="anchored" data-anchor-id="effect-of-gravity-on-photons"><span class="header-section-number">36.4.3</span> Effect of Gravity on Photons</h3>
+<p>Despite having zero rest mass, photons interact with gravitational fields due to their energy-equivalent mass. From special relativity we know that mass is affected by the relative motion of reference systems:</p>
+<p><span class="math display">\[
+m = \frac{1}{\sqrt{1-\left( \frac{v}{c}\right)^2}} \, m_0
+\]</span></p>
+<p>Only particles with a rest mass <span class="math inline">\(m_0 = 0\)</span> can travel at the speed of light, which is why photons must have zero rest mass. For the energy of a photon, we find:</p>
+<p><span class="math display">\[
+\begin{aligned}
+E &amp; =  \sqrt{p^2c^2 + m_0^2 c^4}\\
+{} &amp; =  p c\\
+{} &amp; =  \frac{h}{\lambda} c\\
+{} &amp; =  h \nu
+\end{aligned}
+\]</span></p>
+<p>in accordance with previous energy and momentum considerations. If we assign an effective mass <span class="math inline">\(m\)</span> to the photon:</p>
+<p><span class="math display">\[
+m = \frac{E}{c^2} = \frac{h \nu}{c^2}
+\]</span></p>
+<p>this photon must perform work when traveling in a gravitational field. Moving from position <span class="math inline">\(\vec{r_1}\)</span> with gravitational potential <span class="math inline">\(\Phi(\vec{r_1})\)</span> to position <span class="math inline">\(\vec{r_2}\)</span> with potential <span class="math inline">\(\Phi(\vec{r_2})\)</span>, the work is:</p>
+<p><span class="math display">\[
+W = m \cdot \Delta \Phi = \frac{h \nu}{c^2} \left( \Phi \left( \vec{r_2} \right) - \Phi \left( \vec{r_1} \right) \right)
+\]</span></p>
+<p>By energy conservation, the photon’s energy <span class="math inline">\(h\nu\)</span> must change by this amount, leading to a frequency shift:</p>
+<p><span class="math display">\[
+\nu_2 = \nu_1 \left(1-\frac{\Delta \phi}{c^2} \right)
+\]</span></p>
+<p>or in relative terms:</p>
+<p><span class="math display">\[
+\frac{\Delta \nu}{\nu} = \frac{\Delta \Phi}{c^2}
+\]</span></p>
+<p>This remarkable prediction - that photons experience a redshift (longer wavelength, smaller frequency, lower energy) when rising in a gravitational field - was first experimentally verified by Pound and Rebka in 1959. Using the Mössbauer effect, they measured the frequency shift of gamma rays from <span class="math inline">\(^{57}\)</span>Fe (14.4 keV) traveling vertically over a height of 22.5 meters at Harvard University. The expected relative frequency shift was extremely small:</p>
+<p><span class="math display">\[
+\frac{\Delta \nu}{\nu} \approx 2.5 \times 10^{-15}
+\]</span></p>
+<div id="fig-pound_rebka2" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pound_rebka2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/pound_rebka2.png" class="img-fluid figure-img" style="width:60.0%"></p>
+<figcaption>Architectural sketch of the Jefferson Physical Laboratory tower showing the placement of the gravitational red-shift experiment running from the penthouse to the basement. Source: R. V. Pound and J. L. Snider, ‘‘Effect of Gravity’’ (ref. 23), p.&nbsp;B 792 and Pound &amp; Rebka, Phys. Rev.&nbsp;Lett. 3, 440 (1959)</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/pound_rebka.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption>Schematic of the Pound-Rebka experiment showing gamma ray source and detector separated vertically by 22.5 meters</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pound_rebka2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;36.4— Sektch of the tower at Harvard University (left) and the Pound-Rebka experiment setup (right).
+</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The Mößbauer Effect in the Pound-Rebka Experiment
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The detection of gravitational redshift requires extremely precise frequency measurements (<span class="math inline">\(\Delta \nu/\nu \approx 10^{-15}\)</span>). This was made possible by the Mößbauer effect, which allows for recoil-free emission and absorption of gamma rays in crystals.</p>
+<p>In free atoms, the emission or absorption of a gamma ray causes recoil, shifting the photon energy by about <span class="math inline">\(10^{-3}\)</span> eV. For a gamma ray of energy <span class="math inline">\(E_\gamma\)</span>, the recoil energy is:</p>
+<p><span class="math display">\[E_R = \frac{E_\gamma^2}{2Mc^2}\]</span></p>
+<p>where <span class="math inline">\(M\)</span> is the mass of the nucleus. However, in a crystal lattice, the nucleus is not free to recoil. Instead, the recoil momentum can be transferred to the entire crystal if:</p>
+<ol type="1">
+<li>The nucleus is tightly bound in the crystal lattice</li>
+<li>The recoil energy is less than the energy of the lowest lattice vibration (phonon)</li>
+<li>The entire crystal acts as a single quantum mechanical system</li>
+</ol>
+<p>In this case, the effective mass <span class="math inline">\(M\)</span> in the recoil energy formula becomes the mass of the entire crystal, making <span class="math inline">\(E_R\)</span> negligible. For <span class="math inline">\(^{57}\)</span>Fe nuclei in a crystal:</p>
+<ul>
+<li>Gamma ray energy: 14.4 keV</li>
+<li>Natural linewidth: <span class="math inline">\(\approx 10^{-8}\)</span> eV</li>
+<li>No recoil broadening</li>
+<li>Extremely sharp resonance</li>
+</ul>
+<p>This allows for the detection of the tiny frequency shifts caused by gravity over the 22.5 m height difference in the Harvard tower.</p>
+</div>
+</div>
+</div>
+<p>The success of the Pound-Rebka experiment demonstrates how quantum mechanics and general relativity make consistent predictions about photon behavior, though a complete quantum theory of gravity remains one of physics’ greatest challenges.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../quantum-mechanics/Structure_of_matter.html" class="pagination-link" aria-label="The Structure of Matter - Historical Experiments">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">The Structure of Matter - Historical Experiments</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../quantum-mechanics/Black_Body_Radiation.html" class="pagination-link" aria-label="Black Body Radiation">
+        <span class="nav-page-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Black Body Radiation</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

@@ -1,0 +1,24 @@
+## Spreading of wave packets
+
+As we have seen previously the center of a matter wave propagates with the group velocity $v_{\mathrm{g}}$ which is tantamount to the velocity of a particle $v_{\mathrm{p}} = p/m$. Since the initial momentum of the particle $p$ already bears a particular uncertainty $\Delta p$, we cannot determine the momentum of the particle more precise than $p \pm \Delta p$. As a consequence $v_{\mathrm{g}}$ also bears a particular uncertainty $ \Delta v_{\mathrm{g}}$ with
+
+$$
+\Delta v_{\mathrm{g}} = \frac{1}{m} \Delta p = \frac{1}{m} \frac{\hbar}{\Delta z_0} \mathrm{,}
+$$
+
+
+with $\Delta z_0$ being the uncertainty of the particle's position at time $t = 0$. Due to the uncertainty of the particle propagation, the uncertainty to determine $\Delta z$ *at a later time than* $t = 0$ grows with increasing time, namely
+
+$$
+\Delta z \left( t \right) = \Delta v_{\mathrm{g}} \cdot t = \frac{\hbar}{m \Delta z_0} \cdot t \mathrm{.}
+$$
+
+Here, $\Delta z \left( t \right)$ denotes the width of the wave packet at time $t > 0$. The area under the curve of the wave packet, however, remains constant. This is an immediate consequence of the normalization condition,
+
+$$
+\int_{-\infty}^{+\infty} \left| \psi \left( z, t \right) \right|^2 \mathrm{d}z = 1 \mathrm{.}
+$$
+
+![The spreading of a wave packet with Gaussian amplitude during time. Note the actual amplitude of the wave packet is decreasing while its width is increasing. The area under the curve, however, is constant.](img/L24_wave_packet_time.png){width=45%}
+
+Furthermore, it is evident that the better the particle is located at time $t = 0$ ($\Delta x_0$ small), the greater the spread over time. This arises from an increased momentum uncertainty as a consequence of the reduced position uncertainty, and hence an increased uncertainty of the particle velocity.

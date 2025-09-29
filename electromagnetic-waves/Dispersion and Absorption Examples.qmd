@@ -1,0 +1,113 @@
+## Experimental Examples and Demonstrations
+
+### 1. Measurement of Refractive Index
+
+```python
+### Example box: Abbe Refractometer
+The Abbe refractometer provides a precise method for measuring refractive indices of liquids:
+
+1. Operating principle: Total internal reflection at critical angle
+2. Typical accuracy: ±0.0002
+3. Procedure:
+   - Place sample between prisms
+   - Adjust viewing angle until bright/dark boundary appears
+   - Read refractive index directly from scale
+4. Applications:
+   - Quality control in food/chemical industries
+   - Concentration measurements
+   - Purity testing
+```
+
+### 2. Dispersion Demonstration
+
+```python
+### Example box: Prism Spectroscopy
+Simple but effective demonstration using:
+- White LED source
+- Glass prism
+- Screen
+
+Observations:
+1. Separation of white light into spectrum
+2. Different angles of deviation for different colors
+3. Measurement of dispersion relation n(λ)
+```
+
+### 3. Absorption Measurements
+
+```python
+### Example box: Beer-Lambert Law Verification
+Equipment:
+- Spectrophotometer
+- Solutions of varying concentration
+- Cuvettes of different path lengths
+
+Procedure:
+1. Measure transmission vs. concentration
+2. Plot ln(I/I₀) vs. path length
+3. Determine absorption coefficient
+4. Verify linear relationship
+```
+
+### 4. Group Velocity Measurement
+
+```python
+### Example box: Fiber Optic Pulse Propagation
+Setup:
+- Short pulse laser source (~ps)
+- Optical fiber of known length
+- Fast photodetector
+- Oscilloscope
+
+Measurements:
+1. Pulse arrival time vs. fiber length
+2. Pulse width changes due to dispersion
+3. Calculate group velocity
+```
+
+### 5. Practical Applications
+
+```python
+### Example box: Optical Communications
+Demonstration of dispersion effects in telecommunications:
+1. Signal transmission through optical fiber
+2. Pulse broadening measurement
+3. Dispersion compensation techniques
+4. Bit error rate measurements
+```
+
+### 6. Advanced Demonstrations
+
+```python
+### Example box: Anomalous Dispersion
+Using atomic vapor cells:
+1. Sodium vapor cell setup
+2. Tunable laser source
+3. Measurement of refractive index near D-lines
+4. Observation of rapid n(ω) variation
+```
+
+You might also add hands-on activities:
+
+1. **Student Exercises**:
+   - Measuring refractive indices of different materials
+   - Plotting dispersion curves
+   - Analyzing absorption spectra
+
+2. **Virtual Labs**:
+   - Interactive simulations of wave propagation
+   - Online spectroscopy experiments
+   - Data analysis exercises
+
+3. **Real-world Connections**:
+   - Fiber optic communications
+   - Spectroscopy in chemistry
+   - Optical imaging systems
+   - Medical diagnostics
+
+4. **Troubleshooting Scenarios**:
+   - Common experimental problems
+   - Error analysis
+   - Calibration procedures
+
+These examples would help students connect theoretical concepts with practical applications and develop experimental skills.

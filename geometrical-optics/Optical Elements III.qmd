@@ -427,16 +427,16 @@ This is a very powerful tool to analyze optical systems.
 ## Thick Lens Focal Length
 We would like to model the imaging properties of a thick lens using the matrix method. The lens is divided into three components:
 
-1. A thin lens at the front surface
+1. A spherical surface at the front of the lens with radius $R_1$
 2. A region of free space propagation through the lens material of thickness $d$
-3. Another thin lens at the back surface
+3. Another spherical surface at the back of the lens with radius $R_2$
 
 The matrices for these components are:
 
 $$
-M_1 = \begin{bmatrix} 1 & 0 \\ -1/f_1 & 1 \end{bmatrix}, \quad
+M_1 = \begin{bmatrix} 1 & 0 \\ -1/f_1 & 1/n \end{bmatrix}, \quad
 M_2 = \begin{bmatrix} 1 & d \\ 0 & 1 \end{bmatrix}, \quad
-M_3 = \begin{bmatrix} 1 & 0 \\ -1/f_2 & 1 \end{bmatrix}
+M_3 = \begin{bmatrix} 1 & 0 \\ -1/f_2 & n \end{bmatrix}
 $$
 
 Where
@@ -447,7 +447,7 @@ Where
 
 For a lens with refractive index $n$ in air, the focal lengths of the surfaces are:
 
-   $$\frac{1}{f_1} = \frac{n-1}{R_1}, \quad \frac{1}{f_2} = \frac{1-n}{R_2}$$
+   $$\frac{1}{f_1} = \frac{1-n}{nR_1}, \quad \frac{1}{f_2} = \frac{n-1}{R_2}$$
 
    Where $R_1$ and $R_2$ are the radii of curvature of the front and back surfaces.
 
@@ -455,27 +455,61 @@ The total system matrix is then
 
    $$M_{total} = M_3 \cdot M_2 \cdot M_1$$
 
-After multiplication, the element in the lower left corner of the resulting matrix represents $-1/f$ for the entire lens system:
+After multiplication the total matrix is
 
-   $$-\frac{1}{f} = -\frac{1}{f_2} - \frac{1}{f_1} + \frac{d}{f_1f_2}$$
+$$
+M=\begin{bmatrix}
+  1 - \frac{d \left(1 - n\right)}{R_{1}} & d\\
+  - \frac{n-1}{R_{2} } - \frac{\left(1 - n\right) \left(n - \frac{d n \left( n-1\right)}{R_{2}}\right)}{R_{1} n} & \frac{\left(n - \frac{d n \left( n-1\right)}{R_{2}}\right)}{n}
+\end{bmatrix}
+$$
+
+where the element in the lower left corner is the inverse of the focal length of the thick lens. This can be simplified to the following expression:
+
+   $$-\frac{1}{f} = -\frac{1}{f_2} - \frac{n}{f_1} -\frac{d n}{f_1f_2}$$
 
 Substituting the expressions for $1/f_1$ and $1/f_2$:
 
-   $$\frac{1}{f} = \frac{n-1}{R_1} + \frac{n-1}{R_2} - \frac{d(n-1)^2}{nR_1R_2}$$
+   $$\frac{1}{f} = \frac{n-1}{R_1} - \frac{n-1}{R_2} + \frac{d(n-1)^2}{nR_1R_2}$$
 
-Factoring out $(n-1)$:
+Factoring out $(n-1)$ gives the final expression for the focal length of a thick lens:
 
-   $$\frac{1}{f} = (n-1)\left[\frac{1}{R_1} + \frac{1}{R_2} - \frac{(n-1)d}{nR_1R_2}\right]$$
-
-Rearranging slightly:
-
-   $$\frac{1}{f} = (n-1)\left[\frac{1}{R_1} - \frac{1}{R_2} + \frac{(n-1)d}{nR_1R_2}\right]$$
+   $$\frac{1}{f} = (n-1)\left[\frac{1}{R_1} - \frac{1}{R_2} + \frac{(n-1)d}{R_1R_2}\right]$$
 
 This is the Lensmaker's equation for a thick lens.
 
 The construction of ray diagrams for thick lenses is similar to that for thin lenses, but the object and image distances are measured from the principal planes. The magnification is also calculated using the distances from the principal planes. **Principal planes are where a thick lens can be treated as an equivalent thin lens. At these planes, the magnification is unity.**
 
 The derivation of the local of the principle planes will be part of the seminar.
+
+```{python}
+# %% Importing libraries and defining symbols
+from sympy import *
+from IPython.display import display, Math
+
+n1, n2 , d, R1, R2, f1, f2, f    = symbols('n1 n2 d R1 R2 f1 f2 f')
+init_session(quiet=True)
+init_printing()
+
+# %% Definition of matrices
+#
+f1=1/((n2-n1)/R1/n2) ## First spherical refracting surface
+f2=1/((n1-n2)/R2/n1) ## Second spherical refracting surface
+
+M1=Matrix([[1,0],[-1/f1,n1/n2]]) # first refracting surface
+M2=Matrix([[1,n2*d],[0,1]]) # free space
+M3=Matrix([[1,0],[-1/f2,n2/n1]]) # second refracting surface
+
+# %% Thin lens calculation
+M_thin=M3*M1  # first and second refracting surfaces
+#display(Math('1/f ='+ latex(factor(collect(expand(simplify(-M_thin)[1,0]),[1/R1,1/R2],factor)))))
+
+# The result of the matrix multiplication for a thick lens with SymPy
+# %% Thick lens calculation
+M_thick=M3*M2*M1
+
+display(Math('1/f ='+ latex(collect(expand(simplify(-M_thick)[1,0]),[1/R1,1/R2,1/(R1*R2)],factor))))
+```
 :::
 
 

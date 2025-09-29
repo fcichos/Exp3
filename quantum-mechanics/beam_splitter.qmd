@@ -1,0 +1,54 @@
+## Probabilistic Interpretation of the Wave Function: The Beam Splitter Example
+
+The beam splitter provides an elegant demonstration of the probabilistic nature of quantum 
+mechanics and wave function interpretation. Consider a basic 50:50 beam splitter setup with 
+one input port and two output ports, which we'll call path A and path B.
+
+### Quantum State Description
+
+The wave function after the beam splitter can be written as:
+
+$$\psi = \frac{1}{\sqrt{2}}(\psi_A + i\psi_B)$$
+
+This mathematical expression describes the quantum superposition state. Here, $\psi_A$ 
+represents the wave function for path A, and $\psi_B$ for path B. The coefficient 
+$\frac{1}{\sqrt{2}}$ ensures proper normalization, while the factor $i$ represents the 
+π/2 phase shift that occurs upon reflection.
+
+### Probabilistic Interpretation
+
+The probability of finding the photon in either path follows from the square of the wave 
+function amplitude. For path A and B respectively:
+
+$$P_A = |\psi_A|^2 = \frac{1}{2}$$
+$$P_B = |\psi_B|^2 = \frac{1}{2}$$
+
+::: {.callout-important}
+Even when sending single photons one at a time, we cannot predict which path an individual 
+photon will take. Only the probability distribution is known, with the 50:50 split emerging 
+after many measurements.
+:::
+
+### Measurement and Wave Function Collapse
+
+When we detect which path the photon takes, the wave function "collapses" to either path A 
+or path B. This means the photon is found in only one output path, and the measurement 
+destroys the superposition state. After measurement, the wave function becomes either:
+
+$$\psi = \psi_A \quad \text{or} \quad \psi = \psi_B$$
+
+### Quantum Interference Effects
+
+The most intriguing aspect appears when we combine the outputs. The total wave function 
+amplitude at a point where the paths recombine is:
+
+$$\psi_{total} = \frac{1}{\sqrt{2}}(\psi_A + i\psi_B)$$
+
+This leads to interference patterns depending on the relative phase between paths, 
+demonstrating the wave nature of light even at the single-photon level.
+
+::: {.callout-note}
+This beam splitter example illustrates fundamental quantum concepts: superposition, 
+probability amplitudes, and the role of measurement, all without requiring advanced 
+mathematical notation.
+:::

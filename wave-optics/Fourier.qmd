@@ -1,0 +1,79 @@
+::: {.callout-note collapse=true}
+### Fourier Transform and Diffraction
+
+In the context of wave optics, the diffraction pattern observed in the far field (Fraunhofer diffraction) can be understood as the Fourier transform of the aperture function. For a single slit, the aperture function is a rectangular function.
+
+### Aperture Function of a Slit
+
+Consider a single slit of width $b$ centered at $x = 0$. The aperture function $A(x)$ can be described as:
+
+$$
+A(x) = \begin{cases}
+1 & \text{if } -\frac{b}{2} \leq x \leq \frac{b}{2} \\
+0 & \text{otherwise}
+\end{cases}
+$$
+
+This is a rectangular function, often denoted as $\text{rect}\left(\frac{x}{b}\right)$.
+
+### Fourier Transform of the Aperture Function
+
+The Fourier transform of the aperture function $A(x)$ gives us the amplitude distribution in the far field. The Fourier transform $\mathcal{F}\{A(x)\}$ is defined as:
+
+$$
+\mathcal{F}\{A(x)\} = \int_{-\infty}^{\infty} A(x) e^{-i 2 \pi f x} \, dx
+$$
+
+For the rectangular function $A(x) = \text{rect}\left(\frac{x}{b}\right)$, the Fourier transform is:
+
+$$
+\mathcal{F}\left\{\text{rect}\left(\frac{x}{b}\right)\right\} = \int_{-\frac{b}{2}}^{\frac{b}{2}} e^{-i 2 \pi f x} \, dx
+$$
+
+### Evaluating the Integral
+
+Let's evaluate the integral:
+
+$$
+\mathcal{F}\left\{\text{rect}\left(\frac{x}{b}\right)\right\} = \int_{-\frac{b}{2}}^{\frac{b}{2}} e^{-i 2 \pi f x} \, dx
+$$
+
+This integral can be solved as follows:
+
+$$
+\mathcal{F}\left\{\text{rect}\left(\frac{x}{b}\right)\right\} = \left[ \frac{e^{-i 2 \pi f x}}{-i 2 \pi f} \right]_{-\frac{b}{2}}^{\frac{b}{2}}
+$$
+
+Substituting the limits:
+
+$$
+\mathcal{F}\left\{\text{rect}\left(\frac{x}{b}\right)\right\} = \frac{1}{-i 2 \pi f} \left( e^{-i 2 \pi f \frac{b}{2}} - e^{i 2 \pi f \frac{b}{2}} \right)
+$$
+
+Using Euler's formula $e^{i \theta} - e^{-i \theta} = 2i \sin(\theta)$:
+
+$$
+\mathcal{F}\left\{\text{rect}\left(\frac{x}{b}\right)\right\} = \frac{1}{-i 2 \pi f} \cdot (-2i \sin(\pi f b))
+$$
+
+Simplifying:
+
+$$
+\mathcal{F}\left\{\text{rect}\left(\frac{x}{b}\right)\right\} = \frac{2 \sin(\pi f b)}{2 \pi f} = \frac{\sin(\pi f b)}{\pi f}
+$$
+
+### Sinc Function
+
+The result can be expressed in terms of the sinc function. The sinc function is defined as:
+
+$$
+\text{sinc}(x) = \frac{\sin(\pi x)}{\pi x}
+$$
+
+Therefore, the Fourier transform of the rectangular aperture function is:
+
+$$
+\mathcal{F}\left\{\text{rect}\left(\frac{x}{b}\right)\right\} = b \cdot \text{sinc}(b f)
+$$
+
+:::

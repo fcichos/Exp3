@@ -14,7 +14,7 @@ website:
   sidebar:
     style: "floating" # Options: "floating", "sticky"
     logo: mona_logo.png
-    collapse-level: 3
+    collapse-level: 2
     contents:
       - text: Home
         href: index.qmd
@@ -57,11 +57,158 @@ website:
               - text: Optical Instruments- Eye
                 href: geometrical-optics/Eye.qmd
           - section: "Lecture 5"
-          #  contents:
-          #    - text: Optical Instruments- Magnifying Glass
-          #      href: geometrical-optics/Magnifying Glass.qmd
-          #    - text: Optical Instruments- Microscope
-          #      href: geometrical-optics/Microscope.qmd
+            contents:
+              - text: Optical Instruments- Magnifying Glass
+                href: geometrical-optics/Magnifying Glass.qmd
+              - text: Optical Instruments- Microscope
+                href: geometrical-optics/Microscope.qmd
+              - text: Optical Instruments- Telescope
+                href: geometrical-optics/Telescope.qmd
+          - section: "Lecture 6"
+            contents:
+              - text: Contents
+                href: geometrical-optics/ContentsL6.qmd
+              # - text: Rainbow
+              #   href: geometrical-optics/Rainbow.qmd
+              # - text: Imaging Errors
+              #   href: geometrical-optics/Imaging Errors.qmd
+              # - text: Wave Optics
+              #   href: wave-optics/Wave Optics.qmd
+              # - text: Interference
+              #   href: wave-optics/interference.qmd
+      - section: Wave Optics
+        contents:
+          - section: "Lecture 7"
+            contents:
+              - text: Wave Optics
+                href: wave-optics/Wave Optics.qmd
+          - section: "Lecture 8"
+            contents:
+              - text: Interference and Coherence
+                href: wave-optics/Interference.qmd
+              - text: Double Slit Interference
+                href: wave-optics/Double Slit.qmd
+          - section: "Lecture 9"
+            contents:
+              - text: Thin Film Interference
+                href: wave-optics/Thin Film Interference.qmd
+              - text: Multi Wave Interference
+                href: wave-optics/MultiWave Interference.qmd
+          - section: "Lecture 10"
+            contents:
+              - text: Fabry Perot Interferometer
+                href: wave-optics/Dummy.qmd
+              - text: Diffraction
+                href: wave-optics/Diffraction.qmd
+          - section: "Lecture 11"
+            contents:
+              - text: Diffraction
+                href: wave-optics/Diffraction2.qmd
+              - text: Fresnel Zone Plate
+                href: wave-optics/Fresnel Zones.qmd
+              - text: Diffraction Integral
+                href: wave-optics/Dummy.qmd
+              - text: Interferometers
+                href: wave-optics/Interferometers.qmd
+      - section: Electromagnetic Optics
+        contents:
+          - section: "Lecture 12"
+            contents:
+              - text: Electromagnetic Optics
+                href: electromagnetic-waves/Electromagnetic Optics.qmd
+              - text: Polarization of EM Waves
+                href: electromagnetic-waves/Polarization of EM Waves.qmd
+          - section: "Lecture 13"
+            contents:
+              - text: Energy Transport
+                href: electromagnetic-waves/Energy Transport.qmd
+          - section: "Lecture 14"
+            contents:
+              - text: Waves in Matter
+                href: electromagnetic-waves/EM Waves in Matter.qmd
+              - text: Origin of Refractive Index
+                href: electromagnetic-waves/Dispersion and Absorption.qmd
+          - section: "Lecture 15"
+            contents:
+              - text: Reflection and Refraction
+                href: electromagnetic-waves/Reflection and Refraction.qmd
+              - text: Fresnel Equations
+                href: electromagnetic-waves/Fresnel Equations.qmd
+          - section: "Lecture 16"
+            contents:
+              - text: Fresnel Equations
+                href: electromagnetic-waves/Fresnel Equations.qmd
+          - section: "Lecture 17"
+            contents:
+              - text: Electromagnetic Waves in Metals
+                href: electromagnetic-waves/Metals.qmd
+              - text: Anisotropic Materials
+                href: electromagnetic-waves/Anisotropic Materials.qmd
+          - section: "Lecture 18"
+            contents:
+              - text: Optical Activity
+                href: electromagnetic-waves/Optical Activity.qmd
+              - text: Dipole Radiation
+                href: wave-optics/Dummy.qmd
+      - section: Quantum Mechanics
+        contents:
+          - section: "Lecture 19"
+            contents:
+              - text: Structure of Matter
+                href: quantum-mechanics/Structure_of_matter.qmd
+          - section: "Lecture 20"
+            contents:
+              - text: Particle Nature of Light
+                href: quantum-mechanics/Particle_Nature_of_Light.qmd
+          - section: "Lecture 21"
+            contents:
+              - text: Particle Nature of Light
+                href: quantum-mechanics/Particle_Nature_of_Light.qmd
+          - section: "Lecture 22"
+            contents:
+              - text: Black Body Radiation
+                href: quantum-mechanics/Black_Body_Radiation.qmd
+          - section: "Lecture 23"
+            contents:
+              - text: Wave Character of Particles
+                href: quantum-mechanics/Wave_character_of_particles.qmd
+              - text: Matter Waves
+                href: quantum-mechanics/Matter_waves.qmd
+          - section: "Lecture 24"
+            contents:
+              - text: Heisenberg Uncertainty Principle
+                href: quantum-mechanics/Heisenbergs_uncertainty_relation.qmd
+                #href: quantum-mechanics/Heisenbergs_uncertainty_relation.qmd
+          - section: "Lecture 25"
+            contents:
+              - text: Structure of Atoms
+                href: quantum-mechanics/Dummy.qmd
+                #href: quantum-mechanics/Structure_of_atoms.qmd
+              - text: Schrödinger Equation
+                href: quantum-mechanics/Schroedinger_equation.qmd
+              #href: quantum-mechanics/Dummy.qmd
+          - section: "Lecture 26"
+            contents:
+              - text: Potential Barriers and Wells
+                href: quantum-mechanics/potential_barrier.qmd
+          - section: "Lecture 27"
+            contents:
+              - text: Harmonic Oscillator
+                href: quantum-mechanics/harmonic_oscillator.qmd
+          - section: "Lecture 28"
+            contents:
+              - text: Photon Entanglement
+                href: quantum-mechanics/parametric_dc.qmd
+              - text: Spherically Symmetric Problems
+                href: quantum-mechanics/Spherical_potential.qmd
+          - section: "Lecture 29"
+            contents:
+              - text: Quantum Zeno Effect
+                href: quantum-mechanics/Qzeno.qmd
+              - text: Spherically Symmetric Problems
+                href: quantum-mechanics/Spherical_potential.qmd
+              - text: Hydrogen Atom
+                href: quantum-mechanics/hydrogen.qmd
 format:
   html:
     theme: cosmo
@@ -70,4 +217,4 @@ format:
     toc-depth: 3
 
 comments:
-  hypothesis: true
+  hypothesis: false

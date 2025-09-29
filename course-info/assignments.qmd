@@ -6,6 +6,8 @@ Assignments are an essential part of the course. They help you to understand the
 
 All of the assignments for the lecture will be handled online. An assignment will be handed out every week starting October 17, 2024 on the Moodle page of the course (see below).
 
+We will use future seminars to discuss without any announcement problems that are similar to some questions we will use in the exam.
+
 ::: {.callout-important}
 ## Submission Deadline
 **The solutions to the exercise sheets have to be handed in on Thursdays before the lecture 11:15 via Moodle.**

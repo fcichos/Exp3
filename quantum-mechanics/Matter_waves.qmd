@@ -1,0 +1,737 @@
+---
+title: Matter Waves
+jupyter: python3
+format:
+  html:
+    code-fold: true
+crossref:
+  fig-title: Figure
+  tbl-title: Table
+  title-delim: "—"
+  fig-prefix: Figure
+  eq-prefix: Equation
+  chapters: true
+---
+
+```{python}
+# | echo: false
+## just for plotting later
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.integrate import odeint
+import matplotlib as mpl
+import matplotlib.cm as cm
+
+
+plt.rcParams.update({'font.size': 10,
+                     'lines.linewidth': 1,
+                     'lines.markersize': 5,
+                     'axes.labelsize': 10,
+                     'axes.labelpad':0,
+                     'xtick.labelsize' : 9,
+                     'ytick.labelsize' : 9,
+                     'legend.fontsize' : 8,
+                     'contour.linewidth' : 1,
+                     'xtick.top' : True,
+                     'xtick.direction' : 'in',
+                     'ytick.right' : True,
+                     'ytick.direction' : 'in',
+                     'figure.figsize': (4, 3),
+                     'axes.titlesize':8,
+                     'figure.dpi': 150 })
+
+def get_size(w,h):
+    return((w/2.54,h/2.54))
+```
+
+After having established that particles exhibit wave-like properties through phenomena such as electron diffraction, we need to develop a mathematical framework to describe matter waves. While a simple plane wave ansatz might seem like a natural starting point, we will see that it has limitations in describing localized particles. This leads us to the concept of wave packets and ultimately to a probabilistic interpretation of matter waves proposed by Max Born.
+
+## Plane waves
+
+In order to properly describe the wave character of a particle with mass $m$ that is propagating along the $z$ direction we choose a similar ansatz as for electromagnetic light,
+
+$$
+\psi \left( z,t \right) = C \cdot \mathrm{e}^{i\left(\omega t - k z  \right)} \mathrm{.}
+$$
+
+Even though we are still discussing properties of matter, the above equation has the shape of a wave function. Thus, one often refers to **matter waves**. In accord with the de Broglie wavelength and the analogous description of atomistic particles as waves, we can derive the kinetic energy as
+
+$$
+E_{\mathrm{kin}} = \hbar \cdot \omega
+$$
+
+and the momentum as
+
+$$
+p = \hbar k \mathrm{,}
+$$
+
+which allows us to reformulate the wave equation as
+
+$$
+\psi \left( z,t \right) = C \cdot \mathrm{e}^{\frac{i}{\hbar} \left(E t - p z  \right)} \mathrm{.}
+$$
+
+However, there is still an important distinction between photons of electromagnetic waves and corpuscles of matter waves. In the case of electromagnetic waves the phase velocity **does not depend** on the wave's frequency. From the condition
+
+$$
+\frac{\mathrm{d}}{\mathrm{d}t} \left( \omega t - k z \right) = 0
+$$
+
+it becomes evident that
+
+$$
+\frac{\mathrm{d}z}{\mathrm{d}t} = \frac{\omega}{k} = v_{\mathrm{ph}} = c
+$$
+
+and represents the vanishing dispersion of electromagnetic waves in vacuum $\mathrm{d}v_{\mathrm{ph}}/ \mathrm{d} \omega = 0$. This relation does not hold true for matter waves. For a free particle (force-free motion in constant potential) we know
+
+$$
+E = E_{\mathrm{kin}} = \frac{1}{2m}p^2
+$$
+
+and
+
+$$
+\omega = \frac{\hbar}{2m}k^2 \mathrm{.}
+$$
+
+If we now make use of the definition of the phase velocity $v_{\mathrm{ph}} = \omega / k$, it becomes evident that the dispersion relation gives:
+
+$$
+v_{\mathrm{ph}} = \frac{\omega}{k} = \frac{\hbar k}{2m}
+$$
+
+Matter waves show dispersion and their phase velocity **does depend** on the wavevector and thus on the momentum of the particle. If the particle moves with the velocity $v_{\mathrm{p}} = p/m = \hbar k / m$, then
+
+$$
+v_{\mathrm{ph}} = \frac{v_{\mathrm{p}}}{2}
+$$
+
+and the phase velocity of the matter waves corresponds to half the velocity of the particle. As a consequence, a matter wave and its phase velocity is not suited to describe the motion of particles *without further considerations*. Having in mind that a plane wave is distributed across the whole space, whereas a particle is somehow located, we provide remedy through the introduction of wave packets.
+
+## Wave packets
+
+Unlike plane waves which extend infinitely in space, classical particles are localized. We can bridge this gap using *wave packets* (or *wave trains*) - superpositions of plane waves with similar frequencies and wavevectors:
+
+$$
+\psi \left( z , t \right) = \sum_j C_j \, \mathrm{e}^{i \left( \omega_j t - k_j z \right)}
+$$
+
+
+```{python}
+#| code-fold: true
+#| fig-align: center
+#| fig-cap: Superposition of five waves with different wavenumbers.
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Set up the z-axis
+z = np.linspace(-2.7, 2.7, 1000)
+
+# Define 5 different wavenumbers
+k = [1, 2, 3, 4, 5]
+
+# Calculate individual waves and their superposition
+waves = []
+superposition = np.zeros_like(z)
+
+for ki in k:
+    wave = np.cos(ki * z)
+    waves.append(wave)
+    superposition += wave
+
+# Plot
+plt.figure(figsize=get_size(10, 6))
+
+# Plot individual waves
+for i, wave in enumerate(waves):
+    plt.plot(z, wave, '--', alpha=0.3, label=f'k={k[i]}')
+
+# Plot superposition
+plt.plot(z, superposition, 'k-', linewidth=1, label='Superposition')
+
+plt.xlabel('z')
+plt.ylabel('amplitude')
+plt.legend()
+plt.show()
+```
+
+The wave packet has maximum amplitude at position $z_m = \left(\frac{\mathrm{d} \omega}{\mathrm{d} k} \right)_{k_0} \cdot t$, which propagates with the group velocity:
+
+$$
+v_{\mathrm{g}} = \frac{d\omega}{dk}
+$$
+
+For a large number of waves with frequencies in $\left[ \omega_0 - \Delta \omega/2 ; \omega_0 + \Delta \omega/2 \right]$ and wavenumbers in $\left[ k_0 - \Delta k/2 ; k_0 + \Delta k/2 \right]$, the sum becomes an integral:
+
+$$
+\psi \left( z , t \right) = \int_{k = k_0 - \Delta k/2}^{k_0 + \Delta k/2}  C\left(k\right) \, \mathrm{e}^{i \left( \omega t - k z \right)} \, \mathrm{d}k \mathrm{.}
+$$
+
+The amplitude distribution $C\left(k\right)$ and width $\Delta k$ determine the wave packet's shape in momentum space.
+
+::: {.callout-note collapse=true}
+## Position of Maximum Amplitude
+
+If we rewrite frequencies and wave vectors as deviations from central values:
+
+$$\omega_j = \omega_0 + \Delta \omega_j \quad \text{and} \quad k_j = k_0 + \Delta k_j$$
+
+The phase in the exponential then becomes $(\omega_0 + \Delta \omega_j)t - (k_0 + \Delta k_j)z$. For constructive interference, the phases must be equal:
+
+$$(\omega_0 + \Delta \omega_j)t - (k_0 + \Delta k_j)z = \text{constant}$$
+
+For neighboring waves $(j \text{ and } j+1)$, this means:
+
+$$(\omega_0 + \Delta \omega_j)t - (k_0 + \Delta k_j)z = (\omega_0 + \Delta \omega_{j+1})t - (k_0 + \Delta k_{j+1})z$$
+
+Subtracting the common terms $\omega_0t - k_0z$ from both sides gives:
+
+$$\Delta\omega_j t - \Delta k_j z = \Delta\omega_{j+1} t - \Delta k_{j+1} z$$
+
+This finally leads to the relation:
+
+$$\mathrm{d}\omega \cdot t = \mathrm{d}k \cdot z$$
+
+Therefore:
+
+$$z = \frac{\mathrm{d}\omega}{\mathrm{d}k} \cdot t$$
+
+This $z$ gives the position of constructive interference, which is where the amplitude is maximum:
+
+$$z_m = \left(\frac{\mathrm{d}\omega}{\mathrm{d}k}\right)_{k_0} \cdot t$$
+
+The derivative $\mathrm{d}\omega/\mathrm{d}k$ evaluated at $k_0$ is the group velocity, showing that the maximum of the wave packet moves with the group velocity.
+:::
+
+
+### Constant amplitude wave packets
+
+If the width of the wavenumber interval $\Delta k$ is small compared to the wavenumber $k_0 \gg \Delta k$, we can expand $\omega \left( k \right)$ in a Taylor series and neglect higher terms than the linear one resulting in
+
+$$
+\omega \left( k \right) = \omega_0 + \left( \frac{\partial \omega}{\partial k} \right)_{k_0} \cdot \left( k - k_0 \right) + \ldots
+$$
+
+If further the amplitude $C_j$ does not change significantly on the interval $\Delta k$ ($\ll k_0$), we can replace $C_j$ through a constant $C \left( k_0 \right)$. Now we get
+
+$$
+\psi \left( z , t \right) = C \left( k_0 \right) \mathrm{e}^{i \left( \omega_0 t - k_0 z \right)} \int_{\kappa = - \Delta k/2}^{ + \Delta k/2}  \mathrm{e}^{i \left( u \kappa \right)} \, \mathrm{d} \kappa \mathrm{,}
+$$
+
+with $\kappa = k - k_0$ and $u = \left(\frac{\mathrm{d} \omega}{\mathrm{d} k} \right)_{k_0} t - z$. (**Note:** I had a typo in the integral equation on the blackboard. It was correct here.) The integration then results in
+
+$$
+\psi \left( z , t \right) = A \left( z,t \right) \, \mathrm{e}^{i \left( \omega_0 t - k_0 z \right)}
+$$
+
+with
+
+$$
+A \left(z,t \right) = 2 C \left( k_0 \right) \, \frac{\sin \left(\Delta k \ u /2  \right)}{u} \mathrm{.}
+$$
+
+
+```{python}
+# | code-fold: true
+# | fig-align: center
+# | fig-cap: Constant amplitude wave packets for two different values of $\Delta k$.
+
+# Parameters
+k0 = 10.0  # central wave number
+omega0 = 2.0  # central frequency
+C = 1.0  # amplitude constant
+t = 0  # time (starting at t=0)
+
+# Spatial grid
+z = np.linspace(-10, 10, 1000)
+
+# Create figure with two subplots side by side
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=get_size(12, 6))
+
+# Plot for Delta_k = π/2
+Delta_k1 = np.pi/2
+u1 = omega0/k0 * t - z
+A1 = 2 * C * np.sinc(Delta_k1 * u1 / (2 * np.pi))
+psi1 = A1 * np.exp(1j * (omega0 * t - k0 * z))
+
+ax1.plot(z, np.real(psi1), 'k-', label='Re(ψ)', alpha=0.7)
+ax1.plot(z, A1, 'r--', label='Envelope A(z,t)', linewidth=1)
+ax1.plot(z, -A1, 'r--', linewidth=1)
+ax1.set_xlabel('z')
+ax1.set_ylabel('ψ(z,t)')
+ax1.set_title(f'Wave Packet at t=0\nΔk = π/2')
+#ax1.legend()
+
+# Plot for Delta_k = π
+Delta_k2 = np.pi
+u2 = omega0/k0 * t - z
+A2 = 2 * C * np.sinc(Delta_k2 * u2 / (2 * np.pi))
+psi2 = A2 * np.exp(1j * (omega0 * t - k0 * z))
+
+ax2.plot(z, np.real(psi2), 'k-', label='Re(ψ)', alpha=0.7)
+ax2.plot(z, A2, 'r--', label='Envelope A(z,t)', linewidth=1)
+ax2.plot(z, -A2, 'r--', linewidth=1)
+ax2.set_xlabel('z')
+ax2.set_ylabel('ψ(z,t)')
+ax2.set_title(f'Wave Packet at t=0\nΔk = π')
+#ax2.legend()
+
+plt.tight_layout()
+plt.show()
+```
+
+The function $\psi \left( z , t \right)$ represents a plane wave whose amplitude $A$ exhibits a maximum at $u=0$, and therefore $z_{\mathrm{m}} = \left(\frac{\mathrm{d} \omega}{\mathrm{d} k} \right)_{k_0} \cdot t$. We call this function $\psi$ a **wave packet**. Its shape, namely height and distance to side lobes, does depend on the width of the interval $\Delta k$ and the distribution of the amplitude $C \left( k \right)$. The wave packet's maximum propagates with the group velocity
+
+$$
+v_{\mathrm{g}} = \left(\frac{\mathrm{d} \omega}{\mathrm{d}k}\right)_{k_0}
+$$
+
+along the $z$ direction. Moreover, we can make use of the relation
+
+$$
+\omega = \frac{1}{\hbar} \, E = \frac{1}{\hbar} \, \frac{p^2}{2m} = \frac{1}{\hbar} \, \frac{\hbar^2 k^2}{2m} = \frac{\hbar}{2m} k^2
+$$
+
+and derive for the group velocity
+
+$$
+v_{\mathrm{g}} = \left(\frac{\mathrm{d} \omega}{\mathrm{d}k}\right)_{k_0} = \frac{\hbar}{2m} \left(\frac{\mathrm{d}}{\mathrm{d}k} \, k^2 \right)_{k_0} = \frac{\hbar k}{m} = \frac{p}{m} \mathrm{.}
+$$
+
+Thus, a wave packet is better suited than a plane wave for describing a particle on the microscopic scale, because characteristics of a wave packet can be interlinked with the according properties of a particle in the classical sense.
+
+- The wave packet's group velocity $v_{\mathrm{g}}$ corresponds to the particle's velocity $v_{\mathrm{p}}$.
+
+- The wavevector of the packet's center $\vec{k_0}$ determines the momentum of the particle $p_{\mathrm{p}} = \hbar k_0$.
+
+- A wave packet is localized (in contrast to a plane wave) and the wave packet's amplitude has maximum values only in a limited range $\Delta z$. In the case $t=0$ we can calculate the width of the central maximum as distance between the roots $\Delta z = 4\pi/\Delta k$. While this is sometimes incorrectly compared to the particle's de Broglie wavelength $\lambda_{\mathrm{p}} = 2\pi/k_0$, the actual width depends on the momentum spread $\Delta k$ and is not fundamentally limited by the wavelength.
+
+
+```{python}
+# | code-fold: true
+# | fig-align: center
+# | fig-cap: Constant amplitude wavepacket propagating in time and changing shape due to dispersion.
+
+# Parameters
+N = 1000  # number of points
+x = np.linspace(-20, 20, N)
+dx = x[1] - x[0]
+k = 2*np.pi*np.fft.fftfreq(N, dx)  # momentum space grid
+k = np.fft.fftshift(k)  # shift k-space grid
+times = [0, 2,4]  # three different times
+
+# Create rectangular amplitude distribution in k-space
+k0 = 0.0  # center wavevector
+dk = 2.0  # width in k-space
+psi_k = np.zeros(N, dtype=complex)
+mask = (k > k0-dk/2) & (k < k0+dk/2)
+psi_k[mask] = 1.0
+
+# Function to calculate wavepacket at time t
+def get_wavepacket(t):
+    # Apply time evolution in k-space with dispersion
+    # E = ℏ²k²/2m (using ℏ=m=1)
+    E_k = 0.5 * k**2  # quadratic dispersion relation
+    psi_k_t = psi_k * np.exp(-1j * E_k * t)
+
+    # Transform to position space
+    psi_x = np.fft.ifftshift(np.fft.ifft(np.fft.ifftshift(psi_k_t)))
+    return np.abs(psi_x)**2
+
+# Create three subplots
+fig, (ax1, ax2, ax3) = plt.subplots(1, 3, figsize=get_size(12, 5))
+axes = [ax1, ax2, ax3]
+
+# Plot wavepacket at different times
+for ax, t in zip(axes, times):
+    y = get_wavepacket(t)
+    ax.plot(x, y/y.max(), 'b-')
+    ax.set_xlim(-20, 20)
+    ax.set_ylim(0, 1.2)
+    ax.set_xlabel('position')
+    if t == 0:
+        ax.set_ylabel('prob. density')
+    ax.set_title(f't = {t}')
+
+plt.tight_layout()
+plt.show()
+```
+
+
+### Gaussian wave packets
+
+A Gaussian distribution for the amplitude provides an improved description of wave packets compared to constant amplitude:
+
+$$
+C \left( k \right) = C \left( k_0 \right) \, \mathrm{e}^{- \frac{\left( k-k_0\right)^2}{2 \Delta k^2}} \mathrm{.}
+$$
+
+The full wave function is then given by:
+
+$$\psi(z,t) = \int_{-\infty}^{\infty} C(k_0) \exp\left(-\frac{(k-k_0)^2}{2\Delta k^2}\right) \exp\left(i(kz - \omega(k)t)\right) dk$$
+
+This wavefunction with the envelope is depicted below.
+
+```{python}
+# | code-fold: true
+# | fig-align: center
+# | fig-cap: Gaussian wavpacket with different width in momentum space.
+# Parameters
+k0 = 10.0  # central wave number
+omega0 = 2.0  # central frequency
+C = 1.0  # amplitude constant
+t = 0  # time (starting at t=0)
+
+# Spatial grid
+z = np.linspace(-5, 5, 1000)
+
+# Create figure with two subplots side by side
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=get_size(12, 6))
+
+# Function to create Gaussian wave packet
+def gaussian_wavepacket(z, t, Delta_k):
+    k = np.linspace(k0 - 3*Delta_k, k0 + 3*Delta_k, 1000)
+    dk = k[1] - k[0]
+
+    # Gaussian amplitude distribution
+    C_k = C * np.exp(-(k - k0)**2 / (2 * Delta_k**2))
+
+    # Calculate wave packet through integration
+    psi = np.zeros(len(z), dtype=complex)
+    for i, ki in enumerate(k):
+        psi += C_k[i] * np.exp(1j * (omega0 * t - ki * z)) * dk
+
+    return psi
+
+# Plot for Delta_k = π/2
+Delta_k1 = np.pi/2
+psi1 = gaussian_wavepacket(z, t, Delta_k1)
+envelope1 = np.abs(psi1)
+
+ax1.plot(z, np.real(psi1), 'k-', label='Re(ψ)', alpha=0.7)
+ax1.plot(z, envelope1, 'r--', label='Envelope |ψ|', linewidth=1)
+ax1.plot(z, -envelope1, 'r--', linewidth=1)
+ax1.set_xlabel('z')
+ax1.set_ylabel('ψ(z,t)')
+ax1.set_title(f'Gaussian Wave Packet at t=0\nΔk = π/2')
+
+# Plot for Delta_k = π
+Delta_k2 = np.pi
+psi2 = gaussian_wavepacket(z, t, Delta_k2)
+envelope2 = np.abs(psi2)
+
+ax2.plot(z, np.real(psi2), 'k-', label='Re(ψ)', alpha=0.7)
+ax2.plot(z, envelope2, 'r--', label='Envelope |ψ|', linewidth=1)
+ax2.plot(z, -envelope2, 'r--', linewidth=1)
+ax2.set_xlabel('z')
+ax2.set_ylabel('ψ(z,t)')
+ax2.set_title(f'Gaussian Wave Packet at t=0\nΔk = π')
+
+
+plt.tight_layout()
+plt.show()
+```
+
+When integrated, the wave packet in position space has the envelope:
+
+$$
+|\psi(z,t)| = \frac{1}{\sqrt{\sigma(t)\sqrt{2\pi}}} \exp\left(-\frac{(z-v_gt)^2}{4\sigma^2(t)}\right)
+$$
+
+The time-dependent width $\sigma(t)$ evolves as:
+
+$$
+\sigma(t) = \sigma_0\sqrt{1 + \left(\frac{\hbar t}{2m\sigma_0^2}\right)^2}
+$$
+
+where $v_g = \hbar k_0/m$ is the group velocity and $\sigma_0 = 1/(2\Delta k)$ is the initial width. The width spreads quadratically in time according to:
+
+$$
+\sigma^2(t) = \sigma_0^2\left(1 + \frac{\hbar^2t^2}{4m^2\sigma_0^4}\right)
+$$
+
+The spreading rate is governed by the initial width $\sigma_0$, Planck's constant $\hbar$, and particle mass $m$. Narrower packets and lighter particles spread more rapidly.
+
+```{python}
+# | code-fold: true
+# | fig-align: center
+# | fig-cap: Gaussian wavepacket propagation. The width of the wavepacket changes in time due to the dispersion of massive particles.
+
+# Parameters
+hbar = 1.0  # reduced Planck's constant
+m = 1.0    # mass
+sigma0 = 1.0  # initial width
+k0 = 2.0    # initial wave number
+x = np.linspace(-10, 10, 1000)
+times = [0, 2, 4]  # three different times
+
+# Function to calculate wave packet at time t
+def gaussian_packet(x, t):
+    # Complex time-dependent width
+    sigma_t = sigma0 * np.sqrt(1 + (1j*hbar*t)/(2*m*sigma0**2))
+
+    # Normalization
+    norm = 1/np.sqrt(np.sqrt(2*np.pi)*sigma_t)
+
+    # Gaussian envelope with phase
+    psi = norm * np.exp(-(x**2)/(4*sigma_t**2)) * np.exp(1j*k0*x)
+
+    return np.abs(psi)**2
+
+# Create three subplots
+fig, (ax1, ax2, ax3) = plt.subplots(1, 3, figsize=get_size(12, 5))
+axes = [ax1, ax2, ax3]
+
+# Plot wavepacket at different times
+for ax, t in zip(axes, times):
+    y = gaussian_packet(x, t)
+    ax.plot(x, y, 'b-',)
+    ax.set_xlim(-10, 10)
+    ax.set_ylim(0, 0.5)
+    ax.set_xlabel('position')
+    if t == 0:
+        ax.set_ylabel('prob density')
+    ax.set_title(f't = {t}')
+
+plt.tight_layout()
+plt.show()
+```
+
+
+```{ojs}
+//| echo: false
+
+// Create plot container
+viewof plot = {
+  // Setup parameters
+  const width = 600;
+  const height = 200;
+  const margin = {top: 20, right: 20, bottom: 40, left: 60};
+
+  // Physical constants (in natural units)
+  const hbar = 1;
+  const m = 1;
+  const sigma0 = 0.1;  // initial width
+  const k0 = 50;  // central wavevector
+  const period = 0.2;  // time period for the loop
+
+  // Create SVG
+  const svg = d3.create("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+  // Setup scales
+  const x = d3.scaleLinear()
+    .domain([-2, 15])
+    .range([margin.left, width - margin.right]);
+
+  const y = d3.scaleLinear()
+    .domain([0, 3])
+    .range([height - margin.bottom, margin.top]);
+
+  // Add axes
+  svg.append("g")
+    .attr("transform", `translate(0,${height - margin.bottom})`)
+    .call(d3.axisBottom(x).ticks(10))
+    .append("text")
+    .attr("x", width/2)
+    .attr("y", 35)
+    .attr("fill", "black")
+    .text("Position");
+
+  svg.append("g")
+    .attr("transform", `translate(${margin.left},0)`)
+    .call(d3.axisLeft(y).ticks(5))
+    .append("text")
+    .attr("transform", "rotate(-90)")
+    .attr("x", -height/3)
+    .attr("y", -40)
+    .attr("fill", "black")
+    .text("Probability Density");
+
+  // Function to calculate wavepacket at time t
+  function gaussianPacket(x, t) {
+    const sigma_t = Math.sqrt(sigma0**2 + (hbar*t/(2*m*sigma0))**2);
+    const vg = hbar*k0/m;
+    const x_shifted = x - (vg*t % 20); // modulo for looping
+    return Math.exp(-x_shifted*x_shifted/(4*sigma_t*sigma_t))/(Math.sqrt(2*Math.PI*sigma_t*sigma_t));
+  }
+
+  // Create line generator
+  const line = d3.line()
+    .x(d => x(d.x))
+    .y(d => y(d.y));
+
+  // Animation
+  let t = 0;
+  const dt = 0.001;
+
+  function update() {
+    // Calculate wavepacket
+    const points = d3.range(-2, 15, 0.1).map(x => ({
+      x: x,
+      y: gaussianPacket(x, t % period)  // use modulo for time looping
+    }));
+
+    // Update or create path
+    const path = svg.selectAll("path.wavepacket")
+      .data([points]);
+
+    path.enter()
+      .append("path")
+      .attr("class", "wavepacket")
+      .merge(path)
+      .attr("fill", "none")
+      .attr("stroke", "blue")
+      .attr("stroke-width", 2)
+      .attr("d", line);
+
+    // Update time display
+    svg.selectAll("text.time")
+      .data([`t = ${(t % period).toFixed(3)}`])
+      .join("text")
+      .attr("class", "time")
+      .attr("x", width - 4*margin.right)
+      .attr("y", margin.top)
+      .text(d => d);
+
+    t += dt;
+    requestAnimationFrame(update);  // removed conditional to make it loop
+  }
+
+  update();
+  return svg.node();
+}
+```
+
+Despite these improvements, a wave packet still has limitations in modeling particles:
+
+- The wave function can take negative or complex values that don't correspond to physical measurements
+- Wave packets spread over time due to dispersion, unlike classical particles
+- Waves can split into multiple parts, while elementary particles are indivisible
+
+These limitations led Max Born to develop a statistical interpretation of matter waves.
+
+## The statistical interpretation of matter waves
+
+Max Born proposed a probabilistic interpretation of quantum mechanics where the wavefunction itself does not represent a physical quantity, but rather its absolute square gives the probability density for finding a particle at a particular position. For a particle described by a wavefunction $\psi(z,t)$, the probability of finding it within an infinitesimal interval $[z, z+dz]$ at time $t$ is given by:
+
+$$
+P(z,t)dz = |\psi(z,t)|^2 dz
+$$
+
+This interpretation arose from Born's analysis of scattering problems, where he recognized that $|\psi|^2$ gives the probability of a particular scattering outcome. The wavefunction itself can take complex values, but its squared modulus is always real and non-negative, making it suitable as a probability density.
+
+Since the particle must exist somewhere in space, the total probability of finding it anywhere must equal 1, leading to the normalization condition:
+
+$$
+\int_{-\infty}^{+\infty} |\psi(z,t)|^2 dz = 1
+$$
+
+```{python}
+# | code-fold: true
+# | fig-align: center
+# | fig-cap: The squared wave packet with a Gaussian amplitude distribution (black line) and probability density (area under the curve, shaded gray).
+
+# Parameters
+k0 = 10.0  # central wave number
+omega0 = 2.0  # central frequency
+C = 1.0  # amplitude constant
+t = 0  # time (starting at t=0)
+
+# Spatial grid
+z = np.linspace(-2, 2, 1000)
+
+# Create figure with two subplots side by side
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=get_size(12, 6))
+
+# Function to create Gaussian wave packet
+def gaussian_wavepacket(z, t, Delta_k):
+    k = np.linspace(k0 - 3*Delta_k, k0 + 3*Delta_k, 1000)
+    dk = k[1] - k[0]
+
+    # Gaussian amplitude distribution
+    C_k = C * np.exp(-(k - k0)**2 / (2 * Delta_k**2))
+
+    # Calculate wave packet through integration
+    psi = np.zeros(len(z), dtype=complex)
+    for i, ki in enumerate(k):
+        psi += C_k[i] * np.exp(1j * (omega0 * t - ki * z)) * dk
+
+    return psi
+
+# Plot for Delta_k = π/2
+Delta_k1 = np.pi/2
+psi1 = gaussian_wavepacket(z, t, Delta_k1)
+prob_density1 = np.abs(psi1)**2
+
+ax1.plot(z, prob_density1, 'b-', label='|ψ|²')
+ax1.fill_between(z, prob_density1, alpha=0.3)
+ax1.set_xlabel('z')
+ax1.set_ylabel('|ψ(z,t)|²')
+ax1.set_title(f'Probability Density at t=0\nΔk = π/2')
+
+# Plot for Delta_k = π
+Delta_k2 = np.pi
+psi2 = gaussian_wavepacket(z, t, Delta_k2)
+prob_density2 = np.abs(psi2)**2
+
+ax2.plot(z, prob_density2, 'b-', label='|ψ|²')
+ax2.fill_between(z, prob_density2, alpha=0.3)
+ax2.set_xlabel('z')
+ax2.set_ylabel('|ψ(z,t)|²')
+ax2.set_title(f'Probability Density at t=0\nΔk = π')
+
+plt.tight_layout()
+plt.show()
+```
+
+In the case the particle propagates within a three-dimensional space, we can assign a three-dimensional wave packet $\psi \left( x,y,z, t \right)$ to this particle. As discussed above, the particle has to be located somewhere in space and as a consequence the probability to find it within the whole space is $1$ and we can state the normalization condition
+
+$$
+\int\int\int \left| \psi \left( x,y,z, t \right) \right|^2 \, \mathrm{d}x \, \mathrm{d}y \, \mathrm{d}z = 1 \mathrm{.}
+$$
+
+Thus, we can conclude:
+
+- Every particle can be represented through a matter wave $\psi \left( x,y,z, t \right)$ being determined through the wave function $\psi \left( x,y,z, t \right)$.
+
+- The quantity $P \left( x,y,z, t \right) \, \mathrm{d}x \, \mathrm{d}y \, \mathrm{d}z = \left| \psi \left( x,y,z, t \right) \right|^2 \, \mathrm{d}x \, \mathrm{d}y \, \mathrm{d}z$ with its normalization $\int\int\int \left| \psi \left( x,y,z, t \right) \right|^2 \, \mathrm{d}x \, \mathrm{d}y \, \mathrm{d}z = 1$ represents the probability to find the particle within the volume element $\mathrm{d} V = \mathrm{d}x \, \mathrm{d}y \, \mathrm{d}z$ at the particular time $t$.
+
+- The probability to find the particle is biggest at the center of the wave packet.
+
+- The center of the wave packet propagates with the group velocity $v_{\mathrm{g}}$ which is identical to the classical particle velocity $v_{\mathrm{p}}$.
+
+- The probability to find the particle within an infinite volume **is not $0$**. This means one cannot locate the particle in a single spot $\left( x,y,z \right)$. The particle's location is smeared which corresponds to the distribution of the wave packet and obeys an uncertainty.
+
+
+## Relation to measurement
+
+The probabilistic interpretation of the wave function has profound implications for the measurement process in quantum mechanics. When we perform a measurement on a quantum system:
+
+- The act of measurement causes the wave function to "collapse" from its spread-out state to a localized state
+- Before measurement, the particle exists in a superposition described by the wave function $\psi(x,y,z,t)$
+- The measurement outcome will be random, but governed by the probability distribution $|\psi|^2$
+- After measurement, the wave function collapses to a new state centered on the measured position
+- Subsequent measurements will find the particle near this new position until the wave packet spreads out again due to time evolution
+
+This measurement-induced collapse of the wave function is a key feature that distinguishes quantum mechanics from classical physics. It represents the transition from quantum probabilities to definite classical outcomes. The spreading of wave packets between measurements represents the return to quantum uncertainty.
+
+The question of whether wavefunction collapse occurs during non-destructive measurements is actually still debated in quantum mechanics. While traditional Copenhagen interpretation suggests collapse occurs with any measurement, modern perspectives like quantum decoherence offer alternative views.
+
+Non-destructive measurements (also called QND - Quantum Non-Demolition measurements) can preserve the quantum state while still extracting some information. However, they still cause some level of interaction/entanglement between the system and measuring apparatus.
+
+Below is a figure from a recent publication on [Nondestructive Detection of an
+Optical Photon](https://www.science.org/doi/epdf/10.1126/science.1246164) by Reiser, Ritter an Rempe from 2013.
+
+The authors developed a specific measurement scheme, that allows to detect the presence of a single photon without destroying it.
+
+::: {#fig-non-destructive-measurement}
+![](img/non_destructive.png)
+
+Nondestructive photon detection. (A and B) Sketch of the setup and atomic level scheme. A single atom, (1), is trapped in an optical cavity that consists of a high-reflector, (2), and a coupling mirror, (3). A resonant photon is impinging on, (4), and reflected off, (5), the cavity. (A) If the atom is in state $|1\rangle_a$, the photon (red wavy arrow) enters the cavity (blue semicircles) before being reflected. In this process, the combined atom-photon state acquires a phase shift of $\pi$. (B) If the atom is in $|2\rangle_a$, the strong coupling on the $|2\rangle_a \leftrightarrow|3\rangle_a$ transition leads to a normal-mode splitting of $2 g$, so that the photon cannot enter the cavity and is directly reflected without a phase shift. (C to F) Procedure to measure whether a photon has been reflected. (C) The atomic state, visualized on the Bloch sphere, is prepared in the superposition state $\frac{1}{\sqrt{2}}\left(|1\rangle_a+|2\rangle_a\right)$. ( D ) If a photon impinges, the atomic state is flipped to $\frac{1}{\sqrt{2}}\left(|1\rangle_a-|2\rangle_a\right)$. (E) The atomic state is rotated by $\frac{\pi}{2}$. (F) Fluorescence detection is used to discriminate between the states $|1\rangle_a$ and $|2\rangle_a$.
+Taken from [Nondestructive Detection of an
+Optical Photon](https://www.science.org/doi/epdf/10.1126/science.1246164)
+:::

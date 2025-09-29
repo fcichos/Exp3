@@ -1,0 +1,62 @@
+---
+title: "Laplacian of Stokeslet and Source Dipole Relationship"
+format: pdf
+---
+
+Starting with the stokeslet (force singularity) solution in three dimensions:
+
+$$u_i(\mathbf{x}) = \frac{1}{8\pi\mu}\left[\frac{\delta_{ij}}{r} + \frac{x_ix_j}{r^3}\right]F_j$$
+
+where $r = |\mathbf{x}|$ is the distance from the singularity, and Einstein summation is used.
+
+To calculate $\nabla^2u_i$, we need:
+
+1) From potential theory:
+$$\nabla^2\left(\frac{1}{r}\right) = -4\pi\delta(\mathbf{x})$$
+
+2) For the second term, we calculate $\nabla^2(x_ix_j/r^3)$:
+
+Using $\nabla^2 = \partial^2/\partial x_k^2$ and applying to $x_ix_j/r^3$:
+
+$$\frac{\partial}{\partial x_k}\left(\frac{x_ix_j}{r^3}\right) = \frac{\delta_{ik}x_j + \delta_{jk}x_i}{r^3} - 3\frac{x_ix_jx_k}{r^5}$$
+
+Taking the second derivative:
+
+$$\frac{\partial^2}{\partial x_k^2}\left(\frac{x_ix_j}{r^3}\right) = -3\frac{\delta_{ik}x_j + \delta_{jk}x_i}{r^5} + \frac{15x_ix_jx_k^2}{r^7} - 3\frac{x_ix_j}{r^5}$$
+
+Summing over k and using $x_k^2 = r^2$:
+
+$$\nabla^2\left(\frac{x_ix_j}{r^3}\right) = 8\pi\delta_{ij}\delta(\mathbf{x})/3$$
+
+Let's break down the next steps carefully:
+
+1) We can now combine both Laplacian terms:
+   $$\nabla^2u_i = \frac{1}{8\pi\mu}\left[-4\pi\delta_{ij}\delta(\mathbf{x}) + \frac{8\pi}{3}\delta_{ij}\delta(\mathbf{x})\right]F_j$$
+
+2) Factoring out the common terms:
+   $$= \frac{1}{8\pi\mu}\left[-4\pi + \frac{8\pi}{3}\right]\delta_{ij}\delta(\mathbf{x})F_j$$
+
+3) Simplifying the fraction:
+   $$= -\frac{1}{2}\cdot\frac{4}{3\mu}\delta_{ij}\delta(\mathbf{x})F_j$$
+
+This final result shows that the Laplacian of the stokeslet reduces to a delta function at the origin, which is equivalent to a source dipole field. This is because a source dipole represents two point sources of opposite sign separated by an infinitesimal distance - which mathematically manifests as a delta function multiplied by a vector (in this case, the force vector F_j). The proportionality constant -4/6μ determines the strength of the dipole. This relationship between stokeslets and source dipoles is fundamental in microhydrodynamics, as it shows that taking the Laplacian of a stokeslet field produces a source dipole field of proportional strength.
+
+The source dipole solution in three dimensions is:
+
+$$u_i^{SD}(\mathbf{x}) = \frac{D}{4\pi}\left[\frac{\delta_{ij}}{r^3} - 3\frac{x_ix_j}{r^5}\right]n_j$$
+
+where D is the dipole strength and n_j is the orientation vector.
+
+To show this is equivalent to our Laplacian result, we need to:
+
+1) Set $D = -\frac{2\mu}{3}F_j$ and $n_j = F_j/|F|$
+
+2) Substitute these into the source dipole equation:
+
+   $$u_i^{SD}(\mathbf{x}) = -\frac{2\mu}{3}\frac{1}{4\pi}\left[\frac{\delta_{ij}}{r^3} - 3\frac{x_ix_j}{r^5}\right]\frac{F_j}{|F|}$$
+
+3) This matches our Laplacian result when evaluated at the origin (where the delta function is non-zero):
+
+   $$\nabla^2u_i = -\frac{4}{6\mu}\delta_{ij}\delta(\mathbf{x})F_j$$
+
+The equivalence is established through the fact that the source dipole is precisely the field that results from taking the Laplacian of the stokeslet, with the strength proportional to the original force vector.

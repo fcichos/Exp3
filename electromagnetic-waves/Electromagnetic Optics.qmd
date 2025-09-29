@@ -1,0 +1,252 @@
+---
+title: Electromagnetic Optics
+jupyter: python3
+format:
+  html:
+    code-fold: true
+crossref:
+  fig-title: Figure     # (default is "Figure")
+  tbl-title: Tbl     # (default is "Table")
+  title-delim: "—"   # (default is ":")
+  fig-prefix: "Figure"
+  eq-prefix: Eq.
+  chapters: true
+---
+
+So far we have looked at the propagation of light in form of ray's and its description in Gemoetrical Optics. We made a number of assumtions that we formulated as postulates. We then extended this description by a scalar Wave Optics description to allow for a description of interference and diffraction, which can not be explained by Geometrical Optics. Yet concepts of refractive index and light matter interaction and the intensities are not covered by Wave Optics and also just postulates.
+
+Electromagnetic Optics allows us to define these missing things. We discover light as electromagnetic waves consisting of electric and magnetic fields, which allow us to describe the interaction with charges in atoms, which is the foundation for the refractive index for example. The new thing is therefore the fact that we now need vectors for the description of light.
+
+::: {layout-ncol=2}
+![Vertical Polarization](img/vertical_pol.png){width="100%"}
+![Horizontal Polarization](img/horizontal_pol.png){width="100%"}
+
+Demonstration of the vectorial nature of the electric field of electromagnetic waves with the help of a set of polarizers. (Left) The first polarizer on the right side of the image is transmitting only the vertical direction of the electric field. This vertical direction of the electric field is probed with the second polarizer. If pointing in the same direction, the intensity as measured with the meter behind is maximum. When probed with a second polarizer along the horizontal direction (Right), the detector shows zero intensity.
+:::
+
+
+## Electromagnetic Spectrum
+
+While most of our considerations are focused on electromagnetic waves in the visible region, all of them can be generalized to other regions of the very broad electromagnetic spectrum. The electromagnetic theory is scale free, meaning that the same effect on specific structures occur also at smaller scales if you scale the wavelength of the wave.
+
+::: {layout-ncol=1}
+![Electromagnetic Spectrum](img/em_spectrum.png){width="90%" fig-align=center}
+
+Electromagnetic wave spectrum with its specific regions.
+:::
+
+### Maxwell Equations
+
+To obtain a wave equation in terms of electric $\vec{E}$ and magnetic fields $\vec{B}$ we need Maxwell's equations. We will consider them in vacumm, i.e. for zero charge $\rho=0$ and current density. The electric and magnetic permeabilities of vacuum are given by $\epsilon_0$ and $\mu_0$.
+
+$$
+\nabla \times \vec{E}=-\frac{\partial \vec{B}}{\partial t}
+\label{eq:ME1}\tag{ME.1}
+$$
+
+$$
+\nabla\cdot\vec{E}=0
+\tag{ME.2}
+$$
+
+$$
+\nabla\times \vec{B}=\epsilon_0\mu_0\frac{\partial \vec{E}}{\partial t}
+\tag{ME.3}
+$$
+
+$$
+\nabla\cdot \vec{B}=0
+\tag{ME.4}
+$$
+
+Maxwell's third equation (ME.3) is significant because it expands upon Ampère's law, which states that magnetic field lines form closed loops around electric currents. This principle can be applied to a capacitor circuit, where we can calculate the magnetic field by integrating along a circular path around the current-carrying wire.
+
+In this setup, the current density flows through a surface bounded by the circular path. Importantly, we can choose any surface that shares the same boundary circle (mathematically known as path-independent surface integration). However, this creates an apparent paradox: Ampère's law must work both for:
+1. A simple surface through which the conduction current flows
+2. A surface that passes through the capacitor gap where no actual charges flow
+
+To resolve this inconsistency, Maxwell introduced the concept of displacement current. This additional current exists even in regions without flowing charges and is proportional to the time rate of change of the electric field, multiplied by the vacuum permittivity ($\epsilon_{0}$).
+
+![](img/diplacement_current.jpg){width=50% fig-align=center}
+
+The displacement current makes physical sense because current only flows in the capacitor's wires when the electric field between the plates is changing. This addition to Ampère's law was crucial, as it completed the set of equations that describe electromagnetic waves.
+
+This term is essential for deriving the electromagnetic wave equation and understanding how electromagnetic waves propagate through space.
+
+
+### Deriving the Wave Equation
+We will take the first (ME.1) of the four equations and apply another rotation $\nabla \times$ to both sides
+
+$$
+\nabla\times\nabla\times = -\nabla \times \frac{\partial \vec{B}}{\partial t}
+$$
+
+We can exchange the time and spatial derivate on the right side as $\nabla$ is not depending on time to get
+
+\begin{eqnarray}
+\nabla\times\nabla\times \vec{E}&=& - \frac{\partial \nabla \times \vec{B}}{\partial t}\\
+&=&-\epsilon_0\mu_0 \frac{\partial^2 \vec{E}}{\partial t^2}
+\end{eqnarray}
+
+where we used the third equation (ME.3) to replace the rotation of the magnetic field. We now have to expand the left side with the identity
+
+$$
+\nabla\times\nabla\times \vec{E}=\nabla(\nabla\cdot \vec{E})-\nabla(\nabla \vec{E})
+$$
+
+Note the the first term on the right side is the gradient of the divergence of $\vec{E}$, while the second term is the divergence of the gradient of $\vec{E}$. We know that in vacuum the divergence of the elecric field is zero (no sources of the electric field) and therefore $\nabla\times\nabla\times \vec{E}=-\nabla(\nabla \vec{E})
+$ and we have our wave equation
+
+$$
+\frac{\partial^2 \vec{E}}{\partial \vec{r}^2}-\epsilon_0\mu_0 \frac{\partial^2\vec{E}}{\partial t^2}=0
+\tag{Wave Equation}
+$$
+
+::: {.callout-note}
+## Wave Equation
+
+The wave equation for the propagation of electric fields in vaccum is given by
+
+$$
+\frac{\partial^2 \vec{E}}{\partial \vec{r}^2}-\epsilon_0\mu_0 \frac{\partial^2\vec{E}}{\partial t^2}=0
+$$
+
+The phase velocity of the wave is
+
+$$
+c=\frac{1}{\sqrt{\mu_0\epsilon_0}}=299792458 \, {\rm\frac{m}{s}}
+$$
+:::
+
+One of the interesting relations to electrostatics is now, that the static permeabilities $\epsilon_0.\mu_0$ determine the speed of light. Note that the above wave equation is a vectorial equation., That means there is a wave equation for each component of the elecric field, e.g.
+
+$$
+\frac{\partial^2 E_x}{\partial x^2}+\frac{\partial^2 E_x}{\partial y^2}+\frac{\partial^2 E_x}{\partial z^2}-\frac{1}{c^2} \frac{\partial^2 E_x}{\partial t^2}=0
+$$
+
+for the x-component of the electric field. Equivalent equations exist for the other field components.
+
+The same mathematical treatment can be done for the magnetic field $\vec{B}$ and the same wave equation will follow from that.
+
+::: {.callout-note collapse=true}
+
+## Michelson Morley Experiment
+
+![](img/michelson_morley.png){width=60% fig-align="center"}
+
+The Michelson-Morley experiment of 1887 was designed to detect the hypothetical luminiferous ether through which light was thought to propagate. Using an interferometer, they split a light beam into two perpendicular paths and recombined them to create an interference pattern. The theoretical derivation considered the time for light to travel in both directions: along the direction of Earth's motion through the ether, the outward and return journey times are given by:
+
+$$t_1 = \frac{L}{c-v}$$
+$$t_2 = \frac{L}{c+v}$$
+
+where L is the arm length, c is the speed of light, and v is Earth's velocity through the ether. The total time for this path is therefore:
+
+$$T_1 = t_1 + t_2 = \frac{L}{c-v} + \frac{L}{c+v} = \frac{2Lc}{c^2-v^2}$$
+
+For the perpendicular arm, the time calculation involved the Pythagorean theorem, as light would travel diagonally relative to the ether, giving:
+
+$$T_2 = \frac{2L}{\sqrt{c^2-v^2}}$$
+
+The time difference ΔT = T₁ - T₂, when expanded using the binomial theorem and keeping terms to second order in v/c, yields:
+
+$$\Delta T = \frac{L}{c} \times \frac{v^2}{c^2}$$
+
+This time difference corresponds to a path difference of:
+
+$$\Delta d = 2L\frac{v^2}{c^2}$$
+
+However, Michelson and Morley observed no significant fringe shift, contradicting the ether theory and paving the way for special relativity, which established the constancy of the speed of light in all inertial reference frames.
+
+:::
+
+## Plane Waves, Spherical Waves
+
+### Plane Waves
+
+We will first have a look at elementary solutions of the wave equation again as we have done that in the wave optics sections. First of all we can write the solution of the wave equation as a product of a spatial and a temporal amplitude, i.e.
+
+\begin{eqnarray}
+\vec{\mathcal{E}}(\vec{r},t)&=&\mathcal{Re}\lbrace \vec{E}(\vec{r})e^{-i\omega t}\rbrace\\
+\vec{\mathcal{B}}(\vec{r},t)&=&\mathcal{Re}\lbrace \vec{B}(\vec{r})e^{-i\omega t}\rbrace
+\end{eqnarray}
+
+We use again the complex notation and remember that the measurable physical quantity $\vec{\mathcal{E}}$ or $\vec{\mathcal{B}}$ has to be a real valued quantity. Therefore we may calculate with the complex quantities, but finally need to calculate the real part ($\mathcal{Re}$) if required. In the following we will use the complex notation throughout the calculation and only refer to the real value if this is really useful.
+When inserting the complex ansatz above into the wave equation, we can take the time derivative which yields for the electric field
+
+\begin{equation}
+\Delta \vec{E}(\vec{r})+\frac{\omega^2}{c^2}\vec{E}(\vec{r})=0
+\tag{Helmholtz Equation}
+\end{equation}
+
+The latter equation is known as the **Helmholtz equation**. It is the differential equation for the spatial amplitude of the wave. We may also insert the solutions into the first and the third Maxwell equation which results in
+
+\begin{eqnarray}
+\nabla \times \vec{E}&=&i\omega\vec{B}\\
+\nabla \times\vec{B} &=& -\epsilon_0\mu_0 i\omega \vec{E}
+\end{eqnarray}
+
+We obtain finally a plane wave with our knowledge from the wave optics section.
+
+\begin{eqnarray}
+\vec{E}(\vec{r})&=&\vec{E}_{0}e^{i\vec{k}\cdot\vec{r}}\\
+\vec{B}(\vec{r})&=&\vec{B}_{0}e^{i\vec{k}\cdot\vec{r}}\\
+\end{eqnarray}
+
+Taking the rotation of those two equations yields
+
+\begin{eqnarray}
+\vec{k}\times \vec{E}_{0}&=&\omega \vec{B}_0\\
+\vec{k}\times \vec{B}_{0}&=&-\frac{\omega}{c^2} \vec{E}_0
+\end{eqnarray}
+
+The latter two equations tell essentiall two things. First of all they state that the vectors $\vec{k}$, $\vec{E}_0$ and $\vec{B}_{0}$ stand perpendicular to each other. This is why electromagnetic waves are termed transverse waves. The physical quantity of a transverse wave change sperpendicular to its propagation direction.
+
+The second thing is that the amplitudes of the two waves are not independent of each other but rather
+
+$$
+B_0=\frac{1}{c}E_0
+$$
+
+This is quite helpful, as we may just do calculations for the electric field and transfer them with the help of this conversion to the magnetic field.
+
+::: {layout-ncol=1}
+![Plane Wave](img/plane_wave.png){width="90%"}
+
+Plane wave propagating along the y-direction, with the electric field oscillating along the z-direction.
+:::
+
+### Spherical Waves
+
+Spherical waves are more complex than plane waves and require a different mathematical approach. We can describe them using an auxiliary function called the **Vector potential**, defined as:
+
+$$
+\vec{A}(\vec{r})=A_0 U(\vec{r})\hat{x}
+$$
+
+where $\hat{x}$ is the unit vector in the x-direction, and $U(\vec{r})$ is the scalar spherical wave function from wave optics:
+
+$$
+U(\vec{r})=\frac{1}{r}e^{-ik r}
+$$
+
+This vector potential satisfies the Helmholtz equation:
+
+$$
+\Delta\vec{A}+k^2 \vec{A}=0
+$$
+
+When we solve for the electric and magnetic fields in spherical coordinates, and consider large distances where $r\gg\lambda$ or $k r\gg2\pi$, we get:
+
+\begin{eqnarray}
+\vec{E}(\vec{r})&=& E_0 \sin(\theta) U(\vec{r}) \hat{\theta}\\
+\vec{B}(\vec{r})&=& B_0 \sin(\theta) U(\vec{r}) \hat{\phi}
+\end{eqnarray}
+
+These equations reveal that both the electric and magnetic fields lie tangent to the spherical wavefront. Since the wave propagates radially while the fields are perpendicular to this direction, we can classify spherical waves as transverse electromagnetic waves, just like plane waves.
+
+
+::: {layout-ncol=1}
+![](img/spherical_wave.png){width="95%"}
+
+(Left) Definition of the unit vectors in a spherical coordinate system. (Right) Vectors of the electric and magnetic field for a spherical wave.
+:::

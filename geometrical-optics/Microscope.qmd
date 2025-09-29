@@ -83,7 +83,7 @@ $$
 The intermediate image of size $B_1$ is now imaged by a magnifying glass of focal distance $f_2$. According to what we calculated earlier, we have now the observation angle
 
 $$
-\tan(\epsilon)=\frac{B_1}{f_2}=\frac{Ab}{a_1 f_2}.
+\tan(\epsilon)=\frac{B_1}{f_2}=\frac{Ab_1}{a_1 f_2}.
 $$
 
 If we observe the object of a size $A$ and the clear visual distance $s_0$, it would cover an angle of
@@ -95,10 +95,10 @@ $$
 and we may obtain the total angular magnification
 
 $$
-V=\frac{A b_1 s_0}{A b_1 f_2}=\frac{b_1 s_0}{g f_2}.
+V=\frac{A b_1 s_0}{A a_1 f_2}=\frac{b_1 s_0}{a_1 f_2}.
 $$
 
-If we set the distance between the two lenses to $D=b_1+f_2$ and $g\approx f_1$ then we obtain
+If we set the distance between the two lenses to $D=b_1+f_2$ and $a_1\approx f_1$ then we obtain
 
 $$
 V=\frac{(D-f_2)s_0}{f_1 f_2}
@@ -113,7 +113,6 @@ While the description above accurately represents the simplest microscope design
 ![**Fig.:** Infinity optics vs. normal microscopy optics.](img/infinity_optics.png){width=60% fig-align="center"}
 
 Infinity optics allows you to have a free length with a parallel optical path where you can insert optical elements. There is no fixed tube length as in the case sketched above, where the distance of the intermediate image has to be considered. Therefore, it has tremendous technical advantages. Common optical microscopes are further today coupled to CCD cameras to record images digitally. Yet, an eye-piece may still be available in many cases. The sketch below shows the light path for a simple fluorescence microscope recording fluorescence images with a camera.
-
 
 ![**Fig.:** Simple fluorescence microscope.](img/fluorescence_micr.png){width=40% fig-align="center"}
 

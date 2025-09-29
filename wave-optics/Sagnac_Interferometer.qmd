@@ -1,0 +1,46 @@
+---
+title: Sagnac Interferometer
+jupyter: python3
+format:
+  html:
+    code-fold: true
+crossref:
+  fig-title: Figure     # (default is "Figure")
+  tbl-title: Tbl     # (default is "Table")
+  title-delim: "—"   # (default is ":")
+  fig-prefix: "Figure"
+  eq-prefix: Eq.
+  chapters: true
+---
+
+## Sagnac Interferometer Overview
+
+A Sagnac interferometer operates by splitting a beam of light into two separate beams that travel in opposite directions around a closed loop. These beams are then recombined at the end of the loop, resulting in an interference pattern. If the interferometer is rotating, the path lengths of the two beams differ, leading to a phase shift.
+
+The phase shift, denoted as $\Delta \phi$, can be calculated using the formula:
+
+$$
+\Delta \phi = \frac{8 \pi A \Omega}{\lambda c}
+$$
+
+where $A$ represents the area enclosed by the light path, $\Omega$ is the angular velocity of the rotation, $\lambda$ is the wavelength of the light, and $c$ is the speed of light.
+
+### Derivation of the Phase Shift
+
+To derive the phase shift, we start by considering the path length difference. Assume a loop with a perimeter $L$ and an area $A$. In the absence of rotation, the time taken for light to travel around the loop is given by $T = \frac{L}{c}$.
+
+When the interferometer rotates with an angular velocity $\Omega$, the effective path length changes. For the beam traveling in the direction of rotation, the path length increases, while for the beam traveling opposite to the direction of rotation, the path length decreases.
+
+The time difference $\Delta T$ between the two beams can be expressed as:
+
+$$
+\Delta T = \frac{4 A \Omega}{c^2}
+$$
+
+The phase shift $\Delta \phi$ is related to this time difference by the equation:
+
+$$
+\Delta \phi = \frac{2 \pi \Delta T}{T} = \frac{8 \pi A \Omega}{\lambda c}
+$$
+
+This relationship shows how the rotation of the interferometer causes a measurable phase shift in the interference pattern, which can be used to determine the angular velocity of the rotation.

@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experimental Physics 3 - Q&A Widget</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Main widget container */
+        .physics-qa-widget {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        /* Header */
+        .qa-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .qa-header h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .qa-header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        /* Search section */
+        .qa-search {
+            padding: 30px;
+            background: #f8f9fa;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .search-box {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 12px 20px;
+            border: 2px solid #e9ecef;
+            border-radius: 50px;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .search-button {
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .search-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .search-button:active {
+            transform: translateY(0);
+        }
+
+        /* Suggestions */
+        .suggestions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .suggestion-label {
+            font-size: 0.9rem;
+            color: #6c757d;
+            margin-right: 10px;
+        }
+
+        .suggestion-chip {
+            padding: 6px 14px;
+            background: white;
+            border: 1px solid #667eea;
+            border-radius: 20px;
+            color: #667eea;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .suggestion-chip:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-1px);
+        }
+
+        /* Results section */
+        .qa-results {
+            padding: 30px;
+            min-height: 300px;
+        }
+
+        .no-results {
+            text-align: center;
+            color: #6c757d;
+            padding: 40px;
+        }
+
+        .result-item {
+            padding: 20px;
+            margin-bottom: 15px;
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            border-radius: 8px;
+            animation: slideIn 0.3s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .result-question {
+            font-weight: 600;
+            color: #495057;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .result-answer {
+            color: #333;
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+
+        .result-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #dee2e6;
+        }
+
+        .result-topic {
+            display: inline-block;
+            padding: 4px 12px;
+            background: #e9ecef;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            color: #495057;
+        }
+
+        .result-relevance {
+            font-size: 0.85rem;
+            color: #6c757d;
+        }
+
+        .relevance-bar {
+            display: inline-block;
+            width: 100px;
+            height: 6px;
+            background: #e9ecef;
+            border-radius: 3px;
+            margin-left: 8px;
+            vertical-align: middle;
+            overflow: hidden;
+        }
+
+        .relevance-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #28a745, #20c997);
+            transition: width 0.3s;
+        }
+
+        /* Loading state */
+        .loading {
+            text-align: center;
+            padding: 40px;
+            display: none;
+        }
+
+        .loading.active {
+            display: block;
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border: 4px solid #e9ecef;
+            border-top-color: #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .qa-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .search-box {
+                flex-direction: column;
+            }
+
+            .search-button {
+                width: 100%;
+            }
+
+            .suggestions {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="physics-qa-widget">
+        <div class="qa-header">
+            <h1>🔬 Experimental Physics 3 Q&A</h1>
+            <p>Ask questions about optics, waves, and quantum mechanics</p>
+        </div>
+
+        <div class="qa-search">
+            <div class="search-box">
+                <input
+                    type="text"
+                    class="search-input"
+                    id="searchInput"
+                    placeholder="Ask your physics question..."
+                    autocomplete="off"
+                >
+                <button class="search-button" id="searchButton">Search</button>
+            </div>
+            <div class="suggestions">
+                <span class="suggestion-label">Try:</span>
+                <span class="suggestion-chip" data-question="What is Snell's law?">Snell's Law</span>
+                <span class="suggestion-chip" data-question="Explain wave interference">Wave Interference</span>
+                <span class="suggestion-chip" data-question="What is diffraction?">Diffraction</span>
+                <span class="suggestion-chip" data-question="Describe the photoelectric effect">Photoelectric Effect</span>
+                <span class="suggestion-chip" data-question="What is quantum tunneling?">Quantum Tunneling</span>
+            </div>
+        </div>
+
+        <div class="qa-results" id="results">
+            <div class="no-results">
+                Enter a question above to search the course content
+            </div>
+        </div>
+
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p style="margin-top: 20px; color: #6c757d;">Searching course materials...</p>
+        </div>
+    </div>
+
+    <script>
+        // Course Q&A Database
+        const qaDatabase = [
+            // Geometrical Optics
+            {
+                question: "What is Snell's law?",
+                answer: "Snell's law describes the relationship between the angles of incidence and refraction when light passes through a boundary between two different media. It states that n₁sin(θ₁) = n₂sin(θ₂), where n is the refractive index and θ is the angle with respect to the normal. This law is fundamental to understanding how light bends when passing through different materials like from air into water or glass.",
+                topic: "Geometrical Optics",
+                keywords: ["snell", "refraction", "angle", "refractive index", "boundary", "medium"]
+            },
+            {
+                question: "How do lenses form images?",
+                answer: "Lenses form images by refracting light rays according to their shape and material. Convex lenses converge parallel rays to a focal point, creating real images when the object is beyond the focal length, and virtual images when closer. The thin lens equation 1/f = 1/do + 1/di relates focal length (f), object distance (do), and image distance (di). The magnification is given by M = -di/do.",
+                topic: "Geometrical Optics",
+                keywords: ["lens", "image", "focal", "convex", "concave", "magnification", "thin lens equation"]
+            },
+            {
+                question: "What causes spherical aberration?",
+                answer: "Spherical aberration occurs when light rays passing through different parts of a spherical lens or mirror don't converge to the same focal point. Rays near the edge focus closer than those near the center, causing image blurring. This can be corrected using aspherical surfaces, aperture stops to limit rays to the center, or combining lenses with opposite aberrations.",
+                topic: "Geometrical Optics",
+                keywords: ["aberration", "spherical", "focus", "blur", "correction", "aspherical"]
+            },
+
+            // Wave Optics
+            {
+                question: "What is wave interference?",
+                answer: "Wave interference occurs when two or more waves overlap in space, combining according to the principle of superposition. Constructive interference happens when waves are in phase, creating bright fringes where amplitudes add. Destructive interference occurs when waves are out of phase, creating dark fringes where they cancel. This is demonstrated in Young's double-slit experiment, producing an interference pattern.",
+                topic: "Wave Optics",
+                keywords: ["interference", "constructive", "destructive", "superposition", "phase", "young", "double slit", "fringe"]
+            },
+            {
+                question: "What is diffraction?",
+                answer: "Diffraction is the bending and spreading of waves when they encounter an obstacle or pass through an aperture. It's most pronounced when the aperture size is comparable to the wavelength. Single-slit diffraction creates a pattern with a central bright maximum and alternating dark and bright fringes. The angular position of minima is given by a·sin(θ) = nλ, where a is the slit width.",
+                topic: "Wave Optics",
+                keywords: ["diffraction", "bending", "aperture", "slit", "wavelength", "fringe", "pattern"]
+            },
+            {
+                question: "How does polarization work?",
+                answer: "Polarization describes the orientation of electromagnetic wave oscillations. Unpolarized light has random orientations, while polarized light oscillates in a specific plane. Polarizers transmit only components aligned with their axis, following Malus's law: I = I₀cos²(θ). Light can be polarized by absorption (polaroid filters), reflection (Brewster's angle), scattering (Rayleigh scattering), or birefringence in crystals.",
+                topic: "Wave Optics",
+                keywords: ["polarization", "polarized", "malus", "brewster", "birefringence", "electromagnetic"]
+            },
+
+            // Electromagnetic Waves
+            {
+                question: "What are Maxwell's equations?",
+                answer: "Maxwell's equations are four fundamental equations describing electromagnetic phenomena: (1) Gauss's law for electricity: ∇·E = ρ/ε₀, (2) Gauss's law for magnetism: ∇·B = 0, (3) Faraday's law: ∇×E = -∂B/∂t, (4) Ampère-Maxwell law: ∇×B = μ₀J + μ₀ε₀∂E/∂t. These equations unify electricity and magnetism, predicting electromagnetic waves traveling at the speed of light.",
+                topic: "Electromagnetic Waves",
+                keywords: ["maxwell", "gauss", "faraday", "ampere", "electromagnetic", "field", "equation"]
+            },
+            {
+                question: "How do electromagnetic waves propagate?",
+                answer: "Electromagnetic waves propagate through the mutual generation of oscillating electric and magnetic fields perpendicular to each other and to the direction of propagation. The changing electric field creates a magnetic field (Faraday's law), and the changing magnetic field creates an electric field (Ampère-Maxwell law). In vacuum, they travel at speed c = 1/√(μ₀ε₀) ≈ 3×10⁸ m/s.",
+                topic: "Electromagnetic Waves",
+                keywords: ["electromagnetic", "propagation", "electric field", "magnetic field", "wave", "speed of light"]
+            },
+            {
+                question: "What is the Poynting vector?",
+                answer: "The Poynting vector S = (1/μ₀)E × B represents the directional energy flux of an electromagnetic wave. Its magnitude gives the power per unit area (intensity) carried by the wave. For a plane wave, the time-averaged Poynting vector magnitude is <S> = (1/2)ε₀cE₀², where E₀ is the electric field amplitude. This describes energy transport in EM radiation.",
+                topic: "Electromagnetic Waves",
+                keywords: ["poynting", "energy", "flux", "intensity", "power", "electromagnetic"]
+            },
+
+            // Quantum Mechanics
+            {
+                question: "What is the photoelectric effect?",
+                answer: "The photoelectric effect is the emission of electrons from a material when light shines on it. Einstein explained that light consists of photons with energy E = hf. Electrons are emitted only if the photon energy exceeds the work function: hf ≥ φ. The kinetic energy of emitted electrons is KE = hf - φ. This provided crucial evidence for the particle nature of light and earned Einstein the Nobel Prize.",
+                topic: "Quantum Mechanics",
+                keywords: ["photoelectric", "photon", "einstein", "work function", "electron", "emission"]
+            },
+            {
+                question: "What is wave-particle duality?",
+                answer: "Wave-particle duality is the principle that all matter and radiation exhibit both wave and particle properties. Light shows particle behavior in the photoelectric effect but wave behavior in interference. Similarly, electrons show particle properties when detected but create interference patterns in double-slit experiments. The de Broglie wavelength λ = h/p relates a particle's momentum to its wave nature.",
+                topic: "Quantum Mechanics",
+                keywords: ["wave", "particle", "duality", "de broglie", "complementarity", "quantum"]
+            },
+            {
+                question: "What is the Schrödinger equation?",
+                answer: "The Schrödinger equation is the fundamental equation of quantum mechanics describing how quantum states evolve. The time-dependent form is iℏ∂Ψ/∂t = ĤΨ, where Ψ is the wave function and Ĥ is the Hamiltonian operator. For stationary states, it reduces to ĤΨ = EΨ. The wave function's square |Ψ|² gives the probability density of finding a particle at a given position.",
+                topic: "Quantum Mechanics",
+                keywords: ["schrodinger", "equation", "wave function", "quantum", "hamiltonian", "probability"]
+            },
+            {
+                question: "What is quantum tunneling?",
+                answer: "Quantum tunneling is the phenomenon where particles pass through potential barriers even when their energy is less than the barrier height. This is impossible classically but occurs due to the wave nature of particles. The transmission probability decreases exponentially with barrier width and height. Tunneling is essential in nuclear fusion, scanning tunneling microscopes, and semiconductor devices.",
+                topic: "Quantum Mechanics",
+                keywords: ["tunneling", "quantum", "barrier", "transmission", "probability", "wave function"]
+            },
+            {
+                question: "What is the uncertainty principle?",
+                answer: "Heisenberg's uncertainty principle states that certain pairs of physical properties cannot be simultaneously measured with arbitrary precision. The position-momentum uncertainty is ΔxΔp ≥ ℏ/2, and energy-time uncertainty is ΔEΔt ≥ ℏ/2. This isn't due to measurement limitations but is a fundamental property of quantum systems, reflecting the wave nature of matter.",
+                topic: "Quantum Mechanics",
+                keywords: ["uncertainty", "heisenberg", "position", "momentum", "quantum", "measurement"]
+            }
+        ];
+
+        // Search functionality
+        class QASearch {
+            constructor() {
+                this.database = qaDatabase;
+                this.searchInput = document.getElementById('searchInput');
+                this.searchButton = document.getElementById('searchButton');
+                this.resultsContainer = document.getElementById('results');
+                this.loadingContainer = document.getElementById('loading');
+
+                this.init();
+            }
+
+            init() {
+                // Event listeners
+                this.searchButton.addEventListener('click', () => this.search());
+                this.searchInput.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') this.search();
+                });
+
+                // Suggestion chips
+                document.querySelectorAll('.suggestion-chip').forEach(chip => {
+                    chip.addEventListener('click', (e) => {
+                        this.searchInput.value = e.target.dataset.question;
+                        this.search();
+                    });
+                });
+            }
+
+            search() {
+                const query = this.searchInput.value.trim().toLowerCase();
+                if (!query) return;
+
+                // Show loading
+                this.resultsContainer.style.display = 'none';
+                this.loadingContainer.classList.add('active');
+
+                // Simulate processing time
+                setTimeout(() => {
+                    const results = this.findMatches(query);
+                    this.displayResults(results);
+
+                    // Hide loading
+                    this.loadingContainer.classList.remove('active');
+                    this.resultsContainer.style.display = 'block';
+                }, 500);
+            }
+
+            findMatches(query) {
+                // Score each Q&A based on relevance
+                const scored = this.database.map(item => {
+                    let score = 0;
+                    const queryWords = query.split(/\s+/);
+
+                    // Check question match
+                    const questionMatch = item.question.toLowerCase();
+                    if (questionMatch.includes(query)) {
+                        score += 10;
+                    }
+
+                    // Check individual word matches
+                    queryWords.forEach(word => {
+                        if (word.length > 2) {
+                            if (questionMatch.includes(word)) score += 3;
+                            if (item.answer.toLowerCase().includes(word)) score += 2;
+                            if (item.keywords.some(k => k.includes(word))) score += 4;
+                        }
+                    });
+
+                    // Check keyword matches
+                    item.keywords.forEach(keyword => {
+                        if (query.includes(keyword)) score += 3;
+                    });
+
+                    return { ...item, score };
+                });
+
+                // Sort by score and return top results
+                return scored
+                    .filter(item => item.score > 0)
+                    .sort((a, b) => b.score - a.score)
+                    .slice(0, 5);
+            }
+
+            displayResults(results) {
+                if (results.length === 0) {
+                    this.resultsContainer.innerHTML = `
+                        <div class="no-results">
+                            <p>No results found for your query.</p>
+                            <p>Try using different keywords or browse the suggested topics.</p>
+                        </div>
+                    `;
+                    return;
+                }
+
+                const maxScore = Math.max(...results.map(r => r.score));
+
+                this.resultsContainer.innerHTML = results.map(item => {
+                    const relevance = Math.round((item.score / maxScore) * 100);
+
+                    return `
+                        <div class="result-item">
+                            <div class="result-question">Q: ${item.question}</div>
+                            <div class="result-answer">${item.answer}</div>
+                            <div class="result-meta">
+                                <span class="result-topic">${item.topic}</span>
+                                <span class="result-relevance">
+                                    Relevance: ${relevance}%
+                                    <span class="relevance-bar">
+                                        <span class="relevance-fill" style="width: ${relevance}%"></span>
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            }
+        }
+
+        // Initialize the search when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            new QASearch();
+        });
+    </script>
+</body>
+</html>

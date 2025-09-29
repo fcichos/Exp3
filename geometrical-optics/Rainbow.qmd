@@ -6,8 +6,6 @@ format:
     code-fold: true
 ---
 
-
-
 ```{python}
 #| echo: false
 
@@ -67,14 +65,19 @@ plt.rcParams.update({'font.size': 12,
                      'ytick.direction' : 'in',})
 ```
 
-### Deflection with one reflection
+As the last topic of the optical elements we would like to have a look at a phenomenon, which has nothing to do with optical elements but is fun and just fits to the topic of dispersion. We will explore the rainbow and in addition a DIY version, the glassbow.
 
-As the last topic of the optical elements we would like to have a look at a phenomenon, which has nothing to do with optical elements but is fun and just fits to the topic of dispersion. We will explore the rainbow and in addition a DIY version, the glassbow. To understand the rainbow we will have first a look at the reflection of rays from a single droplet.
+### Historical Background
+The rainbow has fascinated humans throughout history, but its first scientific explanation came from René Descartes in 1637. Using geometric optics, he explained how sunlight is reflected and refracted by spherical water droplets to create the bow shape. However, Descartes could not explain the colors. It was Isaac Newton who, through his experiments with prisms and understanding of dispersion, provided the complete explanation of the rainbow's colors in 1672. Newton showed that white sunlight consists of different colors that are refracted at slightly different angles due to dispersion.
+
+
+## Single Drop Analysis
+
+To understand the rainbow we will have first a look at the reflection of rays from a single droplet.
 
 ![Reflection of rays in a single drop](img/rainbow.png){ width=40% fig-align="center" }
 
-In the sketch above a light ray of white light is entering the droplet under an angle $\alpha$ to the surface normal on the top. The ray is refracted and enters the droplet under an angle $\beta$ to the surface normal.
-The angle can be calculated from Snell's law
+In the sketch above a light ray of white light is entering the droplet under an angle $\alpha$ to the surface normal on the top. The ray is refracted and enters the droplet under an angle $\beta$ to the surface normal. The angle can be calculated from Snell's law
 
 $$n_{\rm air}\sin(\alpha)=n_{\rm water}\sin(\beta).$$
 
@@ -94,12 +97,10 @@ $$\phi=4\sin^{-1}\left (\frac{n_{\rm air}}{n_{\rm water}}\sin(\alpha) \right)-2\
 
 So let us have a look at this dependence of the deflection angle as a function of the incidence angle.
 
-
 ```{python}
 #| code-fold: true
 #| fig-align: center
 #| fig-cap: "Deflection angle of a light ray in a water droplet as a function of the incidence angle. The refractive index of water is taken from the data file `H2O.csv`."
-
 
 alpha=np.linspace(0,np.pi/2,10000)
 h2o=pd.read_csv("data/H2O.csv",delimiter=",")
@@ -122,9 +123,9 @@ The dependence seems to show a maximum deflection angle at an incidence angle of
 print('Maximum deflection angle ', np.max(rainbow(alpha,n)*180/np.pi))
 ```
 
-### Color of the rainbow
+### Color Formation and Dispersion
 
-The color of the rainbow is now the result of the fact that the maximum deflection angle depends on the color of the light due to the dispersion. Since we have a refraction, reflection and another refraction, the largest maximum deflection angle is observed for red light, while the smallest one appears for blue light. The diagrams below show this result, which is in general true for materials with normal dispersion.
+The color of the rainbow is the result of the fact that the maximum deflection angle depends on the color of the light due to the dispersion. Since we have a refraction, reflection and another refraction, the largest maximum deflection angle is observed for red light, while the smallest one appears for blue light. The diagrams below show this result, which is in general true for materials with normal dispersion.
 
 ```{python}
 #| code-fold: true
@@ -139,8 +140,6 @@ for wl in np.linspace(0.400,0.700,100):
 plt.xlabel(r"incident angle $\alpha$ [°]")
 plt.ylabel(r"deflection angle $\phi$ [°]")
 
-
-
 plt.subplot(1,2,2)
 for wl in np.linspace(0.400,0.700,100):
     c=wavelength_to_rgb(wl*1000, gamma=0.8)
@@ -154,9 +153,10 @@ plt.tight_layout()
 plt.show()
 ```
 
-This order of the colors is actually true for all incident angles, which raises the question, why the rainbow is actually colored. The blue color of a certain incidence angle would actually overlap with the green color of a different incidence angle and the red color of an even different incidence angle. If you select a specific outgoing angle under which you observe the rainbow, let us say 41°, then you find under this observation angle all color and, therefore, should observe always white light.
+This order of the colors is actually true for all incident angles, which raises the question, why the rainbow is actually colored. The blue color of a certain incidence angle would actually overlap with the green color of a different incidence angle and the red color of an even different incidence angle. If you select a specific outgoing angle under which you observe the rainbow, let us say $41^{\circ}$, then you find under this observation angle all color and, therefore, should observe always white light.
 
 This is actually true if you look at the inside of a rainbow. You clearly recognize that inside the rainbow it is much brighter than outside. Yet when you reach the maximum angle of each color, you have a region, where even for larger angles for the incidence angles, the deflection angle does not change. Thus, if you assume you send in rays at constantly spaced incidence angles, you will have more rays with a deflection angle close to the maximum. The diagram below just counts the number of deflection angles in the different for each color and you clearly see that around the maximum deflection angles for each color you have a strong peak.
+
 
 ```{python}
 #| code-fold: true
@@ -177,7 +177,7 @@ plt.show()
 
 Thus, around each droplet on the sky, there is a cone of deflected light reflected back from the sun. On the outside of that cone is red light under an angle of almost $42^{\circ}$ while on the inside edge we find blue light and finally white light (see left image below). We just have to connect that to the observer now. This is shown in the right sketch. The rainbow, therefore, results from the fact that we look at different height at different edges of the cone.
 
-::: {#fig-rainbow-formation layout-ncol=2 fig-align="center"}
+::: {#fig-rainbow-formation layout-ncol=2}
 ![Deflection cones](img/cone.png){#fig-cone width=100%}
 
 ![Resulting rainbow](img/observation.png){#fig-observation width=100%}
@@ -185,30 +185,27 @@ Thus, around each droplet on the sky, there is a cone of deflected light reflect
 Deflection cones of different colors on a single drop in a rainbow (left) and the resulting rainbow as observed from these cones (right).
 :::
 
-#### Rainbow
 
-The photos below show a rainbow, where you should see the enhanced white color in the center of the rainbow, the color order of the bow itself and the darker region outside. But there is also a second rainbow appearing on the outside.
+### Primary and Secondary Rainbows
 
-::: {#fig-rainbow-full fig-align="center"}
-![Double rainbow over the Grand Canyon. (c) Picture by Frank Cichos](img/rainbow_full.JPG){width=100%}
+The photos below show a remarkable example of both primary and secondary rainbows. Between these two bows, a careful observer will notice a darker region known as Alexander's dark band, first described by Alexander of Aphrodisias in 200 AD. This dark band occurs because no light is scattered back to the observer at angles between approximately $42^{\circ}$ (maximum angle of primary rainbow) and $50^{\circ}$ (minimum angle of secondary rainbow).
 
-Double rainbow over the Grand Canyon.
-:::
+![Double rainbow over Grand Canyon. (Frank Cichos)](img/rainbow_full.png)
 
-This second outside rainbow has a reversed color order and is weaker than the inside rainbow. This secondary rainbow comes from a process involving two refractions and two reflections inside each drop.
+The primary rainbow results from one internal reflection within each water droplet, while the secondary rainbow involves two internal reflections. This double reflection explains both the reversed color order and the reduced brightness of the secondary rainbow, as each reflection decreases the light intensity.
 
-::: {#fig-rainbow-zoom fig-align="center"}
-![Zoom into the rainbow over the Grand Canyon. (c) Picture by Frank Cichos](img/rainbow_gczoom.JPG){width=100%}
+![Zoom into the Rainbow fotograph showing Alexanders dark band.](img/rainbow_gczoom.png)
 
-Zoom into the rainbow over the Grand Canyon.
-:::
+## Glassbow
 
-#### Glassbow
+A beatiful demonstration of rainbow physics can be created at home using glass beads of about $200\, \mu m$ diameter (available from our lab). When these beads are placed on a black background and illuminated with a flash lamp, they create what we call a "glassbow" - a rainbow-like pattern produced by glass instead of water droplets.
 
-You can observe a beautiful rainbow at home if you just have a few glass beads. You can get these glass beeds from us. They have a diameter of about 200 µm. If you place them on a black background and use a flash lamp, you will observe a nice rainbow as Mr. Märcker did in the photo below. The main difference is the observation angle. Try to calculate the new observation angle for the refractive indices of glass.
+The main difference between a glassbow and a natural rainbow lies in the observation angle, due to the different refractive index of glass ($n \approx 1.5$) compared to water ($n \approx 1.33$). Using the same deflection angle equation:
 
-::: {#fig-glassbow fig-align="center"}
-![](img/glassbow.JPG){width=100%}
+$$
+\phi=4\sin^{-1}\left (\frac{n_{\rm air}}{n_{\rm glass}}\sin(\alpha) \right)-2\alpha
+$$
 
-Glassbow created by the reflection of light from glass beads. (c) Picture by Axel Märcker.
-:::
+we can calculate why the glassbow appears at a different angle than its atmospheric counterpart.
+
+![A glassbow created by light reflection and refraction in microscopic glass beads on a black surface. (c) Picture by Axel Märcker](img/glassbow.png){width=80%}

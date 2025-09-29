@@ -1,0 +1,425 @@
+---
+title: Black Body Radiation
+jupyter: python3
+format:
+  html:
+    code-fold: true
+crossref:
+  fig-title: Figure
+  tbl-title: Table
+  title-delim: "—"
+  fig-prefix: Figure
+  eq-prefix: Equation
+  chapters: true
+---
+
+Black body radiation represents one of the pivotal problems that led to the birth of quantum mechanics. While seemingly a purely thermodynamic phenomenon - the electromagnetic radiation emitted by an idealized perfect absorber in thermal equilibrium - its explanation required a radical departure from classical physics.
+
+In the late 19th century, classical physics completely failed to explain the observed spectrum of black body radiation. The classical Rayleigh-Jeans law predicted that the intensity of radiation would increase indefinitely with frequency (the 'ultraviolet catastrophe'), which clearly contradicted experimental measurements. This crisis in physics was resolved only when Max Planck introduced the revolutionary concept that electromagnetic energy could only be emitted in discrete quantities or 'quanta' - an idea that would become one of the fundamental principles of quantum mechanics.
+
+The study of black body radiation thus marks the historical transition point from classical to quantum physics. Planck's solution not only explained the observed radiation spectrum but introduced the quantum of action $h$ (Planck's constant), which would become central to all of quantum mechanics. This topic demonstrates how quantum effects emerge even in seemingly classical macroscopic systems when we examine them carefully enough.
+
+The figure below displays the emission of a light bulb with a tungsten filament. The filament is heated up to a specific temperature by different currents.
+
+::: {#fig-light-bulb fig-align="center"}
+![](img/emission_at_T.png){width=50%}
+
+Light emission at different temperatures. The filament of the light bulb is heated up to different temperatures by varying the current. The color of the emitted light changes with the temperature of the filament.
+:::
+
+Without dispersing the spectrum we directly notice the different color of the light emitted by the filament. While the heating mechanism is different for different materials, the emitted spectrum is always similar and solely depends on the temperature of the radiator. The emitted spectrum is called the **blackbody spectrum** and is universal for all materials.
+
+
+## Black Body
+
+:::{.callout-note }
+*A blackbody is a model of a radiation source whose emission depends only on its temperature.* Its emission, however, does not depend on the material the radiator is made from, nor on its surface or any other potential characteristics.
+:::
+
+
+
+Consider a body with a cavity as depicted below. The body is heated to a certain temperature $T$ and the cavity is closed.
+
+![A body with a cavity. The body is heated to a certain temperature $T$ and the cavity is closed.](img/cavity.png){width=35%}
+
+The system is in thermal equilibriums and thus each quadratic degree of freedom carries an energy of $0.5 k_B T$, where $k_B=1.21.380649 \times 10^{-23} \text{ J/K}$ is the Boltzmann constant.
+
+Each surface element of the cavity emits radiation. The radiation is absorbed and re-emitted multiple times within the cavity. The radiation is in thermal equilibrium with the walls of the cavity. The radiation is isotropic and homogeneous. The radiation is called **blackbody radiation**.
+
+
+As a consequence the absorption of an ideal blackbody is $A = 1$. A realization of a blackbody radiator might be constructed on the basis of a cavity within a solid body. If one drills a hole in the cavity wall with the prerequisite that the area of this hole $\Delta A$ is small compared to the overall area of the cavity $A_{\mathrm{cav}} \gg \Delta A$, the radiation entering the cavity is reflected and absorbed multiple times before the radiation might reach the opening again. Practically the whole radiation is absorbed $A \approx 1$.
+
+![Principle of a cavity resonator. Due to the geometry (the inner surface $A_{\mathrm{cav}}$ is much bigger than the area of the inlet $\Delta A$) radiation is reflected and partially absorbed multiple times and cannot escape.](img/Lecture20_cavity_radiator_principle.png){width=35%}
+
+
+When the cavity is heated while maintaining its walls at a uniform temperature, the thermal energy causes the atoms in the walls to vibrate. These vibrating atoms emit electromagnetic waves in the form of thermal radiation. Because the hole in the cavity is very small compared to the total cavity surface area ($\Delta A \ll A_{\mathrm{cav}}$) and the cavity has perfect absorption ($A = 1$), the radiation that emerges from the hole represents the most intense possible thermal emission - greater than what any real material could produce at that temperature. This makes the cavity an ideal blackbody radiator.
+
+We can show for cavity radiation:
+
+- If the cavity walls are in a stationary state, the absorption and emission of the walls are in equilibrium. For every frequency $\nu$ the absorption and emission of an area element is given through
+$$
+\frac{\mathrm{d} W_{\mathrm{A}} \left( \nu \right) }{\mathrm{d} t} = \frac{\mathrm{d} W_{\mathrm{E}} \left( \nu \right) }{\mathrm{d}t}
+$$
+
+- Cavity radiation is isotropic. The spectral radiance at any point of the cavity does not depend on the direction of observation and is independent of the kind and shape of the walls. (If this point had not been true, one might have placed a black plate into the cavity and oriented it with its normal facing the strongest radiation. Thus, one side of the plate would have become hotter than the other one, which is against the second law of thermodynamics.)
+
+- Cavity radiation is homogeneous. The energy spectral density is independent from the particular position within the cavity. (If this had not been true, you might have constructed a perpetuum mobile)
+
+If we now place a body in the cavity the area element $\mathrm{d}A$ experiences a **spectral radiancy** of
+$S^{\ast}_{\nu} \; \mathrm{d} \nu \; \mathrm{d} A \; \mathrm{d} \Omega$ on the interval $\left[ \nu; \nu + \mathrm{d} \nu \right]$ from the solid angle $\mathrm{d} \Omega$. The area $\mathrm{d} A$ then absorbs the radiant power of
+
+$$
+\frac{\mathrm{d} W_{A}}{\mathrm{d} t} = A_{\nu} \; S^{\ast}_{\nu} \; \mathrm{d} A \; \mathrm{d} \Omega \; \mathrm{d} \nu
+$$
+
+and emits the radiancy of
+
+$$
+\frac{\mathrm{d} W_{E}}{\mathrm{d} t} = E^{\ast}_{\nu} \; \mathrm{d} A \; \mathrm{d} \Omega \; \mathrm{d} \nu
+$$
+
+with $A_{\nu}$ and $E^{\ast}_{\nu}$ being the absorption and emission capabilities, respectively.
+
+If the body is in thermal equilibrium the absorption and emitted power have to be equal. Furthermore, because the spectral radiancy within the cavity is isotropic, its value is constant for every orientation ($\theta$ and $\varphi$). Thus, we immediately obtain **Kirchhoff's law of thermal radiation**
+
+$$
+\frac{E^{\ast}_{\nu}}{A_{\nu}} = S^{\ast}_{\nu}
+$$
+
+Thus, for every body being in thermal equilibrium with the cavity radiation the ratio between the emission capability and absorption capability at a given frequency $\nu$ is equal to the spectral radiancy $S^{\ast}_{\nu} \left( T \right)$ of the cavity. Since the blackbody radiator absorbs perfectly $A = 1$, it follows that the spectral emission capability $E^{\ast}_{\nu}$ is identical to the spectral radiancy $S^{\ast}_{\nu}$.
+
+
+::: {.callout-note}
+## The Leslie Cube Experiment
+
+The Leslie Cube, developed by John Leslie in 1804, was one of the first experimental demonstrations of how surface properties affect thermal radiation. The apparatus consists of a cubic vessel with different surface treatments on each face (e.g., polished metal, blackened surface, rough surface), filled with hot water.
+
+::: {#fig-leslie-cube fig-align="center"}
+![](img/Leslie_Cube.png){width=40%}
+
+Leslie Cube. The cube is filled with hot water, and each face has a different surface treatment. The radiation emitted from each face is measured using a thermopile detector. The experiment demonstrated that different surfaces emit radiation differently at the same temperature, and that good absorbers are also good emitters.
+:::
+
+By measuring the radiation emitted from each face using a thermopile detector, Leslie showed that:
+
+1. Different surfaces emit radiation differently at the same temperature
+2. Good absorbers are also good emitters (leading to Kirchhoff's law)
+3. The emissivity depends on the surface properties but not on the material inside
+
+This simple but elegant experiment helped establish fundamental principles of thermal radiation and provided early experimental evidence for what would later be formalized as Kirchhoff's law of thermal radiation:
+
+$$\frac{E^{\ast}_{\nu}}{A_{\nu}} = S^{\ast}_{\nu}$$
+
+:::
+
+## Spectral density of modes
+
+Now we would like to have a look at how electromagnetic waves behave within a cavity. First we discuss a one-dimensional problem. If we assume an electromagnetic wave with an electric field of $\vec{E} \left( z, t \right) = E_0 \cos \left( \omega t - k z \right) \; \vec{e_x}$ and being reflected at a conducting surface at $z = 0$, we have to pay attention that tangential components of $\vec{E}$ cannot exist at the interface. Thus, it follows
+
+$$
+\vec{E} \left( z = 0, t \right) = E_{0,\mathrm{I}} \; \vec{e_x} + E_{0,\mathrm{R}} \; \vec{e_x} = 0
+$$
+and
+$$
+E_{0,\mathrm{I}} \; \vec{e_x} = -E_{0,\mathrm{R}} \; \vec{e_x}
+$$
+
+The superposition of incident and reflected waves then result in
+
+$$
+\vec{E} \left( z, t \right) = 2 E_0 \sin \left( k z \right) \sin \left( \omega t \right) \; \vec{e_x} \mathrm{,}
+$$
+which is a standing wave.
+
+If we now discuss the three-dimensional problem, we have a look at a cuboid with ideally conducting walls and the length of the edges being $a$, $b$, and $c$. If we place one corner of the cuboid at the origin of the coordinate system and discuss the electric field for an arbitrary orientation $\vec{E} = \left( E_x, E_y, E_z \right)^{\mathrm{T}}$, we obtain from the vanishing tangential components of the electric field at the interface the following boundary conditions
+$$
+\begin{eqnarray}
+E_x = 0 & \; \mathrm{for} \; & z = 0,\; z = c,\; y = 0,\; \mathrm{and} \; y = b\\
+E_y = 0 & \; \mathrm{for} \; & z = 0,\; z = c,\; x = 0,\; \mathrm{and} \; x = a\\
+E_z = 0 & \; \mathrm{for} \; & x = 0,\; x = a,\; y = 0,\; \mathrm{and} \; y = b
+\end{eqnarray}
+$$
+
+![A cuboid as resonator.](img/Lecture20_cavity_resonator.png){width=35%}
+
+
+
+Due to reflections and superposition of the components of the wavevector $\left( \pm k_x, \pm k_y, \pm k_z \right)$, standing waves are generated if the boundary conditions are fulfilled
+
+$$
+\begin{eqnarray}
+k_x & = & n \cdot \frac{\pi}{a}\\
+k_y & = & m \cdot \frac{\pi}{b}\\
+k_z & = & o \cdot \frac{\pi}{c}
+\end{eqnarray}
+$$
+with $m,n,o$ being natural numbers. Furthermore, the magnitude of the wavevector is given through $\left| \vec{k} \right| = \sqrt{k_x^2 + k_y^2 + k_z^2}$ which directly leads to the condition for possible frequencies
+
+$$
+\omega = c \cdot \pi \; \sqrt{\left(\frac{n}{a}\right)^2 + \left(\frac{m}{b}\right)^2 + \left(\frac{o}{c}\right)^2}
+$$
+
+Consequently, only such standing waves are allowed in our resonator that obey the conditions
+
+$$
+\vec{E}_{m,n,o} = \vec{E}_{0} \left( m,n,o \right) \cdot \cos \left( \omega t\right)
+$$
+
+with $\vec{E}_{0} \left( m,n,o \right) = \left( E_{0,x},E_{0,y},E_{0,z} \right)^{\mathrm{T}}$ and
+
+$$
+\begin{eqnarray}
+E_{0,x} & = & A \cdot \cos \left( n \frac{\pi}{a} x \right) \sin \left( m \frac{\pi}{b} y \right) \sin \left( o \frac{\pi}{c} z \right)\\
+E_{0,y} & = & B \cdot \sin \left( n \frac{\pi}{a} x \right) \cos \left( m \frac{\pi}{b} y \right) \sin \left( o \frac{\pi}{c} z \right)\\
+E_{0,z} & = & C \cdot \sin \left( n \frac{\pi}{a} x \right) \sin \left( m \frac{\pi}{b} y \right) \cos \left( o \frac{\pi}{c} z \right)\\
+\end{eqnarray}
+$$
+
+Such a box with ideally conducting walls is called a *cavity resonator* and the possible standing waves the resonator's *principle oscillations* or **resonator modes**.
+
+In order to simplify the calculation a bit, we discuss the case of a cube instead of a cuboid. The frequency condition then results in
+
+$$
+\begin{eqnarray}
+\omega & = & c \cdot \frac{\pi}{a} \; \sqrt{ n^2 + m^2 + o^2}\\
+\rightarrow n^2 + m^2 + o^2 & = & \left( \frac{a \omega}{\pi c}\right)^2\\
+\rightarrow n^2 + m^2 + o^2 & = & \left( \frac{a}{\pi}\right)^2 \cdot k^2\\
+\end{eqnarray}
+$$
+
+In a coordinate system in $k$-space where $k_x$, $k_y$, and $k_z$ define the axes, the points $\left( m, n, o \right)$ form a lattice with the lattice constant $\pi / a$. As the combinations of the parameters $\left( m, n, o \right)$ defines the number of modes within the resonator, as a consequence there are as many modes as lattice points in $k$-space. The very last equation, in addition, defines a sphere with the radius $\left| \vec{k} \right| = \pi /a \cdot \sqrt{n^2 + m^2 + o^2} $
+
+![Two-dimensional k-space with a circle representing a sphere in two-dimensional space.](img/Lecture20_cavity_resonator_k-space.png){width=35%}
+
+Now we can discuss the following case. For $\sqrt{m^2 +n^2 +o^2} \gg 1$, it follows for the radius of the sphere $\left| \vec{k} \right| \gg \pi / a$ and for the wavelength $\lambda \ll 2a$. As a consequence the number of lattice points $N_{\mathrm{L}}$ (under the boundary condition $m,n,o > 0$) can be approximated with the number of unit cells within our sphere with the radius $\left| \vec{k} \right|$ in the first octant. The volume of the sphere in the first octant reads as
+
+$$
+\begin{eqnarray}
+V_{\mathrm{S}} & = & \frac{1}{8} \; \frac{4}{3} \pi \left| \vec{k} \right|^3 \mathrm{ or }\\
+V_{\mathrm{S}} & = & \frac{1}{6} \pi \left( \frac{\omega}{c_0} \right)^3 \mathrm{.}
+\end{eqnarray}
+$$
+
+Then, we can calculate the number of lattice points on the basis of the ratio of the volume of the sphere in the first octant to the volume of a unit cell ($V_{\mathrm{UC}} = \left( \pi / a \right)^3$)
+
+$$
+N_{\mathrm{L}} = \frac{V_{\mathrm{S}}}{V_{\mathrm{UC}}} = \frac{\pi}{6} \left( \frac{a \cdot \omega}{\pi \cdot c_0} \right)^3 \mathrm{.}
+$$
+
+If we now consider that every standing wave might have an arbitrary polarization that can be constructed as superposition of two orthogonal directions of polarization, the number of modes doubles. Thus, the number of possible modes with a frequency $\omega$ smaller than the limiting frequency $\omega_{\mathrm{S}}$ within a cavity resonator is given through
+
+$$
+N \left( \omega \le \omega_{\mathrm{S}} \right) = 2 \cdot \frac{\pi}{6} \left( \frac{a \cdot \omega_{\mathrm{S}}}{\pi \cdot c_0} \right)^3 = \frac{8 \pi \nu_{\mathrm{S}} a^3}{3 c_0^3} \mathrm{.}
+$$
+
+Here we made use of $\omega_{\mathrm{S}} = 2 \pi v_{\mathrm{S}}$. If we now go back to real space, we can calculate the number of modes per unit volume for $\nu \le \nu_\mathrm{S}$ as the ratio of the number of modes up to the limiting frequency $\nu_{\mathrm{S}}$ divided through the real-space volume $V = a^3$. As a result we get the **density of modes** being
+
+$$
+\frac{N \left( \nu \le \nu_{\mathrm{S}} \right) }{V} = n = \frac{8 \pi \nu_{\mathrm{S}}^3}{3 c_0^3} \mathrm{.}
+$$
+
+Often one is interested in the **spectral density of modes**, that is the number of allowed modes per unit volume of the resonator within the interval $\left[ \nu ; \nu + \Delta \nu \right]$. A straightforward calculation of the first derivative of the density of modes with respect to the frequency $\mathrm{d}n/\mathrm{d}\nu$ gives us an expression for the spectral mode density
+
+
+$$
+\frac{\mathrm{d} n }{\mathrm{d} \nu} = \frac{8 \pi \nu^2}{c_0^3} \mathrm{.}
+$$
+
+So far we have calculated that only under particular conditions standing waves can be established within a cubic cavity. These eigen-oscillations are called "modes of the cavity". Furthermore, if the wavelength is small compared to the cavity dimensions, we derived the spectral density of modes, that is the number of modes within one cubic meter of volume within the interval between $\nu$ and $\nu + \mathrm{d}\nu$ is
+
+$$
+n \left( \nu \right) \; \mathrm{d}\nu = \frac{8 \pi \nu^2}{c_0^3} \mathrm{.}
+$$
+
+If we now assume $\bar{W}_{\nu} \left( T \right)$ being the average energy per eigen-oscillation within the interval $\mathrm{d}\nu$, we can calculate the spectral energy density $\omega_{\nu}\mathrm{d} \nu$ as
+
+$$
+\omega_{\nu} \; \mathrm{d} \nu = n \left( \nu \right) \cdot \bar{W}_{\nu} \left( T \right) \cdot \mathrm{d}\nu
+$$
+
+Now the question arises how we can derive an expression for the spectral energy density $\omega_{\nu}\mathrm{d} \nu$. We will discuss this expression in a moment, but before we have to have a look at historical results leading to the law of radiation as we know it nowadays.
+
+## Stefan-Boltzmann Law
+
+In order to derive the expression which we know today as Stefan-Boltzmann law, Stefan discovered the empirical relation in 1879 and later in 1884 Boltzmann derived the law on the basis of thermodynamics and Maxwell relations. First we want to consider the inner energy $U$ of an isolated system, which can be expressed as thermodynamic potential depending on the temperature $T$, the entropy $S$, pressure $p$, and volume $V$,
+
+$$
+\mathrm{d} U = T \mathrm{d} S - p \mathrm{d}V \mathrm{.}
+$$
+
+If we now calculate the derivative of the inner energy with respect to the volume at constant temperature
+
+$$
+\left( \frac{\mathrm{d} U}{\mathrm{d} V} \right)_{T} = T \left( \frac{\mathrm{d} S}{\mathrm{d} V} \right)_{T} - p
+$$
+
+and make use of one Maxwell relation, namely
+
+$$
+\left( \frac{\mathrm{d} S}{\mathrm{d} V} \right)_{T} = \left( \frac{\mathrm{d} p}{\mathrm{d} T} \right)_{V}
+$$
+
+we get
+
+$$
+\left( \frac{\mathrm{d} U}{\mathrm{d} V} \right)_{T} = T \left( \frac{\mathrm{d} p}{\mathrm{d} T} \right)_{V} - p
+$$
+
+Previously Maxwell presented an expression for the radiation pressure being $p = \frac{1}{3}u$ with $u$ as the energy density and the total inner energy as $U = u\cdot V$. If we use these expressions in the equation of the derivative and integrate, we obtain
+$$
+\begin{eqnarray}
+u & = & C_1 \cdot T^4\\
+U & = & C_2 \cdot V \cdot T^4 \mathrm{,}
+\end{eqnarray}
+$$
+
+with $C_1$ and $C_2$ denoting integration constants. In the modern form we refer to the radiation power $P$ as
+
+$$
+P = \sigma \cdot A \cdot T^4
+$$
+
+being proportional to the *Stefan-Boltzmann constant* $\sigma$, the blackbody area $A$, and to the **fourth power** of the absolute temperature. This law also describes that every body with a temperature higher than $0 \mbox{ K}$ emits electromagnetic radiation.
+
+## Wien's Displacement Law
+
+In 1896 Wien published how the spectrum of cavity radiation changes with altered temperature. Today this law is often not referred to the overall shape of the spectrum, but rather to the maximum of the spectrum. In 1896 the Stefan-Boltzmann law was already published stating that the emitted radiance depends on the apparent temperature to the power of 4 ($\propto T^4$). However, the actual spectral distribution of the energy was unknown.
+
+On the basis of thermodynamic concepts and the Stefan-Boltzmann law Wien derived a relation between the wavelength $\lambda$ and the spectral energy at a particular wavelength $\varphi \left(\lambda\right)$
+
+$$
+\varphi \cdot \mathrm{d} \lambda = \varphi_0 \cdot \mathrm{d} \lambda_0
+$$
+
+and
+
+$$
+\mathrm{d} \lambda = \frac{T_0}{T} \; \mathrm{d} \lambda_0 \mathrm{.}
+$$
+
+The last equation can be reformulated into the shape of
+
+$$
+ \lambda_{\mathrm{peak}} = b \cdot \frac{1}{T}
+$$
+
+with $b$ being the proportionality or *Wien's displacement constant* ($b = 2.898 \cdot 10^{-3} \, \mathrm{m}\cdot\mathrm{K}$).
+
+Wien further examined the integration with the result for the energy profile $\varphi = \varphi_0 \; \frac{\mathrm{d} \lambda_0}{\mathrm{d} \lambda} = \varphi_0 \; \frac{\mathrm{d} T}{\mathrm{d} T_0}$. In addition with the known relation from the Stefan-Boltzmann law $\varphi \propto \frac{T^4}{T_0^4}$, Wien proposed the spectral shape at a particular temperature on the basis of the spectral shape at a known temperature $\varphi = \varphi_0 \frac{T^5}{T_0^5}$. So far the exact spectral shape still remained unknown; however, by means of adjusting the parameter $\varphi_0$ theory was successfully brought into coincidence with experimental results and the spectrum for small wavelengths could be predicted.
+
+## Wien's distribution law or Wien approximation
+
+In his original publication in 1896 Wien employed the wavelength dependence of the blackbody radiation and the Maxwell-Boltzmann distribution for the speed of molecules. On the basis of thermodynamic arguments he derived a formula for the radiance
+
+$$
+S^{\ast}_{\lambda} \left(\lambda, T \right) = \frac{C_1}{\lambda^5} \; \mathrm{e}^{- \frac{C_2}{\lambda T}} \mathrm{.}
+$$
+
+with $C_1$ and $C_2$ being constants. As to be expected the curve described by this formula exhibits a maximum. In the case of short wavelength, experimental results from cavity radiation can be well described. For long wavelengths, instead, the Wien approximation underestimated the radiance.
+
+![Comparison between blackbody radiation (solid lines) and Wien approximation (dashed lines) at different temperatures.](img/Lecture20_spectra_planck_wien_comparison.png){width=50%}
+
+## Rayleigh–Jeans law
+
+In order to calculate the average energy per eigen-oscillation Rayleigh and Jeans used the classical approach. Similar to the harmonic oscillators every mode bears the average energy of
+
+$$
+\bar{W_{\nu}} \left( T \right) = k \cdot T \mathrm{,}
+$$
+
+with $k$ and $T$ being the Boltzmann constant and absolute temperature, respectively. Therefore, within the limit of the classical approach the spectral energy density,
+
+$$
+\omega_{\nu} \; \mathrm{d} \nu = \frac{8 \pi \nu^2}{c_0^3} \; k \; T \; \mathrm{d}\nu \mathrm{,}
+$$
+
+rises quadratically with respect to the frequency $\nu$. This quadratic relation is known as **Rayleigh-Jeans law**. As a consequence a small hole in the cavity wall will then emit radiation into the solid angle of $\mathrm{d} \Omega = 1 \mbox{ sr}$ with the radiance of
+
+$$
+\begin{eqnarray}
+S^{\ast}_{\nu} \left( \nu \right) \mathrm{d} \nu & = & \frac{c_0}{4 \pi} \; \omega_{\nu} \left( \nu \right) \; \mathrm{d} \nu\\
+{} & = & \frac{2 \nu^2}{c_0^2} \; k \; T \; \mathrm{d} \nu
+\end{eqnarray}
+$$
+
+ If we now consider a temperature of about $5000 \; \mathrm{K}$ we achieve a wavelength bigger than $2 \; \mu\mathrm{m}$, being well in the infrared region. For this spectral region the measured radiance and the theoretical prediction are in agreement. However, if we reduce the wavelength, disparities between experimental findings and the prediction appear. Moreover, if the Rayleigh-Jeans law was valid, there would be the so-called **ultraviolet catastrophe**! In the case of decreasing frequencies, the spectral energy density and the integrated radiance will rise until they become infinitely big for vanishing frequencies.
+
+![Comparison between blackbody radiation (solid lines) and radiation as described through the Rayleigh-Jeans law (dashed lines) at different temperatures.](img/Lecture20_spectra_planck_rayleigh-jeans_comparison.png){width=50%}
+
+## Planck's law
+
+In 1900 Max Planck faced the question how to avoid the ultraviolet catastrophe and describe the blackbody radiation as a whole.
+
+![Comparison between blackbody radiation at 3000 K (solid line) and radiation as described through the Wien approximation (dashed line) and the Rayleigh-Jeans law (dash-dotted line).](img/Lecture20_spectra_planck_rayleigh-jeans-wien.png){width=50%}
+
+He proposed a revolutionary hypothesis called **Quantum Hypothesis** or **Planck's Postulate**. As Rayleigh and Jeans before, Planck assumed the modes within a cavity resonator as oscillations. However, in contrast to the classical approach allowing every oscillator to acquire any arbitrary small value of energy ($W_{\nu} = k \cdot T$), Planck postulated that these oscillators are allowed to acquire energy only in particular **quanta of energy**. Those quanta depend on the frequency $\nu$ of the eigen-oscillation and are multiples of a *smallest quantum of energy*. Thus it follows
+
+$$
+E \left( \nu \right) = n \cdot E_{\mathrm{ph}} \left( \nu \right) = n \cdot h \cdot \nu \mathrm{.}
+$$
+
+The letter $h$ was initially chosen as *help constant*, but shortly after the success of Planck's Postulate the constant was renamed as *Planck's Constant* with the value
+
+$$
+h = 6.626 \ldots \cdot 10^{-34} \; \mathrm{Js}.
+$$
+
+This event of postulating a smallest quantum of energy is often referred to as the birth of quantum mechanics. Nowadays we can define the smallest quantum of the electromagnetic field bearing the energy $h \cdot \nu$ as **Photon**. The energy of an eigen-oscillation with $n$ photons is then
+
+$$
+W_{\nu} = n \cdot h \cdot \nu\mathrm{.}
+$$
+
+If we now consider thermal equilibrium, the likelihood $p \left( W_{\nu} \right)$ of this particular eigen-oscillation bearing the energy of $W_{\nu}$ (meaning that this particular eigenstate is occupied by $n$ photons) is proportional to the Boltzmann factor $\mathrm{e}^{-W_{\nu}/\left( k\cdot T \right)}$
+
+$$
+p \left( W_{\nu} \right) = \frac{
+\mathrm{e}^{- \frac{n \cdot h \cdot \nu}{k \cdot T}}
+}{
+\sum_{n=0}^{\infty} \mathrm{e}^{- \frac{n \cdot h \cdot \nu}{k \cdot T}}
+}
+$$
+
+Since we did calculate a likelihood, the relation $\sum_{n=0}^{\infty} p \left(n \cdot h \cdot \nu \right) = 1$ holds true. Furthermore, we can calculate the average energy per eigen-oscillation as the energy of this particular oscillation weighted with the likelihood that this particular eigenstate is occupied with this particular number of photons. The averaged energy per eigen-oscillation then reads as
+$\bar{W}_{\nu} = \sum_{n=0}^{\infty} p\left( nh\nu \right) n \, h\, \nu$ and further
+
+
+$$
+\bar{W}_{\nu} = \frac{n \cdot \nu}{\mathrm{e}^{+\frac{n \cdot h \cdot \nu}{k \cdot T}} -1} \mathrm{.}
+$$
+
+The spectral energy density of a cavity radiator then is given through
+
+$$
+\omega \left( \nu,T \right) = n\left(\nu \right) \cdot \bar{W_{\nu}} \left( \nu,T \right)
+$$
+
+which leads us to the famous Planck's formula
+
+$$
+\omega \left( \nu,T \right) \mathrm{d} \nu = \frac{8 \pi h \nu^3}{c_0^3} \, \frac{\mathrm{d} \nu}{\mathrm{e}^{\frac{h \nu}{k T}} -1} \mathrm{.}
+$$
+
+Here $\omega \left( \nu,T \right) \mathrm{d}\nu$ represents the spectral distribution of the energy density per frequency interval; its unit is $\left[ \omega \left( \nu,T \right) \right] = \mbox{Jsm}^3$. The radiance of the area element $\mathrm{d}A$ emitted into the solid angle $\mathrm{d} \Omega$ then is
+
+$$
+\begin{eqnarray}
+S^{\ast}_{\nu} \mathrm{d} \nu \mathrm{d} \Omega & = & \frac{c_0}{4\pi} \omega_{\nu} \left(\nu,T\right) \, \mathrm{d} \nu \, \mathrm{d} \Omega\\
+{} & = & \frac{2 h \nu^3}{c_0^2} \, \frac{\mathrm{d} \nu \, \mathrm{d} \Omega}{\mathrm{e}^{\frac{h \nu}{k T}} -1} \mathrm{.}
+\end{eqnarray}
+$$
+
+So far we have expressed Planck's law in dependence of the frequency $\nu$. With the aid of the relation $\lambda = c/\nu$ we can also express Planck's law in dependence of the wavelength. Therefore, we have to pay attention to $\mathrm{d}\lambda = -\left( c / \nu^2 \right) \mathrm{d} \nu$. Then, we can describe the spectral energy density
+
+$$
+\omega \left( \lambda,T \right) \mathrm{d} \lambda = \frac{8 \pi h c_0}{\lambda^5} \, \frac{\mathrm{d} \lambda}{\mathrm{e}^{\frac{h c_0}{\lambda k T}} -1}
+$$
+
+and the radiance
+$$
+S^{\ast}_{\lambda} \mathrm{d} \lambda \mathrm{d} \Omega = \frac{2 h c^2}{\lambda^5} \, \frac{\mathrm{d} \lambda \, \mathrm{d} \Omega}{\mathrm{e}^{\frac{h c}{\lambda k T}} -1}
+$$
+
+as functions of $\lambda$ and $T$.
+
+![Blackbody radiation as described through Planck's law of radiation at different temperatures.](img/Lecture20_spectra_planck.png){width=90%}

@@ -1,0 +1,228 @@
+---
+title: "Interactive Q&A System"
+subtitle: "Ask Questions About Course Content"
+author: "Experimental Physics 3"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    theme: cosmo
+    css: 
+      - custom-qa.css
+    include-in-header:
+      - text: |
+          <script>
+            // Configure the API URL for the Q&A system
+            window.QA_API_URL = 'http://localhost:8000';
+          </script>
+---
+
+# Course Q&A System
+
+Welcome to the interactive Q&A system for the Experimental Physics 3 course. This system allows you to ask questions about the course content and receive instant answers based on the course materials.
+
+## How It Works
+
+Our Q&A system uses advanced natural language processing to:
+
+1. **Understand your question** - The system analyzes your question to understand what you're asking about
+2. **Search course materials** - It searches through all course content including lectures, notes, and supplementary materials
+3. **Generate relevant answers** - Based on the most relevant content, it generates a comprehensive answer
+4. **Provide sources** - Each answer includes references to the specific course materials used
+
+## Ask Your Question
+
+<div class="qa-widget"></div>
+
+## Common Topics You Can Ask About
+
+### Geometrical Optics
+- Reflection and refraction laws
+- Lens equations and ray tracing
+- Optical instruments (microscopes, telescopes)
+- Aberrations and corrections
+
+### Wave Optics
+- Interference phenomena
+- Diffraction patterns
+- Polarization of light
+- Coherence and interferometry
+
+### Electromagnetic Waves
+- Maxwell's equations
+- Wave propagation
+- Energy and momentum of EM waves
+- Radiation and antennas
+
+### Quantum Mechanics
+- Wave-particle duality
+- Schrödinger equation
+- Quantum states and measurements
+- Tunneling and barrier penetration
+
+## Tips for Better Results
+
+::: {.callout-tip}
+## Getting the Best Answers
+
+1. **Be specific** - Instead of "Tell me about optics", ask "What is the difference between geometric and wave optics?"
+2. **Use course terminology** - Use terms from the lectures for more accurate results
+3. **Ask one question at a time** - Complex multi-part questions may not get comprehensive answers
+4. **Check the sources** - Always review the source materials referenced in the answer
+:::
+
+## Technical Setup
+
+::: {.callout-note collapse="true"}
+## For Instructors: Setting Up the Q&A System
+
+### Prerequisites
+- Python 3.8 or higher
+- Node.js (for Quarto)
+- 2GB of free disk space for the vector database
+
+### Installation Steps
+
+1. **Install Python dependencies:**
+```bash
+pip install langchain chromadb sentence-transformers fastapi uvicorn beautifulsoup4
+```
+
+2. **Create the vector database:**
+```bash
+cd llm_integration
+python website_embedder.py
+```
+Choose option 2 to load from local Quarto files, or option 1 to scrape the published website.
+
+3. **Start the Q&A server:**
+```bash
+python qa_server.py
+```
+The server will run on `http://localhost:8000`
+
+4. **Include the widget in your Quarto document:**
+```html
+<div class="qa-widget"></div>
+```
+
+### Configuration Options
+
+You can customize the widget by setting JavaScript variables:
+
+```javascript
+window.QA_API_URL = 'https://your-server.com';  // API endpoint
+```
+
+### Updating Content
+
+To update the Q&A system with new content:
+
+1. Add or modify your `.qmd` files
+2. Re-run the embedder: `python website_embedder.py`
+3. Restart the Q&A server
+
+### API Endpoints
+
+- `GET /` - Health check
+- `POST /ask` - Submit a question
+- `GET /sources` - List all indexed sources
+- `POST /feedback` - Submit feedback on answers
+:::
+
+## Alternative: Using External LLM Services
+
+::: {.callout-warning collapse="true"}
+## Advanced: Connecting to External APIs
+
+If you want to use more powerful language models, you can connect to external services:
+
+### OpenAI API
+```python
+# In qa_server.py, replace the HuggingFace model with:
+from langchain.llms import OpenAI
+llm = OpenAI(temperature=0.7, openai_api_key="your-key")
+```
+
+### Local LLM with Ollama
+```python
+from langchain.llms import Ollama
+llm = Ollama(model="llama2", base_url="http://localhost:11434")
+```
+
+### SCADS AI LLM (TU Chemnitz)
+For TU Chemnitz users, you can integrate with the SCADS AI infrastructure by modifying the API endpoints in the server configuration.
+:::
+
+## Troubleshooting
+
+::: {.callout-important collapse="true"}
+## Common Issues and Solutions
+
+### "Server not responding" error
+- Make sure the Q&A server is running: `python qa_server.py`
+- Check that the API URL is correct in your Quarto document
+- Verify firewall settings allow connections to port 8000
+
+### Poor answer quality
+- Ensure all course materials are properly indexed
+- Consider increasing the `context_size` parameter
+- Review and update the embedding model if needed
+
+### Slow response times
+- First query may be slow as models load
+- Consider using a GPU for faster embeddings
+- Reduce the `max_tokens` parameter for quicker responses
+
+### Widget not appearing
+- Check browser console for JavaScript errors
+- Ensure the widget script is properly loaded
+- Verify that the `qa-widget` div is present in the HTML
+:::
+
+## Privacy and Data
+
+::: {.callout-note}
+## Data Privacy
+
+- All questions and answers are processed locally on your server
+- No data is sent to external services (unless you configure external LLMs)
+- Question logs can be used to improve the system but are stored locally
+- Students' questions are not personally identifiable
+:::
+
+## Feedback
+
+We continuously improve the Q&A system based on your feedback. After receiving an answer, please let us know if it was helpful. This helps us enhance the system's accuracy and relevance.
+
+<!-- Load the Q&A widget JavaScript -->
+<script src="./llm_integration/qa_widget.js"></script>
+
+<!-- Custom styles for this page -->
+<style>
+.callout {
+  margin: 1rem 0;
+}
+
+.qa-widget {
+  min-height: 400px;
+  margin: 2rem 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .qa-widget-container {
+    margin: 1rem;
+    padding: 1rem;
+  }
+  
+  .qa-input-group {
+    flex-direction: column;
+  }
+  
+  .qa-submit-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+</style>

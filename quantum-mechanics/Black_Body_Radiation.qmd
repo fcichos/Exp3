@@ -1,0 +1,729 @@
+---
+title: Black Body Radiation
+jupyter: python3
+format:
+  html:
+    code-fold: true
+crossref:
+  fig-title: Figure
+  tbl-title: Table
+  title-delim: "—"
+  fig-prefix: Figure
+  eq-prefix: Equation
+  chapters: true
+---
+
+```{python}
+# | echo: false
+## just for plotting later
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.integrate import odeint
+import matplotlib as mpl
+import matplotlib.cm as cm
+
+
+plt.rcParams.update({'font.size': 10,
+                     'lines.linewidth': 1,
+                     'lines.markersize': 5,
+                     'axes.labelsize': 10,
+                     'axes.labelpad':0,
+                     'xtick.labelsize' : 9,
+                     'ytick.labelsize' : 9,
+                     'legend.fontsize' : 8,
+                     'contour.linewidth' : 1,
+                     'xtick.top' : True,
+                     'xtick.direction' : 'in',
+                     'ytick.right' : True,
+                     'ytick.direction' : 'in',
+                     'figure.figsize': (4, 3),
+                     'axes.titlesize':8,
+                     'figure.dpi': 150 })
+
+def get_size(w,h):
+    return((w/2.54,h/2.54))
+```
+Black body radiation represents one of the pivotal problems that led to the birth of quantum mechanics. While seemingly a purely thermodynamic phenomenon - the electromagnetic radiation emitted by an idealized perfect absorber in thermal equilibrium - its explanation required a radical departure from classical physics.
+
+In the late 19th century, classical physics completely failed to explain the observed spectrum of black body radiation. The classical Rayleigh-Jeans law predicted that the intensity of radiation would increase indefinitely with frequency (the 'ultraviolet catastrophe'), which clearly contradicted experimental measurements. This crisis in physics was resolved only when Max Planck introduced the revolutionary concept that electromagnetic energy could only be emitted in discrete quantities or 'quanta' - an idea that would become one of the fundamental principles of quantum mechanics.
+
+The study of black body radiation thus marks the historical transition point from classical to quantum physics. Planck's solution not only explained the observed radiation spectrum but introduced the quantum of action $h$ (Planck's constant), which would become central to all of quantum mechanics. This topic demonstrates how quantum effects emerge even in seemingly classical macroscopic systems when we examine them carefully enough.
+
+The figure below displays the emission of a light bulb with a tungsten filament. The filament is heated up to a specific temperature by different currents.
+
+::: {#fig-light-bulb fig-align="center"}
+![](img/emission_at_T.png){width=50%}
+
+Light emission at different temperatures. The filament of the light bulb is heated up to different temperatures by varying the current. The color of the emitted light changes with the temperature of the filament.
+:::
+
+Without dispersing the spectrum we directly notice the different color of the light emitted by the filament. While the heating mechanism is different for different materials, the emitted spectrum is always similar and solely depends on the temperature of the radiator. The emitted spectrum is called the **blackbody spectrum** and is universal for all materials.
+
+
+## Blackbody
+
+:::{.callout-note }
+*A blackbody is a model of a radiation source whose emission depends only on its temperature.* Its emission, however, does not depend on the material the radiator is made from, nor on its surface or any other potential characteristics.
+:::
+
+
+Consider a body with a cavity as depicted below. The body is heated to a certain temperature $T$ and the cavity is closed.
+
+![A body with a cavity. The body is heated to a certain temperature $T$ and the cavity is closed but can be equipped with a tiny hole to probe the radiation inside the cavity without perturbation.](img/cavity.png){width=35%}
+
+The system is in thermal equilibriums and thus each quadratic degree of freedom carries an energy of $0.5 k_B T$, where $k_B=1.21.380649 \times 10^{-23} \text{ J/K}$ is the Boltzmann constant.
+
+Each surface element of the cavity emits radiation at a specific frequency $\nu$. The amount of power that is radiated by a surface element $\mathrm{d} A$ into a solid angle element $\mathrm{d} \Omega$ at a frequency interval $\mathrm{d} \nu$ relates to the property of its surface, i.e. the emissivity $E^{\ast}_{\nu}$
+
+$$
+\frac{\mathrm{d} W_{E}}{\mathrm{d} t} = E^{\ast}_{\nu} \; \mathrm{d} A \; \mathrm{d} \Omega \; \mathrm{d} \nu
+$$
+
+The emissivity is thereby the spectral radiance (energy emitted per unit area, per unit solid angle, per unit frequency), which has units of $W⋅m^-2⋅sr^{-1}⋅Hz^{-1}$. In a simular way, each surface element at the cavity absorbs a certain power under a solid angle element and frequency intervall. The absorbed power is given by
+
+$$
+\frac{\mathrm{d} W_{A}}{\mathrm{d} t} = A_{\nu} \; S^{\ast}_{\nu} \; \mathrm{d} A \; \mathrm{d} \Omega \; \mathrm{d} \nu
+$$
+
+where $S^{\ast}_{\nu}$ is the spectral radiancy of an ideal black body, so the radiated power per unit area, per unit solid angle and per unit frequency interval. The absorption capability $A_{\nu}$ is also a number between 0 and 1.
+
+In the steady state, the body emits and absorbs the same amount of power and thus
+
+$$
+\frac{\mathrm{d} W_{E}}{\mathrm{d} t} = \frac{\mathrm{d} W_{A}}{\mathrm{d} t}
+$$
+
+which readily yields
+
+$$
+E^{\ast}_{\nu} = A_{\nu} \; S^{\ast}_{\nu}
+$$
+
+The spectral randiancy times the frequency dependent absorptivity is equal to the spectral emissivity. This is known as **Kirchhoff's law of thermal radiation**.
+
+From the Kirchhoff's law we can see that a perfectly absorbing body $A_{\nu}=1$ is also a perfect emitter. This is the case for a *blackbody*, which absorbs all radiation incident on it and emits the maximum amount of radiation possible at a given temperature.
+
+Note that in the case of a blackbody, the absorptivity does not depend anymore on the frequency $\nu$, while it will for a real body. In the case of a blackbody, the spectral radiancy $S^{\ast}_{\nu}$ is then only a function of the temperature $T$ and needs to be calculated from teh cavity structure, i.e. the modes of the cavity, which we will calculate next.
+
+::: {.callout-note}
+## The Leslie Cube Experiment
+
+The Leslie Cube, developed by John Leslie in 1804, was one of the first experimental demonstrations of how surface properties affect thermal radiation. The apparatus consists of a cubic vessel with different surface treatments on each face (e.g., polished metal, blackened surface, rough surface), filled with hot water.
+
+::: {#fig-leslie-cube fig-align="center"}
+![](img/Leslie_Cube.png){width=40%}
+
+Leslie Cube. The cube is filled with hot water, and each face has a different surface treatment. The radiation emitted from each face is measured using a thermopile detector. The experiment demonstrated that different surfaces emit radiation differently at the same temperature, and that good absorbers are also good emitters.
+:::
+
+By measuring the radiation emitted from each face using a thermopile detector, Leslie showed that:
+
+1. Different surfaces emit radiation differently at the same temperature
+2. Good absorbers are also good emitters (leading to Kirchhoff's law)
+3. The emissivity depends on the surface properties but not on the material inside
+
+This simple but elegant experiment helped establish fundamental principles of thermal radiation and provided early experimental evidence for what would later be formalized as Kirchhoff's law of thermal radiation:
+
+$$\frac{E^{\ast}_{\nu}}{A_{\nu}} = S^{\ast}_{\nu}$$
+:::
+
+
+## Spectral density of modes
+
+To determine the spectral energy density in the cavity $S^{\ast}_{\nu}$, we need to calculate two quantities: the number of modes in the cavity and the average energy per mode. While calculating the number of modes is relatively straightforward, determining the average energy per mode is more complex and ultimately leads to Planck's law of radiation.
+
+The number of modes in the cavity corresponds to the number of possible standing waves that can exist in the cavity. Let's first consider a simple one-dimensional case where the wave propagates along the z-direction, i.e. $k=k_z$. When an electric field $\vec{E} \left( z, t \right) = E_0 \cos \left( \omega t - k_z z \right) \; \vec{e_x}$ is incident on a conducting surface at $z = 0$, the tangential components of the electric field must vanish. This leads to:
+
+$$
+\vec{E} \left( z = 0, t \right) = E_{0,\mathrm{I}} \; \vec{e_x} + E_{0,\mathrm{R}} \; \vec{e_x} = 0
+$$
+
+and
+
+$$
+E_{0,\mathrm{I}} \; \vec{e_x} = -E_{0,\mathrm{R}} \; \vec{e_x}
+$$
+
+The superposition of incident and reflected waves results in a standing wave:
+
+$$
+\vec{E} \left( z, t \right) = 2 E_0 \sin \left( k_z z \right) \sin \left( \omega t \right) \; \vec{e_x} \mathrm{,}
+$$
+
+where the wavevector $k_z$ is given by $k_z = \omega / c_0$ with $c_0$ being the speed of light in vacuum.
+For a second conducting surface at $z = a$, the boundary condition requires:
+
+$$
+\vec{E} \left( z = a, t \right) = 2 E_0 \sin \left( k a \right) \sin \left( \omega t \right) \; \vec{e_x} = 0
+$$
+
+leading to:
+
+$$
+k_z  = o \frac{\pi}{a}
+$$
+
+These represent the modes in a one-dimensional cavity.
+
+```{python}
+# Create x values (position along cavity)
+L = 1.0  # cavity length
+x = np.linspace(0, L, 1000)
+
+# Create figure
+plt.figure(figsize=get_size(10, 8))  # Adjusted figure size to accommodate legend
+
+# Plot first 10 modes
+for n in range(1, 11):
+    # Calculate wave function for mode n
+    psi = np.sin(n * np.pi * x / L)
+
+    # Plot with offset for clarity
+    plt.plot(x, psi + n*2, label=f'n={n}')
+
+
+plt.axvline(0,ls='--',color='black',label='Cavity wall')
+plt.axvline(1,ls='--',color='black',label='Cavity wall')
+plt.xlabel('position (x/a)')
+plt.ylabel('amplitude (with offset)')
+
+# Place legend outside
+plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left')
+# Adjust layout to prevent legend cutoff
+plt.tight_layout()
+plt.show()
+```
+
+For a three-dimensional cavity, we can analyze each direction independently, obtaining the following conditions for the wavevector components:
+
+$$
+\begin{aligned}
+k_x & =  n \frac{\pi}{a}\\
+k_y & =  m \frac{\pi}{b}\\
+k_z & =  o \frac{\pi}{c}
+\end{aligned}
+$$
+
+where $m,n,o$ are natural numbers. The magnitude of the wavevector is $\left| \vec{k} \right| = \sqrt{k_x^2 + k_y^2 + k_z^2}$, which determines the possible frequencies $\omega$ in the cavity
+
+$$
+\omega = c \cdot \pi \; \sqrt{\left(\frac{o}{a}\right)^2 + \left(\frac{m}{b}\right)^2 + \left(\frac{n}{c}\right)^2}
+$$
+
+
+
+::: {.callout-note collapse=true}
+## Resonator modes
+
+The standing waves which follow from these frequencies in our resonator are given by:
+
+$$
+\vec{E}_{m,n,o} = \vec{E}_{0} \left( m,n,o \right) \cdot \cos \left( \omega t\right)
+$$
+
+with $\vec{E}_{0} \left( m,n,o \right) = \left( E_{0,x},E_{0,y},E_{0,z} \right)^{\mathrm{T}}$ and
+
+$$
+\begin{aligned}
+E_{0,x} & = & A \cdot \cos \left( n \frac{\pi}{a} x \right) \sin \left( m \frac{\pi}{b} y \right) \sin \left( o \frac{\pi}{c} z \right)\\
+E_{0,y} & = & B \cdot \sin \left( n \frac{\pi}{a} x \right) \cos \left( m \frac{\pi}{b} y \right) \sin \left( o \frac{\pi}{c} z \right)\\
+E_{0,z} & = & C \cdot \sin \left( n \frac{\pi}{a} x \right) \sin \left( m \frac{\pi}{b} y \right) \cos \left( o \frac{\pi}{c} z \right)\\
+\end{aligned}
+$$
+
+This system, comprising a box with ideally conducting walls, is known as a *cavity resonator*, and the possible standing waves are called the resonator's *principle oscillations* or **resonator modes**.
+
+:::
+
+As mentioned before, we are interested in the number of modes that fit into the cavity. For that purpose we need to count the number of modes within a certain frequency range. In order to simplify the calculation a bit, we restrict out box to a cube with edge length $a$ such that
+
+$$
+\begin{aligned}
+\omega & =  c \cdot \frac{\pi}{a} \; \sqrt{ n^2 + m^2 + o^2}\\
+\rightarrow n^2 + m^2 + o^2 & =  \left( \frac{a \omega}{\pi c}\right)^2\\
+\rightarrow n^2 + m^2 + o^2 & =  \left( \frac{a}{\pi}\right)^2 \cdot k^2\\
+\end{aligned}
+$$
+
+We can visualize the possible modes in k-space (where $k_x$, $k_y$, and $k_z$ are our axes). The points $(m,n,o)$ create an evenly-spaced grid with spacing $\pi/a$ between points. Since each combination of $(m,n,o)$ represents one mode in the resonator, counting the grid points, or better the number of unit cell cubes with a length $\pi/a$ tells us the number of possible modes.
+
+::: {#fig-cavity-resonator-k-space fig-align="center"}
+![](img/Lecture20_cavity_resonator_k-space.png){width=35%}
+
+Two-dimensional k-space with a circle representing a sphere in two-dimensional space.
+:::
+
+
+When considering large values where $\sqrt{m^2 +n^2 +o^2} \gg 1$, the sphere radius in k-space $\left| \vec{k} \right|$ becomes much larger than $\pi / a$, corresponding to wavelengths $\lambda$ much smaller than the cavity size $a$. In this limit, we can approximate the number of allowed modes $N_{\mathrm{L}}$ (where $m,n,o > 0$) by calculating the volume occupied by unit cells within the first octant of a sphere with radius $\left| \vec{k} \right|$. The volume of this octant is:
+
+$$
+\begin{aligned}
+V_{\mathrm{S}} & = \frac{1}{8} \; \frac{4}{3} \pi \left| \vec{k} \right|^3 \mathrm{ or }\\
+V_{\mathrm{S}} & = \frac{1}{6} \pi \left( \frac{\omega}{c_0} \right)^3 \mathrm{.}
+\end{aligned}
+$$
+
+The number modes corresponds then to the volume of the octant to the volume of a unit cell ($V_{\mathrm{UC}} = \left( \pi / a \right)^3$) which is
+
+$$
+N_{\mathrm{L}} = \frac{V_{\mathrm{S}}}{V_{\mathrm{UC}}} = \frac{\pi}{6} \left( \frac{a \cdot \omega}{\pi \cdot c_0} \right)^3 \mathrm{.}
+$$
+
+Since each standing wave can have two independent polarization states, the total number of modes below frequency $\omega_{\mathrm{S}}$ is twice the previous result and we find the total number of modes up to a limiting frequency $\omega_{\mathrm{S}}$
+
+$$
+N \left( \omega \le \omega_{\mathrm{S}} \right) = 2 \cdot \frac{\pi}{6} \left( \frac{a \cdot \omega_{\mathrm{S}}}{\pi \cdot c_0} \right)^3 = \frac{8 \pi \nu_{\mathrm{S}}^3}{3 c_0^3} \mathrm{.}
+$$
+
+Here we made use of $\omega_{\mathrm{S}} = 2 \pi \nu_{\mathrm{S}}$. The number of modes per volume of the cavity $a^3$ is thus given by
+
+$$
+\frac{N \left( \nu \le \nu_{\mathrm{S}} \right) }{a^3} = n = \frac{8 \pi \nu_{\mathrm{S}}^3}{3 c_0^3} \mathrm{.}
+$$
+
+When we now increase the limiting frequency $\nu_{\mathrm{S}}$, the number of modes increases. This increase is best represented by the **spectral density of modes**, that is the number of allowed modes per unit volume of the resonator within the interval $\left[ \nu ; \nu + \mathrm{d}\nu \right]$. A straightforward calculation of the first derivative of the density of modes with respect to the frequency gives us an expression for the spectral mode density
+
+$$
+\mathrm{d}n(\nu) = \frac{8 \pi \nu^2}{c_0^3} \mathrm{d}\nu
+$$
+
+So far we have calculated that only under particular conditions standing waves can be established within a cubic cavity. These eigen-oscillations are called "modes of the cavity". Furthermore, if the wavelength is small compared to the cavity dimensions, we derived the spectral density of modes, that is the number of modes within one cubic meter of volume within the interval between $\nu$ and $\nu + \mathrm{d}\nu$ is given by the equation above. This is the spectral density of optical modes per volume.
+
+::: {.callout-note}
+## Density of optical modes per unit volume
+
+This equation represents the density of optical modes per unit volume and frequency interval in free space. It has important consequences for lasing:
+
+1. The density of modes increases quadratically with frequency ($\nu^2$)
+2. This means there are more available modes at higher frequencies
+3. For lasers, this affects:
+   - The threshold conditions for lasing
+   - The emission probability at different frequencies
+   - The competition between modes
+
+In practical terms, it helps explain why it's generally easier to achieve lasing at shorter wavelengths (higher frequencies) where there are more available modes, although other factors like gain and losses also play crucial roles.
+:::
+
+This spectral mode density is now the basis for any further consideration. To obtain the spectral energy density we just need to multiply the mode density with the energy stored in each mode $\bar{W}_{\nu} \left( T \right)$ and obtain the spectral energy density
+
+$$
+\omega_{\nu} \; \mathrm{d} \nu = dn \left( \nu \right) \cdot \bar{W}_{\nu} \left( T \right) \cdot \mathrm{d}\nu = \frac{8 \pi \nu^2}{c_0^3} \cdot \bar{W}_{\nu} \left( T \right) \cdot \mathrm{d}\nu
+$$
+
+This is the energy density at a frequency $\nu$ in a tiny interval $d\nu$ and the temperature $T$. This spectral energy density $\omega_{\nu}$ relates to the spectral radiancy $S^*_{\nu}$ through:
+
+$$
+S^*_{\nu} = \frac{c_0}{4\pi} \omega_{\nu}
+$$
+
+
+## Rayleigh–Jeans law
+
+One way to obtain a mean energy per mode is to consider classical thermal equilbrium and equipartition. In this case, each quadratic degree of freedom contains $0.5 k_B T$ energy such that
+
+$$
+\bar{W_{\nu}} \left( T \right) = k_B \cdot T \mathrm{,}
+$$
+
+with $k_B$ and $T$ being the Boltzmann constant and absolute temperature, respectively. Therefore, within the limit of the classical approach the spectral energy density,
+
+$$
+\omega_{\nu} \; \mathrm{d} \nu = \frac{8 \pi \nu^2}{c_0^3} k_B T  \mathrm{d}\nu \mathrm{,}
+$$
+
+rises quadratically with respect to the frequency $\nu$. This quadratic relation is known as **Rayleigh-Jeans law**. As a consequence a small hole in the cavity wall will then emit radiation into the solid angle of $\mathrm{d} \Omega = 1 \mbox{ sr}$ with the radiance of
+
+$$
+\begin{aligned}
+S^{\ast}_{\nu} \left( \nu \right) \mathrm{d} \nu & = & \frac{c_0}{4 \pi} \omega_{\nu} \left( \nu \right)  \mathrm{d} \nu\\
+{} & = & \frac{2 \nu^2}{c_0^2} k_B T \mathrm{d} \nu
+\end{aligned}
+$$
+
+ If we now consider a temperature of about $5000 \; \mathrm{K}$ we achieve a wavelength bigger than $2 \; \mu\mathrm{m}$, being well in the infrared region. For this spectral region the measured radiance and the theoretical prediction are in agreement. However, if we reduce the wavelength, disparities between experimental findings and the prediction appear. Moreover, if the Rayleigh-Jeans law was valid, there would be the so-called **ultraviolet catastrophe**! In the case of decreasing frequencies, the spectral energy density and the integrated radiance will rise until they become infinitely big for vanishing frequencies.
+
+
+```{python}
+# | code-fold: true
+# | fig-align: center
+# | fig-cap: Comparison between blackbody radiation (solid lines) and radiation as described through the Rayleigh-Jeans law (dashed lines) at different temperatures.
+# Constants
+h = 6.62607015e-34  # Planck constant (J⋅s)
+c = 2.99792458e8    # Speed of light (m/s)
+k = 1.380649e-23    # Boltzmann constant (J/K)
+
+# Wavelength range (in meters)
+wavelength = np.linspace(0.1e-6, 8e-6, 1000)
+
+# Define Planck's law
+def planck(wavelength, T):
+    return (2*h*c**2)/(wavelength**5) * 1/(np.exp((h*c)/(wavelength*k*T)) - 1)
+
+# Define Rayleigh-Jeans law
+def rayleigh_jeans(wavelength, T):
+    return (2*c*k*T)/(wavelength**4)
+
+# Temperatures
+temperatures = [1200, 1600, 2000, 2400, 2800]
+colors = ['blue', 'green', 'red', 'purple', 'orange']
+
+plt.figure(figsize=get_size(12, 8))
+
+# Plot both laws for each temperature
+for T, color in zip(temperatures, colors):
+    plt.plot(wavelength*1e6, planck(wavelength, T)*1e-12,
+             label=f'Planck {T}K', color=color)
+    plt.plot(wavelength*1e6, rayleigh_jeans(wavelength, T)*1e-12,
+             '--', label=f'Rayleigh-Jeans {T}K', color=color)
+
+plt.xlabel('Wavelength [μm]')
+plt.ylabel(r'S [$× 10^{13} W⋅sr^{-1}⋅m^{-3}$]')
+plt.legend()
+plt.ylim(0,1)
+plt.show()
+```
+
+While the Rayleigh Jeans Law is corrected with Planck's law, it demonstrates the failure of classical physics to describe the blackbody radiation. The Rayleigh-Jeans law predicts that the spectral energy density increases with frequency, leading to the ultraviolet catastrophe. This discrepancy between theory and experiment was one of the key motivations for the development of quantum mechanics.
+
+## Planck's law
+
+In 1900 Max Planck tackled the problem of how to avoid the ultraviolet catastrophe and describe the blackbody radiation as a whole.
+He assumed that the energy of the absorbing and emitting oscillators in the wall can release or absorb small packets of energy given by $h \cdot \nu$, where $h$ was used as a **helper constant**. Taking the limit $h\rightarrow 0$ should then lead to the classical result, yet Planck found that the classical limit was not reached. Rather, the quantization of energy with $h=6.626 \ldots \cdot 10^{-34} \; \mathrm{Js}$ led to a new law of radiation, which was in perfect agreement with the experimental findings. The energy at a particular frequency $\nu$ is then quantized in terms of the number of energy packets $n$ as
+
+$$
+W_{\nu} = n \cdot h \cdot \nu
+$$
+
+where $n$ is a natural number. If we now consider thermal equilibrium, the probability $p \left( W_{\nu} \right)$ of finding an oscillator with energy $W_{\nu} = n h \nu$ (meaning the eigenstate is occupied by $n$ photons) is given by the Boltzmann distribution:
+
+$$
+p \left( W_{\nu} \right) = \frac{
+\mathrm{e}^{- \frac{n \cdot h \cdot \nu}{k_B\cdot T}}
+}{
+\sum_{n=0}^{\infty} \mathrm{e}^{- \frac{n \cdot h \cdot \nu}{k_B \cdot T}}
+}
+$$
+
+Note that a Boltzmann distribution provides the maximum entropy for a given energy, i.e. it spreads the energy as evenly as possible over the available states (modes) of the systems. The average energy per oscillator can then be calculated as the expectation value of energy, weighting each possible energy level by its probability of occupation. The averaged energy per oscillator then reads as
+
+$$
+\bar{W}_{\nu} = \sum_{n=0}^{\infty} p\left( nh\nu \right) n \, h\, \nu
+$$
+
+and further
+
+
+$$
+\bar{W}_{\nu} = \frac{h \cdot \nu}{\mathrm{e}^{\frac{h \cdot \nu}{k_B \cdot T}} -1} \mathrm{.}
+$$
+
+The spectral energy density in the cavity is thus given by
+
+$$
+\omega \left( \nu,T \right) = dn\left(\nu \right) \cdot \bar{W_{\nu}} \left( \nu,T \right)
+$$
+
+which leads us to the famous Planck's formula
+
+$$
+\omega \left( \nu,T \right) \mathrm{d} \nu = \frac{8 \pi h \nu^3}{c_0^3} \, \frac{\mathrm{d} \nu}{\mathrm{e}^{\frac{h \nu}{k_B T}} -1} \mathrm{.}
+$$
+
+Here $\omega \left( \nu,T \right) \mathrm{d}\nu$ represents the spectral distribution of the energy density per frequency interval; its unit is $\left[ \omega \left( \nu,T \right) \right] = \mbox{Jsm}^3$. The radiance of the area element $\mathrm{d}A$ emitted into the solid angle $\mathrm{d} \Omega$ then is
+
+$$
+\begin{aligned}
+S^{\ast}_{\nu} \mathrm{d} \nu \mathrm{d} \Omega & = & \frac{c_0}{4\pi} \omega_{\nu} \left(\nu,T\right) \, \mathrm{d} \nu \, \mathrm{d} \Omega\\
+{} & = & \frac{2 h \nu^3}{c_0^2} \, \frac{\mathrm{d} \nu \, \mathrm{d} \Omega}{\mathrm{e}^{\frac{h \nu}{k_B T}} -1} \mathrm{.}
+\end{aligned}
+$$
+
+Planck's theory posited that oscillator energy exists in discrete units or packets denoted by $n$, following the relation $W_{\nu} = n \cdot h \cdot \nu$. This concept was later expanded by Einstein in his explanation of the photoelectric effect, demonstrating that light itself consists of discrete energy quanta proportional to frequency $\nu$. Einstein's interpretation, expressing the energy of the electromagnetic field as $E = h \nu$, established the foundation for understanding light as discrete particles called *photons*.
+
+While we've previously written Planck's law in terms of frequency $\nu$, we can alternatively express it using wavelength $\lambda$ through the relationship $\lambda = c/\nu$. Making this conversion requires noting that $\mathrm{d}\lambda = -\left( c / \nu^2 \right) \mathrm{d} \nu$. This allows us to express the spectral energy density
+
+$$
+\omega \left( \lambda,T \right) \mathrm{d} \lambda = \frac{8 \pi h c_0}{\lambda^5} \, \frac{\mathrm{d} \lambda}{\mathrm{e}^{\frac{h c_0}{\lambda k_B T}} -1}
+$$
+
+and the radiance
+
+$$
+S^{\ast}_{\lambda} \mathrm{d} \lambda \mathrm{d} \Omega = \frac{2 h c^2}{\lambda^5} \, \frac{\mathrm{d} \lambda \, \mathrm{d} \Omega}{\mathrm{e}^{\frac{h c}{\lambda k_B T}} -1}
+$$
+
+in terms of wavelength $\lambda$ and temperature $T$.
+
+
+::: {.callout-note collapse=false}
+## Measuring Planck's Constant
+
+Planck's constant $h$ is a fundamental constant of nature, and its precise value is crucial for many areas of physics. The most accurate method for measuring $h$ is through the photoelectric effect, as demonstrated by Einstein. One could also determine $h$ by measuring the Compton edge in X-ray scattering experiments or estimating by measuring the uncertainty in the particle momentum and position from a diffraction experiment.
+
+Another possibility arises from counting single photons from a laser beam. The particle nature of light now delivers the definition of light power by the relation
+
+$$
+P = N \cdot E_{\textrm{photon}} = N \cdot h \cdot \nu = N \cdot h \cdot \frac{c}{\lambda}
+$$
+
+where $N$ is the number of photons per second. If we know the wavelength of the laser light, we can determine Planck's constant by measuring the power of the laser beam and the number of photons per second. We can easily arive at the relation
+
+$$
+h= \frac{P \lambda}{N c}
+$$
+
+In reality, measuring the photon arrival rate is a challenging task. For coherent laser light, the photon arrivals follow Poisson statistics, meaning the time intervals between consecutive photons are exponentially distributed. While this makes the measurements theoretically straightforward, the uncertainty in counting photons (which follows the square root of the mean count rate according to Poisson statistics) is usually the limiting factor in the precision of the measurement.
+Yet, we can dim the laser light to a point where only one photon is present at a time. Note that while diming the laser light with an appropriate filter, the photon rate decreases, but the photon statistics remain Poissonian. Only the average rate of photon arrivals decreases such that most of the time no photon arrives.
+
+```{python}
+#| fig-align: center
+# | code-fold: true
+
+np.random.seed(42)
+
+# Parameters
+rate = 5  # photons per second
+n_photons = 20
+
+# Generate inter-arrival times (exponentially distributed)
+inter_arrival_times = np.random.exponential(1/rate, n_photons)
+
+# Calculate arrival times (cumulative sum of inter-arrival times)
+arrival_times = np.cumsum(inter_arrival_times)
+
+# Create the plot
+plt.figure(figsize=get_size(10, 1.5))
+for t in arrival_times:
+    plt.axvline(x=t, color='b', linestyle='-', alpha=0.7)
+
+plt.xlabel('time [s]')
+plt.ylim(-0.1, 1.1)
+
+# Remove y axis and ticks
+plt.gca().get_yaxis().set_visible(False)
+
+# Remove top and right spines
+plt.gca().spines['top'].set_visible(False)
+plt.gca().spines['right'].set_visible(False)
+plt.gca().spines['left'].set_visible(False)
+
+# Remove top ticks
+plt.tick_params(top=False)
+
+plt.show()
+```
+By measuring the time between two photon arrivals, we can determine the photon rate and thus Planck's constant.
+Single photons are typically detected with the help of an Avalanche Photodiode (APD). The APD is a semiconductor device that can detect single photons by amplifying the signal from a single electron-hole pair created by the photon.
+
+::: {#fig-apd layout-ncol=2}
+![Schematic of an APD detector](img/APD_scheme.png)
+
+![Picture of a typical APD detector](img/APD_foto.png)
+
+An APD is a special type of photodiode that can detect single photons by amplifying the signal from a single electron-hole pair created by the photon.
+:::
+
+
+
+:::
+
+
+```{python}
+# | code-fold: true
+# | fig-align: center
+# | fig-cap: Planck's law of blackbody radiation at different temperatures.
+
+# Constants
+h = 6.626e-34  # Planck's constant (J⋅s)
+c = 2.998e8    # Speed of light (m/s)
+k = 1.381e-23  # Boltzmann constant (J/K)
+
+# Wavelength range (0.1 to 8.0 micrometers, converted to meters)
+wavelengths = np.linspace(0.1e-6, 5.0e-6, 1000)
+
+# Temperature ranges
+temperatures_1 = np.arange(800, 2801, 200)
+temperatures_2 = np.arange(3000, 7001, 500)
+
+# Planck function
+def planck(wav, T):
+    a = 2.0 * h * c**2
+    b = h * c / (wav * k * T)
+    return a / ((wav**5) * (np.exp(b) - 1.0))
+
+# Create the plots
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=get_size(12, 8))
+
+# First subplot (800-2800 K)
+for T in temperatures_1:
+    spectral_radiance = planck(wavelengths, T)
+    ax1.plot(wavelengths*1e6, spectral_radiance*1e-12, label=f'{T} K')
+
+ax1.set_xlabel('wavelength [μm]')
+ax1.set_ylabel(r'S [W⋅sr$^{-1}$⋅m$^{-3}$] ×10$^{12}$')
+ax1.legend()
+ax1.set_ylim(0, 0.8)
+
+# Second subplot (3000-7000 K)
+for T in temperatures_2:
+    spectral_radiance = planck(wavelengths, T)
+    ax2.plot(wavelengths*1e6, spectral_radiance*1e-12, label=f'{T} K')
+
+ax2.set_xlabel('wavelength [μm]')
+ax2.set_ylabel(r'S [W⋅sr$^{-1}$⋅m$^{-3}$] ×10$^{12}$')
+ax2.legend()
+ax2.set_ylim(0, 80)  # Adjusted y-axis limit for higher temperatures
+
+plt.tight_layout()
+plt.show()
+```
+
+
+The sun is a blackbody radiator with a temperature of about $5778 \; \mathrm{K}$. The spectral radiance of the sun is given by Planck's law.
+
+::: {#fig-sun-radiation fig-align="center"}
+![](img/sun.png){width=80%}
+
+The sun spectrum at the earth as compared to Planck's law. Due to the presence of absorption lines of water and other components in the atmosphere, the spectrum is not a perfect blackbody spectrum.
+:::
+
+Since the spectrum is completly defined by the temperature of the blackbody, it is possible to estimate the temperature of the sun or other stars by comparing the spectrum of the sun with Planck's law.
+
+
+### Properties of Planck's Radiation Formula
+
+::: {.callout-note}
+#### Planck's Radiation Law
+The fundamental equation describing the spectral radiance of a black body:
+$$S(\lambda,T) = \frac{2hc^2}{\lambda^5} \frac{1}{e^{\frac{hc}{\lambda  k_B T}} - 1}$$
+
+where:
+
+- $S(\lambda,T)$ is the spectral radiance $[\mathrm{W}\cdot\mathrm{sr}^{-1}\cdot\mathrm{m}^{-3}]$
+- $h$ is Planck's constant $[\mathrm{J}\cdot\mathrm{s}]$
+- $c$ is the speed of light $[\mathrm{m}/\mathrm{s}]$
+- $k_B$ is the Boltzmann constant $[\mathrm{J}/\mathrm{K}]$
+- $T$ is absolute temperature $[\mathrm{K}]$
+- $\lambda$ is wavelength $[\mathrm{m}]$
+
+Note that Plancks radiation law is only valid for propagating electromagnet modes. Evanscence modes are not included in this formula and do not follow Plancks radiation law.
+
+
+::: {#fig-superplanck-radiation fig-align="center"}
+![](img/super_planck.png){width=60%}
+
+A schematic of the home-made measurement setup. From top to bottom, the emitter side consists of S-magnet, heater, copper spreader, and Si/Gr and the receiver side consisting of Gr/Si, copper spreader, TEC layer, copper spreader, and H-magnet. Four photoresist posts are used to separate the emitter and the receiver. from [Observing of the super-Planckian near-field thermal radiation between graphene sheets](https://www.nature.com/articles/s41467-018-06163-8)
+:::
+
+This opens a number of possibilities which are used for solar energy collection beyond the Shockley limit, for example in thermophotovaltaic cells, which convert the spectrals absorbance into heat radiation, that is shaped spectrally by metametarials to match the bandgap of the solar cell.
+:::
+
+::: {.callout-note}
+### Stefan-Boltzmann Law
+The total power radiated per unit area across all wavelengths:
+$$E = \sigma T^4$$
+
+This can be derived by integrating Planck's law over all wavelengths:
+$$E = \int_0^\infty S(\lambda,T) d\lambda = \sigma T^4$$
+
+where $\sigma = \frac{2\pi^5k^4}{15c^2h^3} \approx 5.67 \times 10^{-8}\, W m^{-2} K^{-4}$
+:::
+
+::: {.callout-tip collapse=true}
+### Solar Power at Earth's Distance: A Stefan-Boltzmann Law Calculation
+
+We can calculate the solar power arriving at Earth using the Stefan-Boltzmann law and basic geometric principles. The Stefan-Boltzmann law states that the total power emitted per unit area by a black body is given by:
+
+$$E = \sigma T^4$$
+
+where $\sigma = 5.67 \times 10^{-8} \; \mathrm{W} \cdot \mathrm{m}^{-2} \cdot \mathrm{K}^{-4}$ is the Stefan-Boltzmann constant and $T$ is the temperature in Kelvin.
+
+For our calculation, we need:
+
+- Temperature of Sun's surface: $T_{sun} \approx 5778$ K
+- Radius of Sun: $R_{sun} \approx 6.957 \times 10^8$ m
+- Distance Earth-Sun: $d \approx 1.496 \times 10^{11}$ m (1 AU)
+
+First, we calculate the power emitted per square meter at the Sun's surface:
+
+$$E_{sun} = 5.67 \times 10^{-8} \cdot (5778)^4 = 6.32 \times 10^7 \text{ W/m²}$$
+
+The total power output of the Sun is this value multiplied by its surface area:
+
+$$P_{total} = E_{sun} \cdot 4\pi R_{sun}^2 = 6.32 \times 10^7 \cdot 4\pi (6.957 \times 10^8)^2 = 3.828 \times 10^{26} \text{ W}$$
+
+To find the power per square meter reaching Earth, we use the inverse square law. The total power is distributed over a sphere with radius equal to the Earth-Sun distance:
+
+$$E_{earth} = \frac{P_{total}}{4\pi d^2} = \frac{3.828 \times 10^{26}}{4\pi (1.496 \times 10^{11})^2} = 1361 \text{ W/m²}$$
+
+This value of 1361 W/m² is known as the solar constant or total solar irradiance (TSI) at the top of Earth's atmosphere. It represents the power from the Sun reaching Earth before any atmospheric absorption. This calculated value matches well with measured values from satellites.
+:::
+
+::: {.callout-tip collapse=true}
+## Real-World Examples of Blackbody Radiation
+
+### Astronomical Objects
+Beyond our sun, blackbody radiation plays a crucial role in astronomy. Stars of different classifications exhibit distinct blackbody spectra based on their surface temperatures. Red dwarf stars, with temperatures around 3000K, appear reddish in color due to Wien's law governing their peak wavelength emission. In contrast, blue giant stars burn much hotter at approximately 20,000K, resulting in their characteristic bluish appearance.
+
+Perhaps the most remarkable astronomical example of blackbody radiation comes from the Cosmic Microwave Background (CMB). The universe itself behaves as an almost perfect blackbody radiator with a temperature of 2.725K. This omnipresent radiation serves as a remnant from the early universe, and its discovery provided compelling evidence supporting the Big Bang theory.
+
+::: {#fig-cmb layout-ncol=2 fig-align="center"}
+![Spectrum of CMB radiation](img/CMB_spectrum.jpg){width=100%}
+
+![Map of CMB radiation](img/WMAP_2012.png){width=100%}
+
+The measured spectrum of the cosmic microwave background radiation fits perfectly to a blackbody spectrum at T = 2.725K. This is considered one of the most precise measurements in physics.
+:::
+
+### Industrial Applications
+
+In industrial settings, blackbody radiation enables a wide range of temperature measurement applications. Pyrometers serve as non-contact temperature measurement devices, utilizing the principles of blackbody radiation to determine surface temperatures from a distance. Similar technology powers infrared thermometers, which find widespread use across medical applications, cooking processes, and industrial monitoring. Thermal imaging cameras extend these capabilities further, providing detailed temperature mapping for applications ranging from building inspection to night vision systems and medical diagnostics.
+
+Manufacturing processes rely heavily on blackbody radiation principles for temperature control and monitoring. In steel production, experienced metalworkers can gauge temperature by observing the color of heated metal, as these colors follow predictable patterns based on blackbody radiation laws. Glass blowing artisans similarly depend on their understanding of these color-temperature relationships to perfect their craft. In semiconductor processing, precise temperature control guided by blackbody radiation principles ensures proper crystal growth and development.
+
+::: {#fig-steel-colors fig-align="center"}
+![](img/steel_colors.png){width=80%}
+
+The color of heated steel changes with temperature following blackbody radiation principles. This allows experienced metalworkers to estimate temperature visually.
+:::
+
+### Everyday Examples
+
+Common electric heating elements in household appliances demonstrate blackbody radiation principles in everyday life. Toasters contain metal elements that glow according to blackbody radiation laws when heated. Electric stove burners similarly show a characteristic red glow that indicates their temperature. Incandescent light bulbs, though less common today, produce light through blackbody radiation from their heated filaments.
+
+Natural phenomena provide abundant examples of blackbody radiation in the environment. Molten lava, at temperatures around 1200K, emits visible radiation following blackbody principles. While not perfect blackbodies, flames approximate blackbody radiation in their emission spectra. Even our planet Earth acts as a blackbody radiator, emitting infrared radiation at an effective temperature of approximately 288K.
+
+Modern technology frequently employs principles of blackbody radiation. LED display manufacturers calibrate their screens' color output based on blackbody radiation curves. Digital cameras rely on color temperature settings derived from blackbody principles for proper white balance adjustment. In advanced manufacturing, 3D printing systems use blackbody radiation principles for precise temperature monitoring during metal printing processes.
+
+::: {.callout-note}
+## Color Temperature in Photography
+
+The concept of color temperature, derived from blackbody radiation, is fundamental in photography and lighting. Different light sources correspond to different blackbody temperatures: natural daylight approximates 5500K, while incandescent bulbs emit light equivalent to about 2700K, and candle flames produce light characteristic of roughly 1800K. Photographers use these color temperature values to adjust their camera's white balance for accurate color reproduction.
+
+::: {#fig-color-temperature fig-align="center"}
+
+![](img/cie_chromaticity.png){width=60%}
+
+The CIE chromaticity diagram, also containing chromaticity values for blackbody radiation. [Source](https://en.wikipedia.org/wiki/Chromaticity#/media/File:PlanckianLocus.png)
+:::
+:::
+
+These examples demonstrate how blackbody radiation principles appear in various aspects of science, technology, and daily life. Understanding these applications helps connect theoretical physics to practical experiences.
+:::
+
+::: {.callout-note}
+#### Wien's Displacement Law
+The wavelength of maximum emission:
+$$\lambda_{max} = \frac{b}{T}$$
+
+This is derived by finding the maximum of Planck's law:
+$$\frac{d}{d\lambda}S(\lambda,T) = 0$$
+
+where $b = \frac{hc}{4.965k} \approx 2898\, \mu m K$
+
+#### Rayleigh-Jeans Approximation
+The classical limit of Planck's law for long wavelengths:
+$$S(\lambda,T) \approx \frac{2ckT}{\lambda^4}$$
+
+This approximation is valid when $\frac{hc}{\lambda kT} \ll 1$, and historically led to the "ultraviolet catastrophe" that Planck's law resolved.
+:::

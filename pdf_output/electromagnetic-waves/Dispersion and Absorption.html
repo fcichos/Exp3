@@ -1,0 +1,1418 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.34">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>28&nbsp; Dispersion &amp; Absorption – Experimental Physics 3 Course on Optics and Quantum Mechanics</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../electromagnetic-waves/Reflection and Refraction.html" rel="next">
+<link href="../electromagnetic-waves/EM Waves in Matter.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-485d01fc63b59abcd3ee1bf1e8e2748d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../electromagnetic-waves/Electromagnetic Optics.html">Electromagnetic Optics</a></li><li class="breadcrumb-item"><a href="../electromagnetic-waves/Dispersion and Absorption.html"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Dispersion &amp; Absorption</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Experimental Physics 3 Course on Optics and Quantum Mechanics</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Experimental Physics 3</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Geometrical Optics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Geometrical Optics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/reflection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Reflection</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/refraction-total-internal-reflection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Refraction and Total Internal Reflection</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Optical Elements I.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Optical Elements Part I</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Optical Elements II.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Optical Elements Part II</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Optical Elements III.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Optical Elements Part III</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Eye.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Optical Instruments</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Magnifying Glass.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Optical Instruments</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Microscope.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Optical Instruments</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Telescope.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Telescopes</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Rainbow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Rainbow</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Imaging Errors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Imaging Errors</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Wave Optics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Wave Optics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Wave Optics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Double Slit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Double Slit Interference</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Thin Film Interference.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Thin Film Interference</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/MultiWave Interference.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Multiple Wave Interference</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/FabryPerot.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Fabry Perot Interferometer</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Diffraction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Diffraction</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Diffraction2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Diffraction in Applications</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Fresnel Zones.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Fresnel Zones</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Diffraction Integral.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Diffraction Integral</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Interferometers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Interferometers and other Coherence Applications</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Electromagnetic Optics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Electromagnetic Optics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Electromagnetic Optics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Polarization of EM Waves.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Polarization of EM Waves</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Energy Transport.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Energy Transport and Momentum Transport of EM Waves</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/EM Waves in Matter.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Electromagnetic Waves in Matter</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Dispersion and Absorption.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Dispersion &amp; Absorption</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Reflection and Refraction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Reflection and Refraction of Electromagnetic Waves</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Fresnel Equations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Fresnel Equations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Metals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Electromagnetic Waves in Metals</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Anisotropic Materials.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Anisotropic Materials</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Optical Activity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Optical Activity and Rotatory Dispersion</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Dipole Radiation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Dipole Radiation</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Quantum Mechanics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Structure_of_matter.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">The Structure of Matter - Historical Experiments</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Particle_Nature_of_Light.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Particle Nature of Light</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Black_Body_Radiation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Black Body Radiation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Wave_character_of_particles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">The Wave Character of Particles</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Matter_waves.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Matter Waves</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Heisenbergs_uncertainty_relation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">Heisenbergs Uncertainty Relation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Structure_of_atoms.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">The Structure of Atoms and the Bohr Model</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Schroedinger_equation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">The Schrödinger Equation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/potential_barrier.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">Potential barriers and wells</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/harmonic_oscillator.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">The harmonic oscillator</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/parametric_dc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">Parametric Downconversion</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Spherical_potential.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">Angular Momentum and Spherical Potentials</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Qzeno.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">The Quantum Zeno Effect</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/hydrogen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">48</span>&nbsp; <span class="chapter-title">Towards the Hydrogen Atom</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#absorption" id="toc-absorption" class="nav-link active" data-scroll-target="#absorption"><span class="header-section-number">28.1</span> Absorption</a></li>
+  <li><a href="#dispersion" id="toc-dispersion" class="nav-link" data-scroll-target="#dispersion"><span class="header-section-number">28.2</span> Dispersion</a>
+  <ul class="collapse">
+  <li><a href="#phase-velocity" id="toc-phase-velocity" class="nav-link" data-scroll-target="#phase-velocity"><span class="header-section-number">28.2.1</span> Phase Velocity</a></li>
+  <li><a href="#group-velocity" id="toc-group-velocity" class="nav-link" data-scroll-target="#group-velocity"><span class="header-section-number">28.2.2</span> Group Velocity</a></li>
+  <li><a href="#types-of-dispersion" id="toc-types-of-dispersion" class="nav-link" data-scroll-target="#types-of-dispersion"><span class="header-section-number">28.2.3</span> Types of Dispersion</a></li>
+  <li><a href="#superluminal-group-velocity" id="toc-superluminal-group-velocity" class="nav-link" data-scroll-target="#superluminal-group-velocity"><span class="header-section-number">28.2.4</span> Superluminal Group Velocity</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../electromagnetic-waves/Electromagnetic Optics.html">Electromagnetic Optics</a></li><li class="breadcrumb-item"><a href="../electromagnetic-waves/Dispersion and Absorption.html"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Dispersion &amp; Absorption</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Dispersion &amp; Absorption</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>When light interacts with matter, its electric field <span class="math inline">\(\vec{E}(\vec{r},t)\)</span> influences the charged particles within atoms. For visible light (<span class="math inline">\(\lambda \approx 500\, \text{nm}\)</span>) interacting with atoms (size <span class="math inline">\(\approx 0.1\, \text{nm}\)</span>), we can make two important approximations:</p>
+<ol type="1">
+<li><p><strong>Dipole Approximation</strong>: Since <span class="math inline">\(\lambda \gg a\)</span> (atomic size), the field appears uniform across each atom: <span class="math display">\[\vec{E}(\vec{r},t) \approx \vec{E}(t)\]</span></p></li>
+<li><p><strong>Local Field Approximation</strong>: The field acting on each atom is approximately the macroscopic field: <span class="math display">\[\vec{E}_\text{local} \approx \vec{E}\]</span></p></li>
+</ol>
+<p>For a linearly polarized wave along the x-direction: <span class="math display">\[\vec{E}(t)=E_0\hat{x} e^{-i\omega t}\]</span></p>
+<p>For isotropic media, the dipole moment <span class="math inline">\(\vec{p}\)</span> of an atom is proportional to the local electric field:</p>
+<p><span class="math display">\[\vec{p}=\alpha\vec{E}\]</span></p>
+<p>The equation of motion for the electron displacement vector follows: <span class="math display">\[
+\ddot{\vec{r}}+\sigma\dot{\vec{r}}+\omega_0\vec{r}=\frac{q}{m}\vec{E}(t)
+\]</span></p>
+<p>For the x-component, we can write: <span class="math display">\[
+\ddot{x}+\sigma\dot{x}+\omega_0x=\frac{q}{m}E_x(t)
+\]</span></p>
+<p>The solution has the form: <span class="math display">\[
+x(t)=x_0 e^{i\omega t}
+\]</span></p>
+<p>This leads to: <span class="math display">\[
+\vec{r}(t)=\frac{1}{\omega_0^2+i\omega\sigma-\omega^2}\frac{q}{m}\vec{E}(t)
+\]</span></p>
+<p>The oscillating dipole moment becomes <span class="math inline">\(\vec{p}=q\vec{r}(t)=\alpha\vec{E}(t)\)</span>, and the polarization density: <span class="math display">\[
+\vec{P}=Nq\frac{1}{\omega_0^2+i\omega\sigma-\omega^2}\frac{q}{m}\vec{E}(t)=\epsilon_0\chi\vec{E}(t)
+\]</span></p>
+<p>From this, we obtain the electronic susceptibility:</p>
+<p><span class="math display">\[
+\chi=\chi_0\frac{1}{\omega_0^2+i\omega\sigma-\omega^2}
+\]</span></p>
+<p>with</p>
+<p><span class="math display">\[
+\chi_0=\frac{q^2N}{m\epsilon_0}
+\]</span></p>
+<p>The susceptibility is complex, written as <span class="math inline">\(\chi=\chi^{'}+i\chi^{"}\)</span>, making both the dielectric function <span class="math inline">\(\epsilon_r=1+\chi\)</span> and refractive index complex quantities.</p>
+<p>The complex refractive index takes the form:</p>
+<p><span class="math display">\[
+n=n_r-i\kappa=\sqrt{\epsilon_r}=\sqrt{1+\chi}
+\]</span></p>
+<p>where the negative sign convention for the imaginary part is standard but not universal. Explicitly:</p>
+<p><span class="math display">\[
+n=1+\frac{Nq^2}{2\epsilon_0 m}\frac{(\omega_0^2-\omega^2)-i\sigma\omega}{(\omega_0^2-\omega^2)^2+\omega^2\sigma^2}=n_r-i\kappa
+\]</span></p>
+<p>These real and imaginary components, <span class="math inline">\(n_r\)</span> and <span class="math inline">\(\kappa\)</span>, significantly affect light propagation. The two components can be written as</p>
+<p><span class="math display">\[n_r = 1 + A\frac{(\omega_0^2-\omega^2)}{(\omega_0^2-\omega^2)^2+\omega^2\sigma^2}\]</span></p>
+<p>and</p>
+<p><span class="math display">\[\kappa = A\frac{\sigma\omega}{(\omega_0^2-\omega^2)^2+\omega^2\sigma^2}\]</span></p>
+<p>with <span class="math inline">\(A=\frac{Nq^2}{2\epsilon_0 m}\)</span>.</p>
+<div id="5759d961" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Dispersion and Absorption_files/figure-html/cell-3-output-1.png" width="694" height="398" class="figure-img"></p>
+<figcaption>Real and imaginary part of the refractive index.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The plots show how both components vary with frequency due to the atomic resonance. Near resonance, the real part exhibits strong dispersion, transitioning from values above 1 to below 1. The imaginary part shows a Lorentzian peak with width determined by the damping coefficient <span class="math inline">\(\sigma\)</span>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Measuring Refractive Index
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A simple way to measure the refractive index is through the critical angle principle. By measuring the critical angle at which total internal reflection occurs, one can determine the refractive index of a material. This technique is widely used in refractometers and optical sensors.</p>
+<div id="fig-abbe" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-abbe-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="img/abbe_refractometer.png" class="img-fluid figure-img"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p><img src="img/IMG_0554.jpeg" class="img-fluid figure-img" style="width:60.0%"> <img src="img/abbe_reading.png" class="img-fluid figure-img" style="width:30.0%"></p>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-abbe-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;28.1— Principle of the Abbe refractometer (left). Abbe refractometer for alcohol content measurement (right).
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<section id="absorption" class="level2" data-number="28.1">
+<h2 data-number="28.1" class="anchored" data-anchor-id="absorption"><span class="header-section-number">28.1</span> Absorption</h2>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The imaginary component of the refractive index leads to the Lambert-Beer Law, a fundamental principle in optics and spectroscopy.</p>
+</div>
+</div>
+<p>The imaginary component <span class="math inline">\(\kappa\)</span> determines wave attenuation. For a plane wave propagating in the z-direction, the electric field is:</p>
+<p><span class="math display">\[
+\vec{E}(z,t) = E_0\hat{x}e^{i(kz-\omega t)}
+\]</span></p>
+<p>The spatial part follows:</p>
+<p><span class="math display">\[
+\vec{E}(z)=E_0\hat{x}e^{-ik z}=E_0\hat{x}e^{-in k_0 z}
+\]</span></p>
+<p>Including the complex refractive index:</p>
+<p><span class="math display">\[
+\vec{E}(z)=E_0\hat{x}e^{-i(n-i\kappa) k_0 z} =E_0\hat{x} e^{-i n_r k_0 z}e^{-\kappa k_0 z}
+\]</span></p>
+<p>The exponential decay factor modifies the wave amplitude with distance.</p>
+<p>The intensity, which is proportional to the time-averaged Poynting vector magnitude, follows:</p>
+<p><span class="math display">\[\begin{align}
+I &amp;= \frac{1}{2}\epsilon_0 c|\vec{E}|^2 \\
+  &amp;= \frac{1}{2}\epsilon_0 c |E_0|^2 \left | e^{-in_r k_0 z }e^{-\kappa k_0 z} \right |^2\\
+  &amp;= I_0 e^{-2\kappa k_0 z} \\
+  &amp;= I_0 e^{-\alpha z}
+\end{align}\]</span></p>
+<p>where <span class="math inline">\(\alpha=2k_0\kappa = \frac{4\pi\kappa}{\lambda}\)</span> represents the absorption coefficient. This exponential decay of intensity with distance is known as the <strong>Lambert-Beer Law</strong>:</p>
+<p><span class="math display">\[
+\frac{I}{I_0}= e^{-\alpha z}
+\tag{Lambert Beer Law}
+\]</span></p>
+<div id="fig-absorption1" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-absorption1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="img/absorption_exp.png" class="img-fluid figure-img"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="img/lambert_exp.png" class="img-fluid figure-img"></p>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-absorption1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;28.2— Measurement of the absorption coefficient.
+</figcaption>
+</figure>
+</div>
+<p>The frequency-dependent absorption reflects resonant behavior, with strong absorption near resonance and weak absorption elsewhere. Real materials typically have multiple resonances, creating complex absorption spectra that serve as unique chemical fingerprints.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Absorption Measurements
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The measurement of absorption is fundamental to many fields including chemistry, materials science, and biological studies. The basic principle relies on the Lambert-Beer Law:</p>
+<p><span class="math display">\[\ln\left(\frac{I}{I_0}\right) = -\alpha(\lambda)L = -\epsilon(\lambda)cL\]</span></p>
+<p>where:</p>
+<ul>
+<li><span class="math inline">\(I/I_0\)</span> is the transmittance</li>
+<li><span class="math inline">\(\alpha(\lambda)\)</span> is the absorption coefficient</li>
+<li><span class="math inline">\(\epsilon(\lambda)\)</span> is the molar extinction coefficient</li>
+<li><span class="math inline">\(c\)</span> is the molar concentration</li>
+<li><span class="math inline">\(L\)</span> is the path length</li>
+</ul>
+<p>The above logarithm can be used to define the absorbance <span class="math inline">\(A\)</span> as</p>
+<p><span class="math display">\[A = -\ln\left(\frac{I}{I_0}\right)/\ln(10)\]</span></p>
+<p>which is the typical quantity that is plotted against concentration in absorption measurements and linearly depends on the concentration. According to Lambert Beers law, the absorbance is calculated from <span class="math display">\[A = \epsilon c L\]</span> and provides the molar extinction coefficient <span class="math inline">\(\epsilon\)</span> for the material at a given wavelength.</p>
+<div id="7af3dcb3" class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Dispersion and Absorption_files/figure-html/cell-4-output-1.png" width="579" height="302" class="figure-img"></p>
+<figcaption>Basic setup for absorption measurements</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<section id="concentration-measurements" class="level3" data-number="28.1.1">
+<h3 data-number="28.1.1" class="anchored" data-anchor-id="concentration-measurements"><span class="header-section-number">28.1.1</span> Concentration Measurements</h3>
+<p>The linear relationship between absorbance and concentration enables quantitative analysis:</p>
+<div id="3d7f5c85" class="cell" data-execution_count="4">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Dispersion and Absorption_files/figure-html/cell-5-output-1.png" width="454" height="349" class="figure-img"></p>
+<figcaption>Beer-Lambert law verification plot</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The linear range typically extends up to absorbance values of ~1.0 Beyond this, deviation from linearity may occur</p>
+</div>
+</div>
+</section>
+<section id="applications" class="level3" data-number="28.1.2">
+<h3 data-number="28.1.2" class="anchored" data-anchor-id="applications"><span class="header-section-number">28.1.2</span> Applications</h3>
+<section id="chemical-analysis" class="level4" data-number="28.1.2.1">
+<h4 data-number="28.1.2.1" class="anchored" data-anchor-id="chemical-analysis"><span class="header-section-number">28.1.2.1</span> 1. Chemical Analysis</h4>
+<p>Chemical analysis provides quantitative information about composition and concentration in solutions. Absorption measurements enable precise determination of concentration levels across many compounds. Reaction kinetics can be monitored in real-time by tracking absorption changes. Quality control in industrial processes relies on rapid and accurate absorption measurements to ensure product consistency.</p>
+</section>
+<section id="materials-characterization" class="level4" data-number="28.1.2.2">
+<h4 data-number="28.1.2.2" class="anchored" data-anchor-id="materials-characterization"><span class="header-section-number">28.1.2.2</span> 2. Materials Characterization</h4>
+<p>Optical properties of materials reveal crucial information about their electronic structure and physical properties. Band gap determination helps classify semiconductors and predict their behavior in devices. Film thickness measurements using absorption techniques provide non-destructive ways to characterize thin films and coatings. Understanding these properties is essential for developing new materials and optimizing their performance in applications.</p>
+</section>
+<section id="biological-studies" class="level4" data-number="28.1.2.3">
+<h4 data-number="28.1.2.3" class="anchored" data-anchor-id="biological-studies"><span class="header-section-number">28.1.2.3</span> 3. Biological Studies</h4>
+<p>Protein quantification through absorption measurements forms a cornerstone of biochemical analysis. DNA and RNA analysis relies on characteristic absorption peaks to determine concentration and purity. Enzyme assays monitor reaction progress through changes in absorption, providing insight into biological processes. These techniques are fundamental to modern biological research and medical diagnostics.</p>
+</section>
+</section>
+</div>
+</div>
+</section>
+<section id="dispersion" class="level2" data-number="28.2">
+<h2 data-number="28.2" class="anchored" data-anchor-id="dispersion"><span class="header-section-number">28.2</span> Dispersion</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Dispersion manifests through two key velocities:</p>
+<ul>
+<li>Phase velocity: speed of wave fronts</li>
+<li>Group velocity: speed of wave packets</li>
+</ul>
+</div>
+</div>
+<p>The frequency dependence of the real refractive index affects wave propagation speeds in two important ways: through the phase velocity and group velocity.</p>
+<section id="phase-velocity" class="level3" data-number="28.2.1">
+<h3 data-number="28.2.1" class="anchored" data-anchor-id="phase-velocity"><span class="header-section-number">28.2.1</span> Phase Velocity</h3>
+<p>The phase velocity represents the speed of wave phase fronts: <span class="math display">\[
+v=\frac{\omega}{k}=\frac{c}{n_r}
+\tag{phase velocity}
+\]</span></p>
+</section>
+<section id="group-velocity" class="level3" data-number="28.2.2">
+<h3 data-number="28.2.2" class="anchored" data-anchor-id="group-velocity"><span class="header-section-number">28.2.2</span> Group Velocity</h3>
+<p>The group velocity represents the speed of wave packets <span class="math display">\[
+v_g=\frac{d\omega}{dk}
+\tag{group velocity}
+\]</span></p>
+<div id="b6b60ae3" class="cell" data-execution_count="5">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Dispersion and Absorption_files/figure-html/cell-6-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="561" height="440"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>To relate group velocity to the refractive index, we can derive:</p>
+<p><span class="math display">\[
+v_g=\frac{d}{dk}(v k)=v+k\frac{dv}{dk}
+\]</span></p>
+<p>Using <span class="math inline">\(k=k_0 n_r\)</span> and <span class="math inline">\(v=c/n_r\)</span>, and after some algebra, we obtain:</p>
+<p><span class="math display">\[
+v_g=\frac{c}{n_r+\omega \frac{dn_r}{d\omega}}
+\tag{group velocity dispersion}
+\]</span></p>
+<p>The group velocity is distinct from the phase velocity and represents how fast the envelope of a wave packet propagates through space. In a dispersive medium, where the refractive index depends on frequency, the group velocity can differ significantly from the phase velocity. This is particularly important in optical communications where information is carried by wave packets rather than single-frequency waves.</p>
+<div id="327c1b15" class="cell" data-execution_count="6">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Dispersion and Absorption_files/figure-html/cell-7-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="695" height="397"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>For optical pulses in fibers or other waveguides, group velocity dispersion leads to pulse spreading because different frequency components travel at different speeds. This effect becomes critical in long-distance optical communication systems where pulse broadening can lead to signal distortion and intersymbol interference.</p>
+<p>In vacuum or non-dispersive media where the refractive index is constant (<span class="math inline">\(\frac{dn_r}{d\omega}=0\)</span>), the group velocity equals the phase velocity. However, in most practical situations involving light propagation through materials, dispersion causes these velocities to differ, necessitating careful consideration in optical system design.</p>
+</section>
+<section id="types-of-dispersion" class="level3" data-number="28.2.3">
+<h3 data-number="28.2.3" class="anchored" data-anchor-id="types-of-dispersion"><span class="header-section-number">28.2.3</span> Types of Dispersion</h3>
+<p>The frequency dependence of the refractive index leads to two distinct regimes of dispersion:</p>
+<ol type="1">
+<li><strong>Normal Dispersion</strong>: <span class="math display">\[
+\frac{dn_r}{d\omega}&gt;0
+\]</span> In the normal dispersion regime, the refractive index increases with frequency, meaning that higher frequency (blue) light travels more slowly through the medium than lower frequency (red) light. This behavior is commonly observed in transparent materials at frequencies far from their resonances. The effects of normal dispersion are ubiquitous in optics: when white light passes through a prism, it separates into its spectral components creating a rainbow pattern; in optical systems, it causes chromatic aberration where different colors focus at different points; and in optical fibers, it leads to temporal spreading of pulses as different frequency components travel at different speeds through the medium.</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Normal dispersion dominates in transparent materials at frequencies well below their resonances. This is why prisms separate white light into its spectral components with blue light bending more than red light.</p>
+</div>
+</div>
+<ol start="2" type="1">
+<li><strong>Anomalous Dispersion</strong>: <span class="math display">\[
+\frac{dn_r}{d\omega}&lt;0
+\]</span> Anomalous dispersion occurs in the vicinity of absorption resonances, where the conventional relationship between frequency and refractive index is reversed. In this regime, higher frequencies propagate faster than lower frequencies, leading to unique optical phenomena. The behavior is characterized by strong frequency-dependent absorption accompanied by rapid variations in the refractive index. This unusual dispersion can even result in negative group velocities under certain conditions. The practical applications of anomalous dispersion are particularly important in modern optics, where it is used for pulse compression in ultrafast laser systems, dispersion compensation in optical communications, and various applications in ultrafast optics.</li>
+</ol>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The transition between normal and anomalous dispersion typically occurs near absorption resonances, where the refractive index varies rapidly with frequency. This behavior is described by the Kramers-Kronig relations, which connect the real and imaginary parts of the refractive index.</p>
+</div>
+</div>
+<p>Real materials often exhibit both types of dispersion across different frequency ranges, resulting in complex optical behavior. Understanding and controlling these dispersion effects is crucial for the development of optical communication systems, the generation and manipulation of ultrashort pulses, the design of optical components, and the implementation of nonlinear optical processes. The interplay between normal and anomalous dispersion enables sophisticated control over light propagation, essential for modern optical technologies.</p>
+</section>
+<section id="superluminal-group-velocity" class="level3" data-number="28.2.4">
+<h3 data-number="28.2.4" class="anchored" data-anchor-id="superluminal-group-velocity"><span class="header-section-number">28.2.4</span> Superluminal Group Velocity</h3>
+<p>The concept of superluminal group velocity emerges in regions of anomalous dispersion, where the group velocity can mathematically exceed the speed of light c.&nbsp;This occurs when: <span class="math display">\[
+n_r+\omega \frac{dn_r}{d\omega}&lt;1
+\]</span></p>
+<p>In our classical oscillator model, this condition is met near the resonance frequency when: <span class="math display">\[
+|\omega_0-\omega|&lt;\frac{\sigma}{2}
+\]</span></p>
+<p>This seemingly paradoxical result warrants careful interpretation. The group velocity, while traditionally associated with the speed of energy or information transport, becomes problematic near resonances. Several key points help clarify this phenomenon:</p>
+<ol type="1">
+<li><p><strong>Physical Interpretation</strong>: The superluminal effect is associated with pulse reshaping rather than actual faster-than-light signal propagation. The pulse peak appears to emerge from the medium before it would in vacuum due to preferential absorption and dispersion of different frequency components.</p></li>
+<li><p><strong>Pulse Distortion</strong>: Near resonances, pulses undergo severe distortion, making the group velocity less meaningful as a measure of signal propagation. The pulse envelope no longer maintains its shape, and different parts of the pulse travel at different velocities.</p></li>
+<li><p><strong>Causality and Energy Transport</strong>: While <span class="math inline">\(v_g\)</span> may exceed c, the energy transport velocity: <span class="math display">\[
+v_{E}=\frac{\vec{S}}{w_{em}}=\frac{I}{w_{em}}\le c
+\]</span> where <span class="math inline">\(\vec{S}\)</span> is the Poynting vector and <span class="math inline">\(w_{em}\)</span> is the electromagnetic energy density, always remains subluminal, preserving causality.</p></li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The apparent superluminal propagation has been observed experimentally in various systems, including:</p>
+<ul>
+<li>Gain media</li>
+<li>Photonic crystals</li>
+<li>Atomic gases near absorption lines (see <span class="citation" data-cites="superluminal">Wang, Kuzmich, and Dogariu (<a href="#ref-superluminal" role="doc-biblioref">2000</a>)</span>)</li>
+<li>Optical fibers with specially engineered dispersion</li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Despite superluminal group velocity, no information can be transmitted faster than c.&nbsp;This is ensured by:</p>
+<ol type="1">
+<li>The severe pulse distortion in regions of anomalous dispersion</li>
+<li>The Kramers-Kronig relations linking absorption and dispersion</li>
+<li>The principle of causality in electromagnetic theory</li>
+</ol>
+</div>
+</div>
+<p>The study of superluminal group velocity has practical applications in: - Understanding fundamental limits of signal propagation - Designing fast-light and slow-light devices - Developing optical delay lines and buffers - Quantum information processing</p>
+<p>This phenomenon illustrates the subtle interplay between classical electromagnetic theory, special relativity, and the practical limitations of optical pulse propagation.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Kramers-Kronig Relations
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The Kramers-Kronig relations express a fundamental connection between the real and imaginary parts of the complex refractive index (or susceptibility). These relations arise from causality - the principle that effects cannot precede their causes - and the analytical properties of response functions in the complex frequency plane.</p>
+<section id="physical-origin" class="level4" data-number="28.2.4.1">
+<h4 data-number="28.2.4.1" class="anchored" data-anchor-id="physical-origin"><span class="header-section-number">28.2.4.1</span> Physical Origin</h4>
+<p>Consider a general response function <span class="math inline">\(\chi(\omega)\)</span> describing how a system responds to electromagnetic perturbations. For this response to be causal, <span class="math inline">\(\chi(\omega)\)</span> must be analytic in the upper half of the complex frequency plane. This analyticity requirement, combined with the reality condition <span class="math inline">\(\chi(-\omega)=\chi^*(\omega)\)</span>, leads to the Kramers-Kronig relations.</p>
+</section>
+<section id="principal-relations" class="level4" data-number="28.2.4.2">
+<h4 data-number="28.2.4.2" class="anchored" data-anchor-id="principal-relations"><span class="header-section-number">28.2.4.2</span> Principal Relations</h4>
+<p>For the complex susceptibility <span class="math inline">\(\chi(\omega)=\chi'(\omega)+i\chi''(\omega)\)</span>, the Kramers-Kronig relations take the form:</p>
+<p><span class="math display">\[
+\chi'(\omega) = \frac{1}{\pi}\mathcal{P}\int_{-\infty}^{\infty}\frac{\chi''(\omega')}{\omega'-\omega}d\omega'
+\]</span></p>
+<p><span class="math display">\[
+\chi''(\omega) = -\frac{1}{\pi}\mathcal{P}\int_{-\infty}^{\infty}\frac{\chi'(\omega')}{\omega'-\omega}d\omega'
+\]</span></p>
+<p>where <span class="math inline">\(\mathcal{P}\)</span> denotes the Cauchy principal value of the integral.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Similar relations hold for the complex refractive index <span class="math inline">\(n(\omega)=n_r(\omega)+i\kappa(\omega)\)</span>:</p>
+<p><span class="math display">\[
+n_r(\omega)-1 = \frac{2}{\pi}\mathcal{P}\int_{0}^{\infty}\frac{\omega'\kappa(\omega')}{\omega'^2-\omega^2}d\omega'
+\]</span></p>
+<p><span class="math display">\[
+\kappa(\omega) = -\frac{2\omega}{\pi}\mathcal{P}\int_{0}^{\infty}\frac{n_r(\omega')-1}{\omega'^2-\omega^2}d\omega'
+\]</span></p>
+</div>
+</div>
+</section>
+<section id="implications" class="level4" data-number="28.2.4.3">
+<h4 data-number="28.2.4.3" class="anchored" data-anchor-id="implications"><span class="header-section-number">28.2.4.3</span> Implications</h4>
+<p>The Kramers-Kronig relations reveal profound connections in optical physics. Most significantly, they demonstrate that absorption and dispersion are intrinsically linked phenomena. It is impossible to have a perfectly transparent medium that exhibits dispersion, as the presence of dispersion necessarily implies some absorption at certain frequencies. This connection is mathematically expressed through sum rules, such as the integral relation <span class="math inline">\(\int_0^\infty \omega'\chi''(\omega')d\omega' = 0\)</span>, which places constraints on physically possible optical responses.</p>
+<p>The relations enforce causality in light-matter interactions, ensuring that optical responses cannot precede their stimuli. This causality principle manifests in the observed behavior of optical materials, particularly near resonances where anomalous dispersion invariably accompanies absorption peaks.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The Kramers-Kronig relations demonstrate that dispersion and absorption are not independent phenomena but are fundamentally linked through causality. This connection explains why anomalous dispersion always occurs near absorption resonances.</p>
+</div>
+</div>
+</section>
+<section id="applications-1" class="level4" data-number="28.2.4.4">
+<h4 data-number="28.2.4.4" class="anchored" data-anchor-id="applications-1"><span class="header-section-number">28.2.4.4</span> Applications</h4>
+<p>The practical significance of the Kramers-Kronig relations extends throughout optical physics and engineering. Scientists and engineers use these relations to determine complete optical responses from partial measurements, as measuring either the real or imaginary part allows reconstruction of the other. This capability proves invaluable in materials characterization and optical device design. The relations also serve as a theoretical framework for validating experimental optical data and understanding the fundamental limits of optical materials.</p>
+<p>In optical device design, these relations guide the development of components with specific dispersion properties, though they also highlight the inherent trade-offs between dispersion and absorption that must be considered. The understanding provided by the Kramers-Kronig relations has become essential in fields ranging from spectroscopy to telecommunications, where precise control of optical properties is crucial.</p>
+<p>The Kramers-Kronig relations stand as one of the most elegant examples of how fundamental physical principles - in this case, causality - manifest in measurable optical properties, providing both practical tools for optical engineering and deep insights into the nature of light-matter interactions.</p>
+</section>
+</div>
+</div>
+</div>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-superluminal" class="csl-entry" role="listitem">
+Wang, L. J., A. Kuzmich, and A. Dogariu. 2000. <span>“<span class="nocase">Gain-assisted superluminal light propagation</span>.”</span> <em>Nature</em> 406 (6793): 277–79. <a href="https://doi.org/10.1038/35018520">https://doi.org/10.1038/35018520</a>.
+</div>
+</div>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../electromagnetic-waves/EM Waves in Matter.html" class="pagination-link" aria-label="Electromagnetic Waves in Matter">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Electromagnetic Waves in Matter</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../electromagnetic-waves/Reflection and Refraction.html" class="pagination-link" aria-label="Reflection and Refraction of Electromagnetic Waves">
+        <span class="nav-page-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Reflection and Refraction of Electromagnetic Waves</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

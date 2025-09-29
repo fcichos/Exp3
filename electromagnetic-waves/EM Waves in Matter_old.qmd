@@ -1,0 +1,353 @@
+
+-------------------
+## Single Atom in an electric Field
+
+The behavior of electromagnetic waves changes significantly when they propagate through materials rather than vacuum. This interaction is fundamentally governed by how the electric and magnetic fields of the wave affect the charged particles within the material. Before exploring these wave phenomena, let's first understand how materials respond to electric fields through the process of polarization - the separation of positive and negative charge centers in atoms.
+
+To understand how materials respond to electromagnetic waves, let's first examine how individual atoms become polarized in an electric field. We'll use a simple but instructive model where:
+
+1. An electron charge $-q$ is uniformly distributed in a spherical cloud of radius $a$
+2. A positive nucleus sits at the center of this negative charge distribution
+
+The charge density of the electron cloud is a scalar quantity:
+
+$$
+\rho=\frac{-q}{\frac{4}{3}\pi a^{3}}=-\frac{3q}{4\pi a^3}
+$$
+
+This configuration creates a radial electric field inside the cloud:
+
+$$
+\vec{E}(\vec{r})=-\frac{1}{4\pi\epsilon_0}\frac{q}{a^3}\vec{r}
+$$
+
+where $\vec{r}$ is the position vector from the center. The linear dependence on $\vec{r}$ creates a restoring force similar to a spring.
+
+::: {#fig-atom}
+![](img/atom.png){width=40%}
+
+Polarization of an electric cloud of an atom: An external electric field displaces the positive nucleus relative to the negative electron cloud, creating an induced dipole moment.
+:::
+
+When we apply an external electric field $\vec{E}_{\rm ex}$, the nucleus is displaced by a vector $\vec{d}$ until forces balance:
+
+$$
+q\vec{E}_{\rm ex}-\frac{1}{4\pi\epsilon_0}\frac{q^2\vec{d}}{a^3}=\vec{0}
+$$
+
+This force balance between the external field (pushing the nucleus) and the internal field (trying to restore the nucleus to the center) determines the atomic polarization, from which we find the displacement:
+
+$$
+\vec{d}=4\pi \epsilon_0 a^3 \frac{\vec{E}_{\rm ex}}{q}
+$$
+
+This displacement creates a dipole moment:
+
+$$
+\vec{p}=q\vec{d}=4\pi\epsilon_0 a^3 \vec{E}_{\rm ex}
+$$
+
+The dipole moment increases linearly with the external field, with the proportionality constant:
+
+$$
+\alpha=4\pi \epsilon_0 a^3
+$$
+
+known as the electronic polarizability. Note that while α is a scalar for this spherically symmetric case, in general it can be a tensor. The polarizability scales with atomic volume.
+
+When many atoms in a material are exposed to an electric field, their individual dipole moments combine to create a macroscopic polarization. The collective behavior can be characterized by the polarization density:
+
+$$
+\vec{P}=N\vec{p}
+$$
+
+where $N$ is the number of dipoles per unit volume and $p$ is the individual atomic dipole moment.
+
+::: {#fig-sample}
+![](img/sample.png){width=80%}
+
+Polarization in a dielectric material showing aligned atomic dipoles and resulting surface charges.
+:::
+
+Then finally for a cylindrical sample with cross-sectional area $A$ and height $s$, this microscopic picture leads to:
+
+- Total dipole moment: $p_{\rm cyl}=A s P$
+- End charges: $q_{\rm end}=\frac{p_{\rm cyl}}{s}=A P$
+- Surface charge density: $\sigma=\frac{q_{\rm end}}{A}=P$
+
+More generally, the surface charge density at any boundary is:
+
+$$
+\sigma=\vec{P}\cdot\hat{n}
+$$
+
+where $\hat{n}$ is the surface normal. These surface charges are "bound" to atoms, distinct from free charges, and denoted as $\sigma_b$.
+
+
+### Volume Charge Density
+
+When polarization isn't uniform throughout a material, we need to consider both surface and volume charges. All bound charges in the material must sum to zero since the material was initially neutral. This charge conservation requirement leads to:
+
+$$\int \sigma_b dA +\int \rho_b dv=0$$
+
+We know that surface charge density is related to polarization through $\sigma_b=\vec{P}\cdot\hat{n}$. Therefore, the surface integral can be written as:
+
+$$\int \sigma_b dA = \int \vec{P}\cdot\hat{n}dA = \int \vec{P}\cdot d\vec{A}$$
+
+Now we can apply Gauss's theorem, which states that $\int \vec{P}\cdot d\vec{A} = \int (\nabla\cdot\vec{P})dv$. Applying this to our charge conservation equation gives:
+
+$$\int \rho_b dv + \int (\nabla\cdot\vec{P})dv = 0$$
+
+Since this relationship must hold for any arbitrary volume within the material, we can conclude that the integrands must be equal and opposite, leading to the local relationship:
+
+$$\rho_b = -\nabla\cdot\vec{P}$$
+
+This fundamental equation reveals that bound volume charges appear wherever the polarization has a divergence - that is, wherever it changes spatially in a way that creates an imbalance of positive and negative charges.
+
+### Electric Displacement Field
+
+In materials, the electric field's divergence must account for both free charges and the bound charges that arise from polarization. Starting with Gauss's law, we can write:
+
+$$
+\nabla \cdot \vec{E}=\frac{\rho_{\rm f}+\rho_{\rm b}}{\epsilon_0}
+$$
+
+We previously found that bound charges are related to the polarization through $\rho_b=-\nabla\cdot \vec{P}$. Inserting this relationship into Gauss's law yields:
+
+$$
+\nabla \cdot \vec{E}=\frac{\rho_{\rm f}-\nabla\cdot \vec{P}}{\epsilon_0}
+$$
+
+Multiplying both sides by $\epsilon_0$ and rearranging terms leads to a more compact form:
+
+$$
+\nabla \cdot(\epsilon_0\vec{E}+\vec{P})=\rho_f
+$$
+
+This naturally suggests defining a new field quantity, the electric displacement field:
+
+$$
+\vec{D}=\epsilon_0 \vec{E}+\vec{P}
+$$
+
+The displacement field $\vec{D}$ elegantly simplifies Gauss's law to:
+
+$$
+\nabla \cdot \vec{D} =\rho_f
+$$
+
+This form resembles the original Gauss's law in vacuum, but now the displacement field $\vec{D}$ accounts for both the electric field and the material's polarization response, while only relating to free charges.
+
+### Dielectric Polarization in Materials
+
+For many materials, the polarization density is proportional to the applied electric field:
+
+$$
+\vec{P}=\epsilon_0\chi\vec{E}
+$$
+
+where $\chi$ is the electric susceptibility, characterizing the material's response to electric fields. This linear relationship between $\vec{P}$ and $\vec{E}$ defines what we call linear dielectric materials. While this linear response follows from our simple atomic model, real materials often exhibit nonlinear responses to strong electric fields - effects studied in the field of nonlinear optics.
+
+Within this linear approximation, we can express the displacement field in terms of the susceptibility:
+
+$$
+\vec{D}=\epsilon_0 \vec{E}+\vec{P}=\epsilon_0 (1+\chi)\vec{E}=\epsilon \vec{E}
+$$
+
+where we define the electric permittivity as:
+
+$$
+\epsilon=\epsilon_0 (1+\chi)
+\tag{electric permittivity}
+$$
+
+The dimensionless ratio
+
+$$
+\epsilon_r=\frac{\epsilon}{\epsilon_0}=1+\chi
+$$
+
+is called the relative permittivity or dielectric constant. However, this term can be misleading as $\epsilon_r$ typically depends on the frequency of the electromagnetic field - making it a dielectric function rather than a constant.
+
+### Clausius-Mossotti Relation
+
+While this model provides useful intuition, it requires modification for dense materials where atoms are closely packed. Consider a dielectric material composed of polarizable atoms or molecules. The local electric field $\vec{E}_{loc}$ experienced by an atom differs from the average (macroscopic) field $\vec{E}$ due to the contributions from surrounding dipoles. The local field inside a small spherical cavity in the dielectric consists of three contributions:
+
+$$\vec{E}_{loc} = \vec{E} + \vec{E}_{dep}$$
+
+where $\vec{E}$ is the applied field, $\vec{E}_{dep}$ is the depolarization field from charges on the cavity surface, and $\vec{E}_{near}$ is the near-field contribution from neighboring dipoles.
+
+For a spherical cavity, the depolarization field is given by $\vec{E}_{dep} = -\frac{\vec{P}}{3\epsilon_0}$, where $\vec{P}$ is the polarization density. The near-field contribution from a cubic lattice arrangement averages to zero ($\vec{E}_{near} = \vec{0}$). Therefore, the local field becomes:
+
+$$\vec{E}_{loc} = \vec{E} - \frac{\vec{P}}{3\epsilon_0}$$
+
+The polarization density is related to the local field through $\vec{P} = N\alpha \vec{E}_{loc}$, where N is the number density of dipoles and α is the polarizability. We also know that $\vec{P} = \epsilon_0\chi \vec{E} = \epsilon_0(\epsilon_r-1)\vec{E}$.
+
+Substituting these equations and solving for $\vec{P}$:
+
+$$\vec{P} = N\alpha(\vec{E} - \frac{\vec{P}}{3\epsilon_0})$$
+
+$$\vec{P} + \frac{N\alpha \vec{P}}{3\epsilon_0} = N\alpha \vec{E}$$
+
+$$\vec{P}(1 + \frac{N\alpha}{3\epsilon_0}) = N\alpha \vec{E}$$
+
+Equating the two expressions for $\vec{P}$:
+
+$$\epsilon_0(\epsilon_r-1)\vec{E} = \frac{N\alpha \vec{E}}{1 + \frac{N\alpha}{3\epsilon_0}}$$
+
+Since this equation holds for any direction of $\vec{E}$, and assuming an isotropic medium, we obtain the scalar Clausius-Mossotti relation:
+
+$$\frac{\epsilon_r-1}{\epsilon_r+2} = \frac{N\alpha}{3\epsilon_0}$$
+
+This relation provides a powerful link between microscopic polarizability and macroscopic dielectric properties, though it assumes the material is isotropic and the local field corrections are adequately described by the spherical cavity model.
+
+
+### Magnetic Response of Materials
+
+Similar principles apply to magnetic materials, though the physics differs due to the absence of magnetic monopoles. The magnetic flux density $\vec{B}$ relates to the magnetic field $\vec{H}$ through:
+
+$$
+\vec{B}=\mu_0(1+\chi_m)\vec{H}
+$$
+
+where $\chi_m$ is the magnetic susceptibility. Analogous to electric polarization, we define the magnetization $\vec{M}$ as the density of magnetic dipole moments:
+
+$$
+\vec{B}=\mu_0(\vec{H}+\vec{M})
+$$
+
+## Maxwell's Equations in Matter
+
+Maxwell's equations in materials take a modified form to account for the material's response to electromagnetic fields. The four fundamental equations become:
+
+$$
+\nabla \times \vec{E}=-\frac{\partial \vec{B}}{\partial t}
+\tag{ME.1}
+$$
+
+Faraday's law of induction remains unchanged from its vacuum form.
+
+$$
+\nabla\cdot\vec{D}=\rho_f
+\tag{ME.2}
+$$
+
+Gauss's law now involves the displacement field $\vec{D}$ and only free charges $\rho_f$.
+
+$$
+\nabla\times \vec{H}=\frac{\partial \vec{D}}{\partial t}+\vec{j}_f
+\tag{ME.3}
+$$
+
+Ampère's law includes both the displacement current $\frac{\partial \vec{D}}{\partial t}$ and free current density $\vec{j}_f$.
+
+$$
+\nabla\cdot \vec{B}=0
+\tag{ME.4}
+$$
+
+The absence of magnetic monopoles remains a fundamental principle.
+
+The material properties enter through the constitutive relations:
+
+\begin{eqnarray}
+\vec{D}&=&\epsilon \vec{E}=\epsilon_0 \epsilon_r\vec{E}\\
+\vec{B}&=&\mu \vec{H}=\mu_0 \mu_r\vec{H}
+\end{eqnarray}
+
+### Wave Propagation in Matter
+
+For media without free charges ($\rho_f=0$) and currents ($\vec{j}_f=0$), these equations lead to the wave equation:
+
+$$
+\frac{\partial^2 \vec{E}}{\partial \vec{r}^2}-\frac{1}{v^2} \frac{\partial^2\vec{E}}{\partial t^2}=0
+$$
+
+where the phase velocity $v$ is:
+
+$$
+v=\frac{c}{\sqrt{\epsilon_r\mu_r}}
+$$
+
+This shows that electromagnetic waves travel more slowly in matter than in vacuum. For non-magnetic materials ($\mu_r=1$), we define the refractive index:
+
+$$
+n=\frac{c}{v}=\sqrt{\epsilon_r}
+\tag{refractive index}
+$$
+
+This connects our microscopic understanding of atomic polarization to the macroscopic phenomenon of light propagation in matter.
+
+### Special Case: Negative Refraction
+
+While most materials have $n>1$, materials with both $\epsilon_r<0$ and $\mu_r<0$ exhibit the unusual property of negative refraction, where:
+
+$$
+v=-\frac{c}{\sqrt{\epsilon_r\mu_r}}
+\tag{negative refraction}
+$$
+
+Such metamaterials, engineered with specific substructures, enable novel optical phenomena and applications.
+
+:::{#fig-negative-refraction}
+![](img/negative_refraction.png){width=80%}
+
+Refraction: Diagrams of (a) positive refraction and (b) negative refraction; and calculated images of a metal rod (c) in a glass filled with regular water ($n = 1.3$), and (d) in a glass filled with “negative-index water” ($n = -1.3$). In parts a and b, solid lines with arrows indicate the direction of the energy flows, broken lines with arrows show the direction of the wave vectors. (Parts c and d from G. Dolling et al., Photorealistic images of objects in effective negative-index materials, Opt. Express, 14:1842–1849, 2006).
+:::
+
+
+The Poynting vector describes the energy flow in electromagnetic waves, representing power per unit area. For any electromagnetic wave, we can calculate this energy flow as the cross product of the electric and magnetic fields:
+
+$$ \mathbf{S} = \mathbf{E} \times \mathbf{H} $$
+
+where $\mathbf{H}$ relates to the magnetic field $\mathbf{B}$ through the material's permeability: $\mathbf{B} = \mu \mathbf{H}$. In negative refractive index materials, both the permittivity and permeability are negative, leading to $\mathbf{H}$ pointing opposite to $\mathbf{B}$.
+
+For a plane wave, the magnetic field relates to the electric field through $\mathbf{B} = \frac{1}{\omega} \mathbf{k} \times \mathbf{E}$, allowing us to express $\mathbf{H}$ as:
+
+$$ \mathbf{H} = \frac{1}{\mu \omega} \mathbf{k} \times \mathbf{E} $$
+
+Inserting this into our expression for the Poynting vector and using the vector triple product identity, we find:
+
+$$ \mathbf{S} = \frac{1}{\mu \omega} \left[ \mathbf{k} (\mathbf{E} \cdot \mathbf{E}) - \mathbf{E} (\mathbf{E} \cdot \mathbf{k}) \right] $$
+
+Since the electric field is perpendicular to the wave vector in a plane wave ($\mathbf{E} \cdot \mathbf{k} = 0$), this simplifies to:
+
+$$ \mathbf{S} = \frac{1}{\mu \omega} \mathbf{k} E_0^2 $$
+
+In negative index materials, where $\mathbf{k} = -k \hat{\mathbf{k}}$, the Poynting vector becomes:
+
+$$ \mathbf{S} = -\frac{k E_0^2}{\mu \omega} \hat{\mathbf{k}} $$
+
+This remarkable result shows that energy flows in the direction opposite to the wave propagation, a unique characteristic of negative index materials that leads to their unusual optical properties.
+
+
+
+::: {#fig-negative-refraction1}
+![](img/split_ring.png)
+
+Metamaterial with negative refraction. Smith, D. R., et al. (2004). Metamaterials and Negative Refractive Index. *Science*, 305(5685), 788-792.
+:::
+
+The concept of negative refractive index was first theorized by Victor Veselago in 1968. He predicted that materials with simultaneous negative permittivity and permeability would exhibit unique optical properties such as reversed Snell's law, reversed Doppler effect, and reversed Cherenkov radiation.
+
+~~~
+Veselago, V. G. (1968). The Electrodynamics of Substances with Simultaneously Negative Values of $\epsilon$ and $\mu$. *Soviet Physics Uspekhi*, 10(4), 509-514.
+Pendry, J. B. (2000). Negative Refraction Makes a Perfect Lens. *Physical Review Letters*, 85(18), 3966-3969.
+~~~
+
+
+### Wave Properties
+
+For monochromatic waves of the form:
+
+$$
+\vec{E}=\vec{E}_0e^{i(\omega t- \vec{k}\cdot \vec{r})}
+$$
+
+the wavevector $\vec{k}$ relates to the vacuum wavevector $\vec{k}_0$ through:
+
+$$
+\vec{k}=n\vec{k}_0
+$$
+
+This relationship determines how waves propagate and refract at material interfaces.

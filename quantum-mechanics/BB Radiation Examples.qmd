@@ -1,0 +1,42 @@
+## Real-World Examples of Blackbody Radiation
+
+### Astronomical Objects
+Beyond our sun, blackbody radiation plays a crucial role in astronomy. Stars of different classifications exhibit distinct blackbody spectra based on their surface temperatures. Red dwarf stars, with temperatures around 3000K, appear reddish in color due to Wien's law governing their peak wavelength emission. In contrast, blue giant stars burn much hotter at approximately 20,000K, resulting in their characteristic bluish appearance.
+
+Perhaps the most remarkable astronomical example of blackbody radiation comes from the Cosmic Microwave Background (CMB). The universe itself behaves as an almost perfect blackbody radiator with a temperature of 2.725K. This omnipresent radiation serves as a remnant from the early universe, and its discovery provided compelling evidence supporting the Big Bang theory.
+
+::: {#fig-cmb layout-ncol=2 fig-align="center"}
+![Spectrum of CMB radiation](img/CMB_spectrum.jpg){width=100%}
+
+![Map of CMB radiation](img/WMAP_2012.png){width=100%}
+
+The measured spectrum of the cosmic microwave background radiation fits perfectly to a blackbody spectrum at T = 2.725K. This is considered one of the most precise measurements in physics.
+:::
+
+### Industrial Applications
+
+In industrial settings, blackbody radiation enables a wide range of temperature measurement applications. Pyrometers serve as non-contact temperature measurement devices, utilizing the principles of blackbody radiation to determine surface temperatures from a distance. Similar technology powers infrared thermometers, which find widespread use across medical applications, cooking processes, and industrial monitoring. Thermal imaging cameras extend these capabilities further, providing detailed temperature mapping for applications ranging from building inspection to night vision systems and medical diagnostics.
+
+Manufacturing processes rely heavily on blackbody radiation principles for temperature control and monitoring. In steel production, experienced metalworkers can gauge temperature by observing the color of heated metal, as these colors follow predictable patterns based on blackbody radiation laws. Glass blowing artisans similarly depend on their understanding of these color-temperature relationships to perfect their craft. In semiconductor processing, precise temperature control guided by blackbody radiation principles ensures proper crystal growth and development.
+
+::: {#fig-steel-colors fig-align="center"}
+![](img/steel_colors.png){width=80%}
+
+The color of heated steel changes with temperature following blackbody radiation principles. This allows experienced metalworkers to estimate temperature visually.
+:::
+
+### Everyday Examples
+
+Common electric heating elements in household appliances demonstrate blackbody radiation principles in everyday life. Toasters contain metal elements that glow according to blackbody radiation laws when heated. Electric stove burners similarly show a characteristic red glow that indicates their temperature. Incandescent light bulbs, though less common today, produce light through blackbody radiation from their heated filaments.
+
+Natural phenomena provide abundant examples of blackbody radiation in the environment. Molten lava, at temperatures around 1200K, emits visible radiation following blackbody principles. While not perfect blackbodies, flames approximate blackbody radiation in their emission spectra. Even our planet Earth acts as a blackbody radiator, emitting infrared radiation at an effective temperature of approximately 288K.
+
+Modern technology frequently employs principles of blackbody radiation. LED display manufacturers calibrate their screens' color output based on blackbody radiation curves. Digital cameras rely on color temperature settings derived from blackbody principles for proper white balance adjustment. In advanced manufacturing, 3D printing systems use blackbody radiation principles for precise temperature monitoring during metal printing processes.
+
+::: {.callout-note}
+## Color Temperature in Photography
+
+The concept of color temperature, derived from blackbody radiation, is fundamental in photography and lighting. Different light sources correspond to different blackbody temperatures: natural daylight approximates 5500K, while incandescent bulbs emit light equivalent to about 2700K, and candle flames produce light characteristic of roughly 1800K. Photographers use these color temperature values to adjust their camera's white balance for accurate color reproduction.
+:::
+
+These examples demonstrate how blackbody radiation principles appear in various aspects of science, technology, and daily life. Understanding these applications helps connect theoretical physics to practical experiences.

@@ -1,0 +1,697 @@
+---
+title: Electromagnetic Waves in Metals
+jupyter: python3
+format:
+  html:
+    code-fold: true
+crossref:
+  fig-title: Figure     # (default is "Figure")
+  tbl-title: Tbl     # (default is "Table")
+  title-delim: "—"   # (default is ":")
+  fig-prefix: "Figure"
+  eq-prefix: Eq.
+  chapters: true
+---
+
+```{python}
+# | echo: false
+## just for plotting later
+import numpy as np
+import matplotlib.pyplot as plt
+from time import sleep,time
+from ipycanvas import MultiCanvas, hold_canvas,Canvas
+import matplotlib as mpl
+import matplotlib.cm as cm
+
+
+plt.rcParams.update({'font.size': 10,
+                     'lines.linewidth': 1,
+                     'lines.markersize': 5,
+                     'axes.labelsize': 10,
+                     'axes.labelpad':0,
+                     'xtick.labelsize' : 9,
+                     'ytick.labelsize' : 9,
+                     'legend.fontsize' : 8,
+                     'contour.linewidth' : 1,
+                     'xtick.top' : True,
+                     'xtick.direction' : 'in',
+                     'ytick.right' : True,
+                     'ytick.direction' : 'in',
+                     'figure.figsize': (4, 3),
+                     'axes.titlesize':8,
+                     'figure.dpi': 150 })
+
+def get_size(w,h):
+    return((w/2.54,h/2.54))
+```
+
+Metals have free charges, which modify the propagation of light. Their influence is large and gives metals their characteristic reflection and color.
+In this case, we have to include the free charge density $\rho_f$ and the current density $\vec{j}$ in the Maxwell equations and derive the wave equation accordingly. Instead of modifying the wave equation, we would like to go a different way here. We would like to derive the dielectric function for metals based on a microscopic description, which is only approximate but captures some basic features.
+
+## Drude Model
+
+The model we would like to put forward is the Drude model. It considers the motion of a charge in the electromagnetic field of a wave. As compared to our previous attempts on bound electrons in atoms, there is no direct restoring force for the free charges in the metal. The equation of motion therefore looks as
+
+$$
+m_e\frac{d^2\vec{r}}{dt^2}+m_e\Gamma \frac{d\vec{r}}{dt}=e\vec{E}_0 e^{i\omega t}
+$$
+
+Here, the coefficient $\Gamma$ is given by
+
+$$
+\Gamma=\frac{v_f}{l}=\frac{1}{\tau}
+$$
+
+where $v_f$ is the Fermi velocity and $l$ is the mean free path electrons travel before colliding with a lattice site inside the metal. To obtain an expression for the refractive index, we use again the ansatz
+
+$$
+\vec{r}=\vec{r}_0 e^{i\omega t}
+$$
+
+from which we obtain an expression for $\vec{r}_0$. With his solution we can again calculate the polarization density and finally also the dielectric function
+
+$$
+\epsilon_r(\omega)=n^2=1-\frac{\omega_p^2}{\omega^2-i\Gamma \omega}
+$$
+
+with
+
+$$
+\omega_p=\sqrt{\frac{Ne^2}{\epsilon_0 m}}
+$$
+
+which is called the **plasma frequency**. It is a characteristic for each metal, since the density of free charges in the metal enters the equation. It is located in the UV region of the electromagnetic spectrum.
+
+
+| Parameter | Symbol | Gold Value | Silver Value | Copper Value | Units |
+|-----------|---------|------------|--------------|--------------|--------|
+| Free electron density | $N$ | 5.9 × 10²⁸ | 5.86 × 10²⁸ | 8.47 × 10²⁸ | m⁻³ |
+| Electron mass | $m_e$ | 9.109 × 10⁻³¹ | 9.109 × 10⁻³¹ | 9.109 × 10⁻³¹ | kg |
+| Elementary charge | e | 1.602 × 10⁻¹⁹ | 1.602 × 10⁻¹⁹ | 1.602 × 10⁻¹⁹ | C |
+| Resulting plasma frequency | $\omega_p$ | 13.8 × 10¹⁵ | 13.7 × 10¹⁵ | 16.5 × 10¹⁵ | rad/s |
+| Frequency | $f$ | 2.18 × 10¹⁵ | 2.18 × 10¹⁵ | 2.62 × 10¹⁵ | Hz |
+| Plasma wavelength | $\lambda_p$ | 138 | 138 | 114 | nm |
+
+ The complex refractive index $n$ is composed of two parts: the real part $n_r$ which describes the phase velocity of light in the material, and the imaginary part $\kappa$ (kappa) which describes the absorption. These are related by:
+
+$$
+n=n_r-i\kappa
+$$
+
+Since the dielectric function $\epsilon$ is equal to the square of the refractive index $n$, we can expand this relationship to separate the real and imaginary components:
+
+$$
+n^2=n_r^2-\kappa^2-2i n_r \kappa=\epsilon^{\prime}+i\epsilon^{\prime\prime}
+$$
+
+Here, $\epsilon^{\prime}$ represents the real part of the dielectric function, which determines how much polarization occurs in response to an applied electric field, while $\epsilon^{\prime\prime}$ represents the imaginary part, which determines how much energy is absorbed by the material. From the Drude model, we can express these components explicitly:
+
+$$
+\epsilon^{\prime}=n_r^2-\kappa^2=1-\frac{\tau^2 (\omega^2-\omega_p^2)}{1+\omega^2\tau^2}
+$$
+
+$$
+\epsilon^{\prime\prime}=2n_r\kappa=\frac{\omega_p^2\tau}{\omega(1+\omega^2\tau^2)}
+$$
+
+These equations directly connect the optical properties ($n_r$ and $\kappa$) to the physical parameters of the metal like the plasma frequency ωp and the relaxation time $\tau$. When $\epsilon^{\prime}$ is negative, which occurs below the plasma frequency, the metal reflects light strongly. When $\epsilon^{\prime\prime}$ is large, the metal absorbs light efficiently. Together, these components fully characterize how the metal interacts with electromagnetic radiation.
+
+
+```{python}
+# | code-fold: true
+# | label: fig-drude
+# | fig-align: center
+# | fig-cap: "Real (left) and imaginary part (right) of the dielectric function according to the Drude model. The dashed line in the left plot corresponds to the plasma frequency. The calculations are for Gold."
+
+omega_p_d=13.8e15
+gamma_d=1.075e14
+
+#wavelength range
+wavelength=np.arange(400,1000,1)
+
+
+def epsilon_d(omega,gamma,omega_p):
+    return(1-omega_p**2/(omega**2+1j*gamma*omega))
+
+#conversion from wavelength in angular frequency
+def freq(lam): # supply wavelength in nm
+    c=299792458 # speed of light m/s
+    return(2*np.pi*c/(lam*1e-9))
+
+
+#dielectric function, complex!
+epsilon=epsilon_d(freq(wavelength),gamma_d,omega_p_d)
+
+fig=plt.figure(figsize=get_size(12,6))
+plt.subplot(121)
+plt.plot(wavelength,np.real(epsilon),label=r'Re($\epsilon_{D}$)')
+plt.xlabel('wavelength [nm]')
+plt.ylabel(r'$\epsilon_{r,D}$')
+plt.legend()
+
+plt.subplot(122)
+plt.plot(wavelength,np.imag(epsilon),label=r'Im($\epsilon_{D}$)')
+plt.xlabel('wavelength [nm]')
+plt.ylabel(r'$\epsilon_{r,D}$')
+plt.legend()
+plt.tight_layout()
+plt.show()
+```
+The figure above shows the dielectric function for Gold as determined from the parameters $\omega_{p}=13.8\times 10^{15}\, \rm{s}^{-1}$ and $\Gamma=1.075\times 10^{14}\, \rm{s}^{-1}$. The real value of the dielectric function is negative over the whole visible range stating that there is no propagating wave inside the matal. It just becomes positive below the plasma frequency. The imaginary part increases continuously with the wavelength.
+
+### Conductivity
+
+Als we calculate the position $\vec{r}$ of the electrons in the oscillating electric field, we may also obtain its velocity, which helps us to calculate a new quantity, which is the conductivity $\sigma$ of the metal. This conductivity will be frequency dependent as well as the charges will not follow the electric field oscillations in the same way at different frequencies. The conductivity is following from Ohm's law, which is given by
+
+$$
+\vec{j}=\sigma \vec{E}=N e \vec{v}
+$$
+
+where we explicity wrote the current density on the right side. Following this relation, the conductivity is obtained as
+
+$$
+\sigma=\epsilon_0 \omega_p^2\frac{\tau(1+i\omega\tau)}{1+\omega^2\tau^2}
+$$
+
+from the Drude model and we may express the real and imaginary parts of the dielectric function also in relation to the conductivity by
+
+$$
+\epsilon^{\prime}=1-\frac{\mathcal{R}(\sigma)\tau}{\epsilon_0}
+$$
+
+$$
+\epsilon^{\prime\prime}=\frac{\mathcal{Im}(\sigma)}{\epsilon_0 \omega^2 \tau}
+$$
+
+which readily tells us, that we obtain information on the conductivity at high frequencies from optical measurements.
+
+
+## Optical Properties of Metals
+
+### Reflectivity of Metals
+
+The reflectivity of a metal is closely related to its dielectric function. The reflectivity $R$ of a metal can be calculated from the complex dielectric function $\epsilon$ using the Fresnel equations:
+
+$$
+R = \left|\frac{n - 1}{n + 1}\right|^2
+$$
+
+where $n = \sqrt{\epsilon}$ is the complex refractive index.
+
+
+The plot below shows the square of complex refractive index $n$ for gold according to the Drude model. Interestingly the square of the real part of the refractive index is negative below the plasma frequency. This means that the wave is evanescent and cannot propagate in the metal. This is the reason why metals are opaque in the visible range.
+
+```{python}
+# | code-fold: true
+# | label: fig-n-squared
+# | fig-align: center
+# | fig-cap: "Real and imaginary parts of n² for gold according to the Drude model. The dashed line indicates the plasma frequency."
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+def drude_epsilon(omega, omega_p, gamma):
+    """Calculate complex dielectric function using Drude model"""
+    return 1 - omega_p**2/(omega**2 - 1j*gamma*omega)
+
+# Parameters for Gold
+omega_p = 13.8e15  # plasma frequency
+gamma = 1.075e14   # damping constant
+
+# Wavelength range
+wavelength = np.linspace(10, 400, 1000)  # wavelength in nm
+c = 299792458  # speed of light in m/s
+omega = 2*np.pi*c/(wavelength*1e-9)  # angular frequency
+
+# Calculate n²
+n_squared = drude_epsilon(omega, omega_p, gamma)
+
+# Plot
+plt.figure(figsize=get_size(8, 6))
+plt.plot(wavelength, np.real(n_squared), 'b-', label=r'Re($n^2$)')
+plt.plot(wavelength, np.imag(n_squared), 'r--', label=r'Im($n^2$)')
+plt.xlabel('Wavelength (nm)')
+plt.ylabel(r'$n^2$')
+plt.legend()
+
+# Add plasma wavelength
+plasma_wavelength = 2*np.pi*c/omega_p * 1e9  # convert to nm
+plt.axvline(plasma_wavelength, color='gray', linestyle=':', alpha=0.5)
+plt.text(plasma_wavelength*1.1, 0-1, r'$\omega_p$', fontsize=10)
+
+
+#plt.axvspan(400, 750, color='yellow', alpha=0.1)
+#plt.text(575, plt.ylim()[0]+10, 'Visible', rotation=90)
+
+# Add zero line
+plt.axhline(y=0, color='k', linestyle='-', alpha=0.2)
+
+plt.tight_layout()
+plt.show()
+
+# Print some values
+#print("\nWavelength (nm) | Re(n²) | Im(n²)")
+#for i in range(0, len(wavelength), 200):
+#    print(f"{wavelength[i]:13.1f} | {np.real(n_squared)[i]:6.2f} | {np.imag(n_squared)[i]:6.2f}")
+```
+
+::: {#tbl-refindex}
+
+| Wavelength (nm) | Re(n²) | Im(n²) |
+|----------------|---------|---------|
+| 10.0           | 0.99    | -0.00   |
+| 88.1           | 0.58    | -0.00   |
+| 166.2          | -0.48   | -0.01   |
+| 244.2          | -2.20   | -0.04   |
+| 322.3          | -4.57   | -0.10   |
+
+: Real and imaginary components of the refractive index squared (n²) at different wavelengths
+:::
+
+From the square of the refractive index, we can calculate the reflectivity of the metal. The plot below shows the reflectivity of gold with and without damping. Without damping, the reflectivity is exactly 1 below the plasma frequency and drops sharply above it. The damping broadens the reflectivity curve and reduces the reflectivity below the plasma frequency.
+
+
+```{python}
+# | code-fold: true
+# | label: fig-reflectivity-damping
+# | fig-align: center
+# | fig-cap: "Comparison of metal reflectivity with and without damping. Without damping (γ = 0), the reflectivity is exactly 1 below the plasma frequency and drops sharply above it."
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+def drude_epsilon(omega, omega_p, gamma):
+    """Calculate complex dielectric function using Drude model"""
+    return 1 - omega_p**2/(omega**2 - 1j*gamma*omega)
+
+def reflectivity_from_epsilon(epsilon):
+    """Calculate reflectivity from complex dielectric function"""
+    n_complex = np.sqrt(epsilon)
+    r = (n_complex - 1)/(n_complex + 1)
+    return np.abs(r)**2
+
+# Parameters
+omega_p = 13.8e15  # plasma frequency
+gamma = 1.075e14   # damping constant
+
+# Frequency range
+wavelength = np.linspace(100, 1000, 1000)  # wavelength in nm
+c = 299792458  # speed of light in m/s
+omega = 2*np.pi*c/(wavelength*1e-9)  # angular frequency
+
+# Calculate reflectivity with and without damping
+R_with_damping = reflectivity_from_epsilon(drude_epsilon(omega, omega_p, gamma))
+R_no_damping = reflectivity_from_epsilon(drude_epsilon(omega, omega_p, 0))
+
+# Plot
+plt.figure(figsize=get_size(8, 6))
+plt.plot(wavelength, R_with_damping, 'b-', label='With damping')
+plt.plot(wavelength, R_no_damping, 'r--', label='Without damping')
+plt.xlabel('wavelength [nm]')
+plt.ylabel('reflectivity')
+plt.legend()
+
+# Add plasma wavelength
+plasma_wavelength = 2*np.pi*c/omega_p * 1e9  # convert to nm
+plt.axvline(plasma_wavelength, color='gray', linestyle=':', alpha=0.5)
+plt.text(plasma_wavelength*1.1, 0.5, r'$\omega_p$', fontsize=10)
+
+# Add visible range
+plt.axvspan(400, 750, color='yellow', alpha=0.1)
+plt.text(575, plt.ylim()[0]+0.4, 'Visible', rotation=90)
+
+plt.tight_layout()
+plt.show()
+
+# Print some values
+#print("\nWavelength (nm) | R (with damping) | R (no damping)")
+#for i in range(0, len(wavelength), 200):
+#    print(f"{wavelength[i]:13.1f} | {R_with_damping[i]:15.3f} | {R_no_damping[i]:12.3f}")
+```
+::: {#tbl-reflectivity}
+
+| Wavelength (nm) | R (with damping) | R (no damping) |
+|----------------|------------------|----------------|
+| 100.0          | 0.036            | 0.036          |
+| 280.2          | 0.982            | 1.000          |
+| 460.4          | 0.984            | 1.000          |
+| 640.5          | 0.984            | 1.000          |
+| 820.7          | 0.984            | 1.000          |
+
+: Comparison of reflectivity (R) values with and without damping effects at different wavelengths
+:::
+
+### Dispersion Relation in Metals
+
+To understand how electromagnetic waves propagate in metals, we need to derive the dispersion relation. Starting from Maxwell's equations and using the dielectric function we derived from the Drude model, we can obtain the wave equation in metals:
+
+$$
+\nabla^2\vec{E}-\frac{1}{c^2}\frac{\partial^2\vec{E}}{\partial t^2}=\mu_0\frac{\partial\vec{j}}{\partial t}
+$$
+
+For a plane wave solution $\vec{E}=\vec{E}_0e^{i(kx-\omega t)}$, and using the relation between current density and electric field through conductivity $\vec{j}=\sigma\vec{E}$, we get:
+
+$$
+-k^2\vec{E}+\frac{\omega^2}{c^2}\vec{E}+i\omega\mu_0\sigma\vec{E}=0
+$$
+
+This leads to the dispersion relation:
+
+$$
+k^2=\frac{\omega^2}{c^2}\left(1+i\frac{\sigma}{\epsilon_0\omega}\right)=\frac{\omega^2}{c^2}\epsilon_r(\omega)
+$$
+
+Using the Drude model expression for $\epsilon_r(\omega)$, we can write:
+
+$$
+k^2=\frac{\omega^2}{c^2}\left(1-\frac{\omega_p^2}{\omega^2-i\Gamma\omega}\right)
+$$
+
+This dispersion relation shows two important regimes:
+
+1. For $\omega < \omega_p$: The wave vector $k$ becomes imaginary, meaning the waves are evanescent and decay exponentially into the metal. This explains why metals are reflective at visible frequencies.
+
+2. For $\omega > \omega_p$: The wave vector $k$ is real, and electromagnetic waves can propagate through the metal. This typically occurs in the ultraviolet region for most metals.
+
+The penetration depth (skin depth) $\delta$ of the electromagnetic wave into the metal can be calculated from the imaginary part of $k$:
+
+$$
+\delta=\frac{1}{\text{Im}(k)}
+$$
+
+This skin depth is typically on the order of tens of nanometers in the visible region, explaining why metals are opaque even in thin films.
+
+
+```{python}
+# | code-fold: true
+# | label: fig-dispersion
+# | fig-align: center
+# | fig-cap: "Dispersion relation for electromagnetic waves in a metal according to the Drude model. The light line (dashed) represents the dispersion in vacuum. Note how below the plasma frequency, no propagating waves exist in the metal."
+
+def k_metal(omega, omega_p, gamma):
+    """Calculate complex wave vector in metal using Drude model"""
+    eps_r = 1 - omega_p**2/(omega**2 - 1j*gamma*omega)
+    return omega/c * np.sqrt(eps_r)
+
+# Constants
+c = 299792458  # speed of light in m/s
+omega_p = 13.8e15  # plasma frequency for Gold
+gamma = 1.075e14   # damping constant for Gold
+
+# Frequency range (normalized to plasma frequency)
+omega_range = np.linspace(0.1, 2*omega_p, 1000)
+
+# Calculate wave vector
+k = k_metal(omega_range, omega_p, gamma)
+
+# Create plot
+plt.figure(figsize=get_size(8,6))
+plt.plot(np.real(k)*c/omega_p, omega_range/omega_p, 'b-', label='Real(k)')
+plt.plot(np.imag(k)*c/omega_p, omega_range/omega_p, 'r-', label='Imag(k)')
+plt.plot(omega_range/omega_p, omega_range/omega_p, 'k--', label='Light line')
+
+plt.axhline(y=1, color='gray', linestyle=':', alpha=0.5)
+plt.text(0.5, 1.05, r'$\omega_p$', fontsize=10)
+
+plt.xlabel(r'$kc/\omega_p$')
+plt.ylabel(r'$\omega/\omega_p$')
+plt.legend()
+plt.grid(True, alpha=0.3)
+plt.xlim(-2, 2)
+plt.ylim(0, 2)
+plt.tight_layout()
+plt.show()
+```
+
+The figure above shows the dispersion relation for electromagnetic waves in a metal according to the Drude model. Several important features can be observed:
+
+1. Below the plasma frequency ($\omega < \omega_p$), the real part of $k$ is zero while the imaginary part is large, indicating evanescent waves that decay exponentially into the metal.
+
+2. Above the plasma frequency ($\omega > \omega_p$), the real part of $k$ becomes dominant, allowing wave propagation through the metal.
+
+3. The light line (dashed) represents the dispersion relation in vacuum ($\omega = ck$). The metal's dispersion relation deviates significantly from this line, especially near and below the plasma frequency.
+
+4. The presence of damping ($\gamma$) leads to a smooth transition around $\omega_p$ rather than an abrupt change.
+
+This behavior explains why metals are highly reflective at frequencies below the plasma frequency (typically in the visible range) but can become transparent at higher frequencies in the ultraviolet region.
+
+
+In the simple interpretation of the Drude model, we often say that below the plasma frequency, waves cannot propagate in the metal because the dielectric function is negative. However, this is only strictly true when we ignore damping ($\Gamma = 0$).
+
+When we include damping ($\Gamma \neq 0$), the dielectric function becomes complex:
+
+$$
+\epsilon_r(\omega)=1-\frac{\omega_p^2}{\omega^2-i\Gamma \omega}
+$$
+
+In the low-frequency limit ($\omega  << \omega_p), this becomes:
+
+$$
+\epsilon_r(\omega) \approx 1-\frac{\omega_p^2}{-i\Gamma \omega} \approx -\frac{\omega_p^2}{-i\Gamma \omega} = \frac{\omega_p^2}{\Gamma \omega}i
+$$
+
+The wave vector is then:
+
+$$
+k = \frac{\omega}{c}\sqrt{\epsilon_r} \approx \frac{\omega}{c}\sqrt{\frac{\omega_p^2}{\Gamma \omega}i} = \frac{\omega}{c}(1+i)\sqrt{\frac{\omega_p^2}{2\Gamma \omega}}
+$$
+
+This shows that both the real and imaginary parts of $k$ are non-zero and equal in magnitude in this limit. This represents a heavily damped wave that can propagate a short distance into the metal.
+
+The wave in the metal has the form:
+
+$$
+E(x) = E_0 e^{ikx} = E_0 e^{i\text{Re}(k)x}e^{-\text{Im}(k)x}
+$$
+
+The skin depth is then:
+
+$$
+\delta = \frac{1}{\text{Im}(k)} = \frac{c}{\omega}\sqrt{\frac{2\Gamma \omega}{\omega_p^2}}
+$$
+
+
+```{python}
+# | code-fold: true
+# | label: fig-skin-depth-corrected
+# | fig-align: center
+# | fig-cap: "Skin depth as a function of frequency for a metal (Gold parameters). The dashed line shows the typical one over square root of frequency behavior at low frequencies."
+
+def skin_depth_full(omega, omega_p, gamma):
+
+    eps_r = 1 - omega_p**2/(omega**2 - 1j*gamma*omega)
+    k = omega/c * np.sqrt(eps_r)
+    return 1/abs(np.imag(k))  # Using abs to ensure positive values
+
+def skin_depth_low(omega, omega_p, gamma):
+    return c/omega * np.sqrt(2*gamma*omega/omega_p**2)
+
+c = 299792458
+omega_p = 13.8e15
+gamma = 1.075e14
+
+freq = np.logspace(12, 16, 1000)  # Hz
+omega = 2*np.pi*freq
+
+delta_full = skin_depth_full(omega, omega_p, gamma)
+delta_low = skin_depth_low(omega, omega_p, gamma)
+
+plt.figure(figsize=get_size(8,6))
+
+#print("Sample values:")
+#print("freq (Hz) | delta_full (nm) | delta_low (nm)")
+#for i in range(0, len(freq), 200):
+#    print(f"{freq[i]:.2e} | {delta_full[i]*1e9:.2f} | {delta_low[i]*1e9:.2f}")
+
+plt.loglog(freq, delta_full*1e9, 'b-', label='Full model')
+plt.loglog(freq, delta_low*1e9, 'r--', label='Low freq. approx.')
+
+plt.xlabel(r'frequency $\omega$ [Hz]')
+plt.ylabel('skin depth [nm]')
+plt.legend()
+
+# Add vertical line at plasma frequency
+plt.axvline(omega_p/(2*np.pi), color='gray', linestyle=':', alpha=0.5)
+plt.text(omega_p/(2*np.pi)*1.1, 4, r'$\omega_p$', fontsize=10)
+
+# Add frequency markers for visible light
+plt.axvspan(4e14, 8e14, color='yellow', alpha=0.1)
+plt.text(5e14, plt.ylim()[0]*50, 'Visible', rotation=90)
+
+plt.ylim(1, 1e4)
+plt.tight_layout()
+plt.show()
+```
+::: {#tbl-penetration}
+
+| freq (Hz)  | delta_full (nm) | delta_low (nm) |
+|------------|-----------------|----------------|
+| 1.00e+12   | 123.63         | 127.08         |
+| 6.32e+12   | 44.97          | 50.54          |
+| 4.00e+13   | 23.13          | 20.10          |
+| 2.53e+14   | 21.91          | 8.00           |
+| 1.60e+15   | 31.64          | 3.18           |
+
+: Penetration depth (delta) comparison between full model and low frequency approximation at different frequencies
+:::
+
+
+
+### Skin Depth
+
+At low frequencies, the skin depth can be approximated as:
+
+$$
+\delta \approx \sqrt{\frac{2}{\omega_p^2\Gamma}}\frac{c}{\sqrt{\omega}} = \sqrt{\frac{2}{\sigma_0\mu_0\omega}}
+$$
+
+where $\sigma_0 = \frac{\omega_p^2\epsilon_0}{\Gamma}$ is the DC conductivity. This shows the characteristic $\delta \propto 1/\sqrt{\omega}$ behavior.
+
+Some important observations from the plot:
+
+1. At low frequencies (below the plasma frequency), the skin depth follows the $1/\sqrt{\omega}$ dependence
+2. For visible light ($\omega \approx 10^{14}-10^{15} Hz$), the skin depth is typically tens of nanometers
+3. Above the plasma frequency, the skin depth increases rapidly as the metal becomes transparent
+4. For Gold at room temperature and visible frequencies, the skin depth is approximately 20-30 nm
+
+This small skin depth explains why:
+
+- Thin metal films (>100 nm) are opaque
+- Surface effects dominate in metals at optical frequencies
+- Metal nanoparticles can support localized surface plasmons
+- Why RF shielding requires only thin metal layers
+
+The skin effect is crucial in many applications:
+
+- RF and microwave engineering
+- Electromagnetic shielding
+- Design of electrical conductors for AC applications
+- Plasmonic devices
+
+
+## Plasmonics
+
+One of the exciting fields of research in modern optics is plasmonics. Plasmons are collective oscillations of free electrons in a metal that can interact strongly with light. These interactions lead to fascinating phenomena, such as enhanced light-matter interactions, subwavelength imaging, and sensing applications.
+
+### Localized Surface Plasmons
+
+In metal nanoparticles, the confined electron oscillations create localized surface plasmons (LSPs). These are non-propagating excitations of the conduction electrons coupled to the electromagnetic field. The resonance condition depends strongly on the particle size, shape, and dielectric environment. A striking demonstration of LSPs can be observed in solutions of gold nanoparticles, where the interaction between light and the collective electron oscillations creates vivid colors.
+
+::: {#fig-np-gold}
+![](img/gold_np.png){width=70%}
+
+Backscattering and transmission through a 65 nm gold nanoparticle solution. The backscattering is green due to the surface plasmon resonance of the conduction band electrons, while the transmission is red, since the green light is removed by scattering.
+:::
+
+### Surface Plasmon Polaritons
+
+Surface plasmon polaritons (SPPs) are electromagnetic excitations propagating along a metal-dielectric interface. These waves result from the coupling of the electromagnetic fields to oscillations of the conductor's electron plasma. The dispersion relation for SPPs is given by:
+
+$$
+k_{SPP} = \frac{\omega}{c}\sqrt{\frac{\epsilon_m\epsilon_d}{\epsilon_m + \epsilon_d}}
+$$
+
+where $\epsilon_m$ and $\epsilon_d$ are the dielectric functions of the metal and dielectric, respectively. This unique dispersion relation allows SPPs to concentrate light into subwavelength volumes, enabling applications in sensing, waveguiding, and imaging beyond the diffraction limit.
+
+#### Surface Plasmon Polariton Sensor
+
+A surface plasmon polariton sensor is a device that exploits the sensitivity of SPPs to changes in the local refractive index. By monitoring the resonance condition of the SPPs, one can detect minute changes in the dielectric environment near the metal surface. This principle forms the basis of label-free biosensing, where the binding of biomolecules to the metal surface can be detected in real-time.
+
+::: {#fig-sppsensor}
+![](img/excitation.png){width=70%}
+
+Two different excitation schemes of surface plasmon polaritons for sensing applications. The prism coupling method (left) uses total internal reflection to excite SPPs, while the Kretschmann configuration (right) involves a thin metal film on a dielectric substrate.
+:::
+
+To observe SPPs, one can use a prism coupling method or the Kretschmann configuration. In both cases, the resonance condition is sensitive to changes in the refractive index near the metal surface, making SPP sensors highly versatile and sensitive.
+
+```{python}
+# | code-fold: true
+# | label: fig-spp-reflectivity-ag-au
+# | fig-align: center
+# | fig-cap: "Comparison of reflectivity versus incident angle for 50 nm gold and silver films on glass at 532 nm. Silver shows a sharper and deeper resonance due to lower losses."
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+def fresnel_rp(theta, eps1, eps2, eps3, d, k0):
+    kz1 = np.sqrt(eps1 * k0**2 - (np.sqrt(eps1) * k0 * np.sin(theta))**2 + 0j)
+    kz2 = np.sqrt(eps2 * k0**2 - (np.sqrt(eps1) * k0 * np.sin(theta))**2 + 0j)
+    kz3 = np.sqrt(eps3 * k0**2 - (np.sqrt(eps1) * k0 * np.sin(theta))**2 + 0j)
+
+    r12 = (eps2 * kz1 - eps1 * kz2)/(eps2 * kz1 + eps1 * kz2)
+    r23 = (eps3 * kz2 - eps2 * kz3)/(eps3 * kz2 + eps2 * kz3)
+
+    numerator = r12 + r23 * np.exp(2j * kz2 * d)
+    denominator = 1 + r12 * r23 * np.exp(2j * kz2 * d)
+
+    return numerator/denominator
+
+# Parameters
+wavelength = 532e-9  # green laser wavelength
+k0 = 2*np.pi/wavelength
+
+# Layer properties
+eps_glass = 2.25  # glass prism
+eps_air = 1.0    # air
+d = 50e-9        # 50 nm film thickness
+
+# Dielectric constants at 532 nm
+eps_gold = -4.8 + 2.4j   # gold
+eps_silver = -11.7 + 0.4j  # silver
+
+
+theta_deg = np.linspace(0, 90, 1000)
+theta_rad = theta_deg * np.pi/180
+
+Rp_au = np.abs(fresnel_rp(theta_rad, eps_glass, eps_gold, eps_air, d, k0))**2
+Rp_ag = np.abs(fresnel_rp(theta_rad, eps_glass, eps_silver, eps_air, d, k0))**2
+
+plt.figure(figsize=get_size(8,6))
+plt.plot(theta_deg, Rp_au, 'g-', label='Gold')
+plt.plot(theta_deg, Rp_ag, 'b-', label='Silver')
+
+plt.xlabel(r'incident angle $theta$ [°]')
+plt.ylabel('reflectivity R')
+plt.legend()
+
+theta_c = np.arcsin(np.sqrt(eps_air/eps_glass)) * 180/np.pi
+plt.axvline(theta_c, color='gray', linestyle=':', alpha=0.5)
+plt.text(theta_c-3, 0.4, r'$\theta_c$', fontsize=10)
+
+spr_angle_au = theta_deg[np.argmin(Rp_au)]
+spr_angle_ag = theta_deg[np.argmin(Rp_ag)]
+plt.plot(spr_angle_au, np.min(Rp_au), 'go')
+plt.plot(spr_angle_ag, np.min(Rp_ag), 'bo')
+plt.text(spr_angle_au+1, 0.4, f'Au: {spr_angle_au:.1f}°', fontsize=10)
+plt.text(spr_angle_ag-12, 0.1, f'Ag: {spr_angle_ag:.1f}°', fontsize=10)
+
+plt.ylim(0, 1)
+plt.xlim(30,70)
+plt.tight_layout()
+plt.show()
+```
+::: {#tbl-spr-metals}
+
+| Metal  | SPR Angle (°) | Minimum Reflectivity | Dielectric Constant (ε) at 532 nm |
+|--------|---------------|---------------------|----------------------------------|
+| Gold   | 48.6          | 0.107               | -4.8 + 2.4i                     |
+| Silver | 44.2          | 0.044               | -11.7 + 0.4i                    |
+
+: Comparison of surface plasmon resonance (SPR) characteristics for gold and silver films at 532 nm wavelength
+:::
+
+
+### Historical and Modern Applications
+
+The use of plasmonic effects in materials dates back to ancient times, though the underlying physics was not understood. Perhaps the most famous example is the Lycurgus Cup from the 4th century AD. This remarkable artifact appears green in reflected light but red in transmitted light due to the presence of gold and silver nanoparticles embedded in the glass matrix.
+
+::: {#fig-lycurgus}
+![](img/lycurgus.png){width=70%}
+
+The Lycurgus Cup demonstrates the dramatic optical effects of metallic nanoparticles. When viewed in reflected light (left), the cup appears green, while in transmitted light (right), it glows ruby red due to the surface plasmon resonance of embedded gold and silver nanoparticles.
+:::
+
+Modern applications of plasmonics have expanded far beyond decorative uses. Surface plasmon resonance sensors enable highly sensitive biochemical detection by monitoring changes in the local refractive index near metal surfaces. Plasmonic waveguides can guide light in dimensions far below the diffraction limit, promising applications in next-generation optical computing and telecommunications. In medicine, plasmonic nanoparticles are being developed for targeted therapy and diagnostic imaging.
+
+The field of metamaterials leverages plasmonic effects to create artificial materials with properties not found in nature, such as negative refractive indices and perfect lensing. These developments continue to push the boundaries of what's possible in optics and photonics, leading to innovations in solar energy harvesting, quantum information processing, and ultrasensitive chemical detection.

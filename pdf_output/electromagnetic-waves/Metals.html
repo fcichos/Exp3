@@ -1,0 +1,1490 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.34">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>31&nbsp; Electromagnetic Waves in Metals – Experimental Physics 3 Course on Optics and Quantum Mechanics</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../electromagnetic-waves/Anisotropic Materials.html" rel="next">
+<link href="../electromagnetic-waves/Fresnel Equations.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-485d01fc63b59abcd3ee1bf1e8e2748d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../electromagnetic-waves/Electromagnetic Optics.html">Electromagnetic Optics</a></li><li class="breadcrumb-item"><a href="../electromagnetic-waves/Metals.html"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Electromagnetic Waves in Metals</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Experimental Physics 3 Course on Optics and Quantum Mechanics</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Experimental Physics 3</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Geometrical Optics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Geometrical Optics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/reflection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Reflection</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/refraction-total-internal-reflection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Refraction and Total Internal Reflection</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Optical Elements I.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Optical Elements Part I</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Optical Elements II.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Optical Elements Part II</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Optical Elements III.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Optical Elements Part III</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Eye.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Optical Instruments</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Magnifying Glass.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Optical Instruments</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Microscope.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Optical Instruments</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Telescope.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Telescopes</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Rainbow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Rainbow</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Imaging Errors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Imaging Errors</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Wave Optics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Wave Optics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Wave Optics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Double Slit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Double Slit Interference</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Thin Film Interference.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Thin Film Interference</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/MultiWave Interference.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Multiple Wave Interference</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/FabryPerot.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Fabry Perot Interferometer</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Diffraction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Diffraction</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Diffraction2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Diffraction in Applications</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Fresnel Zones.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Fresnel Zones</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Diffraction Integral.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Diffraction Integral</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Interferometers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Interferometers and other Coherence Applications</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Electromagnetic Optics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Electromagnetic Optics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Electromagnetic Optics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Polarization of EM Waves.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Polarization of EM Waves</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Energy Transport.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Energy Transport and Momentum Transport of EM Waves</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/EM Waves in Matter.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Electromagnetic Waves in Matter</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Dispersion and Absorption.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Dispersion &amp; Absorption</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Reflection and Refraction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Reflection and Refraction of Electromagnetic Waves</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Fresnel Equations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Fresnel Equations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Metals.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Electromagnetic Waves in Metals</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Anisotropic Materials.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Anisotropic Materials</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Optical Activity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Optical Activity and Rotatory Dispersion</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Dipole Radiation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Dipole Radiation</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Quantum Mechanics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Structure_of_matter.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">The Structure of Matter - Historical Experiments</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Particle_Nature_of_Light.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Particle Nature of Light</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Black_Body_Radiation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Black Body Radiation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Wave_character_of_particles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">The Wave Character of Particles</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Matter_waves.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Matter Waves</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Heisenbergs_uncertainty_relation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">Heisenbergs Uncertainty Relation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Structure_of_atoms.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">The Structure of Atoms and the Bohr Model</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Schroedinger_equation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">The Schrödinger Equation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/potential_barrier.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">Potential barriers and wells</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/harmonic_oscillator.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">The harmonic oscillator</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/parametric_dc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">Parametric Downconversion</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Spherical_potential.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">Angular Momentum and Spherical Potentials</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Qzeno.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">The Quantum Zeno Effect</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/hydrogen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">48</span>&nbsp; <span class="chapter-title">Towards the Hydrogen Atom</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#drude-model" id="toc-drude-model" class="nav-link active" data-scroll-target="#drude-model"><span class="header-section-number">31.1</span> Drude Model</a>
+  <ul class="collapse">
+  <li><a href="#conductivity" id="toc-conductivity" class="nav-link" data-scroll-target="#conductivity"><span class="header-section-number">31.1.1</span> Conductivity</a></li>
+  </ul></li>
+  <li><a href="#optical-properties-of-metals" id="toc-optical-properties-of-metals" class="nav-link" data-scroll-target="#optical-properties-of-metals"><span class="header-section-number">31.2</span> Optical Properties of Metals</a>
+  <ul class="collapse">
+  <li><a href="#reflectivity-of-metals" id="toc-reflectivity-of-metals" class="nav-link" data-scroll-target="#reflectivity-of-metals"><span class="header-section-number">31.2.1</span> Reflectivity of Metals</a></li>
+  <li><a href="#dispersion-relation-in-metals" id="toc-dispersion-relation-in-metals" class="nav-link" data-scroll-target="#dispersion-relation-in-metals"><span class="header-section-number">31.2.2</span> Dispersion Relation in Metals</a></li>
+  <li><a href="#skin-depth" id="toc-skin-depth" class="nav-link" data-scroll-target="#skin-depth"><span class="header-section-number">31.2.3</span> Skin Depth</a></li>
+  </ul></li>
+  <li><a href="#plasmonics" id="toc-plasmonics" class="nav-link" data-scroll-target="#plasmonics"><span class="header-section-number">31.3</span> Plasmonics</a>
+  <ul class="collapse">
+  <li><a href="#localized-surface-plasmons" id="toc-localized-surface-plasmons" class="nav-link" data-scroll-target="#localized-surface-plasmons"><span class="header-section-number">31.3.1</span> Localized Surface Plasmons</a></li>
+  <li><a href="#surface-plasmon-polaritons" id="toc-surface-plasmon-polaritons" class="nav-link" data-scroll-target="#surface-plasmon-polaritons"><span class="header-section-number">31.3.2</span> Surface Plasmon Polaritons</a></li>
+  <li><a href="#historical-and-modern-applications" id="toc-historical-and-modern-applications" class="nav-link" data-scroll-target="#historical-and-modern-applications"><span class="header-section-number">31.3.3</span> Historical and Modern Applications</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../electromagnetic-waves/Electromagnetic Optics.html">Electromagnetic Optics</a></li><li class="breadcrumb-item"><a href="../electromagnetic-waves/Metals.html"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Electromagnetic Waves in Metals</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Electromagnetic Waves in Metals</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Metals have free charges, which modify the propagation of light. Their influence is large and gives metals their characteristic reflection and color. In this case, we have to include the free charge density <span class="math inline">\(\rho_f\)</span> and the current density <span class="math inline">\(\vec{j}\)</span> in the Maxwell equations and derive the wave equation accordingly. Instead of modifying the wave equation, we would like to go a different way here. We would like to derive the dielectric function for metals based on a microscopic description, which is only approximate but captures some basic features.</p>
+<section id="drude-model" class="level2" data-number="31.1">
+<h2 data-number="31.1" class="anchored" data-anchor-id="drude-model"><span class="header-section-number">31.1</span> Drude Model</h2>
+<p>The model we would like to put forward is the Drude model. It considers the motion of a charge in the electromagnetic field of a wave. As compared to our previous attempts on bound electrons in atoms, there is no direct restoring force for the free charges in the metal. The equation of motion therefore looks as</p>
+<p><span class="math display">\[
+m_e\frac{d^2\vec{r}}{dt^2}+m_e\Gamma \frac{d\vec{r}}{dt}=e\vec{E}_0 e^{i\omega t}
+\]</span></p>
+<p>Here, the coefficient <span class="math inline">\(\Gamma\)</span> is given by</p>
+<p><span class="math display">\[
+\Gamma=\frac{v_f}{l}=\frac{1}{\tau}
+\]</span></p>
+<p>where <span class="math inline">\(v_f\)</span> is the Fermi velocity and <span class="math inline">\(l\)</span> is the mean free path electrons travel before colliding with a lattice site inside the metal. To obtain an expression for the refractive index, we use again the ansatz</p>
+<p><span class="math display">\[
+\vec{r}=\vec{r}_0 e^{i\omega t}
+\]</span></p>
+<p>from which we obtain an expression for <span class="math inline">\(\vec{r}_0\)</span>. With his solution we can again calculate the polarization density and finally also the dielectric function</p>
+<p><span class="math display">\[
+\epsilon_r(\omega)=n^2=1-\frac{\omega_p^2}{\omega^2-i\Gamma \omega}
+\]</span></p>
+<p>with</p>
+<p><span class="math display">\[
+\omega_p=\sqrt{\frac{Ne^2}{\epsilon_0 m}}
+\]</span></p>
+<p>which is called the <strong>plasma frequency</strong>. It is a characteristic for each metal, since the density of free charges in the metal enters the equation. It is located in the UV region of the electromagnetic spectrum.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 13%">
+<col style="width: 17%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 11%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Parameter</th>
+<th>Symbol</th>
+<th>Gold Value</th>
+<th>Silver Value</th>
+<th>Copper Value</th>
+<th>Units</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Free electron density</td>
+<td><span class="math inline">\(N\)</span></td>
+<td>5.9 × 10²⁸</td>
+<td>5.86 × 10²⁸</td>
+<td>8.47 × 10²⁸</td>
+<td>m⁻³</td>
+</tr>
+<tr class="even">
+<td>Electron mass</td>
+<td><span class="math inline">\(m_e\)</span></td>
+<td>9.109 × 10⁻³¹</td>
+<td>9.109 × 10⁻³¹</td>
+<td>9.109 × 10⁻³¹</td>
+<td>kg</td>
+</tr>
+<tr class="odd">
+<td>Elementary charge</td>
+<td>e</td>
+<td>1.602 × 10⁻¹⁹</td>
+<td>1.602 × 10⁻¹⁹</td>
+<td>1.602 × 10⁻¹⁹</td>
+<td>C</td>
+</tr>
+<tr class="even">
+<td>Resulting plasma frequency</td>
+<td><span class="math inline">\(\omega_p\)</span></td>
+<td>13.8 × 10¹⁵</td>
+<td>13.7 × 10¹⁵</td>
+<td>16.5 × 10¹⁵</td>
+<td>rad/s</td>
+</tr>
+<tr class="odd">
+<td>Frequency</td>
+<td><span class="math inline">\(f\)</span></td>
+<td>2.18 × 10¹⁵</td>
+<td>2.18 × 10¹⁵</td>
+<td>2.62 × 10¹⁵</td>
+<td>Hz</td>
+</tr>
+<tr class="even">
+<td>Plasma wavelength</td>
+<td><span class="math inline">\(\lambda_p\)</span></td>
+<td>138</td>
+<td>138</td>
+<td>114</td>
+<td>nm</td>
+</tr>
+</tbody>
+</table>
+<p>The complex refractive index <span class="math inline">\(n\)</span> is composed of two parts: the real part <span class="math inline">\(n_r\)</span> which describes the phase velocity of light in the material, and the imaginary part <span class="math inline">\(\kappa\)</span> (kappa) which describes the absorption. These are related by:</p>
+<p><span class="math display">\[
+n=n_r-i\kappa
+\]</span></p>
+<p>Since the dielectric function <span class="math inline">\(\epsilon\)</span> is equal to the square of the refractive index <span class="math inline">\(n\)</span>, we can expand this relationship to separate the real and imaginary components:</p>
+<p><span class="math display">\[
+n^2=n_r^2-\kappa^2-2i n_r \kappa=\epsilon^{\prime}+i\epsilon^{\prime\prime}
+\]</span></p>
+<p>Here, <span class="math inline">\(\epsilon^{\prime}\)</span> represents the real part of the dielectric function, which determines how much polarization occurs in response to an applied electric field, while <span class="math inline">\(\epsilon^{\prime\prime}\)</span> represents the imaginary part, which determines how much energy is absorbed by the material. From the Drude model, we can express these components explicitly:</p>
+<p><span class="math display">\[
+\epsilon^{\prime}=n_r^2-\kappa^2=1-\frac{\tau^2 (\omega^2-\omega_p^2)}{1+\omega^2\tau^2}
+\]</span></p>
+<p><span class="math display">\[
+\epsilon^{\prime\prime}=2n_r\kappa=\frac{\omega_p^2\tau}{\omega(1+\omega^2\tau^2)}
+\]</span></p>
+<p>These equations directly connect the optical properties (<span class="math inline">\(n_r\)</span> and <span class="math inline">\(\kappa\)</span>) to the physical parameters of the metal like the plasma frequency ωp and the relaxation time <span class="math inline">\(\tau\)</span>. When <span class="math inline">\(\epsilon^{\prime}\)</span> is negative, which occurs below the plasma frequency, the metal reflects light strongly. When <span class="math inline">\(\epsilon^{\prime\prime}\)</span> is large, the metal absorbs light efficiently. Together, these components fully characterize how the metal interacts with electromagnetic radiation.</p>
+<div id="cell-fig-drude" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display">
+<div id="fig-drude" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-drude-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Metals_files/figure-html/fig-drude-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="692" height="339">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-drude-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;31.1— Real (left) and imaginary part (right) of the dielectric function according to the Drude model. The dashed line in the left plot corresponds to the plasma frequency. The calculations are for Gold.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The figure above shows the dielectric function for Gold as determined from the parameters <span class="math inline">\(\omega_{p}=13.8\times 10^{15}\, \rm{s}^{-1}\)</span> and <span class="math inline">\(\Gamma=1.075\times 10^{14}\, \rm{s}^{-1}\)</span>. The real value of the dielectric function is negative over the whole visible range stating that there is no propagating wave inside the matal. It just becomes positive below the plasma frequency. The imaginary part increases continuously with the wavelength.</p>
+<section id="conductivity" class="level3" data-number="31.1.1">
+<h3 data-number="31.1.1" class="anchored" data-anchor-id="conductivity"><span class="header-section-number">31.1.1</span> Conductivity</h3>
+<p>Als we calculate the position <span class="math inline">\(\vec{r}\)</span> of the electrons in the oscillating electric field, we may also obtain its velocity, which helps us to calculate a new quantity, which is the conductivity <span class="math inline">\(\sigma\)</span> of the metal. This conductivity will be frequency dependent as well as the charges will not follow the electric field oscillations in the same way at different frequencies. The conductivity is following from Ohm’s law, which is given by</p>
+<p><span class="math display">\[
+\vec{j}=\sigma \vec{E}=N e \vec{v}
+\]</span></p>
+<p>where we explicity wrote the current density on the right side. Following this relation, the conductivity is obtained as</p>
+<p><span class="math display">\[
+\sigma=\epsilon_0 \omega_p^2\frac{\tau(1+i\omega\tau)}{1+\omega^2\tau^2}
+\]</span></p>
+<p>from the Drude model and we may express the real and imaginary parts of the dielectric function also in relation to the conductivity by</p>
+<p><span class="math display">\[
+\epsilon^{\prime}=1-\frac{\mathcal{R}(\sigma)\tau}{\epsilon_0}
+\]</span></p>
+<p><span class="math display">\[
+\epsilon^{\prime\prime}=\frac{\mathcal{Im}(\sigma)}{\epsilon_0 \omega^2 \tau}
+\]</span></p>
+<p>which readily tells us, that we obtain information on the conductivity at high frequencies from optical measurements.</p>
+</section>
+</section>
+<section id="optical-properties-of-metals" class="level2" data-number="31.2">
+<h2 data-number="31.2" class="anchored" data-anchor-id="optical-properties-of-metals"><span class="header-section-number">31.2</span> Optical Properties of Metals</h2>
+<section id="reflectivity-of-metals" class="level3" data-number="31.2.1">
+<h3 data-number="31.2.1" class="anchored" data-anchor-id="reflectivity-of-metals"><span class="header-section-number">31.2.1</span> Reflectivity of Metals</h3>
+<p>The reflectivity of a metal is closely related to its dielectric function. The reflectivity <span class="math inline">\(R\)</span> of a metal can be calculated from the complex dielectric function <span class="math inline">\(\epsilon\)</span> using the Fresnel equations:</p>
+<p><span class="math display">\[
+R = \left|\frac{n - 1}{n + 1}\right|^2
+\]</span></p>
+<p>where <span class="math inline">\(n = \sqrt{\epsilon}\)</span> is the complex refractive index.</p>
+<p>The plot below shows the square of complex refractive index <span class="math inline">\(n\)</span> for gold according to the Drude model. Interestingly the square of the real part of the refractive index is negative below the plasma frequency. This means that the wave is evanescent and cannot propagate in the metal. This is the reason why metals are opaque in the visible range.</p>
+<div id="cell-fig-n-squared" class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display">
+<div id="fig-n-squared" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-n-squared-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Metals_files/figure-html/fig-n-squared-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="453" height="339">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-n-squared-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;31.2— Real and imaginary parts of n² for gold according to the Drude model. The dashed line indicates the plasma frequency.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div id="tbl-refindex" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-refindex-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tbl&nbsp;31.1— Real and imaginary components of the refractive index squared (n²) at different wavelengths
+</figcaption>
+<div aria-describedby="tbl-refindex-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Wavelength (nm)</th>
+<th>Re(n²)</th>
+<th>Im(n²)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>10.0</td>
+<td>0.99</td>
+<td>-0.00</td>
+</tr>
+<tr class="even">
+<td>88.1</td>
+<td>0.58</td>
+<td>-0.00</td>
+</tr>
+<tr class="odd">
+<td>166.2</td>
+<td>-0.48</td>
+<td>-0.01</td>
+</tr>
+<tr class="even">
+<td>244.2</td>
+<td>-2.20</td>
+<td>-0.04</td>
+</tr>
+<tr class="odd">
+<td>322.3</td>
+<td>-4.57</td>
+<td>-0.10</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>From the square of the refractive index, we can calculate the reflectivity of the metal. The plot below shows the reflectivity of gold with and without damping. Without damping, the reflectivity is exactly 1 below the plasma frequency and drops sharply above it. The damping broadens the reflectivity curve and reduces the reflectivity below the plasma frequency.</p>
+<div id="cell-fig-reflectivity-damping" class="cell" data-execution_count="4">
+<div class="cell-output cell-output-display">
+<div id="fig-reflectivity-damping" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-reflectivity-damping-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Metals_files/figure-html/fig-reflectivity-damping-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="458" height="339">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-reflectivity-damping-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;31.3— Comparison of metal reflectivity with and without damping. Without damping (γ = 0), the reflectivity is exactly 1 below the plasma frequency and drops sharply above it.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div id="tbl-reflectivity" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-reflectivity-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tbl&nbsp;31.2— Comparison of reflectivity (R) values with and without damping effects at different wavelengths
+</figcaption>
+<div aria-describedby="tbl-reflectivity-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Wavelength (nm)</th>
+<th>R (with damping)</th>
+<th>R (no damping)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>100.0</td>
+<td>0.036</td>
+<td>0.036</td>
+</tr>
+<tr class="even">
+<td>280.2</td>
+<td>0.982</td>
+<td>1.000</td>
+</tr>
+<tr class="odd">
+<td>460.4</td>
+<td>0.984</td>
+<td>1.000</td>
+</tr>
+<tr class="even">
+<td>640.5</td>
+<td>0.984</td>
+<td>1.000</td>
+</tr>
+<tr class="odd">
+<td>820.7</td>
+<td>0.984</td>
+<td>1.000</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</section>
+<section id="dispersion-relation-in-metals" class="level3" data-number="31.2.2">
+<h3 data-number="31.2.2" class="anchored" data-anchor-id="dispersion-relation-in-metals"><span class="header-section-number">31.2.2</span> Dispersion Relation in Metals</h3>
+<p>To understand how electromagnetic waves propagate in metals, we need to derive the dispersion relation. Starting from Maxwell’s equations and using the dielectric function we derived from the Drude model, we can obtain the wave equation in metals:</p>
+<p><span class="math display">\[
+\nabla^2\vec{E}-\frac{1}{c^2}\frac{\partial^2\vec{E}}{\partial t^2}=\mu_0\frac{\partial\vec{j}}{\partial t}
+\]</span></p>
+<p>For a plane wave solution <span class="math inline">\(\vec{E}=\vec{E}_0e^{i(kx-\omega t)}\)</span>, and using the relation between current density and electric field through conductivity <span class="math inline">\(\vec{j}=\sigma\vec{E}\)</span>, we get:</p>
+<p><span class="math display">\[
+-k^2\vec{E}+\frac{\omega^2}{c^2}\vec{E}+i\omega\mu_0\sigma\vec{E}=0
+\]</span></p>
+<p>This leads to the dispersion relation:</p>
+<p><span class="math display">\[
+k^2=\frac{\omega^2}{c^2}\left(1+i\frac{\sigma}{\epsilon_0\omega}\right)=\frac{\omega^2}{c^2}\epsilon_r(\omega)
+\]</span></p>
+<p>Using the Drude model expression for <span class="math inline">\(\epsilon_r(\omega)\)</span>, we can write:</p>
+<p><span class="math display">\[
+k^2=\frac{\omega^2}{c^2}\left(1-\frac{\omega_p^2}{\omega^2-i\Gamma\omega}\right)
+\]</span></p>
+<p>This dispersion relation shows two important regimes:</p>
+<ol type="1">
+<li><p>For <span class="math inline">\(\omega &lt; \omega_p\)</span>: The wave vector <span class="math inline">\(k\)</span> becomes imaginary, meaning the waves are evanescent and decay exponentially into the metal. This explains why metals are reflective at visible frequencies.</p></li>
+<li><p>For <span class="math inline">\(\omega &gt; \omega_p\)</span>: The wave vector <span class="math inline">\(k\)</span> is real, and electromagnetic waves can propagate through the metal. This typically occurs in the ultraviolet region for most metals.</p></li>
+</ol>
+<p>The penetration depth (skin depth) <span class="math inline">\(\delta\)</span> of the electromagnetic wave into the metal can be calculated from the imaginary part of <span class="math inline">\(k\)</span>:</p>
+<p><span class="math display">\[
+\delta=\frac{1}{\text{Im}(k)}
+\]</span></p>
+<p>This skin depth is typically on the order of tens of nanometers in the visible region, explaining why metals are opaque even in thin films.</p>
+<div id="cell-fig-dispersion" class="cell" data-execution_count="5">
+<div class="cell-output cell-output-display">
+<div id="fig-dispersion" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-dispersion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Metals_files/figure-html/fig-dispersion-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="454" height="335">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dispersion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;31.4— Dispersion relation for electromagnetic waves in a metal according to the Drude model. The light line (dashed) represents the dispersion in vacuum. Note how below the plasma frequency, no propagating waves exist in the metal.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The figure above shows the dispersion relation for electromagnetic waves in a metal according to the Drude model. Several important features can be observed:</p>
+<ol type="1">
+<li><p>Below the plasma frequency (<span class="math inline">\(\omega &lt; \omega_p\)</span>), the real part of <span class="math inline">\(k\)</span> is zero while the imaginary part is large, indicating evanescent waves that decay exponentially into the metal.</p></li>
+<li><p>Above the plasma frequency (<span class="math inline">\(\omega &gt; \omega_p\)</span>), the real part of <span class="math inline">\(k\)</span> becomes dominant, allowing wave propagation through the metal.</p></li>
+<li><p>The light line (dashed) represents the dispersion relation in vacuum (<span class="math inline">\(\omega = ck\)</span>). The metal’s dispersion relation deviates significantly from this line, especially near and below the plasma frequency.</p></li>
+<li><p>The presence of damping (<span class="math inline">\(\gamma\)</span>) leads to a smooth transition around <span class="math inline">\(\omega_p\)</span> rather than an abrupt change.</p></li>
+</ol>
+<p>This behavior explains why metals are highly reflective at frequencies below the plasma frequency (typically in the visible range) but can become transparent at higher frequencies in the ultraviolet region.</p>
+<p>In the simple interpretation of the Drude model, we often say that below the plasma frequency, waves cannot propagate in the metal because the dielectric function is negative. However, this is only strictly true when we ignore damping (<span class="math inline">\(\Gamma = 0\)</span>).</p>
+<p>When we include damping (<span class="math inline">\(\Gamma \neq 0\)</span>), the dielectric function becomes complex:</p>
+<p><span class="math display">\[
+\epsilon_r(\omega)=1-\frac{\omega_p^2}{\omega^2-i\Gamma \omega}
+\]</span></p>
+<p>In the low-frequency limit ($&lt;&lt; _p), this becomes:</p>
+<p><span class="math display">\[
+\epsilon_r(\omega) \approx 1-\frac{\omega_p^2}{-i\Gamma \omega} \approx -\frac{\omega_p^2}{-i\Gamma \omega} = \frac{\omega_p^2}{\Gamma \omega}i
+\]</span></p>
+<p>The wave vector is then:</p>
+<p><span class="math display">\[
+k = \frac{\omega}{c}\sqrt{\epsilon_r} \approx \frac{\omega}{c}\sqrt{\frac{\omega_p^2}{\Gamma \omega}i} = \frac{\omega}{c}(1+i)\sqrt{\frac{\omega_p^2}{2\Gamma \omega}}
+\]</span></p>
+<p>This shows that both the real and imaginary parts of <span class="math inline">\(k\)</span> are non-zero and equal in magnitude in this limit. This represents a heavily damped wave that can propagate a short distance into the metal.</p>
+<p>The wave in the metal has the form:</p>
+<p><span class="math display">\[
+E(x) = E_0 e^{ikx} = E_0 e^{i\text{Re}(k)x}e^{-\text{Im}(k)x}
+\]</span></p>
+<p>The skin depth is then:</p>
+<p><span class="math display">\[
+\delta = \frac{1}{\text{Im}(k)} = \frac{c}{\omega}\sqrt{\frac{2\Gamma \omega}{\omega_p^2}}
+\]</span></p>
+<div id="cell-fig-skin-depth-corrected" class="cell" data-execution_count="6">
+<div class="cell-output cell-output-display">
+<div id="fig-skin-depth-corrected" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-skin-depth-corrected-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Metals_files/figure-html/fig-skin-depth-corrected-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="457" height="335">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-skin-depth-corrected-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;31.5— Skin depth as a function of frequency for a metal (Gold parameters). The dashed line shows the typical one over square root of frequency behavior at low frequencies.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div id="tbl-penetration" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-penetration-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tbl&nbsp;31.3— Penetration depth (delta) comparison between full model and low frequency approximation at different frequencies
+</figcaption>
+<div aria-describedby="tbl-penetration-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>freq (Hz)</th>
+<th>delta_full (nm)</th>
+<th>delta_low (nm)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1.00e+12</td>
+<td>123.63</td>
+<td>127.08</td>
+</tr>
+<tr class="even">
+<td>6.32e+12</td>
+<td>44.97</td>
+<td>50.54</td>
+</tr>
+<tr class="odd">
+<td>4.00e+13</td>
+<td>23.13</td>
+<td>20.10</td>
+</tr>
+<tr class="even">
+<td>2.53e+14</td>
+<td>21.91</td>
+<td>8.00</td>
+</tr>
+<tr class="odd">
+<td>1.60e+15</td>
+<td>31.64</td>
+<td>3.18</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</section>
+<section id="skin-depth" class="level3" data-number="31.2.3">
+<h3 data-number="31.2.3" class="anchored" data-anchor-id="skin-depth"><span class="header-section-number">31.2.3</span> Skin Depth</h3>
+<p>At low frequencies, the skin depth can be approximated as:</p>
+<p><span class="math display">\[
+\delta \approx \sqrt{\frac{2}{\omega_p^2\Gamma}}\frac{c}{\sqrt{\omega}} = \sqrt{\frac{2}{\sigma_0\mu_0\omega}}
+\]</span></p>
+<p>where <span class="math inline">\(\sigma_0 = \frac{\omega_p^2\epsilon_0}{\Gamma}\)</span> is the DC conductivity. This shows the characteristic <span class="math inline">\(\delta \propto 1/\sqrt{\omega}\)</span> behavior.</p>
+<p>Some important observations from the plot:</p>
+<ol type="1">
+<li>At low frequencies (below the plasma frequency), the skin depth follows the <span class="math inline">\(1/\sqrt{\omega}\)</span> dependence</li>
+<li>For visible light (<span class="math inline">\(\omega \approx 10^{14}-10^{15} Hz\)</span>), the skin depth is typically tens of nanometers</li>
+<li>Above the plasma frequency, the skin depth increases rapidly as the metal becomes transparent</li>
+<li>For Gold at room temperature and visible frequencies, the skin depth is approximately 20-30 nm</li>
+</ol>
+<p>This small skin depth explains why:</p>
+<ul>
+<li>Thin metal films (&gt;100 nm) are opaque</li>
+<li>Surface effects dominate in metals at optical frequencies</li>
+<li>Metal nanoparticles can support localized surface plasmons</li>
+<li>Why RF shielding requires only thin metal layers</li>
+</ul>
+<p>The skin effect is crucial in many applications:</p>
+<ul>
+<li>RF and microwave engineering</li>
+<li>Electromagnetic shielding</li>
+<li>Design of electrical conductors for AC applications</li>
+<li>Plasmonic devices</li>
+</ul>
+</section>
+</section>
+<section id="plasmonics" class="level2" data-number="31.3">
+<h2 data-number="31.3" class="anchored" data-anchor-id="plasmonics"><span class="header-section-number">31.3</span> Plasmonics</h2>
+<p>One of the exciting fields of research in modern optics is plasmonics. Plasmons are collective oscillations of free electrons in a metal that can interact strongly with light. These interactions lead to fascinating phenomena, such as enhanced light-matter interactions, subwavelength imaging, and sensing applications.</p>
+<section id="localized-surface-plasmons" class="level3" data-number="31.3.1">
+<h3 data-number="31.3.1" class="anchored" data-anchor-id="localized-surface-plasmons"><span class="header-section-number">31.3.1</span> Localized Surface Plasmons</h3>
+<p>In metal nanoparticles, the confined electron oscillations create localized surface plasmons (LSPs). These are non-propagating excitations of the conduction electrons coupled to the electromagnetic field. The resonance condition depends strongly on the particle size, shape, and dielectric environment. A striking demonstration of LSPs can be observed in solutions of gold nanoparticles, where the interaction between light and the collective electron oscillations creates vivid colors.</p>
+<div id="fig-np-gold" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-np-gold-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/gold_np.png" class="img-fluid figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-np-gold-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;31.6— Backscattering and transmission through a 65 nm gold nanoparticle solution. The backscattering is green due to the surface plasmon resonance of the conduction band electrons, while the transmission is red, since the green light is removed by scattering.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="surface-plasmon-polaritons" class="level3" data-number="31.3.2">
+<h3 data-number="31.3.2" class="anchored" data-anchor-id="surface-plasmon-polaritons"><span class="header-section-number">31.3.2</span> Surface Plasmon Polaritons</h3>
+<p>Surface plasmon polaritons (SPPs) are electromagnetic excitations propagating along a metal-dielectric interface. These waves result from the coupling of the electromagnetic fields to oscillations of the conductor’s electron plasma. The dispersion relation for SPPs is given by:</p>
+<p><span class="math display">\[
+k_{SPP} = \frac{\omega}{c}\sqrt{\frac{\epsilon_m\epsilon_d}{\epsilon_m + \epsilon_d}}
+\]</span></p>
+<p>where <span class="math inline">\(\epsilon_m\)</span> and <span class="math inline">\(\epsilon_d\)</span> are the dielectric functions of the metal and dielectric, respectively. This unique dispersion relation allows SPPs to concentrate light into subwavelength volumes, enabling applications in sensing, waveguiding, and imaging beyond the diffraction limit.</p>
+<section id="surface-plasmon-polariton-sensor" class="level4" data-number="31.3.2.1">
+<h4 data-number="31.3.2.1" class="anchored" data-anchor-id="surface-plasmon-polariton-sensor"><span class="header-section-number">31.3.2.1</span> Surface Plasmon Polariton Sensor</h4>
+<p>A surface plasmon polariton sensor is a device that exploits the sensitivity of SPPs to changes in the local refractive index. By monitoring the resonance condition of the SPPs, one can detect minute changes in the dielectric environment near the metal surface. This principle forms the basis of label-free biosensing, where the binding of biomolecules to the metal surface can be detected in real-time.</p>
+<div id="fig-sppsensor" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sppsensor-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/excitation.png" class="img-fluid figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sppsensor-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;31.7— Two different excitation schemes of surface plasmon polaritons for sensing applications. The prism coupling method (left) uses total internal reflection to excite SPPs, while the Kretschmann configuration (right) involves a thin metal film on a dielectric substrate.
+</figcaption>
+</figure>
+</div>
+<p>To observe SPPs, one can use a prism coupling method or the Kretschmann configuration. In both cases, the resonance condition is sensitive to changes in the refractive index near the metal surface, making SPP sensors highly versatile and sensitive.</p>
+<div id="cell-fig-spp-reflectivity-ag-au" class="cell" data-execution_count="7">
+<div class="cell-output cell-output-display">
+<div id="fig-spp-reflectivity-ag-au" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-spp-reflectivity-ag-au-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Metals_files/figure-html/fig-spp-reflectivity-ag-au-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="458" height="336">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-spp-reflectivity-ag-au-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;31.8— Comparison of reflectivity versus incident angle for 50 nm gold and silver films on glass at 532 nm. Silver shows a sharper and deeper resonance due to lower losses.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div id="tbl-spr-metals" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-spr-metals-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tbl&nbsp;31.4— Comparison of surface plasmon resonance (SPR) characteristics for gold and silver films at 532 nm wavelength
+</figcaption>
+<div aria-describedby="tbl-spr-metals-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 19%">
+<col style="width: 26%">
+<col style="width: 43%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Metal</th>
+<th>SPR Angle (°)</th>
+<th>Minimum Reflectivity</th>
+<th>Dielectric Constant (ε) at 532 nm</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Gold</td>
+<td>48.6</td>
+<td>0.107</td>
+<td>-4.8 + 2.4i</td>
+</tr>
+<tr class="even">
+<td>Silver</td>
+<td>44.2</td>
+<td>0.044</td>
+<td>-11.7 + 0.4i</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</section>
+</section>
+<section id="historical-and-modern-applications" class="level3" data-number="31.3.3">
+<h3 data-number="31.3.3" class="anchored" data-anchor-id="historical-and-modern-applications"><span class="header-section-number">31.3.3</span> Historical and Modern Applications</h3>
+<p>The use of plasmonic effects in materials dates back to ancient times, though the underlying physics was not understood. Perhaps the most famous example is the Lycurgus Cup from the 4th century AD. This remarkable artifact appears green in reflected light but red in transmitted light due to the presence of gold and silver nanoparticles embedded in the glass matrix.</p>
+<div id="fig-lycurgus" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-lycurgus-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/lycurgus.png" class="img-fluid figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-lycurgus-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;31.9— The Lycurgus Cup demonstrates the dramatic optical effects of metallic nanoparticles. When viewed in reflected light (left), the cup appears green, while in transmitted light (right), it glows ruby red due to the surface plasmon resonance of embedded gold and silver nanoparticles.
+</figcaption>
+</figure>
+</div>
+<p>Modern applications of plasmonics have expanded far beyond decorative uses. Surface plasmon resonance sensors enable highly sensitive biochemical detection by monitoring changes in the local refractive index near metal surfaces. Plasmonic waveguides can guide light in dimensions far below the diffraction limit, promising applications in next-generation optical computing and telecommunications. In medicine, plasmonic nanoparticles are being developed for targeted therapy and diagnostic imaging.</p>
+<p>The field of metamaterials leverages plasmonic effects to create artificial materials with properties not found in nature, such as negative refractive indices and perfect lensing. These developments continue to push the boundaries of what’s possible in optics and photonics, leading to innovations in solar energy harvesting, quantum information processing, and ultrasensitive chemical detection.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../electromagnetic-waves/Fresnel Equations.html" class="pagination-link" aria-label="Fresnel Equations">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Fresnel Equations</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../electromagnetic-waves/Anisotropic Materials.html" class="pagination-link" aria-label="Anisotropic Materials">
+        <span class="nav-page-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Anisotropic Materials</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

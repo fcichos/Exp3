@@ -1,0 +1,83 @@
+There have then been several attemps to explore the thermodynamics of blackbody radiation and to compare with measurements. Some of these approaches have been carried out by Stefan and Wien but also by Lord Rayleigh.
+
+::: {.callout-note collapse=true}
+## Stefan-Boltzmann Law
+
+In order to derive the expression which we know today as Stefan-Boltzmann law, Stefan discovered the empirical relation in 1879 and later in 1884 Boltzmann derived the law on the basis of thermodynamics and Maxwell relations. First we want to consider the internal energy $U$ of an isolated system, which can be expressed as thermodynamic potential depending on the temperature $T$, the entropy $S$, pressure $p$, and volume $V$,
+
+$$
+\mathrm{d} U = T \mathrm{d} S - p \mathrm{d}V \mathrm{.}
+$$
+
+If we now calculate the derivative of the internal energy with respect to the volume at constant temperature
+
+$$
+\left( \frac{\mathrm{d} U}{\mathrm{d} V} \right)_{T} = T \left( \frac{\mathrm{d} S}{\mathrm{d} V} \right)_{T} - p
+$$
+
+and make use of one Maxwell relation, namely
+
+$$
+\left( \frac{\mathrm{d} S}{\mathrm{d} V} \right)_{T} = \left( \frac{\mathrm{d} p}{\mathrm{d} T} \right)_{V}
+$$
+
+we get
+
+$$
+\left( \frac{\mathrm{d} U}{\mathrm{d} V} \right)_{T} = T \left( \frac{\mathrm{d} p}{\mathrm{d} T} \right)_{V} - p
+$$
+
+Previously Maxwell presented an expression for the radiation pressure being $p = \frac{1}{3}u$ with $u$ as the energy density and the total internal energy as $U = u\cdot V$. If we use these expressions in the equation of the derivative and integrate, we obtain
+$$
+\begin{eqnarray}
+u & = & C_1 \cdot T^4\\
+U & = & C_2 \cdot V \cdot T^4 \mathrm{,}
+\end{eqnarray}
+$$
+
+with $C_1$ and $C_2$ denoting integration constants. In the modern form we refer to the radiation power $P$ as
+
+$$
+P = \sigma \cdot A \cdot T^4
+$$
+
+being proportional to the *Stefan-Boltzmann constant* $\sigma$, the blackbody area $A$, and to the **fourth power** of the absolute temperature. This law also describes that every body with a temperature higher than $0 \mbox{ K}$ emits electromagnetic radiation.
+
+## Wien's Displacement Law
+
+In 1896 Wien published how the spectrum of cavity radiation changes with altered temperature. Today this law is often not referred to the overall shape of the spectrum, but rather to the maximum of the spectrum. In 1896 the Stefan-Boltzmann law was already published stating that the emitted radiance depends on the apparent temperature to the power of 4 ($\propto T^4$). However, the actual spectral distribution of the energy was unknown.
+
+On the basis of thermodynamic concepts and the Stefan-Boltzmann law Wien derived a relation between the wavelength $\lambda$ and the spectral energy at a particular wavelength $\varphi \left(\lambda\right)$
+
+$$
+\varphi \cdot \mathrm{d} \lambda = \varphi_0 \cdot \mathrm{d} \lambda_0
+$$
+
+and
+
+$$
+\mathrm{d} \lambda = \frac{T_0}{T} \; \mathrm{d} \lambda_0 \mathrm{.}
+$$
+
+The last equation can be reformulated into the shape of
+
+$$
+ \lambda_{\mathrm{peak}} = b \cdot \frac{1}{T}
+$$
+
+with $b$ being the proportionality or *Wien's displacement constant* ($b = 2.898 \cdot 10^{-3} \, \mathrm{m}\cdot\mathrm{K}$).
+
+Wien further examined the integration with the result for the energy profile $\varphi = \varphi_0 \; \frac{\mathrm{d} \lambda_0}{\mathrm{d} \lambda} = \varphi_0 \; \frac{\mathrm{d} T}{\mathrm{d} T_0}$. In addition with the known relation from the Stefan-Boltzmann law $\varphi \propto \frac{T^4}{T_0^4}$, Wien proposed the spectral shape at a particular temperature on the basis of the spectral shape at a known temperature $\varphi = \varphi_0 \frac{T^5}{T_0^5}$. So far the exact spectral shape still remained unknown; however, by means of adjusting the parameter $\varphi_0$ theory was successfully brought into coincidence with experimental results and the spectrum for small wavelengths could be predicted.
+
+## Wien's distribution law or Wien approximation
+
+In his original publication in 1896 Wien employed the wavelength dependence of the blackbody radiation and the Maxwell-Boltzmann distribution for the speed of molecules. On the basis of thermodynamic arguments he derived a formula for the radiance
+
+$$
+S^{\ast}_{\lambda} \left(\lambda, T \right) = \frac{C_1}{\lambda^5} \; \mathrm{e}^{- \frac{C_2}{\lambda T}} \mathrm{.}
+$$
+
+with $C_1$ and $C_2$ being constants. As to be expected the curve described by this formula exhibits a maximum. In the case of short wavelength, experimental results from cavity radiation can be well described. For long wavelengths, instead, the Wien approximation underestimated the radiance.
+
+![Comparison between blackbody radiation (solid lines) and Wien approximation (dashed lines) at different temperatures.](img/Lecture20_spectra_planck_wien_comparison.png){width=50%}
+:::

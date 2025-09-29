@@ -1,0 +1,9 @@
+---
+title: Contents
+jupyter: python3
+format:
+  html:
+    code-fold: true
+---
+
+The contents of this Topic will only be presented in the lectures and not part of the online publications.

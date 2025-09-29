@@ -1,0 +1,46 @@
+---
+title: LIGO
+jupyter: python3
+format:
+  html:
+    code-fold: true
+crossref:
+  fig-title: Figure     # (default is "Figure")
+  tbl-title: Tbl     # (default is "Table")
+  title-delim: "—"   # (default is ":")
+  fig-prefix: "Figure"
+  eq-prefix: Eq.
+  chapters: true
+---
+
+## LIGO Interferometer Overview
+
+The Laser Interferometer Gravitational-Wave Observatory (LIGO) is designed to detect gravitational waves—ripples in spacetime caused by massive accelerating objects, such as merging black holes or neutron stars. LIGO uses a Michelson interferometer configuration with two perpendicular arms, each several kilometers long. A laser beam is split into two beams that travel down these arms, reflect off mirrors at the ends, and then recombine at the beam splitter. Under normal conditions, the lengths of the arms are such that the beams interfere destructively, resulting in no light reaching the detector.
+
+When a gravitational wave passes through the interferometer, it causes a tiny but measurable change in the lengths of the arms. This change alters the interference pattern of the recombined beams, allowing the detection of the gravitational wave. The sensitivity of LIGO is such that it can detect changes in arm length smaller than a thousandth of the diameter of a proton.
+
+The phase shift $\Delta \phi$ caused by a gravitational wave can be expressed as:
+
+$$
+\Delta \phi = \frac{4 \pi \Delta L}{\lambda}
+$$
+
+where $\Delta L$ is the change in the length of the interferometer arms due to the gravitational wave, and $\lambda$ is the wavelength of the laser light used in the interferometer.
+
+### Derivation of the Phase Shift
+
+To understand the phase shift in LIGO, consider the effect of a gravitational wave passing through the interferometer. The wave causes a differential change in the lengths of the two arms, denoted as $\Delta L$. This change in length affects the travel time of the laser beams in each arm.
+
+The time difference $\Delta T$ between the beams traveling in the two arms can be expressed as:
+
+$$
+\Delta T = \frac{\Delta L}{c}
+$$
+
+The phase shift $\Delta \phi$ is then related to this time difference by the equation:
+
+$$
+\Delta \phi = \frac{2 \pi \Delta T}{T} = \frac{4 \pi \Delta L}{\lambda}
+$$
+
+This phase shift alters the interference pattern observed at the detector, allowing LIGO to measure the presence and properties of gravitational waves. The extraordinary precision of LIGO's measurements enables it to detect incredibly small disturbances in spacetime, providing valuable insights into some of the most energetic events in the universe.

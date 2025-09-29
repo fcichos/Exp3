@@ -1,0 +1,7 @@
+## Franck-Hertz Experiment
+
+In 1914 James Franck and Gustav Hertz demonstrated that energy quantization plays a major role in collision processes. A vacuum tube filled with mercury vapor contained a cathode emitting electrons and a wire mesh for accelerating electrons with energy $e \cdot U$. The electron collector has a potential of $U_{\mathrm{Col}} = U -\Delta U$. Thus, electrons are decelerated after passing the mesh. Only electrons with energy equal to or greater than $e \cdot \Delta U$ can reach the collector. Measuring the electron current at the collector as a function of acceleration voltage produces a characteristic curve.
+
+![Scheme of the apparatus used by Franck and Hertz showing wire mesh (M) used to accelerate electrons emitted from the cathode (left). After passing the mesh the electrons are decelerated before reaching the collector. An example measured curve along with expected results without inelastic scattering (right).](img/Lecture19_franck_hertz.png)
+
+From 0 to 4.9 eV the current rises, then decreases after passing 5 V. For higher accelerating voltages, the current increases again until reaching the next local maximum at around 9.8 V. This pattern results from inelastic collisions and energy transfer from electrons to mercury atoms. The distance between local maxima corresponds to the excitation energy of mercury. This demonstrates that **atoms can absorb energy only in quantized amounts**. The excited Hg atoms then decay to lower energy states by emitting light, producing bright rings within the vacuum tube.

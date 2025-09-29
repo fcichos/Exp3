@@ -1,0 +1,133 @@
+---
+title: "Calculating Band Structure for 2D Photonic Crystals"
+format: 
+  html:
+    code-fold: false
+    html-math-method: katex
+---
+
+## Theory and Formulas
+
+### Basic Concepts
+
+A 2D photonic crystal consists of a periodic arrangement of dielectric materials. For a square lattice with lattice constant $a$, the dielectric function $\epsilon(\mathbf{r})$ is periodic:
+
+$$\epsilon(\mathbf{r}) = \epsilon(\mathbf{r} + \mathbf{R})$$
+
+where $\mathbf{R} = n_1\mathbf{a}_1 + n_2\mathbf{a}_2$ is any lattice vector.
+
+### Maxwell's Equations
+
+For 2D photonic crystals, Maxwell's equations can be separated into TE and TM modes. For TM modes (E-field parallel to rods), we solve:
+
+$$\nabla \times \frac{1}{\epsilon(\mathbf{r})} \nabla \times \mathbf{E} = \frac{\omega^2}{c^2}\mathbf{E}$$
+
+### Plane Wave Expansion
+
+The dielectric function can be expanded in reciprocal lattice vectors:
+
+$$\epsilon(\mathbf{r}) = \sum_\mathbf{G} \epsilon_\mathbf{G} e^{i\mathbf{G}\cdot\mathbf{r}}$$
+
+For circular rods of radius $R$ in a square lattice:
+
+$$\epsilon_\mathbf{G} = \epsilon_a + (\epsilon_b - \epsilon_a)f\frac{2J_1(|\mathbf{G}|R)}{|\mathbf{G}|R}$$
+
+where:
+- $\epsilon_a$ is the background dielectric constant
+- $\epsilon_b$ is the rod dielectric constant
+- $f$ is the filling fraction ($\pi R^2/a^2$ for circular rods)
+- $J_1$ is the Bessel function of first kind
+
+### Bloch's Theorem
+
+The electric field can be expanded using Bloch's theorem:
+
+$$\mathbf{E}(\mathbf{r}) = e^{i\mathbf{k}\cdot\mathbf{r}}\sum_\mathbf{G} \mathbf{E}_\mathbf{G} e^{i\mathbf{G}\cdot\mathbf{r}}$$
+
+### Eigenvalue Equation
+
+This leads to the eigenvalue equation:
+
+$$\sum_{\mathbf{G}'} |\mathbf{k} + \mathbf{G}|^2 \epsilon_{\mathbf{G}-\mathbf{G}'} E_{\mathbf{G}'} = \frac{\omega^2}{c^2}E_\mathbf{G}$$
+
+### Practical Implementation
+
+For numerical calculations, we truncate the plane wave expansion to a finite number of G vectors. The matrix elements of the eigenvalue problem are:
+
+$$H_{\mathbf{G}\mathbf{G}'} = |\mathbf{k} + \mathbf{G}|^2\delta_{\mathbf{G}\mathbf{G}'} + V_{\mathbf{G}-\mathbf{G}'}$$
+
+where:
+
+$$V_{\mathbf{G}} = (\epsilon_b - \epsilon_a)f\frac{2J_1(|\mathbf{G}|R)}{|\mathbf{G}|R}$$
+
+### High Symmetry Points
+
+For a square lattice, the high symmetry points in the first Brillouin zone are:
+
+- $\Gamma$: $(0,0)$
+- $X$: $(\pi/a,0)$
+- $M$: $(\pi/a,\pi/a)$
+
+### Band Gap Calculation
+
+A complete photonic band gap exists when there is a frequency range where:
+
+$$\max_{\mathbf{k}}(\omega_n(\mathbf{k})) < \min_{\mathbf{k}}(\omega_{n+1}(\mathbf{k}))$$
+
+for some band index $n$.
+
+## Implementation in Python
+
+The numerical implementation requires:
+
+1. Constructing the reciprocal lattice vectors:
+```python
+G = 2*np.pi/a * np.array([
+    [0, 0],
+    [1, 0], [-1, 0], [0, 1], [0, -1],
+    [1, 1], [-1, -1], [1, -1], [-1, 1]
+])
+```
+
+2. Building the Hamiltonian matrix:
+```python
+H[i,j] = np.sum(k_plus_G_i**2) if i == j else \
+         (epsilon - 1) * np.pi * radius**2 / a**2 * \
+         np.exp(-np.sum(G_diff**2) * radius**2/4)
+```
+
+3. Solving the eigenvalue problem:
+```python
+eigenvalues = linalg.eigvalsh(H)
+```
+
+## Required Parameters
+
+| Parameter | Description | Typical Values |
+|-----------|-------------|----------------|
+| $a$ | Lattice constant | Unit length |
+| $\epsilon_b$ | Rod dielectric constant | 8.9 (Al₂O₃) |
+| $\epsilon_a$ | Background dielectric constant | 1 (air) |
+| $R$ | Rod radius | 0.2a - 0.4a |
+| $N_G$ | Number of G vectors | 9-25 |
+
+## Numerical Considerations
+
+1. **Convergence**: Check convergence with respect to:
+   - Number of plane waves
+   - k-point sampling
+   - Size of computational domain
+
+2. **Symmetry**: Use symmetry to reduce computational cost:
+   - Consider only irreducible Brillouin zone
+   - Apply appropriate boundary conditions
+
+3. **Band Gap Accuracy**: For accurate band gap calculations:
+   - Use dense k-point sampling near band edges
+   - Include sufficient number of plane waves
+   - Check convergence of gap size
+
+## References
+
+1. Joannopoulos, J. D., et al. "Photonic Crystals: Molding the Flow of Light"
+2. Sakoda, K. "Optical Properties of Photonic Crystals"

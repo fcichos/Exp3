@@ -126,6 +126,8 @@ This relationship is fundamental in understanding how objects are perceived and 
 Diagram of a relaxed eye focusing on a distant object.
 :::
 
+history |grep git
+
 Understanding these concepts is crucial for diagnosing vision problems and designing appropriate corrective measures, whether through eyeglasses, contact lenses, or surgical interventions.
 
 ### Magnification
