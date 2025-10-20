@@ -840,6 +840,11 @@ F=ma Optics: Mathematical Analogy with Newton’s Second Law
 </div>
 </div>
 </div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+
+</div>
+</div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-photothermal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4— Photothermal deflection demonstration. (Left) A copper sphere embedded in acrylic glass creates a refractive index gradient when heated by a laser. (Right) The resulting distortion becomes visible when viewing a regular grid pattern through the heated block.
@@ -945,35 +950,39 @@ Example: Light in a Graded-Index Medium
 </div>
 <div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Consider a medium where the refractive index varies with height <span class="math inline">\(y\)</span> as <span class="math inline">\(n(y) = n_0 (1 - \frac{\alpha^2}{2 n_0} y^2)\)</span>. The path of light in such a medium can be found by using Fermat’s principle in differential form:</p>
+<p>Consider a medium where the refractive index varies with height <span class="math inline">\(y\)</span> as <span class="math inline">\(n(y) = n_0 \left(1 - \frac{\alpha^2}{2} y^2\right)\)</span>. The path of light in such a medium can be found by using Fermat’s principle in differential form:</p>
 <p><span class="math display">\[
 \frac{d}{ds}\left (n(\textbf{r})\frac{d\textbf{r}}{ds}\right)=\nabla n(\textbf{r})
 \]</span></p>
-<p>Typically, this requires to express the coordinates in terms of a parameter, such as <span class="math inline">\(x(s)\)</span> and <span class="math inline">\(y(s)\)</span>, and then solve the differential equation. The solution will give the path of light in the medium. This is difficult and commonly done numerically. In paraxial optics, when the light is propagating roughly in the direction of <span class="math inline">\(z\)</span>, the differential element <span class="math inline">\(ds\)</span> can be approximated as <span class="math inline">\(dz\)</span> since then</p>
+<p>Typically, this requires expressing the coordinates in terms of a parameter, such as <span class="math inline">\(x(s)\)</span> and <span class="math inline">\(y(s)\)</span>, and then solving the differential equation. The solution will give the path of light in the medium. This is difficult and commonly done numerically. In paraxial optics, when the light is propagating roughly in the direction of <span class="math inline">\(z\)</span>, the differential element <span class="math inline">\(ds\)</span> can be approximated as <span class="math inline">\(dz\)</span> since then</p>
 <p><span class="math display">\[
 ds=dz\sqrt{1+\left (\frac{dy}{dz}\right )^2+\left (\frac{dx}{dz}\right)^2}\approx dz
 \]</span></p>
 <p>which yields</p>
 <p><span class="math display">\[
-\frac{d}{dz}\left (n\frac{dx}{dz}\right)\approx \frac{dn}{dx}
+\frac{d}{dz}\left (n\frac{dx}{dz}\right)\approx \frac{\partial n}{\partial x}
 \]</span></p>
 <p>and</p>
 <p><span class="math display">\[
-\frac{d}{dz}\left (n\frac{dy}{dz}\right )\approx \frac{dn}{dy}
+\frac{d}{dz}\left (n\frac{dy}{dz}\right )\approx \frac{\partial n}{\partial y}
 \]</span></p>
 <p>This readily yields the path of light in a homogeneous medium, where <span class="math inline">\(n\)</span> is constant. In this case we have</p>
 <p><span class="math display">\[
 \frac{d^2 x}{dz^2}=\frac{d^2 y}{dz^2}=0
 \]</span></p>
-<p>which is true for a straight line. In a graded-index medium, the path of light can be found by solving the differential equation</p>
+<p>which is true for a straight line. In a graded-index medium with <span class="math inline">\(n(y) = n_0 \left(1 - \frac{\alpha^2}{2} y^2\right)\)</span>, we have <span class="math inline">\(\frac{\partial n}{\partial y} = -n_0 \alpha^2 y\)</span>. Under the paraxial approximation where <span class="math inline">\(n \approx n_0\)</span> is approximately constant along the ray, the path of light can be found by solving the differential equation</p>
 <p><span class="math display">\[
-\frac{d^2 y}{dz^2}=-\alpha^2 y
+n_0 \frac{d^2 y}{dz^2} \approx -n_0 \alpha^2 y
 \]</span></p>
-<p>which is reminiscent of the equation of motion of a harmonic oscillator. The solution is therefore an oscillating function</p>
+<p>which simplifies to</p>
 <p><span class="math display">\[
-y(z)=y_0\cos(\alpha z)+\frac{\theta_0}{\alpha}\sin(\alpha z  )
+\frac{d^2 y}{dz^2} \approx -\alpha^2 y
 \]</span></p>
-<p>where the angle <span class="math inline">\(\theta_0\)</span> is the initial angle of the light ray with respect to the <span class="math inline">\(z\)</span> axis. This solution describes the path of light in a graded-index medium.</p>
+<p>This is reminiscent of the equation of motion of a harmonic oscillator. The solution is therefore an oscillating function</p>
+<p><span class="math display">\[
+y(z)=y_0\cos(\alpha z)+\frac{\theta_0}{\alpha}\sin(\alpha z)
+\]</span></p>
+<p>where <span class="math inline">\(y_0\)</span> is the initial position and <span class="math inline">\(\theta_0\)</span> is the initial angle of the light ray with respect to the <span class="math inline">\(z\)</span> axis. This solution describes the sinusoidal path of light in a graded-index medium with a parabolic refractive index profile.</p>
 </div>
 </div>
 </div>
@@ -983,7 +992,7 @@ y(z)=y_0\cos(\alpha z)+\frac{\theta_0}{\alpha}\sin(\alpha z  )
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Fermats’s Principle in Integral and Differential Form
+Fermat’s Principle in Integral and Differential Form
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
