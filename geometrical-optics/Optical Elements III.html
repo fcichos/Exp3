@@ -426,7 +426,7 @@ Paraxial Approximation
 <li>The error increases rapidly for larger angles, indicating the limitations of the paraxial approximation.</li>
 </ol>
 <p>In most optical systems, especially those involving lenses, the angles of incident and refracted rays are typically small enough for this approximation to be valid. However, it’s important to be aware of its limitations when dealing with wide-angle optical systems or scenarios where precision is critical.</p>
-<div id="52c43769" class="cell" data-execution_count="2">
+<div id="e4edd7b0" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -774,6 +774,37 @@ C &amp; D
 0 &amp; 1
 \end{bmatrix}
 \]</span></p>
+<p>The physical meaning of the ABCD matrix elements can be understood as follows:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Element</th>
+<th>Physical Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>A</strong></td>
+<td>Relates output height to input height (magnification-like effect)</td>
+</tr>
+<tr class="even">
+<td><strong>B</strong></td>
+<td>Relates output height to input angle (how much an angled ray displaces)</td>
+</tr>
+<tr class="odd">
+<td><strong>C</strong></td>
+<td>Relates output angle to input height (optical power, focusing/defocusing)</td>
+</tr>
+<tr class="even">
+<td><strong>D</strong></td>
+<td>Relates output angle to input angle (angular magnification)</td>
+</tr>
+</tbody>
+</table>
 <p>Here are some useful matrices for optical elements:</p>
 <p><span class="math display">\[
 \mathbf{M}=\left[\begin{array}{ll}
@@ -804,6 +835,44 @@ C &amp; D
 \rightarrow \mathrm{M}_1 \rightarrow \mathrm{M}_2 \rightarrow \mathrm{M}_N \rightarrow \mathrm{M}=\mathbf{M}_N \ldots \mathrm{M}_2 \mathbf{M}_1 \text {. }
 \]</span></p>
 <p>This is a very powerful tool to analyze optical systems.</p>
+<section id="example-two-lens-system" class="level3">
+<h3 class="anchored" data-anchor-id="example-two-lens-system">Example: Two-Lens System</h3>
+<p>Consider a system consisting of two thin lenses separated by a distance <span class="math inline">\(d\)</span>. The first lens has focal length <span class="math inline">\(f_1 = 100\)</span> mm and the second lens has focal length <span class="math inline">\(f_2 = 150\)</span> mm, separated by <span class="math inline">\(d = 200\)</span> mm. We want to find the overall system matrix and determine where a parallel ray at height <span class="math inline">\(y_1 = 10\)</span> mm crosses the optical axis.</p>
+<p>The system consists of three components: 1. First lens with matrix <span class="math inline">\(\mathbf{M}_1\)</span> 2. Free space propagation of distance <span class="math inline">\(d\)</span> with matrix <span class="math inline">\(\mathbf{M}_{\text{free}}\)</span> 3. Second lens with matrix <span class="math inline">\(\mathbf{M}_2\)</span></p>
+<p>The individual matrices are:</p>
+<p><span class="math display">\[
+\mathbf{M}_1 = \begin{bmatrix} 1 &amp; 0 \\ -\frac{1}{f_1} &amp; 1 \end{bmatrix}, \quad
+\mathbf{M}_{\text{free}} = \begin{bmatrix} 1 &amp; d \\ 0 &amp; 1 \end{bmatrix}, \quad
+\mathbf{M}_2 = \begin{bmatrix} 1 &amp; 0 \\ -\frac{1}{f_2} &amp; 1 \end{bmatrix}
+\]</span></p>
+<p>The total system matrix is:</p>
+<p><span class="math display">\[
+\mathbf{M}_{\text{total}} = \mathbf{M}_2 \cdot \mathbf{M}_{\text{free}} \cdot \mathbf{M}_1
+\]</span></p>
+<p>Performing the matrix multiplication:</p>
+<p><span class="math display">\[
+\mathbf{M}_{\text{total}} = \begin{bmatrix} 1 &amp; 0 \\ -\frac{1}{f_2} &amp; 1 \end{bmatrix} \begin{bmatrix} 1 &amp; d \\ 0 &amp; 1 \end{bmatrix} \begin{bmatrix} 1 &amp; 0 \\ -\frac{1}{f_1} &amp; 1 \end{bmatrix}
+\]</span></p>
+<p><span class="math display">\[
+= \begin{bmatrix} 1 &amp; 0 \\ -\frac{1}{f_2} &amp; 1 \end{bmatrix} \begin{bmatrix} 1 - \frac{d}{f_1} &amp; d \\ -\frac{1}{f_1} &amp; 1 \end{bmatrix}
+\]</span></p>
+<p><span class="math display">\[
+= \begin{bmatrix} 1 - \frac{d}{f_1} &amp; d \\ -\frac{1}{f_2} - \frac{1}{f_1} + \frac{d}{f_1 f_2} &amp; 1 - \frac{d}{f_2} \end{bmatrix}
+\]</span></p>
+<p>For our specific values (<span class="math inline">\(f_1 = 100\)</span> mm, <span class="math inline">\(f_2 = 150\)</span> mm, <span class="math inline">\(d = 200\)</span> mm):</p>
+<p><span class="math display">\[
+\mathbf{M}_{\text{total}} = \begin{bmatrix} -1 &amp; 200 \\ -0.00333 &amp; -0.333 \end{bmatrix}
+\]</span></p>
+<p>For a parallel ray at height <span class="math inline">\(y_1 = 10\)</span> mm (i.e., <span class="math inline">\(\theta_1 = 0\)</span>):</p>
+<p><span class="math display">\[
+\begin{pmatrix} y_2 \\ \theta_2 \end{pmatrix} = \begin{bmatrix} -1 &amp; 200 \\ -0.00333 &amp; -0.333 \end{bmatrix} \begin{pmatrix} 10 \\ 0 \end{pmatrix} = \begin{pmatrix} -10 \\ -0.0333 \end{pmatrix}
+\]</span></p>
+<p>The ray exits at height <span class="math inline">\(y_2 = -10\)</span> mm with angle <span class="math inline">\(\theta_2 = -0.0333\)</span> rad. The ray crosses the optical axis at a distance:</p>
+<p><span class="math display">\[
+b = -\frac{y_2}{\theta_2} = -\frac{-10}{-0.0333} = -300 \text{ mm}
+\]</span></p>
+<p>This means the focal point is 300 mm before the second lens (a virtual focus). This example demonstrates how matrix optics simplifies the analysis of complex multi-element optical systems.</p>
+</section>
 </div>
 </div>
 </div>
@@ -855,7 +924,7 @@ M=\begin{bmatrix}
 <p>This is the Lensmaker’s equation for a thick lens.</p>
 <p>The construction of ray diagrams for thick lenses is similar to that for thin lenses, but the object and image distances are measured from the principal planes. The magnification is also calculated using the distances from the principal planes. <strong>Principal planes are where a thick lens can be treated as an equivalent thin lens. At these planes, the magnification is unity.</strong></p>
 <p>The derivation of the local of the principle planes will be part of the seminar.</p>
-<div id="dd93b6aa" class="cell" data-execution_count="3">
+<div id="e5b178e2" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># %% Importing libraries and defining symbols</span></span>
