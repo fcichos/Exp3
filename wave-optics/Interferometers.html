@@ -486,9 +486,22 @@ window.Quarto = {
 <p><span class="math display">\[
 \Delta T = \frac{\Delta L}{c}
 \]</span></p>
-<p>The phase shift <span class="math inline">\(\Delta \phi\)</span> is then related to this time difference by the equation:</p>
+<p>where <span class="math inline">\(c\)</span> is the speed of light.</p>
+<p>To relate this time difference to a phase shift, we need to understand that the phase of a light wave is periodic with period <span class="math inline">\(T\)</span>, which is the time it takes for one complete oscillation of the electromagnetic wave. This period <span class="math inline">\(T\)</span> is related to the wavelength <span class="math inline">\(\lambda\)</span> and the speed of light <span class="math inline">\(c\)</span> by:</p>
 <p><span class="math display">\[
-\Delta \phi = \frac{2 \pi \Delta T}{T} = \frac{4 \pi \Delta L}{\lambda}
+T = \frac{\lambda}{c}
+\]</span></p>
+<p>The phase shift <span class="math inline">\(\Delta \phi\)</span> is then related to the time difference <span class="math inline">\(\Delta T\)</span> by comparing it to the period <span class="math inline">\(T\)</span>. Since a full oscillation corresponds to a phase change of <span class="math inline">\(2\pi\)</span> radians, the phase shift is:</p>
+<p><span class="math display">\[
+\Delta \phi = \frac{2 \pi \Delta T}{T} = \frac{2 \pi \Delta T}{\lambda/c} = \frac{2 \pi c \Delta T}{\lambda}
+\]</span></p>
+<p>Substituting <span class="math inline">\(\Delta T = \frac{\Delta L}{c}\)</span>:</p>
+<p><span class="math display">\[
+\Delta \phi = \frac{2 \pi c}{\lambda} \cdot \frac{\Delta L}{c} = \frac{2 \pi \Delta L}{\lambda}
+\]</span></p>
+<p>However, because the light makes a round trip in each arm (traveling to the mirror and back), the effective path length change is <span class="math inline">\(2\Delta L\)</span>, giving:</p>
+<p><span class="math display">\[
+\Delta \phi = \frac{2 \pi (2\Delta L)}{\lambda} = \frac{4 \pi \Delta L}{\lambda}
 \]</span></p>
 <p>This phase shift alters the interference pattern observed at the detector, allowing LIGO to measure the presence and properties of gravitational waves. The extraordinary precision of LIGO’s measurements enables it to detect incredibly small disturbances in spacetime, providing valuable insights into some of the most energetic events in the universe.</p>
 <div class="callout callout-style-default callout-note callout-titled">
