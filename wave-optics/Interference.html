@@ -434,6 +434,17 @@ window.Quarto = {
  <span class="menu-text">Interference and Coherence</span></a>
   </div>
 </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 9</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../wave-optics/Interferometers.html" class="sidebar-item-text sidebar-link">
@@ -538,7 +549,7 @@ Constructive Interference
 <p>Occurs when <span class="math inline">\(\Delta \phi=2\pi m\)</span> (where <span class="math inline">\(m\)</span> is an integer), resulting in <span class="math inline">\(I=4I_0\)</span></p>
 </div>
 </div>
-<div id="17625862" class="cell" data-execution_count="2">
+<div id="c99c4cbc" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x<span class="op">=</span>np.linspace(<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">1000</span>)</span>
@@ -579,7 +590,7 @@ Destructive Interference
 <p>Occurs when <span class="math inline">\(\Delta \phi=(2m-1)\pi\)</span> (where <span class="math inline">\(m\)</span> is an integer), resulting in <span class="math inline">\(I=0\)</span></p>
 </div>
 </div>
-<div id="b554638a" class="cell" data-execution_count="3">
+<div id="af5b90d9" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>x<span class="op">=</span>np.linspace(<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">1000</span>)</span>
@@ -643,7 +654,7 @@ Phase Difference and Path Difference
 </section>
 <section id="interference-of-waves-in-space" class="level3">
 <h3 class="anchored" data-anchor-id="interference-of-waves-in-space">Interference of Waves in Space</h3>
-<div id="f48ca516" class="cell" data-execution_count="4">
+<div id="7648bc7e" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plane_wave(k,omega,r,t):</span>
@@ -697,7 +708,7 @@ Phase Difference and Path Difference
 </div>
 </div>
 </div>
-<div id="2c81228e" class="cell" data-execution_count="5">
+<div id="e8968129" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> spherical_wave(k,omega,r,r0,t):</span>
@@ -859,7 +870,7 @@ Coherence
 <li>Limited coherence length/area</li>
 <li>Spectral broadening</li>
 </ul>
-<div id="5dc24133" class="cell" data-execution_count="6">
+<div id="0e7326cd" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>omega0 <span class="op">=</span> <span class="fl">2.0</span></span>
@@ -931,7 +942,7 @@ Coherence
 </div>
 </div>
 <p>Besides different frequencies the coherence time can also be affected by phase jumps. The following example shows two waves with the same frequency but multiple phase jumps. The temporal correlation function shows the decoherence due to the phase jumps.</p>
-<div id="0149214e" class="cell" data-execution_count="7">
+<div id="ab53d692" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -1040,7 +1051,7 @@ Coherence of Thermal radiation
 </div>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Thermal radiation is a common example of incoherent light. While it is called incoherent, there is no complete incoherence, but the coherence length of a few 10 micrometers. Sun light, for example, has been <a href="https://opg.optica.org/directpdfaccess/151be151-eff8-4f8c-ac25d1cdd98cdfa9_310743/optica-2-2-95.pdf?da=1&amp;id=310743&amp;seq=0&amp;mobile=no">measured</a> to have a coherence length of about 50 micrometers (Shawn Divitt and Lukas Novotny, “Spatial coherence of sunlight and its implications for light management in photovoltaics,” Optica 2, 95-103 (2015)). The following factors contribute to the incoherence of thermal radiation:</p>
+<p>Thermal radiation is a common example of incoherent light. While it is called incoherent, there is no complete incoherence, but the coherence length of a few 10 micrometers. Sun light, for example, has been <a href="https://www.semanticscholar.org/paper/Spatial-coherence-of-sunlight-and-its-implications-Divitt-Novotn%C3%BD/fbc2560b8fc54a10cb0feeac94eb3607e4e80ffb">measured</a> to have a coherence length of about 50 micrometers (Shawn Divitt and Lukas Novotny, “Spatial coherence of sunlight and its implications for light management in photovoltaics,” Optica 2, 95-103 (2015)). The following factors contribute to the incoherence of thermal radiation:</p>
 <p><strong>Random Emission Process</strong> - Individual atoms/molecules emit light independently - Each emission event has a random phase - The emission timing is random - These random events effectively create continuous phase jumps</p>
 <p><strong>Multiple Emitters</strong> - Many atoms/molecules emit simultaneously - Each emitter acts independently - There’s no phase relationship between different emitters - This leads to spatially incoherent radiation</p>
 <p><strong>Thermal Motion</strong> - Atoms/molecules are in constant thermal motion - This motion causes Doppler shifts - The shifts result in frequency variations - Motion also affects the phase of emitted radiation</p>
