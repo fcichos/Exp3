@@ -499,7 +499,11 @@ window.Quarto = {
   <li><a href="#fixed-wavelength-designing-optical-coatings" id="toc-fixed-wavelength-designing-optical-coatings" class="nav-link" data-scroll-target="#fixed-wavelength-designing-optical-coatings">Fixed Wavelength: Designing Optical Coatings</a></li>
   <li><a href="#fixed-thickness-understanding-colored-films" id="toc-fixed-thickness-understanding-colored-films" class="nav-link" data-scroll-target="#fixed-thickness-understanding-colored-films">Fixed Thickness: Understanding Colored Films</a></li>
   </ul></li>
-  <li><a href="#real-world-application-anti-reflection-coatings" id="toc-real-world-application-anti-reflection-coatings" class="nav-link" data-scroll-target="#real-world-application-anti-reflection-coatings">Real-World Application: Anti-Reflection Coatings</a></li>
+  <li><a href="#real-world-application-anti-reflection-coatings" id="toc-real-world-application-anti-reflection-coatings" class="nav-link" data-scroll-target="#real-world-application-anti-reflection-coatings">Real-World Application: Anti-Reflection Coatings</a>
+  <ul class="collapse">
+  <li><a href="#design-principles-of-anti-reflection-coatings" id="toc-design-principles-of-anti-reflection-coatings" class="nav-link" data-scroll-target="#design-principles-of-anti-reflection-coatings">Design Principles of Anti-Reflection Coatings</a></li>
+  <li><a href="#how-destructive-interference-eliminates-reflections" id="toc-how-destructive-interference-eliminates-reflections" class="nav-link" data-scroll-target="#how-destructive-interference-eliminates-reflections">How Destructive Interference Eliminates Reflections</a></li>
+  </ul></li>
   <li><a href="#soap-films-and-bubbles-natures-interferometers" id="toc-soap-films-and-bubbles-natures-interferometers" class="nav-link" data-scroll-target="#soap-films-and-bubbles-natures-interferometers">Soap Films and Bubbles: Nature’s Interferometers</a></li>
   <li><a href="#newton-rings-measuring-with-interference" id="toc-newton-rings-measuring-with-interference" class="nav-link" data-scroll-target="#newton-rings-measuring-with-interference">Newton Rings: Measuring with Interference</a></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
@@ -579,7 +583,7 @@ Phase Jump at Boundaries
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Waves may experience phase jumps upon reflection, depending on the relative refractive indices of the two media. A light wave will experience a phase jump of <span class="math inline">\(\pi\)</span> when reflecting from a medium of higher refractive index. Conversely, no phase jump occurs when light reflects from a medium of lower refractive index. This phenomenon is analogous to a wave on a string: when the string is attached to a rigid wall (like going from a less dense to a more dense medium), the reflected wave is inverted. When the string end is free (like going from a denser to a less dense medium), the reflected wave is not inverted. The detailed physical reasons will be covered when we examine the Fresnel formulas in electromagnetic optics.</p>
+<p>Waves may experience phase jumps upon reflection, depending on the relative refractive indices of the two media. A light wave will experience a phase jump of <span class="math inline">\(\pi\)</span> when reflecting from a medium of higher refractive index. Conversely, no phase jump occurs when light reflects from a medium of lower refractive index. This phenomenon is analogous to a wave on a string: when the string is attached to a rigid wall (like going from a less dense to a more dense medium), the reflected wave is inverted. When the string end is free (like going from a denser to a less dense medium), the reflected wave is not inverted. The detailed physical reasons will be covered when we examine the <em>Fresnel formulas in electromagnetic optics</em>.</p>
 </div>
 </div>
 </section>
@@ -814,8 +818,41 @@ Haidinger Fringes
 <section id="real-world-application-anti-reflection-coatings" class="level2">
 <h2 class="anchored" data-anchor-id="real-world-application-anti-reflection-coatings">Real-World Application: Anti-Reflection Coatings</h2>
 <p>One of the most important technological applications of thin film interference is the anti-reflection coating found on eyeglasses, camera lenses, solar panels, and telescope optics. Without such coatings, a typical glass surface reflects about 4% of incident light at each air-glass interface. For a lens system with multiple elements, these reflections accumulate, reducing image brightness, causing glare, and creating ghost images from internal reflections.</p>
-<p>An anti-reflection coating works by exploiting destructive interference. A thin film with carefully chosen thickness and refractive index is deposited on the glass surface. The refractive index of the coating (<span class="math inline">\(n_{\text{coating}}\)</span>) is typically chosen to be intermediate between air (<span class="math inline">\(n = 1\)</span>) and glass (<span class="math inline">\(n \approx 1.5\)</span>), often around <span class="math inline">\(n_{\text{coating}} \approx 1.23\)</span> (magnesium fluoride is a common choice). The thickness is chosen to be <span class="math inline">\(d = \lambda/(4n_{\text{coating}})\)</span>—a quarter-wave thickness—for a target wavelength, typically around 550 nm where the human eye is most sensitive.</p>
-<p>With this design, light reflecting from the top surface of the coating undergoes a phase jump of <span class="math inline">\(\pi\)</span> (since <span class="math inline">\(n_{\text{air}} &lt; n_{\text{coating}}\)</span>). Light that travels through the coating and reflects from the coating-glass interface travels an extra optical path of <span class="math inline">\(2n_{\text{coating}}d = 2n_{\text{coating}} \cdot \lambda/(4n_{\text{coating}}) = \lambda/2\)</span>, which corresponds to a phase change of <span class="math inline">\(\pi\)</span>. However, this reflection at the coating-glass interface also experiences a phase jump of <span class="math inline">\(\pi\)</span> (since <span class="math inline">\(n_{\text{coating}} &lt; n_{\text{glass}}\)</span>). The total phase difference between the two reflected beams is therefore <span class="math inline">\(\pi + \pi + \pi = 3\pi\)</span> (equivalent to <span class="math inline">\(\pi\)</span> modulo <span class="math inline">\(2\pi\)</span>), resulting in destructive interference and minimal reflection. Modern multi-layer coatings use several layers of different materials to achieve anti-reflection over a broad wavelength range, essential for high-performance optical systems.</p>
+<section id="design-principles-of-anti-reflection-coatings" class="level3">
+<h3 class="anchored" data-anchor-id="design-principles-of-anti-reflection-coatings">Design Principles of Anti-Reflection Coatings</h3>
+<p>An anti-reflection coating works by exploiting destructive interference. A thin film with carefully chosen thickness and refractive index is deposited on the glass surface. The key design parameters are:</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Anti-Reflection Coating Design
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Refractive index:</strong> The coating material is chosen with <span class="math inline">\(n_{\text{coating}}\)</span> intermediate between air and glass: <span class="math display">\[n_{\text{air}} &lt; n_{\text{coating}} &lt; n_{\text{glass}}\]</span></p>
+<p>Typically: <span class="math inline">\(n_{\text{coating}} \approx 1.23\)</span> (magnesium fluoride is a common choice) for <span class="math inline">\(n_{\text{air}} = 1\)</span> and <span class="math inline">\(n_{\text{glass}} \approx 1.5\)</span></p>
+<p><strong>Coating thickness:</strong> Quarter-wave thickness for the target wavelength: <span class="math display">\[d = \frac{\lambda}{4n_{\text{coating}}}\]</span></p>
+<p>where <span class="math inline">\(\lambda\)</span> is typically around 550 nm (where the human eye is most sensitive).</p>
+</div>
+</div>
+</section>
+<section id="how-destructive-interference-eliminates-reflections" class="level3">
+<h3 class="anchored" data-anchor-id="how-destructive-interference-eliminates-reflections">How Destructive Interference Eliminates Reflections</h3>
+<p>With this quarter-wave design, the anti-reflection coating achieves destructive interference through careful phase management:</p>
+<ol type="1">
+<li><p>Light reflecting from the <strong>top surface</strong> (air-coating interface) undergoes a phase jump of <span class="math inline">\(\pi\)</span> (since <span class="math inline">\(n_{\text{air}} &lt; n_{\text{coating}}\)</span>)</p></li>
+<li><p>Light traveling through the coating and reflecting from the <strong>coating-glass interface</strong> accumulates:</p>
+<ul>
+<li>Optical path difference: <span class="math inline">\(2n_{\text{coating}}d = 2n_{\text{coating}} \cdot \frac{\lambda}{4n_{\text{coating}}} = \frac{\lambda}{2}\)</span> → phase change of <span class="math inline">\(\pi\)</span></li>
+<li>Phase jump at reflection: <span class="math inline">\(\pi\)</span> (since <span class="math inline">\(n_{\text{coating}} &lt; n_{\text{glass}}\)</span>)</li>
+</ul></li>
+<li><p><strong>Total phase difference:</strong> <span class="math display">\[\Delta \phi = \pi + \pi + \pi = 3\pi \equiv \pi \pmod{2\pi}\]</span></p></li>
+</ol>
+<p>This results in destructive interference and minimal reflection at the design wavelength.</p>
+<p>Modern multi-layer coatings use several layers of different materials to achieve anti-reflection over a broad wavelength range, essential for high-performance optical systems.</p>
+</section>
 </section>
 <section id="soap-films-and-bubbles-natures-interferometers" class="level2">
 <h2 class="anchored" data-anchor-id="soap-films-and-bubbles-natures-interferometers">Soap Films and Bubbles: Nature’s Interferometers</h2>
