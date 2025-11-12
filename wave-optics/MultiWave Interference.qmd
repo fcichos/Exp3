@@ -195,55 +195,59 @@ def get_size(w,h):
     return((w/2.54,h/2.54))
 
 ```
-So far we looked at the interference of two waves, which was a simplification as I mentioned already earlier. Commonly there will be a multitude of partial waves contribute to the oberved intereference. This is what we would like to have a look at now. We will do that in a quite general fashion, as the resulting formulas will appear several times again for different problems.
+## Introduction: Beyond Two-Wave Interference
 
-Nevertheless we will make a difference between
+So far in our study of interference, we have focused primarily on the interaction of two waves—a useful simplification that captures the essential physics of interference phenomena. However, this two-wave picture is idealized. In most practical optical systems, we encounter situations where many partial waves interfere simultaneously. Consider a diffraction grating with thousands of parallel slits, each emitting a wavelet that contributes to the observed pattern. Or think about light bouncing back and forth between two highly reflective mirrors in a laser cavity, creating hundreds of interfering reflections. These multi-wave interference scenarios produce dramatically different and often more useful patterns than simple two-wave interference.
 
-- multiwave interference of waves with the constant amplitude
-- multiwave interference of waves with decreasing amplitude
+Understanding multiple wave interference is crucial for explaining and designing many important optical devices. Diffraction gratings, which we use for spectroscopy and wavelength measurement, rely on the interference of light from thousands of periodic sources. Fabry-Perot interferometers, used for ultra-precise wavelength measurements and laser frequency stabilization, exploit multiple reflections between parallel mirrors. Even the laser itself—perhaps the most important optical invention of the 20th century—operates through multiple wave interference in its optical cavity. The sharp, well-defined spectral lines produced by these devices, and their ability to resolve closely spaced wavelengths, all stem from the physics of multiple wave interference.
 
-Especially the latter is often occuring, if we have multiple reflections and each reflection is only a fraction of the incident amplitude.
+In this lecture, we will develop a general mathematical framework for analyzing multiple wave interference. We will distinguish between two important cases that arise in different physical situations. The first case involves multiple waves all having the same amplitude, as occurs in a diffraction grating where each slit contributes equally to the interference pattern. The second case involves waves with progressively decreasing amplitudes, as happens when light undergoes multiple reflections in a cavity where each reflection reduces the wave amplitude. As we'll see, these two scenarios lead to distinctly different interference patterns with different practical applications.
 
-### Multiple Wave Interference with Constant Amplitude
+## Multiple Wave Interference with Constant Amplitude
 
-In the case of constant amplitude (for example realized by a grating, which we talk about later), the total wave amplitude is given according to the picture below by
+Let us first consider the simpler case where multiple waves all have the same amplitude but differ in their phase. This situation occurs, for example, in a diffraction grating where light passes through many equally sized slits, or in an array of coherent sources arranged periodically. Understanding this case will provide the foundation for analyzing more complex situations.
+
+Consider $M$ waves, each with the same amplitude but with successive phase differences. The total wave amplitude is the vector sum of all individual wave amplitudes:
 
 $$
-U=U_1+U_2+U_1+U_3+\ldots+U_M
+U=U_1+U_2+U_3+\ldots+U_M
 $$
 
-where we sum the amplitude over $M$ partial waves. Between the neighboring waves (e.g. $U_1$ and $U_2$), we will assume a phase difference (because of a path length difference for example), which we denote as $\Delta \phi$.
-
-The amplitude of the p-th wave is then given by
+where we sum over all $M$ partial waves. If neighboring waves (such as $U_1$ and $U_2$) have a constant phase difference $\Delta \phi$ due to, for example, a path length difference, then we can express the amplitude of the $p$-th wave as:
 
 $$
 U_p=\sqrt{I_0}e^{i(p-1)\Delta \phi}
 $$
 
-with the index $p$ being an interger $p=1,2,\ldots,M$, $h=e^{i\Delta \phi}$ and $\sqrt{I_0}$ as the amplitude of each individual wave. The total amplitude $U$ can be then expressed as
+where $p=1,2,\ldots,M$ is an integer index, and $\sqrt{I_0}$ represents the amplitude of each individual wave. The total amplitude can then be written as a geometric series:
 
 $$
 U=\sqrt{I_0}\left (1+h+h^2+\ldots +h^{M-1}\right)
 $$
 
-which is a geometric sum. We can apply the sum formula for geometric sums to obtain
+where we've introduced the notation $h=e^{i\Delta \phi}$ to simplify the expression. The beauty of recognizing this as a geometric series is that we can immediately apply the closed-form sum formula to obtain:
 
 $$
 U=\sqrt{I_0}\frac{1-h^M}{1-h}=\sqrt{I_0}\frac{1-e^{iM\Delta \phi}}{1-e^{i\Delta \phi}}
 $$
 
-We now have to calculate the intensity of the total amplitude
+To find the observed intensity, we must calculate the squared magnitude of this total amplitude. After factoring out appropriate phase terms and using Euler's formula to convert complex exponentials to sines, we arrive at a remarkably elegant result:
 
-$$
-I=|U|^2=I_{0}\left | \frac{e^{-iM\Delta \phi/2}-e^{iM\Delta \phi/2}}{e^{-i\Delta \phi/2}-e^{i\Delta \phi/2}}\right |^2
-$$
+::: {.callout-important}
+## Multiple Beam Interference Formula (Equal Amplitudes)
+$$I=I_{0}\frac{\sin^2(M\Delta \phi/2)}{\sin^2(\Delta \phi/2)}$$
 
-which we can further simplify to give
+This formula describes the interference pattern from $M$ waves of equal amplitude with constant phase difference $\Delta \phi$ between neighbors.
 
-$$
-I=I_{0}\frac{\sin^2(M\Delta \phi/2)}{\sin^2(\Delta \phi/2)}
-$$
+**Key features:**
 
+- **Numerator** $\sin^2(M\Delta \phi/2)$: oscillates $M$ times faster than denominator
+- **Denominator** $\sin^2(\Delta \phi/2)$: creates the envelope of the pattern
+- **Maximum intensity**: $I_{\text{max}} = M^2 I_0$ when $\Delta \phi = 2\pi m$ (where $m$ is an integer)
+- **First minimum**: occurs at $\Delta \phi = 2\pi/M$
+
+**Physical interpretation:** As $M$ increases, the interference peaks become narrower and taller, while maintaining the same positions. This sharpening is crucial for high-resolution spectroscopy.
+:::
 ::: {#figure-md layout-ncol=2}
 
 ```{python}
@@ -374,63 +378,68 @@ plt.show()
 ```
 :::
 
-The result is therefore an oscillating function. The numerator $\sin^2(M\Delta \phi/2)$ shows and oscillation frequency, which is by a factor of $M$ higher than the one in the denominator $\sin^2 (\Delta \phi/2)$.
-Therefore the intensity pattern is oscillating rapidly and creating a first minimum at
+This intensity formula reveals several fascinating features. The numerator $\sin^2(M\Delta \phi/2)$ oscillates with a frequency that is $M$ times higher than the denominator $\sin^2(\Delta \phi/2)$. This creates a rapidly oscillating pattern that produces sharp interference peaks separated by regions of low intensity. The first minimum of the interference peak occurs at $\Delta \phi = 2\pi/M$, which is a crucial result: it shows that the number of sources $M$ directly determines how narrow the interference peak becomes. As we add more sources, the peaks become increasingly sharp and well-defined.
+
+This narrowing effect has profound practical implications. In a diffraction grating with spacing $d$ between adjacent slits, the phase difference between neighboring sources is $\Delta \phi = 2\pi d \sin(\theta)/\lambda$, just as in the double-slit experiment. Using this relationship, we can express the angular width of the interference peak. The first minimum occurs at an angle given by:
 
 $$
-\Delta \phi=\frac{2\pi}{M}
+\sin(\theta_{\text{min}}) = \frac{\lambda}{Md}
 $$
 
-This is an important result, since it shows that the number of sources $M$ determines the position of the first minimum and the interference peak gets narrower with increasing $M$. Since the phase difference $\Delta \phi$ between neighboring sources is the same as for the double slit experiment, i.e. $\Delta \phi=2\pi d/\lambda \sin(\theta)$, we can also determine the angular position of the first minimum. This is given by
+Notice that this angular width is inversely proportional to the total width of the grating ($Md$), not just to the slit spacing $d$. A grating with 10,000 slits produces peaks that are 10,000 times narrower than a double-slit with the same spacing! This is why diffraction gratings can resolve spectral lines that are extremely close in wavelength—a capability essential for spectroscopy in chemistry, astronomy, and materials science.
+
+A mathematically subtle but physically important situation arises when both the numerator and denominator simultaneously approach zero. This occurs whenever the phase difference is an integer multiple of $2\pi$:
 
 $$
-\sin(\theta_\textrm{min})=\frac{1}{M}\frac{\lambda}{d}
+\Delta \phi = 2\pi m
 $$
 
-This again has the common feature that it scales as $\lambda/d$.
-A special situation occurs, whenever the numerator and the denominator become zero. This will happen whenever
+where $m$ is an integer called the interference order, representing how many wavelengths of path difference exist between neighboring partial waves. At these special points, our formula appears to give the indeterminate form $0/0$. However, applying L'Hôpital's rule or using the small-angle approximation for the sine functions reveals that:
 
 $$
-\Delta \phi=m 2\pi
+I(\Delta \phi = 2\pi m) = M^2 I_0
 $$
 
-where $m$ is an integer and denotes the interference order, i.e. the number of wavelength that neighboring partial waves have as path length difference.
-In this case, the intensity distributiion will give us
+This is the maximum possible intensity, and it's proportional to the square of the number of sources. This quadratic scaling is remarkable: doubling the number of sources quadruples the peak intensity. This explains why diffraction gratings with many lines are so much brighter and more efficient than simple double slits.
+:::
 
-$$
-I=I_0 \frac{0}{0}
-$$
+### Application: Diffraction Gratings and Spectroscopy
 
-and we have to determine the limit with the help of l'Hospitals rule. The outcome of this calculation is, that
+The multiple beam interference formula we've derived provides the theoretical foundation for one of the most important optical instruments: the diffraction grating. A typical diffraction grating contains thousands of parallel lines etched or ruled on a reflective or transparent surface, with spacings on the order of micrometers. When illuminated by light, each line acts as a coherent source, and the interference of light from all these sources creates sharp, bright spectral lines at specific angles determined by the wavelength.
 
-$$
-I(\Delta \phi=m2\Delta \pi)=M^2 I_0
-$$
+The resolving power of a grating—its ability to distinguish between two closely spaced wavelengths—is directly proportional to the product $mM$, where $m$ is the diffraction order and $M$ is the total number of illuminated grating lines. A typical commercial grating might have 1200 lines per millimeter across a width of 50 mm, giving $M = 60,000$ lines. Such a grating can resolve wavelength differences as small as a few picometers in the visible spectrum, making it indispensable for identifying chemical elements in astronomical spectroscopy, measuring Doppler shifts of distant galaxies, and analyzing the composition of materials in analytical chemistry.
 
-which can be also realized when using the small angle approximation for the sine functions.
+### Wavevector Representation: A Powerful Geometric Insight
 
-#### Wavevector Representation
+There is an elegant geometric way to understand multiple wave interference using wavevectors that provides deep insight into the physics and connects to many other phenomena in optics and solid-state physics. Let's rewrite the first-order ($m=1$) constructive interference condition in terms of wavevectors rather than wavelengths and angles.
 
-We would like to introduce a different representation of the multiple wave interference of the grating, which is quite insightful.
-The first order ($m=1$) constructive interference condition is given by
+The standard grating equation $d\sin\theta = \lambda$ can be rewritten by dividing both sides by the wavelength:
 
 $$
 \frac{1}{\lambda}\sin{\theta}= \frac{1}{d}
 $$
 
-which also means that
+Multiplying both sides by $2\pi$ gives:
 
 $$
 \frac{2\pi}{\lambda}\sin{\theta}= \frac{2\pi}{d}
 $$
 
-This can be written as
+::: {.callout-tip}
+## Wavevector Formulation of Grating Equation
+$$k \sin{\theta}= K$$
 
-$$
-k \sin{\theta}= K
-$$
+where:
+- $k = 2\pi/\lambda$ is the magnitude of the wavevector of the light
+- $K = 2\pi/d$ is the grating wavevector corresponding to the grating period $d$
+- $\theta$ is the diffraction angle
 
-where $k$ is the magnitude of the wavevector of the light and $K$ is the wavevector magnitude that corresponds to the grating period $d$. As the magnitude of the wavevector of the light is conserved, the wavevectors of the incident light and the light traveling along the direction of the first interence peak form the sides of an equilateral triangle. This is shown in the following figure.
+**Geometric interpretation:** The grating provides momentum transfer $K$ to redirect the incident light. The wavevectors of incident and diffracted light, together with the grating vector, form a closed triangle—a vector addition $\vec{k}_{\text{incident}} + \vec{K} = \vec{k}_{\text{diffracted}}$.
+
+**Universal principle:** This wavevector picture applies to X-ray diffraction from crystals, electron diffraction, neutron scattering, and phonon interactions—wherever periodic structures interact with waves.
+:::
+
+Since the magnitude of the light's wavevector is conserved (elastic scattering), the incident and diffracted wavevectors both have magnitude $k$. Together with the grating vector $K$, they form an isosceles triangle, as shown in the figure below. This geometric picture reveals that the grating is effectively providing a "momentum kick" of magnitude $K$ to change the light's direction. This same wavevector conservation principle appears throughout physics: in X-ray diffraction from crystals (the Bragg condition), in electron diffraction, in the scattering of light by acoustic waves, and even in nonlinear optics where photons combine or split.
 
 ```{python}
 # | code-fold: true
@@ -505,40 +514,42 @@ plt.show()
 This means that the diffraction grating is providing a wavevector $K$ to alter the direction of the incident light. This is again a common feature reappearing in many situations as for example in the X-ray diffraction of crystals.
 
 
-### Multiple Wave Interference with Decreasing Amplitude
+## Multiple Wave Interference with Decreasing Amplitude
 
-We will turn our attention now to a slight modification of the previous multiwave interference. We will introduce a decreasing amplitude of the individual waves. The first wave shall have an amplitude $U_1=\sqrt{I_0}$. The next wave, however, will not only be phase shifted but also have a smaller amplitude.
+We now turn our attention to a physically important variation of multiple wave interference: the case where successive waves have progressively decreasing amplitudes. This scenario arises naturally whenever light undergoes multiple reflections in an optical cavity, such as in a Fabry-Perot interferometer or the mirrors of a laser cavity. Each time light reflects from a partially reflective surface, only a fraction of the amplitude is reflected—the rest is transmitted through the surface and lost from the interference pattern within the cavity.
+
+Consider a sequence of waves where the first wave has amplitude $U_1 = \sqrt{I_0}$, but each subsequent wave has its amplitude reduced by a constant factor. We express the second wave as:
 
 $$
 U_2=h U_1
 $$
 
-where $h=re^{i\phi}$ with $|h|=r<1$. $r$ can be regarded as a reflection coefficient, which deminishes the amplitude of the incident wave. According to that the intensity is reduced by
+where $h = re^{i\Delta\phi}$ with $|h| = r < 1$. Here $r$ represents the reflection coefficient, a dimensionless number less than one that describes what fraction of the wave amplitude survives each reflection. The phase factor $e^{i\Delta\phi}$ accounts for the additional optical path traveled between successive reflections. When we calculate the intensity of this second wave, we find:
 
 $$
 I_2=|U_2|^2=|h U_1|^2=r^2 I_1
 $$
 
-The intensity of the incident wave is multiplied by a  factor $r^2$, while the amplitude is multiplied by $r$. Note that the phase factor $e^{i\Delta\phi}$ is removed when taking the square of this complex number.
+This reveals an important distinction: while the amplitude is multiplied by $r$ at each reflection, the intensity is multiplied by $r^2$. The phase factor $e^{i\Delta\phi}$ vanishes when we take the squared magnitude to find intensity, as $|e^{i\Delta\phi}|^2 = 1$. This means the phase affects where the waves interfere, but the factor $r$ determines how quickly the wave amplitudes decay with successive reflections.
 
 ::: {.callout-note}
-## Intensity at Boundaries
+## Reflectance, Transmittance, and Energy Conservation
 
-The amplitude of the reflected wave is diminished by a factor
-$r\le 1$, which is called the reflection coefficient. The intensity is diminished by a factor $R=|r|^2\le1$, which is the **reflectance**.
+The amplitude reflection coefficient $r \le 1$ determines what fraction of the wave amplitude is reflected at a boundary. The corresponding **reflectance** $R = |r|^2 \le 1$ gives the fraction of intensity (energy per unit area per unit time) that is reflected.
 
-In the absence of absorption, reflectance $R$  and **transmittance** $T$ add to one due to energy conservation.
+The **transmittance** $T$ is the fraction of intensity transmitted through the boundary. In the absence of absorption, energy conservation requires:
 
 $$
 R+T=1
 $$
+
+**Example:** A typical uncoated glass surface has $R \approx 0.04$ (4% reflectance) and $T \approx 0.96$ (96% transmittance). High-quality mirror coatings can achieve $R > 0.999$ (99.9% reflectance).
 :::
 
-Consequently, the third wave would be now $U_3=hU_2=h^2U_1$.
-The total amplitude is thus
+Following this pattern, the third wave has amplitude $U_3 = hU_2 = h^2U_1$, the fourth has $U_4 = h^3U_1$, and so on. If we sum over many such reflections (potentially infinite in number), the total amplitude becomes:
 
 $$
-U=U_1+U_2+U_3+\ldots+U_M = \sqrt{I_0}(1+h+h^2+\ldots)
+U=U_1+U_2+U_3+\ldots = \sqrt{I_0}(1+h+h^2+\ldots)
 $$
 
 ::: {#figure-fabry layout-ncol=2}
@@ -641,38 +652,57 @@ plt.show()
 ```
 :::
 
-This yields again
+This is again a geometric series, which we can sum using the standard formula (taking the limit as $M \to \infty$ since reflections continue indefinitely):
 
 $$
-U=\sqrt{I_0}\frac{(1-h^M)}{1-h}=\frac{\sqrt{I_0}}{1-r e^{i\Delta\phi}}
+U=\sqrt{I_0}\lim_{M\to\infty}\frac{(1-h^M)}{1-h}=\frac{\sqrt{I_0}}{1-r e^{i\Delta\phi}}
 $$
 
-Calculating the intensity of the waves is giving
+The intensity is found by calculating $I = |U|^2$, which requires evaluating the squared magnitude of the complex denominator:
 
 $$
 I=|U|^2=\frac{I_{0}}{|1-re^{i\Delta\phi}|^2}=\frac{I_0}{(1-r)^2+4r\sin^2(\Delta\phi/2)}
 $$
 
-which is also known as the **Airy function**. This function can be further simplified by the following abbrevations
+This fundamental result is known as the **Airy function** or Airy formula, named after the British astronomer George Biddell Airy who first derived it in 1833 while studying the properties of spectroscopic instruments.
 
-$$
-I_{\rm max}=\frac{I_0}{(1-r)^2}
-$$
+::: {.callout-important}
+## Airy Function: Multiple Reflections with Losses
+$$I=\frac{I_{\rm max}}{1+4\left(\frac{\mathcal{F}}{\pi}\right)^2\sin^{2}(\Delta\phi/2)}$$
 
-and
+where:
+- $I_{\rm max}=\frac{I_0}{(1-r)^2}$ is the maximum transmitted intensity
+- $\mathcal{F}=\frac{\pi \sqrt{r}}{1-r}$ is the **finesse**, a dimensionless quality factor
+- $\Delta\phi$ is the round-trip phase accumulated in the cavity
 
-$$
-\mathcal{F}=\frac{\pi \sqrt{r}}{1-r}
-$$
+**Key features:**
 
-where the latter is called the *Finesse*. With those abbrevations, we obtain
+- **Peak sharpness** increases dramatically with finesse $\mathcal{F}$
+- **High reflectivity** ($r \to 1$) gives high finesse and very narrow peaks
+- **Maximum intensity** occurs when $\Delta\phi = 2\pi m$ (constructive interference)
+- **Between peaks**, transmission drops to nearly zero for high finesse
 
-$$
-I=\frac{I_{\rm max}}{1+4\left(\frac{\mathcal{F}}{\pi}\right)^2\sin^{2}(\Delta\phi/2)}
-$$
+**Applications:** Fabry-Perot interferometers, laser cavities, optical filters, wavelength meters
+:::
 
-for the interference of multiple waves with decreasing amplitude.
+The finesse $\mathcal{F}$ is perhaps the most important parameter characterizing a Fabry-Perot cavity or any resonant optical system. It quantifies how "sharp" the resonance peaks are compared to their spacing. A cavity with highly reflective mirrors (say $r = 0.99$, giving $R = 98\%$ reflectance) has a finesse of about $\mathcal{F} \approx 310$, producing extremely narrow transmission peaks. This makes such cavities exquisitely sensitive to small changes in wavelength or cavity length.
 
-This intensity distribution has a different shape than the one we obtained for multiple waves with the same amplitude.
+The intensity distribution described by the Airy function has a profoundly different character from the equal-amplitude case. As we increase the finesse, the intensity maxima—which occur at multiples of $2\pi$ in phase—become dramatically narrower and more isolated. Between the maxima, the intensity drops to nearly zero, creating regions of almost complete destructive interference. This sharp wavelength selectivity makes Fabry-Perot interferometers indispensable for applications requiring ultra-high spectral resolution, such as measuring the frequency stability of lasers, detecting tiny Doppler shifts in astrophysics, and studying the fine structure of atomic emission lines.
 
-We clearly observe that with increasing Finesse the intensity maxima, which occur at multiples fo $\pi$ get much narrower. In addition the regions between the maxima show better contrast and fopr higher Finesse we get complete destructive interference.
+## Application: Fabry-Perot Interferometers and Laser Cavities
+
+The Airy function directly describes the transmission spectrum of a Fabry-Perot interferometer, which consists of two parallel, partially reflective mirrors separated by a distance $L$. When light enters this cavity, it bounces back and forth many times, with a small fraction leaking out at each reflection. The transmitted light exhibits sharp peaks whenever the cavity length corresponds to an integer number of half-wavelengths: $L = m\lambda/2$, or equivalently when the round-trip phase $\Delta\phi = 4\pi L/\lambda = 2\pi m$.
+
+The frequency spacing between adjacent transmission peaks is called the **free spectral range** (FSR) and is given by $\text{FSR} = c/(2L)$, where $c$ is the speed of light. The width of each peak is approximately $\text{FSR}/\mathcal{F}$. A Fabry-Perot with finesse 1000 and FSR of 1 GHz thus has peak widths of only 1 MHz, enabling it to resolve frequency differences a thousand times smaller than the FSR. This remarkable capability makes such instruments essential for laser frequency stabilization and precision spectroscopy.
+
+The same physics governs laser cavities. A laser consists of an amplifying medium placed between two mirrors, forming a Fabry-Perot cavity. Only wavelengths that satisfy the resonance condition can build up to large intensities inside the cavity. The finesse determines how selective this resonance is, affecting both which wavelengths can lase and how stable the laser frequency will be. High-finesse cavities produce lasers with extremely narrow linewidths, crucial for applications ranging from atomic clocks and gravitational wave detection to quantum computing and precision measurements of fundamental constants.
+
+## Conclusion: From Fundamental Physics to Precision Technology
+
+The transition from two-wave to multiple-wave interference represents more than just mathematical generalization—it reveals a profound principle that underpins much of modern photonics. When many coherent sources interfere, whether they have equal amplitudes (as in diffraction gratings) or decreasing amplitudes (as in Fabry-Perot cavities), the resulting patterns exhibit dramatically sharper features than simple two-wave interference. This sharpening effect, characterized mathematically by the $M^2$ intensity scaling in gratings and the finesse parameter in cavities, provides the foundation for optical instruments of extraordinary precision and capability.
+
+Diffraction gratings, exploiting the equal-amplitude interference of thousands of sources, have become indispensable tools for separating and analyzing light. From the spectrographs mounted on the world's largest telescopes—revealing the chemical composition of distant stars and galaxies—to compact spectrometers in chemistry labs identifying molecular structures, gratings transform the abstract mathematics of multi-wave interference into practical analytical power. The same principles extend to modern photonic devices: arrayed waveguide gratings in optical communications demultiplex dozens of data channels carried on different wavelengths through a single fiber, while volume holographic gratings enable advanced applications in augmented reality displays and optical data storage.
+
+Fabry-Perot interferometers, governed by the Airy function and characterized by their finesse, push measurement precision to extraordinary limits. The remarkably narrow transmission peaks of high-finesse cavities enable wavelength measurements accurate to parts per billion, frequency stabilization of lasers to better than one part in $10^{15}$, and spectroscopic resolution sufficient to observe individual spectral components separated by only megahertz. Every laser—from the barcode scanner at a supermarket checkout to the kilometer-scale interferometer detecting gravitational waves—relies on the multiple reflection interference we've studied. The laser's narrow linewidth, directional beam, and temporal coherence all emerge from the cavity's ability to support only those wavelengths satisfying the stringent resonance condition.
+
+The mathematical frameworks we've developed—the multi-beam formula for equal amplitudes and the Airy function for decreasing amplitudes—appear throughout physics wherever periodic structures interact with waves. The same wavevector addition that describes grating diffraction also governs X-ray scattering from crystal lattices (Bragg diffraction), the electronic band structure of semiconductors, and even the propagation of light in photonic crystals that act as "semiconductors for photons." Understanding multiple wave interference thus provides not just isolated techniques for optical measurements, but a universal language for describing how waves interact with periodic structures across all scales and all branches of physics.

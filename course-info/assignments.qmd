@@ -4,14 +4,14 @@ title: "Seminars & Assignments"
 
 Assignments are an essential part of the course. They help you to understand the material better and to prepare for the final exam. Our experience shows that students who regularly work on the assignments have a better understanding of the material and are more successful in the final exam.
 
-All of the assignments for the lecture will be handled online. An assignment will be handed out every week starting October 17, 2024 on the Moodle page of the course (see below).
+All of the assignments for the lecture will be handled online. An assignment will be handed out every week starting October 16, 2025 on the Moodle page of the course (see below).
 
 We will use future seminars to discuss without any announcement problems that are similar to some questions we will use in the exam.
 
 ::: {.callout-important}
 ## Submission Deadline
 **The solutions to the exercise sheets have to be handed in on Thursdays before the lecture 11:15 via Moodle.**
-**Please upload your solutions as a single PDF file.**
+**Please upload your solutions as a single PDF file until next Thursday before the lecture.**
 **Please note that the submission will be closed at 11:15 sharp.**
 :::
 
@@ -26,6 +26,6 @@ There will be no online versions of the solutions available. Science is about di
 
 ## Moodle Page
 
-You can find the current assignments on the Moodle page of the course. The Moodle page is available at [Moodle](https://moodle2.uni-leipzig.de/course/view.php?id=50959).
+You can find the current assignments on the Moodle page of the course. The Moodle page is available at [Moodle](https://moodle2.uni-leipzig.de/course/view.php?id=57288).
 
 ![](../assets/images/main/Experimental Physics 3 QR Code.png){fig-align="center"}

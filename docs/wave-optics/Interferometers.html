@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../electromagnetic-waves/Electromagnetic Optics.html" rel="next">
-<link href="../wave-optics/Fresnel Zones.html" rel="prev">
+<link href="../wave-optics/Double Slit.html" rel="next">
+<link href="../wave-optics/Interference.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -69,6 +69,12 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script async="" src="https://hypothes.is/embed.js"></script>
+<script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    document.body.classList.add('hypothesis-enabled');
+  });
+</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -131,7 +137,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Wave Optics</li><li class="breadcrumb-item"><a href="../wave-optics/Diffraction2.html">Lecture 11</a></li><li class="breadcrumb-item"><a href="../wave-optics/Interferometers.html">Interferometers</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Wave Optics</li><li class="breadcrumb-item"><a href="../wave-optics/Interferometers.html">Lecture 9</a></li><li class="breadcrumb-item"><a href="../wave-optics/Interferometers.html">Interferometers</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -267,12 +273,6 @@ window.Quarto = {
  <span class="menu-text">Optical Elements II - Prims</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../geometrical-optics/Optical Elements III.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Optical Elements III - Lenses</span></a>
-  </div>
-</li>
       </ul>
   </li>
           <li class="sidebar-item sidebar-item-section">
@@ -286,8 +286,8 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../geometrical-optics/Eye.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Optical Instruments- Eye</span></a>
+  <a href="../geometrical-optics/Optical Elements III.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optical Elements III - Lenses</span></a>
   </div>
 </li>
       </ul>
@@ -303,20 +303,26 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Eye.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optical Instruments- Eye</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../geometrical-optics/Magnifying Glass.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Optical Instruments- Magnifying Glass</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../geometrical-optics/Microscope.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Optical Instruments- Microscope</span></a>
+  <a href="../geometrical-optics/Lens Systems and Optical Instruments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lens Systems and Optical Instruments</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../geometrical-optics/Telescope.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Optical Instruments- Telescope</span></a>
+  <a href="../geometrical-optics/Microscope.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optical Instruments- Microscope</span></a>
   </div>
 </li>
       </ul>
@@ -332,8 +338,20 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../geometrical-optics/ContentsL6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Contents</span></a>
+  <a href="../geometrical-optics/Telescope.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optical Instruments- Telescope</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Imaging Errors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Imaging Errors</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Rainbow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Rainbow</span></a>
   </div>
 </li>
       </ul>
@@ -381,479 +399,27 @@ window.Quarto = {
  <span class="menu-text">Interference and Coherence</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../wave-optics/Double Slit.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Double Slit Interference</span></a>
-  </div>
-</li>
       </ul>
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="true">
  <span class="menu-text">Lecture 9</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../wave-optics/Thin Film Interference.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Thin Film Interference</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../wave-optics/MultiWave Interference.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Multi Wave Interference</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false">
- <span class="menu-text">Lecture 10</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../wave-optics/Dummy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Fabry Perot Interferometer</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../wave-optics/Diffraction.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Diffraction</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="true">
- <span class="menu-text">Lecture 11</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth2 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../wave-optics/Diffraction2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Diffraction</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../wave-optics/Fresnel Zones.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Fresnel Zone Plate</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../wave-optics/Dummy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Diffraction Integral</span></a>
-  </div>
-</li>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../wave-optics/Interferometers.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Interferometers</span></a>
   </div>
 </li>
-      </ul>
-  </li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="true">
- <span class="menu-text">Electromagnetic Optics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="false">
- <span class="menu-text">Lecture 12</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-16" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/Electromagnetic Optics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Electromagnetic Optics</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/Polarization of EM Waves.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Polarization of EM Waves</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-17" role="navigation" aria-expanded="false">
- <span class="menu-text">Lecture 13</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-17" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-17" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/Energy Transport.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Energy Transport</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-18" role="navigation" aria-expanded="false">
- <span class="menu-text">Lecture 14</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-18" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-18" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/EM Waves in Matter.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Waves in Matter</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/Dispersion and Absorption.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Origin of Refractive Index</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-19" role="navigation" aria-expanded="false">
- <span class="menu-text">Lecture 15</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-19" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-19" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/Reflection and Refraction.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Reflection and Refraction</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/Fresnel Equations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Fresnel Equations</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-20" role="navigation" aria-expanded="false">
- <span class="menu-text">Lecture 16</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-20" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-20" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/Fresnel Equations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Fresnel Equations</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-21" role="navigation" aria-expanded="false">
- <span class="menu-text">Lecture 17</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-21" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-21" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/Metals.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Electromagnetic Waves in Metals</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/Anisotropic Materials.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Anisotropic Materials</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-22" role="navigation" aria-expanded="false">
- <span class="menu-text">Lecture 18</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-22" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-22" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/Optical Activity.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Optical Activity</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../wave-optics/Dummy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Dipole Radiation</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-23" role="navigation" aria-expanded="true">
- <span class="menu-text">Quantum Mechanics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-23" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-23" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-24" role="navigation" aria-expanded="false">
- <span class="menu-text">Lecture 19</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-24" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-24" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../quantum-mechanics/Structure_of_matter.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Structure of Matter</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-25" role="navigation" aria-expanded="false">
- <span class="menu-text">Lecture 20</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-25" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-25" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../quantum-mechanics/Particle_Nature_of_Light.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Particle Nature of Light</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-26" role="navigation" aria-expanded="false">
- <span class="menu-text">Lecture 21</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-26" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-26" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../quantum-mechanics/Particle_Nature_of_Light.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Particle Nature of Light</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-27" role="navigation" aria-expanded="false">
- <span class="menu-text">Lecture 22</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-27" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-27" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../quantum-mechanics/Black_Body_Radiation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Black Body Radiation</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-28" role="navigation" aria-expanded="false">
- <span class="menu-text">Lecture 23</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-28" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-28" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../quantum-mechanics/Wave_character_of_particles.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Wave Character of Particles</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../quantum-mechanics/Matter_waves.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Matter Waves</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-29" role="navigation" aria-expanded="false">
- <span class="menu-text">Lecture 24</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-29" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-29" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../quantum-mechanics/Heisenbergs_uncertainty_relation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Heisenberg Uncertainty Principle</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-30" role="navigation" aria-expanded="false">
- <span class="menu-text">Lecture 25</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-30" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-30" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../quantum-mechanics/Dummy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Structure of Atoms</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../quantum-mechanics/Schroedinger_equation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Schrödinger Equation</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-31" role="navigation" aria-expanded="false">
- <span class="menu-text">Lecture 26</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-31" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-31" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../quantum-mechanics/potential_barrier.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Potential Barriers and Wells</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-32" role="navigation" aria-expanded="false">
- <span class="menu-text">Lecture 27</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-32" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-32" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../quantum-mechanics/harmonic_oscillator.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Harmonic Oscillator</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-33" role="navigation" aria-expanded="false">
- <span class="menu-text">Lecture 28</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-33" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-33" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../quantum-mechanics/parametric_dc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Photon Entanglement</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../quantum-mechanics/Spherical_potential.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Spherically Symmetric Problems</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-34" role="navigation" aria-expanded="false">
- <span class="menu-text">Lecture 29</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-34" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-34" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../quantum-mechanics/Qzeno.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Quantum Zeno Effect</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../quantum-mechanics/Spherical_potential.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Spherically Symmetric Problems</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../quantum-mechanics/hydrogen.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Hydrogen Atom</span></a>
+  <a href="../wave-optics/Double Slit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Double Slit Interference</span></a>
   </div>
 </li>
       </ul>
@@ -870,16 +436,28 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#michelson-interferometer" id="toc-michelson-interferometer" class="nav-link active" data-scroll-target="#michelson-interferometer">Michelson Interferometer</a></li>
-  <li><a href="#mach-zehnder-interferometer" id="toc-mach-zehnder-interferometer" class="nav-link" data-scroll-target="#mach-zehnder-interferometer">Mach Zehnder Interferometer</a></li>
-  <li><a href="#sagnac-interferometer-overview" id="toc-sagnac-interferometer-overview" class="nav-link" data-scroll-target="#sagnac-interferometer-overview">Sagnac Interferometer Overview</a></li>
+  <li><a href="#introduction-phase-and-optical-path-length" id="toc-introduction-phase-and-optical-path-length" class="nav-link active" data-scroll-target="#introduction-phase-and-optical-path-length">Introduction: Phase and Optical Path Length</a></li>
+  <li><a href="#michelson-interferometer" id="toc-michelson-interferometer" class="nav-link" data-scroll-target="#michelson-interferometer">Michelson Interferometer</a>
+  <ul class="collapse">
+  <li><a href="#application-measuring-refractive-index-of-gases" id="toc-application-measuring-refractive-index-of-gases" class="nav-link" data-scroll-target="#application-measuring-refractive-index-of-gases">Application: Measuring Refractive Index of Gases</a></li>
+  <li><a href="#application-the-ligo-gravitational-wave-detector" id="toc-application-the-ligo-gravitational-wave-detector" class="nav-link" data-scroll-target="#application-the-ligo-gravitational-wave-detector">Application: The LIGO Gravitational Wave Detector</a></li>
+  </ul></li>
+  <li><a href="#mach-zehnder-interferometer" id="toc-mach-zehnder-interferometer" class="nav-link" data-scroll-target="#mach-zehnder-interferometer">Mach-Zehnder Interferometer</a>
+  <ul class="collapse">
+  <li><a href="#application-electro-optic-modulators-in-photonic-integrated-circuits" id="toc-application-electro-optic-modulators-in-photonic-integrated-circuits" class="nav-link" data-scroll-target="#application-electro-optic-modulators-in-photonic-integrated-circuits">Application: Electro-Optic Modulators in Photonic Integrated Circuits</a></li>
+  </ul></li>
+  <li><a href="#sagnac-interferometer" id="toc-sagnac-interferometer" class="nav-link" data-scroll-target="#sagnac-interferometer">Sagnac Interferometer</a>
+  <ul class="collapse">
+  <li><a href="#derivation-and-application-in-fiber-optic-gyroscopes" id="toc-derivation-and-application-in-fiber-optic-gyroscopes" class="nav-link" data-scroll-target="#derivation-and-application-in-fiber-optic-gyroscopes">Derivation and Application in Fiber-Optic Gyroscopes</a></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Wave Optics</li><li class="breadcrumb-item"><a href="../wave-optics/Diffraction2.html">Lecture 11</a></li><li class="breadcrumb-item"><a href="../wave-optics/Interferometers.html">Interferometers</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Wave Optics</li><li class="breadcrumb-item"><a href="../wave-optics/Interferometers.html">Lecture 9</a></li><li class="breadcrumb-item"><a href="../wave-optics/Interferometers.html">Interferometers</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Interferometers and other Coherence Applications</h1>
 </div>
@@ -898,46 +476,109 @@ window.Quarto = {
 </header>
 
 
-<section id="michelson-interferometer" class="level3">
-<h3 class="anchored" data-anchor-id="michelson-interferometer">Michelson Interferometer</h3>
-<p>The Michelson interferometer is an essential optical instrument used to measure the interference of light waves. It consists of a coherent light source, such as a laser, which emits a beam directed towards a beam splitter. The beam splitter divides the light into two beams: one reflected towards a fixed mirror and the other transmitted towards a movable mirror. After reflecting off their respective mirrors, the beams are recombined at the beam splitter, where they interfere.</p>
+<section id="introduction-phase-and-optical-path-length" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-phase-and-optical-path-length">Introduction: Phase and Optical Path Length</h2>
+<p>Interferometry is fundamentally based on the principle that light waves accumulate phase as they propagate through space. The key to understanding how interferometers work lies in recognizing the relationship between the optical path length traveled by light and the phase it accumulates along that path. When a light wave travels through a medium with refractive index <span class="math inline">\(n\)</span> over a physical distance <span class="math inline">\(L\)</span>, it accumulates an optical path length (OPL) given by <span class="math inline">\(\text{OPL} = n \cdot L\)</span>. The phase acquired by the light wave is then directly proportional to this optical path length, expressed as <span class="math inline">\(\phi = \frac{2\pi}{\lambda} \text{OPL}\)</span>, where <span class="math inline">\(\lambda\)</span> is the wavelength of light in vacuum.</p>
+<p>This relationship has profound implications for interferometric measurements. When we split a beam of light into two paths and then recombine them, the resulting interference pattern depends on the phase difference between the two beams.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Fundamental Phase Difference Formula
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[\Delta \phi = \frac{2\pi}{\lambda}(n_1 L_1 - n_2 L_2)\]</span></p>
+<p>This is the cornerstone equation of interferometry. The phase difference <span class="math inline">\(\Delta \phi\)</span> between two light beams depends on the difference in their optical path lengths. Here, <span class="math inline">\(\lambda\)</span> is the wavelength of light, <span class="math inline">\(n_1\)</span> and <span class="math inline">\(n_2\)</span> are the refractive indices along each path, and <span class="math inline">\(L_1\)</span> and <span class="math inline">\(L_2\)</span> are the physical path lengths. This formula reveals two fundamental ways to create a phase difference:</p>
+<ol type="1">
+<li><strong>Change the physical path length</strong> (<span class="math inline">\(L\)</span>) - used in LIGO, precision metrology</li>
+<li><strong>Change the refractive index</strong> (<span class="math inline">\(n\)</span>) - used in gas sensing, electro-optic modulators</li>
+</ol>
+</div>
+</div>
+<p>From this expression, we can immediately see that there are two distinct ways to introduce a phase difference: we can either change the physical length of one path (varying <span class="math inline">\(L\)</span>), or we can change the refractive index along one path (varying <span class="math inline">\(n\)</span>). This duality is what makes interferometers incredibly versatile instruments, capable of measuring not only distances and mechanical vibrations but also changes in the optical properties of materials, gas composition, temperature, and even rotation.</p>
+<p>The interference that results from this phase difference manifests as alternating bright and dark fringes.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Interference Conditions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Constructive interference (bright fringes):</strong> <span class="math inline">\(\Delta \phi = 2\pi m\)</span> where <span class="math inline">\(m = 0, 1, 2, 3, ...\)</span></p>
+<p><strong>Destructive interference (dark fringes):</strong> <span class="math inline">\(\Delta \phi = \pi(2m + 1)\)</span> where <span class="math inline">\(m = 0, 1, 2, 3, ...\)</span></p>
+<p>These conditions determine when light waves add constructively (maximum intensity) or destructively (minimum intensity).</p>
+</div>
+</div>
+<p>By carefully observing how these interference patterns change, we can extract extremely precise measurements of whatever physical quantity is causing the phase shift. In the following sections, we will explore several important types of interferometers and examine how they exploit these principles for various scientific and technological applications.</p>
+</section>
+<section id="michelson-interferometer" class="level2">
+<h2 class="anchored" data-anchor-id="michelson-interferometer">Michelson Interferometer</h2>
+<p>The Michelson interferometer is perhaps the most fundamental and historically significant optical interferometer. Its basic design elegantly demonstrates the core principles of interferometry while providing a platform for extraordinarily precise measurements. The interferometer consists of a coherent light source, typically a laser, that emits a beam directed toward a beam splitter positioned at 45 degrees to the incoming beam. This beam splitter divides the incident light into two beams of approximately equal intensity: one beam is reflected at 90 degrees toward a fixed mirror, while the other is transmitted straight through toward a movable mirror. After reflecting off their respective mirrors, both beams return to the beam splitter where they are recombined, with portions of each beam directed toward a detector or viewing screen where they interfere.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/michelson.png" class="img-fluid figure-img" style="width:30.0%"></p>
 <figcaption>Michelson Interferometer</figcaption>
 </figure>
 </div>
-<p>The interference pattern depends on the difference in the optical path lengths of the two beams. Constructive interference occurs when the path lengths are equal or differ by an integer multiple of the wavelength <span class="math inline">\(\lambda\)</span>, given by the condition <span class="math inline">\(2d = m\lambda\)</span>, where <span class="math inline">\(d\)</span> is the path length difference and <span class="math inline">\(m\)</span> is an integer. Destructive interference occurs when the path lengths differ by an odd multiple of half the wavelength, given by <span class="math inline">\(2d = (m + \frac{1}{2})\lambda\)</span>.</p>
-<p>By adjusting the position of the movable mirror, the path length difference changes, altering the interference pattern. This sensitivity to path length variations makes the Michelson interferometer useful for precise measurements, such as determining the wavelength of light, measuring small distances, and detecting changes in refractive index. It also played a crucial role in the Michelson-Morley experiment, which provided evidence against the existence of the luminiferous ether and supported the theory of special relativity.</p>
-<section id="ligo-interferometer-overview" class="level4">
-<h4 class="anchored">LIGO Interferometer Overview</h4>
-<p>The Laser Interferometer Gravitational-Wave Observatory (LIGO) is designed to detect gravitational waves—ripples in spacetime caused by massive accelerating objects, such as merging black holes or neutron stars. LIGO uses a Michelson interferometer configuration with two perpendicular arms, each several kilometers long. A laser beam is split into two beams that travel down these arms, reflect off mirrors at the ends, and then recombine at the beam splitter. Under normal conditions, the lengths of the arms are such that the beams interfere destructively, resulting in no light reaching the detector.</p>
+<p>The key to understanding the Michelson interferometer lies in analyzing the optical path difference between the two arms. If we denote the distance from the beam splitter to the fixed mirror as <span class="math inline">\(L_1\)</span> and the distance to the movable mirror as <span class="math inline">\(L_2\)</span>, then the total optical path difference is <span class="math inline">\(\Delta L = 2(L_2 - L_1)\)</span>, where the factor of 2 accounts for the round trip each beam makes to its respective mirror and back. This path difference translates directly into a phase difference of <span class="math inline">\(\Delta \phi = \frac{4\pi(L_2 - L_1)}{\lambda}\)</span>. When <span class="math inline">\(L_1 = L_2\)</span>, the beams interfere constructively. As we move the movable mirror by a distance <span class="math inline">\(d\)</span>, we introduce a path difference of <span class="math inline">\(2d\)</span>, and each time this path difference changes by one wavelength, we observe one complete cycle of the interference pattern—from bright to dark and back to bright again.</p>
+<section id="application-measuring-refractive-index-of-gases" class="level3">
+<h3 class="anchored" data-anchor-id="application-measuring-refractive-index-of-gases">Application: Measuring Refractive Index of Gases</h3>
+<p>One of the most elegant applications of the Michelson interferometer is the measurement of the refractive index of gases. This technique demonstrates beautifully how interferometers can detect not just changes in geometric path length, but also changes in optical path length due to variations in the refractive index. To perform this measurement, we place a transparent gas cell of known length <span class="math inline">\(L\)</span> in one arm of the interferometer. Initially, when the cell is evacuated and contains only vacuum, the optical path through that arm is simply <span class="math inline">\(n_{\text{vacuum}} \cdot L = L\)</span> (since <span class="math inline">\(n_{\text{vacuum}} = 1\)</span>). When we introduce a gas into the cell, the refractive index changes from 1 to <span class="math inline">\(n_{\text{gas}}\)</span>, which slightly increases the optical path length in that arm to <span class="math inline">\(n_{\text{gas}} \cdot L\)</span>.</p>
+<p>The change in optical path length is <span class="math inline">\(\Delta(\text{OPL}) = (n_{\text{gas}} - 1)L\)</span>. Since the light makes a round trip through the cell, the total change in optical path length is <span class="math inline">\(2(n_{\text{gas}} - 1)L\)</span>. This change manifests as a shift in the interference pattern.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Gas Refractive Index Measurement Formula
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[n_{\text{gas}} = 1 + \frac{m\lambda}{2L}\]</span></p>
+<p>This formula allows us to determine the refractive index of a gas by counting fringe shifts. Here: - <span class="math inline">\(m\)</span> = number of bright fringes that pass by as the cell is filled - <span class="math inline">\(\lambda\)</span> = wavelength of light used - <span class="math inline">\(L\)</span> = length of the gas cell</p>
+<p><strong>How it works:</strong> Place a gas cell of length <span class="math inline">\(L\)</span> in one arm of the interferometer. As you fill it with gas, the refractive index changes from 1 (vacuum) to <span class="math inline">\(n_{\text{gas}}\)</span>, causing fringes to shift. Count the fringes to determine <span class="math inline">\(n_{\text{gas}}\)</span>.</p>
+</div>
+</div>
+<p>Specifically, if we count the number of bright fringes <span class="math inline">\(m\)</span> that pass by a reference point as we fill the cell with gas, we can relate this to the refractive index through the equation <span class="math inline">\(m = \frac{2(n_{\text{gas}} - 1)L}{\lambda}\)</span>, which can be rearranged to give the formula above.</p>
+<p>For example, if we use a HeNe laser with <span class="math inline">\(\lambda = 632.8\)</span> nm and a gas cell of length <span class="math inline">\(L = 10\)</span> cm, and we observe 20 fringes passing as we fill the cell with air at standard conditions, we can calculate that the refractive index of air is approximately <span class="math inline">\(n_{\text{air}} \approx 1.000063\)</span>. This technique is remarkably sensitive; even tiny changes in gas pressure, temperature, or composition can be detected by monitoring the interference pattern. This makes the Michelson interferometer valuable for applications ranging from gas sensing and environmental monitoring to quality control in industrial processes.</p>
+</section>
+<section id="application-the-ligo-gravitational-wave-detector" class="level3">
+<h3 class="anchored" data-anchor-id="application-the-ligo-gravitational-wave-detector">Application: The LIGO Gravitational Wave Detector</h3>
+<p>The extraordinary sensitivity of the Michelson interferometer to changes in path length reaches its ultimate expression in the Laser Interferometer Gravitational-Wave Observatory, or LIGO. This instrument represents one of the most ambitious and technically challenging scientific instruments ever constructed, designed to detect gravitational waves—ripples in the fabric of spacetime itself predicted by Einstein’s general theory of relativity. These waves are generated by some of the most violent events in the universe, such as the collision and merger of black holes or neutron stars, and they propagate through space at the speed of light, stretching and compressing spacetime as they pass.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/VIRGO.jpg" class="img-fluid figure-img" data-with="50%"></p>
 <figcaption>Virgo detector of LIGO</figcaption>
 </figure>
 </div>
-<p>When a gravitational wave passes through the interferometer, it causes a tiny but measurable change in the lengths of the arms. This change alters the interference pattern of the recombined beams, allowing the detection of the gravitational wave. The sensitivity of LIGO is such that it can detect changes in arm length smaller than a thousandth of the diameter of a proton.</p>
-<p>The phase shift <span class="math inline">\(\Delta \phi\)</span> caused by a gravitational wave can be expressed as:</p>
-<p><span class="math display">\[
-\Delta \phi = \frac{4 \pi \Delta L}{\lambda}
-\]</span></p>
-<p>where <span class="math inline">\(\Delta L\)</span> is the change in the length of the interferometer arms due to the gravitational wave, and <span class="math inline">\(\lambda\)</span> is the wavelength of the laser light used in the interferometer.</p>
-<section id="derivation-of-the-phase-shift" class="level5">
-<h5 class="anchored">Derivation of the Phase Shift</h5>
-<p>To understand the phase shift in LIGO, consider the effect of a gravitational wave passing through the interferometer. The wave causes a differential change in the lengths of the two arms, denoted as <span class="math inline">\(\Delta L\)</span>. This change in length affects the travel time of the laser beams in each arm.</p>
-<p>The time difference <span class="math inline">\(\Delta T\)</span> between the beams traveling in the two arms can be expressed as:</p>
-<p><span class="math display">\[
-\Delta T = \frac{\Delta L}{c}
-\]</span></p>
-<p>The phase shift <span class="math inline">\(\Delta \phi\)</span> is then related to this time difference by the equation:</p>
-<p><span class="math display">\[
-\Delta \phi = \frac{2 \pi \Delta T}{T} = \frac{4 \pi \Delta L}{\lambda}
-\]</span></p>
-<p>This phase shift alters the interference pattern observed at the detector, allowing LIGO to measure the presence and properties of gravitational waves. The extraordinary precision of LIGO’s measurements enables it to detect incredibly small disturbances in spacetime, providing valuable insights into some of the most energetic events in the universe.</p>
+<p>LIGO consists of two large Michelson interferometers located at separate sites in the United States: one in Hanford, Washington, and the other in Livingston, Louisiana. Each interferometer has two perpendicular arms extending 4 kilometers in length. A powerful laser beam is split and sent down these arms, where it bounces back and forth many times in Fabry-Pérot cavities before returning to the beam splitter. Under normal conditions, the interferometer is carefully tuned so that the two beams interfere destructively when they recombine, meaning essentially no light reaches the photodetector—this is called the “dark fringe” operating point.</p>
+<p>When a gravitational wave passes through the detector, it causes one arm to stretch while simultaneously causing the other arm to compress. This differential change in length, though incredibly tiny, alters the optical path difference between the two arms and thus shifts the interference pattern away from the dark fringe. The detector then registers light, and the amount of light and how it varies with time encodes information about the gravitational wave. The sensitivity required is almost incomprehensible: LIGO must detect changes in arm length smaller than <span class="math inline">\(10^{-19}\)</span> meters, which is less than one-thousandth the diameter of a proton. To put this in perspective, this is equivalent to measuring the distance to the nearest star (4 light-years away) to an accuracy smaller than the width of a human hair.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+LIGO Phase Shift Formula
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[\Delta \phi = \frac{4\pi \Delta L}{\lambda}\]</span></p>
+<p>This formula describes the phase shift caused by a gravitational wave in LIGO. Here: - <span class="math inline">\(\Delta L\)</span> = change in arm length due to the gravitational wave - <span class="math inline">\(\lambda\)</span> = wavelength of the laser (1064 nm for LIGO) - The factor of 4 comes from: 2 (round trip in each arm) × 2 (differential effect between arms)</p>
+<p><strong>Why factor of 4?</strong> When a gravitational wave passes through: one arm increases by <span class="math inline">\(\Delta L\)</span> while the other decreases by <span class="math inline">\(\Delta L\)</span>. The light makes a round trip in each arm, so the total optical path difference is <span class="math inline">\(2 \cdot 2\Delta L = 4\Delta L\)</span>.</p>
+</div>
+</div>
+<p>The phase shift <span class="math inline">\(\Delta \phi\)</span> caused by a gravitational wave can be expressed as shown above. To understand this more carefully, consider that when a gravitational wave passes through the interferometer, it causes a time-varying strain in spacetime. If one arm increases in length by <span class="math inline">\(\Delta L\)</span>, the other decreases by approximately the same amount. The round-trip optical path difference between the arms becomes <span class="math inline">\(2 \cdot 2\Delta L = 4\Delta L\)</span>, leading to the phase shift formula given above.</p>
+<p>The extraordinary precision of LIGO’s measurements is achieved through a combination of advanced technologies including powerful stabilized lasers, ultra-high vacuum systems, sophisticated vibration isolation, and quantum noise reduction techniques. Since its first detection of gravitational waves in September 2015, LIGO has opened an entirely new window onto the universe, allowing us to observe cosmic events that are completely invisible to conventional telescopes. This remarkable achievement demonstrates how the simple principles of the Michelson interferometer, when pushed to their ultimate limits, can reveal phenomena at the very frontiers of physics.</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -946,93 +587,48 @@ LIGO Technical Details
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>LIGO consists of two large interferometers located in the United States: one in Hanford, Washington, and the other in Livingston, Louisiana. These facilities are operated by the LIGO Scientific Collaboration (LSC), which includes scientists from various institutions around the world. Here is a link to the <a href="https://www.ligo.caltech.edu/">LIGO website</a> and a direct link to an <a href="https://www.ligo.caltech.edu/system/media_files/binaries/303/original/ligo-educators-guide.pdf?1455165573">overview document</a>.</p>
-<section id="interferometer-design" class="level3">
-<h3 class="anchored" data-anchor-id="interferometer-design">Interferometer Design</h3>
-<ol type="1">
-<li><strong>Michelson Interferometer Configuration:</strong>
-<ul>
-<li>LIGO uses a Michelson interferometer configuration with 4-kilometer-long arms.</li>
-<li>Each interferometer has two perpendicular arms, forming an “L” shape.</li>
-<li>A laser beam is split into two beams that travel down the arms, reflect off mirrors, and recombine at the beam splitter.</li>
-</ul></li>
-<li><strong>Fabry-Pérot Cavities:</strong>
-<ul>
-<li>Each arm of the interferometer contains a Fabry-Pérot cavity to increase the effective path length of the laser beams.</li>
-<li>The cavities are formed by highly reflective mirrors placed at the ends of the arms.</li>
-<li>The laser beams bounce back and forth multiple times within the cavities, effectively increasing the arm length to several hundred kilometers.</li>
-</ul></li>
-<li><strong>Laser System:</strong>
-<ul>
-<li>LIGO uses a high-power, stabilized laser operating at a wavelength of 1064 nm (infrared).</li>
-<li>The laser power is typically around 200 watts, but the effective power in the interferometer arms is increased to several kilowatts using power recycling techniques.</li>
-</ul></li>
-<li><strong>Suspension and Isolation:</strong>
-<ul>
-<li>The mirrors and other optical components are suspended by a system of pendulums to isolate them from ground vibrations and other noise sources.</li>
-<li>The suspension system includes multiple stages of isolation, including active and passive damping mechanisms.</li>
-</ul></li>
-<li><strong>Vacuum System:</strong>
-<ul>
-<li>The interferometer arms are housed in ultra-high vacuum tubes to eliminate air molecules that could scatter the laser beams and introduce noise.</li>
-<li>The vacuum system maintains a pressure of around <span class="math inline">\(10^{-9}\)</span> torr.</li>
-</ul></li>
-</ol>
-</section>
-<section id="detection-principle" class="level3">
-<h3 class="anchored" data-anchor-id="detection-principle">Detection Principle</h3>
-<ol type="1">
-<li><strong>Gravitational Waves:</strong>
-<ul>
-<li>Gravitational waves are ripples in spacetime caused by accelerating massive objects, such as merging black holes or neutron stars.</li>
-<li>As a gravitational wave passes through the interferometer, it stretches and compresses the spacetime along the arms, causing tiny changes in the arm lengths.</li>
-</ul></li>
-<li><strong>Interference Pattern:</strong>
-<ul>
-<li>The changes in arm lengths cause a phase shift in the laser beams when they recombine at the beam splitter.</li>
-<li>This phase shift results in a change in the interference pattern, which is detected by photodetectors.</li>
-</ul></li>
-<li><strong>Sensitivity:</strong>
-<ul>
-<li>LIGO is designed to detect changes in arm lengths as small as <span class="math inline">\(10^{-19}\)</span> meters, which is less than one-thousandth the diameter of a proton.</li>
-<li>The sensitivity is achieved through advanced noise reduction techniques, including seismic isolation, thermal noise reduction, and quantum noise reduction.</li>
-</ul></li>
-</ol>
-</section>
-<section id="data-analysis" class="level3">
-<h3 class="anchored" data-anchor-id="data-analysis">Data Analysis</h3>
-<ol type="1">
-<li><strong>Signal Processing:</strong>
-<ul>
-<li>The data from the photodetectors are processed to identify potential gravitational wave signals.</li>
-<li>Advanced algorithms and computational techniques are used to filter out noise and extract the signals.</li>
-</ul></li>
-<li><strong>Event Detection:</strong>
-<ul>
-<li>When a potential gravitational wave event is detected, the data are analyzed to determine the properties of the source, such as the masses and spins of merging black holes or neutron stars.</li>
-<li>The detection is confirmed by comparing data from both LIGO detectors and, if available, data from other gravitational wave observatories like Virgo.</li>
-</ul></li>
-</ol>
-</section>
+<p>The interferometer design employs a Michelson interferometer configuration with 4-kilometer-long arms forming an “L” shape. Each arm contains a Fabry-Pérot cavity to increase the effective path length of the laser beams. These cavities are formed by highly reflective mirrors placed at the ends of the arms, and the laser beams bounce back and forth multiple times within the cavities, effectively increasing the arm length to several hundred kilometers. The laser system uses a high-power, stabilized laser operating at a wavelength of 1064 nm in the infrared. The laser power is typically around 200 watts, but the effective power in the interferometer arms is increased to several kilowatts using power recycling techniques.</p>
+<p>The mirrors and other optical components are suspended by a system of pendulums to isolate them from ground vibrations and other noise sources. The suspension system includes multiple stages of isolation, including active and passive damping mechanisms. The interferometer arms are housed in ultra-high vacuum tubes to eliminate air molecules that could scatter the laser beams and introduce noise, maintaining a pressure of around <span class="math inline">\(10^{-9}\)</span> torr.</p>
+<p>Gravitational waves are detected through their effect on the interference pattern. As a gravitational wave passes through the interferometer, it stretches and compresses the spacetime along the arms, causing tiny changes in the arm lengths. These changes cause a phase shift in the laser beams when they recombine at the beam splitter, resulting in a change in the interference pattern that is detected by photodetectors. LIGO is designed to detect changes in arm lengths as small as <span class="math inline">\(10^{-19}\)</span> meters through advanced noise reduction techniques.</p>
+<p>The data from the photodetectors are processed using advanced algorithms and computational techniques to filter out noise and extract potential gravitational wave signals. When a potential event is detected, the data are analyzed to determine the properties of the source, such as the masses and spins of merging black holes or neutron stars. Detection is confirmed by comparing data from both LIGO detectors and, if available, data from other gravitational wave observatories like Virgo in Europe.</p>
 </div>
 </div>
 </div>
 </section>
 </section>
-</section>
-<section id="mach-zehnder-interferometer" class="level3">
-<h3 class="anchored" data-anchor-id="mach-zehnder-interferometer">Mach Zehnder Interferometer</h3>
-<p>The Mach-Zehnder interferometer is an optical device used to measure phase shifts between two light beams. It consists of a coherent light source, such as a laser, which emits a beam that is split into two paths by a beam splitter. Each beam travels along a different path, encountering mirrors that redirect them towards a second beam splitter where they are recombined. The recombined beams then interfere, producing an interference pattern that can be observed at the output ports.</p>
+<section id="mach-zehnder-interferometer" class="level2">
+<h2 class="anchored" data-anchor-id="mach-zehnder-interferometer">Mach-Zehnder Interferometer</h2>
+<p>The Mach-Zehnder interferometer represents a different geometric configuration that offers distinct advantages for certain applications, particularly those involving the manipulation and modulation of light in optical systems. Unlike the Michelson interferometer where the two beams travel back and forth along the same paths, the Mach-Zehnder interferometer splits a beam into two separate paths that never retrace themselves, and the beams are recombined at a different location from where they were split. This architecture makes it particularly suitable for applications where you want to place samples or active devices in one or both paths without the complications of retroreflection.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/mach.png" class="img-fluid figure-img" style="width:30.0%"></p>
 <figcaption>Mach Zehnder Interferometer</figcaption>
 </figure>
 </div>
-<p>The interference pattern depends on the phase difference between the two beams, which is influenced by the optical path lengths they travel. If the path lengths are equal, constructive interference occurs, resulting in maximum intensity at one output port and minimum intensity at the other. If the path lengths differ, the phase difference causes a shift in the interference pattern, leading to varying intensities at the output ports.</p>
-<p>The phase difference <span class="math inline">\(\Delta \phi\)</span> between the two beams is given by <span class="math inline">\(\Delta \phi = \frac{2\pi \Delta L}{\lambda}\)</span>, where <span class="math inline">\(\Delta L\)</span> is the difference in path lengths and <span class="math inline">\(\lambda\)</span> is the wavelength of the light. By introducing a phase shift in one of the paths, such as by changing the length of the path or altering the refractive index of the medium through which the beam travels, the interference pattern can be controlled and measured.</p>
+<p>The interferometer consists of a coherent light source that emits a beam toward a first beam splitter, which divides the light into two beams of approximately equal intensity. These two beams propagate along separate paths, each encountering a mirror that redirects them toward a second beam splitter. At this second beam splitter, the two beams are recombined and directed toward two output ports. The relative phase between the two beams when they arrive at the second beam splitter determines the interference pattern and consequently how much light exits from each output port. If the two paths have exactly the same optical path length, the beams arrive in phase at the second beam splitter, and the interference is purely constructive at one output port and destructive at the other.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Mach-Zehnder Phase Difference
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[\Delta \phi = \frac{2\pi}{\lambda}(n_1 L_1 - n_2 L_2)\]</span></p>
+<p>Unlike the Michelson interferometer, the Mach-Zehnder uses non-retroreflecting paths (no factor of 2 from round trips). The phase difference depends on:</p>
+<ul>
+<li><span class="math inline">\(L_1, L_2\)</span> = physical path lengths of the two arms</li>
+<li><span class="math inline">\(n_1, n_2\)</span> = refractive indices along each arm</li>
+</ul>
+<p>By controlling either the path length or refractive index in one arm, we can switch light between output ports.</p>
+</div>
+</div>
+<p>By introducing changes to either the path length or the refractive index in one arm, we can control the phase difference and thereby switch the light between the two output ports. This controllability makes the Mach-Zehnder interferometer ideal for applications in optical communications, sensing, and information processing.</p>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
@@ -1053,48 +649,84 @@ LIGO Technical Details
 </div>
 </div>
 </div>
-<p>The Mach-Zehnder interferometer is widely used in applications requiring precise measurements of phase shifts, such as in optical communication systems, quantum mechanics experiments, and the study of optical properties of materials.</p>
+<section id="application-electro-optic-modulators-in-photonic-integrated-circuits" class="level3">
+<h3 class="anchored" data-anchor-id="application-electro-optic-modulators-in-photonic-integrated-circuits">Application: Electro-Optic Modulators in Photonic Integrated Circuits</h3>
+<p>One of the most important modern applications of the Mach-Zehnder interferometer is in electro-optic phase modulators, particularly those implemented on photonic integrated circuits. These devices are essential components in fiber-optic communication systems, optical computing, and various sensing applications. The basic principle involves placing an electro-optic material—a material whose refractive index changes in response to an applied electric field—in one or both arms of the interferometer. When voltage is applied to electrodes positioned near the waveguides, the resulting electric field modulates the refractive index of the material through the Pockels effect, thereby changing the optical path length in that arm and introducing a phase shift.</p>
+<p>In a typical integrated Mach-Zehnder modulator fabricated on a lithium niobate substrate or silicon photonic platform, light enters the device and is split equally into two waveguide arms. Electrodes are patterned along one or both arms, and when a voltage <span class="math inline">\(V\)</span> is applied, it creates an electric field that changes the refractive index by an amount proportional to the applied field.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Electro-Optic Phase Modulation (Pockels Effect)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Refractive index change:</strong> <span class="math display">\[\Delta n = -\frac{1}{2}n^3 r E\]</span></p>
+<p><strong>Resulting phase shift:</strong> <span class="math display">\[\Delta \phi = \frac{2\pi}{\lambda} \Delta n \cdot L\]</span></p>
+<p>where:</p>
+<ul>
+<li><span class="math inline">\(n\)</span> = unperturbed refractive index</li>
+<li><span class="math inline">\(r\)</span> = Pockels coefficient (material property)</li>
+<li><span class="math inline">\(E\)</span> = applied electric field</li>
+<li><span class="math inline">\(L\)</span> = length of the modulator arm</li>
+<li><span class="math inline">\(\lambda\)</span> = wavelength of light</li>
+</ul>
+<p><strong>Key principle:</strong> Applying voltage changes the electric field <span class="math inline">\(E\)</span>, which changes the refractive index <span class="math inline">\(\Delta n\)</span> via the Pockels effect, which in turn changes the phase <span class="math inline">\(\Delta \phi\)</span>. This voltage-controlled phase shift enables high-speed optical modulation for telecommunications and photonic computing.</p>
+</div>
+</div>
+<p>When the beams recombine at the output, the interference pattern depends on this voltage-controlled phase shift. By varying the applied voltage, we can continuously tune the output intensity from maximum (constructive interference) to minimum (destructive interference) and back again. This allows us to encode electrical signals onto optical carriers, converting the electrical voltage signal into variations in optical intensity—a process essential for transmitting data through optical fibers. The speed at which these modulators can operate is determined by the response time of the electro-optic effect and the electrical bandwidth of the device, with state-of-the-art modulators achieving modulation rates exceeding 100 GHz.</p>
+<p>Beyond telecommunications, Mach-Zehnder modulators are now finding applications in emerging photonic computing systems. Arrays of interconnected Mach-Zehnder interferometers can be configured to perform matrix multiplication operations optically, which is a fundamental operation in neural networks and machine learning algorithms. In these systems, the phase shifters in each Mach-Zehnder element are programmed to represent the weights of the neural network, and the optical signals propagating through the network perform the computations at the speed of light with potentially much lower energy consumption than electronic processors.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/MZI-ONN.png" class="img-fluid figure-img"></p>
 <figcaption>Network of Mach Zehnder Interferometers forming an all optical neural network. Zhou, H. et al.&nbsp;Photonic matrix multiplication lights up photonic accelerator and beyond. Light: Sci. Appl. 11, 30 (2022).</figcaption>
 </figure>
 </div>
+<p>This image illustrates a sophisticated implementation where multiple Mach-Zehnder interferometers are arranged in a network to create an all-optical neural network processor. Each interferometer acts as a programmable element that can be tuned to implement specific mathematical operations, and the entire network performs complex computations by manipulating the phase and amplitude of light waves as they propagate through the structure. This represents a powerful demonstration of how the simple principle of interference can be scaled up and integrated to create advanced photonic systems with applications in artificial intelligence and high-speed information processing.</p>
 </section>
-<section id="sagnac-interferometer-overview" class="level3">
-<h3 class="anchored" data-anchor-id="sagnac-interferometer-overview">Sagnac Interferometer Overview</h3>
-<p>A Sagnac interferometer operates by splitting a beam of light into two separate beams that travel in opposite directions around a closed loop. These beams are then recombined at the end of the loop, resulting in an interference pattern. If the interferometer is rotating, the path lengths of the two beams differ, leading to a phase shift.</p>
+</section>
+<section id="sagnac-interferometer" class="level2">
+<h2 class="anchored" data-anchor-id="sagnac-interferometer">Sagnac Interferometer</h2>
+<p>The Sagnac interferometer operates on a fundamentally different principle from the Michelson and Mach-Zehnder interferometers we have discussed so far. While those devices are sensitive to differences in path length or refractive index between two spatially separated paths, the Sagnac interferometer is specifically designed to detect rotation. This unique capability has made it the basis for highly accurate fiber-optic gyroscopes used in aircraft navigation, spacecraft attitude control, and autonomous vehicle systems.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/sagnac.png" class="img-fluid figure-img" style="width:30.0%"></p>
 <figcaption>Sagnac Interferometer</figcaption>
 </figure>
 </div>
-<p>The phase shift, denoted as <span class="math inline">\(\Delta \phi\)</span>, can be calculated using the formula:</p>
-<p><span class="math display">\[
-\Delta \phi = \frac{8 \pi A \Omega}{\lambda c}
-\]</span></p>
-<p>where <span class="math inline">\(A\)</span> represents the area enclosed by the light path, <span class="math inline">\(\Omega\)</span> is the angular velocity of the rotation, <span class="math inline">\(\lambda\)</span> is the wavelength of the light, and <span class="math inline">\(c\)</span> is the speed of light.</p>
+<p>In a Sagnac interferometer, a beam of light is split into two beams that travel around the same closed loop but in opposite directions—one clockwise and the other counterclockwise. These counter-propagating beams are then recombined after completing their journeys around the loop. In a non-rotating reference frame, both beams travel exactly the same path and accumulate the same phase, resulting in perfect constructive interference when they recombine. However, when the entire interferometer is rotating, something remarkable happens: the two beams experience different effective path lengths despite traveling along the same physical path. This is a consequence of the fact that, in the rotating frame of the interferometer, the point where the beams recombine is moving. From the perspective of the laboratory frame, the beam traveling in the direction of rotation has a slightly longer path to travel to reach the recombination point, while the beam traveling opposite to the rotation has a slightly shorter path.</p>
+<section id="derivation-and-application-in-fiber-optic-gyroscopes" class="level3">
+<h3 class="anchored" data-anchor-id="derivation-and-application-in-fiber-optic-gyroscopes">Derivation and Application in Fiber-Optic Gyroscopes</h3>
+<p>The phase shift induced by rotation can be derived by considering the time difference between the two counter-propagating beams. For an interferometer loop enclosing an area <span class="math inline">\(A\)</span> and rotating with angular velocity <span class="math inline">\(\Omega\)</span>, the time difference <span class="math inline">\(\Delta T\)</span> between the two beams can be shown to be <span class="math inline">\(\Delta T = \frac{4A\Omega}{c^2}\)</span>, where <span class="math inline">\(c\)</span> is the speed of light. This time difference directly translates into a phase shift.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Sagnac Effect: Rotation-Induced Phase Shift
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[\Delta \phi = \frac{8\pi A \Omega}{\lambda c}\]</span></p>
+<p>This fundamental formula for rotation sensing shows that the phase shift depends on: - <span class="math inline">\(A\)</span> = area enclosed by the light path - <span class="math inline">\(\Omega\)</span> = angular velocity of rotation - <span class="math inline">\(\lambda\)</span> = wavelength of light - <span class="math inline">\(c\)</span> = speed of light</p>
+<p><strong>Key insight:</strong> The phase shift is independent of the loop shape—only the enclosed area matters! A circular, square, or irregular loop with the same area will have the same sensitivity to rotation.</p>
+<p><strong>Practical implementation:</strong> In fiber-optic gyroscopes, the fiber is coiled <span class="math inline">\(N\)</span> times, giving total area <span class="math inline">\(A = N \cdot A_0\)</span>, which multiplies the sensitivity by <span class="math inline">\(N\)</span>.</p>
+</div>
+</div>
+<p>This remarkably simple formula shows that the phase shift is directly proportional to the angular velocity <span class="math inline">\(\Omega\)</span> and to the area <span class="math inline">\(A\)</span> enclosed by the light path, but is independent of the shape of that path. This is a profound result: whether the loop is circular, square, or any other shape, only the enclosed area matters for determining the sensitivity to rotation.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/sagnac_exp.png" class="img-fluid figure-img" style="width:50.0%"></p>
 <figcaption>Sagnac interferometer made of a fibre rolled up on a cylinder taken from <a href="https://www.stabilock.com/holography--consulting/fiber-optic-sensors/sagnac-interferometer.html">here</a></figcaption>
 </figure>
 </div>
-<section id="derivation-of-the-phase-shift-1" class="level4">
-<h4 class="anchored" data-anchor-id="derivation-of-the-phase-shift-1">Derivation of the Phase Shift</h4>
-<p>To derive the phase shift, we start by considering the path length difference. Assume a loop with a perimeter <span class="math inline">\(L\)</span> and an area <span class="math inline">\(A\)</span>. In the absence of rotation, the time taken for light to travel around the loop is given by <span class="math inline">\(T = \frac{L}{c}\)</span>.</p>
-<p>When the interferometer rotates with an angular velocity <span class="math inline">\(\Omega\)</span>, the effective path length changes. For the beam traveling in the direction of rotation, the path length increases, while for the beam traveling opposite to the direction of rotation, the path length decreases.</p>
-<p>The time difference <span class="math inline">\(\Delta T\)</span> between the two beams can be expressed as:</p>
-<p><span class="math display">\[
-\Delta T = \frac{4 A \Omega}{c^2}
-\]</span></p>
-<p>The phase shift <span class="math inline">\(\Delta \phi\)</span> is related to this time difference by the equation:</p>
-<p><span class="math display">\[
-\Delta \phi = \frac{2 \pi \Delta T}{T} = \frac{8 \pi A \Omega}{\lambda c}
-\]</span></p>
+<p>In practical fiber-optic gyroscopes, the light path is formed by winding many turns of optical fiber into a coil. If the fiber is wound into <span class="math inline">\(N\)</span> turns, each enclosing an area <span class="math inline">\(A_0\)</span>, then the total effective area is <span class="math inline">\(A = N \cdot A_0\)</span>, which greatly enhances the sensitivity of the device. Modern fiber-optic gyroscopes can use coils with hundreds or even thousands of turns, achieving extraordinary sensitivity to rotation rates. These devices have several advantages over mechanical gyroscopes: they have no moving parts, are immune to mechanical wear, can operate over a wide range of temperatures, and are relatively compact and lightweight.</p>
+<p>The sensitivity of a Sagnac gyroscope can be expressed as the minimum detectable rotation rate, which depends on the ability to measure small phase shifts. With modern photodetectors and signal processing techniques, phase shifts as small as microradians can be detected, corresponding to rotation rates of fractions of a degree per hour. This level of performance makes fiber-optic gyroscopes suitable for inertial navigation systems in commercial aircraft, military vehicles, and spacecraft, where they provide continuous information about the vehicle’s orientation and angular velocity without requiring any external reference.</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1103,61 +735,39 @@ Derivation Details
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>To derive the formula for the time difference <span class="math inline">\(\Delta T\)</span> between two counter-propagating beams in a Sagnac interferometer, we start by considering a loop of perimeter <span class="math inline">\(L\)</span> and area <span class="math inline">\(A\)</span>. The interferometer is rotating with an angular velocity <span class="math inline">\(\Omega\)</span>. Light travels in opposite directions around the loop, creating two counter-propagating beams.</p>
 <p>In a non-rotating frame, the time taken for light to travel around the loop is <span class="math inline">\(T = \frac{L}{c}\)</span>. When the interferometer rotates with angular velocity <span class="math inline">\(\Omega\)</span>, the effective path lengths for the two beams differ due to the rotation. For the beam traveling in the direction of rotation, the effective path length increases, while for the beam traveling opposite to the direction of rotation, the effective path length decreases.</p>
 <p>The relative velocity of light with respect to the rotating frame is <span class="math inline">\(c \pm v\)</span>, where <span class="math inline">\(v = \Omega R\)</span> is the tangential velocity at the perimeter of the loop. For small angular velocities, we can approximate the effect using the area <span class="math inline">\(A\)</span> and the angular velocity <span class="math inline">\(\Omega\)</span>.</p>
-<p>The time taken for the beam traveling in the direction of rotation is: <span class="math display">\[
-T_+ = \frac{L}{c + v}
-\]</span> and the time taken for the beam traveling opposite to the direction of rotation is: <span class="math display">\[
-T_- = \frac{L}{c - v}
+<p>The time taken for the beam traveling in the direction of rotation is <span class="math inline">\(T_+ = \frac{L}{c - v}\)</span>, and the time taken for the beam traveling opposite to the direction of rotation is <span class="math inline">\(T_- = \frac{L}{c + v}\)</span>. For small <span class="math inline">\(v\)</span>, we can use the binomial expansion to approximate the times:</p>
+<p><span class="math display">\[
+T_+ \approx \frac{L}{c}\left(1 + \frac{v}{c}\right), \quad T_- \approx \frac{L}{c}\left(1 - \frac{v}{c}\right)
 \]</span></p>
-<p>For small <span class="math inline">\(v\)</span>, we can use the binomial expansion to approximate the times: <span class="math display">\[
-T_+ \approx \frac{L}{c} \left(1 - \frac{v}{c}\right)
-\]</span> <span class="math display">\[
-T_- \approx \frac{L}{c} \left(1 + \frac{v}{c}\right)
+<p>The time difference between the two beams is:</p>
+<p><span class="math display">\[
+\Delta T = T_+ - T_- = \frac{L}{c}\left(1 + \frac{v}{c}\right) - \frac{L}{c}\left(1 - \frac{v}{c}\right) = \frac{2Lv}{c^2}
 \]</span></p>
-<p>The time difference between the two beams is: <span class="math display">\[
-\Delta T = T_+ - T_- = \frac{L}{c} \left(1 - \frac{v}{c}\right) - \frac{L}{c} \left(1 + \frac{v}{c}\right)
-\]</span> <span class="math display">\[
-\Delta T = \frac{L}{c} \left(- \frac{v}{c} - \frac{v}{c}\right)
-\]</span> <span class="math display">\[
-\Delta T = -\frac{2Lv}{c^2}
+<p>The tangential velocity <span class="math inline">\(v\)</span> is related to the angular velocity <span class="math inline">\(\Omega\)</span> and the effective radius <span class="math inline">\(R\)</span> of the loop. For a general loop shape, we can relate the area and perimeter through the geometry of the loop. For a circular loop, <span class="math inline">\(A = \pi R^2\)</span> and <span class="math inline">\(L = 2\pi R\)</span>, giving <span class="math inline">\(R = \frac{L}{2\pi}\)</span> and thus <span class="math inline">\(v = \Omega \frac{L}{2\pi}\)</span>.</p>
+<p>Substituting this into the expression for <span class="math inline">\(\Delta T\)</span>:</p>
+<p><span class="math display">\[
+\Delta T = \frac{2L \cdot \Omega \frac{L}{2\pi}}{c^2} = \frac{L^2 \Omega}{\pi c^2}
 \]</span></p>
-<p>The tangential velocity <span class="math inline">\(v\)</span> is related to the angular velocity <span class="math inline">\(\Omega\)</span> and the radius <span class="math inline">\(R\)</span> of the loop: <span class="math display">\[
-v = \Omega R
+<p>For a circular loop, <span class="math inline">\(L^2 = 4\pi A\)</span>, which gives:</p>
+<p><span class="math display">\[
+\Delta T = \frac{4\pi A \Omega}{\pi c^2} = \frac{4A\Omega}{c^2}
 \]</span></p>
-<p>The area <span class="math inline">\(A\)</span> of the loop is related to the radius <span class="math inline">\(R\)</span> and the perimeter <span class="math inline">\(L\)</span>: <span class="math display">\[
-A = \pi R^2
-\]</span></p>
-<p>Combining these, we get: <span class="math display">\[
-R = \frac{L}{2\pi}
-\]</span> <span class="math display">\[
-v = \Omega \frac{L}{2\pi}
-\]</span></p>
-<p>Substituting <span class="math inline">\(v = \Omega \frac{L}{2\pi}\)</span> into the expression for <span class="math inline">\(\Delta T\)</span>: <span class="math display">\[
-\Delta T = -\frac{2L \left(\Omega \frac{L}{2\pi}\right)}{c^2}
-\]</span> <span class="math display">\[
-\Delta T = -\frac{2L^2 \Omega}{2\pi c^2}
-\]</span> <span class="math display">\[
-\Delta T = -\frac{L^2 \Omega}{\pi c^2}
-\]</span></p>
-<p>Using the relationship <span class="math inline">\(L^2 = 4A\)</span>, we get: <span class="math display">\[
-L^2 = 4A
-\]</span></p>
-<p>Substituting <span class="math inline">\(L^2 = 4A\)</span> into the expression for <span class="math inline">\(\Delta T\)</span>: <span class="math display">\[
-\Delta T = -\frac{4A \Omega}{c^2}
-\]</span></p>
-<p>Since the time difference <span class="math inline">\(\Delta T\)</span> is typically considered in magnitude, we take the absolute value: <span class="math display">\[
-\Delta T = \frac{4 A \Omega}{c^2}
-\]</span></p>
+<p>This result, remarkably, holds for arbitrary loop shapes, not just circular ones, which can be proven using more general arguments from relativity theory.</p>
 </div>
 </div>
 </div>
-
-
 </section>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>The three types of interferometers we have explored—Michelson, Mach-Zehnder, and Sagnac—illustrate the remarkable versatility of interferometric techniques. All of these devices rely on the fundamental relationship between optical path length and phase, exploiting the fact that light waves accumulate phase as they propagate and that this phase accumulation is sensitive to both the geometric path length and the refractive index of the medium through which the light travels. By carefully designing the geometry and choosing what physical quantities to vary, interferometers can be optimized to measure an extraordinary range of phenomena: from the refractive index of gases and the mechanical vibrations of mirrors to the passage of gravitational waves and the rotation of spacecraft. As technology continues to advance, particularly in photonic integration and quantum-enhanced measurements, interferometers will undoubtedly continue to play a central role in both fundamental scientific research and practical technological applications.</p>
+
+
 </section>
 
 </main> <!-- /main -->
@@ -1562,13 +1172,13 @@ L^2 = 4A
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../wave-optics/Fresnel Zones.html" class="pagination-link" aria-label="Fresnel Zone Plate">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Fresnel Zone Plate</span>
+      <a href="../wave-optics/Interference.html" class="pagination-link" aria-label="Interference and Coherence">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Interference and Coherence</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../electromagnetic-waves/Electromagnetic Optics.html" class="pagination-link" aria-label="Electromagnetic Optics">
-        <span class="nav-page-text">Electromagnetic Optics</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../wave-optics/Double Slit.html" class="pagination-link" aria-label="Double Slit Interference">
+        <span class="nav-page-text">Double Slit Interference</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

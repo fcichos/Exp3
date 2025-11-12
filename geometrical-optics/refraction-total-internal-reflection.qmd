@@ -44,17 +44,17 @@ The understanding of refraction has evolved over centuries, with contributions f
 
 2. **Ancient Rome (1st century CE):** Ptolemy conducted experiments on refraction and compiled tables of refraction angles for different media.
 
-3. **Islamic Golden Age (10th-11th centuries):** Ibn Sahl (940-1000) discovered the law of refraction, describing it geometrically. Alhazen (965-1040) studied lenses and the human eye, contributing significantly to optics.
+3. **Islamic Golden Age (10th-11th centuries):** Ibn Sahl (c. 940-1000) used geometric principles related to refraction in his work on burning mirrors and lenses, employing techniques that anticipated aspects of Snell's law, though the exact nature of his formulation remains debated by historians. Alhazen (965-1040) studied lenses and the human eye, contributing significantly to optics.
 
 4. **Middle Ages:** Robert Grosseteste (1175-1253) and Roger Bacon (1214-1294) studied refraction and its application to lenses.
 
-5. **Renaissance:** Thomas Harriot (1560-1621) rediscovered the law of refraction but didn't publish his findings.
+5. **Renaissance:** Thomas Harriot (c. 1560-1621) experimentally investigated refraction around 1602 and found numerical relationships between angles, though his work remained unpublished in manuscripts.
 
-6. **17th Century:** Willebrord Snellius (1580-1626) derived the mathematical law of refraction (Snell's law) around 1621. René Descartes (1596-1650) independently derived and published the law of refraction in 1637. Pierre de Fermat (1607-1665) derived the law of refraction using his principle of least time.
+6. **17th Century:** Willebrord Snellius (1580-1626) derived the mathematical law of refraction (Snell's law) around 1621, though his work remained unpublished. René Descartes (1596-1650) independently derived and published the law of refraction in his "Dioptrique" (1637). Isaac Newton (1642-1727) conducted extensive experiments with prisms and developed his corpuscular theory of light. Pierre de Fermat (1607-1665) derived the law of refraction using his principle of least time in the 1650s-1660s.
 
 7. **19th Century:** Augustin-Jean Fresnel (1788-1827) developed the wave theory of light, explaining refraction in terms of changes in wave speed.
 
-8. **20th Century:** The quantum mechanical understanding of light, which emerged in the early 20th century, significantly impacted our view of refraction. Max Planck's work on black body radiation in 1900 and Albert Einstein's explanation of the photoelectric effect in 1905 laid the groundwork for the quantum nature of light. This quantum perspective provided a complementary explanation to the wave theory, describing refraction in terms of photons interacting with the atoms in the medium. While this quantum view offers insights into certain aspects of refraction, it's important to note that both the wave and particle descriptions of light are necessary for a complete understanding of optical phenomena.
+8. **20th Century:** The development of quantum mechanics in the early 20th century, beginning with Max Planck's work on black body radiation (1900) and Albert Einstein's explanation of the photoelectric effect (1905), revealed the dual wave-particle nature of light. However, for refraction itself, the classical electromagnetic wave theory developed by Maxwell remains the primary and most practical description. The refractive index arises from the collective electromagnetic response of atoms in a material, and while quantum mechanics provides a deeper understanding of atomic structure and light-matter interactions at the microscopic level, the macroscopic phenomenon of refraction is well-described by wave optics.
 :::
 
 The law of refraction is the second important law of geometrical optics. It relates the refractive index $n_1$ and angle of incidence $\theta_1$ on one side of an interface to the refractive index $n_2$ and angle of refraction $\theta_2$ on the other side. Both the law of reflection and the law of refraction can be derived from more fundamental principles such as Fermat's principle of least time and are consistent with the conservation of energy. Their relation to momentum is more complex and involves considering the interaction of light with the medium at an atomic level. These laws provide a mathematical framework for predicting how light behaves when it encounters interfaces between different media, forming the basis for understanding a wide range of optical phenomena and the design of optical devices.
@@ -308,7 +308,6 @@ $$
 $$
 :::
 
-
 We can demonstrate total internal reflection very easily with a water basin, for example, where we couple in light from a laser from the side.
 
 ![Total internal reflection at a water/air interface.](../assets/images/reflection/basin_tir.png){#fig-water-air-interface width=59%} ![](../assets/images/reflection/tir_basin.png){width=40% fig-align="center"}
@@ -367,7 +366,7 @@ The NA is an important parameter in fiber optic design:
 
 Optical fibers come in various types, each optimized for different applications. Some fibers are designed to transmit light over long distances with minimal loss, while others are engineered for specific wavelengths or to guide light in unusual ways. The figure below shows a few examples of optical fiber types.
 
-![Rendering of different optical fibers types (from left to right): Hollow core optical fiber, hollow core bragg fiber, photonic crystal fiber, conventional fiber](img/fibers.png){#fig-optical-fiber width=100%}
+![Rendering of different optical fibers types (from left to right): Hollow core optical fiber, hollow core bragg fiber, photonic crystal fiber, conventional fiber](../assets/images/reflection/fibers.png){#fig-fiber-types width=100%}
 
 
 ### Fermat's Principle for Inhomogeneous Media
@@ -397,6 +396,88 @@ $$
 where $\nabla n$ is the gradient of the refractive index. This equation describes how the light ray bends in response to changes in the refractive index of the medium.
 
 Fermat's Principle is a cornerstone of geometrical optics and has applications in designing optical systems, understanding mirages, and analyzing the behavior of light in various media.
+
+
+::: {.callout-note collapse="false"}
+## F=ma Optics: Mathematical Analogy with Newton's Second Law
+
+The differential form of Fermat's principle bears a striking mathematical resemblance to Newton's second law of motion, F = ma. This analogy provides a beautiful connection between mechanics and optics, sometimes referred to as "F=ma optics."
+
+Recall that the differential form of Fermat's principle is:
+
+$$
+\frac{d}{ds}\left(n\frac{d\mathbf{r}}{ds}\right) = \nabla n
+$$
+
+Now consider Newton's second law in its most general form:
+
+$$
+\frac{d}{dt}\left(m\mathbf{v}\right) = \mathbf{F}
+$$
+
+where $\mathbf{v} = \frac{d\mathbf{r}}{dt}$ is the velocity.
+
+**The Mathematical Analogy:**
+
+The parallel between these equations becomes clear when we make the following correspondences:
+
+| Mechanics | Optics |
+|-----------|--------|
+| Time $t$ | Arc length $s$ |
+| Mass $m$ | Refractive index $n$ |
+| Velocity $\mathbf{v} = \frac{d\mathbf{r}}{dt}$ | Ray direction $\frac{d\mathbf{r}}{ds}$ |
+| Momentum $m\mathbf{v}$ | Optical momentum $n\frac{d\mathbf{r}}{ds}$ |
+| Force $\mathbf{F}$ | Gradient of refractive index $\nabla n$ |
+
+In this analogy:
+
+1. **The role of mass in mechanics is played by the refractive index in optics.** Just as a massive particle has more inertia and resists changes in motion, a light ray in a high-refractive-index medium is more "resistant" to bending.
+
+2. **The role of force is played by the gradient of the refractive index.** Just as a force causes a particle to accelerate (change its momentum), a gradient in refractive index causes a light ray to bend (change its optical momentum).
+
+3. **Arc length in optics plays the role of time in mechanics.** The evolution of the light ray's path with respect to arc length follows the same mathematical structure as the evolution of a particle's trajectory with respect to time.
+
+This analogy is more than just a mathematical curiosity—it reveals a deep connection between different areas of physics. Both Fermat's principle and Newton's laws can be derived from more fundamental variational principles (Fermat's principle of least time and Hamilton's principle of least action, respectively), which is why they share the same mathematical structure.
+
+**Practical Implications:**
+
+This analogy allows us to:
+
+- Use intuition from mechanics to understand optical phenomena
+- Apply mathematical techniques from classical mechanics to solve optics problems
+- Design optical systems by thinking about "forces" acting on light rays
+
+For example, a graded-index fiber can be thought of as creating an "optical force" that pulls light rays back toward the fiber axis, much like a spring force in a harmonic oscillator pulls a mass back to equilibrium.
+
+
+:::
+
+
+### Example: Photothermal Microscopy
+
+
+Photothermal microscopy is a powerful optical technique that exploits the refractive index changes induced by localized heating. When a material absorbs light, it converts the optical energy into heat, creating a temperature gradient in the surrounding medium. This temperature gradient produces a corresponding gradient in the refractive index, which can deflect probe light beams passing through the region—a phenomenon that can be understood and predicted using Fermat's principle in inhomogeneous media.
+
+The technique works by using two laser beams: a heating (pump) beam that is absorbed by the sample, creating a thermal gradient, and a probe beam that is deflected by the resulting refractive index gradient. By detecting this deflection, one can obtain information about the absorption properties of the sample with extremely high sensitivity, even detecting single nanoparticles or molecules.
+
+The images below demonstrate this principle beautifully. A copper sphere embedded in acrylic glass is heated by a laser, creating a radial temperature gradient around it. This gradient produces a corresponding refractive index gradient that deflects a probe laser beam. The distortion becomes clearly visible when viewing a regular grid pattern through the acrylic block—when the heating is switched on, the grid pattern warps due to the refractive index changes, and returns to normal when the heating is switched off.
+
+::: {#fig-photothermal layout-ncol=2}
+
+![Photothermal deflection around a heated copper sphere in acrylic glass.](img/cube_PT.png)
+
+::: {.content-visible when-format="html"}
+![Grid distortion when viewing through the heated acrylic block.](img/cube_PT.gif)
+:::
+
+::: {.content-visible when-format="pdf"}
+![Grid distortion when viewing through the heated acrylic block.](img/cube_PT.png)
+:::
+
+Photothermal deflection demonstration. (Left) A copper sphere embedded in acrylic glass creates a refractive index gradient when heated by a laser. (Right) The resulting distortion becomes visible when viewing a regular grid pattern through the heated block.
+:::
+
+This demonstration illustrates how Fermat's principle applies to inhomogeneous media: the light rays bend continuously as they traverse regions with varying refractive index, following paths that make the optical path length stationary. The heating-induced refractive index gradient $\nabla n$ acts as an "optical force" that deflects the light rays, just as described by the differential form of Fermat's principle: $\frac{d}{ds}\left(n\frac{d\mathbf{r}}{ds}\right) = \nabla n$.
 
 
 ::: {.callout-tip collapse="true"}
@@ -500,13 +581,13 @@ This demonstrates how the principle of least time leads to the well-known law of
 ::: {.callout-tip collapse="true"}
 #### Example: Light in a Graded-Index Medium
 
-Consider a medium where the refractive index varies with height $y$ as $n(y) = n_0 (1 - \frac{\alpha^2}{2 n_0} y^2)$. The path of light in such a medium can be found by using Fermat's principle in differential form:
+Consider a medium where the refractive index varies with height $y$ as $n(y) = n_0 \left(1 - \frac{\alpha^2}{2} y^2\right)$. The path of light in such a medium can be found by using Fermat's principle in differential form:
 
 $$
 \frac{d}{ds}\left (n(\textbf{r})\frac{d\textbf{r}}{ds}\right)=\nabla n(\textbf{r})
 $$
 
-Typically, this requires to express the coordinates in terms of a parameter, such as $x(s)$ and $y(s)$, and then solve the differential equation. The solution will give the path of light in the medium. This is difficult and commonly done numerically. In paraxial optics, when the light is propagating roughly in the direction of $z$, the differential element $ds$ can be approximated as $dz$ since then
+Typically, this requires expressing the coordinates in terms of a parameter, such as $x(s)$ and $y(s)$, and then solving the differential equation. The solution will give the path of light in the medium. This is difficult and commonly done numerically. In paraxial optics, when the light is propagating roughly in the direction of $z$, the differential element $ds$ can be approximated as $dz$ since then
 
 $$
 ds=dz\sqrt{1+\left (\frac{dy}{dz}\right )^2+\left (\frac{dx}{dz}\right)^2}\approx dz
@@ -515,13 +596,13 @@ $$
 which yields
 
 $$
-\frac{d}{dz}\left (n\frac{dx}{dz}\right)\approx \frac{dn}{dx}
+\frac{d}{dz}\left (n\frac{dx}{dz}\right)\approx \frac{\partial n}{\partial x}
 $$
 
 and
 
 $$
-\frac{d}{dz}\left (n\frac{dy}{dz}\right )\approx \frac{dn}{dy}
+\frac{d}{dz}\left (n\frac{dy}{dz}\right )\approx \frac{\partial n}{\partial y}
 $$
 
 This readily yields the path of light in a homogeneous medium, where $n$ is constant.  In this case we have
@@ -530,25 +611,30 @@ $$
 \frac{d^2 x}{dz^2}=\frac{d^2 y}{dz^2}=0
 $$
 
-which is true for a straight line. In a graded-index medium, the path of light can be found by solving the differential equation
+which is true for a straight line. In a graded-index medium with $n(y) = n_0 \left(1 - \frac{\alpha^2}{2} y^2\right)$, we have $\frac{\partial n}{\partial y} = -n_0 \alpha^2 y$. Under the paraxial approximation where $n \approx n_0$ is approximately constant along the ray, the path of light can be found by solving the differential equation
 
 $$
-\frac{d^2 y}{dz^2}=-\alpha^2 y
+n_0 \frac{d^2 y}{dz^2} \approx -n_0 \alpha^2 y
 $$
 
-which is reminiscent of the equation of motion of a harmonic oscillator.
-The solution is therefore an oscillating function
+which simplifies to
 
 $$
-y(z)=y_0\cos(\alpha z)+\frac{\theta_0}{\alpha}\sin(\alpha z  )
+\frac{d^2 y}{dz^2} \approx -\alpha^2 y
 $$
 
-where the angle $\theta_0$ is the initial angle of the light ray with respect to the $z$ axis. This solution describes the path of light in a graded-index medium.
+This is reminiscent of the equation of motion of a harmonic oscillator. The solution is therefore an oscillating function
+
+$$
+y(z)=y_0\cos(\alpha z)+\frac{\theta_0}{\alpha}\sin(\alpha z)
+$$
+
+where $y_0$ is the initial position and $\theta_0$ is the initial angle of the light ray with respect to the $z$ axis. This solution describes the sinusoidal path of light in a graded-index medium with a parabolic refractive index profile.
 :::
 
 
 ::: {.callout-tip collapse="true"}
-## Fermats's Principle in Integral and Differential Form
+## Fermat's Principle in Integral and Differential Form
 
 
 We have described Fermat't principle in an integral form specifiying the optical path length $S$ as

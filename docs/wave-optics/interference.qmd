@@ -1,0 +1,626 @@
+---
+title: Interference
+jupyter: python3
+format:
+  html:
+    code-fold: true
+crossref:
+  fig-title: Figure     # (default is "Figure")
+  tbl-title: Tbl     # (default is "Table")
+  title-delim: "—"   # (default is ":")
+  fig-prefix: "Figure"
+  eq-prefix: Eq.
+  chapters: true
+---
+
+```{python}
+# | echo: false
+## just for plotting later
+import numpy as np
+import matplotlib.pyplot as plt
+from time import sleep,time
+from ipycanvas import MultiCanvas, hold_canvas,Canvas
+import matplotlib as mpl
+import matplotlib.cm as cm
+
+
+plt.rcParams.update({'font.size': 10,
+                     'lines.linewidth': 1,
+                     'lines.markersize': 5,
+                     'axes.labelsize': 10,
+                     'axes.labelpad':0,
+                     'xtick.labelsize' : 9,
+                     'ytick.labelsize' : 9,
+                     'legend.fontsize' : 8,
+                     'contour.linewidth' : 1,
+                     'xtick.top' : True,
+                     'xtick.direction' : 'in',
+                     'ytick.right' : True,
+                     'ytick.direction' : 'in',
+                     'figure.figsize': (4, 3),
+                     'axes.titlesize':8,
+                     'figure.dpi': 150 })
+
+def get_size(w,h):
+    return((w/2.54,h/2.54))
+```
+
+
+Interference is a fundamental physical phenomenon that demonstrates the superposition principle for linear systems. This principle, which states that the net response to multiple stimuli is the sum of the individual responses, is central to our understanding of wave physics. Interference appears across many domains of physics: in optics where it enables high-precision measurements and holography, in quantum mechanics where it reveals the wave nature of matter, and in acoustics where it forms the basis for noise cancellation technology. The ability of waves to interfere constructively (amplifying each other) or destructively (canceling each other) has profound practical applications, from the anti-reflective coatings on optical elements to the operational principles of interferometric gravitational wave detectors like LIGO. Understanding interference is therefore not just of theoretical interest but crucial for modern technology and experimental physics.
+
+
+When two wave solutions $U_1(\mathbf{r})$ and $U_2(\mathbf{r})$ combine, their superposition gives:
+
+$$
+U(\mathbf{r})=U_1(\mathbf{r})+U_2(\mathbf{r})
+$$
+
+The resulting intensity is:
+
+\begin{eqnarray}
+I &= &|U|^2\\
+&= &|U_1+U_2|^2\\
+&= &|U_1|^2+|U_2|^2+U^{*}_1 U_2 + U_1 U^{*}_2
+\end{eqnarray}
+
+The individual wave intensities are given by $I_1=|U_1|^2$ and $I_2=|U_2|^2$. Using this, we can express each complex wave amplitude in polar form, separating its magnitude (related to intensity) and phase:
+
+$$
+U_1=\sqrt{I_1}e^{i\phi_1}
+$$
+$$
+U_2=\sqrt{I_2}e^{i\phi_2}
+$$
+
+Substituting these expressions back into our interference equation and performing the algebra, the total intensity becomes:
+
+$$
+I=I_1+I_2+2\sqrt{I_1 I_2}\cos(\Delta \phi)
+$$
+
+where $\Delta \phi=\phi_2-\phi_1$ is the phase difference between the waves. This equation is known as the interference formula and contains three terms:
+
+- $I_1$ and $I_2$: the individual intensities
+- $2\sqrt{I_1 I_2}\cos(\Delta \phi)$: the interference term that can be positive or negative
+
+A particularly important special case occurs when the interfering waves have equal intensities ($I_1=I_2=I_0$). The equation then simplifies to:
+
+$$
+I=2I_0(1+\cos(\Delta \phi))=4I_0\cos^2\left(\frac{\Delta \phi}{2}\right)
+$$
+
+This last form clearly shows that:
+
+- Maximum intensity ($4I_0$) occurs when $\Delta \phi = 2\pi n$ (constructive interference)
+- Zero intensity occurs when $\Delta \phi = (2n+1)\pi$ (destructive interference)
+- The intensity varies sinusoidally with the phase difference
+
+
+::: {.callout-note}
+### Constructive Interference
+Occurs when $\Delta \phi=2\pi m$ (where $m$ is an integer), resulting in $I=4I_0$
+:::
+
+
+
+
+
+```{python}
+# | fig-align: center
+# | fig-cap: Constructive interference of two waves (top, middle) and the sum of the two wave amplitudes (bottom)
+# | code-fold: true
+x=np.linspace(0,2,1000)
+wavelength=0.532
+k=2*np.pi/0.532
+y1=np.cos(k*x)
+
+fig,[ax1,ax2,ax3]=plt.subplots(3,1,figsize=get_size(10,8))
+ax1.plot(x/wavelength,y1,label='Wave 1')
+ax2.plot(x/wavelength,y1,label='Wave 1')
+ax3.plot(x/wavelength,2*y1,label='Wave 1')
+ax3.set_xlabel(r"distance [$\lambda$]")
+ax1.set_ylabel(r"$U_1$")
+ax2.set_ylabel(r"$U_2$")
+ax3.set_ylabel(r"$U_1+U_2$")
+plt.tight_layout()
+plt.show()
+```
+
+
+::: {.callout-note}
+### Destructive Interference
+Occurs when $\Delta \phi=(2m-1)\pi$ (where $m$ is an integer), resulting in $I=0$
+:::
+
+```{python}
+# | fig-align: center
+# | fig-cap: Destructive interference of two waves (top, middle) and the sum of the two wave amplitudes (bottom)
+# | code-fold: true
+x=np.linspace(0,2,1000)
+wavelength=0.532
+k=2*np.pi/0.532
+y1=np.cos(k*x)
+y2=np.cos(k*x+np.pi)
+
+fig,[ax1,ax2,ax3]=plt.subplots(3,1,figsize=get_size(10,8))
+ax1.plot(x/wavelength,y1,label='Wave 1')
+ax2.plot(x/wavelength,y2,label='Wave 1')
+ax3.plot(x/wavelength,y1+y2,label='Wave 1')
+ax3.set_xlabel(r"distance [$\lambda$]")
+ax1.set_ylabel(r"$U_1$")
+ax2.set_ylabel(r"$U_2$")
+ax3.set_ylabel(r"$U_1+U_2$")
+ax3.set_ylim(-1,1)
+plt.tight_layout()
+plt.show()
+```
+
+### Phase and Path Difference
+
+The phase difference $\Delta \phi$ can be related to the path difference $\Delta s$ between the two waves. For two waves with the same frequency $\omega$, we can write their complete phase expressions as:
+
+$$\phi_1(\mathbf{r},t) = \mathbf{k}_1\cdot\mathbf{r} - \omega t + \phi_{01}$$
+$$\phi_2(\mathbf{r},t) = \mathbf{k}_2\cdot\mathbf{r} - \omega t + \phi_{02}$$
+
+where:
+
+- $\mathbf{k}_i$ are the wave vectors
+- $\mathbf{r}$ is the position vector
+- $\omega$ is the angular frequency
+- $\phi_{0i}$ are initial phase constants
+
+The instantaneous phase difference is then:
+
+$$
+\Delta\phi(\mathbf{r},t) = \phi_2(\mathbf{r},t) - \phi_1(\mathbf{r},t) = (\mathbf{k}_2-\mathbf{k}_1)\cdot\mathbf{r} + (\phi_{02}-\phi_{01})
+$$
+
+For stationary interference patterns, we typically observe the time-independent phase difference. When the waves travel along similar paths (same direction), this reduces to:
+
+$$\Delta\phi = k\Delta s + \Delta\phi_0$$
+
+where $\Delta s$ is the path difference and $\Delta\phi_0$ is any initial phase difference between the sources.
+
+
+::: {.callout-important}
+### Phase Difference and Path Difference
+A path difference $\Delta s$ corresponds to a phase difference $k\Delta s=2\pi\Delta s/\lambda$. Path differences of integer multiples of $\lambda$ result in phase differences of integer multiples of $2\pi$.
+:::
+
+
+### Interference of Waves in Space
+
+```{python}
+# | code-fold: true
+# | fig-align: center
+# | fig-cap: Interference of two plane waves propagating under an angle of 45°. The two left graphs show the original waves. The two right show the total amplitude and the intensity pattern.
+def plane_wave(k,omega,r,t):
+    return(np.exp(1j*(np.dot(k,r)-omega*t)))
+
+wavelength=532e-9
+k0=2*np.pi/wavelength
+c=299792458
+omega0=k0*c
+
+vec=np.array([0.0,0.,1.])
+vec1=np.array([1.0,0.,1.])
+vec=vec/np.sqrt(np.dot(vec,vec))
+vec1=vec1/np.sqrt(np.dot(vec1,vec1))
+
+k=k0*vec
+k1=k0*vec1
+
+x=np.linspace(-2.5e-6,2.5e-6,300)
+z=np.linspace(0,5e-6,300)
+
+X,Z=np.meshgrid(x,z)
+r=np.array([X,0,Z],dtype=object)
+
+fig,ax=plt.subplots(2,2,figsize=get_size(10,10))
+field=plane_wave(k,omega0,r,0)
+field1=plane_wave(k1,omega0,r,0)
+
+extent = np.min(z)*1e6, np.max(z)*1e6,np.min(x)*1e6, np.max(x)*1e6
+ax[0,0].imshow(np.real(field.transpose()),extent=extent,vmin=-1,vmax=1,cmap='seismic')
+ax[0,0].set_title('wave 1')
+ax[0,1].imshow(np.real(field1.transpose()),extent=extent,vmin=-1,vmax=1,cmap='seismic')
+ax[0,1].set_title('wave 2')
+ax[1,0].imshow(np.real(field.transpose()+field1.transpose()),extent=extent,vmin=-1,vmax=1,cmap='seismic')
+ax[1,0].set_title('sum')
+ax[1,1].imshow(np.abs(field.transpose()+field1.transpose())**2,extent=extent,cmap='gray')
+ax[1,1].set_title('intensity')
+ax[1,1].set_xlabel('z-position [µm]')
+ax[1,0].set_xlabel('z-position [µm]')
+ax[1,0].set_ylabel('x-position [µm]')
+ax[0,0].set_ylabel('x-position [µm]')
+plt.tight_layout()
+plt.show()
+
+```
+
+
+```{python}
+#| code-fold: true
+#| fig-align: center
+#| fig-cap: Interference of a spherical wave and a plane wave. The top graphs show the original waves. The two bottom show the total amplitude and the intensity pattern.
+def spherical_wave(k,omega,r,r0,t):
+    k=np.linalg.norm(k)
+    d=np.linalg.norm(r-r0)
+    return( np.exp(1j*(k*d-omega*t))/d)
+
+
+
+x=np.linspace(-5e-6,5e-6,300)
+z=np.linspace(-5e-6,5e-6,300)
+
+X,Z=np.meshgrid(x,z)
+r=np.array([X,0,Z],dtype=object)
+
+wavelength=532e-9
+k0=2*np.pi/wavelength
+c=299792458
+omega0=k0*c
+
+k=k0*np.array([0,1.0,0])
+r0=np.array([0,2e-6,0])
+
+field=spherical_wave(k,omega0,r,r0,0)
+field1=plane_wave(k,omega0,r,0)
+
+extent = np.min(z)*1e6, np.max(z)*1e6,np.min(x)*1e6, np.max(x)*1e6
+
+fig,ax=plt.subplots(2,2,figsize=get_size(10,10))
+ax[0,0].imshow(np.real(field.transpose()+0*field1.transpose()),extent=extent,cmap='seismic')
+ax[0,0].set_title('Spherical wave')
+ax[0,1].imshow(np.real(0*field.transpose()+field1.transpose()),extent=extent,cmap='seismic')
+ax[0,1].set_title('Plane wave')
+ax[1,0].imshow(np.real(0.00001*field.transpose()+field1.transpose()),extent=extent,cmap='seismic')
+ax[0,1].set_title('Sum')
+ax[1,1].imshow(np.abs(0.00001*field.transpose()+field1.transpose())**2,extent=extent,cmap='gray')
+ax[0,1].set_title('Intensity')
+ax[1,0].set_xlabel('z [µm]')
+ax[1,1].set_xlabel('z [µm]')
+ax[1,0].set_ylabel('x [µm]')
+ax[0,0].set_ylabel('x [µm]')
+plt.show()
+
+```
+
+
+The interference of the spherical and the plane wave (also the one of the two plane waves) give also an interesting result. The intensity resembles to be a snapshot of the shape of the wavefronts of the spherical wave. We can therefore measure the wavefronts of the spherical wave by interfering it with a plane wave. This is also the basic principle behind holography. There we use a reference wave to interfere with the wave that we want to measure. The interference pattern is recorded and can be used to reconstruct the wavefronts of the wave.
+
+::: {.callout-alert}
+A super nice website to try out interference interactively is [here](https://www.falstad.com/ripple/).
+:::
+
+### Coherence
+
+In the earlier consideration we obtained a general description for the phase difference between two waves. TIt is given by and contains the pathlength difference $\Delta s$ and some intrinsic phase  $\Delta\phi_0$ that could be part of the wave generation process.
+
+$$\Delta\phi = k\Delta s + \Delta\phi_0$$
+
+To observe stationary interference, it is important that these two quantities are also stationary, i.e. the phase relation between the two waves is stationary. This relation between the phase of two waves is called coherence and was assumed in all the examples before.
+
+![Two waves of different frequency over time.](img/coherence.png){width="90%" fig-align="center"}
+
+The above image shows the timetrace of the amplitude of two wave with slightly different frequency. Due to the frequency, the waves run out of phase and have acquired a phase different of $\pi$ after $40$ fs.
+
+The temporal coherence of two waves is now defined by the time it takes for the two waves to obtain a phase difference of $2\pi$. The phase difference between two wave of frequency $\nu_1$ and $\nu_2$ is given by
+
+$$
+\Delta \phi = 2\pi (\nu_2-\nu_1)(t-t_0)
+$$
+
+Here $t_0$ refers to the time, when thw two waves were perfectly in sync. Lets assume that the two frequencies are seperarated from a central frequency $\nu_0$ such that
+
+$$
+\nu_1=\nu_0-\Delta \nu/2
+$$
+$$
+\nu_2=\nu_0+\Delta \nu/2
+$$
+
+Inserting this into the first equation yields
+
+$$
+\Delta \phi = 2\pi \Delta \nu \Delta t
+$$
+
+with $\Delta t=t-t_0$. We can now define the coherence time as the time interval over which the phase shift $\Delta \phi$ grows to $2\pi$, i.e. $\Delta \phi=2\pi$. The coherence time is thus
+
+$$
+\tau_{c}=\Delta t =\frac{1}{\Delta \nu}
+$$
+
+Thus the temporal coherence and the frequency distribution of the light are intrisincly connected. Monochromatic light has $\Delta nu=0$ and thus the coherence time is infinitely long. Light with a wide spectrum (white light for example) therefore has and extremly short coherence time.
+
+The coherence time is also connected to a coherence length. The coherence length $L_c$ is given by the distance light travels within the coherence time $\tau_c$, i.e.
+
+$$
+L_c=c\tau_c
+$$
+
+::: {.callout-note }
+# Coherence
+
+Two waves are called coherent, if they exihibit a fixed phase relation in space or time relation over time. It measures their ability to interfer. The main types of coherence are
+
+### Temporal Coherence
+- Measures phase correlation of a wave with itself at different times
+- Characterized by coherence time $\tau_c$ and coherence length $L_c = c\tau_c$
+- Related to spectral width: $\tau_c = 1/\Delta\nu$
+- Perfect for monochromatic waves (single frequency)
+- Limited for broad spectrum sources (like thermal light)
+
+### Spatial Coherence
+- Measures phase correlation between different points in space
+- Important for interference from extended sources
+- Determines ability to form interference patterns
+- Related to source size and geometry
+
+Coherence is a property of the light source and is connected to the frequency distribution of the light.
+Sources can be:
+
+- **Fully coherent**: ideal laser
+- **Partially coherent**: real laser
+- **Incoherent**: thermal light
+:::
+
+### More General Description of Coherence
+
+While the above definition provides an intuitive picture based on frequency spread, we can describe coherence more rigorously using correlation functions. These functions measure how well a wave maintains its phase relationships:
+
+In real physical systems, perfect coherence (constant phase relationship) between waves is rare. Partial coherence describes the degree to which waves maintain a consistent phase relationship over time and space. We can characterize this using correlation functions:
+
+1. **Temporal Coherence**
+The complex degree of temporal coherence is given by:
+
+$$g^{(1)}(\tau) = \frac{\langle U(t)U^*(t+\tau)\rangle}{\sqrt{\langle|U(t)|^2\rangle\langle|U(t+\tau)|^2\rangle}}$$
+
+where:
+
+- $\tau$ is the time delay
+- $U(t)$ is the electric field
+- $\langle...\rangle$ denotes time averaging
+
+2. **Spatial Coherence**
+Similarly, spatial coherence between two points is characterized by:
+
+$$g^{(1)}(\mathbf{r}_1,\mathbf{r}_2) = \frac{\langle U(\mathbf{r}_1)U^*(\mathbf{r}_2)\rangle}{\sqrt{\langle|U(\mathbf{r}_1)|^2\rangle\langle|U(\mathbf{r}_2)|^2\rangle}}$$
+
+The obtained correlation functions can be used to calculate the coherence time and length and have the following properties:
+
+- $|g^{(1)}| = 1$ indicates perfect coherence
+- $|g^{(1)}| = 0$ indicates complete incoherence
+- $0 < |g^{(1)}| < 1$ indicates partial coherence
+
+A finite coherence time and length is leads to partial coherence affects interference visibility through:
+
+- Reduced contrast in interference patterns
+- Limited coherence length/area
+- Spectral broadening
+
+
+```{python}
+# | code-fold: true
+# | fig-align: center
+# | fig-cap: Temporal correlation for two waves with slightly different frequencies. The vertical line indicates the coherence time τc = π/Δω.
+
+omega0 = 2.0
+delta_omega = 0.05  # frequency difference
+tau_c = np.pi/delta_omega  # coherence time (corrected)
+beat_period = 2*np.pi/delta_omega  # time for full beat cycle
+
+t = np.linspace(0, 1000, 10000)
+tau = np.linspace(0, 500, 200)
+
+def generate_waves(t):
+    wave1 = np.exp(1j * omega0 * t)
+    wave2 = np.exp(1j * (omega0 + delta_omega) * t)
+    return wave1, wave2
+
+def calc_correlation(wave, tau):
+    g = np.zeros(len(tau), dtype=complex)
+    N = len(wave)
+
+    for i, dt in enumerate(tau):
+        shift = int(dt * 10)
+        if shift >= N:
+            g[i] = 0
+        else:
+            g[i] = np.mean(wave[:(N-shift)] * np.conj(wave[shift:]))
+
+    return g / np.abs(g[0])
+
+
+wave1, wave2 = generate_waves(t)
+wave_total = wave1 + wave2
+
+# Calculate correlation
+g = calc_correlation(wave_total, tau)
+
+# Plot
+fig, (ax1, ax2) = plt.subplots(2, 1, figsize=get_size(10, 8))
+
+# Plot waves
+ax1.plot(t[:500], np.real(wave1[:500]), label='Wave 1', alpha=0.7)
+ax1.plot(t[:500], np.real(wave2[:500]), label='Wave 2', alpha=0.7)
+ax1.plot(t[:500], np.real(wave_total[:500]), 'k', label='Sum', alpha=0.7,lw=0.5)
+ax1.set_title('wave superposition')
+ax1.set_xlabel('time')
+ax1.set_ylabel('amplitude')
+ax1.legend(bbox_to_anchor=(1.05, 1), loc='upper left')
+
+
+# Plot correlation
+ax2.plot(tau, np.abs(g))
+ax2.axvline(x=tau_c, color='r', linestyle='--', label=r'$\tau_c$ ')
+ax2.axvline(x=beat_period, color='g', linestyle=':', label=f'Beat period')
+ax2.set_title('|g⁽¹⁾(τ)|')
+ax2.set_xlabel('τ')
+ax2.set_ylabel('|g⁽¹⁾(τ)|')
+ax2.legend(bbox_to_anchor=(1.05, 1), loc='upper left')
+plt.tight_layout()
+plt.subplots_adjust(right=0.85)
+
+plt.show()
+```
+Besides different frequencies the coherence time can also be affected by phase jumps. The following example shows two waves with the same frequency but multiple phase jumps. The temporal correlation function shows the decoherence due to the phase jumps.
+
+
+```{python}
+# | fig-align: center
+# | fig-cap: Temporal correlation for two waves of same frequency showing decoherence due to multiple phase jumps. Vertical lines indicate positions of phase jumps.
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+omega0 = 1.0  # same frequency for both waves
+tau = np.linspace(0, 500, 200)
+
+t = np.linspace(0, 1000, 10000)
+
+def generate_waves_with_jumps(t, n_jumps=10):
+    # Create two identical waves
+    wave1 = np.exp(1j * omega0 * t)
+    wave2 = np.exp(1j * omega0 * t)  # same frequency
+
+    # Create regularly spaced jumps within first 500 time units
+    jump_positions = np.linspace(0, 500, n_jumps+1)[:-1]  # exclude last point
+    jump_indices = [int(pos * len(t)/t[-1]) for pos in jump_positions]
+    phase_shifts = np.random.uniform(0, 2*np.pi, n_jumps)
+
+    # Apply phase shifts to wave2
+    wave2_with_jumps = wave2.copy()
+    current_phase = 0
+
+    for i in range(n_jumps):
+        start_idx = jump_indices[i]
+        if i < n_jumps-1:
+            end_idx = jump_indices[i+1]
+        else:
+            end_idx = len(t)
+
+        current_phase += phase_shifts[i]
+        wave2_with_jumps[start_idx:end_idx] *= np.exp(1j * current_phase)
+
+    return wave1, wave2_with_jumps, jump_positions
+
+
+def calc_correlation(wave, tau):
+    g = np.zeros(len(tau), dtype=complex)
+    N = len(wave)
+
+    for i, dt in enumerate(tau):
+        shift = int(dt * 10)
+        if shift >= N:
+            g[i] = 0
+        else:
+            g[i] = np.mean(wave[:(N-shift)] * np.conj(wave[shift:]))
+
+    return g / np.abs(g[0])
+
+# Generate waves with 30 jumps
+wave1, wave2, jump_positions = generate_waves_with_jumps(t, n_jumps=30)
+wave_total = wave1 + wave2
+
+g = calc_correlation(wave_total, tau)
+
+
+fig, (ax1, ax2) = plt.subplots(2, 1, figsize=get_size(10, 8))
+
+ax1.plot(t[:2000], np.real(wave1[:2000]), label='Wave 1', alpha=0.9)
+ax1.plot(t[:2000], np.real(wave2[:2000]), label='Wave 2', alpha=0.9)
+ax1.plot(t[:2000], np.real(wave_total[:2000]), 'k-', label='Sum', lw=0.5)
+ax1.set_xlim(0, 200)
+# Add vertical lines for phase jumps in wave plot
+for pos in jump_positions:
+    ax1.axvline(x=pos, color='r', linestyle='--', alpha=0.3)
+
+ax1.set_title('Superposition with Multiple Phase Jumps')
+ax1.set_xlabel('time')
+ax1.set_ylabel('amplitude')
+ax1.legend(bbox_to_anchor=(1.05, 1), loc='upper left')
+
+# Plot correlation
+ax2.plot(tau, np.abs(g))
+
+ax2.set_title('|g⁽¹⁾(τ)|')
+ax2.set_xlabel('τ')
+ax2.set_ylabel('|g⁽¹⁾(τ)|')
+ax2.set_xlim(0, 200)
+ax2.set_ylim(0, 1)
+
+# Adjust layout
+plt.tight_layout()
+plt.subplots_adjust(right=0.85)
+
+plt.show()
+```
+
+
+
+::: {.callout-note collapse=true}
+## Coherence of Thermal radiation
+
+Thermal radiation is a common example of incoherent light. While it is called incoherent, there is no complete incoherence, but the coherence length of a few 10 micrometers. Sun light, for example, has been [measured](https://opg.optica.org/directpdfaccess/151be151-eff8-4f8c-ac25d1cdd98cdfa9_310743/optica-2-2-95.pdf?da=1&id=310743&seq=0&mobile=no) to have a coherence length of about 50 micrometers (Shawn Divitt and Lukas Novotny, "Spatial coherence of sunlight and its implications for light management in photovoltaics," Optica 2, 95-103 (2015)). The following factors contribute to the incoherence of thermal radiation:
+
+**Random Emission Process**
+- Individual atoms/molecules emit light independently
+- Each emission event has a random phase
+- The emission timing is random
+- These random events effectively create continuous phase jumps
+
+
+**Multiple Emitters**
+- Many atoms/molecules emit simultaneously
+- Each emitter acts independently
+- There's no phase relationship between different emitters
+- This leads to spatially incoherent radiation
+
+
+**Thermal Motion**
+- Atoms/molecules are in constant thermal motion
+- This motion causes Doppler shifts
+- The shifts result in frequency variations
+- Motion also affects the phase of emitted radiation
+
+
+**Collision Effects**
+- Frequent atomic/molecular collisions
+- Each collision can cause phase jumps
+- At higher temperatures, more frequent collisions
+- This leads to shorter coherence times
+:::
+
+::: {.callout-note collapse=true}
+## Partial Coherence in Lasers
+
+The coherence of laser light is limited by various physical mechanisms that cause fluctuations in phase and frequency. While perfect coherence is theoretically impossible, some lasers can achieve remarkable coherence lengths. Single-frequency solid-state lasers, when properly stabilized, are particularly noteworthy in this regard. For instance, a laser with a Lorentzian spectrum of 10 kHz linewidth can achieve a coherence length of 9.5 km.
+
+The fundamental limit to laser coherence is set by quantum noise, as described by the Schawlow-Townes linewidth. However, modern laser systems, particularly those developed for optical clocks, have pushed these boundaries further. Some of these systems have been stabilized to achieve linewidths below one hertz, corresponding to coherence lengths exceeding 300,000 km.
+
+**Spontaneous Emission**
+- Not all emission in a laser is stimulated
+- Some spontaneous emission is always present
+- Adds random phase jumps to the laser field
+- Sets fundamental quantum limit to coherence
+
+**Technical Noise Sources**
+- Mechanical vibrations of cavity mirrors
+- Thermal fluctuations in gain medium
+- Pump power fluctuations
+- Current noise in diode lasers
+
+**Gain Medium Properties**
+- Finite linewidth of the lasing transition
+- Thermal motion of atoms/molecules
+- Pressure broadening in gas lasers
+- Population fluctuations
+
+**Cavity Effects**
+- Finite cavity lifetime
+- Multiple longitudinal modes
+- Temperature-induced length changes
+
+:::

@@ -2,8 +2,8 @@
 title: "Exam"
 ---
 
-The exam will take place on February 24, 2025, 09:00–12:00 in the Large Lecture Hall.
-We also intent to create a mock exam to help you prepare for the exam.
+The exam will take place on February XX, 2026, XX:00–XX:00 in the Large Lecture Hall.
+We will try to incorporate possible exam questions spotnaenously into the seminars.
 
 ::: {.callout-note}
 ## Exam Format
@@ -12,5 +12,6 @@ This course will end with a **written exam** of **180 minutes** duration.
 
 ::: {.callout-important}
 ## Exam Eligibility
-To take part in the exam, you need to qualify by earning **50% of the possible points** from the exercises handed out weekly.
+To take part in the exam, you need to qualify by earning **50% of the possible points** from the assignments handed out weekly.
+You need 50% sharp, i.e. 49.9% will not be enough!!
 :::

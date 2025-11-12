@@ -7,6 +7,8 @@ title: "Resources"
 ![](../assets/images/main/hypothesis.png){fig-align="center"}
 
 This website makes use of the hypothes.is annotation service. You can use it to leave comments and feedback on the content of this website. To do so, you need to create a hypothes.is account. You can then highlight text on the website and leave comments. You can also reply to comments left by others and create your own nodes. We use this service for the first time, so please let us know if you like that. The annotation sidebar can be reached with the icons depicted in the figure above, wich are located at the right side of the screen.
+
+
 Here is the [Link to the Hypothes.is group](https://hypothes.is/groups/5GJKk6bW/experimental-physics-3) for this course.
 
 

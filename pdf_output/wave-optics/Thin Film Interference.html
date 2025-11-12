@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>16&nbsp; Thin Film Interference – Experimental Physics 3 Course on Optics and Quantum Mechanics</title>
+<title>19&nbsp; Thin Film Interference – Experimental Physics 3 Course on Optics and Quantum Mechanics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../wave-optics/MultiWave Interference.html" rel="next">
-<link href="../wave-optics/Double Slit.html" rel="prev">
+<link href="../wave-optics/Interferometers.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -69,6 +69,12 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script async="" src="https://hypothes.is/embed.js"></script>
+<script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    document.body.classList.add('hypothesis-enabled');
+  });
+</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -112,7 +118,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../wave-optics/Wave Optics.html">Wave Optics</a></li><li class="breadcrumb-item"><a href="../wave-optics/Thin Film Interference.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Thin Film Interference</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../wave-optics/Wave Optics.html">Wave Optics</a></li><li class="breadcrumb-item"><a href="../wave-optics/Thin Film Interference.html"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Thin Film Interference</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -202,26 +208,32 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Lens Systems and Optical Instruments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Lens Systems and Optical Instruments</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../geometrical-optics/Microscope.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Optical Instruments</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Optical Instruments</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../geometrical-optics/Telescope.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Telescopes</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../geometrical-optics/Rainbow.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Rainbow</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Telescopes</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../geometrical-optics/Imaging Errors.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Imaging Errors</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Rainbow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Rainbow</span></span></a>
   </div>
 </li>
       </ul>
@@ -238,233 +250,43 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../wave-optics/Wave Optics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Wave Optics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Wave Optics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Interference.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Interference</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../wave-optics/Double Slit.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Double Slit Interference</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../wave-optics/Thin Film Interference.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Thin Film Interference</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../wave-optics/MultiWave Interference.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Multiple Wave Interference</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../wave-optics/FabryPerot.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Fabry Perot Interferometer</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../wave-optics/Diffraction.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Diffraction</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../wave-optics/Diffraction2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Diffraction in Applications</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../wave-optics/Fresnel Zones.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Fresnel Zones</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../wave-optics/Diffraction Integral.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Diffraction Integral</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Double Slit Interference</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../wave-optics/Interferometers.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Interferometers and other Coherence Applications</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Electromagnetic Optics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/Electromagnetic Optics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Electromagnetic Optics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Interferometers and other Coherence Applications</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/Polarization of EM Waves.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Polarization of EM Waves</span></span></a>
+  <a href="../wave-optics/Thin Film Interference.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Thin Film Interference</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/Energy Transport.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Energy Transport and Momentum Transport of EM Waves</span></span></a>
+  <a href="../wave-optics/MultiWave Interference.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Multiple Wave Interference</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/EM Waves in Matter.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Electromagnetic Waves in Matter</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/Dispersion and Absorption.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Dispersion &amp; Absorption</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/Reflection and Refraction.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Reflection and Refraction of Electromagnetic Waves</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/Fresnel Equations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Fresnel Equations</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/Metals.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Electromagnetic Waves in Metals</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/Anisotropic Materials.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Anisotropic Materials</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/Optical Activity.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Optical Activity and Rotatory Dispersion</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/Dipole Radiation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Dipole Radiation</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
- <span class="menu-text">Quantum Mechanics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../quantum-mechanics/Structure_of_matter.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">The Structure of Matter - Historical Experiments</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../quantum-mechanics/Particle_Nature_of_Light.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Particle Nature of Light</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../quantum-mechanics/Black_Body_Radiation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Black Body Radiation</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../quantum-mechanics/Wave_character_of_particles.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">The Wave Character of Particles</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../quantum-mechanics/Matter_waves.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Matter Waves</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../quantum-mechanics/Heisenbergs_uncertainty_relation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">Heisenbergs Uncertainty Relation</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../quantum-mechanics/Structure_of_atoms.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">The Structure of Atoms and the Bohr Model</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../quantum-mechanics/Schroedinger_equation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">The Schrödinger Equation</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../quantum-mechanics/potential_barrier.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">Potential barriers and wells</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../quantum-mechanics/harmonic_oscillator.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">The harmonic oscillator</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../quantum-mechanics/parametric_dc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">Parametric Downconversion</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../quantum-mechanics/Spherical_potential.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">Angular Momentum and Spherical Potentials</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../quantum-mechanics/Qzeno.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">The Quantum Zeno Effect</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../quantum-mechanics/hydrogen.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">48</span>&nbsp; <span class="chapter-title">Towards the Hydrogen Atom</span></span></a>
+  <a href="../wave-optics/FabryPerot.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Fabry Perot Interferometer</span></span></a>
   </div>
 </li>
       </ul>
@@ -479,18 +301,18 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#fixed-wavelength" id="toc-fixed-wavelength" class="nav-link active" data-scroll-target="#fixed-wavelength"><span class="header-section-number">16.0.1</span> Fixed Wavelength</a></li>
-  <li><a href="#fixed-thickness" id="toc-fixed-thickness" class="nav-link" data-scroll-target="#fixed-thickness"><span class="header-section-number">16.0.2</span> Fixed Thickness</a></li>
-  <li><a href="#newton-rings" id="toc-newton-rings" class="nav-link" data-scroll-target="#newton-rings"><span class="header-section-number">16.1</span> Newton Rings</a></li>
+  <li><a href="#fixed-wavelength" id="toc-fixed-wavelength" class="nav-link active" data-scroll-target="#fixed-wavelength"><span class="header-section-number">19.0.1</span> Fixed Wavelength</a></li>
+  <li><a href="#fixed-thickness" id="toc-fixed-thickness" class="nav-link" data-scroll-target="#fixed-thickness"><span class="header-section-number">19.0.2</span> Fixed Thickness</a></li>
+  <li><a href="#newton-rings" id="toc-newton-rings" class="nav-link" data-scroll-target="#newton-rings"><span class="header-section-number">19.1</span> Newton Rings</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../wave-optics/Wave Optics.html">Wave Optics</a></li><li class="breadcrumb-item"><a href="../wave-optics/Thin Film Interference.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Thin Film Interference</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../wave-optics/Wave Optics.html">Wave Optics</a></li><li class="breadcrumb-item"><a href="../wave-optics/Thin Film Interference.html"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Thin Film Interference</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Thin Film Interference</span></h1>
+<h1 class="title"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Thin Film Interference</span></h1>
 </div>
 
 
@@ -551,23 +373,23 @@ Phase Jump at Boundaries
 \]</span></p>
 <p>In case we are searching for constructive interference, this phase shift should correspond to an integer multiple of <span class="math inline">\(2\pi\)</span>, e.g.&nbsp;<span class="math inline">\(\Delta \phi =m2\pi\)</span>. From the last equation we see already, that for <span class="math inline">\(d=0\)</span>, we have in principle a residual phase shift of <span class="math inline">\(\pi\)</span>, meaning that there is only destructive interference. Yet a film thickness of zero does not really make sense.</p>
 <p>We would like to discuss two different situations in the following in an example. For that we either look at the thickness under which a constructive interference at a wavelength of <span class="math inline">\(\lambda\)</span> occurs, or we ask what kind of wavelength do show constructive interference for a fixed thickness.</p>
-<section id="fixed-wavelength" class="level3" data-number="16.0.1">
-<h3 data-number="16.0.1" class="anchored" data-anchor-id="fixed-wavelength"><span class="header-section-number">16.0.1</span> Fixed Wavelength</h3>
+<section id="fixed-wavelength" class="level3" data-number="19.0.1">
+<h3 data-number="19.0.1" class="anchored" data-anchor-id="fixed-wavelength"><span class="header-section-number">19.0.1</span> Fixed Wavelength</h3>
 <p>For a fixed wavelength of <span class="math inline">\(\lambda\)</span> we obtain a corresponding thickness for the constructive interference of</p>
 <p><span class="math display">\[
 d=\frac{(2m-1)\lambda}{4n}
 \]</span></p>
 <p>Thus we see constructive interference at from regions of the same thickness <span class="math inline">\(d\)</span>. This means that the interference fringes correspond to iso-thickness lines that we can use to determine the thickness of the film.</p>
 </section>
-<section id="fixed-thickness" class="level3" data-number="16.0.2">
-<h3 data-number="16.0.2" class="anchored" data-anchor-id="fixed-thickness"><span class="header-section-number">16.0.2</span> Fixed Thickness</h3>
+<section id="fixed-thickness" class="level3" data-number="19.0.2">
+<h3 data-number="19.0.2" class="anchored" data-anchor-id="fixed-thickness"><span class="header-section-number">19.0.2</span> Fixed Thickness</h3>
 <p>If we use now a film of a fixed thickness of <span class="math inline">\(d\)</span> and send in a mixture of different wavelength, we obtain constructive interference for the wavelengths</p>
 <p><span class="math display">\[
 \lambda_{max}=\frac{4nd}{2m-1}
 \]</span></p>
 <p>This means, thin films appear colored under some circumstances, which we still have to define. For this, we can now have a look at some examples.</p>
-<section id="example---d100-nm-and-below" class="level4" data-number="16.0.2.1">
-<h4 data-number="16.0.2.1" class="anchored" data-anchor-id="example---d100-nm-and-below"><span class="header-section-number">16.0.2.1</span> Example - d=100 nm and below</h4>
+<section id="example---d100-nm-and-below" class="level4" data-number="19.0.2.1">
+<h4 data-number="19.0.2.1" class="anchored" data-anchor-id="example---d100-nm-and-below"><span class="header-section-number">19.0.2.1</span> Example - d=100 nm and below</h4>
 <p>If we look at a film thickness of <span class="math inline">\(d=100\)</span> nm with <span class="math inline">\(n=1.33\)</span>, which corresponds to water we obbtain constructive interference for</p>
 <p><span class="math display">\[
 \lambda_{max}=\frac{4\cdot 100\, {\rm nm} \cdot 1.33}{2m-1}
@@ -591,7 +413,7 @@ d=\frac{(2m-1)\lambda}{4n}
 <img src="Thin Film Interference_files/figure-html/fig-reflection-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="576" height="279">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-reflection-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;16.1— Intensity of reflection for a 100 nm and a 10 nm film of water.
+Figure&nbsp;19.1— Intensity of reflection for a 100 nm and a 10 nm film of water.
 </figcaption>
 </figure>
 </div>
@@ -603,8 +425,8 @@ d=\frac{(2m-1)\lambda_{max}}{2n}\approx 75\, {\rm nm}
 \]</span></p>
 <p>So for film thickness of water thinner than 75 nm, there is no constructive interference of the reflected light from the two boundaries in the visible region anymore. There will be still a reflection but no specific color. If the film gets even thinner, the intensity of the reflected light is further diminished by desctructive interference and whe obtain no reflection as shown on the right side of the above figure for a <span class="math inline">\(d=10\)</span> nm film. Such thin films, which do not show any reflection are called <strong>Newton black films</strong>. You might have seen them, if you look closer at soap bubbles. They will show regions, which look like holes, but of course there are no holes in soap bubbles.</p>
 </section>
-<section id="example---d1-µm-and-d100-µm" class="level4" data-number="16.0.2.2">
-<h4 data-number="16.0.2.2" class="anchored" data-anchor-id="example---d1-µm-and-d100-µm"><span class="header-section-number">16.0.2.2</span> Example - d=1 µm and d=100 µm</h4>
+<section id="example---d1-µm-and-d100-µm" class="level4" data-number="19.0.2.2">
+<h4 data-number="19.0.2.2" class="anchored" data-anchor-id="example---d1-µm-and-d100-µm"><span class="header-section-number">19.0.2.2</span> Example - d=1 µm and d=100 µm</h4>
 <p>If the film gets thicker, e.g.&nbsp;<span class="math inline">\(d=1\)</span> µm or even <span class="math inline">\(d=100\)</span> µm, more than one constructive interference fits into the visible wavelength range. Due to that, the film may appear to have mixed colors or even look white. Below are the diagrams for those film thicknesses.</p>
 <div id="cell-fig-reflection2" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display">
@@ -614,7 +436,7 @@ d=\frac{(2m-1)\lambda_{max}}{2n}\approx 75\, {\rm nm}
 <img src="Thin Film Interference_files/figure-html/fig-reflection2-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="576" height="279">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-reflection2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;16.2— Reflection from a 1µm (left) and a 100 µm (right)thin water film. Experimental demonstration of the reflection of white light by a thin soap film.
+Figure&nbsp;19.2— Reflection from a 1µm (left) and a 100 µm (right)thin water film. Experimental demonstration of the reflection of white light by a thin soap film.
 </figcaption>
 </figure>
 </div>
@@ -656,14 +478,14 @@ Haidinger fringes
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-soapfilm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;16.3— Experimental demonstration of the reflection of white light by a thin soap film.
+Figure&nbsp;19.3— Experimental demonstration of the reflection of white light by a thin soap film.
 </figcaption>
 </figure>
 </div>
 </section>
 </section>
-<section id="newton-rings" class="level2" data-number="16.1">
-<h2 data-number="16.1" class="anchored" data-anchor-id="newton-rings"><span class="header-section-number">16.1</span> Newton Rings</h2>
+<section id="newton-rings" class="level2" data-number="19.1">
+<h2 data-number="19.1" class="anchored" data-anchor-id="newton-rings"><span class="header-section-number">19.1</span> Newton Rings</h2>
 <p>A similar interference pattern is also observed in the case of a hemi-spherical surface touching a planar surface as sketched in the image below.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -1111,13 +933,13 @@ r_m=\sqrt{m\lambda R}
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../wave-optics/Double Slit.html" class="pagination-link" aria-label="Double Slit Interference">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Double Slit Interference</span></span>
+      <a href="../wave-optics/Interferometers.html" class="pagination-link" aria-label="Interferometers and other Coherence Applications">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Interferometers and other Coherence Applications</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../wave-optics/MultiWave Interference.html" class="pagination-link" aria-label="Multiple Wave Interference">
-        <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Multiple Wave Interference</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Multiple Wave Interference</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

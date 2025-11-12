@@ -13,3 +13,116 @@ In this Experimental Physics 3 course, we will explore fundamental experiments a
 - Matter Waves and Quantum Mechanics
 
 The fields of optics and quantum mechanics are currently vibrant areas of research, with rapidly evolving optical technologies, high-resolution microscopy, and quantum information science. All of these advancements build upon the foundations that we will address in this course.
+
+
+## Course Participation
+
+```{python}
+#| echo: false
+#| label: fig-participation
+#| fig-cap: "Number of participants over time in the lecture. The dashed line indicates the number of course participants."
+
+import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
+from datetime import datetime
+
+# Data
+dates = ['13.10.25', '16.10.25', '20.10.25', '23.10.25', '27.10.25', '30.10.25','03.11.25','6.11.25']
+participants = [56, 55, 53, 47, 40, 23,35,32]
+
+# Convert dates to datetime objects
+date_objects = [datetime.strptime(date, '%d.%m.%y') for date in dates]
+
+# Create the plot
+fig, ax = plt.subplots(figsize=(5, 4))
+ax.plot(date_objects, participants, marker='o', linewidth=2, markersize=8)
+ax.axhline(y=77, color='r', linestyle='--')
+# Format the plot
+ax.set_xlabel('Date', fontsize=12)
+ax.set_ylabel('Number of Participants', fontsize=12)
+
+# Format x-axis dates
+ax.xaxis.set_major_formatter(mdates.DateFormatter('%d.%m.%y'))
+plt.xticks(rotation=45)
+plt.ylim(0,100)
+plt.tight_layout()
+plt.show()
+```
+
+
+## Seminar Participation
+
+```{python}
+#| echo: false
+#| label: fig-participation_seminar
+#| fig-cap: "Number of participants over time in the seminars. The dashed line indicates half the number of course participants."
+
+import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
+from datetime import datetime
+
+# Data
+dates = ['21.10.25', '28.10.25', '4.11.25','11.11.25']
+participants1 = [15, 10, 17, 7]
+participants2 = [10, 5, 7, 3]
+
+# Convert dates to datetime objects
+date_objects = [datetime.strptime(date, '%d.%m.%y') for date in dates]
+
+# Create the plot
+fig, ax = plt.subplots(figsize=(5, 4))
+ax.plot(date_objects, participants1, marker='o', linewidth=2, markersize=8)
+ax.plot(date_objects, participants2, marker='+', linewidth=2, markersize=8)
+ax.axhline(y=38, color='r', linestyle='--')
+
+# Format the plot
+ax.set_xlabel('Date', fontsize=12)
+ax.set_ylabel('Number of Participants', fontsize=12)
+
+# Format x-axis dates
+ax.xaxis.set_major_formatter(mdates.DateFormatter('%d.%m.%y'))
+plt.xticks(rotation=45)
+
+plt.ylim(0,40)
+plt.tight_layout()
+plt.show()
+```
+
+
+## Seminar Participation
+
+```{python}
+#| echo: false
+#| label: fig-submitted
+#| fig-cap: "Number of submitted homeworks"
+
+import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
+from datetime import datetime
+
+# Data
+dates = ['21.10.25', '28.10.25', '4.11.25','11.11.25']
+participants1 = [15, 10, 17, 7]
+participants2 = [10, 5, 7, 3]
+
+# Convert dates to datetime objects
+date_objects = [datetime.strptime(date, '%d.%m.%y') for date in dates]
+
+# Create the plot
+fig, ax = plt.subplots(figsize=(5, 4))
+ax.plot(date_objects, participants1, marker='o', linewidth=2, markersize=8)
+ax.plot(date_objects, participants2, marker='+', linewidth=2, markersize=8)
+ax.axhline(y=103, color='r', linestyle='--')
+
+# Format the plot
+ax.set_xlabel('Date', fontsize=12)
+ax.set_ylabel('Number of Participants', fontsize=12)
+
+# Format x-axis dates
+ax.xaxis.set_major_formatter(mdates.DateFormatter('%d.%m.%y'))
+plt.xticks(rotation=45)
+
+plt.ylim(0,110)
+plt.tight_layout()
+plt.show()
+```

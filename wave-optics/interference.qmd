@@ -103,8 +103,6 @@ Occurs when $\Delta \phi=2\pi m$ (where $m$ is an integer), resulting in $I=4I_0
 
 
 
-
-
 ```{python}
 # | fig-align: center
 # | fig-cap: Constructive interference of two waves (top, middle) and the sum of the two wave amplitudes (bottom)
@@ -559,11 +557,10 @@ plt.show()
 ```
 
 
-
 ::: {.callout-note collapse=true}
 ## Coherence of Thermal radiation
 
-Thermal radiation is a common example of incoherent light. While it is called incoherent, there is no complete incoherence, but the coherence length of a few 10 micrometers. Sun light, for example, has been [measured](https://opg.optica.org/directpdfaccess/151be151-eff8-4f8c-ac25d1cdd98cdfa9_310743/optica-2-2-95.pdf?da=1&id=310743&seq=0&mobile=no) to have a coherence length of about 50 micrometers (Shawn Divitt and Lukas Novotny, "Spatial coherence of sunlight and its implications for light management in photovoltaics," Optica 2, 95-103 (2015)). The following factors contribute to the incoherence of thermal radiation:
+Thermal radiation is a common example of incoherent light. While it is called incoherent, there is no complete incoherence, but the coherence length of a few 10 micrometers. Sun light, for example, has been [measured](https://www.semanticscholar.org/paper/Spatial-coherence-of-sunlight-and-its-implications-Divitt-Novotn%C3%BD/fbc2560b8fc54a10cb0feeac94eb3607e4e80ffb) to have a coherence length of about 50 micrometers (Shawn Divitt and Lukas Novotny, "Spatial coherence of sunlight and its implications for light management in photovoltaics," Optica 2, 95-103 (2015)). The following factors contribute to the incoherence of thermal radiation:
 
 **Random Emission Process**
 - Individual atoms/molecules emit light independently

@@ -9,7 +9,7 @@ title: "Instructors"
 - Phone: +49 341 97 32571
 - Email: *lastname@physik.uni-leipzig.de*
 
-## Axel Märcker
+## Friederike Lühmann
 
 - Vorlesungsexperimente
 - Linnéstr. 5, 04103 Leipzig
@@ -22,7 +22,7 @@ title: "Instructors"
 - Phone: +49 341 97 32570
 - Email: *firstname.lastname@physik.uni-leipzig.de*
 
-## Dr. Markus Anton
+## Dr. Falko Schmidt
 
 - Linnéstr. 5, 04103 Leipzig
 - Office: 333a

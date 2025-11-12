@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>23&nbsp; Interferometers and other Coherence Applications – Experimental Physics 3 Course on Optics and Quantum Mechanics</title>
+<title>18&nbsp; Interferometers and other Coherence Applications – Experimental Physics 3 Course on Optics and Quantum Mechanics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../electromagnetic-waves/Electromagnetic Optics.html" rel="next">
-<link href="../wave-optics/Diffraction Integral.html" rel="prev">
+<link href="../wave-optics/Thin Film Interference.html" rel="next">
+<link href="../wave-optics/Double Slit.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -69,6 +69,12 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script async="" src="https://hypothes.is/embed.js"></script>
+<script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    document.body.classList.add('hypothesis-enabled');
+  });
+</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -112,7 +118,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../wave-optics/Wave Optics.html">Wave Optics</a></li><li class="breadcrumb-item"><a href="../wave-optics/Interferometers.html"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Interferometers and other Coherence Applications</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../wave-optics/Wave Optics.html">Wave Optics</a></li><li class="breadcrumb-item"><a href="../wave-optics/Interferometers.html"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Interferometers and other Coherence Applications</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -202,26 +208,32 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Lens Systems and Optical Instruments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Lens Systems and Optical Instruments</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../geometrical-optics/Microscope.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Optical Instruments</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Optical Instruments</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../geometrical-optics/Telescope.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Telescopes</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../geometrical-optics/Rainbow.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Rainbow</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Telescopes</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../geometrical-optics/Imaging Errors.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Imaging Errors</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Rainbow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Rainbow</span></span></a>
   </div>
 </li>
       </ul>
@@ -238,233 +250,43 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../wave-optics/Wave Optics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Wave Optics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Wave Optics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Interference.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Interference</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../wave-optics/Double Slit.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Double Slit Interference</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../wave-optics/Thin Film Interference.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Thin Film Interference</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../wave-optics/MultiWave Interference.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Multiple Wave Interference</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../wave-optics/FabryPerot.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Fabry Perot Interferometer</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../wave-optics/Diffraction.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Diffraction</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../wave-optics/Diffraction2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Diffraction in Applications</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../wave-optics/Fresnel Zones.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Fresnel Zones</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../wave-optics/Diffraction Integral.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Diffraction Integral</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Double Slit Interference</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../wave-optics/Interferometers.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Interferometers and other Coherence Applications</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Electromagnetic Optics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/Electromagnetic Optics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Electromagnetic Optics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Interferometers and other Coherence Applications</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/Polarization of EM Waves.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Polarization of EM Waves</span></span></a>
+  <a href="../wave-optics/Thin Film Interference.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Thin Film Interference</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/Energy Transport.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Energy Transport and Momentum Transport of EM Waves</span></span></a>
+  <a href="../wave-optics/MultiWave Interference.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Multiple Wave Interference</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/EM Waves in Matter.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Electromagnetic Waves in Matter</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/Dispersion and Absorption.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Dispersion &amp; Absorption</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/Reflection and Refraction.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Reflection and Refraction of Electromagnetic Waves</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/Fresnel Equations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Fresnel Equations</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/Metals.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Electromagnetic Waves in Metals</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/Anisotropic Materials.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Anisotropic Materials</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/Optical Activity.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Optical Activity and Rotatory Dispersion</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../electromagnetic-waves/Dipole Radiation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Dipole Radiation</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
- <span class="menu-text">Quantum Mechanics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../quantum-mechanics/Structure_of_matter.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">The Structure of Matter - Historical Experiments</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../quantum-mechanics/Particle_Nature_of_Light.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Particle Nature of Light</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../quantum-mechanics/Black_Body_Radiation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Black Body Radiation</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../quantum-mechanics/Wave_character_of_particles.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">The Wave Character of Particles</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../quantum-mechanics/Matter_waves.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Matter Waves</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../quantum-mechanics/Heisenbergs_uncertainty_relation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">Heisenbergs Uncertainty Relation</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../quantum-mechanics/Structure_of_atoms.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">The Structure of Atoms and the Bohr Model</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../quantum-mechanics/Schroedinger_equation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">The Schrödinger Equation</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../quantum-mechanics/potential_barrier.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">Potential barriers and wells</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../quantum-mechanics/harmonic_oscillator.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">The harmonic oscillator</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../quantum-mechanics/parametric_dc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">Parametric Downconversion</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../quantum-mechanics/Spherical_potential.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">Angular Momentum and Spherical Potentials</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../quantum-mechanics/Qzeno.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">The Quantum Zeno Effect</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../quantum-mechanics/hydrogen.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">48</span>&nbsp; <span class="chapter-title">Towards the Hydrogen Atom</span></span></a>
+  <a href="../wave-optics/FabryPerot.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Fabry Perot Interferometer</span></span></a>
   </div>
 </li>
       </ul>
@@ -479,18 +301,18 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#michelson-interferometer" id="toc-michelson-interferometer" class="nav-link active" data-scroll-target="#michelson-interferometer"><span class="header-section-number">23.0.1</span> Michelson Interferometer</a></li>
-  <li><a href="#mach-zehnder-interferometer" id="toc-mach-zehnder-interferometer" class="nav-link" data-scroll-target="#mach-zehnder-interferometer"><span class="header-section-number">23.0.5</span> Mach Zehnder Interferometer</a></li>
-  <li><a href="#sagnac-interferometer-overview" id="toc-sagnac-interferometer-overview" class="nav-link" data-scroll-target="#sagnac-interferometer-overview"><span class="header-section-number">23.0.6</span> Sagnac Interferometer Overview</a></li>
+  <li><a href="#michelson-interferometer" id="toc-michelson-interferometer" class="nav-link active" data-scroll-target="#michelson-interferometer"><span class="header-section-number">18.0.1</span> Michelson Interferometer</a></li>
+  <li><a href="#mach-zehnder-interferometer" id="toc-mach-zehnder-interferometer" class="nav-link" data-scroll-target="#mach-zehnder-interferometer"><span class="header-section-number">18.0.5</span> Mach Zehnder Interferometer</a></li>
+  <li><a href="#sagnac-interferometer-overview" id="toc-sagnac-interferometer-overview" class="nav-link" data-scroll-target="#sagnac-interferometer-overview"><span class="header-section-number">18.0.6</span> Sagnac Interferometer Overview</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../wave-optics/Wave Optics.html">Wave Optics</a></li><li class="breadcrumb-item"><a href="../wave-optics/Interferometers.html"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Interferometers and other Coherence Applications</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../wave-optics/Wave Optics.html">Wave Optics</a></li><li class="breadcrumb-item"><a href="../wave-optics/Interferometers.html"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Interferometers and other Coherence Applications</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Interferometers and other Coherence Applications</span></h1>
+<h1 class="title"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Interferometers and other Coherence Applications</span></h1>
 </div>
 
 
@@ -507,8 +329,8 @@ window.Quarto = {
 </header>
 
 
-<section id="michelson-interferometer" class="level3" data-number="23.0.1">
-<h3 data-number="23.0.1" class="anchored" data-anchor-id="michelson-interferometer"><span class="header-section-number">23.0.1</span> Michelson Interferometer</h3>
+<section id="michelson-interferometer" class="level3" data-number="18.0.1">
+<h3 data-number="18.0.1" class="anchored" data-anchor-id="michelson-interferometer"><span class="header-section-number">18.0.1</span> Michelson Interferometer</h3>
 <p>The Michelson interferometer is an essential optical instrument used to measure the interference of light waves. It consists of a coherent light source, such as a laser, which emits a beam directed towards a beam splitter. The beam splitter divides the light into two beams: one reflected towards a fixed mirror and the other transmitted towards a movable mirror. After reflecting off their respective mirrors, the beams are recombined at the beam splitter, where they interfere.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -518,8 +340,8 @@ window.Quarto = {
 </div>
 <p>The interference pattern depends on the difference in the optical path lengths of the two beams. Constructive interference occurs when the path lengths are equal or differ by an integer multiple of the wavelength <span class="math inline">\(\lambda\)</span>, given by the condition <span class="math inline">\(2d = m\lambda\)</span>, where <span class="math inline">\(d\)</span> is the path length difference and <span class="math inline">\(m\)</span> is an integer. Destructive interference occurs when the path lengths differ by an odd multiple of half the wavelength, given by <span class="math inline">\(2d = (m + \frac{1}{2})\lambda\)</span>.</p>
 <p>By adjusting the position of the movable mirror, the path length difference changes, altering the interference pattern. This sensitivity to path length variations makes the Michelson interferometer useful for precise measurements, such as determining the wavelength of light, measuring small distances, and detecting changes in refractive index. It also played a crucial role in the Michelson-Morley experiment, which provided evidence against the existence of the luminiferous ether and supported the theory of special relativity.</p>
-<section id="ligo-interferometer-overview" class="level4" data-number="23.0.1.1">
-<h4 data-number="23.0.1.1" class="anchored"><span class="header-section-number">23.0.1.1</span> LIGO Interferometer Overview</h4>
+<section id="ligo-interferometer-overview" class="level4" data-number="18.0.1.1">
+<h4 data-number="18.0.1.1" class="anchored"><span class="header-section-number">18.0.1.1</span> LIGO Interferometer Overview</h4>
 <p>The Laser Interferometer Gravitational-Wave Observatory (LIGO) is designed to detect gravitational waves—ripples in spacetime caused by massive accelerating objects, such as merging black holes or neutron stars. LIGO uses a Michelson interferometer configuration with two perpendicular arms, each several kilometers long. A laser beam is split into two beams that travel down these arms, reflect off mirrors at the ends, and then recombine at the beam splitter. Under normal conditions, the lengths of the arms are such that the beams interfere destructively, resulting in no light reaching the detector.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -533,16 +355,29 @@ window.Quarto = {
 \Delta \phi = \frac{4 \pi \Delta L}{\lambda}
 \]</span></p>
 <p>where <span class="math inline">\(\Delta L\)</span> is the change in the length of the interferometer arms due to the gravitational wave, and <span class="math inline">\(\lambda\)</span> is the wavelength of the laser light used in the interferometer.</p>
-<section id="derivation-of-the-phase-shift" class="level5" data-number="23.0.1.1.1">
-<h5 data-number="23.0.1.1.1" class="anchored"><span class="header-section-number">23.0.1.1.1</span> Derivation of the Phase Shift</h5>
+<section id="derivation-of-the-phase-shift" class="level5" data-number="18.0.1.1.1">
+<h5 data-number="18.0.1.1.1" class="anchored"><span class="header-section-number">18.0.1.1.1</span> Derivation of the Phase Shift</h5>
 <p>To understand the phase shift in LIGO, consider the effect of a gravitational wave passing through the interferometer. The wave causes a differential change in the lengths of the two arms, denoted as <span class="math inline">\(\Delta L\)</span>. This change in length affects the travel time of the laser beams in each arm.</p>
 <p>The time difference <span class="math inline">\(\Delta T\)</span> between the beams traveling in the two arms can be expressed as:</p>
 <p><span class="math display">\[
 \Delta T = \frac{\Delta L}{c}
 \]</span></p>
-<p>The phase shift <span class="math inline">\(\Delta \phi\)</span> is then related to this time difference by the equation:</p>
+<p>where <span class="math inline">\(c\)</span> is the speed of light.</p>
+<p>To relate this time difference to a phase shift, we need to understand that the phase of a light wave is periodic with period <span class="math inline">\(T\)</span>, which is the time it takes for one complete oscillation of the electromagnetic wave. This period <span class="math inline">\(T\)</span> is related to the wavelength <span class="math inline">\(\lambda\)</span> and the speed of light <span class="math inline">\(c\)</span> by:</p>
 <p><span class="math display">\[
-\Delta \phi = \frac{2 \pi \Delta T}{T} = \frac{4 \pi \Delta L}{\lambda}
+T = \frac{\lambda}{c}
+\]</span></p>
+<p>The phase shift <span class="math inline">\(\Delta \phi\)</span> is then related to the time difference <span class="math inline">\(\Delta T\)</span> by comparing it to the period <span class="math inline">\(T\)</span>. Since a full oscillation corresponds to a phase change of <span class="math inline">\(2\pi\)</span> radians, the phase shift is:</p>
+<p><span class="math display">\[
+\Delta \phi = \frac{2 \pi \Delta T}{T} = \frac{2 \pi \Delta T}{\lambda/c} = \frac{2 \pi c \Delta T}{\lambda}
+\]</span></p>
+<p>Substituting <span class="math inline">\(\Delta T = \frac{\Delta L}{c}\)</span>:</p>
+<p><span class="math display">\[
+\Delta \phi = \frac{2 \pi c}{\lambda} \cdot \frac{\Delta L}{c} = \frac{2 \pi \Delta L}{\lambda}
+\]</span></p>
+<p>However, because the light makes a round trip in each arm (traveling to the mirror and back), the effective path length change is <span class="math inline">\(2\Delta L\)</span>, giving:</p>
+<p><span class="math display">\[
+\Delta \phi = \frac{2 \pi (2\Delta L)}{\lambda} = \frac{4 \pi \Delta L}{\lambda}
 \]</span></p>
 <p>This phase shift alters the interference pattern observed at the detector, allowing LIGO to measure the presence and properties of gravitational waves. The extraordinary precision of LIGO’s measurements enables it to detect incredibly small disturbances in spacetime, providing valuable insights into some of the most energetic events in the universe.</p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -558,8 +393,8 @@ LIGO Technical Details
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>LIGO consists of two large interferometers located in the United States: one in Hanford, Washington, and the other in Livingston, Louisiana. These facilities are operated by the LIGO Scientific Collaboration (LSC), which includes scientists from various institutions around the world. Here is a link to the <a href="https://www.ligo.caltech.edu/">LIGO website</a> and a direct link to an <a href="https://www.ligo.caltech.edu/system/media_files/binaries/303/original/ligo-educators-guide.pdf?1455165573">overview document</a>.</p>
-<section id="interferometer-design" class="level3" data-number="23.0.2">
-<h3 data-number="23.0.2" class="anchored" data-anchor-id="interferometer-design"><span class="header-section-number">23.0.2</span> Interferometer Design</h3>
+<section id="interferometer-design" class="level3" data-number="18.0.2">
+<h3 data-number="18.0.2" class="anchored" data-anchor-id="interferometer-design"><span class="header-section-number">18.0.2</span> Interferometer Design</h3>
 <ol type="1">
 <li><strong>Michelson Interferometer Configuration:</strong>
 <ul>
@@ -590,8 +425,8 @@ LIGO Technical Details
 </ul></li>
 </ol>
 </section>
-<section id="detection-principle" class="level3" data-number="23.0.3">
-<h3 data-number="23.0.3" class="anchored" data-anchor-id="detection-principle"><span class="header-section-number">23.0.3</span> Detection Principle</h3>
+<section id="detection-principle" class="level3" data-number="18.0.3">
+<h3 data-number="18.0.3" class="anchored" data-anchor-id="detection-principle"><span class="header-section-number">18.0.3</span> Detection Principle</h3>
 <ol type="1">
 <li><strong>Gravitational Waves:</strong>
 <ul>
@@ -610,8 +445,8 @@ LIGO Technical Details
 </ul></li>
 </ol>
 </section>
-<section id="data-analysis" class="level3" data-number="23.0.4">
-<h3 data-number="23.0.4" class="anchored" data-anchor-id="data-analysis"><span class="header-section-number">23.0.4</span> Data Analysis</h3>
+<section id="data-analysis" class="level3" data-number="18.0.4">
+<h3 data-number="18.0.4" class="anchored" data-anchor-id="data-analysis"><span class="header-section-number">18.0.4</span> Data Analysis</h3>
 <ol type="1">
 <li><strong>Signal Processing:</strong>
 <ul>
@@ -631,8 +466,8 @@ LIGO Technical Details
 </section>
 </section>
 </section>
-<section id="mach-zehnder-interferometer" class="level3" data-number="23.0.5">
-<h3 data-number="23.0.5" class="anchored" data-anchor-id="mach-zehnder-interferometer"><span class="header-section-number">23.0.5</span> Mach Zehnder Interferometer</h3>
+<section id="mach-zehnder-interferometer" class="level3" data-number="18.0.5">
+<h3 data-number="18.0.5" class="anchored" data-anchor-id="mach-zehnder-interferometer"><span class="header-section-number">18.0.5</span> Mach Zehnder Interferometer</h3>
 <p>The Mach-Zehnder interferometer is an optical device used to measure phase shifts between two light beams. It consists of a coherent light source, such as a laser, which emits a beam that is split into two paths by a beam splitter. Each beam travels along a different path, encountering mirrors that redirect them towards a second beam splitter where they are recombined. The recombined beams then interfere, producing an interference pattern that can be observed at the output ports.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -670,8 +505,8 @@ LIGO Technical Details
 </figure>
 </div>
 </section>
-<section id="sagnac-interferometer-overview" class="level3" data-number="23.0.6">
-<h3 data-number="23.0.6" class="anchored" data-anchor-id="sagnac-interferometer-overview"><span class="header-section-number">23.0.6</span> Sagnac Interferometer Overview</h3>
+<section id="sagnac-interferometer-overview" class="level3" data-number="18.0.6">
+<h3 data-number="18.0.6" class="anchored" data-anchor-id="sagnac-interferometer-overview"><span class="header-section-number">18.0.6</span> Sagnac Interferometer Overview</h3>
 <p>A Sagnac interferometer operates by splitting a beam of light into two separate beams that travel in opposite directions around a closed loop. These beams are then recombined at the end of the loop, resulting in an interference pattern. If the interferometer is rotating, the path lengths of the two beams differ, leading to a phase shift.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -690,8 +525,8 @@ LIGO Technical Details
 <figcaption>Sagnac interferometer made of a fibre rolled up on a cylinder taken from <a href="https://www.stabilock.com/holography--consulting/fiber-optic-sensors/sagnac-interferometer.html">here</a></figcaption>
 </figure>
 </div>
-<section id="derivation-of-the-phase-shift-1" class="level4" data-number="23.0.6.1">
-<h4 data-number="23.0.6.1" class="anchored" data-anchor-id="derivation-of-the-phase-shift-1"><span class="header-section-number">23.0.6.1</span> Derivation of the Phase Shift</h4>
+<section id="derivation-of-the-phase-shift-1" class="level4" data-number="18.0.6.1">
+<h4 data-number="18.0.6.1" class="anchored" data-anchor-id="derivation-of-the-phase-shift-1"><span class="header-section-number">18.0.6.1</span> Derivation of the Phase Shift</h4>
 <p>To derive the phase shift, we start by considering the path length difference. Assume a loop with a perimeter <span class="math inline">\(L\)</span> and an area <span class="math inline">\(A\)</span>. In the absence of rotation, the time taken for light to travel around the loop is given by <span class="math inline">\(T = \frac{L}{c}\)</span>.</p>
 <p>When the interferometer rotates with an angular velocity <span class="math inline">\(\Omega\)</span>, the effective path length changes. For the beam traveling in the direction of rotation, the path length increases, while for the beam traveling opposite to the direction of rotation, the path length decreases.</p>
 <p>The time difference <span class="math inline">\(\Delta T\)</span> between the two beams can be expressed as:</p>
@@ -1171,13 +1006,13 @@ L^2 = 4A
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../wave-optics/Diffraction Integral.html" class="pagination-link" aria-label="Diffraction Integral">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Diffraction Integral</span></span>
+      <a href="../wave-optics/Double Slit.html" class="pagination-link" aria-label="Double Slit Interference">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Double Slit Interference</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../electromagnetic-waves/Electromagnetic Optics.html" class="pagination-link" aria-label="Electromagnetic Optics">
-        <span class="nav-page-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Electromagnetic Optics</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../wave-optics/Thin Film Interference.html" class="pagination-link" aria-label="Thin Film Interference">
+        <span class="nav-page-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Thin Film Interference</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

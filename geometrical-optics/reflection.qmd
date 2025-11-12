@@ -13,6 +13,31 @@ crossref:
   chapters: true
 ---
 
+```{python}
+#| echo: false
+## just for plotting late
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+plt.rcParams.update({'font.size': 12,
+                     'axes.titlesize': 18,
+                     'axes.labelsize': 16,
+                     'axes.labelpad': 14,
+                     'lines.linewidth': 1,
+                     'lines.markersize': 10,
+                     'xtick.labelsize' : 16,
+                     'ytick.labelsize' : 16,
+                     'xtick.top' : True,
+                     'xtick.direction' : 'in',
+                     'ytick.right' : True,
+                     'ytick.direction' : 'in',})
+
+def get_size(w,h):
+    return((w/2.54,h/2.54))
+
+```
+
 ::: {.callout-note collapse="true"}
 
 ## Historical Context of Reflection Laws
@@ -26,6 +51,8 @@ The study of reflection has a rich history dating back to ancient times:
 3. **Islamic Golden Age (1000 CE)**: Ibn al-Haytham (Alhazen) made significant contributions to optics in his "Book of Optics." He conducted experiments to verify the law of reflection and explored the properties of spherical and parabolic mirrors.
 
 4. **17th Century**: Fermat's Principle, formulated by Pierre de Fermat, provided a more general framework for understanding reflection (and refraction) based on the principle of least time.
+
+**Note**: For reflection in a uniform medium, Hero's principle of least distance is mathematically equivalent to Fermat's principle of least time, since distance and time are proportional when the speed of light is constant ($t = l/c$). However, Fermat's formulation is more general and applies to refraction as well, where light travels at different speeds in different media.
 
 5. **Modern Era**: The understanding of reflection has been further refined with the development of electromagnetic theory by James Clerk Maxwell in the 19th century and quantum optics in the 20th century.
 :::
@@ -78,7 +105,7 @@ The path taken by a ray between two given points A, B is the path that can be tr
 *More precise alternative:* A ray going in a certain particular path has the property that if we make a small change in the ray in any manner whatever, say in the location at which it comes to the mirror, or the shape of the curve, or anything, there will be no first-order change in the time; there will be only a second-order change in the time.
 :::
 
-So let us consider that contraints to the path length. The total length the light hast to travel via the three points is
+So let us consider that contraints to the path length. The total length the light has to travel via the three points is
 
 $$
 l=l_{1}+l_{2}=\sqrt{(x-x_1)^2+y_1^2}+\sqrt{(x_2-x)^2+y_2^2}
@@ -92,33 +119,77 @@ $$
 
 where $c$ is the speed of light in the medium above the mirror. If this time should now be a minimum, we have to take the derivative of the time $t$ with respect to the position $x$ on the mirror and set that to zero, i.e.,
 
-$$\frac{\mathrm dt}{\mathrm dx}=0.$${#eq-hello}
+$$\frac{\mathrm dt}{\mathrm dx}=0.$$
 
-This results in @eq-hello
+
+Let's visualize how the path length $l$ varies as we change the position $x$ on the mirror:
+
+```{python}
+# | code-fold: true
+# | fig-cap: Total optical pathlength upon reflection of a ray on a planar mirror indicating the second order change with a minimum.
+# | label: fig-planar-reflection
+# Set example values for the positions
+x1, y1 = 1, 2  # Position of point A
+x2, y2 = 5, 3  # Position of point C
+
+# Create an array of x positions on the mirror
+x = np.linspace(-1, 7, 1000)
+
+# Calculate the total path length for each x position
+l1 = np.sqrt((x - x1)**2 + y1**2)
+l2 = np.sqrt((x2 - x)**2 + y2**2)
+l_total = l1 + l2
+
+# Find the minimum
+min_idx = np.argmin(l_total)
+x_min = x[min_idx]
+l_min = l_total[min_idx]
+
+# Create the plot
+fig, ax1 = plt.subplots(1, 1, figsize=get_size(10,8))
+
+# Left plot: Path length as function of x
+ax1.plot(x, l_total, 'k-', linewidth=1, label='Total path length $l = l_1 + l_2$')
+ax1.plot(x_min, l_min, 'ro', markersize=5, label=f'Minimum at $x = {x_min:.2f}$')
+ax1.axvline(x=x_min, color='r', linestyle='--', alpha=0.5)
+ax1.set_xlabel('position $x$ on mirror')
+ax1.set_ylabel('path length $l$')
+plt.show()
+```
+
+As we can see from the plot, the path length has a clear minimum at a specific position on the mirror. This minimum corresponds to the point where the angle of incidence equals the angle of reflection, confirming the law of reflection through Fermat's principle.
+
+Taking the derivative of the time with respect to $x$ corresponds to taking the derivative of the path length with respect to $x$ and setting it equal to zero for the minimum:
+
+$$
+\frac{\mathrm dl}{\mathrm dx} = \frac{x-x_1}{\sqrt{(x-x_1)^2+y_1^2}} - \frac{x_2-x}{\sqrt{(x_2-x)^2+y_2^2}} = 0
+$$
+
+This gives us:
 
 $$
 \frac{x-x_1}{\sqrt{(x-x_1)^2+y_{1}^2}}=\frac{x_2-x}{\sqrt{(x_2-x)^2+y_{2}^2}},
-$$
+$${#eq-hello}
 
-which is actually
+which simplifies to:
 
 $$
 \frac{x-x_1}{l_1}=\frac{x_2-x}{l_2}
 $$
 
-or
+Looking at the geometry in @fig-fermat, we can identify these ratios as the sines of the respective angles: $(x-x_1)/l_1 = \sin(\theta_1)$ and $(x_2-x)/l_2 = \sin(\theta_2)$. Therefore, @eq-hello becomes:
 
 $$
 \sin(\theta_1)=\sin(\theta_2)
 $$
 
-which finally requires
+which requires:
 
 $$
 \theta_1=\theta_2
 $$
 
-and is our law of reflection. Thus, reflection satisfies Fermat's principle, i.e. the light rays propagate along those path on which the propagation time is an extremum.
+This is our law of reflection. Thus, reflection satisfies Fermat's principle—the light rays propagate along those paths on which the propagation time is an extremum.
 
 
 

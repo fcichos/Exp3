@@ -4,7 +4,7 @@ title: "Course Schedule"
 
 # Lectures
 
-The course will be held in two weekly lectures, starting **14.10.2024**. The lectures will be held in the Large Lecture Hall (GHS) at the Linnéstr. 5. The course will be held in English.
+The course will be held in two weekly lectures, starting **13.10.2025**. The lectures will be held in the Large Lecture Hall (GHS) at the Linnéstr. 5. The course will be held in English.
 
 ::: {.callout-note}
 ## Lecture Times
@@ -21,14 +21,14 @@ Seminars are an essential part of the course. They help you to understand the ma
 
 ::: {.callout-warning}
 ## Seminar Start
-**The seminars will start on October 22**
+**The seminars will start on October 21**
 **The solutions to the exercise sheets have to be handed in on Thursdays before the lecture.**
 :::
 
 ::: {.callout-note}
 ## Seminar Times
 - Tuesday 11:15 am – 12:45 pm, SR 224
-- Tuesday 15:15 am – 16:45 pm, ThHS
+- Tuesday 13:15 am – 14:45 pm, SR 218
 :::
 
 The seminar will be held by Diptabrata Paul and Markus Anton.

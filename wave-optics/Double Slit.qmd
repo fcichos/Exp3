@@ -420,7 +420,7 @@ $$
 
 ::: {.callout-note collapse=true}
 ## Correct path length difference
-The path length difference given above is only approximately correct. The exact calculation would involve the geometry of the problem and the path length difference would be calculated as $\Delta s = \sqrt{d^2 + L^2 - 2dL \cos(\theta)} - \sqrt{d^2 + L^2 - 2dL \cos(\theta)}$.  Note that when observing the pattern on the screen with the help of a lens that is placed at the focal distance from the screen, the two path would correspond to parallel rays and the path length difference assumed above would be correct.
+The path length difference given above is only approximately correct. The exact calculation would involve the geometry of the problem. For two sources separated by a distance $d$ at positions $z_1 = -d/2$ and $z_2 = d/2$, and a point P at distance $L$ from the center with coordinate $y_P$, the path lengths are $r_1 = \sqrt{L^2 + (y_P + d/2)^2}$ and $r_2 = \sqrt{L^2 + (y_P - d/2)^2}$, giving $\Delta s = r_2 - r_1$. The approximation $\Delta s \approx d\sin(\theta)$ is valid when the screen distance $L$ is much larger than both the source separation $d$ and the position on the screen $y_P$ (the far-field or **Fraunhofer limit**). Note that when observing the pattern on the screen with the help of a lens that is placed at the focal distance from the screen, the two paths would correspond to parallel rays and the path length difference assumed above would be exact.
 :::
 
 As constructive interference occurs when the phase difference is a multiple of, i.e. $m 2\pi$, the constructive interference will be observed when
@@ -487,7 +487,7 @@ $$
 where $\lambda$ is the wavelength of the light and $\theta$ is the angle subtended by the two objects at the lens. The Abbe criterion is derived from the condition that the microscopy lens has to collect at least the first minimum of the interference pattern of the two objects. This first destructive interference is the information that is needed to separate the two objects from one object.
 
 
-::: {.callout-note collapse=true}
+::: {.callout-note collapse=false}
 ## Fresnel double mirror and biprism experiment
 
 One of the first experiments that demonstrated the wave nature of light was the Fresnel double mirror experiment. In this experiment, a light source is placed in front of two tilted mirrors. The light is reflected from this mirror to a screen. The interference pattern that is observed on the screen is due to the interference of the light that is reflected from the two mirrors. The interference pattern is similar to the one that is observed in the Young's double slit experiment as the two mirrors "immitate" two virtual light sources behind the tilted mirror.

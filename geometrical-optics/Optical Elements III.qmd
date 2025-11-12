@@ -380,6 +380,15 @@ C & D
 \end{bmatrix}
 $$
 
+The physical meaning of the ABCD matrix elements can be understood as follows:
+
+| Element | Physical Meaning |
+|---------|-----------------|
+| **A** | Relates output height to input height (magnification-like effect) |
+| **B** | Relates output height to input angle (how much an angled ray displaces) |
+| **C** | Relates output angle to input height (optical power, focusing/defocusing) |
+| **D** | Relates output angle to input angle (angular magnification) |
+
 Here are some useful matrices for optical elements:
 
 
@@ -420,6 +429,63 @@ $$
 $$
 
 This is a very powerful tool to analyze optical systems.
+
+### Example: Two-Lens System
+
+Consider a system consisting of two thin lenses separated by a distance $d$. The first lens has focal length $f_1 = 100$ mm and the second lens has focal length $f_2 = 150$ mm, separated by $d = 200$ mm. We want to find the overall system matrix and determine where a parallel ray at height $y_1 = 10$ mm crosses the optical axis.
+
+The system consists of three components:
+1. First lens with matrix $\mathbf{M}_1$
+2. Free space propagation of distance $d$ with matrix $\mathbf{M}_{\text{free}}$
+3. Second lens with matrix $\mathbf{M}_2$
+
+The individual matrices are:
+
+$$
+\mathbf{M}_1 = \begin{bmatrix} 1 & 0 \\ -\frac{1}{f_1} & 1 \end{bmatrix}, \quad
+\mathbf{M}_{\text{free}} = \begin{bmatrix} 1 & d \\ 0 & 1 \end{bmatrix}, \quad
+\mathbf{M}_2 = \begin{bmatrix} 1 & 0 \\ -\frac{1}{f_2} & 1 \end{bmatrix}
+$$
+
+The total system matrix is:
+
+$$
+\mathbf{M}_{\text{total}} = \mathbf{M}_2 \cdot \mathbf{M}_{\text{free}} \cdot \mathbf{M}_1
+$$
+
+Performing the matrix multiplication:
+
+$$
+\mathbf{M}_{\text{total}} = \begin{bmatrix} 1 & 0 \\ -\frac{1}{f_2} & 1 \end{bmatrix} \begin{bmatrix} 1 & d \\ 0 & 1 \end{bmatrix} \begin{bmatrix} 1 & 0 \\ -\frac{1}{f_1} & 1 \end{bmatrix}
+$$
+
+$$
+= \begin{bmatrix} 1 & 0 \\ -\frac{1}{f_2} & 1 \end{bmatrix} \begin{bmatrix} 1 - \frac{d}{f_1} & d \\ -\frac{1}{f_1} & 1 \end{bmatrix}
+$$
+
+$$
+= \begin{bmatrix} 1 - \frac{d}{f_1} & d \\ -\frac{1}{f_2} - \frac{1}{f_1} + \frac{d}{f_1 f_2} & 1 - \frac{d}{f_2} \end{bmatrix}
+$$
+
+For our specific values ($f_1 = 100$ mm, $f_2 = 150$ mm, $d = 200$ mm):
+
+$$
+\mathbf{M}_{\text{total}} = \begin{bmatrix} -1 & 200 \\ -0.00333 & -0.333 \end{bmatrix}
+$$
+
+For a parallel ray at height $y_1 = 10$ mm (i.e., $\theta_1 = 0$):
+
+$$
+\begin{pmatrix} y_2 \\ \theta_2 \end{pmatrix} = \begin{bmatrix} -1 & 200 \\ -0.00333 & -0.333 \end{bmatrix} \begin{pmatrix} 10 \\ 0 \end{pmatrix} = \begin{pmatrix} -10 \\ -0.0333 \end{pmatrix}
+$$
+
+The ray exits at height $y_2 = -10$ mm with angle $\theta_2 = -0.0333$ rad. The ray crosses the optical axis at a distance:
+
+$$
+b = -\frac{y_2}{\theta_2} = -\frac{-10}{-0.0333} = -300 \text{ mm}
+$$
+
+This means the focal point is 300 mm before the second lens (a virtual focus). This example demonstrates how matrix optics simplifies the analysis of complex multi-element optical systems.
 :::
 
 
