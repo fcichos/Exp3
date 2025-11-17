@@ -30,6 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../wave-optics/Diffraction.html" rel="next">
+<link href="../wave-optics/MultiWave Interference.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -135,7 +137,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Fabry Perot Interferometer</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Wave Optics</li><li class="breadcrumb-item"><a href="../wave-optics/FabryPerot.html">Lecture 11</a></li><li class="breadcrumb-item"><a href="../wave-optics/FabryPerot.html">Fabry Perot Interferometer</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -433,14 +435,37 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../about.html" class="sidebar-item-text sidebar-link">
+  <a href="../wave-optics/Thin Film Interference.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Thin Film Interference</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../about.html" class="sidebar-item-text sidebar-link">
+  <a href="../wave-optics/MultiWave Interference.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Multi Wave Interference</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="true">
+ <span class="menu-text">Lecture 11</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/FabryPerot.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Fabry Perot Interferometer</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Diffraction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Diffraction</span></a>
   </div>
 </li>
       </ul>
@@ -465,7 +490,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Wave Optics</li><li class="breadcrumb-item"><a href="../wave-optics/FabryPerot.html">Lecture 11</a></li><li class="breadcrumb-item"><a href="../wave-optics/FabryPerot.html">Fabry Perot Interferometer</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Fabry Perot Interferometer</h1>
 </div>
@@ -553,7 +578,7 @@ I=|U|^2=\frac{I_{0}}{|1-re^{i\phi}|^2}=\frac{I_0}{(1-r)^2+4r\sin^2\left (\frac{2
 <p><span class="math display">\[
 \frac{I}{I_{\rm max}} = \frac{1}{2} = \frac{1}{1 + \left( \frac{\mathcal{F}}{\pi} \right)^2 \Delta \phi_{1/2}^2 }
 \]</span></p>
-<p>Solving for the phase difference <span class="math inline">\(\Delta \phi_{1/2}\)</span> at half maximum, we can determine the corresponding frequency width:</p>
+<p>and use the small angle approximation to get rid of the function. Solving for the phase difference <span class="math inline">\(\Delta \phi_{1/2}\)</span> at half maximum, we can determine the corresponding frequency width:</p>
 <p><span class="math display">\[
 \Delta \nu = \frac{c}{2d \mathcal{F}} = \frac{\delta \nu}{\mathcal{F}}
 \]</span></p>
@@ -1108,6 +1133,18 @@ Applications in Modern Research and Technology
     }
   });
   </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../wave-optics/MultiWave Interference.html" class="pagination-link" aria-label="Multi Wave Interference">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Multi Wave Interference</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../wave-optics/Diffraction.html" class="pagination-link" aria-label="Diffraction">
+        <span class="nav-page-text">Diffraction</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 
 

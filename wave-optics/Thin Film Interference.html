@@ -65,6 +65,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../wave-optics/MultiWave Interference.html" rel="next">
+<link href="../wave-optics/Double Slit.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -170,7 +172,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Thin Film Interference</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Wave Optics</li><li class="breadcrumb-item"><a href="../wave-optics/Thin Film Interference.html">Lecture 10</a></li><li class="breadcrumb-item"><a href="../wave-optics/Thin Film Interference.html">Thin Film Interference</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -459,23 +461,46 @@ window.Quarto = {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="true">
  <span class="menu-text">Lecture 10</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../about.html" class="sidebar-item-text sidebar-link">
+  <a href="../wave-optics/Thin Film Interference.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Thin Film Interference</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../about.html" class="sidebar-item-text sidebar-link">
+  <a href="../wave-optics/MultiWave Interference.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Multi Wave Interference</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 11</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/FabryPerot.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fabry Perot Interferometer</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Diffraction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Diffraction</span></a>
   </div>
 </li>
       </ul>
@@ -513,7 +538,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Wave Optics</li><li class="breadcrumb-item"><a href="../wave-optics/Thin Film Interference.html">Lecture 10</a></li><li class="breadcrumb-item"><a href="../wave-optics/Thin Film Interference.html">Thin Film Interference</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Thin Film Interference</h1>
 </div>
@@ -568,7 +593,15 @@ General Phase Difference Formula for Thin Films
 </div>
 <div class="callout-body-container callout-body">
 <p><span class="math display">\[\Delta \phi=\frac{2\pi}{\lambda}\Delta s +\pi\]</span></p>
-<p>where: - <span class="math inline">\(\Delta s = 2d\sqrt{n^2-\sin^2(\alpha)}\)</span> is the optical path difference - <span class="math inline">\(\lambda\)</span> is the wavelength of light in vacuum - <span class="math inline">\(d\)</span> is the film thickness - <span class="math inline">\(n\)</span> is the refractive index of the film - <span class="math inline">\(\alpha\)</span> is the incident angle - The additional <span class="math inline">\(\pi\)</span> term represents the phase jump at the first interface (when <span class="math inline">\(n_1 &lt; n_2\)</span>)</p>
+<p>where:</p>
+<ul>
+<li><span class="math inline">\(\Delta s = 2d\sqrt{n^2-\sin^2(\alpha)}\)</span> is the optical path difference</li>
+<li><span class="math inline">\(\lambda\)</span> is the wavelength of light in vacuum</li>
+<li><span class="math inline">\(d\)</span> is the film thickness</li>
+<li><span class="math inline">\(n\)</span> is the refractive index of the film</li>
+<li><span class="math inline">\(\alpha\)</span> is the incident angle</li>
+<li>The additional <span class="math inline">\(\pi\)</span> term represents the phase jump at the first interface (when <span class="math inline">\(n_1 &lt; n_2\)</span>)</li>
+</ul>
 <p><strong>Key insight:</strong> The phase jump of <span class="math inline">\(\pi\)</span> occurs whenever light reflects from an optically denser medium (higher refractive index). No phase jump occurs when reflecting from a less dense medium.</p>
 </div>
 </div>
@@ -916,7 +949,12 @@ Newton Rings Formula
 </div>
 <div class="callout-body-container callout-body">
 <p><span class="math display">\[r_m=\sqrt{m\lambda R}\]</span></p>
-<p>This formula gives the radius of the <span class="math inline">\(m\)</span>-th dark ring, where: - <span class="math inline">\(m = 0, 1, 2, 3, ...\)</span> is the ring order (with <span class="math inline">\(m = 0\)</span> at the center) - <span class="math inline">\(\lambda\)</span> is the wavelength of light - <span class="math inline">\(R\)</span> is the radius of curvature of the spherical surface</p>
+<p>This formula gives the radius of the <span class="math inline">\(m\)</span>-th dark ring, where:</p>
+<ul>
+<li><span class="math inline">\(m = 0, 1, 2, 3, ...\)</span> is the ring order (with <span class="math inline">\(m = 0\)</span> at the center)</li>
+<li><span class="math inline">\(\lambda\)</span> is the wavelength of light</li>
+<li><span class="math inline">\(R\)</span> is the radius of curvature of the spherical surface</li>
+</ul>
 <p><strong>Key insights:</strong> - The ring radius increases with the square root of the order number <span class="math inline">\(m\)</span>, so rings get closer together as you move outward - Each wavelength creates its own ring pattern with different radii - This relationship enables precise measurements: if you know <span class="math inline">\(\lambda\)</span>, you can measure <span class="math inline">\(R\)</span>; if you know <span class="math inline">\(R\)</span>, you can measure <span class="math inline">\(\lambda\)</span></p>
 <p><strong>Applications:</strong> Testing optical surfaces for flatness and measuring radius of curvature, quality control in lens manufacturing, precision measurements in optical metrology</p>
 </div>
@@ -1337,6 +1375,18 @@ Newton Rings Formula
     }
   });
   </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../wave-optics/Double Slit.html" class="pagination-link" aria-label="Double Slit Interference">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Double Slit Interference</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../wave-optics/MultiWave Interference.html" class="pagination-link" aria-label="Multi Wave Interference">
+        <span class="nav-page-text">Multi Wave Interference</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 
 
