@@ -189,80 +189,31 @@ $$
 \Delta d \geq \frac{0.61\, \lambda}{\text{NA}}
 $$
 
-**Where:**
-
-- $\Delta d$ is the minimum resolvable distance between the two point sources.
-- $\lambda$ is the wavelength of the light used for imaging.
-- $\text{NA} = n \sin(\alpha)$ is the numerical aperture of the optical system.
-  - $n$ is the refractive index of the medium.
-  - $\alpha$ is the half-angle of the maximum cone of light entering the lens.
+Here $\Delta d$ is the minimum resolvable distance between the two point sources, $\lambda$ is the wavelength of the light used for imaging, and $\text{NA} = n \sin(\alpha)$ is the numerical aperture of the optical system, where $n$ is the refractive index of the medium and $\alpha$ is the half-angle of the maximum cone of light entering the lens.
 :::
-
 
 ### Abbe's Criterion for Resolution
 
-**Limitations of Rayleigh's Criterion:**
+While Rayleigh's criterion applies to **incoherent** light sources where intensities add directly, Ernst Abbe developed a complementary theory for **coherent** imaging where the phases of light waves are correlated. Abbe's approach emphasizes the role of diffracted orders and spatial frequencies in image formation.
 
-- Rayleigh's criterion applies to **incoherent** light sources, where the intensities of the diffraction patterns add directly.
-- It does not fully account for the effects of coherence and interference in the imaging process.
+Abbe recognized that an object with fine periodic details acts as a diffraction grating, scattering incident coherent light into multiple diffraction orders: the zeroth order (undiffracted beam), and higher orders (±1st, ±2nd, etc.). Each order carries information about different spatial frequency components of the object. For the optical system to correctly reproduce the image, it must capture at least the zeroth order and one first-order beam. If the objective lens aperture is too small and blocks all first-order diffracted beams, the fine structural details cannot be resolved regardless of magnification.
 
-**Ernst Abbe** developed a theory that considers the imaging of **coherent** light sources, where the phases of the waves are correlated. It emphasizes the importance of diffracted orders and spatial frequencies in the formation of images.
-
-The key concepts in Abbe's theory are
-
-**Diffraction Grating Analogy:**
-
-   - An object with fine details can be thought of as a diffraction grating that scatters light into multiple diffraction orders.
-   - The ability to resolve these fine details depends on the optical system's capacity to capture these diffracted orders.
-
-**Spatial Frequencies:**
-
-   - The finer the details in the object, the higher the spatial frequency.
-   - High spatial frequencies correspond to larger angles in the diffraction pattern.
-
-**Optical Transfer Function:**
-
-   - Describes how different spatial frequencies are transmitted through the optical system.
-   - An optical system with a larger NA can transmit higher spatial frequencies, improving resolution.
-
-
-Following that analogy, Abbe's criterion states that the minimum resolvable distance $\Delta d$ between two points in the object plane is given by:
+Consider a periodic structure with spacing $d$. When illuminated with coherent light of wavelength $\lambda$, the first diffraction order emerges at angle $\theta$ satisfying $d \sin\theta = \lambda$. For the objective lens to capture this first order, we require $\sin\theta \leq \sin\alpha$, where $\alpha$ defines the numerical aperture. The smallest resolvable spacing occurs when the first-order beam just enters the lens at its maximum acceptance angle, leading to:
 
 $$
-\Delta d = \frac{\lambda}{2 \text{NA}}
+\Delta d = \frac{\lambda}{2 \,\text{NA}}
 $$
 
+The factor of 2 arises from practical microscopy configurations where illumination can approach from both sides of the optical axis.
 
 ::: {.callout-note}
-## Rayleigh's and Abbe's criteria
+## Comparing Rayleigh's and Abbe's Criteria
 
-- **Abbe's Limit:**
+The two criteria approach resolution from different physical perspectives. Rayleigh's criterion ($\Delta d = 0.61\lambda/\text{NA}$) describes when two incoherent point sources become distinguishable based on the overlap of their Airy diffraction patterns, with the factor 0.61 arising from the first zero of the Bessel function $J_1$. This applies naturally to conventional bright-field microscopy and fluorescence imaging where sources emit independently.
 
-  - $\Delta d = \frac{\lambda}{2 \text{NA}}$
-  - Emphasizes coherent imaging and the transmission of at least two diffracted orders (zeroth and first) for resolution.
+Abbe's criterion ($\Delta d = \lambda/(2\text{NA})$) describes the spatial frequency bandwidth of an optical system for coherent imaging. It requires capturing at least two diffraction orders (zeroth and first) to resolve periodic structures. This framework applies to phase-contrast microscopy, interference microscopy, and other coherent imaging techniques.
 
-- **Rayleigh's Limit:**
-
-  - $\Delta d = \frac{0.61\, \lambda}{\text{NA}}$
-  - Based on the visibility of intensity dips in the overlapping Airy patterns of incoherent sources.
-
-**Implications in Microscopy:**
-
-Coherent Illumination:
-
-  - Techniques like phase-contrast or interference microscopy rely on coherent light.
-  - Abbe's criterion is more appropriate for these methods.
-
-Incoherent Illumination:
-
-  - Common in conventional bright-field microscopy.
-  - Rayleigh's criterion provides a practical resolution limit.
-
-Importance of Abbe's Criterion:
-
-- Highlights the role of interference between diffracted waves in image formation.
-- Demonstrates that resolution is fundamentally limited by the wavelength of light and the NA of the system.
-- Suggests that capturing higher spatial frequencies (larger NA) leads to better resolution.
+Despite their different origins, both criteria reveal the same fundamental scaling: resolution improves linearly with numerical aperture and inversely with wavelength. The numerical factor difference ($0.61 \approx 1.22/2$ versus $1/2$) reflects the different physical scenarios—intensity overlap for incoherent sources versus spatial frequency transmission for coherent illumination. Both confirm that diffraction fundamentally limits optical resolution at $\Delta d \sim \lambda/\text{NA}$.
 
 :::
 

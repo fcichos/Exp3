@@ -688,87 +688,33 @@ Rayleigh’s Resolution Criterion
 <p><span class="math display">\[
 \Delta d \geq \frac{0.61\, \lambda}{\text{NA}}
 \]</span></p>
-<p><strong>Where:</strong></p>
-<ul>
-<li><span class="math inline">\(\Delta d\)</span> is the minimum resolvable distance between the two point sources.</li>
-<li><span class="math inline">\(\lambda\)</span> is the wavelength of the light used for imaging.</li>
-<li><span class="math inline">\(\text{NA} = n \sin(\alpha)\)</span> is the numerical aperture of the optical system.
-<ul>
-<li><span class="math inline">\(n\)</span> is the refractive index of the medium.</li>
-<li><span class="math inline">\(\alpha\)</span> is the half-angle of the maximum cone of light entering the lens.</li>
-</ul></li>
-</ul>
+<p>Here <span class="math inline">\(\Delta d\)</span> is the minimum resolvable distance between the two point sources, <span class="math inline">\(\lambda\)</span> is the wavelength of the light used for imaging, and <span class="math inline">\(\text{NA} = n \sin(\alpha)\)</span> is the numerical aperture of the optical system, where <span class="math inline">\(n\)</span> is the refractive index of the medium and <span class="math inline">\(\alpha\)</span> is the half-angle of the maximum cone of light entering the lens.</p>
 </div>
 </div>
 </div>
 </section>
 <section id="abbes-criterion-for-resolution" class="level3">
 <h3 class="anchored" data-anchor-id="abbes-criterion-for-resolution">Abbe’s Criterion for Resolution</h3>
-<p><strong>Limitations of Rayleigh’s Criterion:</strong></p>
-<ul>
-<li>Rayleigh’s criterion applies to <strong>incoherent</strong> light sources, where the intensities of the diffraction patterns add directly.</li>
-<li>It does not fully account for the effects of coherence and interference in the imaging process.</li>
-</ul>
-<p><strong>Ernst Abbe</strong> developed a theory that considers the imaging of <strong>coherent</strong> light sources, where the phases of the waves are correlated. It emphasizes the importance of diffracted orders and spatial frequencies in the formation of images.</p>
-<p>The key concepts in Abbe’s theory are</p>
-<p><strong>Diffraction Grating Analogy:</strong></p>
-<ul>
-<li>An object with fine details can be thought of as a diffraction grating that scatters light into multiple diffraction orders.</li>
-<li>The ability to resolve these fine details depends on the optical system’s capacity to capture these diffracted orders.</li>
-</ul>
-<p><strong>Spatial Frequencies:</strong></p>
-<ul>
-<li>The finer the details in the object, the higher the spatial frequency.</li>
-<li>High spatial frequencies correspond to larger angles in the diffraction pattern.</li>
-</ul>
-<p><strong>Optical Transfer Function:</strong></p>
-<ul>
-<li>Describes how different spatial frequencies are transmitted through the optical system.</li>
-<li>An optical system with a larger NA can transmit higher spatial frequencies, improving resolution.</li>
-</ul>
-<p>Following that analogy, Abbe’s criterion states that the minimum resolvable distance <span class="math inline">\(\Delta d\)</span> between two points in the object plane is given by:</p>
+<p>While Rayleigh’s criterion applies to <strong>incoherent</strong> light sources where intensities add directly, Ernst Abbe developed a complementary theory for <strong>coherent</strong> imaging where the phases of light waves are correlated. Abbe’s approach emphasizes the role of diffracted orders and spatial frequencies in image formation.</p>
+<p>Abbe recognized that an object with fine periodic details acts as a diffraction grating, scattering incident coherent light into multiple diffraction orders: the zeroth order (undiffracted beam), and higher orders (±1st, ±2nd, etc.). Each order carries information about different spatial frequency components of the object. For the optical system to correctly reproduce the image, it must capture at least the zeroth order and one first-order beam. If the objective lens aperture is too small and blocks all first-order diffracted beams, the fine structural details cannot be resolved regardless of magnification.</p>
+<p>Consider a periodic structure with spacing <span class="math inline">\(d\)</span>. When illuminated with coherent light of wavelength <span class="math inline">\(\lambda\)</span>, the first diffraction order emerges at angle <span class="math inline">\(\theta\)</span> satisfying <span class="math inline">\(d \sin\theta = \lambda\)</span>. For the objective lens to capture this first order, we require <span class="math inline">\(\sin\theta \leq \sin\alpha\)</span>, where <span class="math inline">\(\alpha\)</span> defines the numerical aperture. The smallest resolvable spacing occurs when the first-order beam just enters the lens at its maximum acceptance angle, leading to:</p>
 <p><span class="math display">\[
-\Delta d = \frac{\lambda}{2 \text{NA}}
+\Delta d = \frac{\lambda}{2 \,\text{NA}}
 \]</span></p>
+<p>The factor of 2 arises from practical microscopy configurations where illumination can approach from both sides of the optical axis.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Rayleigh’s and Abbe’s criteria
+Comparing Rayleigh’s and Abbe’s Criteria
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<ul>
-<li><p><strong>Abbe’s Limit:</strong></p>
-<ul>
-<li><span class="math inline">\(\Delta d = \frac{\lambda}{2 \text{NA}}\)</span></li>
-<li>Emphasizes coherent imaging and the transmission of at least two diffracted orders (zeroth and first) for resolution.</li>
-</ul></li>
-<li><p><strong>Rayleigh’s Limit:</strong></p>
-<ul>
-<li><span class="math inline">\(\Delta d = \frac{0.61\, \lambda}{\text{NA}}\)</span></li>
-<li>Based on the visibility of intensity dips in the overlapping Airy patterns of incoherent sources.</li>
-</ul></li>
-</ul>
-<p><strong>Implications in Microscopy:</strong></p>
-<p>Coherent Illumination:</p>
-<ul>
-<li>Techniques like phase-contrast or interference microscopy rely on coherent light.</li>
-<li>Abbe’s criterion is more appropriate for these methods.</li>
-</ul>
-<p>Incoherent Illumination:</p>
-<ul>
-<li>Common in conventional bright-field microscopy.</li>
-<li>Rayleigh’s criterion provides a practical resolution limit.</li>
-</ul>
-<p>Importance of Abbe’s Criterion:</p>
-<ul>
-<li>Highlights the role of interference between diffracted waves in image formation.</li>
-<li>Demonstrates that resolution is fundamentally limited by the wavelength of light and the NA of the system.</li>
-<li>Suggests that capturing higher spatial frequencies (larger NA) leads to better resolution.</li>
-</ul>
+<p>The two criteria approach resolution from different physical perspectives. Rayleigh’s criterion (<span class="math inline">\(\Delta d = 0.61\lambda/\text{NA}\)</span>) describes when two incoherent point sources become distinguishable based on the overlap of their Airy diffraction patterns, with the factor 0.61 arising from the first zero of the Bessel function <span class="math inline">\(J_1\)</span>. This applies naturally to conventional bright-field microscopy and fluorescence imaging where sources emit independently.</p>
+<p>Abbe’s criterion (<span class="math inline">\(\Delta d = \lambda/(2\text{NA})\)</span>) describes the spatial frequency bandwidth of an optical system for coherent imaging. It requires capturing at least two diffraction orders (zeroth and first) to resolve periodic structures. This framework applies to phase-contrast microscopy, interference microscopy, and other coherent imaging techniques.</p>
+<p>Despite their different origins, both criteria reveal the same fundamental scaling: resolution improves linearly with numerical aperture and inversely with wavelength. The numerical factor difference (<span class="math inline">\(0.61 \approx 1.22/2\)</span> versus <span class="math inline">\(1/2\)</span>) reflects the different physical scenarios—intensity overlap for incoherent sources versus spatial frequency transmission for coherent illumination. Both confirm that diffraction fundamentally limits optical resolution at <span class="math inline">\(\Delta d \sim \lambda/\text{NA}\)</span>.</p>
 </div>
 </div>
 </section>
@@ -847,7 +793,7 @@ Analysis of the Results
 <section id="using-huygens-sources-for-more" class="level2">
 <h2 class="anchored" data-anchor-id="using-huygens-sources-for-more">Using Huygens Sources for more</h2>
 <p>The Huygens principle is a powerful tool to calculate the diffraction pattern of an aperture. The idea is to consider the aperture as a collection of point sources, which emit spherical waves. The superposition of all these waves will then give the total wave field. Below is a Python code which demonstrates the calculation of the diffraction pattern of a spherical mirror. It uses Huygens sources placed on an arc (see left). The right image shows the resulting diffraction pattern in the focal plane of the mirror.</p>
-<div id="419a25b7" class="cell" data-execution_count="2">
+<div id="326b3812" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -915,7 +861,7 @@ Analysis of the Results
 </div>
 </div>
 <p>The pattern changes with increasing angle of the arc, which is consistent with our knowledge of the numerical aperature defining the resolution of and optical system. The changes are especially visible along the vertical axis.</p>
-<div id="524e0688" class="cell" data-execution_count="3">
+<div id="dc3a4b61" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
