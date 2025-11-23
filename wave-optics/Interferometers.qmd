@@ -6,8 +6,6 @@ format:
     code-fold: true
 ---
 
-## Introduction: Phase and Optical Path Length
-
 Interferometry is fundamentally based on the principle that light waves accumulate phase as they propagate through space. The key to understanding how interferometers work lies in recognizing the relationship between the optical path length traveled by light and the phase it accumulates along that path. When a light wave travels through a medium with refractive index $n$ over a physical distance $L$, it accumulates an optical path length (OPL) given by $\text{OPL} = n \cdot L$. The phase acquired by the light wave is then directly proportional to this optical path length, expressed as $\phi = \frac{2\pi}{\lambda} \text{OPL}$, where $\lambda$ is the wavelength of light in vacuum.
 
 This relationship has profound implications for interferometric measurements. When we split a beam of light into two paths and then recombine them, the resulting interference pattern depends on the phase difference between the two beams.
@@ -35,7 +33,11 @@ The interference that results from this phase difference manifests as alternatin
 These conditions determine when light waves add constructively (maximum intensity) or destructively (minimum intensity).
 :::
 
-By carefully observing how these interference patterns change, we can extract extremely precise measurements of whatever physical quantity is causing the phase shift. In the following sections, we will explore several important types of interferometers and examine how they exploit these principles for various scientific and technological applications.
+By carefully observing how these interference patterns change, we can extract extremely precise measurements of whatever physical quantity is causing the phase shift.
+
+A critical requirement for all interferometric measurements is **coherence**—the light beams must maintain a stable phase relationship over the time and distance scales of the measurement. As discussed in the lecture on interference, coherence is characterized by the coherence length $L_c = c\tau_c$, where $\tau_c = 1/\Delta\nu$ is the coherence time and $\Delta\nu$ is the spectral bandwidth of the light source. For an interferometer to produce stable interference fringes, the optical path difference between the interfering beams must be smaller than the coherence length. This is why modern interferometers almost universally employ lasers as light sources: a typical HeNe laser has a coherence length of tens of centimeters to meters, while a stabilized single-mode laser can have coherence lengths of kilometers. In contrast, white light from a thermal source has a coherence length of only a few micrometers, making it unsuitable for most interferometric applications (though it can be used for specialized techniques like white light interferometry for surface profiling).
+
+In the following sections, we will explore several important types of interferometers and examine how they exploit these principles for various scientific and technological applications.
 
 ## Michelson Interferometer
 
@@ -56,6 +58,7 @@ The change in optical path length is $\Delta(\text{OPL}) = (n_{\text{gas}} - 1)L
 $$n_{\text{gas}} = 1 + \frac{m\lambda}{2L}$$
 
 This formula allows us to determine the refractive index of a gas by counting fringe shifts. Here:
+
 - $m$ = number of bright fringes that pass by as the cell is filled
 - $\lambda$ = wavelength of light used
 - $L$ = length of the gas cell
@@ -139,7 +142,7 @@ By introducing changes to either the path length or the refractive index in one 
 
 One of the most important modern applications of the Mach-Zehnder interferometer is in electro-optic phase modulators, particularly those implemented on photonic integrated circuits. These devices are essential components in fiber-optic communication systems, optical computing, and various sensing applications. The basic principle involves placing an electro-optic material—a material whose refractive index changes in response to an applied electric field—in one or both arms of the interferometer. When voltage is applied to electrodes positioned near the waveguides, the resulting electric field modulates the refractive index of the material through the Pockels effect, thereby changing the optical path length in that arm and introducing a phase shift.
 
-In a typical integrated Mach-Zehnder modulator fabricated on a lithium niobate substrate or silicon photonic platform, light enters the device and is split equally into two waveguide arms. Electrodes are patterned along one or both arms, and when a voltage $V$ is applied, it creates an electric field that changes the refractive index by an amount proportional to the applied field.
+In a typical integrated Mach-Zehnder modulator fabricated on a *lithium niobate* substrate or *silicon photonic* platform, light enters the device and is split equally into two waveguide arms. Electrodes are patterned along one or both arms, and when a voltage $V$ is applied, it creates an electric field that changes the refractive index by an amount proportional to the applied field.
 
 ::: {.callout-important}
 ## Electro-Optic Phase Modulation (Pockels Effect)

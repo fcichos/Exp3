@@ -105,7 +105,7 @@ $$
 \frac{I}{I_{\rm max}} = \frac{1}{2} = \frac{1}{1 + \left( \frac{\mathcal{F}}{\pi} \right)^2 \Delta \phi_{1/2}^2 }
 $$
 
-Solving for the phase difference $\Delta \phi_{1/2}$ at half maximum, we can determine the corresponding frequency width:
+and use the small angle approximation to get rid of the \textit{sine} function. Solving for the phase difference $\Delta \phi_{1/2}$ at half maximum, we can determine the corresponding frequency width:
 
 $$
 \Delta \nu = \frac{c}{2d \mathcal{F}} = \frac{\delta \nu}{\mathcal{F}}

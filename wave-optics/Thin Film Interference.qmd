@@ -231,6 +231,7 @@ However, the optical path difference alone doesn't tell the complete story. We m
 $$\Delta \phi=\frac{2\pi}{\lambda}\Delta s +\pi$$
 
 where:
+
 - $\Delta s = 2d\sqrt{n^2-\sin^2(\alpha)}$ is the optical path difference
 - $\lambda$ is the wavelength of light in vacuum
 - $d$ is the film thickness
@@ -247,7 +248,7 @@ The additional $\pi$ term in the phase difference is crucial and arises from the
 ::: {.callout-note}
 ## Phase Jump at Boundaries
 
-Waves may experience phase jumps upon reflection, depending on the relative refractive indices of the two media. A light wave will experience a phase jump of $\pi$ when reflecting from a medium of higher refractive index. Conversely, no phase jump occurs when light reflects from a medium of lower refractive index. This phenomenon is analogous to a wave on a string: when the string is attached to a rigid wall (like going from a less dense to a more dense medium), the reflected wave is inverted. When the string end is free (like going from a denser to a less dense medium), the reflected wave is not inverted. The detailed physical reasons will be covered when we examine the Fresnel formulas in electromagnetic optics.
+Waves may experience phase jumps upon reflection, depending on the relative refractive indices of the two media. A light wave will experience a phase jump of $\pi$ when reflecting from a medium of higher refractive index. Conversely, no phase jump occurs when light reflects from a medium of lower refractive index. This phenomenon is analogous to a wave on a string: when the string is attached to a rigid wall (like going from a less dense to a more dense medium), the reflected wave is inverted. When the string end is free (like going from a denser to a less dense medium), the reflected wave is not inverted. The detailed physical reasons will be covered when we examine the *Fresnel formulas in electromagnetic optics*.
 :::
 
 
@@ -455,9 +456,40 @@ The circular interference patterns observed on a plane-parallel film are called 
 
 One of the most important technological applications of thin film interference is the anti-reflection coating found on eyeglasses, camera lenses, solar panels, and telescope optics. Without such coatings, a typical glass surface reflects about 4% of incident light at each air-glass interface. For a lens system with multiple elements, these reflections accumulate, reducing image brightness, causing glare, and creating ghost images from internal reflections.
 
-An anti-reflection coating works by exploiting destructive interference. A thin film with carefully chosen thickness and refractive index is deposited on the glass surface. The refractive index of the coating ($n_{\text{coating}}$) is typically chosen to be intermediate between air ($n = 1$) and glass ($n \approx 1.5$), often around $n_{\text{coating}} \approx 1.23$ (magnesium fluoride is a common choice). The thickness is chosen to be $d = \lambda/(4n_{\text{coating}})$—a quarter-wave thickness—for a target wavelength, typically around 550 nm where the human eye is most sensitive.
+### Design Principles of Anti-Reflection Coatings
 
-With this design, light reflecting from the top surface of the coating undergoes a phase jump of $\pi$ (since $n_{\text{air}} < n_{\text{coating}}$). Light that travels through the coating and reflects from the coating-glass interface travels an extra optical path of $2n_{\text{coating}}d = 2n_{\text{coating}} \cdot \lambda/(4n_{\text{coating}}) = \lambda/2$, which corresponds to a phase change of $\pi$. However, this reflection at the coating-glass interface also experiences a phase jump of $\pi$ (since $n_{\text{coating}} < n_{\text{glass}}$). The total phase difference between the two reflected beams is therefore $\pi + \pi + \pi = 3\pi$ (equivalent to $\pi$ modulo $2\pi$), resulting in destructive interference and minimal reflection. Modern multi-layer coatings use several layers of different materials to achieve anti-reflection over a broad wavelength range, essential for high-performance optical systems.
+An anti-reflection coating works by exploiting destructive interference. A thin film with carefully chosen thickness and refractive index is deposited on the glass surface. The key design parameters are:
+
+::: {.callout-important}
+## Anti-Reflection Coating Design
+
+**Refractive index:** The coating material is chosen with $n_{\text{coating}}$ intermediate between air and glass:
+$$n_{\text{air}} < n_{\text{coating}} < n_{\text{glass}}$$
+
+Typically: $n_{\text{coating}} \approx 1.23$ (magnesium fluoride is a common choice) for $n_{\text{air}} = 1$ and $n_{\text{glass}} \approx 1.5$
+
+**Coating thickness:** Quarter-wave thickness for the target wavelength:
+$$d = \frac{\lambda}{4n_{\text{coating}}}$$
+
+where $\lambda$ is typically around 550 nm (where the human eye is most sensitive).
+:::
+
+### How Destructive Interference Eliminates Reflections
+
+With this quarter-wave design, the anti-reflection coating achieves destructive interference through careful phase management:
+
+1. Light reflecting from the **top surface** (air-coating interface) undergoes a phase jump of $\pi$ (since $n_{\text{air}} < n_{\text{coating}}$)
+
+2. Light traveling through the coating and reflecting from the **coating-glass interface** accumulates:
+   - Optical path difference: $2n_{\text{coating}}d = 2n_{\text{coating}} \cdot \frac{\lambda}{4n_{\text{coating}}} = \frac{\lambda}{2}$ → phase change of $\pi$
+   - Phase jump at reflection: $\pi$ (since $n_{\text{coating}} < n_{\text{glass}}$)
+
+3. **Total phase difference:**
+$$\Delta \phi = \pi + \pi + \pi = 3\pi \equiv \pi \pmod{2\pi}$$
+
+This results in destructive interference and minimal reflection at the design wavelength.
+
+Modern multi-layer coatings use several layers of different materials to achieve anti-reflection over a broad wavelength range, essential for high-performance optical systems.
 
 ## Soap Films and Bubbles: Nature's Interferometers
 
@@ -519,6 +551,7 @@ Combining this geometric relationship with the destructive interference conditio
 $$r_m=\sqrt{m\lambda R}$$
 
 This formula gives the radius of the $m$-th dark ring, where:
+
 - $m = 0, 1, 2, 3, ...$ is the ring order (with $m = 0$ at the center)
 - $\lambda$ is the wavelength of light
 - $R$ is the radius of curvature of the spherical surface

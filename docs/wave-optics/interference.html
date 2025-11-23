@@ -459,6 +459,81 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 10</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Thin Film Interference</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Multi Wave Interference</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 11</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/FabryPerot.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fabry Perot Interferometer</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Diffraction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Diffraction</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 12</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Diffraction2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Diffraction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Fresnel Zones.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fresnel Zone Plate</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Diffraction Integral.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Diffraction Integral</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
       </ul>
   </li>
     </ul>
@@ -549,7 +624,7 @@ Constructive Interference
 <p>Occurs when <span class="math inline">\(\Delta \phi=2\pi m\)</span> (where <span class="math inline">\(m\)</span> is an integer), resulting in <span class="math inline">\(I=4I_0\)</span></p>
 </div>
 </div>
-<div id="343ea428" class="cell" data-execution_count="2">
+<div id="672a2067" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x<span class="op">=</span>np.linspace(<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">1000</span>)</span>
@@ -590,7 +665,7 @@ Destructive Interference
 <p>Occurs when <span class="math inline">\(\Delta \phi=(2m-1)\pi\)</span> (where <span class="math inline">\(m\)</span> is an integer), resulting in <span class="math inline">\(I=0\)</span></p>
 </div>
 </div>
-<div id="584591fe" class="cell" data-execution_count="3">
+<div id="da9ef437" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>x<span class="op">=</span>np.linspace(<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">1000</span>)</span>
@@ -649,12 +724,14 @@ Phase Difference and Path Difference
 </div>
 <div class="callout-body-container callout-body">
 <p>A path difference <span class="math inline">\(\Delta s\)</span> corresponds to a phase difference <span class="math inline">\(k\Delta s=2\pi\Delta s/\lambda\)</span>. Path differences of integer multiples of <span class="math inline">\(\lambda\)</span> result in phase differences of integer multiples of <span class="math inline">\(2\pi\)</span>.</p>
+<p><strong>Important:</strong> The path difference <span class="math inline">\(\Delta s\)</span> represents the <strong>optical path difference</strong>, not just the geometric distance. When light travels through a medium with refractive index <span class="math inline">\(n\)</span> over a physical distance <span class="math inline">\(L\)</span>, the optical path length is <span class="math inline">\(\text{OPL} = n \cdot L\)</span>. This distinction becomes crucial when analyzing interferometers where light travels through different media or when measuring refractive index changes.</p>
 </div>
 </div>
+<p>The principles of interference we’ve developed—relating phase differences to path differences and understanding constructive and destructive interference—form the foundation for a powerful class of precision instruments called interferometers. These devices split light into multiple paths, allow these paths to accumulate different optical path lengths through either geometric differences or variations in refractive index, and then recombine the beams to observe interference. By carefully analyzing the resulting interference patterns, interferometers can measure distances with sub-wavelength precision, detect tiny changes in refractive index, and even sense gravitational waves. We will explore these remarkable applications in detail in a subsequent lecture on interferometers.</p>
 </section>
 <section id="interference-of-waves-in-space" class="level3">
 <h3 class="anchored" data-anchor-id="interference-of-waves-in-space">Interference of Waves in Space</h3>
-<div id="fef2564d" class="cell" data-execution_count="4">
+<div id="b403964a" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plane_wave(k,omega,r,t):</span>
@@ -708,7 +785,7 @@ Phase Difference and Path Difference
 </div>
 </div>
 </div>
-<div id="814b05df" class="cell" data-execution_count="5">
+<div id="e46db8d7" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> spherical_wave(k,omega,r,r0,t):</span>
@@ -768,9 +845,9 @@ Phase Difference and Path Difference
 </section>
 <section id="coherence" class="level3">
 <h3 class="anchored" data-anchor-id="coherence">Coherence</h3>
-<p>In the earlier consideration we obtained a general description for the phase difference between two waves. TIt is given by and contains the pathlength difference <span class="math inline">\(\Delta s\)</span> and some intrinsic phase <span class="math inline">\(\Delta\phi_0\)</span> that could be part of the wave generation process.</p>
+<p>In the earlier consideration we obtained a general description for the phase difference between two waves. It is given by and contains the optical path difference <span class="math inline">\(\Delta s\)</span> and some intrinsic phase <span class="math inline">\(\Delta\phi_0\)</span> that could be part of the wave generation process.</p>
 <p><span class="math display">\[\Delta\phi = k\Delta s + \Delta\phi_0\]</span></p>
-<p>To observe stationary interference, it is important that these two quantities are also stationary, i.e.&nbsp;the phase relation between the two waves is stationary. This relation between the phase of two waves is called coherence and was assumed in all the examples before.</p>
+<p>To observe stationary interference, it is important that these two quantities are also stationary, i.e.&nbsp;the phase relation between the two waves is stationary. This relation between the phase of two waves is called coherence and was assumed in all the examples before. Coherence is particularly critical for interferometric applications: devices like the Michelson interferometer, Fabry-Perot cavities, and other precision instruments rely on highly coherent light sources (typically lasers) to maintain stable interference patterns over the path length differences involved in the measurements.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/coherence.png" class="img-fluid figure-img" style="width:90.0%"></p>
@@ -870,7 +947,7 @@ Coherence
 <li>Limited coherence length/area</li>
 <li>Spectral broadening</li>
 </ul>
-<div id="083737c0" class="cell" data-execution_count="6">
+<div id="5b5eaf0a" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>omega0 <span class="op">=</span> <span class="fl">2.0</span></span>
@@ -942,7 +1019,7 @@ Coherence
 </div>
 </div>
 <p>Besides different frequencies the coherence time can also be affected by phase jumps. The following example shows two waves with the same frequency but multiple phase jumps. The temporal correlation function shows the decoherence due to the phase jumps.</p>
-<div id="ebd6ecf9" class="cell" data-execution_count="7">
+<div id="2a5d3376" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>

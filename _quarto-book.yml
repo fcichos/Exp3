@@ -4,7 +4,10 @@ project:
 execute:
   echo: false # This will hide the code
   output: true # This will show the output
-  freeze: auto # This will freeze the output
+  freeze: true # Changed from 'auto' to 'true'
+  cache: false # Add caching
+  daemon: true # Enable daemon for faster rendering
+  daemon-timeout: 120
 
 book:
   title: "Experimental Physics 3 Course on Optics and Quantum Mechanics"
@@ -37,16 +40,15 @@ book:
         - wave-optics/Thin Film Interference.qmd
         - wave-optics/MultiWave Interference.qmd
         - wave-optics/FabryPerot.qmd
-    #     - wave-optics/Diffraction.qmd
-    #     - wave-optics/Diffraction2.qmd
-    #     - wave-optics/Fresnel Zones.qmd
-    #     - wave-optics/Diffraction Integral.qmd
-    #     - wave-optics/Interferometers.qmd
-    # - part: "Electromagnetic Optics"
-    #   chapters:
-    #     - electromagnetic-waves/Electromagnetic Optics.qmd
-    #     - electromagnetic-waves/Polarization of EM Waves.qmd
-    #     - electromagnetic-waves/Energy Transport.qmd
+        - wave-optics/Diffraction.qmd
+        - wave-optics/Diffraction2.qmd
+        - wave-optics/Fresnel Zones.qmd
+        - wave-optics/Diffraction Integral.qmd
+    - part: "Electromagnetic Optics"
+      chapters:
+        - electromagnetic-waves/Electromagnetic Optics.qmd
+        - electromagnetic-waves/Polarization of EM Waves.qmd
+        - electromagnetic-waves/Energy Transport.qmd
     #     - electromagnetic-waves/EM Waves in Matter.qmd
     #     - electromagnetic-waves/Dispersion and Absorption.qmd
     #     - electromagnetic-waves/Reflection and Refraction.qmd
@@ -76,6 +78,8 @@ format:
   pdf:
     documentclass: book
     papersize: a4
+    keep-md: true # Keep intermediate markdown files
+    keep-tex: true # Keep intermediate LaTeX files (helps with debugging)
     toc: true
     number-sections: true
     number-depth: 1

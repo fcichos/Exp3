@@ -1,5 +1,5 @@
 ---
-title: "About"
+title: "Dummy"
 ---
 
-About this site
+The content of this lecture is provided only in person.

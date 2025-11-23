@@ -24,27 +24,30 @@ The fields of optics and quantum mechanics are currently vibrant areas of resear
 
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
+import numpy as np
 from datetime import datetime
 
 # Data
-dates = ['13.10.25', '16.10.25', '20.10.25', '23.10.25', '27.10.25', '30.10.25','03.11.25','6.11.25']
-participants = [56, 55, 53, 47, 40, 23,35,32]
+dates = ['13.10.25', '16.10.25', '20.10.25', '23.10.25', '27.10.25', '30.10.25','03.11.25','6.11.25','10.11.25','13.11.25','17.11.25']
+participants = [56, 55, 53, 47, 40, 23,35,32,30,33,26]
 
 # Convert dates to datetime objects
 date_objects = [datetime.strptime(date, '%d.%m.%y') for date in dates]
 
 # Create the plot
 fig, ax = plt.subplots(figsize=(5, 4))
-ax.plot(date_objects, participants, marker='o', linewidth=2, markersize=8)
-ax.axhline(y=77, color='r', linestyle='--')
+ax.plot(date_objects, np.array(participants)*100/103, marker='o', linewidth=2, markersize=8)
+ax.axhline(y=100, color='r', linestyle='--')
 # Format the plot
 ax.set_xlabel('Date', fontsize=12)
 ax.set_ylabel('Number of Participants', fontsize=12)
 
 # Format x-axis dates
+ax.set_xticks(date_objects)
+
 ax.xaxis.set_major_formatter(mdates.DateFormatter('%d.%m.%y'))
 plt.xticks(rotation=45)
-plt.ylim(0,100)
+plt.ylim(0,110)
 plt.tight_layout()
 plt.show()
 ```
@@ -59,12 +62,13 @@ plt.show()
 
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
+import numpy as np
 from datetime import datetime
 
 # Data
-dates = ['21.10.25', '28.10.25', '4.11.25','11.11.25']
-participants1 = [15, 10, 17, 7]
-participants2 = [10, 5, 7, 3]
+dates = ['21.10.25', '28.10.25', '4.11.25','11.11.25','18.11.25']
+participants1 = [15, 10, 17, 7,9]
+participants2 = [10, 5, 7, 3,3]
 
 # Convert dates to datetime objects
 date_objects = [datetime.strptime(date, '%d.%m.%y') for date in dates]
@@ -73,56 +77,189 @@ date_objects = [datetime.strptime(date, '%d.%m.%y') for date in dates]
 fig, ax = plt.subplots(figsize=(5, 4))
 ax.plot(date_objects, participants1, marker='o', linewidth=2, markersize=8)
 ax.plot(date_objects, participants2, marker='+', linewidth=2, markersize=8)
-ax.axhline(y=38, color='r', linestyle='--')
+ax.axhline(y=51, color='r', linestyle='--')
 
 # Format the plot
 ax.set_xlabel('Date', fontsize=12)
 ax.set_ylabel('Number of Participants', fontsize=12)
 
 # Format x-axis dates
+ax.set_xticks(date_objects)
 ax.xaxis.set_major_formatter(mdates.DateFormatter('%d.%m.%y'))
 plt.xticks(rotation=45)
 
-plt.ylim(0,40)
+plt.ylim(0,60)
 plt.tight_layout()
 plt.show()
 ```
 
 
-## Seminar Participation
+## Submitted Homeworks
 
 ```{python}
 #| echo: false
 #| label: fig-submitted
-#| fig-cap: "Number of submitted homeworks"
+#| fig-cap: "Percentage of submitted homeworks."
 
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
+import numpy as np
 from datetime import datetime
 
 # Data
-dates = ['21.10.25', '28.10.25', '4.11.25','11.11.25']
-participants1 = [15, 10, 17, 7]
-participants2 = [10, 5, 7, 3]
+dates = ['16.10.25', '23.10.25', '30.10.25','6.11.25']
+participants1 = [70, 58, 66,46]
 
 # Convert dates to datetime objects
 date_objects = [datetime.strptime(date, '%d.%m.%y') for date in dates]
 
 # Create the plot
 fig, ax = plt.subplots(figsize=(5, 4))
-ax.plot(date_objects, participants1, marker='o', linewidth=2, markersize=8)
-ax.plot(date_objects, participants2, marker='+', linewidth=2, markersize=8)
-ax.axhline(y=103, color='r', linestyle='--')
+ax.plot(date_objects, np.array(participants1)*100/103, marker='o', linewidth=2, markersize=8)
+ax.axhline(y=100, color='r', linestyle='--')
 
 # Format the plot
 ax.set_xlabel('Date', fontsize=12)
-ax.set_ylabel('Number of Participants', fontsize=12)
+ax.set_ylabel('Submitted Homeworks in %', fontsize=12)
 
 # Format x-axis dates
+# 
+ax.set_xticks(date_objects)
 ax.xaxis.set_major_formatter(mdates.DateFormatter('%d.%m.%y'))
 plt.xticks(rotation=45)
 
 plt.ylim(0,110)
+plt.tight_layout()
+plt.show()
+```
+
+
+## Average Points of Total
+
+```{python}
+#| echo: false
+#| label: fig-points
+#| fig-cap: "Average Percentage of Points of Total Points."
+
+import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
+import numpy as np
+from datetime import datetime
+
+# Data
+dates = ['16.10.25', '23.10.25', '30.10.25','6.11.25']
+participants1 = [2.36,2.86, 2.23,0]
+
+# Convert dates to datetime objects
+date_objects = [datetime.strptime(date, '%d.%m.%y') for date in dates]
+
+# Create the plot
+fig, ax = plt.subplots(figsize=(5, 4))
+ax.plot(date_objects, np.array(participants1)*100/4, marker='o', linewidth=2, markersize=8)
+ax.axhline(y=50, color='r', linestyle='--')
+
+# Format the plot
+ax.set_xlabel('Date', fontsize=12)
+ax.set_ylabel('Percent of total points ', fontsize=12)
+
+# Format x-axis dates
+ax.set_xticks(date_objects)
+ax.xaxis.set_major_formatter(mdates.DateFormatter('%d.%m.%y'))
+plt.xticks(rotation=45)
+
+plt.ylim(0,110)
+plt.tight_layout()
+plt.show()
+```
+
+
+## Homework Statistics
+
+```{python}
+#| echo: false
+#| label: fig-homework-stats
+#| fig-cap: "Statistics for each homework assignment and total percentage. Bars show mean values, with error bars indicating min (non-zero) and max values."
+
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+
+# Read the data
+df = pd.read_csv('results.csv', sep=';')
+
+# Prepare data for plotting
+assignments = ['a1', 'a2', 'Assignment:a3', 'total']
+labels = ['A1 (%)', 'A2 (%)', 'A3 (%)', 'Total (%)']
+max_points = 4  # Maximum points for each assignment
+means = []
+mins = []
+maxs = []
+
+for col in assignments:
+    data = df[col]
+    # Filter out zeros
+    non_zero_data = data[data > 0]
+
+    if len(non_zero_data) > 0:
+        mean_val = data.mean()
+        min_val = non_zero_data.min()
+        max_val = data.max()
+    else:
+        mean_val = 0
+        min_val = 0
+        max_val = 0
+
+    # Convert to percentage (except for 'total' which is already in percentage)
+    if col != 'total':
+        mean_val = (mean_val / max_points) * 100
+        min_val = (min_val / max_points) * 100
+        max_val = (max_val / max_points) * 100
+
+    means.append(mean_val)
+    mins.append(min_val)
+    maxs.append(max_val)
+
+# Count students with >= 50% for total
+students_above_50 = len(df[df['total'] >= 50])
+
+# Calculate error bars (distance from mean to min/max)
+lower_errors = [means[i] - mins[i] for i in range(len(means))]
+upper_errors = [maxs[i] - means[i] for i in range(len(means))]
+
+# Create the plot
+fig, ax = plt.subplots(figsize=(6, 4))
+
+x_pos = np.arange(len(labels))
+bars = ax.bar(x_pos, means, alpha=0.7, color='steelblue', edgecolor='black')
+
+# Add error bars
+ax.errorbar(x_pos, means, yerr=[lower_errors, upper_errors],
+            fmt='none', ecolor='red', capsize=5, capthick=2, linewidth=2)
+
+# Format the plot
+ax.set_xlabel('Assignment', fontsize=12)
+ax.set_ylabel('Percentage', fontsize=12)
+ax.set_xticks(x_pos)
+ax.set_xticklabels(labels)
+ax.set_ylim(0, max(maxs) * 1.1)
+
+# Add grid for readability
+ax.grid(axis='y', alpha=0.3, linestyle='--')
+ax.axhline(y=50, color='green', linestyle='--', linewidth=2)
+
+# Add value labels on bars
+for i, (bar, mean, min_val, max_val) in enumerate(zip(bars, means, mins, maxs)):
+    height = bar.get_height()
+    ax.text(bar.get_x() + bar.get_width()/2., height/2,
+            f'μ={mean:.2f}',
+            ha='center', va='center', fontsize=9, fontweight='bold')
+
+    # Add count of students with >= 50% above the Total bar
+    if i == 3:  # Total is the 4th bar (index 3)
+        ax.text(bar.get_x() + bar.get_width()/2., maxs[i] + (max(maxs) * 0.05),
+                f'n≥50%: {students_above_50}',
+                ha='center', va='bottom', fontsize=9, fontweight='bold', color='green')
+
 plt.tight_layout()
 plt.show()
 ```

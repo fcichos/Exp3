@@ -2,7 +2,7 @@
 title: "Exam"
 ---
 
-The exam will take place on February XX, 2026, XX:00–XX:00 in the Large Lecture Hall.
+The exam will take place on February 23, 2026, 9:00–12:00 in the Large Lecture Hall.
 We will try to incorporate possible exam questions spotnaenously into the seminars.
 
 ::: {.callout-note}

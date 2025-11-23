@@ -50,91 +50,6 @@ def get_size(w,h):
 ```
 
 
-## Application: Diffraction in the Human Eye
-
-The human eye provides an excellent real-world example of circular aperture diffraction through the pupil (the opening in the iris). By examining how light diffracts as it enters the eye, we can understand fundamental limits on visual resolution and how the eye is naturally optimized to these constraints.
-
-**Calculating the Diffraction Limit of the Eye**
-
-When light passes through the circular aperture of the pupil, it undergoes diffraction, producing an Airy disk pattern on the retina. The angle to the first minimum (dark ring) of the diffraction pattern is given by:
-
-$$
-\sin(\theta_1) = 0.61\, \frac{\lambda}{R}
-$$
-
-where:
-- $\theta_1$ is the angle to the first minimum,
-- $\lambda$ is the wavelength of the light,
-- $R$ is the radius of the aperture (pupil).
-
-For an average pupil radius of $R = 2.5\, \text{mm}$ and green light with a wavelength of $\lambda = 532\, \text{nm}$ (to which the human eye is most sensitive), we have:
-
-$$
-\sin(\theta_1) = 0.61 \times \frac{532 \times 10^{-9}\, \text{m}}{2.5 \times 10^{-3}\, \text{m}} = 0.61 \times 2.128 \times 10^{-4} \approx 1.298 \times 10^{-4}
-$$
-
-Thus, the angle to the first minimum is approximately:
-
-$$
-\theta_1 \approx \sin^{-1}(1.298 \times 10^{-4}) \approx 0.00744^\circ
-$$
-
-**Determining the Size of the Airy Disk on the Retina**
-
-The distance from the pupil to the retina (the image plane) is approximately $L = 20\, \text{mm}$ (or $2\, \text{cm}$). The linear radius $r$ of the Airy disk on the retina is calculated by:
-
-$$
-r = L \sin(\theta_1) = 20\, \text{mm} \times 1.298 \times 10^{-4} = 2.596 \times 10^{-3}\, \text{mm} = 2.596\, \mu\text{m}
-$$
-
-So, the diameter $D$ of the Airy disk (central bright spot) is:
-
-$$
-D = 2r = 2 \times 2.596\, \mu\text{m} = 5.192\, \mu\text{m}
-$$
-
-This means that the smallest spot of light that can be formed on the retina due to diffraction is about $5.19\, \mu\text{m}$ in diameter.
-
-**Comparing with Photoreceptor Spacing in the Fovea**
-
-The fovea is a small region in the retina responsible for sharp central vision. It contains a high density of cone photoreceptor cells. The average density of cones in the fovea is approximately $150,000$ cells per square millimeter. To find the average spacing $d$ between these cells, we proceed as follows:
-
-**Area per Cell:**
-
-   $$
-   \text{Area per cell} = \frac{1\, \text{mm}^2}{150,000} = 6.667 \times 10^{-6}\, \text{mm}^2 = 6.667\, \mu\text{m}^2
-   $$
-
-**Linear Spacing Between Cells:**
-
-   Assuming a square packing (for simplicity), the linear spacing $d$ is:
-
-   $$
-   d = \sqrt{\text{Area per cell}} = \sqrt{6.667\, \mu\text{m}^2} \approx 2.58\, \mu\text{m}
-   $$
-
-   In reality, the photoreceptors are more closely packed in a hexagonal arrangement, but this calculation gives a good approximation.
-
-
-::: {.callout-note collapse=true}
-## Analysis of the Results
-
-The analysis reveals that the diameter of the Airy disk is approximately $5.192\, \mu\text{m}$, while the center-to-center spacing of photoreceptors in the human eye is about $2.58\, \mu\text{m}$. This observation is significant because the diameter of the Airy disk is roughly twice the photoreceptor spacing, indicating that the central maximum of the diffraction pattern spans about two photoreceptors.
-
-The close correspondence between the diffraction limit of the eye and the spacing of photoreceptor cells is noteworthy for several reasons. Firstly, the diffraction limit establishes the fundamental constraint on the resolving power of the eye, determining the smallest angular separation between two points of light that can be distinguished. Secondly, the density of photoreceptors is sufficiently high to sample the details provided by the optical system up to this diffraction limit.
-
-Increasing the density of photoreceptors within the area of the Airy disk would not enhance visual resolution due to two primary factors. The first factor is the physical limitation imposed by the diffraction limit, which is a fundamental constraint arising from the wave nature of light and the size of the pupil. Consequently, resolution cannot be improved beyond this limit merely by increasing photoreceptor density. The second factor is related to signal intensity. Adding more photoreceptors in the same area would result in each cell receiving less light, given that the total light intensity is fixed. This reduction in light per photoreceptor could potentially decrease the signal-to-noise ratio, making it more challenging to detect light.
-
-### Biological Optimization
-
-The design of the human eye exemplifies a natural optimization process. The density of photoreceptors is matched to the optical resolving power of the eye, ensuring that the visual system extracts the maximum amount of information without unnecessary redundancy. This efficient use of resources reflects an evolutionary adaptation, where biological systems have evolved to align anatomical structures with physical laws, optimizing functions such as vision to confer survival advantages. Over time, this alignment has resulted in a visual system that is finely tuned to the constraints and capabilities imposed by the physics of light and the anatomy of the eye.
-
-- Land, M. F., & Nilsson, D.-E. (2012). *Animal Eyes* (2nd ed.). Oxford University Press.
-- Williams, D. R. (1988). Topography of the foveal cone mosaic in the living human eye. *Vision Research*, 28(3), 433–454.
-:::
-
-
-
 ## Application: Resolution of an Optical Microscope
 
 The resolution of an optical microscope is fundamentally limited by the diffraction of light as it passes through the optical components, particularly the objective lens. Diffraction causes point sources of light to produce blurred images rather than perfect points, affecting the microscope's ability to distinguish between two closely spaced objects.
@@ -266,7 +181,7 @@ Secondly, using **shorter wavelengths** $(\lambda)$ of light leads to better res
 
 
 ::: {.callout-note collapse=true}
-**Rayleigh's Resolution Criterion**
+## Rayleigh's Resolution Criterion
 
 Two incoherent point sources can be resolved when their minimum separation $\Delta d$ satisfies:
 
@@ -350,6 +265,94 @@ Importance of Abbe's Criterion:
 - Suggests that capturing higher spatial frequencies (larger NA) leads to better resolution.
 
 :::
+
+
+## Application: Diffraction in the Human Eye
+
+The human eye provides an excellent real-world example of circular aperture diffraction through the pupil (the opening in the iris). By examining how light diffracts as it enters the eye, we can understand fundamental limits on visual resolution and how the eye is naturally optimized to these constraints.
+
+**Calculating the Diffraction Limit of the Eye**
+
+When light passes through the circular aperture of the pupil, it undergoes diffraction, producing an Airy disk pattern on the retina. The angle to the first minimum (dark ring) of the diffraction pattern is given by:
+
+$$
+\sin(\theta_1) = 0.61\, \frac{\lambda}{R}
+$$
+
+where:
+
+- $\theta_1$ is the angle to the first minimum,
+- $\lambda$ is the wavelength of the light,
+- $R$ is the radius of the aperture (pupil).
+
+For an average pupil radius of $R = 2.5\, \text{mm}$ and green light with a wavelength of $\lambda = 532\, \text{nm}$ (to which the human eye is most sensitive), we have:
+
+$$
+\sin(\theta_1) = 0.61 \times \frac{532 \times 10^{-9}\, \text{m}}{2.5 \times 10^{-3}\, \text{m}} = 0.61 \times 2.128 \times 10^{-4} \approx 1.298 \times 10^{-4}
+$$
+
+Thus, the angle to the first minimum is approximately:
+
+$$
+\theta_1 \approx \sin^{-1}(1.298 \times 10^{-4}) \approx 0.00744^\circ
+$$
+
+**Determining the Size of the Airy Disk on the Retina**
+
+The distance from the pupil to the retina (the image plane) is approximately $L = 20\, \text{mm}$ (or $2\, \text{cm}$). The linear radius $r$ of the Airy disk on the retina is calculated by:
+
+$$
+r = L \sin(\theta_1) = 20\, \text{mm} \times 1.298 \times 10^{-4} = 2.596 \times 10^{-3}\, \text{mm} = 2.596\, \mu\text{m}
+$$
+
+So, the diameter $D$ of the Airy disk (central bright spot) is:
+
+$$
+D = 2r = 2 \times 2.596\, \mu\text{m} = 5.192\, \mu\text{m}
+$$
+
+This means that the smallest spot of light that can be formed on the retina due to diffraction is about $5.19\, \mu\text{m}$ in diameter.
+
+**Comparing with Photoreceptor Spacing in the Fovea**
+
+The fovea is a small region in the retina responsible for sharp central vision. It contains a high density of cone photoreceptor cells. The average density of cones in the fovea is approximately $150,000$ cells per square millimeter. To find the average spacing $d$ between these cells, we proceed as follows:
+
+**Area per Cell:**
+
+   $$
+   \text{Area per cell} = \frac{1\, \text{mm}^2}{150,000} = 6.667 \times 10^{-6}\, \text{mm}^2 = 6.667\, \mu\text{m}^2
+   $$
+
+**Linear Spacing Between Cells:**
+
+   Assuming a square packing (for simplicity), the linear spacing $d$ is:
+
+   $$
+   d = \sqrt{\text{Area per cell}} = \sqrt{6.667\, \mu\text{m}^2} \approx 2.58\, \mu\text{m}
+   $$
+
+   In reality, the photoreceptors are more closely packed in a hexagonal arrangement, but this calculation gives a good approximation.
+
+
+::: {.callout-note collapse=true}
+## Analysis of the Results
+
+The analysis reveals that the diameter of the Airy disk is approximately $5.192\, \mu\text{m}$, while the center-to-center spacing of photoreceptors in the human eye is about $2.58\, \mu\text{m}$. This observation is significant because the diameter of the Airy disk is roughly twice the photoreceptor spacing, indicating that the central maximum of the diffraction pattern spans about two photoreceptors.
+
+The close correspondence between the diffraction limit of the eye and the spacing of photoreceptor cells is noteworthy for several reasons. Firstly, the diffraction limit establishes the fundamental constraint on the resolving power of the eye, determining the smallest angular separation between two points of light that can be distinguished. Secondly, the density of photoreceptors is sufficiently high to sample the details provided by the optical system up to this diffraction limit.
+
+Increasing the density of photoreceptors within the area of the Airy disk would not enhance visual resolution due to two primary factors. The first factor is the physical limitation imposed by the diffraction limit, which is a fundamental constraint arising from the wave nature of light and the size of the pupil. Consequently, resolution cannot be improved beyond this limit merely by increasing photoreceptor density. The second factor is related to signal intensity. Adding more photoreceptors in the same area would result in each cell receiving less light, given that the total light intensity is fixed. This reduction in light per photoreceptor could potentially decrease the signal-to-noise ratio, making it more challenging to detect light.
+
+### Biological Optimization
+
+The design of the human eye exemplifies a natural optimization process. The density of photoreceptors is matched to the optical resolving power of the eye, ensuring that the visual system extracts the maximum amount of information without unnecessary redundancy. This efficient use of resources reflects an evolutionary adaptation, where biological systems have evolved to align anatomical structures with physical laws, optimizing functions such as vision to confer survival advantages. Over time, this alignment has resulted in a visual system that is finely tuned to the constraints and capabilities imposed by the physics of light and the anatomy of the eye.
+
+- Land, M. F., & Nilsson, D.-E. (2012). *Animal Eyes* (2nd ed.). Oxford University Press.
+- Williams, D. R. (1988). Topography of the foveal cone mosaic in the living human eye. *Vision Research*, 28(3), 433–454.
+:::
+
+
+
 
 
 ## Using Huygens Sources for more

@@ -94,26 +94,32 @@ website:
                 href: wave-optics/Interferometers.qmd
               - text: Double Slit Interference
                 href: wave-optics/Double Slit.qmd
+          - section: "Lecture 10"
+            contents:
+              - text: Thin Film Interference
+                href: about.qmd
+              - text: Multi Wave Interference
+                href: about.qmd
           # - section: "Lecture 10"
           #   contents:
           #     - text: Thin Film Interference
           #       href: wave-optics/Thin Film Interference.qmd
           #     - text: Multi Wave Interference
           #       href: wave-optics/MultiWave Interference.qmd
-      #     - section: "Lecture 10"
-      #       contents:
-      #         - text: Fabry Perot Interferometer
-      #           href: wave-optics/Dummy.qmd
-      #         - text: Diffraction
-      #           href: wave-optics/Diffraction.qmd
-      #     - section: "Lecture 11"
-      #       contents:
-      #         - text: Diffraction
-      #           href: wave-optics/Diffraction2.qmd
-      #         - text: Fresnel Zone Plate
-      #           href: wave-optics/Fresnel Zones.qmd
-      #         - text: Diffraction Integral
-      #           href: wave-optics/Dummy.qmd
+          - section: "Lecture 11"
+            contents:
+              - text: Fabry Perot Interferometer
+                href: wave-optics/FabryPerot.qmd
+              - text: Diffraction
+                href: wave-optics/Diffraction.qmd
+          - section: "Lecture 12"
+            contents:
+              - text: Diffraction
+                href: wave-optics/Diffraction2.qmd
+              - text: Fresnel Zone Plate
+                href: wave-optics/Fresnel Zones.qmd
+              - text: Diffraction Integral
+                href: wave-optics/Diffraction Integral.qmd
       #         - text: Interferometers
       #           href: wave-optics/Interferometers.qmd
       # - section: Electromagnetic Optics

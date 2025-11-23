@@ -195,7 +195,6 @@ def get_size(w,h):
     return((w/2.54,h/2.54))
 
 ```
-## Introduction: Beyond Two-Wave Interference
 
 So far in our study of interference, we have focused primarily on the interaction of two waves—a useful simplification that captures the essential physics of interference phenomena. However, this two-wave picture is idealized. In most practical optical systems, we encounter situations where many partial waves interfere simultaneously. Consider a diffraction grating with thousands of parallel slits, each emitting a wavelet that contributes to the observed pattern. Or think about light bouncing back and forth between two highly reflective mirrors in a laser cavity, creating hundreds of interfering reflections. These multi-wave interference scenarios produce dramatically different and often more useful patterns than simple two-wave interference.
 
@@ -401,13 +400,203 @@ I(\Delta \phi = 2\pi m) = M^2 I_0
 $$
 
 This is the maximum possible intensity, and it's proportional to the square of the number of sources. This quadratic scaling is remarkable: doubling the number of sources quadruples the peak intensity. This explains why diffraction gratings with many lines are so much brighter and more efficient than simple double slits.
+
+
+```{python}
+# | code-fold: true
+# | fig-align: center
+# | label: fig-peak-narrowing
+# | fig-cap: Comparison of interference patterns for different numbers of sources M. As M increases, the peaks become narrower and taller while maintaining the same position. This demonstrates the fundamental principle underlying diffraction grating spectroscopy.
+
+# Parameters
+phi = np.linspace(-2*np.pi, 2*np.pi, 5000)
+I0 = 1
+M_values = [2, 4, 8, 16]
+colors = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728']
+
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=get_size(18, 8))
+
+# Left plot: All on same scale
+for M, color in zip(M_values, colors):
+    def multiple_beam_pattern(phi, M):
+        numerator = np.sin(M * phi/2)**2
+        denominator = np.sin(phi/2)**2
+        I = np.where(denominator != 0, numerator/denominator, M**2)
+        return I
+
+    I = I0 * multiple_beam_pattern(phi, M)
+    ax1.plot(phi/np.pi, I, label=f'M={M}', color=color, linewidth=1.5)
+
+ax1.set_xlabel(r'Phase $\Delta\phi/\pi$')
+ax1.set_ylabel(r'Intensity $I/I_0$')
+ax1.set_title('Peak Narrowing with Increasing M')
+ax1.legend()
+ax1.grid(True, alpha=0.3)
+ax1.set_xlim(-2, 2)
+
+# Right plot: Normalized to show shape (divide by M^2)
+for M, color in zip(M_values, colors):
+    I = I0 * multiple_beam_pattern(phi, M) / (M**2)
+    ax2.plot(phi/np.pi, I, label=f'M={M}', color=color, linewidth=1.5)
+
+    # Mark FWHM for M=16
+    if M == 16:
+        # Find first minimum
+        first_min = 2*np.pi/M
+        ax2.axvline(x=first_min/np.pi, color=color, linestyle=':', alpha=0.5, linewidth=1)
+        ax2.axvline(x=-first_min/np.pi, color=color, linestyle=':', alpha=0.5, linewidth=1)
+
+ax2.set_xlabel(r'Phase $\Delta\phi/\pi$')
+ax2.set_ylabel(r'Normalized Intensity $I/I_{\rm max}$')
+ax2.set_title('Normalized Peak Shapes (Width ∝ 1/M)')
+ax2.legend()
+ax2.grid(True, alpha=0.3)
+ax2.set_xlim(-0.5, 0.5)
+ax2.set_ylim(0, 1.1)
+
+plt.tight_layout()
+plt.show()
+```
+
+### Application: Diffraction Gratings
+
+The multiple beam interference formula we've derived provides the theoretical foundation for one of the most important optical instruments: the diffraction grating. A diffraction grating consists of many parallel slits or lines (typically thousands) with regular spacing $d$. When illuminated by light, each slit acts as a coherent source, and the interference of light from all these sources creates sharp, bright spectral lines at specific angles determined by the wavelength through the grating equation $\sin(\theta_m) = m\lambda/d$.
+
+<!--
+```{python}
+# | code-fold: true
+# | fig-align: center
+# | label: fig-grating-geometry
+# | fig-cap: Schematic of a diffraction grating showing multiple slits separated by distance d. Parallel rays at angle θ from each slit interfere constructively when the path difference equals an integer multiple of wavelengths.
+
+fig, ax = plt.subplots(figsize=get_size(12, 8))
+
+# Grating parameters
+d = 2.0  # slit spacing
+N_slits = 5  # number of slits to draw
+slit_positions = np.arange(N_slits) * d
+theta = 25  # diffraction angle in degrees
+theta_rad = np.radians(theta)
+
+# Draw grating slits
+for i, y_pos in enumerate(slit_positions):
+    ax.plot([0, 0], [y_pos - 0.1, y_pos + 0.1], 'k-', linewidth=3)
+    # Label slits
+    if i < 3:
+        ax.text(-0.5, y_pos, f'Slit {i+1}', ha='right', va='center', fontsize=9)
+
+# Draw incident rays (vertical)
+x_incident = np.linspace(-2, -0.2, 20)
+for y_pos in slit_positions:
+    ax.arrow(-2, y_pos, 1.8, 0, head_width=0.15, head_length=0.1,
+             fc='blue', ec='blue', alpha=0.5, linewidth=1.5)
+
+# Draw diffracted rays at angle theta
+ray_length = 5
+for i, y_pos in enumerate(slit_positions):
+    x_end = ray_length * np.cos(theta_rad)
+    y_end = y_pos + ray_length * np.sin(theta_rad)
+    ax.plot([0, x_end], [y_pos, y_end], 'r-', linewidth=1.5, alpha=0.7)
+
+    # Draw path difference illustration for first two slits
+    if i == 1:
+        # Path difference segment
+        path_diff_x = d * np.sin(theta_rad)
+        ax.plot([0, path_diff_x], [y_pos - d, y_pos - d], 'g-', linewidth=2)
+        ax.plot([0, 0], [y_pos - d - 0.1, y_pos - d + 0.1], 'g-', linewidth=2)
+        ax.plot([path_diff_x, path_diff_x], [y_pos - d - 0.1, y_pos - d + 0.1], 'g-', linewidth=2)
+        ax.text(path_diff_x/2, y_pos - d - 0.4, r'$\Delta s = d\sin\theta$',
+                ha='center', fontsize=10, color='green', weight='bold')
+
+# Draw angle annotation
+arc_radius = 1.5
+arc = plt.Circle((0, slit_positions[2]), arc_radius, fill=False, color='black', linestyle='--', linewidth=1)
+angle_arc = np.linspace(0, theta_rad, 50)
+arc_x = arc_radius * np.cos(angle_arc)
+arc_y = slit_positions[2] + arc_radius * np.sin(angle_arc)
+ax.plot(arc_x, arc_y, 'k-', linewidth=1.5)
+ax.text(arc_radius * np.cos(theta_rad/2) + 0.3,
+        slit_positions[2] + arc_radius * np.sin(theta_rad/2),
+        r'$\theta$', fontsize=12)
+
+# Draw slit separation
+ax.plot([0.3, 0.3], [slit_positions[0], slit_positions[1]], 'k-', linewidth=1)
+ax.plot([0.25, 0.35], [slit_positions[0], slit_positions[0]], 'k-', linewidth=1)
+ax.plot([0.25, 0.35], [slit_positions[1], slit_positions[1]], 'k-', linewidth=1)
+ax.text(0.6, (slit_positions[0] + slit_positions[1])/2, '$d$', fontsize=11, weight='bold')
+
+# Labels
+ax.text(-2, N_slits * d + 0.5, 'Incident\nplane wave', ha='center', fontsize=10, color='blue')
+ax.text(ray_length * np.cos(theta_rad)/2,
+        slit_positions[2] + ray_length * np.sin(theta_rad)/2 + 0.5,
+        'Diffracted rays\n(order m)', ha='center', fontsize=10, color='red')
+
+ax.set_xlim(-3, 5)
+ax.set_ylim(-1, N_slits * d + 1)
+ax.set_aspect('equal')
+ax.axis('off')
+ax.set_title('Diffraction Grating Geometry', fontsize=12, weight='bold', pad=20)
+
+plt.tight_layout()
+plt.show()
+```
+-->
+
+
+The key result from our interference analysis is that the angular width of each spectral peak is inversely proportional to the total number of illuminated grating lines $M$. This leads to the resolving power $R = mM$, where $m$ is the diffraction order. More slits create sharper peaks, enabling better separation of closely spaced wavelengths—the fundamental principle of spectroscopic analysis.
+
+::: {.callout-note}
+## Further Study: Diffraction Gratings
+
+The detailed physics of diffraction gratings, including the combined effects of single-slit diffraction and multi-slit interference, is covered in a dedicated lecture after we study diffraction. Topics include:
+
+- Complete grating equation including diffraction envelope
+- Spectral resolution and resolving power
+- Influence of slit width and number on the diffraction pattern
+- Practical applications in spectroscopy and optical instruments
+- Real experimental observations and design considerations
+
+The interference theory developed here provides the foundation for understanding how gratings create their characteristic sharp spectral lines.
 :::
 
-### Application: Diffraction Gratings and Spectroscopy
 
-The multiple beam interference formula we've derived provides the theoretical foundation for one of the most important optical instruments: the diffraction grating. A typical diffraction grating contains thousands of parallel lines etched or ruled on a reflective or transparent surface, with spacings on the order of micrometers. When illuminated by light, each line acts as a coherent source, and the interference of light from all these sources creates sharp, bright spectral lines at specific angles determined by the wavelength.
 
-The resolving power of a grating—its ability to distinguish between two closely spaced wavelengths—is directly proportional to the product $mM$, where $m$ is the diffraction order and $M$ is the total number of illuminated grating lines. A typical commercial grating might have 1200 lines per millimeter across a width of 50 mm, giving $M = 60,000$ lines. Such a grating can resolve wavelength differences as small as a few picometers in the visible spectrum, making it indispensable for identifying chemical elements in astronomical spectroscopy, measuring Doppler shifts of distant galaxies, and analyzing the composition of materials in analytical chemistry.
+::: {.callout-note collapse="true"}
+## Calculation: Interference of M Waves with Different Frequencies
+
+Consider $M$ waves with equal amplitudes but different frequencies, where the frequencies are equally spaced by $\Delta\nu$ around a central frequency $\nu_0$. The $p$-th wave can be written as:
+
+$$
+U_p(t) = U_0 e^{i2\pi(\nu_0 + (p-1)\Delta\nu)t}
+$$
+
+where $p = 1, 2, \ldots, M$. The total amplitude is:
+
+$$
+U(t) = \sum_{p=1}^{M} U_p(t) = U_0 e^{i2\pi\nu_0 t} \sum_{p=1}^{M} e^{i2\pi(p-1)\Delta\nu t}
+$$
+
+Factoring out the common term and recognizing the geometric series:
+
+$$
+U(t) = U_0 e^{i2\pi\nu_0 t} \sum_{p=0}^{M-1} e^{i2\pi p\Delta\nu t} = U_0 e^{i2\pi\nu_0 t} \frac{1 - e^{i2\pi M\Delta\nu t}}{1 - e^{i2\pi\Delta\nu t}}
+$$
+
+The intensity is given by $I(t) = |U(t)|^2$:
+
+$$
+I(t) = |U_0|^2 \left|\frac{1 - e^{i2\pi M\Delta\nu t}}{1 - e^{i2\pi\Delta\nu t}}\right|^2
+$$
+
+Using the identity $|1 - e^{i\theta}|^2 = 2(1 - \cos\theta) = 4\sin^2(\theta/2)$:
+
+$$
+I(t) = I_0 \frac{\sin^2(\pi M\Delta\nu t)}{\sin^2(\pi\Delta\nu t)}
+$$
+
+This result shows that the intensity oscillates in time with a period $T = 1/\Delta\nu$, reaching maximum intensity $I_{\max} = M^2 I_0$ when $\Delta\nu t = m$ (integer $m$). The temporal beating pattern becomes sharper as $M$ increases—a frequency-domain analog of the spatial interference pattern from a diffraction grating. This phenomenon is exploited in frequency combs and mode-locked lasers.
+:::
+
 
 ### Wavevector Representation: A Powerful Geometric Insight
 
@@ -425,21 +614,55 @@ $$
 \frac{2\pi}{\lambda}\sin{\theta}= \frac{2\pi}{d}
 $$
 
-::: {.callout-tip}
+::: {.callout-tip collapse=true}
 ## Wavevector Formulation of Grating Equation
 $$k \sin{\theta}= K$$
 
 where:
+
 - $k = 2\pi/\lambda$ is the magnitude of the wavevector of the light
 - $K = 2\pi/d$ is the grating wavevector corresponding to the grating period $d$
 - $\theta$ is the diffraction angle
 
-**Geometric interpretation:** The grating provides momentum transfer $K$ to redirect the incident light. The wavevectors of incident and diffracted light, together with the grating vector, form a closed triangle—a vector addition $\vec{k}_{\text{incident}} + \vec{K} = \vec{k}_{\text{diffracted}}$.
+**Deriving the vector form:** To understand the vector notation, consider the geometry of diffraction. The incident light has wavevector $\vec{k}_{\text{in}}$ (horizontal in our setup), and the diffracted light has wavevector $\vec{k}_{\text{out}}$ at angle $\theta$ from the horizontal. Both wavevectors have the same magnitude $k = 2\pi/\lambda$ since the wavelength doesn't change during elastic scattering.
 
-**Universal principle:** This wavevector picture applies to X-ray diffraction from crystals, electron diffraction, neutron scattering, and phonon interactions—wherever periodic structures interact with waves.
+The change in the wavevector is $\Delta\vec{k} = \vec{k}_{\text{out}} - \vec{k}_{\text{in}}$. Since both wavevectors have magnitude $k$, we can decompose them:
+
+- $\vec{k}_{\text{in}} = k\hat{x}$ (horizontal)
+- $\vec{k}_{\text{out}} = k\cos\theta\,\hat{x} + k\sin\theta\,\hat{y}$
+
+The change in wavevector is therefore:
+$$\Delta\vec{k} = k(\cos\theta - 1)\hat{x} + k\sin\theta\,\hat{y}$$
+
+The vertical component of the wavevector change is: $\Delta k_y = k\sin\theta$. From our scalar equation, this equals $K = 2\pi/d$. 
+
+**Important note on the vector equation:** You might be tempted to write the simple vector equation:
+$$\vec{k}_{\text{out}} = \vec{k}_{\text{in}} + \vec{K}$$
+
+However, this is **only an approximation** valid for small diffraction angles! Here's why: if we literally add $\vec{k}_{\text{in}} = k\hat{x}$ and $\vec{K} = K\hat{y}$, the resulting magnitude would be $\sqrt{k^2 + K^2} \neq k$, which violates elastic scattering.
+
+**The exact condition:** The diffraction must satisfy *both*:
+1. The grating equation: $k\sin\theta = K$ (perpendicular momentum transfer)
+2. Elastic scattering: $|\vec{k}_{\text{out}}| = |\vec{k}_{\text{in}}| = k$ (energy conservation)
+
+This gives the exact result:
+$$\vec{k}_{\text{out}} = \sqrt{k^2-K^2}\,\hat{x} + K\hat{y} = k\cos\theta\,\hat{x} + k\sin\theta\,\hat{y}$$
+
+Note the horizontal component: $\sqrt{k^2-K^2} = k\cos\theta < k$.
+
+**When the approximation works:** For small angles where $K \ll k$ (equivalently $\sin\theta \ll 1$):
+- $\sqrt{k^2-K^2} \approx k - K^2/(2k) \approx k$
+- The horizontal component change $k\cos\theta - k \approx -K^2/(2k)$ is negligible
+- Then $\vec{k}_{\text{out}} \approx \vec{k}_{\text{in}} + \vec{K}$ becomes a good approximation
+
+For typical gratings in visible light, diffraction angles are indeed small (a few degrees), so this approximation is often reasonable for intuitive understanding.
+
+**Geometric interpretation:** The grating provides a momentum transfer with perpendicular component $K$. The incident and diffracted wavevectors (both with magnitude $k$), together with the change in wavevector, form a vector triangle. Because elastic scattering constrains both $|\vec{k}_{\text{in}}| = |\vec{k}_{\text{out}}| = k$, this forms an *isosceles* triangle. The grating equation $k\sin\theta = K$ determines the geometry of this triangle. This is momentum conservation: the periodic grating structure transfers momentum to the light in discrete units determined by the grating period.
+
+**Universal principle:** This wavevector conservation principle applies throughout wave physics: X-ray diffraction from crystals (Bragg's law), electron diffraction, neutron scattering, phonon interactions, and even particle scattering in quantum mechanics—wherever periodic structures interact with waves.
 :::
 
-Since the magnitude of the light's wavevector is conserved (elastic scattering), the incident and diffracted wavevectors both have magnitude $k$. Together with the grating vector $K$, they form an isosceles triangle, as shown in the figure below. This geometric picture reveals that the grating is effectively providing a "momentum kick" of magnitude $K$ to change the light's direction. This same wavevector conservation principle appears throughout physics: in X-ray diffraction from crystals (the Bragg condition), in electron diffraction, in the scattering of light by acoustic waves, and even in nonlinear optics where photons combine or split.
+Since the magnitude of the light's wavevector is conserved (elastic scattering), the incident and diffracted wavevectors both have magnitude $k$. Together with the change in wavevector $\Delta\vec{k}$, they form an isosceles triangle, as shown in the figure below. The perpendicular component of this momentum change has magnitude $K$. This geometric picture reveals that the grating is effectively providing a "momentum kick" perpendicular to its surface to change the light's direction. This same wavevector conservation principle appears throughout physics: in X-ray diffraction from crystals (the Bragg condition), in electron diffraction, in the scattering of light by acoustic waves, and even in nonlinear optics where photons combine or split.
 
 ```{python}
 # | code-fold: true
@@ -511,7 +734,7 @@ plt.axis('off')
 plt.show()
 ```
 
-This means that the diffraction grating is providing a wavevector $K$ to alter the direction of the incident light. This is again a common feature reappearing in many situations as for example in the X-ray diffraction of crystals.
+This means that the diffraction grating is providing a momentum transfer with perpendicular component $K$ to alter the direction of the incident light. The constraint that both incident and diffracted light have the same wavevector magnitude $k$ (elastic scattering) determines the exact geometry. This wavevector conservation principle reappears throughout physics, for example in X-ray diffraction from crystals (where it leads to Bragg's law).
 
 
 ## Multiple Wave Interference with Decreasing Amplitude
@@ -544,6 +767,8 @@ R+T=1
 $$
 
 **Example:** A typical uncoated glass surface has $R \approx 0.04$ (4% reflectance) and $T \approx 0.96$ (96% transmittance). High-quality mirror coatings can achieve $R > 0.999$ (99.9% reflectance).
+
+**Forward reference:** The Airy function and concepts of finesse developed here form the theoretical foundation for understanding Fabry-Perot interferometers, which are covered in detail in a separate dedicated lecture on Fabry-Perot interferometry.
 :::
 
 Following this pattern, the third wave has amplitude $U_3 = hU_2 = h^2U_1$, the fourth has $U_4 = h^3U_1$, and so on. If we sum over many such reflections (potentially infinite in number), the total amplitude becomes:
@@ -671,6 +896,7 @@ This fundamental result is known as the **Airy function** or Airy formula, named
 $$I=\frac{I_{\rm max}}{1+4\left(\frac{\mathcal{F}}{\pi}\right)^2\sin^{2}(\Delta\phi/2)}$$
 
 where:
+
 - $I_{\rm max}=\frac{I_0}{(1-r)^2}$ is the maximum transmitted intensity
 - $\mathcal{F}=\frac{\pi \sqrt{r}}{1-r}$ is the **finesse**, a dimensionless quality factor
 - $\Delta\phi$ is the round-trip phase accumulated in the cavity
@@ -689,20 +915,90 @@ The finesse $\mathcal{F}$ is perhaps the most important parameter characterizing
 
 The intensity distribution described by the Airy function has a profoundly different character from the equal-amplitude case. As we increase the finesse, the intensity maxima—which occur at multiples of $2\pi$ in phase—become dramatically narrower and more isolated. Between the maxima, the intensity drops to nearly zero, creating regions of almost complete destructive interference. This sharp wavelength selectivity makes Fabry-Perot interferometers indispensable for applications requiring ultra-high spectral resolution, such as measuring the frequency stability of lasers, detecting tiny Doppler shifts in astrophysics, and studying the fine structure of atomic emission lines.
 
-## Application: Fabry-Perot Interferometers and Laser Cavities
+## Connection to Fabry-Perot Interferometry
 
-The Airy function directly describes the transmission spectrum of a Fabry-Perot interferometer, which consists of two parallel, partially reflective mirrors separated by a distance $L$. When light enters this cavity, it bounces back and forth many times, with a small fraction leaking out at each reflection. The transmitted light exhibits sharp peaks whenever the cavity length corresponds to an integer number of half-wavelengths: $L = m\lambda/2$, or equivalently when the round-trip phase $\Delta\phi = 4\pi L/\lambda = 2\pi m$.
+The Airy function we've derived is the fundamental intensity distribution for any optical system involving multiple reflections with decreasing amplitude. The most important practical realization of this physics is the **Fabry-Perot interferometer**, which consists of two parallel, partially reflective mirrors separated by a distance $L$. When light enters this cavity, it bounces back and forth many times, with each reflection reducing the amplitude by the factor $r$, creating exactly the scenario we've analyzed.
 
-The frequency spacing between adjacent transmission peaks is called the **free spectral range** (FSR) and is given by $\text{FSR} = c/(2L)$, where $c$ is the speed of light. The width of each peak is approximately $\text{FSR}/\mathcal{F}$. A Fabry-Perot with finesse 1000 and FSR of 1 GHz thus has peak widths of only 1 MHz, enabling it to resolve frequency differences a thousand times smaller than the FSR. This remarkable capability makes such instruments essential for laser frequency stabilization and precision spectroscopy.
+The Fabry-Perot interferometer exhibits transmission peaks whenever the round-trip phase satisfies $\Delta\phi = 4\pi L/\lambda = 2\pi m$, corresponding to cavity lengths that are integer multiples of half-wavelengths. The sharpness of these peaks—characterized by the finesse—makes Fabry-Perot devices essential for applications requiring ultra-high spectral resolution, such as laser frequency stabilization, precision spectroscopy, and optical communications.
 
-The same physics governs laser cavities. A laser consists of an amplifying medium placed between two mirrors, forming a Fabry-Perot cavity. Only wavelengths that satisfy the resonance condition can build up to large intensities inside the cavity. The finesse determines how selective this resonance is, affecting both which wavelengths can lase and how stable the laser frequency will be. High-finesse cavities produce lasers with extremely narrow linewidths, crucial for applications ranging from atomic clocks and gravitational wave detection to quantum computing and precision measurements of fundamental constants.
+::: {.callout-note}
+## Further Study: Fabry-Perot Interferometers
+
+The detailed physics, applications, and experimental techniques of Fabry-Perot interferometry are covered in a dedicated lecture. Topics include:
+
+- Free spectral range and spectral resolution
+- Ring pattern formation and interpretation
+- Applications in spectroscopy, laser technology, and optical communications
+- Modern implementations in photonics and quantum optics
+
+The Airy function and finesse concepts developed here provide the theoretical foundation for understanding these practical devices.
+:::
+
+```{python}
+# | code-fold: true
+# | fig-align: center
+# | label: fig-grating-vs-fabry
+# | fig-cap: Comparison between equal-amplitude interference (diffraction grating, blue) and decreasing-amplitude interference (Airy function with high finesse, red). The grating shows secondary maxima between main peaks, while the Airy function shows clean suppression between resonances - a key distinction exploited in Fabry-Perot interferometers.
+
+# Parameters
+phi = np.linspace(-2*np.pi, 2*np.pi, 5000)
+M_grating = 8
+r_fabry = 0.95  # High reflectivity for Fabry-Perot
+F_fabry = np.pi * np.sqrt(r_fabry) / (1 - r_fabry)  # Finesse
+
+# Grating intensity (equal amplitude)
+def grating_pattern(phi, M):
+    numerator = np.sin(M * phi/2)**2
+    denominator = np.sin(phi/2)**2
+    I = np.where(denominator != 0, numerator/denominator, M**2)
+    return I
+
+# Fabry-Perot intensity (Airy function)
+def fabry_perot_pattern(phi, F):
+    return 1 / (1 + 4*(F/np.pi)**2 * np.sin(phi/2)**2)
+
+I_grating = grating_pattern(phi, M_grating)
+I_fabry = fabry_perot_pattern(phi, F_fabry)
+
+# Normalize both to same peak height for comparison
+I_grating_norm = I_grating / M_grating**2
+I_fabry_norm = I_fabry
+
+plt.figure(figsize=get_size(18, 9))
+
+plt.plot(phi/np.pi, I_grating_norm, label=f'Grating (M={M_grating}, equal amplitude)',
+         color='#1f77b4', linewidth=2)
+plt.plot(phi/np.pi, I_fabry_norm, label=f'Airy function (r={r_fabry}, ℱ={F_fabry:.1f})',
+         color='#d62728', linewidth=2, linestyle='--')
+
+plt.xlabel(r'Phase $\Delta\phi/\pi$')
+plt.ylabel(r'Normalized Intensity')
+plt.title('Equal Amplitude vs. Decreasing Amplitude Interference')
+plt.legend(fontsize=9)
+plt.grid(True, alpha=0.3)
+plt.xlim(-2, 2)
+plt.ylim(0, 1.1)
+
+# Add annotations
+plt.annotate('Secondary maxima\n(characteristic of gratings)',
+             xy=(0.5, 0.15), xytext=(0.8, 0.4),
+             arrowprops=dict(arrowstyle='->', color='#1f77b4', lw=1.5),
+             fontsize=8, color='#1f77b4')
+plt.annotate('Clean suppression\n(high finesse cavity)',
+             xy=(0.5, 0.01), xytext=(0.8, 0.15),
+             arrowprops=dict(arrowstyle='->', color='#d62728', lw=1.5),
+             fontsize=8, color='#d62728')
+
+plt.tight_layout()
+plt.show()
+```
 
 ## Conclusion: From Fundamental Physics to Precision Technology
 
-The transition from two-wave to multiple-wave interference represents more than just mathematical generalization—it reveals a profound principle that underpins much of modern photonics. When many coherent sources interfere, whether they have equal amplitudes (as in diffraction gratings) or decreasing amplitudes (as in Fabry-Perot cavities), the resulting patterns exhibit dramatically sharper features than simple two-wave interference. This sharpening effect, characterized mathematically by the $M^2$ intensity scaling in gratings and the finesse parameter in cavities, provides the foundation for optical instruments of extraordinary precision and capability.
+The transition from two-wave to multiple-wave interference represents more than just mathematical generalization—it reveals a profound principle that underpins much of modern photonics. When many coherent sources interfere, whether they have equal amplitudes (as in diffraction gratings) or decreasing amplitudes (as in Fabry-Perot cavities and laser resonators), the resulting patterns exhibit dramatically sharper features than simple two-wave interference. This sharpening effect, characterized mathematically by the $M^2$ intensity scaling in gratings and the finesse parameter in the Airy function, provides the foundation for optical instruments of extraordinary precision and capability.
 
-Diffraction gratings, exploiting the equal-amplitude interference of thousands of sources, have become indispensable tools for separating and analyzing light. From the spectrographs mounted on the world's largest telescopes—revealing the chemical composition of distant stars and galaxies—to compact spectrometers in chemistry labs identifying molecular structures, gratings transform the abstract mathematics of multi-wave interference into practical analytical power. The same principles extend to modern photonic devices: arrayed waveguide gratings in optical communications demultiplex dozens of data channels carried on different wavelengths through a single fiber, while volume holographic gratings enable advanced applications in augmented reality displays and optical data storage.
+**Diffraction gratings**, exploiting the equal-amplitude interference of thousands of sources, have become indispensable tools for separating and analyzing light. As we'll explore in detail in the dedicated lecture on diffraction gratings, these devices combine the interference principles developed here with single-slit diffraction effects to create powerful spectroscopic instruments used throughout science and technology—from astronomical spectroscopy revealing the composition of distant stars to compact spectrometers in chemistry labs and wavelength-division multiplexing in optical communications.
 
-Fabry-Perot interferometers, governed by the Airy function and characterized by their finesse, push measurement precision to extraordinary limits. The remarkably narrow transmission peaks of high-finesse cavities enable wavelength measurements accurate to parts per billion, frequency stabilization of lasers to better than one part in $10^{15}$, and spectroscopic resolution sufficient to observe individual spectral components separated by only megahertz. Every laser—from the barcode scanner at a supermarket checkout to the kilometer-scale interferometer detecting gravitational waves—relies on the multiple reflection interference we've studied. The laser's narrow linewidth, directional beam, and temporal coherence all emerge from the cavity's ability to support only those wavelengths satisfying the stringent resonance condition.
+The Airy function, describing interference with decreasing amplitudes, governs systems where waves undergo multiple reflections in optical cavities. As we'll see in the dedicated lecture on **Fabry-Perot interferometry**, this physics enables wavelength measurements accurate to parts per billion, frequency stabilization of lasers to better than one part in $10^{15}$, and spectroscopic resolution sufficient to observe individual spectral components separated by only megahertz. The remarkably narrow transmission peaks of high-finesse cavities make Fabry-Perot devices essential for applications ranging from laser technology and precision spectroscopy to optical communications and quantum optics.
 
 The mathematical frameworks we've developed—the multi-beam formula for equal amplitudes and the Airy function for decreasing amplitudes—appear throughout physics wherever periodic structures interact with waves. The same wavevector addition that describes grating diffraction also governs X-ray scattering from crystal lattices (Bragg diffraction), the electronic band structure of semiconductors, and even the propagation of light in photonic crystals that act as "semiconductors for photons." Understanding multiple wave interference thus provides not just isolated techniques for optical measurements, but a universal language for describing how waves interact with periodic structures across all scales and all branches of physics.

@@ -183,7 +183,11 @@ where $\Delta s$ is the path difference and $\Delta\phi_0$ is any initial phase 
 ::: {.callout-important}
 ### Phase Difference and Path Difference
 A path difference $\Delta s$ corresponds to a phase difference $k\Delta s=2\pi\Delta s/\lambda$. Path differences of integer multiples of $\lambda$ result in phase differences of integer multiples of $2\pi$.
+
+**Important:** The path difference $\Delta s$ represents the **optical path difference**, not just the geometric distance. When light travels through a medium with refractive index $n$ over a physical distance $L$, the optical path length is $\text{OPL} = n \cdot L$. This distinction becomes crucial when analyzing interferometers where light travels through different media or when measuring refractive index changes.
 :::
+
+The principles of interference we've developed—relating phase differences to path differences and understanding constructive and destructive interference—form the foundation for a powerful class of precision instruments called interferometers. These devices split light into multiple paths, allow these paths to accumulate different optical path lengths through either geometric differences or variations in refractive index, and then recombine the beams to observe interference. By carefully analyzing the resulting interference patterns, interferometers can measure distances with sub-wavelength precision, detect tiny changes in refractive index, and even sense gravitational waves. We will explore these remarkable applications in detail in a subsequent lecture on interferometers.
 
 
 ### Interference of Waves in Space
@@ -293,11 +297,11 @@ A super nice website to try out interference interactively is [here](https://www
 
 ### Coherence
 
-In the earlier consideration we obtained a general description for the phase difference between two waves. TIt is given by and contains the pathlength difference $\Delta s$ and some intrinsic phase  $\Delta\phi_0$ that could be part of the wave generation process.
+In the earlier consideration we obtained a general description for the phase difference between two waves. It is given by and contains the optical path difference $\Delta s$ and some intrinsic phase $\Delta\phi_0$ that could be part of the wave generation process.
 
 $$\Delta\phi = k\Delta s + \Delta\phi_0$$
 
-To observe stationary interference, it is important that these two quantities are also stationary, i.e. the phase relation between the two waves is stationary. This relation between the phase of two waves is called coherence and was assumed in all the examples before.
+To observe stationary interference, it is important that these two quantities are also stationary, i.e. the phase relation between the two waves is stationary. This relation between the phase of two waves is called coherence and was assumed in all the examples before. Coherence is particularly critical for interferometric applications: devices like the Michelson interferometer, Fabry-Perot cavities, and other precision instruments rely on highly coherent light sources (typically lasers) to maintain stable interference patterns over the path length differences involved in the measurements.
 
 ![Two waves of different frequency over time.](img/coherence.png){width="90%" fig-align="center"}
 
