@@ -30,6 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../electromagnetic-waves/Electromagnetic Optics.html" rel="next">
 <link href="../wave-optics/Fresnel Zones.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -500,6 +501,40 @@ window.Quarto = {
   </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="true">
+ <span class="menu-text">Electromagnetic Optics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-16" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-17" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 13</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-17" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-17" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Electromagnetic Optics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Electromagnetic Optics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Polarization of EM Waves.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Polarization of EM Waves</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -585,13 +620,13 @@ U(x', y', z_0) = i \frac{e^{-ikz_0}}{\lambda z_0} \iint U_s(x, y) \exp \left[ -\
 \]</span></p>
 <p>As the integration is over <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, we can factor out all screen coordinate elements, yielding:</p>
 <p><span class="math display">\[
-U(x', y', z_0) = i \frac{e^{-ikz_0}}{\lambda z_0} e^{-\frac{ik}{2z_0}(x'^2 + y'^2)} \iint U_s(x, y) e^{-\frac{ik}{2z_0}(x^2 + y^2)} e^{\frac{ik}{2z_0}(xx' + yy')} dx dy
+U(x', y', z_0) = i \frac{e^{-ikz_0}}{\lambda z_0} e^{-\frac{ik}{2z_0}(x'^2 + y'^2)} \iint U_s(x, y) e^{-\frac{ik}{2z_0}(x^2 + y^2)} e^{\frac{ik}{z_0}(xx' + yy')} dx dy
 \]</span></p>
 <p>This is the <strong>Fresnel approximation</strong>. It simplifies the calculation of the diffraction pattern in the near field by making reasonable assumptions about the geometry and angles involved.</p>
 </section>
 <section id="fraunhofer-approximation" class="level2">
 <h2 class="anchored" data-anchor-id="fraunhofer-approximation">Fraunhofer Approximation</h2>
-<p>If we further assume that the aperture is small as compared to the distance at which we observe the diffraction pattern, we can further simplify the Fresnel approximation to yield the Fraunhofer approximation giving the diffraction patter in the far field. The condition is</p>
+<p>If we further assume that the aperture is small as compared to the distance at which we observe the diffraction pattern, we can further simplify the Fresnel approximation to yield the Fraunhofer approximation giving the diffraction pattern in the far field. The condition is</p>
 <p><span class="math display">\[
 z_0\gg\frac{1}{\lambda}(x^2+y^2)
 \]</span></p>
@@ -603,13 +638,30 @@ e^{ -\frac{ik}{2z_0}(x^2+y^2)} \approx 1
 <p><span class="math display">\[
 U(x^{\prime},y^{\prime},z_0)=i\frac{e^{-ikz_0}}{\lambda z_0} e^{-\frac{ik}{2z_0}(x^{\prime 2}+y^{\prime 2})}
 \iint U_{s}(x,y)
-e^{\frac{ik}{2z_0}(xx^{\prime}+yy^{\prime})} dx dy
+e^{\frac{ik}{z_0}(xx^{\prime}+yy^{\prime})} dx dy
 \]</span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/near_far_field.png" class="img-fluid figure-img" style="width:90.0%"></p>
 <figcaption>Diffraction pattern of a slit in the near field (Fresnel diffraction, left) and the far field (Fraunhofer diffraction, right).</figcaption>
 </figure>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Connection to Fourier Optics
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The Fraunhofer diffraction formula reveals a profound relationship: the far-field diffraction pattern is the <strong>2D Fourier transform</strong> of the aperture function. To see this, define spatial frequencies <span class="math inline">\(f_x = x'/({\lambda z_0})\)</span> and <span class="math inline">\(f_y = y'/({\lambda z_0})\)</span>. The integral then becomes:</p>
+<p><span class="math display">\[
+\iint U_{s}(x,y) e^{2\pi i(f_x x + f_y y)} dx dy
+\]</span></p>
+<p>This is precisely the Fourier transform of <span class="math inline">\(U_s(x,y)\)</span>. This connection is the foundation of <strong>Fourier optics</strong>, a powerful framework where lenses perform Fourier transforms, optical systems act as filters in frequency space, and diffraction patterns can be understood as spatial frequency spectra. This perspective enables techniques like optical image processing, holography, and the analysis of optical transfer functions.</p>
+</div>
 </div>
 <p>While these formulas provide the mathematical tools, we may obtain a more intuitive idea about the different approximation in the following way. Consider the image below, where we would like to know about the diffraction intensity of a slit of width <span class="math inline">\(b\)</span> at the optical axis at a distance <span class="math inline">\(D\)</span>.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -618,7 +670,7 @@ e^{\frac{ik}{2z_0}(xx^{\prime}+yy^{\prime})} dx dy
 <figcaption>Illustration of the importance of additional geometrical path length difference for the discrimination of Fresnel (near-field) and Fraunhofer (far-field) diffraction.</figcaption>
 </figure>
 </div>
-<p>The waves from the center of the slit and the edge have to travel towards that point a different pathlength, whcih we may calculate to</p>
+<p>The waves from the center of the slit and the edge have to travel towards that point a different path length, which we may calculate to</p>
 <p><span class="math display">\[\begin{eqnarray}
 \Delta s &amp;=&amp;  \sqrt{\frac{b^2}{4}+D^2}-D\\
 &amp;=&amp; D\sqrt{\frac{b^2}{4D^2}+1}-D
@@ -628,15 +680,15 @@ e^{\frac{ik}{2z_0}(xx^{\prime}+yy^{\prime})} dx dy
 \Delta s &amp;=&amp; \frac{b^2}{8D}-\frac{b^4}{128 D^3}+O(4)\\
 &amp;\approx &amp; \frac{b^2}{8D}
 \end{eqnarray}\]</span></p>
-<p>The second order correction term <span class="math inline">\(\frac{b^2}{8D}\)</span> decreases quadratic with the distance <span class="math inline">\(D\)</span> of the point, which means that at large distances, we can safely assume <span class="math inline">\(\Delta s=0\)</span> on the axis, i.e.&nbsp;all waves arriving at that point have to travel the same distance. This corresponds to the far-field approximation. To be more specific we require</p>
+<p>The first-order term <span class="math inline">\(\frac{b^2}{8D}\)</span> decreases quadratically with the distance <span class="math inline">\(D\)</span> of the point, which means that at large distances, we can safely assume <span class="math inline">\(\Delta s=0\)</span> on the axis, i.e.&nbsp;all waves arriving at that point have to travel the same distance. This corresponds to the far-field approximation. To be more specific we require</p>
 <p><span class="math display">\[
-\frac{b^2}{8D^2}&lt;\frac{\lambda}{8}
+\frac{b^2}{8D}&lt;\frac{\lambda}{8}
 \]</span></p>
 <p>or</p>
 <p><span class="math display">\[
 \frac{b^2}{\lambda D}&lt;1
 \]</span></p>
-<p>to be fullfilled to be in the far field.</p>
+<p>to be fulfilled to be in the far field.</p>
 <p><span class="math display">\[
 F=\frac{b^2}{\lambda D}
 \begin{cases}
@@ -645,11 +697,24 @@ F=\frac{b^2}{\lambda D}
 \gg 1, &amp; \textrm{Full vector}
 \end{cases}
 \]</span></p>
-<p>This number <span class="math inline">\(F\)</span> is called the Frensel number and gives us an idea by how far the dimensions of the opening contribute to the diffraction pattern rather than the direction of the wave propagation only.</p>
+<p>This number <span class="math inline">\(F\)</span> is called the Fresnel number and gives us an idea by how far the dimensions of the opening contribute to the diffraction pattern rather than the direction of the wave propagation only.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Why <span class="math inline">\(\lambda/8\)</span>?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The choice of <span class="math inline">\(\lambda/8\)</span> in the far-field criterion is not arbitrary. A path difference of <span class="math inline">\(\lambda/8\)</span> corresponds to a phase error of <span class="math inline">\(\pi/4\)</span> radians (45°). This is based on the <strong>Rayleigh quarter-wave criterion</strong>, which states that phase errors below <span class="math inline">\(\pi/4\)</span> introduce negligible wavefront distortion (less than ~8% intensity error). This threshold provides a good balance between accuracy and practical applicability in diffraction calculations. Depending on the required precision, stricter criteria (e.g., <span class="math inline">\(\lambda/16\)</span>) or more relaxed ones (e.g., <span class="math inline">\(\lambda/4\)</span>) may be used.</p>
+</div>
+</div>
 </section>
 <section id="babinets-principle" class="level2">
 <h2 class="anchored" data-anchor-id="babinets-principle">Babinet’s Principle</h2>
-<p>The above considerations of diffraction have some intruiging consequence. Consider the two apertures in the image below.</p>
+<p>The above considerations of diffraction have some intriguing consequence. Consider the two apertures in the image below.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/babinet.png" class="img-fluid figure-img" style="width:60.0%"></p>
@@ -660,15 +725,19 @@ F=\frac{b^2}{\lambda D}
 <p><span class="math display">\[
 U=U_h+U_d
 \]</span></p>
-<p>In the case when we have two complementary apertures, that total amplitude has to be zeor, when hole and dot are placed at the same position. We therefore obtain</p>
+<p>In the case when we have two complementary apertures (i.e., one is transparent where the other is opaque and vice versa), the total amplitude has to equal the unobstructed wave amplitude <span class="math inline">\(U_0\)</span>. When we consider points far from the optical axis in the far field, the unobstructed wave contribution is negligible, so we obtain</p>
 <p><span class="math display">\[
-U_h=-U_d
+U_h+U_d \approx 0
 \]</span></p>
 <p>and therefore</p>
 <p><span class="math display">\[
-I_h=I_d
+U_h \approx -U_d
 \]</span></p>
-<p>This is the Principle of Babinet which states:</p>
+<p>Since the intensity is proportional to the square of the amplitude magnitude, we find</p>
+<p><span class="math display">\[
+I_h=|U_h|^2=|U_d|^2=I_d
+\]</span></p>
+<p>Note that this equality holds everywhere except at the forward direction (optical axis), where the unobstructed wave contributes significantly. This is the Principle of Babinet which states:</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1100,6 +1169,9 @@ Babinet’s Principle
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="../electromagnetic-waves/Electromagnetic Optics.html" class="pagination-link" aria-label="Electromagnetic Optics">
+        <span class="nav-page-text">Electromagnetic Optics</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

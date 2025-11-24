@@ -536,6 +536,40 @@ window.Quarto = {
   </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="true">
+ <span class="menu-text">Electromagnetic Optics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-16" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-17" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 13</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-17" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-17" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Electromagnetic Optics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Electromagnetic Optics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Polarization of EM Waves.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Polarization of EM Waves</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -681,7 +715,7 @@ I(\theta)=I_s\frac{\sin^2\left (\pi \frac{b}{\lambda}\sin(\theta)\right)}{\left(
 </figure>
 </div>
 <p>Let’s have a look at some of the properties of the intensity distribution.</p>
-<div id="49ecaf53" class="cell" data-execution_count="2">
+<div id="917000b5" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
@@ -839,7 +873,7 @@ I(\theta) = I_0 \frac{\sin^2\left(\pi \frac{b}{\lambda} \sin(\theta)\right)}{\le
 \sin(\theta) = m \frac{\lambda}{d}
 \]</span></p>
 <p>where <span class="math inline">\(m\)</span> is an integer. The first-order diffraction maximum is found at <span class="math inline">\(\sin(\theta) = \frac{\lambda}{d}\)</span>, independent of the number of slits <span class="math inline">\(N\)</span>. This means that the position of the main peaks increases linearly with the wavelength <span class="math inline">\(\lambda\)</span> and decreases with increasing slit distance <span class="math inline">\(d\)</span>.</p>
-<div id="6a91aa0b" class="cell" data-execution_count="3">
+<div id="0cad4af8" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters</span></span>
@@ -887,7 +921,7 @@ I(\theta) = I_0 \frac{\sin^2\left(\pi \frac{b}{\lambda} \sin(\theta)\right)}{\le
 <section id="influence-of-the-slit-width" class="level3">
 <h3 class="anchored" data-anchor-id="influence-of-the-slit-width">Influence of the Slit Width</h3>
 <p>The two plots below show the influence of the slit width while keeping the slit distance the same. We have <span class="math inline">\(N=8\)</span> slits with <span class="math inline">\(d=4\)</span> µm, while the slit width is <span class="math inline">\(b=2\)</span> µm on the left side and <span class="math inline">\(b=1\)</span> µm on the right side. The result is an increased width of the envelope. The first minimum of the slit diffraction pattern occurs at <span class="math inline">\(\sin(\theta) = \frac{\lambda}{b}\)</span>.</p>
-<div id="6465c740" class="cell" data-execution_count="4">
+<div id="4a89916d" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters</span></span>
@@ -955,7 +989,7 @@ I(\theta) = I_0 \frac{\sin^2\left(\pi \frac{b}{\lambda} \sin(\theta)\right)}{\le
 <section id="influence-of-the-slit-number" class="level3">
 <h3 class="anchored" data-anchor-id="influence-of-the-slit-number">Influence of the Slit Number</h3>
 <p>When increasing the number of slits, the main diffraction peaks become sharper. The location of the main peaks for a given wavelength remains unchanged, but there are now <span class="math inline">\(N-2\)</span> secondary maxima in between. This decreased width of the main peaks is important for the spectral resolution of the grating.</p>
-<div id="f32d04f9" class="cell" data-execution_count="5">
+<div id="e571ffca" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> <span class="dv">100</span>  <span class="co"># Number of slits</span></span>
@@ -1002,7 +1036,7 @@ I(\theta) = I_0 \frac{\sin^2\left(\pi \frac{b}{\lambda} \sin(\theta)\right)}{\le
 <section id="spectral-resolution" class="level3">
 <h3 class="anchored" data-anchor-id="spectral-resolution">Spectral Resolution</h3>
 <p>To quantify the spectral resolution, we use a criterion similar to the optical resolution of a microscope: two peaks are separable if the second peak is located at the minimum of the first diffraction pattern. Here, the diffraction patterns refer to different wavelengths <span class="math inline">\(\lambda_1\)</span> and <span class="math inline">\(\lambda_2\)</span>.</p>
-<div id="d82da2f9" class="cell" data-execution_count="6">
+<div id="8bd18ff5" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> <span class="dv">100</span>  <span class="co"># Number of slits</span></span>
@@ -1262,6 +1296,61 @@ Diffraction Grating Playground
 </script>
 <p>App to play with the parameters of a grating with a slit distance of 4 µm and a slit width of 2 µm.</p>
 </div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The Debye-Sears Effect: Dynamic Diffraction Gratings
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The principles of diffraction gratings that we’ve studied apply not only to static physical structures but also to <strong>dynamic gratings</strong> created by other periodic phenomena. A remarkable example is the <strong>Debye-Sears effect</strong>, discovered independently by Peter Debye and Francis Sears in 1932.</p>
+<section id="physical-principle" class="level3">
+<h3 class="anchored" data-anchor-id="physical-principle">Physical Principle</h3>
+<p>When an ultrasonic wave propagates through a transparent medium (such as water, glass, or crystal), it creates periodic regions of compression and rarefaction. These density variations produce corresponding periodic changes in the refractive index of the medium. When a light beam passes through this modulated medium, it experiences diffraction as if it were passing through a physical grating—but one that moves at the speed of sound!</p>
+</section>
+<section id="application-of-the-grating-equation" class="level3">
+<h3 class="anchored" data-anchor-id="application-of-the-grating-equation">Application of the Grating Equation</h3>
+<p>The same grating equation we derived earlier applies to the Debye-Sears effect:</p>
+<p><span class="math display">\[
+d \sin(\theta) = m \lambda
+\]</span></p>
+<p>However, in this case, the grating spacing <span class="math inline">\(d\)</span> is the <strong>wavelength of the acoustic wave</strong>. This acoustic wavelength is determined by the frequency <span class="math inline">\(F\)</span> of the ultrasonic transducer according to:</p>
+<p><span class="math display">\[
+d = \Lambda_{\text{acoustic}} = \frac{v_{\text{sound}}}{F}
+\]</span></p>
+<p>where <span class="math inline">\(v_{\text{sound}}\)</span> is the speed of sound in the medium and <span class="math inline">\(F\)</span> is the frequency of the acoustic wave. For typical ultrasound frequencies of 1-10 MHz and sound speeds around 1-6 km/s (depending on the material), the acoustic wavelength is typically in the range of 0.1 to 1 mm. This means the diffraction angles are much smaller than for optical gratings with micrometer-scale spacing.</p>
+</section>
+<section id="frequency-shift" class="level3">
+<h3 class="anchored" data-anchor-id="frequency-shift">Frequency Shift</h3>
+<p>Because the grating is moving (the sound wave travels through the medium), the diffracted light experiences a Doppler shift. The frequency of the diffracted light in order <span class="math inline">\(m\)</span> is shifted by <span class="math inline">\(\pm m F\)</span>, where <span class="math inline">\(F\)</span> is the frequency of the acoustic wave. This frequency shift is the basis for many practical applications.</p>
+</section>
+<section id="applications-acousto-optic-modulators-aoms" class="level3">
+<h3 class="anchored" data-anchor-id="applications-acousto-optic-modulators-aoms">Applications: Acousto-Optic Modulators (AOMs)</h3>
+<p>The Debye-Sears effect is exploited in <strong>acousto-optic modulators</strong> (also called Bragg cells), which are widely used in:</p>
+<ul>
+<li><strong>Q-switching</strong> in pulsed lasers</li>
+<li><strong>Laser beam deflection</strong> and scanning systems</li>
+<li><strong>Frequency shifting</strong> for optical heterodyne detection</li>
+<li><strong>Optical signal processing</strong> and switching</li>
+<li><strong>Spectroscopy</strong> for precise frequency control</li>
+</ul>
+<p>The key advantage of AOMs is that they provide fast, electronic control over light intensity, direction, and frequency without moving parts. The response time is limited only by the acoustic transit time across the light beam (typically 10-100 ns).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/AOM.png" class="img-fluid figure-img" style="width:60.0%"></p>
+<figcaption>Diffraction of a laser beam by an acousto-optic modulator. The acoustic wave creates a dynamic diffraction grating that splits the incident beam into multiple diffraction orders.</figcaption>
+</figure>
+</div>
+</section>
+<section id="tunable-gratings" class="level3">
+<h3 class="anchored" data-anchor-id="tunable-gratings">Tunable Gratings</h3>
+<p>Unlike the fixed gratings we’ve studied, the Debye-Sears effect creates a <strong>tunable grating</strong>—by changing the frequency of the ultrasonic transducer, we can adjust the grating spacing and thus control the diffraction angles. This makes AOMs incredibly versatile tools in modern optics laboratories.</p>
+</section>
 </div>
 </div>
 
