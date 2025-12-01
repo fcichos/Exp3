@@ -550,11 +550,18 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#energy-transport" id="toc-energy-transport" class="nav-link active" data-scroll-target="#energy-transport">Energy Transport</a></li>
+  <li><a href="#energy-transport" id="toc-energy-transport" class="nav-link active" data-scroll-target="#energy-transport">Energy Transport</a>
+  <ul class="collapse">
+  <li><a href="#measuring-intensity-in-practice" id="toc-measuring-intensity-in-practice" class="nav-link" data-scroll-target="#measuring-intensity-in-practice">Measuring Intensity in Practice</a></li>
+  </ul></li>
   <li><a href="#momentum-transport-and-radiation-pressure" id="toc-momentum-transport-and-radiation-pressure" class="nav-link" data-scroll-target="#momentum-transport-and-radiation-pressure">Momentum Transport and Radiation Pressure</a>
   <ul class="collapse">
+  <li><a href="#simple-thought-experiments" id="toc-simple-thought-experiments" class="nav-link" data-scroll-target="#simple-thought-experiments">Simple Thought Experiments</a></li>
+  <li><a href="#the-crookes-radiometer-a-classic-misconception" id="toc-the-crookes-radiometer-a-classic-misconception" class="nav-link" data-scroll-target="#the-crookes-radiometer-a-classic-misconception">The Crookes Radiometer: A Classic Misconception</a></li>
+  <li><a href="#radiation-pressure-measurements-nichols-and-hull" id="toc-radiation-pressure-measurements-nichols-and-hull" class="nav-link" data-scroll-target="#radiation-pressure-measurements-nichols-and-hull">Radiation Pressure Measurements: Nichols and Hull</a></li>
   <li><a href="#radiation-pressure-measurements" id="toc-radiation-pressure-measurements" class="nav-link" data-scroll-target="#radiation-pressure-measurements">Radiation Pressure measurements</a></li>
   <li><a href="#comet-tails" id="toc-comet-tails" class="nav-link" data-scroll-target="#comet-tails">Comet Tails</a></li>
+  <li><a href="#solar-sails-propulsion-by-light" id="toc-solar-sails-propulsion-by-light" class="nav-link" data-scroll-target="#solar-sails-propulsion-by-light">Solar Sails: Propulsion by Light</a></li>
   <li><a href="#optical-tweezers-and-magneto-optical-traps" id="toc-optical-tweezers-and-magneto-optical-traps" class="nav-link" data-scroll-target="#optical-tweezers-and-magneto-optical-traps">Optical Tweezers and Magneto-optical Traps</a></li>
   </ul></li>
   </ul>
@@ -663,6 +670,48 @@ I=I_0\cos^2(\omega t)
 \langle I \rangle =I_0\langle\cos^2(\omega t) \rangle =\frac{1}{2}I_0
 \]</span></p>
 <p>This is the intensity we would record with the help of a detector and the flow of energy is set by the direction of the Poynting vector. This is not to be confused with the flow of the wavefronts, which go in the direction of the wavevector.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+What Photodetectors Actually Measure
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Photodetectors cannot respond to individual oscillations of the electromagnetic field at optical frequencies (~<span class="math inline">\(10^{14}\)</span> Hz). Instead, they measure the <strong>time-averaged intensity</strong> <span class="math inline">\(\langle I \rangle\)</span>, which corresponds to the average magnitude of the Poynting vector. This is why we observe the factor of 1/2 in our measurements - the detector inherently averages over many oscillation cycles.</p>
+<p><strong>Important note:</strong> The actual mechanism of photodetection - how light is converted into electrical signals - is fundamentally a <strong>quantum effect</strong> involving the absorption of individual photons. We will study this photoelectric effect and the quantum nature of light in later lectures. For now, we treat light classically and focus on the measurable quantity: the time-averaged intensity.</p>
+</div>
+</div>
+<section id="measuring-intensity-in-practice" class="level3">
+<h3 class="anchored" data-anchor-id="measuring-intensity-in-practice">Measuring Intensity in Practice</h3>
+<p>In experimental optics, we measure the intensity (time-averaged Poynting vector) using several types of detectors:</p>
+<p><strong>Photodiodes and Photomultipliers:</strong> These devices convert photons into electrical current. The photocurrent is proportional to the incident intensity: <span class="math display">\[
+I_{\rm photo} \propto \langle I \rangle = \frac{1}{2}\epsilon_0 c E_0^2
+\]</span></p>
+<p><strong>Thermal Detectors (Bolometers):</strong> These measure the heating effect of absorbed radiation. The temperature rise <span class="math inline">\(\Delta T\)</span> is proportional to the absorbed power: <span class="math display">\[
+P_{\rm absorbed} = \langle I \rangle \cdot A
+\]</span> where <span class="math inline">\(A\)</span> is the detector area.</p>
+<p><strong>Laser Power Meters:</strong> Commercial power meters typically measure the total power (in Watts) by integrating the intensity over the detector area. For a Gaussian beam, measuring the beam profile and total power allows determination of the peak intensity.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Practical Example: Measuring Laser Power
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A typical red laser pointer (λ = 650 nm) with 1 mW power focused to a spot of diameter 1 mm has an intensity of: <span class="math display">\[
+I = \frac{P}{A} = \frac{1 \times 10^{-3}\,{\rm W}}{\pi (0.5 \times 10^{-3}\,{\rm m})^2} \approx 1300\,{\rm W/m^2}
+\]</span></p>
+<p>This can be measured with a simple photodiode or commercial power meter. The corresponding electric field amplitude is: <span class="math display">\[
+E_0 = \sqrt{\frac{2I}{\epsilon_0 c}} \approx 990\,{\rm V/m}
+\]</span></p>
+</div>
+</div>
 <p>An example where this happens are birefringent materials, where the wavefronts and the Poynting vector are not parallel to each other. In this case the energy flow is not in the direction of the wavefronts. This is a very important concept in optics, as it is the energy flow that is important for the heating of materials and not the direction of the wavefronts.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -670,6 +719,7 @@ I=I_0\cos^2(\omega t)
 <figcaption>Birefringence teaser. The wavefronts of the two waves are not parallel to the Poynting vector, which is the direction of the energy flow.</figcaption>
 </figure>
 </div>
+</section>
 </section>
 <section id="momentum-transport-and-radiation-pressure" class="level2">
 <h2 class="anchored" data-anchor-id="momentum-transport-and-radiation-pressure">Momentum Transport and Radiation Pressure</h2>
@@ -712,7 +762,58 @@ p_{\rm rad}=\frac{S}{c}
 p_{\rm rad}=2\frac{S}{c}
 \tag{perfect reflection}
 \]</span></p>
-<p>Thus if you want to measure radiation pressure, its best to use reflecting surfaces. This has been done for the first time in an experiment by Nichols and Hull in the years from 1900-1903.</p>
+<p>Thus if you want to measure radiation pressure, its best to use reflecting surfaces.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Estimating Radiation Pressure
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>How large is radiation pressure in everyday situations? Consider sunlight with an intensity of about <span class="math inline">\(I_{\odot} \approx 1000\)</span> W/m² at Earth’s surface:</p>
+<p>For perfect absorption: <span class="math display">\[
+p_{\rm rad} = \frac{I_{\odot}}{c} = \frac{1000}{3 \times 10^8} \approx 3.3 \times 10^{-6}\,{\rm Pa}
+\]</span></p>
+<p>This is extremely small! Atmospheric pressure is <span class="math inline">\(10^5\)</span> Pa, so radiation pressure from sunlight is about <strong>30 million times weaker</strong>. This explains why radiation pressure is so difficult to observe in everyday life and requires careful experimental design to measure.</p>
+</div>
+</div>
+<section id="simple-thought-experiments" class="level3">
+<h3 class="anchored" data-anchor-id="simple-thought-experiments">Simple Thought Experiments</h3>
+<p>Before discussing the sophisticated experiments, let’s consider some simple scenarios to build intuition:</p>
+<p><strong>Suspended mirror in sunlight:</strong> A lightweight mirror suspended by a thin fiber in sunlight should twist due to radiation pressure. However, air currents and thermal effects (heating causing air movement) dominate this tiny force, making direct observation impossible without vacuum.</p>
+<p><strong>Black vs.&nbsp;reflective surfaces:</strong> According to our theory, a perfectly reflecting surface experiences twice the radiation pressure of a perfectly absorbing one. This could be tested by comparing the deflection of black and mirror surfaces under identical illumination in vacuum.</p>
+<p><strong>Scaling with intensity:</strong> Radiation pressure scales linearly with intensity. A powerful laser beam should produce measurable effects on lightweight objects. This is indeed the basis of optical tweezers and laser cooling of atoms.</p>
+</section>
+<section id="the-crookes-radiometer-a-classic-misconception" class="level3">
+<h3 class="anchored" data-anchor-id="the-crookes-radiometer-a-classic-misconception">The Crookes Radiometer: A Classic Misconception</h3>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+What the Crookes Radiometer Does NOT Show
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <strong>Crookes radiometer</strong> (light mill) is a classic physics demonstration device with four vanes (black on one side, reflective on the other) mounted on a spindle in a partial vacuum. When exposed to light, it spins with the black sides appearing to be “pushed” away from the light source.</p>
+<p><strong>This is NOT radiation pressure!</strong> If radiation pressure were responsible, the reflective sides (which experience twice the pressure) should move away from the light. The actual mechanism involves:</p>
+<ol type="1">
+<li><strong>Differential heating</strong>: Black sides absorb more light and heat up more than reflective sides</li>
+<li><strong>Thermal transpiration</strong>: Gas molecules near the hot black surface move faster, creating a pressure difference</li>
+<li><strong>Residual gas</strong>: The effect requires partial vacuum - too much or too little gas and it doesn’t work</li>
+</ol>
+<p>The Crookes radiometer demonstrates <strong>thermal effects</strong>, not radiation pressure. It’s a beautiful example of how intuition can mislead us in physics!</p>
+</div>
+</div>
+</section>
+<section id="radiation-pressure-measurements-nichols-and-hull" class="level3">
+<h3 class="anchored" data-anchor-id="radiation-pressure-measurements-nichols-and-hull">Radiation Pressure Measurements: Nichols and Hull</h3>
+<p>This has been done for the first time in a proper experiment by Nichols and Hull in the years from 1900-1903.</p>
+</section>
 <section id="radiation-pressure-measurements" class="level3">
 <h3 class="anchored" data-anchor-id="radiation-pressure-measurements">Radiation Pressure measurements</h3>
 <div id="fig-nichols-hull" class="quarto-layout-panel">
@@ -757,6 +858,51 @@ Figure&nbsp;2— Ion and dust tail of the comet Neowise photographed in 07/2020 
 </figure>
 </div>
 <p>Radiation pressure is also of importance in astronomy and in particular visible in the tail of comets. Comets show tails composed of light gas ions and dust particles which seperate under the influence of radiation pressure. While orbiting around a star, the radiation pressure pushes the ligh gas ions radially away from the star, while the dust particles follow a curved shape ben towards the orbit due to their larger mass. This is also visible in the photograph we took in July 2020 for the comet Neowise which passed earth in a very spectacular way.</p>
+</section>
+<section id="solar-sails-propulsion-by-light" class="level3">
+<h3 class="anchored" data-anchor-id="solar-sails-propulsion-by-light">Solar Sails: Propulsion by Light</h3>
+<p>One of the most exciting applications of radiation pressure is <strong>solar sail propulsion</strong> for spacecraft. Unlike conventional rockets that carry fuel, solar sails use the continuous momentum transfer from sunlight to accelerate spacecraft.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+How Solar Sails Work
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A solar sail is a large, lightweight, highly reflective membrane deployed in space. The radiation pressure from sunlight provides continuous thrust:</p>
+<p><strong>Acceleration calculation:</strong> For a sail with area <span class="math inline">\(A\)</span> and mass <span class="math inline">\(m\)</span> at Earth’s distance from the Sun (<span class="math inline">\(I_{\odot} = 1361\)</span> W/m²):</p>
+<p><span class="math display">\[
+F = 2\frac{I_{\odot}A}{c}, \quad a = \frac{F}{m} = \frac{2I_{\odot}A}{mc}
+\]</span></p>
+<p>For a sail with area-to-mass ratio of 10 m²/kg: <span class="math display">\[
+a = \frac{2 \times 1361 \times 10}{3 \times 10^8} \approx 9 \times 10^{-5}\,{\rm m/s^2}
+\]</span></p>
+<p>Though tiny, this continuous acceleration produces substantial velocity changes over time with <strong>no fuel consumption</strong>.</p>
+</div>
+</div>
+<p><strong>Successful Solar Sail Missions:</strong></p>
+<ul>
+<li><strong>IKAROS (2010):</strong> Japanese spacecraft successfully demonstrated solar sail propulsion in interplanetary space</li>
+<li><strong>LightSail 2 (2019):</strong> Planetary Society’s CubeSat successfully raised its orbit using solar sailing</li>
+<li><strong>NEA Scout:</strong> Planned NASA mission to study near-Earth asteroids using solar sail propulsion</li>
+</ul>
+<p>Solar sails could enable: - Deep space missions without fuel - Station-keeping at unusual orbital positions - Gradual orbital adjustments with zero propellant - Future interstellar probes (potentially combined with laser propulsion)</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Future Concept: Laser-Driven Light Sails
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <strong>Breakthrough Starshot</strong> initiative proposes using powerful Earth-based lasers to propel tiny spacecraft to 20% the speed of light, potentially reaching the nearest star system (Alpha Centauri) in about 20 years. This would require laser intensities billions of times stronger than sunlight, creating radiation pressures capable of achieving relativistic velocities.</p>
+</div>
+</div>
 </section>
 <section id="optical-tweezers-and-magneto-optical-traps" class="level3">
 <h3 class="anchored" data-anchor-id="optical-tweezers-and-magneto-optical-traps">Optical Tweezers and Magneto-optical Traps</h3>

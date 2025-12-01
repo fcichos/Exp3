@@ -558,6 +558,10 @@ window.Quarto = {
   <li><a href="#analyzing-polarization" id="toc-analyzing-polarization" class="nav-link" data-scroll-target="#analyzing-polarization">Analyzing Polarization</a>
   <ul class="collapse">
   <li><a href="#law-of-malus" id="toc-law-of-malus" class="nav-link" data-scroll-target="#law-of-malus">Law of Malus</a></li>
+  <li><a href="#the-three-polarizer-paradox" id="toc-the-three-polarizer-paradox" class="nav-link" data-scroll-target="#the-three-polarizer-paradox">The Three-Polarizer Paradox</a></li>
+  <li><a href="#distinguishing-polarization-states-experimentally" id="toc-distinguishing-polarization-states-experimentally" class="nav-link" data-scroll-target="#distinguishing-polarization-states-experimentally">Distinguishing Polarization States Experimentally</a></li>
+  <li><a href="#why-orthogonal-polarizations-dont-interfere" id="toc-why-orthogonal-polarizations-dont-interfere" class="nav-link" data-scroll-target="#why-orthogonal-polarizations-dont-interfere">Why Orthogonal Polarizations Don’t Interfere</a></li>
+  <li><a href="#modern-applications" id="toc-modern-applications" class="nav-link" data-scroll-target="#modern-applications">Modern Applications</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -600,6 +604,19 @@ Polarization of Electromagnetic Waves
 </div>
 <p>We differentiate between different states of polarization, e.g.&nbsp;linear, circular, elliptical polarization. But we may, depending on the properties of the light source also have unpolarized light.</p>
 <p>The polarization of light is important for many applications including for example 3D cinema or TV. The polarization state is commonly changed when light interacts with matter, therefore polarization is also a very important tool to characterize materials. For example, the technique of <strong>ellipsometry</strong> is studying the polarization state of light reflected from a material therby gaining important information about the electronic properties of the material. This is an important tool on solid-state physics. The polarization of light is also important for interence as two wave of orthogonal directions of the elecric field cannot interference (please check this idea yourself). It can be also used to encode information for quantum cryptography.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Historical Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The discovery of polarization was crucial evidence that light is a <strong>transverse wave</strong> rather than a longitudinal wave (like sound). The fact that light can be polarized - that its oscillations can be oriented in specific directions perpendicular to propagation - showed that light cannot be a longitudinal wave, where oscillations occur along the direction of propagation.</p>
+</div>
+</div>
 <p>In the following sections we will shortly define these different polarization states.</p>
 <section id="linearly-polarized-waves" class="level2">
 <h2 class="anchored" data-anchor-id="linearly-polarized-waves">Linearly Polarized Waves</h2>
@@ -619,6 +636,19 @@ E_{x}&amp;=&amp;E_{0x}e^{i(\omega t-kz)}\\
 E_{y}&amp;=&amp;E_{0y}e^{i(\omega t-kz)}\\
 \end{eqnarray}\]</span></p>
 <p>The linear polarization state, independent of the polarization direction is also called <span class="math inline">\(\pi\)</span><strong>-polarization</strong>. We will use this term later in the description of light-atom interaction.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Creating Linearly Polarized Light
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Linearly polarized light is easily created experimentally by passing unpolarized light through a single linear polarizer. The polarizer transmits only the component of the electric field aligned with its transmission axis, producing linearly polarized output.</p>
+</div>
+</div>
 </section>
 <section id="circularly-polarized-waves" class="level2">
 <h2 class="anchored" data-anchor-id="circularly-polarized-waves">Circularly Polarized Waves</h2>
@@ -632,6 +662,19 @@ E_{0y}&amp;=&amp;E_{0x}
 \end{eqnarray}\]</span></p>
 <p>The consequence of that additional phase shift of one component is, that <span class="math inline">\(E_y\)</span> reaches its maximum amplitude at a different position <span class="math inline">\(z\)</span>, when keeping the time fixed, i.e.&nbsp;making a snapshot. If <span class="math inline">\(z\)</span> is fixed, the above formulas describe a rotation of the electric field around the direction of <span class="math inline">\(\vec{k}\)</span> (here z-direction). The third equation ensures that during rotation the magnitude of the electric field vector is unchanged und thus the end of the electric field vectors describes a circle (bottom row of figure) around the direction of propagation.</p>
 <p>Right circularly polarized light is also known as <span class="math inline">\(\sigma^{+}\)</span> <strong>polarization</strong>, while left circularly polarized light is <span class="math inline">\(\sigma_{-}\)</span> <strong>polarization</strong>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Creating Circularly Polarized Light
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Creating circularly polarized light experimentally requires special optical elements (such as quarter-wave plates) that introduce the necessary phase shift between orthogonal field components. We will study these devices in detail in later lectures on anisotropic materials.</p>
+</div>
+</div>
 </section>
 <section id="elliptically-polarized" class="level2">
 <h2 class="anchored" data-anchor-id="elliptically-polarized">Elliptically Polarized</h2>
@@ -655,7 +698,12 @@ E_{0y}&amp;\neq&amp;E_{0x}
 </section>
 <section id="unpolarized-light" class="level2">
 <h2 class="anchored" data-anchor-id="unpolarized-light">Unpolarized Light</h2>
-<p>Unpolarized light is obtained when the electric field vector fluctuates in polarization statistically.</p>
+<p>Unpolarized light is obtained when the electric field vector fluctuates in polarization statistically. Common sources of unpolarized light include the sun, incandescent light bulbs, and most LEDs. In unpolarized light, all polarization directions are equally represented, and the polarization state changes randomly on very short time scales (typically on the order of nanoseconds or faster).</p>
+<p>For partially polarized light, we can quantify the <strong>degree of polarization</strong> <span class="math inline">\(P\)</span> by measuring the transmitted intensity through a rotating polarizer:</p>
+<p><span class="math display">\[
+P = \frac{I_{max} - I_{min}}{I_{max} + I_{min}}
+\]</span></p>
+<p>where <span class="math inline">\(I_{max}\)</span> and <span class="math inline">\(I_{min}\)</span> are the maximum and minimum intensities observed as the polarizer is rotated. For completely unpolarized light, <span class="math inline">\(P = 0\)</span> (no variation in intensity), while for fully polarized light, <span class="math inline">\(P = 1\)</span> (complete extinction at some angle).</p>
 </section>
 <section id="analyzing-polarization" class="level2">
 <h2 class="anchored" data-anchor-id="analyzing-polarization">Analyzing Polarization</h2>
@@ -674,6 +722,98 @@ I_t=I_0\cos^2(\theta)
 \]</span></p>
 <p>If follows that the intensity drops to <span class="math inline">\(50\)</span> %, when we adjust an angle of <span class="math inline">\(45^{\circ}\)</span>. As soon as we have a lecture in the lecture hall again, we will have a look at some nice demonstrations that illustrate Malu’s law similar to the picture below.</p>
 <p><img src="img/malus.png" class="img-fluid" style="width:90.0%" data-fig-cap="Demonstration of Malu's law using two or three polarizers."></p>
+</section>
+<section id="the-three-polarizer-paradox" class="level3">
+<h3 class="anchored" data-anchor-id="the-three-polarizer-paradox">The Three-Polarizer Paradox</h3>
+<p>An intriguing demonstration of how polarizers work is the <strong>three-polarizer paradox</strong>:</p>
+<ul>
+<li>Place two polarizers with perpendicular orientations (0° and 90°): <strong>no light is transmitted</strong></li>
+<li>Now insert a third polarizer at 45° <strong>between</strong> the two crossed polarizers: <strong>light appears!</strong></li>
+</ul>
+<p>This seems paradoxical - adding a third polarizer allows light through. The explanation is that the middle polarizer projects the electric field onto a new direction (45°), and this new field has components along both the first and third polarizer directions. Mathematically:</p>
+<p><span class="math display">\[
+I_{final} = I_0 \cos^2(45°) \cos^2(45°) = I_0/4
+\]</span></p>
+<p>This beautifully demonstrates that polarizers don’t simply “block” or “pass” light - they project the electric field vector.</p>
+</section>
+<section id="distinguishing-polarization-states-experimentally" class="level3">
+<h3 class="anchored" data-anchor-id="distinguishing-polarization-states-experimentally">Distinguishing Polarization States Experimentally</h3>
+<p>Using just a <strong>rotating linear polarizer</strong> and a detector, we can experimentally identify different polarization states:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 40%">
+<col style="width: 59%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Polarization State</th>
+<th>Observed Intensity Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Linear</strong></td>
+<td>Varies from maximum to <strong>complete extinction</strong> (zero)</td>
+</tr>
+<tr class="even">
+<td><strong>Circular</strong></td>
+<td><strong>Constant</strong> intensity (no variation with rotation)</td>
+</tr>
+<tr class="odd">
+<td><strong>Unpolarized</strong></td>
+<td><strong>Constant</strong> intensity at 50% of incident</td>
+</tr>
+<tr class="even">
+<td><strong>Elliptical</strong></td>
+<td>Varies between max and min, but <strong>never reaches zero</strong></td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Experimental Criterion
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Complete extinction (zero intensity) when rotating a linear polarizer is the signature of <strong>linearly polarized light</strong>. Circular and unpolarized light show constant intensity, while elliptical shows variation without complete extinction.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Everyday Application: Polarized Sunglasses
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Light reflecting off horizontal surfaces (water, roads, snow) becomes partially linearly polarized in the horizontal direction, creating glare. <strong>Polarized sunglasses</strong> have their transmission axis oriented vertically to block this horizontally polarized reflected light, significantly reducing glare while allowing other light through. We will explore the physical mechanism behind polarization by reflection when we study light propagation in matter in later lectures.</p>
+</div>
+</div>
+</section>
+<section id="why-orthogonal-polarizations-dont-interfere" class="level3">
+<h3 class="anchored" data-anchor-id="why-orthogonal-polarizations-dont-interfere">Why Orthogonal Polarizations Don’t Interfere</h3>
+<p>The polarization of light has an important consequence for interference: <strong>two waves with perpendicular polarizations cannot interfere with each other</strong>.</p>
+<p>Consider two waves with electric fields: <span class="math display">\[
+\vec{E}_1 = E_0 \hat{e}_x e^{i(\omega t - kz)}
+\]</span> <span class="math display">\[
+\vec{E}_2 = E_0 \hat{e}_y e^{i(\omega t - kz)}
+\]</span></p>
+<p>The total intensity is simply: <span class="math display">\[
+I_{total} = |E_1|^2 + |E_2|^2 = 2I_0
+\]</span></p>
+<p>There are no interference terms! This is because <span class="math inline">\(\hat{e}_x \cdot \hat{e}_y = 0\)</span>. For interference to occur, the electric field vectors must have components in the same direction. This principle is crucial in many optical applications and experiments.</p>
+</section>
+<section id="modern-applications" class="level3">
+<h3 class="anchored" data-anchor-id="modern-applications">Modern Applications</h3>
+<p><strong>LCD Displays:</strong> Liquid crystal displays (LCD) rely fundamentally on polarization. Try viewing your laptop or smartphone screen through a rotating polarizer - at certain angles the screen goes dark! This is because LCD screens emit linearly polarized light.</p>
+<p><strong>3D Cinema:</strong> Modern 3D movies use polarization to separate the images for left and right eyes. Either different linear polarizations or circular polarizations (left and right) are used for the two images. The 3D glasses contain appropriate polarizers to ensure each eye sees only its intended image.</p>
+<p><strong>Photography:</strong> Polarizing filters for cameras are used to reduce reflections from water or glass and to enhance contrast in sky photography.</p>
 
 
 </section>
