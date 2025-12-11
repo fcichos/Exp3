@@ -65,6 +65,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../electromagnetic-waves/Anisotropic Materials.html" rel="next">
+<link href="../electromagnetic-waves/Fresnel Equations.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -170,7 +172,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Electromagnetic Waves in Metals</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Electromagnetic Optics</li><li class="breadcrumb-item"><a href="../electromagnetic-waves/Metals.html">Lecture 17</a></li><li class="breadcrumb-item"><a href="../electromagnetic-waves/Metals.html">Electromagnetic Waves in Metals</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -629,6 +631,29 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-21" role="navigation" aria-expanded="true">
+ <span class="menu-text">Lecture 17</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-21" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-21" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Metals.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Electromagnetic Waves in Metals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Anisotropic Materials.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Anisotropic Materials</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
       </ul>
   </li>
     </ul>
@@ -663,7 +688,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Electromagnetic Optics</li><li class="breadcrumb-item"><a href="../electromagnetic-waves/Metals.html">Lecture 17</a></li><li class="breadcrumb-item"><a href="../electromagnetic-waves/Metals.html">Electromagnetic Waves in Metals</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Electromagnetic Waves in Metals</h1>
 </div>
@@ -687,25 +712,65 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="drude-model">Drude Model</h2>
 <p>The model we would like to put forward is the Drude model. It considers the motion of a charge in the electromagnetic field of a wave. As compared to our previous attempts on bound electrons in atoms, there is no direct restoring force for the free charges in the metal. The equation of motion therefore looks as</p>
 <p><span class="math display">\[
-m_e\frac{d^2\vec{r}}{dt^2}+m_e\Gamma \frac{d\vec{r}}{dt}=e\vec{E}_0 e^{i\omega t}
+m_e\frac{d^2\vec{r}}{dt^2}+m_e\Gamma \frac{d\vec{r}}{dt}=-e\vec{E}_0 e^{i\omega t}
 \]</span></p>
 <p>Here, the coefficient <span class="math inline">\(\Gamma\)</span> is given by</p>
 <p><span class="math display">\[
 \Gamma=\frac{v_f}{l}=\frac{1}{\tau}
 \]</span></p>
-<p>where <span class="math inline">\(v_f\)</span> is the Fermi velocity and <span class="math inline">\(l\)</span> is the mean free path electrons travel before colliding with a lattice site inside the metal. To obtain an expression for the refractive index, we use again the ansatz</p>
+<p>where <span class="math inline">\(v_f\)</span> is the Fermi velocity and <span class="math inline">\(l\)</span> is the mean free path electrons travel before colliding with a lattice site inside the metal.</p>
+<p><strong>Derivation of the Drude Dielectric Function:</strong></p>
+<p>To obtain an expression for the dielectric function, we use the ansatz</p>
 <p><span class="math display">\[
 \vec{r}=\vec{r}_0 e^{i\omega t}
 \]</span></p>
-<p>from which we obtain an expression for <span class="math inline">\(\vec{r}_0\)</span>. With his solution we can again calculate the polarization density and finally also the dielectric function</p>
+<p>Substituting this into the equation of motion and taking the time derivatives (<span class="math inline">\(d\vec{r}/dt = i\omega\vec{r}_0 e^{i\omega t}\)</span> and <span class="math inline">\(d^2\vec{r}/dt^2 = -\omega^2\vec{r}_0 e^{i\omega t}\)</span>):</p>
+<p><span class="math display">\[
+-m_e\omega^2\vec{r}_0 e^{i\omega t}+m_e\Gamma i\omega \vec{r}_0 e^{i\omega t}=-e\vec{E}_0 e^{i\omega t}
+\]</span></p>
+<p>Dividing by <span class="math inline">\(e^{i\omega t}\)</span> and rearranging:</p>
+<p><span class="math display">\[
+m_e\vec{r}_0(-\omega^2+i\Gamma \omega)=-e\vec{E}_0
+\]</span></p>
+<p>Solving for <span class="math inline">\(\vec{r}_0\)</span>:</p>
+<p><span class="math display">\[
+\vec{r}_0=-\frac{e\vec{E}_0}{m_e(-\omega^2+i\Gamma \omega)}=\frac{e\vec{E}_0}{m_e(\omega^2-i\Gamma \omega)}
+\]</span></p>
+<p><strong>Connecting to the Dielectric Function:</strong></p>
+<p>To connect this microscopic motion to the macroscopic dielectric function, we need to calculate the polarization density <span class="math inline">\(\vec{P}\)</span>. The polarization is the electric dipole moment per unit volume.</p>
+<p>If we have <span class="math inline">\(N\)</span> free electrons per unit volume (the <strong>free electron density</strong>), and each electron carries charge <span class="math inline">\(-e\)</span> (where <span class="math inline">\(e &gt; 0\)</span> is the elementary charge magnitude) and has displacement <span class="math inline">\(\vec{r}\)</span>, then the dipole moment per volume is:</p>
+<p><span class="math display">\[
+\vec{P}=N \cdot (-e) \cdot \vec{r}=-Ne\vec{r}_0 e^{i\omega t}
+\]</span></p>
+<p>Substituting our expression for <span class="math inline">\(\vec{r}_0\)</span>:</p>
+<p><span class="math display">\[
+\vec{P}=-Ne\cdot\frac{e\vec{E}_0}{m_e(\omega^2-i\Gamma \omega)} e^{i\omega t}=-\frac{Ne^2\vec{E}_0}{m_e(\omega^2-i\Gamma \omega)} e^{i\omega t}
+\]</span></p>
+<p>Since <span class="math inline">\(\vec{E}=\vec{E}_0 e^{i\omega t}\)</span>, we can write:</p>
+<p><span class="math display">\[
+\vec{P}=-\frac{Ne^2}{m_e(\omega^2-i\Gamma \omega)}\vec{E}
+\]</span></p>
+<p>The displacement field is related to the electric field and polarization by:</p>
+<p><span class="math display">\[
+\vec{D}=\epsilon_0\vec{E}+\vec{P}=\epsilon_0\epsilon_r\vec{E}
+\]</span></p>
+<p>From this relationship, we can extract the relative permittivity (dielectric function):</p>
+<p><span class="math display">\[
+\epsilon_0\epsilon_r\vec{E}=\epsilon_0\vec{E}+\vec{P}
+\]</span></p>
+<p><span class="math display">\[
+\epsilon_r=1+\frac{\vec{P}}{\epsilon_0\vec{E}}=1-\frac{Ne^2}{\epsilon_0 m_e(\omega^2-i\Gamma \omega)}
+\]</span></p>
+<p>We can rewrite this more compactly by defining the <strong>plasma frequency</strong> <span class="math inline">\(\omega_p\)</span>:</p>
+<p><span class="math display">\[
+\omega_p=\sqrt{\frac{Ne^2}{\epsilon_0 m_e}}
+\]</span></p>
+<p>where <span class="math inline">\(N\)</span> is the free electron density (number of free electrons per unit volume), which is a characteristic property of each metal.</p>
+<p>This gives us the final form of the <strong>Drude dielectric function</strong>:</p>
 <p><span class="math display">\[
 \epsilon_r(\omega)=n^2=1-\frac{\omega_p^2}{\omega^2-i\Gamma \omega}
 \]</span></p>
-<p>with</p>
-<p><span class="math display">\[
-\omega_p=\sqrt{\frac{Ne^2}{\epsilon_0 m}}
-\]</span></p>
-<p>which is called the <strong>plasma frequency</strong>. It is a characteristic for each metal, since the density of free charges in the metal enters the equation. It is located in the UV region of the electromagnetic spectrum.</p>
+<p>The <strong>plasma frequency</strong> <span class="math inline">\(\omega_p\)</span> is a characteristic parameter for each metal, since the free electron density <span class="math inline">\(N\)</span> enters directly into its definition. For most metals, the plasma frequency is located in the UV region of the electromagnetic spectrum.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 16%">
@@ -1915,6 +1980,18 @@ Figure&nbsp;9— The Lycurgus Cup demonstrates the dramatic optical effects of m
     }
   });
   </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../electromagnetic-waves/Fresnel Equations.html" class="pagination-link" aria-label="Fresnel Equations">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Fresnel Equations</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../electromagnetic-waves/Anisotropic Materials.html" class="pagination-link" aria-label="Anisotropic Materials">
+        <span class="nav-page-text">Anisotropic Materials</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 
 
