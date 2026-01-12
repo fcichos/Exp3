@@ -861,7 +861,7 @@ E_{0,\mathrm{I}} \; \vec{e_x} = -E_{0,\mathrm{R}} \; \vec{e_x}
 k_z  = o \frac{\pi}{a}
 \]</span></p>
 <p>These represent the modes in a one-dimensional cavity.</p>
-<div id="0c84a18e" class="cell" data-execution_count="2">
+<div id="74907e9c" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create x values (position along cavity)</span></span>
@@ -909,7 +909,7 @@ k_z &amp; =  o \frac{\pi}{c}
 \]</span></p>
 <p>where <span class="math inline">\(m,n,o\)</span> are natural numbers. The magnitude of the wavevector is <span class="math inline">\(\left| \vec{k} \right| = \sqrt{k_x^2 + k_y^2 + k_z^2}\)</span>, which determines the possible frequencies <span class="math inline">\(\omega\)</span> in the cavity</p>
 <p><span class="math display">\[
-\omega = c \cdot \pi \; \sqrt{\left(\frac{o}{a}\right)^2 + \left(\frac{m}{b}\right)^2 + \left(\frac{n}{c}\right)^2}
+\omega = c_0 \cdot \pi \; \sqrt{\left(\frac{o}{a}\right)^2 + \left(\frac{m}{b}\right)^2 + \left(\frac{n}{c}\right)^2}
 \]</span></p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
@@ -926,8 +926,7 @@ Resonator modes
 <p>The standing waves which follow from these frequencies in our resonator are given by:</p>
 <p><span class="math display">\[
 \vec{E}_{m,n,o} = \vec{E}_{0} \left( m,n,o \right) \cdot \cos \left( \omega t\right)
-\]</span></p>
-<p>with <span class="math inline">\(\vec{E}_{0} \left( m,n,o \right) = \left( E_{0,x},E_{0,y},E_{0,z} \right)^{\mathrm{T}}\)</span> and</p>
+\]</span> op with <span class="math inline">\(\vec{E}_{0} \left( m,n,o \right) = \left( E_{0,x},E_{0,y},E_{0,z} \right)^{\mathrm{T}}\)</span> and</p>
 <p><span class="math display">\[
 \begin{aligned}
 E_{0,x} &amp; = &amp; A \cdot \cos \left( n \frac{\pi}{a} x \right) \sin \left( m \frac{\pi}{b} y \right) \sin \left( o \frac{\pi}{c} z \right)\\
@@ -942,8 +941,8 @@ E_{0,z} &amp; = &amp; C \cdot \sin \left( n \frac{\pi}{a} x \right) \sin \left( 
 <p>As mentioned before, we are interested in the number of modes that fit into the cavity. For that purpose we need to count the number of modes within a certain frequency range. In order to simplify the calculation a bit, we restrict out box to a cube with edge length <span class="math inline">\(a\)</span> such that</p>
 <p><span class="math display">\[
 \begin{aligned}
-\omega &amp; =  c \cdot \frac{\pi}{a} \; \sqrt{ n^2 + m^2 + o^2}\\
-\rightarrow n^2 + m^2 + o^2 &amp; =  \left( \frac{a \omega}{\pi c}\right)^2\\
+\omega &amp; =  c_0 \cdot \frac{\pi}{a} \; \sqrt{ n^2 + m^2 + o^2}\\
+\rightarrow n^2 + m^2 + o^2 &amp; =  \left( \frac{a \omega}{\pi c_0}\right)^2\\
 \rightarrow n^2 + m^2 + o^2 &amp; =  \left( \frac{a}{\pi}\right)^2 \cdot k^2\\
 \end{aligned}
 \]</span></p>
@@ -1033,7 +1032,7 @@ S^{\ast}_{\nu} \left( \nu \right) \mathrm{d} \nu &amp; = &amp; \frac{c_0}{4 \pi}
 \end{aligned}
 \]</span></p>
 <p>If we now consider a temperature of about <span class="math inline">\(5000 \; \mathrm{K}\)</span> we achieve a wavelength bigger than <span class="math inline">\(2 \; \mu\mathrm{m}\)</span>, being well in the infrared region. For this spectral region the measured radiance and the theoretical prediction are in agreement. However, if we reduce the wavelength, disparities between experimental findings and the prediction appear. Moreover, if the Rayleigh-Jeans law was valid, there would be the so-called <strong>ultraviolet catastrophe</strong>! In the case of decreasing frequencies, the spectral energy density and the integrated radiance will rise until they become infinitely big for vanishing frequencies.</p>
-<div id="174f053f" class="cell" data-execution_count="3">
+<div id="81fdf0bf" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Constants</span></span>
@@ -1084,7 +1083,77 @@ S^{\ast}_{\nu} \left( \nu \right) \mathrm{d} \nu &amp; = &amp; \frac{c_0}{4 \pi}
 </section>
 <section id="plancks-law" class="level2">
 <h2 class="anchored" data-anchor-id="plancks-law">Planck’s law</h2>
-<p>In 1900 Max Planck tackled the problem of how to avoid the ultraviolet catastrophe and describe the blackbody radiation as a whole. He assumed that the energy of the absorbing and emitting oscillators in the wall can release or absorb small packets of energy given by <span class="math inline">\(h \cdot \nu\)</span>, where <span class="math inline">\(h\)</span> was used as a <strong>helper constant</strong>. Taking the limit <span class="math inline">\(h\rightarrow 0\)</span> should then lead to the classical result, yet Planck found that the classical limit was not reached. Rather, the quantization of energy with <span class="math inline">\(h=6.626 \ldots \cdot 10^{-34} \; \mathrm{Js}\)</span> led to a new law of radiation, which was in perfect agreement with the experimental findings. The energy at a particular frequency <span class="math inline">\(\nu\)</span> is then quantized in terms of the number of energy packets <span class="math inline">\(n\)</span> as</p>
+<p>In 1900 Max Planck tackled the problem of how to avoid the ultraviolet catastrophe and describe the blackbody radiation as a whole. He assumed that the energy of the absorbing and emitting oscillators in the wall can release or absorb small packets of energy given by <span class="math inline">\(h \cdot \nu\)</span>, where <span class="math inline">\(h\)</span> was used as a <strong>helper constant</strong>. Taking the limit <span class="math inline">\(h\rightarrow 0\)</span> should then lead to the classical result, yet Planck found that the classical limit was not reached. Rather, the quantization of energy with <span class="math inline">\(h=6.626 \ldots \cdot 10^{-34} \; \mathrm{Js}\)</span> led to a new law of radiation, which was in perfect agreement with the experimental findings.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Optional derivation (Einstein A/B coefficients and detailed balance)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Planck’s formula can also be derived without explicitly quantizing the field modes, by considering atoms (or molecules) in thermal equilibrium with a radiation field and using <strong>Einstein’s A/B coefficients</strong>.</p>
+<section id="setup-two-level-system-coupled-to-radiation" class="level3">
+<h3 class="anchored" data-anchor-id="setup-two-level-system-coupled-to-radiation">Setup: two-level system coupled to radiation</h3>
+<p>Consider atoms with two energy levels <span class="math inline">\(E_1\)</span> and <span class="math inline">\(E_2\)</span> (<span class="math inline">\(E_2&gt;E_1\)</span>) and a transition frequency <span class="math display">\[
+h\nu = E_2-E_1.
+\]</span></p>
+<p>Let <span class="math inline">\(u(\nu)\)</span> be the spectral energy density of the radiation field at frequency <span class="math inline">\(\nu\)</span> (this is the same quantity as our <span class="math inline">\(\omega(\nu,T)\)</span> above; i.e.&nbsp;<span class="math inline">\(u(\nu)\equiv \omega(\nu,T)\)</span> at fixed temperature <span class="math inline">\(T\)</span>).</p>
+<p>Einstein postulated three processes:</p>
+<ul>
+<li><strong>Absorption</strong> (<span class="math inline">\(1\to 2\)</span>): rate per atom <span class="math inline">\(\propto B_{12}\,u(\nu)\)</span></li>
+<li><strong>Stimulated emission</strong> (<span class="math inline">\(2\to 1\)</span>): rate per atom <span class="math inline">\(\propto B_{21}\,u(\nu)\)</span></li>
+<li><strong>Spontaneous emission</strong> (<span class="math inline">\(2\to 1\)</span>): rate per atom <span class="math inline">\(= A_{21}\)</span></li>
+</ul>
+<p>For a population of <span class="math inline">\(N_1\)</span> atoms in level 1 and <span class="math inline">\(N_2\)</span> atoms in level 2, the total upward and downward transition rates are</p>
+<ul>
+<li>upward: <span class="math inline">\(R_\uparrow = N_1 B_{12} u(\nu)\)</span></li>
+<li>downward: <span class="math inline">\(R_\downarrow = N_2 A_{21} + N_2 B_{21} u(\nu)\)</span></li>
+</ul>
+</section>
+<section id="detailed-balance-at-thermal-equilibrium" class="level3">
+<h3 class="anchored" data-anchor-id="detailed-balance-at-thermal-equilibrium">Detailed balance at thermal equilibrium</h3>
+<p>In equilibrium, upward and downward rates must be equal: <span class="math display">\[
+N_1 B_{12} u(\nu) = N_2 A_{21} + N_2 B_{21} u(\nu).
+\]</span></p>
+<p>Also, the level populations satisfy the Boltzmann relation <span class="math display">\[
+\frac{N_2}{N_1} = \exp\left(-\frac{E_2-E_1}{k_B T}\right)
+= \exp\left(-\frac{h\nu}{k_B T}\right).
+\]</span></p>
+<p>Insert <span class="math inline">\(N_2=N_1\,\exp\left(-\frac{h\nu}{k_B T}\right)\)</span> into the rate equation and solve for <span class="math inline">\(u(\nu)\)</span>:</p>
+<p><span class="math display">\[
+B_{12}u(\nu) = e^{-\frac{h\nu}{k_B T}}\left(A_{21}+B_{21}u(\nu)\right)
+\]</span></p>
+<p><span class="math display">\[
+u(\nu)\left(B_{12}-e^{-\frac{h\nu}{k_B T}}B_{21}\right)=e^{-\frac{h\nu}{k_B T}}A_{21}
+\]</span></p>
+<p><span class="math display">\[
+u(\nu)=\frac{A_{21}}{B_{12}e^{\frac{h\nu}{k_B T}}-B_{21}}.
+\]</span></p>
+<p>If (as required by thermodynamic consistency and confirmed experimentally) the stimulated coefficients satisfy <span class="math display">\[
+B_{12}=B_{21},
+\]</span> then</p>
+<p><span class="math display">\[
+u(\nu)=\frac{A_{21}}{B_{21}}\frac{1}{e^{\frac{h\nu}{k_B T}}-1}.
+\]</span></p>
+<p>This already reproduces the characteristic Planck factor <span class="math display">\[
+\frac{1}{e^{\frac{h\nu}{k_B T}}-1}.
+\]</span></p>
+</section>
+<section id="fixing-the-prefactor-matching-to-electromagnetic-mode-density" class="level3">
+<h3 class="anchored" data-anchor-id="fixing-the-prefactor-matching-to-electromagnetic-mode-density">Fixing the prefactor (matching to electromagnetic mode density)</h3>
+<p>To obtain the full Planck spectrum <span class="math display">\[
+u(\nu)=\frac{8\pi h\nu^3}{c_0^3}\,\frac{1}{e^{\frac{h\nu}{k_B T}}-1},
+\]</span> one must additionally determine the ratio <span class="math inline">\(A_{21}/B_{21}\)</span> by relating the radiation field to its electromagnetic degrees of freedom (mode density) and requiring the correct classical/high-temperature behavior. The key conceptual result of the Einstein derivation is that <strong>spontaneous emission is necessary</strong>, and that the Planck denominator arises from <strong>detailed balance</strong> plus <strong>stimulated emission</strong>.</p>
+</section>
+</div>
+</div>
+</div>
+<p>The energy at a particular frequency <span class="math inline">\(\nu\)</span> is then quantized in terms of the number of energy packets <span class="math inline">\(n\)</span> as</p>
 <p><span class="math display">\[
 W_{\nu} = n \cdot h \cdot \nu
 \]</span></p>
@@ -1112,7 +1181,7 @@ p \left( W_{\nu} \right) = \frac{
 <p><span class="math display">\[
 \omega \left( \nu,T \right) \mathrm{d} \nu = \frac{8 \pi h \nu^3}{c_0^3} \, \frac{\mathrm{d} \nu}{\mathrm{e}^{\frac{h \nu}{k_B T}} -1} \mathrm{.}
 \]</span></p>
-<p>Here <span class="math inline">\(\omega \left( \nu,T \right) \mathrm{d}\nu\)</span> represents the spectral distribution of the energy density per frequency interval; its unit is <span class="math inline">\(\left[ \omega \left( \nu,T \right) \right] = \mbox{Jsm}^3\)</span>. The radiance of the area element <span class="math inline">\(\mathrm{d}A\)</span> emitted into the solid angle <span class="math inline">\(\mathrm{d} \Omega\)</span> then is</p>
+<p>Here <span class="math inline">\(\omega \left( \nu,T \right) \mathrm{d}\nu\)</span> represents the spectral distribution of the energy density per frequency interval; its unit is <span class="math inline">\(\left[ \omega \left( \nu,T \right) \right] = \mathrm{J\,m^{-3}\,Hz^{-1}}\)</span>. The radiance of the area element <span class="math inline">\(\mathrm{d}A\)</span> emitted into the solid angle <span class="math inline">\(\mathrm{d} \Omega\)</span> then is</p>
 <p><span class="math display">\[
 \begin{aligned}
 S^{\ast}_{\nu} \mathrm{d} \nu \mathrm{d} \Omega &amp; = &amp; \frac{c_0}{4\pi} \omega_{\nu} \left(\nu,T\right) \, \mathrm{d} \nu \, \mathrm{d} \Omega\\
@@ -1120,17 +1189,17 @@ S^{\ast}_{\nu} \mathrm{d} \nu \mathrm{d} \Omega &amp; = &amp; \frac{c_0}{4\pi} \
 \end{aligned}
 \]</span></p>
 <p>Planck’s theory posited that oscillator energy exists in discrete units or packets denoted by <span class="math inline">\(n\)</span>, following the relation <span class="math inline">\(W_{\nu} = n \cdot h \cdot \nu\)</span>. This concept was later expanded by Einstein in his explanation of the photoelectric effect, demonstrating that light itself consists of discrete energy quanta proportional to frequency <span class="math inline">\(\nu\)</span>. Einstein’s interpretation, expressing the energy of the electromagnetic field as <span class="math inline">\(E = h \nu\)</span>, established the foundation for understanding light as discrete particles called <em>photons</em>.</p>
-<p>While we’ve previously written Planck’s law in terms of frequency <span class="math inline">\(\nu\)</span>, we can alternatively express it using wavelength <span class="math inline">\(\lambda\)</span> through the relationship <span class="math inline">\(\lambda = c/\nu\)</span>. Making this conversion requires noting that <span class="math inline">\(\mathrm{d}\lambda = -\left( c / \nu^2 \right) \mathrm{d} \nu\)</span>. This allows us to express the spectral energy density</p>
+<p>While we’ve previously written Planck’s law in terms of frequency <span class="math inline">\(\nu\)</span>, we can alternatively express it using wavelength <span class="math inline">\(\lambda\)</span> through the relationship <span class="math inline">\(\lambda = c_0/\nu\)</span>. Making this conversion requires noting that <span class="math inline">\(\mathrm{d}\lambda = -\left( c_0 / \nu^2 \right) \mathrm{d} \nu\)</span>. This allows us to express the spectral energy density</p>
 <p><span class="math display">\[
 \omega \left( \lambda,T \right) \mathrm{d} \lambda = \frac{8 \pi h c_0}{\lambda^5} \, \frac{\mathrm{d} \lambda}{\mathrm{e}^{\frac{h c_0}{\lambda k_B T}} -1}
 \]</span></p>
 <p>and the radiance</p>
 <p><span class="math display">\[
-S^{\ast}_{\lambda} \mathrm{d} \lambda \mathrm{d} \Omega = \frac{2 h c^2}{\lambda^5} \, \frac{\mathrm{d} \lambda \, \mathrm{d} \Omega}{\mathrm{e}^{\frac{h c}{\lambda k_B T}} -1}
+S^{\ast}_{\lambda} \mathrm{d} \lambda \mathrm{d} \Omega = \frac{2 h c_0^2}{\lambda^5} \, \frac{\mathrm{d} \lambda \, \mathrm{d} \Omega}{\mathrm{e}^{\frac{h c_0}{\lambda k_B T}} -1}
 \]</span></p>
 <p>in terms of wavelength <span class="math inline">\(\lambda\)</span> and temperature <span class="math inline">\(T\)</span>.</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1139,7 +1208,7 @@ Measuring Planck’s Constant
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse show">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>Planck’s constant <span class="math inline">\(h\)</span> is a fundamental constant of nature, and its precise value is crucial for many areas of physics. The most accurate method for measuring <span class="math inline">\(h\)</span> is through the photoelectric effect, as demonstrated by Einstein. One could also determine <span class="math inline">\(h\)</span> by measuring the Compton edge in X-ray scattering experiments or estimating by measuring the uncertainty in the particle momentum and position from a diffraction experiment.</p>
 <p>Another possibility arises from counting single photons from a laser beam. The particle nature of light now delivers the definition of light power by the relation</p>
@@ -1151,7 +1220,7 @@ P = N \cdot E_{\textrm{photon}} = N \cdot h \cdot \nu = N \cdot h \cdot \frac{c}
 h= \frac{P \lambda}{N c}
 \]</span></p>
 <p>In reality, measuring the photon arrival rate is a challenging task. For coherent laser light, the photon arrivals follow Poisson statistics, meaning the time intervals between consecutive photons are exponentially distributed. While this makes the measurements theoretically straightforward, the uncertainty in counting photons (which follows the square root of the mean count rate according to Poisson statistics) is usually the limiting factor in the precision of the measurement. Yet, we can dim the laser light to a point where only one photon is present at a time. Note that while diming the laser light with an appropriate filter, the photon rate decreases, but the photon statistics remain Poissonian. Only the average rate of photon arrivals decreases such that most of the time no photon arrives.</p>
-<div id="e03495ae" class="cell" data-execution_count="4">
+<div id="579fe7dc" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)</span>
@@ -1226,7 +1295,7 @@ Figure&nbsp;4— An APD is a special type of photodiode that can detect single p
 </div>
 </div>
 </div>
-<div id="a09dddd5" class="cell" data-execution_count="5">
+<div id="cab082f8" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Constants</span></span>
@@ -1346,7 +1415,7 @@ Stefan-Boltzmann Law
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1355,7 +1424,7 @@ Solar Power at Earth’s Distance: A Stefan-Boltzmann Law Calculation
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>We can calculate the solar power arriving at Earth using the Stefan-Boltzmann law and basic geometric principles. The Stefan-Boltzmann law states that the total power emitted per unit area by a black body is given by:</p>
 <p><span class="math display">\[E = \sigma T^4\]</span></p>
@@ -1377,7 +1446,7 @@ Solar Power at Earth’s Distance: A Stefan-Boltzmann Law Calculation
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1386,7 +1455,7 @@ Real-World Examples of Blackbody Radiation
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <section id="astronomical-objects" class="level3">
 <h3 class="anchored" data-anchor-id="astronomical-objects">Astronomical Objects</h3>
