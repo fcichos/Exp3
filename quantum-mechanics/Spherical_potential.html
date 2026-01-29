@@ -65,6 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../quantum-mechanics/harmonic_oscillator.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -170,7 +171,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Angular Momentum and Spherical Potentials</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Quantum Mechanics</li><li class="breadcrumb-item"><a href="../quantum-mechanics/harmonic_oscillator.html">Lecture 27</a></li><li class="breadcrumb-item"><a href="../quantum-mechanics/Spherical_potential.html">Spherically Symmetric Problems</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -783,6 +784,29 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-29" role="navigation" aria-expanded="true">
+ <span class="menu-text">Lecture 27</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-29" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-29" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/harmonic_oscillator.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Harmonic Oscillator</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Spherical_potential.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Spherically Symmetric Problems</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
       </ul>
   </li>
     </ul>
@@ -799,7 +823,8 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#operators" id="toc-operators" class="nav-link" data-scroll-target="#operators">Operators</a></li>
   <li><a href="#commutators" id="toc-commutators" class="nav-link" data-scroll-target="#commutators">Commutators</a></li>
-  <li><a href="#expectation-values" id="toc-expectation-values" class="nav-link" data-scroll-target="#expectation-values">Expectation values</a></li>
+  <li><a href="#superposition-states-and-measurement" id="toc-superposition-states-and-measurement" class="nav-link" data-scroll-target="#superposition-states-and-measurement">Superposition States and Measurement</a></li>
+  <li><a href="#example-harmonic-oscillator-expectation-values" id="toc-example-harmonic-oscillator-expectation-values" class="nav-link" data-scroll-target="#example-harmonic-oscillator-expectation-values">Example: Harmonic Oscillator Expectation Values</a></li>
   <li><a href="#example-angular-momentum-operator" id="toc-example-angular-momentum-operator" class="nav-link" data-scroll-target="#example-angular-momentum-operator">Example: Angular Momentum Operator</a></li>
   </ul></li>
   </ul>
@@ -808,7 +833,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Quantum Mechanics</li><li class="breadcrumb-item"><a href="../quantum-mechanics/harmonic_oscillator.html">Lecture 27</a></li><li class="breadcrumb-item"><a href="../quantum-mechanics/Spherical_potential.html">Spherically Symmetric Problems</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Angular Momentum and Spherical Potentials</h1>
 </div>
@@ -918,10 +943,9 @@ Figure&nbsp;1— Coulomb potential V(r) = -e²/4πε₀r for hydrogen
 <p>These operators have several important properties:</p>
 <ol type="1">
 <li><p>Linearity: For any constants <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> and wavefunctions <span class="math inline">\(\psi_1\)</span> and <span class="math inline">\(\psi_2\)</span>: <span class="math display">\[\hat{A}(a\psi_1 + b\psi_2) = a\hat{A}\psi_1 + b\hat{A}\psi_2\]</span></p></li>
-<li><p>Hermiticity: The expectation value of a physical observable must be real</p>
-<p>The expected value of an operator <span class="math inline">\(\hat{A}\)</span> is defined by the integral</p>
-<p><span class="math display">\[\mathrm{E}[\hat{A}] = \int \psi^*(x)\,\hat{A}\,\psi(x)d\tau = \left(\int \psi^*(x)\,\hat{A}\,\psi(x)d\tau\right)^*,\]</span></p>
-<p>which shows that the result must be equal to its own complex conjugate.</p></li>
+<li><p>Hermiticity: Physical observables must have real expectation values. An operator <span class="math inline">\(\hat{A}\)</span> is Hermitian if <span class="math inline">\(\hat{A} = \hat{A}^\dagger\)</span>, which ensures:</p>
+<p><span class="math display">\[\langle\hat{A}\rangle = \int \psi^*(x)\,\hat{A}\,\psi(x)\,dx = \langle\hat{A}\rangle^*\]</span></p>
+<p>The expectation value <span class="math inline">\(\langle\hat{A}\rangle\)</span> represents the average result of many measurements of observable <span class="math inline">\(A\)</span> on identically prepared systems. For example, the expectation value of position is <span class="math inline">\(\langle x \rangle = \int \psi^*(x)\, x\, \psi(x)\, dx\)</span>, and for momentum: <span class="math inline">\(\langle p \rangle = -i\hbar\int \psi^*(x)\frac{\partial \psi}{\partial x} dx\)</span>.</p></li>
 <li><p>Eigenvalue equations: When an operator acts on certain special wavefunctions (eigenfunctions), it returns the same function multiplied by a constant (eigenvalue)</p>
 <p><span class="math display">\[\hat{A}\psi = a\psi\]</span></p>
 <p>The eigenvalues represent the possible measured values of the corresponding physical observable. This is why energy levels are quantized - they correspond to eigenvalues of the Hamiltonian operator.</p>
@@ -958,20 +982,93 @@ Uncertainty of an observable in an eigenstate
 </section>
 <section id="commutators" class="level3">
 <h3 class="anchored" data-anchor-id="commutators">Commutators</h3>
-<p>When operators don’t commute (<span class="math inline">\(\hat{A}\hat{B} \neq \hat{B}\hat{A}\)</span>), the corresponding observables cannot be simultaneously measured with arbitrary precision. The most famous example is position and momentum:</p>
+<p>The commutator of two operators <span class="math inline">\(\hat{A}\)</span> and <span class="math inline">\(\hat{B}\)</span> is defined as:</p>
+<p><span class="math display">\[[\hat{A},\hat{B}] = \hat{A}\hat{B} - \hat{B}\hat{A}\]</span></p>
+<p>When operators don’t commute (<span class="math inline">\([\hat{A},\hat{B}] \neq 0\)</span>), the corresponding observables cannot be simultaneously measured with arbitrary precision. The most famous example is position and momentum:</p>
 <p><span class="math display">\[[\hat{x},\hat{p}] = i\hbar\]</span></p>
-<p>This non-commutativity leads directly to Heisenberg’s uncertainty principle:</p>
-<p><span class="math display">\[\Delta x \Delta p \geq \frac{\hbar}{2}\]</span></p>
+<p>This can be verified directly by applying both orderings to a test function <span class="math inline">\(\psi(x)\)</span>:</p>
+<p><span class="math display">\[\hat{x}\hat{p}\psi = x\left(-i\hbar\frac{\partial\psi}{\partial x}\right) = -i\hbar x\frac{\partial\psi}{\partial x}\]</span></p>
+<p><span class="math display">\[\hat{p}\hat{x}\psi = -i\hbar\frac{\partial}{\partial x}(x\psi) = -i\hbar\left(\psi + x\frac{\partial\psi}{\partial x}\right)\]</span></p>
+<p>Subtracting these gives <span class="math inline">\([\hat{x},\hat{p}]\psi = i\hbar\psi\)</span>, confirming <span class="math inline">\([\hat{x},\hat{p}] = i\hbar\)</span>.</p>
+<section id="generalized-uncertainty-relation" class="level4">
+<h4 class="anchored" data-anchor-id="generalized-uncertainty-relation">Generalized Uncertainty Relation</h4>
+<p>The non-commutativity of operators leads to a <strong>generalized uncertainty principle</strong>. For any two observables <span class="math inline">\(\hat{A}\)</span> and <span class="math inline">\(\hat{B}\)</span>:</p>
+<p><span class="math display">\[\Delta A \cdot \Delta B \geq \frac{1}{2}\left|\langle[\hat{A},\hat{B}]\rangle\right|\]</span></p>
+<p>For position and momentum, this gives Heisenberg’s famous result:</p>
+<p><span class="math display">\[\Delta x \Delta p \geq \frac{1}{2}|i\hbar| = \frac{\hbar}{2}\]</span></p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Compatible and Incompatible Observables
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><p><strong>Compatible observables</strong>: If <span class="math inline">\([\hat{A},\hat{B}] = 0\)</span>, the operators share common eigenstates and can be measured simultaneously with arbitrary precision. Examples: <span class="math inline">\(\hat{L}^2\)</span> and <span class="math inline">\(\hat{L}_z\)</span>, or <span class="math inline">\(\hat{H}\)</span> and <span class="math inline">\(\hat{L}^2\)</span> for central potentials.</p></li>
+<li><p><strong>Incompatible observables</strong>: If <span class="math inline">\([\hat{A},\hat{B}] \neq 0\)</span>, the observables cannot both have definite values simultaneously. Examples: <span class="math inline">\(\hat{x}\)</span> and <span class="math inline">\(\hat{p}\)</span>, or <span class="math inline">\(\hat{L}_x\)</span> and <span class="math inline">\(\hat{L}_z\)</span>.</p></li>
+</ul>
+</div>
+</div>
 </section>
-<section id="expectation-values" class="level3">
-<h3 class="anchored" data-anchor-id="expectation-values">Expectation values</h3>
-<p>The expectation value of an operator <span class="math inline">\(\hat{A}\)</span> in a state <span class="math inline">\(\psi\)</span> is given by:</p>
-<p><span class="math display">\[\langle\hat{A}\rangle = \langle\psi|\hat{A}|\psi\rangle\]</span></p>
-<p>This is the average value of the observable <span class="math inline">\(\hat{A}\)</span> in the state <span class="math inline">\(\psi\)</span>. For example, if we want to measure the position of a particle, we use the position operator <span class="math inline">\(\hat{x}\)</span>. While any single measurement will yield one specific position value, if we repeat the measurement many times we will find the average position is given by:</p>
-<p><span class="math display">\[\langle x \rangle = \int \psi^*(x) x \psi(x) dx\]</span></p>
-<p>The expectation value of the momentum operator is particularly important, as it is related to the group velocity of the wavefunction:</p>
-<p><span class="math display">\[\langle\hat{p}\rangle = \int\psi^*\hat{p}\psi dx = -i\hbar\int\psi^*\frac{\partial\psi}{\partial x}dx\]</span></p>
-<p>Note that an eigenvalue can be an expectation value when the system’s wavefunction is an eigenfunction, but an expectation value is not necessarily an eigenvalue.</p>
+</section>
+<section id="superposition-states-and-measurement" class="level3">
+<h3 class="anchored" data-anchor-id="superposition-states-and-measurement">Superposition States and Measurement</h3>
+<p>A fundamental feature of quantum mechanics is that a system can exist in a <strong>superposition</strong> of eigenstates. If <span class="math inline">\(\{\psi_n\}\)</span> are the eigenstates of an operator <span class="math inline">\(\hat{A}\)</span> with eigenvalues <span class="math inline">\(\{a_n\}\)</span>, any normalized wavefunction can be written as:</p>
+<p><span class="math display">\[\psi = \sum_n c_n \psi_n \quad \text{with} \quad \sum_n |c_n|^2 = 1\]</span></p>
+<p>The coefficients <span class="math inline">\(c_n\)</span> are found by projecting the state onto the eigenstates:</p>
+<p><span class="math display">\[c_n = \int \psi_n^*(x) \psi(x) dx = \langle\psi_n|\psi\rangle\]</span></p>
+<section id="measurement-postulates" class="level4">
+<h4 class="anchored" data-anchor-id="measurement-postulates">Measurement Postulates</h4>
+<p>When a measurement of observable <span class="math inline">\(\hat{A}\)</span> is performed on a system in state <span class="math inline">\(\psi\)</span>:</p>
+<ol type="1">
+<li><p><strong>Possible outcomes</strong>: The only possible results are the eigenvalues <span class="math inline">\(a_n\)</span> of <span class="math inline">\(\hat{A}\)</span></p></li>
+<li><p><strong>Probability of outcomes</strong>: The probability of measuring eigenvalue <span class="math inline">\(a_n\)</span> is: <span class="math display">\[P(a_n) = |c_n|^2 = |\langle\psi_n|\psi\rangle|^2\]</span></p></li>
+<li><p><strong>State after measurement</strong>: Immediately after measuring <span class="math inline">\(a_n\)</span>, the system “collapses” into the corresponding eigenstate <span class="math inline">\(\psi_n\)</span></p></li>
+<li><p><strong>Expectation value</strong>: The average of many measurements gives: <span class="math display">\[\langle\hat{A}\rangle = \sum_n |c_n|^2 a_n\]</span></p></li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example: Particle in a Box
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Consider a particle in an infinite square well (width <span class="math inline">\(L\)</span>) prepared in the superposition state:</p>
+<p><span class="math display">\[\psi(x) = \frac{1}{\sqrt{2}}\psi_1(x) + \frac{1}{\sqrt{2}}\psi_2(x)\]</span></p>
+<p>where <span class="math inline">\(\psi_1\)</span> and <span class="math inline">\(\psi_2\)</span> are the ground and first excited states with energies <span class="math inline">\(E_1 = \frac{\pi^2\hbar^2}{2mL^2}\)</span> and <span class="math inline">\(E_2 = \frac{4\pi^2\hbar^2}{2mL^2}\)</span>.</p>
+<ul>
+<li>A measurement of energy will yield either <span class="math inline">\(E_1\)</span> or <span class="math inline">\(E_2\)</span></li>
+<li>Probability of measuring <span class="math inline">\(E_1\)</span>: <span class="math inline">\(P(E_1) = |1/\sqrt{2}|^2 = 1/2\)</span></li>
+<li>Probability of measuring <span class="math inline">\(E_2\)</span>: <span class="math inline">\(P(E_2) = |1/\sqrt{2}|^2 = 1/2\)</span></li>
+<li>After measuring <span class="math inline">\(E_1\)</span>, the system is in state <span class="math inline">\(\psi_1(x)\)</span></li>
+<li>The expectation value is: <span class="math inline">\(\langle E \rangle = \frac{1}{2}E_1 + \frac{1}{2}E_2 = \frac{5\pi^2\hbar^2}{4mL^2}\)</span></li>
+</ul>
+<p>Note that <span class="math inline">\(\langle E \rangle\)</span> is not an eigenvalue — it’s not a value you would ever measure in a single experiment!</p>
+</div>
+</div>
+</section>
+</section>
+<section id="example-harmonic-oscillator-expectation-values" class="level3">
+<h3 class="anchored" data-anchor-id="example-harmonic-oscillator-expectation-values">Example: Harmonic Oscillator Expectation Values</h3>
+<p>As a practical application, consider the quantum harmonic oscillator in an energy eigenstate <span class="math inline">\(\psi_n(x)\)</span>. Due to the symmetry of the wavefunctions (even for even <span class="math inline">\(n\)</span>, odd for odd <span class="math inline">\(n\)</span>), we find:</p>
+<p><span class="math display">\[\langle x \rangle_n = 0 \quad \text{and} \quad \langle p \rangle_n = 0\]</span></p>
+<p>These results make physical sense: on average, the oscillator is centered at the equilibrium position and has no net momentum. For the squared quantities:</p>
+<p><span class="math display">\[\langle x^2 \rangle_n = \frac{\hbar}{m\omega}\left(n + \frac{1}{2}\right) \quad \text{and} \quad \langle p^2 \rangle_n = m\omega\hbar\left(n + \frac{1}{2}\right)\]</span></p>
+<p>The uncertainties are therefore:</p>
+<p><span class="math display">\[\Delta x_n = \sqrt{\frac{\hbar}{m\omega}\left(n + \frac{1}{2}\right)} \quad \text{and} \quad \Delta p_n = \sqrt{m\omega\hbar\left(n + \frac{1}{2}\right)}\]</span></p>
+<p>The uncertainty product is:</p>
+<p><span class="math display">\[\Delta x_n \cdot \Delta p_n = \hbar\left(n + \frac{1}{2}\right) \geq \frac{\hbar}{2}\]</span></p>
+<p>Remarkably, the ground state (<span class="math inline">\(n=0\)</span>) is a <strong>minimum uncertainty state</strong>, saturating the Heisenberg inequality with <span class="math inline">\(\Delta x_0 \cdot \Delta p_0 = \hbar/2\)</span>.</p>
+<p>The expectation value of the energy demonstrates the quantum mechanical <strong>virial theorem</strong>:</p>
+<p><span class="math display">\[\langle T \rangle_n = \frac{\langle p^2 \rangle_n}{2m} = \frac{\hbar\omega}{2}\left(n + \frac{1}{2}\right) = \frac{E_n}{2}\]</span></p>
+<p><span class="math display">\[\langle V \rangle_n = \frac{1}{2}m\omega^2\langle x^2 \rangle_n = \frac{\hbar\omega}{2}\left(n + \frac{1}{2}\right) = \frac{E_n}{2}\]</span></p>
+<p>For the harmonic oscillator, the average kinetic and potential energies are equal, each contributing half of the total energy.</p>
 </section>
 <section id="example-angular-momentum-operator" class="level3">
 <h3 class="anchored" data-anchor-id="example-angular-momentum-operator">Example: Angular Momentum Operator</h3>
@@ -1530,6 +1627,15 @@ Quantization and degeneracy of angular momentum
     }
   });
   </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../quantum-mechanics/harmonic_oscillator.html" class="pagination-link" aria-label="Harmonic Oscillator">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Harmonic Oscillator</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
 </div> <!-- /content -->
 
 

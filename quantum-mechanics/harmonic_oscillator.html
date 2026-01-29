@@ -65,6 +65,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../quantum-mechanics/Spherical_potential.html" rel="next">
+<link href="../quantum-mechanics/potential_barrier.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -170,7 +172,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">The harmonic oscillator</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Quantum Mechanics</li><li class="breadcrumb-item"><a href="../quantum-mechanics/harmonic_oscillator.html">Lecture 27</a></li><li class="breadcrumb-item"><a href="../quantum-mechanics/harmonic_oscillator.html">Harmonic Oscillator</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -783,6 +785,29 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-29" role="navigation" aria-expanded="true">
+ <span class="menu-text">Lecture 27</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-29" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-29" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/harmonic_oscillator.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Harmonic Oscillator</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Spherical_potential.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Spherically Symmetric Problems</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
       </ul>
   </li>
     </ul>
@@ -803,7 +828,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Quantum Mechanics</li><li class="breadcrumb-item"><a href="../quantum-mechanics/harmonic_oscillator.html">Lecture 27</a></li><li class="breadcrumb-item"><a href="../quantum-mechanics/harmonic_oscillator.html">Harmonic Oscillator</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">The harmonic oscillator</h1>
 </div>
@@ -1013,7 +1038,7 @@ E_0 = \frac{1}{2} \hbar \omega \mathrm{.}
 \]</span></p>
 <p>The normalization constant <span class="math inline">\(N_n\)</span> is determined by the normalization condition to be</p>
 <p><span class="math display">\[N_n=\left(\frac{m \omega}{\pi \hbar}\right)^{1 / 4} \frac{1}{\sqrt{2^n n!}}\]</span></p>
-<p>The quantum mechanical harmonic oscillator shows a non-zero ground state energy, in contrast to a particle in a square potential well. This fundamental difference arises from the uncertainty principle - in the harmonic oscillator potential, a particle completely at rest (p=0) would have a precisely defined position at x=0, violating ΔxΔp ≥ ħ/2. The square well, however, allows the particle to have zero momentum while still being delocalized across the well width, satisfying the uncertainty principle even with zero energy.</p>
+<p>The quantum mechanical harmonic oscillator shows a non-zero ground state energy, in contrast to a particle in a square potential well. This fundamental difference arises from the uncertainty principle - in the harmonic oscillator potential, a particle completely at rest (<span class="math inline">\(p=0\)</span>) would have a precisely defined position at <span class="math inline">\(x=0\)</span>, violating <span class="math inline">\(\Delta x \Delta p \geq \hbar/2\)</span>. The square well, however, allows the particle to have zero momentum while still being delocalized across the well width, satisfying the uncertainty principle even with zero energy.</p>
 <div id="cell-fig-harmonic-oscillator" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
@@ -1098,10 +1123,19 @@ E = \frac{1}{2} m \dot{x}^2 + \frac{1}{2} D x^2
 <p><span class="math display">\[
 P \left( x \right) \mathrm{d}x = \frac{1}{T} \mathrm{d}t = \frac{1}{v\left( x \right)} \mathrm{d}x \mathrm{.}
 \]</span></p>
-<p>where <span class="math inline">\(T = 2\pi / \omega\)</span> is the time for one full oscillation and <span class="math inline">\(\mathrm{d}t = 1/v\left( x \right) \cdot \mathrm{d}x\)</span> is the time interval the particle needs to cover the distance <span class="math inline">\(\mathrm{d}x\)</span>. Given the solution above, the speed of the particle is <span class="math inline">\(v\left( x \right) = -A \omega \sin \left( \omega t + \varphi \right)\)</span> and the probability to find the particle at the position <span class="math inline">\(x\)</span> is given by</p>
+<p>where <span class="math inline">\(T = 2\pi / \omega\)</span> is the time for one full oscillation and <span class="math inline">\(\mathrm{d}t = 1/v\left( x \right) \cdot \mathrm{d}x\)</span> is the time interval the particle needs to cover the distance <span class="math inline">\(\mathrm{d}x\)</span>. Given the solution above, the speed of the particle is <span class="math inline">\(v\left( t \right) = -A \omega \sin \left( \omega t + \varphi \right)\)</span>. To obtain a time-independent probability density, we must express the velocity as a function of position rather than time. From the position equation <span class="math inline">\(x = A \cos(\omega t + \varphi)\)</span>, we have <span class="math inline">\(\cos(\omega t + \varphi) = x/A\)</span>. Using the trigonometric identity <span class="math inline">\(\sin^2 + \cos^2 = 1\)</span>:</p>
 <p><span class="math display">\[
-P \left( x \right) \mathrm{d}x = \frac{1}{T} \mathrm{d}t = \frac{1}{-A \omega \sin \left( \omega t + \varphi \right)} \mathrm{d}x \mathrm{.}
+\sin(\omega t + \varphi) = \pm\sqrt{1 - \cos^2(\omega t + \varphi)} = \pm\sqrt{1 - \frac{x^2}{A^2}}
 \]</span></p>
+<p>The magnitude of the velocity as a function of position is therefore:</p>
+<p><span class="math display">\[
+|v(x)| = A\omega\sqrt{1 - \frac{x^2}{A^2}} = \omega\sqrt{A^2 - x^2}
+\]</span></p>
+<p>Since the particle passes each position twice per period (once moving left, once moving right), the properly normalized classical probability density becomes:</p>
+<p><span class="math display">\[
+P_{\mathrm{cl}}(x) = \frac{1}{\pi\sqrt{A^2 - x^2}} \quad \text{for } |x| \leq A
+\]</span></p>
+<p>This is the classical probability density, which diverges at the turning points <span class="math inline">\(x = \pm A\)</span> where the particle momentarily stops (<span class="math inline">\(v = 0\)</span>) and spends the most time.</p>
 <p>With a given quantum number <span class="math inline">\(n\)</span>, the amplitude <span class="math inline">\(A\)</span> of the classical oscillator must be chosen to match the energy of the quantum state. Since the energy of the quantum state is <span class="math inline">\(E_n = \hbar \omega(n + \frac{1}{2})\)</span> and the maximum energy of the classical oscillator is <span class="math inline">\(E_{\mathrm{max}} = \frac{1}{2} D A^2\)</span>, we can equate these:</p>
 <p><span class="math display">\[
 \hbar \omega(n + \frac{1}{2}) = \frac{1}{2} D A^2
@@ -1744,6 +1778,18 @@ Figure&nbsp;7— Intensity distribution of the first 16 Hermite-Gaussian modes
     }
   });
   </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../quantum-mechanics/potential_barrier.html" class="pagination-link" aria-label="Potential Barriers and Wells">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Potential Barriers and Wells</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../quantum-mechanics/Spherical_potential.html" class="pagination-link" aria-label="Spherically Symmetric Problems">
+        <span class="nav-page-text">Spherically Symmetric Problems</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 
 
