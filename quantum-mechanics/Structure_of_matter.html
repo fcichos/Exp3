@@ -468,13 +468,13 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../about.html" class="sidebar-item-text sidebar-link">
+  <a href="../wave-optics/Thin Film Interference.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Thin Film Interference</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../about.html" class="sidebar-item-text sidebar-link">
+  <a href="../wave-optics/MultiWave Interference.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Multi Wave Interference</span></a>
   </div>
 </li>
@@ -754,7 +754,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-27" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../quantum-mechanics/Dummy.html" class="sidebar-item-text sidebar-link">
+  <a href="../quantum-mechanics/Structure_of_atoms.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Structure of Atoms</span></a>
   </div>
 </li>
@@ -802,6 +802,23 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="../quantum-mechanics/Spherical_potential.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Spherically Symmetric Problems</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-30" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 28</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-30" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-30" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/parametric_dc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Photon Entanglement</span></a>
   </div>
 </li>
       </ul>
@@ -1255,7 +1272,7 @@ Figure&nbsp;4— Graphical representation of Geiger and Marsden’s experimental
 <section id="rutherford-scattering-trajectories" class="level2">
 <h2 class="anchored" data-anchor-id="rutherford-scattering-trajectories">Rutherford Scattering Trajectories</h2>
 <p>The graph below shows the calculated Rutherford scattering trajectories for <span class="math inline">\(\alpha\)</span> particles scattered by a gold atom. The trajectories are calculated for different impact parameters <span class="math inline">\(b\)</span> and show the deflection of the <span class="math inline">\(\alpha\)</span> particles as they pass the gold atom using the above described forces.</p>
-<div id="e1697206" class="cell" data-execution_count="2">
+<div id="f253debb" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> rutherford(state,t):</span>
@@ -1402,7 +1419,7 @@ Figure&nbsp;4— Graphical representation of Geiger and Marsden’s experimental
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/fcichos\.github\.io\/Exp3\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

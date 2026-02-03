@@ -470,13 +470,13 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../about.html" class="sidebar-item-text sidebar-link">
+  <a href="../wave-optics/Thin Film Interference.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Thin Film Interference</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../about.html" class="sidebar-item-text sidebar-link">
+  <a href="../wave-optics/MultiWave Interference.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Multi Wave Interference</span></a>
   </div>
 </li>
@@ -756,7 +756,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-27" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../quantum-mechanics/Dummy.html" class="sidebar-item-text sidebar-link">
+  <a href="../quantum-mechanics/Structure_of_atoms.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Structure of Atoms</span></a>
   </div>
 </li>
@@ -804,6 +804,23 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="../quantum-mechanics/Spherical_potential.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Spherically Symmetric Problems</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-30" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 28</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-30" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-30" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/parametric_dc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Photon Entanglement</span></a>
   </div>
 </li>
       </ul>
@@ -1118,12 +1135,18 @@ x \left( t \right) = A \cos \left( \omega t + \varphi \right) \mathrm{.}
 <p><span class="math display">\[
 E = \frac{1}{2} m \dot{x}^2 + \frac{1}{2} D x^2
 \]</span></p>
-<p>and the maximum energy is <span class="math inline">\(E_{\mathrm{max}} = \frac{1}{2} D A^2\)</span>. The classical harmonic oscillator oscillates with the frequency <span class="math inline">\(\omega = \sqrt{\frac{D}{m}}\)</span> and the period <span class="math inline">\(T = \frac{2\pi}{\omega}\)</span>. This classical behavior emerges from the quantum mechanical solution in the limit of large quantum numbers (n ≫ 1), where the energy levels become effectively continuous and the probability distribution of finding the particle matches the classical time-averaged position distribution. This is a manifestation of Bohr’s correspondence principle, showing how quantum mechanics reduces to classical mechanics in the appropriate limit.</p>
-<p>For the classical harmonic oscillator, the probability to find the particle at the position <span class="math inline">\(x\)</span> is given by the time fraction the oscillator spends at this position <span class="math inline">\(x\)</span> in an interval <span class="math inline">\(dx\)</span>. We can calculate this probability by integrating the time the particle needs to cover the distance <span class="math inline">\(dx\)</span> over the period <span class="math inline">\(T\)</span> of the oscillation. The probability to find the particle at the position <span class="math inline">\(x\)</span> is given by</p>
+<p>and the maximum energy is <span class="math inline">\(E_{\mathrm{max}} = \frac{1}{2} D A^2\)</span>. The classical harmonic oscillator oscillates with the frequency <span class="math inline">\(\omega = \sqrt{\frac{D}{m}}\)</span> and the period <span class="math inline">\(T = \frac{2\pi}{\omega}\)</span>.</p>
+<p>According to <strong>Bohr’s correspondence principle</strong>, quantum mechanics must reduce to classical mechanics in the appropriate limit. For the harmonic oscillator, this occurs when the quantum number <span class="math inline">\(n \gg 1\)</span>. In this regime, two things happen: (1) the energy level spacing <span class="math inline">\(\Delta E = \hbar\omega\)</span> becomes negligible compared to the total energy <span class="math inline">\(E_n \approx n\hbar\omega\)</span>, making the spectrum effectively continuous, and (2) the quantum probability distribution approaches the classical time-averaged position distribution.</p>
+<p>For the classical harmonic oscillator, the probability to find the particle at the position <span class="math inline">\(x\)</span> is given by the time fraction the oscillator spends at this position <span class="math inline">\(x\)</span> in an interval <span class="math inline">\(dx\)</span>. We can calculate this probability by considering how long the particle dwells near each position during one complete oscillation.</p>
+<p>During one period <span class="math inline">\(T = 2\pi/\omega\)</span>, the particle passes through each position <span class="math inline">\(x\)</span> (within the classical turning points) exactly <strong>twice</strong> — once moving in each direction. The time spent in an interval <span class="math inline">\(dx\)</span> during each pass is <span class="math inline">\(dt = dx/|v(x)|\)</span>. Therefore, the total time spent near position <span class="math inline">\(x\)</span> per period is:</p>
 <p><span class="math display">\[
-P \left( x \right) \mathrm{d}x = \frac{1}{T} \mathrm{d}t = \frac{1}{v\left( x \right)} \mathrm{d}x \mathrm{.}
+\Delta t = \frac{2 \, dx}{|v(x)|}
 \]</span></p>
-<p>where <span class="math inline">\(T = 2\pi / \omega\)</span> is the time for one full oscillation and <span class="math inline">\(\mathrm{d}t = 1/v\left( x \right) \cdot \mathrm{d}x\)</span> is the time interval the particle needs to cover the distance <span class="math inline">\(\mathrm{d}x\)</span>. Given the solution above, the speed of the particle is <span class="math inline">\(v\left( t \right) = -A \omega \sin \left( \omega t + \varphi \right)\)</span>. To obtain a time-independent probability density, we must express the velocity as a function of position rather than time. From the position equation <span class="math inline">\(x = A \cos(\omega t + \varphi)\)</span>, we have <span class="math inline">\(\cos(\omega t + \varphi) = x/A\)</span>. Using the trigonometric identity <span class="math inline">\(\sin^2 + \cos^2 = 1\)</span>:</p>
+<p>The probability density is this time fraction divided by the period:</p>
+<p><span class="math display">\[
+P(x) \, dx = \frac{\Delta t}{T} = \frac{2}{T} \cdot \frac{dx}{|v(x)|} = \frac{\omega}{\pi} \cdot \frac{dx}{|v(x)|}
+\]</span></p>
+<p>where we used <span class="math inline">\(T = 2\pi/\omega\)</span>. Given the solution above, the speed of the particle is <span class="math inline">\(v\left( t \right) = -A \omega \sin \left( \omega t + \varphi \right)\)</span>. To obtain a time-independent probability density, we must express the velocity as a function of position rather than time. From the position equation <span class="math inline">\(x = A \cos(\omega t + \varphi)\)</span>, we have <span class="math inline">\(\cos(\omega t + \varphi) = x/A\)</span>. Using the trigonometric identity <span class="math inline">\(\sin^2 + \cos^2 = 1\)</span>:</p>
 <p><span class="math display">\[
 \sin(\omega t + \varphi) = \pm\sqrt{1 - \cos^2(\omega t + \varphi)} = \pm\sqrt{1 - \frac{x^2}{A^2}}
 \]</span></p>
@@ -1153,45 +1176,67 @@ A = \sqrt{\frac{2\hbar}{m\omega}(n + \frac{1}{2})} = \sqrt{2n + 1} \cdot \sqrt{\
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    H <span class="op">=</span> hermite(n)</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> N <span class="op">*</span> H(x) <span class="op">*</span> np.exp(<span class="op">-</span>x<span class="op">**</span><span class="dv">2</span><span class="op">/</span><span class="dv">2</span>)</span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>V <span class="op">=</span> <span class="fl">0.5</span> <span class="op">*</span> x<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Create figure with three subplots for different n values</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">3</span>, figsize<span class="op">=</span>get_size(<span class="dv">14</span>, <span class="dv">5</span>))</span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>get_size(<span class="dv">10</span>, <span class="dv">8</span>))</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot single high-n wavefunction</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">100</span>  <span class="co"># High quantum number</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.sqrt(<span class="dv">2</span><span class="op">*</span>n <span class="op">+</span> <span class="dv">1</span>)  <span class="co"># Classical amplitude matching quantum energy</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span>A<span class="op">-</span><span class="dv">1</span>, A<span class="op">+</span><span class="dv">1</span>, <span class="dv">1000</span>)</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>psi <span class="op">=</span> psi_n(x, n)</span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>plt.plot(x, np.<span class="bu">abs</span>(psi)<span class="op">**</span><span class="dv">2</span>, <span class="st">"k-"</span>, label<span class="op">=</span><span class="ss">f'quantum </span><span class="sc">{</span>n<span class="sc">}</span><span class="ss">'</span>)</span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate classical probability density</span></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>mask <span class="op">=</span> np.<span class="bu">abs</span>(x) <span class="op">&lt;=</span> A</span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>P_classical <span class="op">=</span> np.zeros_like(x)</span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>P_classical[mask] <span class="op">=</span> <span class="dv">1</span> <span class="op">/</span> (np.pi <span class="op">*</span> np.sqrt(A<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> x[mask]<span class="op">**</span><span class="dv">2</span>))</span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>plt.plot(x, P_classical, <span class="st">'r--'</span>, label<span class="op">=</span><span class="st">'Classical'</span>)</span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'position (x)'</span>)</span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'probability density'</span>)</span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="dv">0</span>,<span class="fl">0.2</span>)</span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>n_values <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">100</span>]</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>titles <span class="op">=</span> [<span class="st">'n = 0 (ground state)'</span>, <span class="st">'n = 10'</span>, <span class="st">'n = 100 (classical limit)'</span>]</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ax, n, title <span class="kw">in</span> <span class="bu">zip</span>(axes, n_values, titles):</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    A <span class="op">=</span> np.sqrt(<span class="dv">2</span><span class="op">*</span>n <span class="op">+</span> <span class="dv">1</span>)  <span class="co"># Classical amplitude matching quantum energy</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> np.linspace(<span class="op">-</span>A<span class="op">-</span><span class="dv">2</span>, A<span class="op">+</span><span class="dv">2</span>, <span class="dv">2000</span>)</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Quantum probability density</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    psi <span class="op">=</span> psi_n(x, n)</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    P_quantum <span class="op">=</span> np.<span class="bu">abs</span>(psi)<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    ax.plot(x, P_quantum, <span class="st">"k-"</span>, label<span class="op">=</span><span class="st">'Quantum'</span>, linewidth<span class="op">=</span><span class="fl">0.8</span>)</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Classical probability density</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>    mask <span class="op">=</span> np.<span class="bu">abs</span>(x) <span class="op">&lt;</span> A <span class="op">*</span> <span class="fl">0.999</span>  <span class="co"># Avoid singularity at turning points</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>    P_classical <span class="op">=</span> np.zeros_like(x)</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>    P_classical[mask] <span class="op">=</span> <span class="dv">1</span> <span class="op">/</span> (np.pi <span class="op">*</span> np.sqrt(A<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> x[mask]<span class="op">**</span><span class="dv">2</span>))</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>    ax.plot(x, P_classical, <span class="st">'r--'</span>, label<span class="op">=</span><span class="st">'Classical'</span>, linewidth<span class="op">=</span><span class="fl">1.5</span>)</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Mark classical turning points</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>    ax.axvline(A, color<span class="op">=</span><span class="st">'gray'</span>, linestyle<span class="op">=</span><span class="st">':'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>    ax.axvline(<span class="op">-</span>A, color<span class="op">=</span><span class="st">'gray'</span>, linestyle<span class="op">=</span><span class="st">':'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>    ax.set_xlabel(<span class="st">'position (x)'</span>)</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>    ax.set_ylabel(<span class="st">'probability density'</span>)</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>    ax.set_title(title)</span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>    ax.legend()</span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Set appropriate y-limits</span></span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> n <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>        ax.set_ylim(<span class="dv">0</span>, <span class="fl">0.6</span>)</span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> n <span class="op">==</span> <span class="dv">10</span>:</span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>        ax.set_ylim(<span class="dv">0</span>, <span class="fl">0.25</span>)</span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>        ax.set_ylim(<span class="dv">0</span>, <span class="fl">0.15</span>)</span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div id="fig-harmonic-oscillator-1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-harmonic-oscillator-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="harmonic_oscillator_files/figure-html/fig-harmonic-oscillator-1-output-1.png" width="569" height="447" class="figure-img">
+<img src="harmonic_oscillator_files/figure-html/fig-harmonic-oscillator-1-output-1.png" width="825" height="279" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-harmonic-oscillator-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4— Probability density for n=30 of the quantum harmonic oscillator
+Figure&nbsp;4— Comparison of quantum and classical probability densities for the harmonic oscillator at different quantum numbers n.&nbsp;The quantum probability density (black) oscillates rapidly, but its envelope converges to the classical distribution (red dashed) as n increases.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>The figure above shows the probability density for a high quantum number n = 100 of the quantum harmonic oscillator. The red dashed line represents the classical probability density, which is the time fraction the oscillator spends at a given position x in an interval dx. The black solid line shows the quantum probability density, which is the square of the wave function. For high quantum numbers, the quantum probability density closely matches the classical probability density, demonstrating the <strong>correspondence principle</strong>.</p>
+<p>The figure above illustrates the correspondence principle across different quantum numbers:</p>
+<ul>
+<li><p><strong>n = 0 (ground state)</strong>: The quantum probability density is a Gaussian centered at <span class="math inline">\(x = 0\)</span>, which is strikingly different from the classical prediction. Classically, a particle spends the <em>least</em> time at the center (where it moves fastest) and the <em>most</em> time near the turning points (where it slows down). The quantum ground state shows the opposite behavior — maximum probability at the center. This is a purely quantum mechanical effect with no classical analogue.</p></li>
+<li><p><strong>n = 10</strong>: An intermediate case where quantum oscillations are visible, but the overall envelope begins to resemble the classical distribution. Note that the quantum probability extends slightly beyond the classical turning points (gray dotted lines) — this is quantum tunneling into the classically forbidden region.</p></li>
+<li><p><strong>n = 100</strong>: The quantum probability density oscillates rapidly, but its <em>envelope</em> closely matches the classical distribution. The oscillations themselves are a quantum interference effect, but when averaged over a small position interval (as any real measurement would do), the result agrees with classical mechanics.</p></li>
+</ul>
+<p>This progression demonstrates that the correspondence principle does not require exact agreement between quantum and classical predictions. Rather, it states that quantum mechanics reproduces classical results when the quantum oscillations become too rapid to resolve — either because of limited measurement precision or because one averages over many oscillation periods.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1451,7 +1496,7 @@ Figure&nbsp;7— Intensity distribution of the first 16 Hermite-Gaussian modes
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/fcichos\.github\.io\/Exp3\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

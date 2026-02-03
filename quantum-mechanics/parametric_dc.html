@@ -65,6 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../quantum-mechanics/Spherical_potential.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -172,7 +173,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Parametric Downconversion</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Quantum Mechanics</li><li class="breadcrumb-item"><a href="../quantum-mechanics/parametric_dc.html">Lecture 28</a></li><li class="breadcrumb-item"><a href="../quantum-mechanics/parametric_dc.html">Photon Entanglement</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -470,13 +471,13 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../about.html" class="sidebar-item-text sidebar-link">
+  <a href="../wave-optics/Thin Film Interference.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Thin Film Interference</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../about.html" class="sidebar-item-text sidebar-link">
+  <a href="../wave-optics/MultiWave Interference.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Multi Wave Interference</span></a>
   </div>
 </li>
@@ -756,7 +757,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-27" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../quantum-mechanics/Dummy.html" class="sidebar-item-text sidebar-link">
+  <a href="../quantum-mechanics/Structure_of_atoms.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Structure of Atoms</span></a>
   </div>
 </li>
@@ -808,6 +809,23 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-30" role="navigation" aria-expanded="true">
+ <span class="menu-text">Lecture 28</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-30" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-30" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/parametric_dc.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Photon Entanglement</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
       </ul>
   </li>
     </ul>
@@ -815,13 +833,26 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#quantum-entanglement" id="toc-quantum-entanglement" class="nav-link active" data-scroll-target="#quantum-entanglement">Quantum Entanglement</a>
+  <ul class="collapse">
+  <li><a href="#separable-vs.-entangled-states" id="toc-separable-vs.-entangled-states" class="nav-link" data-scroll-target="#separable-vs.-entangled-states">Separable vs.&nbsp;Entangled States</a></li>
+  <li><a href="#the-epr-paradox-and-bells-theorem" id="toc-the-epr-paradox-and-bells-theorem" class="nav-link" data-scroll-target="#the-epr-paradox-and-bells-theorem">The EPR Paradox and Bell’s Theorem</a></li>
+  <li><a href="#why-entanglement-matters" id="toc-why-entanglement-matters" class="nav-link" data-scroll-target="#why-entanglement-matters">Why Entanglement Matters</a></li>
+  <li><a href="#generating-entangled-photons" id="toc-generating-entangled-photons" class="nav-link" data-scroll-target="#generating-entangled-photons">Generating Entangled Photons</a></li>
+  </ul></li>
+  <li><a href="#parametric-downconversion" id="toc-parametric-downconversion" class="nav-link" data-scroll-target="#parametric-downconversion">Parametric Downconversion</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Quantum Mechanics</li><li class="breadcrumb-item"><a href="../quantum-mechanics/parametric_dc.html">Lecture 28</a></li><li class="breadcrumb-item"><a href="../quantum-mechanics/parametric_dc.html">Photon Entanglement</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Parametric Downconversion</h1>
 </div>
@@ -840,6 +871,53 @@ window.Quarto = {
 </header>
 
 
+<section id="quantum-entanglement" class="level2">
+<h2 class="anchored" data-anchor-id="quantum-entanglement">Quantum Entanglement</h2>
+<p>Quantum entanglement is one of the most profound and counterintuitive features of quantum mechanics. Two particles are said to be <strong>entangled</strong> when their quantum state cannot be described independently — measuring one particle instantaneously determines the state of the other, regardless of the distance between them.</p>
+<section id="separable-vs.-entangled-states" class="level3">
+<h3 class="anchored" data-anchor-id="separable-vs.-entangled-states">Separable vs.&nbsp;Entangled States</h3>
+<p>Consider two photons, A and B, each of which can be polarized either horizontally (H) or vertically (V). In a <strong>separable</strong> (non-entangled) state, each photon has its own definite polarization. For example, “photon A is horizontally polarized and photon B is vertically polarized” is a separable state. Measuring photon A tells us nothing new about photon B — we already knew B was vertically polarized.</p>
+<p>An <strong>entangled</strong> state is fundamentally different. Consider a pair of photons prepared such that:</p>
+<ul>
+<li>There is a 50% probability of finding both photons horizontally polarized (H, H)</li>
+<li>There is a 50% probability of finding both photons vertically polarized (V, V)</li>
+<li>There is 0% probability of finding them with opposite polarizations</li>
+</ul>
+<p>This is a Bell state. Crucially, <em>neither photon has a definite polarization on its own</em> — the polarization is only defined for the pair. But if we measure photon A and find it horizontally polarized, we instantly know photon B is also horizontally polarized — even if the photons are light-years apart.</p>
+</section>
+<section id="the-epr-paradox-and-bells-theorem" class="level3">
+<h3 class="anchored" data-anchor-id="the-epr-paradox-and-bells-theorem">The EPR Paradox and Bell’s Theorem</h3>
+<p>In 1935, Einstein, Podolsky, and Rosen (EPR) argued that quantum mechanics must be incomplete. They reasoned that if measuring particle A instantly determines the state of distant particle B, then either:</p>
+<ol type="1">
+<li>Information travels faster than light (violating relativity), or</li>
+<li>Particle B’s property was predetermined all along by some “hidden variable”</li>
+</ol>
+<p>Einstein famously called entanglement “spooky action at a distance” and believed hidden variables must exist — that the photons must secretly “agree” on their polarizations when they are created, like a pair of gloves separated into two boxes.</p>
+<p>In 1964, John Bell proved a remarkable theorem: if hidden variables exist, then correlations between measurements on entangled particles must satisfy certain inequalities (Bell inequalities). Quantum mechanics predicts these inequalities can be <strong>violated</strong>.</p>
+<p>The key insight is to measure polarizations along <em>different</em> axes. If Alice measures her photon’s polarization along angle <span class="math inline">\(\theta_A\)</span> and Bob measures along angle <span class="math inline">\(\theta_B\)</span>, they can compute the correlation <span class="math inline">\(E(\theta_A, \theta_B)\)</span> between their results (+1 for same outcome, −1 for opposite). For four measurement angles, classical hidden variable theories predict:</p>
+<p><span class="math display">\[
+|E(\theta_A, \theta_B) - E(\theta_A, \theta_B')| + |E(\theta_A', \theta_B) + E(\theta_A', \theta_B')| \leq 2
+\]</span></p>
+<p>This is the CHSH inequality. Quantum mechanics predicts a maximum value of <span class="math inline">\(2\sqrt{2} \approx 2.83\)</span>, violating the inequality.</p>
+<p>Experiments have consistently confirmed the quantum prediction, ruling out local hidden variable theories and establishing entanglement as a genuine feature of nature. The 2022 Nobel Prize in Physics was awarded to Alain Aspect, John Clauser, and Anton Zeilinger for their pioneering Bell test experiments.</p>
+</section>
+<section id="why-entanglement-matters" class="level3">
+<h3 class="anchored" data-anchor-id="why-entanglement-matters">Why Entanglement Matters</h3>
+<p>Entanglement is not just a philosophical curiosity — it is a practical resource for:</p>
+<ul>
+<li><strong>Quantum cryptography</strong>: The E91 protocol uses entangled photons to generate secure encryption keys. Any eavesdropping attempt disturbs the entanglement and is immediately detected.</li>
+<li><strong>Quantum teleportation</strong>: The quantum state of one particle can be transferred to another distant particle using entanglement and classical communication.</li>
+<li><strong>Quantum computing</strong>: Entanglement enables quantum computers to perform certain calculations exponentially faster than classical computers.</li>
+<li><strong>Tests of fundamental physics</strong>: Bell test experiments probe the foundations of quantum mechanics and the nature of reality.</li>
+</ul>
+</section>
+<section id="generating-entangled-photons" class="level3">
+<h3 class="anchored" data-anchor-id="generating-entangled-photons">Generating Entangled Photons</h3>
+<p>To exploit entanglement in experiments, we need reliable sources of entangled particle pairs. <strong>Parametric downconversion</strong> (PDC) has become the workhorse technique for generating polarization-entangled photon pairs in the laboratory.</p>
+</section>
+</section>
+<section id="parametric-downconversion" class="level2">
+<h2 class="anchored" data-anchor-id="parametric-downconversion">Parametric Downconversion</h2>
 <p>Parametric downconversion (PDC) is a nonlinear optical process where a high-energy photon (pump) splits into two lower-energy photons (signal and idler) while conserving energy and momentum. This process occurs in nonlinear crystals like Beta Barium Borate (BBO) and is one of the most common methods to generate entangled photon pairs.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -856,19 +934,18 @@ Nonlinear Optics Primer
 <p><span class="math display">\[
 P = \epsilon_0 \chi^{(1)} E + \epsilon_0 \chi^{(2)} E^2 + \epsilon_0 \chi^{(3)} E^3 + \ldots
 \]</span></p>
-<p>where <span class="math inline">\(\chi^{(1)}\)</span> is the linear susceptibility, <span class="math inline">\(\chi^{(2)}\)</span> is the second-order susceptibility, and <span class="math inline">\(\chi^{(3)}\)</span> is the third-order susceptibility. The second-order term is responsible for PDC. If the incident wave is a plane wave, the second-order term can be written as:</p>
+<p>where <span class="math inline">\(\chi^{(1)}\)</span> is the linear susceptibility, <span class="math inline">\(\chi^{(2)}\)</span> is the second-order susceptibility, and <span class="math inline">\(\chi^{(3)}\)</span> is the third-order susceptibility. The second-order term is responsible for PDC.</p>
+<p>When multiple frequencies are present in the crystal, the total electric field is a superposition of all fields. Consider the pump, signal, and idler fields as plane waves:</p>
 <p><span class="math display">\[
-P = \epsilon_0 \chi^{(2)} E^2 = \epsilon_0 \chi^{(2)} E_p E_s
+E = E_p e^{i(\vec{k}_p \cdot \vec{r} - \omega_p t)} + E_s e^{i(\vec{k}_s \cdot \vec{r} - \omega_s t)} + E_i e^{i(\vec{k}_i \cdot \vec{r} - \omega_i t)} + \text{c.c.}
 \]</span></p>
-<p>where <span class="math inline">\(E_p\)</span> and <span class="math inline">\(E_s\)</span> are the electric fields of the pump and signal photons respectively. The photons have a frequency <span class="math inline">\(\omega_p\)</span> and <span class="math inline">\(\omega_s\)</span> and a wavevector <span class="math inline">\(\vec{k}_p\)</span> and <span class="math inline">\(\vec{k}_s\)</span> respectively. Inserting plane wave solutions for the electric fields, we get:</p>
+<p>where <span class="math inline">\(E_p\)</span>, <span class="math inline">\(E_s\)</span>, and <span class="math inline">\(E_i\)</span> are the (complex) amplitudes of the pump, signal, and idler fields respectively. The second-order polarization <span class="math inline">\(P^{(2)} = \epsilon_0 \chi^{(2)} E^2\)</span> contains many terms from squaring this sum. The terms relevant for PDC are the <strong>cross terms</strong> that mix different frequencies.</p>
+<p>For example, the product of the pump field with the complex conjugate of the signal field produces a polarization oscillating at the idler frequency:</p>
 <p><span class="math display">\[
-P = \epsilon_0 \chi^{(2)} E_p E_s e^{i(\vec{k}_p \cdot \vec{r} - \omega_p t)} e^{i(\vec{k}_s \cdot \vec{r} - \omega_s t)}
+P^{(2)}_{\omega_i} = \epsilon_0 \chi^{(2)} E_p E_s^* e^{i[(\vec{k}_p - \vec{k}_s) \cdot \vec{r} - (\omega_p - \omega_s) t]} + \text{c.c.}
 \]</span></p>
-<p>The time-averaged power generated by the second-order term is:</p>
-<p><span class="math display">\[
-\langle P \rangle = \frac{1}{2} \epsilon_0 \chi^{(2)} E_p E_s e^{i(\vec{k}_p - \vec{k}_s) \cdot \vec{r}} e^{i(\omega_p - \omega_s) t} + c.c.
-\]</span></p>
-<p>where <span class="math inline">\(c.c.\)</span> denotes the complex conjugate.</p>
+<p>Since <span class="math inline">\(\omega_p - \omega_s = \omega_i\)</span> (energy conservation), this polarization acts as a source term in Maxwell’s equations, driving the growth of the idler field. Similarly, the term <span class="math inline">\(E_p E_i^*\)</span> drives the signal field. This mutual amplification is the essence of parametric downconversion.</p>
+<p>For efficient energy transfer from pump to signal and idler, the polarization wave must stay in phase with the generated field, requiring the <strong>phase matching condition</strong>: <span class="math inline">\(\vec{k}_p = \vec{k}_s + \vec{k}_i\)</span>.</p>
 </div>
 </div>
 <p>The generated signal photon has a frequency <span class="math inline">\(\omega_s\)</span> and wavevector <span class="math inline">\(\vec{k}_s\)</span> given by:</p>
@@ -895,17 +972,13 @@ Figure&nbsp;1— Schematic of spontaneous parametric downconversion (SPDC) proce
 </figcaption>
 </figure>
 </div>
-<p>The conservation of momentum results in the signal and idler photons propagating along distinct trajectories. To achieve efficient PDC, the phase matching requirement <span class="math inline">\(\vec{k}_p = \vec{k}_s + \vec{k}_i\)</span> must be satisfied, which necessitates alignment of both magnitude and directional components of the wave vectors. Since the pump, signal and idler photons have different frequencies, the refractive index of the crystal must be carefully engineered to ensure phase matching. This can be done with the help of birfringent crystals, aperiodic poling, or quasi-phase matching.</p>
+<p>The conservation of momentum results in the signal and idler photons propagating along distinct trajectories. To achieve efficient PDC, the phase matching requirement <span class="math inline">\(\vec{k}_p = \vec{k}_s + \vec{k}_i\)</span> must be satisfied, which necessitates alignment of both magnitude and directional components of the wave vectors. Since the pump, signal and idler photons have different frequencies, the refractive index of the crystal must be carefully engineered to ensure phase matching. This can be done with the help of birefringent crystals, periodic poling, or quasi-phase matching.</p>
 <p>The relationship between the wavevectors can then be expressed in terms of refractive indices and frequencies as:</p>
 <p><span class="math display">\[
 n_p(\omega_p)\omega_p = n_s(\omega_s)\omega_s + n_i(\omega_i)\omega_i
 \]</span></p>
 <p>where <span class="math inline">\(n_p\)</span>, <span class="math inline">\(n_s\)</span>, and <span class="math inline">\(n_i\)</span> are the refractive indices for pump, signal and idler photons respectively. Due to material dispersion, these refractive indices depend on frequency, making perfect phase matching challenging.</p>
-<p>For collinear phase matching (where signal and idler propagate parallel to the pump), the condition simplifies to:</p>
-<p><span class="math display">\[
-n_p(\omega_p)\omega_p = n_s(\omega_s)\omega_s + n_i(\omega_i)\omega_i
-\]</span></p>
-<p>while for non-collinear phase matching (where signal and idler propagate at angles relative to the pump), we must consider the vector nature of the relationship.</p>
+<p>For collinear phase matching (where signal and idler propagate parallel to the pump), all wave vectors point in the same direction, so the vector equation reduces to a scalar condition on the magnitudes. For non-collinear phase matching (where signal and idler propagate at angles relative to the pump), we must consider the full vector nature of the relationship, with the transverse components also satisfying momentum conservation.</p>
 <p>The phase mismatch <span class="math inline">\(\Delta k\)</span> quantifies how well the phase matching condition is satisfied:</p>
 <p><span class="math display">\[
 \Delta k = k_p - k_s - k_i
@@ -914,7 +987,7 @@ n_p(\omega_p)\omega_p = n_s(\omega_s)\omega_s + n_i(\omega_i)\omega_i
 <p><span class="math display">\[
 \text{Efficiency} \propto \text{sinc}^2(\Delta k L/2)
 \]</span></p>
-<p>where L is the crystal length.The phase matching condition can be satisfied by adjusting the angle of the crystal or by using aperiodic poling.</p>
+<p>where L is the crystal length. The phase matching condition can be satisfied by adjusting the angle of the crystal or by using periodic poling.</p>
 <div id="fig-pdc2" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-pdc2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -925,12 +998,13 @@ Figure&nbsp;2— Polarization configurations for Type-I and Type-II PDC. In Type
 </figcaption>
 </figure>
 </div>
-<p>In Type-I PDC, matching the energy conservation equations above (<span class="math inline">\(\hbar\omega_p = \hbar\omega_s + \hbar\omega_i\)</span>), the signal and idler photons have the same polarization, perpendicular to the pump polarization. The process follows:</p>
+<p>Both Type-I and Type-II PDC satisfy energy conservation (<span class="math inline">\(\hbar\omega_p = \hbar\omega_s + \hbar\omega_i\)</span>) and momentum conservation (<span class="math inline">\(\vec{k}_p = \vec{k}_s + \vec{k}_i\)</span>). The distinction between them lies in the polarization configuration.</p>
+<p>In Type-I PDC, the signal and idler photons have the same polarization, perpendicular to the pump polarization. The process follows:</p>
 <p><span class="math display">\[
 e \rightarrow o + o
 \]</span></p>
 <p>where <span class="math inline">\(e\)</span> represents extraordinary and <span class="math inline">\(o\)</span> represents ordinary polarization.</p>
-<p>For Type-II PDC, following the momentum conservation requirement (<span class="math inline">\(\vec{k}_p = \vec{k}_s + \vec{k}_i\)</span>), the signal and idler photons have orthogonal polarizations:</p>
+<p>In Type-II PDC, the signal and idler photons have orthogonal polarizations:</p>
 <p><span class="math display">\[
 e \rightarrow o + e
 \]</span></p>
@@ -940,9 +1014,9 @@ e \rightarrow o + e
 <p><span class="math display">\[
 \psi = \frac{1}{\sqrt{2}}(H_s V_i + e^{i\phi} V_s H_i)
 \]</span></p>
-<p>where <span class="math inline">\(H_s\)</span> represents horizontal polarization of the signal photon, <span class="math inline">\(V_i\)</span> represents vertical polarization of the idler photon, and <span class="math inline">\(\phi\)</span> is a phase factor that depends on the crystal parameters and geometry. The relative amplitude <span class="math inline">\(1/\sqrt{2}\)</span> ensures proper normalization:</p>
+<p>where <span class="math inline">\(|H_s V_i\rangle\)</span> represents the state with horizontal polarization of the signal photon and vertical polarization of the idler photon, and <span class="math inline">\(\phi\)</span> is a phase factor that depends on the crystal parameters and geometry. The prefactor <span class="math inline">\(1/\sqrt{2}\)</span> ensures proper normalization. Since <span class="math inline">\(|H_s V_i\rangle\)</span> and <span class="math inline">\(|V_s H_i\rangle\)</span> are orthonormal basis states, we have:</p>
 <p><span class="math display">\[
-|\psi|^2 = \frac{1}{2}|H_s V_i|^2 + \frac{1}{2}|V_s H_i|^2 = 1
+\langle\psi|\psi\rangle = \left(\frac{1}{\sqrt{2}}\right)^2 + \left(\frac{1}{\sqrt{2}}\right)^2 = \frac{1}{2} + \frac{1}{2} = 1
 \]</span></p>
 <p>By collecting photon pairs from these intersection points, we obtain polarization-entangled photon pairs that are useful for quantum information applications.</p>
 <p>When collecting photons from the intersection points, we can use a polarizing beam splitter (PBS) to separate the photons based on their polarization. The PBS transmits photons with one polarization and reflects photons with the orthogonal polarization. By placing a PBS at each intersection point, we can separate the photons into two distinct paths. This allows us to perform quantum operations on the photons independently, enabling quantum information processing tasks such as quantum teleportation, quantum cryptography, and quantum computing.</p>
@@ -959,47 +1033,47 @@ Figure&nbsp;3— Experimental setup for measuring the coincidence counts of enta
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1" data-startfrom="194" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 193;"><span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>viewof button <span class="op">=</span> <span class="fu">html</span><span class="vs">`&lt;button&gt;Measure Polarization&lt;/button&gt;`</span></span>
-<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a>currentCount <span class="op">=</span> {</span>
-<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> count <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="kw">function</span>() {</span>
-<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="op">++</span>count<span class="op">;</span></span>
-<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>  }<span class="op">;</span></span>
-<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>measurement <span class="op">=</span> {</span>
-<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Only update when button is clicked</span></span>
-<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (button) {</span>
-<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Randomly decide if we measure H/V or V/H (50-50 chance)</span></span>
-<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> random <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>()<span class="op">;</span></span>
-<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> result <span class="op">=</span> random <span class="op">&lt;</span> <span class="fl">0.5</span> <span class="op">?</span> [<span class="st">'H'</span><span class="op">,</span> <span class="st">'V'</span>] <span class="op">:</span> [<span class="st">'V'</span><span class="op">,</span> <span class="st">'H'</span>]<span class="op">;</span></span>
-<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> {</span>
-<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>      <span class="dt">signal</span><span class="op">:</span> result[<span class="dv">0</span>]<span class="op">,</span></span>
-<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>      <span class="dt">idler</span><span class="op">:</span> result[<span class="dv">1</span>]<span class="op">,</span></span>
-<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>      <span class="dt">count</span><span class="op">:</span> <span class="fu">currentCount</span>()</span>
-<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>    }<span class="op">;</span></span>
-<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> {<span class="dt">signal</span><span class="op">:</span> <span class="st">''</span><span class="op">,</span> <span class="dt">idler</span><span class="op">:</span> <span class="st">''</span><span class="op">,</span> <span class="dt">count</span><span class="op">:</span> <span class="dv">0</span>}<span class="op">;</span></span>
-<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a><span class="co">// Display the measurement results</span></span>
-<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`</span></span>
-<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a><span class="vs">&lt;div style="text-align: center; margin: 20px;"&gt;</span></span>
-<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;div style="display: flex; justify-content: space-around;"&gt;</span></span>
-<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;div style="border: 1px solid black; padding: 20px; margin: 10px;"&gt;</span></span>
-<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;h3&gt;Detector 1 (Signal)&lt;/h3&gt;</span></span>
-<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;p style="font-size: 24px;"&gt;</span><span class="sc">${</span>measurement<span class="op">.</span><span class="at">signal</span><span class="sc">}</span><span class="vs">&lt;/p&gt;</span></span>
-<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;/div&gt;</span></span>
-<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;div style="border: 1px solid black; padding: 20px; margin: 10px;"&gt;</span></span>
-<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;h3&gt;Detector 2 (Idler)&lt;/h3&gt;</span></span>
-<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;p style="font-size: 24px;"&gt;</span><span class="sc">${</span>measurement<span class="op">.</span><span class="at">idler</span><span class="sc">}</span><span class="vs">&lt;/p&gt;</span></span>
-<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;/div&gt;</span></span>
-<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;/div&gt;</span></span>
-<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;p&gt;Total measurements: </span><span class="sc">${</span>measurement<span class="op">.</span><span class="at">count</span><span class="sc">}</span><span class="vs">&lt;/p&gt;</span></span>
-<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a><span class="vs">&lt;/div&gt;</span></span>
-<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a><span class="vs">`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1" data-startfrom="242" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 241;"><span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>viewof button <span class="op">=</span> <span class="fu">html</span><span class="vs">`&lt;button&gt;Measure Polarization&lt;/button&gt;`</span></span>
+<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>currentCount <span class="op">=</span> {</span>
+<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> count <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="kw">function</span>() {</span>
+<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="op">++</span>count<span class="op">;</span></span>
+<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>  }<span class="op">;</span></span>
+<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>measurement <span class="op">=</span> {</span>
+<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Only update when button is clicked</span></span>
+<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (button) {</span>
+<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Randomly decide if we measure H/V or V/H (50-50 chance)</span></span>
+<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> random <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>()<span class="op">;</span></span>
+<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> result <span class="op">=</span> random <span class="op">&lt;</span> <span class="fl">0.5</span> <span class="op">?</span> [<span class="st">'H'</span><span class="op">,</span> <span class="st">'V'</span>] <span class="op">:</span> [<span class="st">'V'</span><span class="op">,</span> <span class="st">'H'</span>]<span class="op">;</span></span>
+<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> {</span>
+<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>      <span class="dt">signal</span><span class="op">:</span> result[<span class="dv">0</span>]<span class="op">,</span></span>
+<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>      <span class="dt">idler</span><span class="op">:</span> result[<span class="dv">1</span>]<span class="op">,</span></span>
+<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>      <span class="dt">count</span><span class="op">:</span> <span class="fu">currentCount</span>()</span>
+<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a>    }<span class="op">;</span></span>
+<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> {<span class="dt">signal</span><span class="op">:</span> <span class="st">''</span><span class="op">,</span> <span class="dt">idler</span><span class="op">:</span> <span class="st">''</span><span class="op">,</span> <span class="dt">count</span><span class="op">:</span> <span class="dv">0</span>}<span class="op">;</span></span>
+<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a><span class="co">// Display the measurement results</span></span>
+<span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`</span></span>
+<span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a><span class="vs">&lt;div style="text-align: center; margin: 20px;"&gt;</span></span>
+<span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;div style="display: flex; justify-content: space-around;"&gt;</span></span>
+<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;div style="border: 1px solid black; padding: 20px; margin: 10px;"&gt;</span></span>
+<span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;h3&gt;Detector 1 (Signal)&lt;/h3&gt;</span></span>
+<span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;p style="font-size: 24px;"&gt;</span><span class="sc">${</span>measurement<span class="op">.</span><span class="at">signal</span><span class="sc">}</span><span class="vs">&lt;/p&gt;</span></span>
+<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;/div&gt;</span></span>
+<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;div style="border: 1px solid black; padding: 20px; margin: 10px;"&gt;</span></span>
+<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;h3&gt;Detector 2 (Idler)&lt;/h3&gt;</span></span>
+<span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;p style="font-size: 24px;"&gt;</span><span class="sc">${</span>measurement<span class="op">.</span><span class="at">idler</span><span class="sc">}</span><span class="vs">&lt;/p&gt;</span></span>
+<span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;/div&gt;</span></span>
+<span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;/div&gt;</span></span>
+<span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;p&gt;Total measurements: </span><span class="sc">${</span>measurement<span class="op">.</span><span class="at">count</span><span class="sc">}</span><span class="vs">&lt;/p&gt;</span></span>
+<span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a><span class="vs">&lt;/div&gt;</span></span>
+<span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a><span class="vs">`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
@@ -1032,6 +1106,7 @@ Figure&nbsp;3— Experimental setup for measuring the coincidence counts of enta
 </div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script type="ojs-module-contents">
@@ -1117,7 +1192,7 @@ window._ojs.runtime.interpretFromScriptTags();
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/fcichos\.github\.io\/Exp3\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -1444,6 +1519,15 @@ window._ojs.runtime.interpretFromScriptTags();
     }
   });
   </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../quantum-mechanics/Spherical_potential.html" class="pagination-link" aria-label="Spherically Symmetric Problems">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Spherically Symmetric Problems</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
 </div> <!-- /content -->
 
 
