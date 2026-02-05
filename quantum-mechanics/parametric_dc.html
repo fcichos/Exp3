@@ -65,6 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../quantum-mechanics/Qzeno.html" rel="next">
 <link href="../quantum-mechanics/Spherical_potential.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -826,6 +827,23 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-31" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 29</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-31" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-31" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Qzeno.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quantum Zeno Effect</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
       </ul>
   </li>
     </ul>
@@ -838,14 +856,13 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#quantum-entanglement" id="toc-quantum-entanglement" class="nav-link active" data-scroll-target="#quantum-entanglement">Quantum Entanglement</a>
+  <li><a href="#parametric-downconversion" id="toc-parametric-downconversion" class="nav-link active" data-scroll-target="#parametric-downconversion">Parametric Downconversion</a></li>
+  <li><a href="#quantum-entanglement" id="toc-quantum-entanglement" class="nav-link" data-scroll-target="#quantum-entanglement">Quantum Entanglement</a>
   <ul class="collapse">
   <li><a href="#separable-vs.-entangled-states" id="toc-separable-vs.-entangled-states" class="nav-link" data-scroll-target="#separable-vs.-entangled-states">Separable vs.&nbsp;Entangled States</a></li>
   <li><a href="#the-epr-paradox-and-bells-theorem" id="toc-the-epr-paradox-and-bells-theorem" class="nav-link" data-scroll-target="#the-epr-paradox-and-bells-theorem">The EPR Paradox and Bell’s Theorem</a></li>
   <li><a href="#why-entanglement-matters" id="toc-why-entanglement-matters" class="nav-link" data-scroll-target="#why-entanglement-matters">Why Entanglement Matters</a></li>
-  <li><a href="#generating-entangled-photons" id="toc-generating-entangled-photons" class="nav-link" data-scroll-target="#generating-entangled-photons">Generating Entangled Photons</a></li>
   </ul></li>
-  <li><a href="#parametric-downconversion" id="toc-parametric-downconversion" class="nav-link" data-scroll-target="#parametric-downconversion">Parametric Downconversion</a></li>
   </ul>
 </nav>
     </div>
@@ -871,51 +888,6 @@ window.Quarto = {
 </header>
 
 
-<section id="quantum-entanglement" class="level2">
-<h2 class="anchored" data-anchor-id="quantum-entanglement">Quantum Entanglement</h2>
-<p>Quantum entanglement is one of the most profound and counterintuitive features of quantum mechanics. Two particles are said to be <strong>entangled</strong> when their quantum state cannot be described independently — measuring one particle instantaneously determines the state of the other, regardless of the distance between them.</p>
-<section id="separable-vs.-entangled-states" class="level3">
-<h3 class="anchored" data-anchor-id="separable-vs.-entangled-states">Separable vs.&nbsp;Entangled States</h3>
-<p>Consider two photons, A and B, each of which can be polarized either horizontally (H) or vertically (V). In a <strong>separable</strong> (non-entangled) state, each photon has its own definite polarization. For example, “photon A is horizontally polarized and photon B is vertically polarized” is a separable state. Measuring photon A tells us nothing new about photon B — we already knew B was vertically polarized.</p>
-<p>An <strong>entangled</strong> state is fundamentally different. Consider a pair of photons prepared such that:</p>
-<ul>
-<li>There is a 50% probability of finding both photons horizontally polarized (H, H)</li>
-<li>There is a 50% probability of finding both photons vertically polarized (V, V)</li>
-<li>There is 0% probability of finding them with opposite polarizations</li>
-</ul>
-<p>This is a Bell state. Crucially, <em>neither photon has a definite polarization on its own</em> — the polarization is only defined for the pair. But if we measure photon A and find it horizontally polarized, we instantly know photon B is also horizontally polarized — even if the photons are light-years apart.</p>
-</section>
-<section id="the-epr-paradox-and-bells-theorem" class="level3">
-<h3 class="anchored" data-anchor-id="the-epr-paradox-and-bells-theorem">The EPR Paradox and Bell’s Theorem</h3>
-<p>In 1935, Einstein, Podolsky, and Rosen (EPR) argued that quantum mechanics must be incomplete. They reasoned that if measuring particle A instantly determines the state of distant particle B, then either:</p>
-<ol type="1">
-<li>Information travels faster than light (violating relativity), or</li>
-<li>Particle B’s property was predetermined all along by some “hidden variable”</li>
-</ol>
-<p>Einstein famously called entanglement “spooky action at a distance” and believed hidden variables must exist — that the photons must secretly “agree” on their polarizations when they are created, like a pair of gloves separated into two boxes.</p>
-<p>In 1964, John Bell proved a remarkable theorem: if hidden variables exist, then correlations between measurements on entangled particles must satisfy certain inequalities (Bell inequalities). Quantum mechanics predicts these inequalities can be <strong>violated</strong>.</p>
-<p>The key insight is to measure polarizations along <em>different</em> axes. If Alice measures her photon’s polarization along angle <span class="math inline">\(\theta_A\)</span> and Bob measures along angle <span class="math inline">\(\theta_B\)</span>, they can compute the correlation <span class="math inline">\(E(\theta_A, \theta_B)\)</span> between their results (+1 for same outcome, −1 for opposite). For four measurement angles, classical hidden variable theories predict:</p>
-<p><span class="math display">\[
-|E(\theta_A, \theta_B) - E(\theta_A, \theta_B')| + |E(\theta_A', \theta_B) + E(\theta_A', \theta_B')| \leq 2
-\]</span></p>
-<p>This is the CHSH inequality. Quantum mechanics predicts a maximum value of <span class="math inline">\(2\sqrt{2} \approx 2.83\)</span>, violating the inequality.</p>
-<p>Experiments have consistently confirmed the quantum prediction, ruling out local hidden variable theories and establishing entanglement as a genuine feature of nature. The 2022 Nobel Prize in Physics was awarded to Alain Aspect, John Clauser, and Anton Zeilinger for their pioneering Bell test experiments.</p>
-</section>
-<section id="why-entanglement-matters" class="level3">
-<h3 class="anchored" data-anchor-id="why-entanglement-matters">Why Entanglement Matters</h3>
-<p>Entanglement is not just a philosophical curiosity — it is a practical resource for:</p>
-<ul>
-<li><strong>Quantum cryptography</strong>: The E91 protocol uses entangled photons to generate secure encryption keys. Any eavesdropping attempt disturbs the entanglement and is immediately detected.</li>
-<li><strong>Quantum teleportation</strong>: The quantum state of one particle can be transferred to another distant particle using entanglement and classical communication.</li>
-<li><strong>Quantum computing</strong>: Entanglement enables quantum computers to perform certain calculations exponentially faster than classical computers.</li>
-<li><strong>Tests of fundamental physics</strong>: Bell test experiments probe the foundations of quantum mechanics and the nature of reality.</li>
-</ul>
-</section>
-<section id="generating-entangled-photons" class="level3">
-<h3 class="anchored" data-anchor-id="generating-entangled-photons">Generating Entangled Photons</h3>
-<p>To exploit entanglement in experiments, we need reliable sources of entangled particle pairs. <strong>Parametric downconversion</strong> (PDC) has become the workhorse technique for generating polarization-entangled photon pairs in the laboratory.</p>
-</section>
-</section>
 <section id="parametric-downconversion" class="level2">
 <h2 class="anchored" data-anchor-id="parametric-downconversion">Parametric Downconversion</h2>
 <p>Parametric downconversion (PDC) is a nonlinear optical process where a high-energy photon (pump) splits into two lower-energy photons (signal and idler) while conserving energy and momentum. This process occurs in nonlinear crystals like Beta Barium Borate (BBO) and is one of the most common methods to generate entangled photon pairs.</p>
@@ -1033,47 +1005,47 @@ Figure&nbsp;3— Experimental setup for measuring the coincidence counts of enta
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1" data-startfrom="242" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 241;"><span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>viewof button <span class="op">=</span> <span class="fu">html</span><span class="vs">`&lt;button&gt;Measure Polarization&lt;/button&gt;`</span></span>
-<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>currentCount <span class="op">=</span> {</span>
-<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> count <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="kw">function</span>() {</span>
-<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="op">++</span>count<span class="op">;</span></span>
-<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>  }<span class="op">;</span></span>
-<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>measurement <span class="op">=</span> {</span>
-<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Only update when button is clicked</span></span>
-<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (button) {</span>
-<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Randomly decide if we measure H/V or V/H (50-50 chance)</span></span>
-<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> random <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>()<span class="op">;</span></span>
-<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> result <span class="op">=</span> random <span class="op">&lt;</span> <span class="fl">0.5</span> <span class="op">?</span> [<span class="st">'H'</span><span class="op">,</span> <span class="st">'V'</span>] <span class="op">:</span> [<span class="st">'V'</span><span class="op">,</span> <span class="st">'H'</span>]<span class="op">;</span></span>
-<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> {</span>
-<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>      <span class="dt">signal</span><span class="op">:</span> result[<span class="dv">0</span>]<span class="op">,</span></span>
-<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>      <span class="dt">idler</span><span class="op">:</span> result[<span class="dv">1</span>]<span class="op">,</span></span>
-<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>      <span class="dt">count</span><span class="op">:</span> <span class="fu">currentCount</span>()</span>
-<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a>    }<span class="op">;</span></span>
-<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> {<span class="dt">signal</span><span class="op">:</span> <span class="st">''</span><span class="op">,</span> <span class="dt">idler</span><span class="op">:</span> <span class="st">''</span><span class="op">,</span> <span class="dt">count</span><span class="op">:</span> <span class="dv">0</span>}<span class="op">;</span></span>
-<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a><span class="co">// Display the measurement results</span></span>
-<span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`</span></span>
-<span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a><span class="vs">&lt;div style="text-align: center; margin: 20px;"&gt;</span></span>
-<span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;div style="display: flex; justify-content: space-around;"&gt;</span></span>
-<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;div style="border: 1px solid black; padding: 20px; margin: 10px;"&gt;</span></span>
-<span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;h3&gt;Detector 1 (Signal)&lt;/h3&gt;</span></span>
-<span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;p style="font-size: 24px;"&gt;</span><span class="sc">${</span>measurement<span class="op">.</span><span class="at">signal</span><span class="sc">}</span><span class="vs">&lt;/p&gt;</span></span>
-<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;/div&gt;</span></span>
-<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;div style="border: 1px solid black; padding: 20px; margin: 10px;"&gt;</span></span>
-<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;h3&gt;Detector 2 (Idler)&lt;/h3&gt;</span></span>
-<span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;p style="font-size: 24px;"&gt;</span><span class="sc">${</span>measurement<span class="op">.</span><span class="at">idler</span><span class="sc">}</span><span class="vs">&lt;/p&gt;</span></span>
-<span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;/div&gt;</span></span>
-<span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;/div&gt;</span></span>
-<span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;p&gt;Total measurements: </span><span class="sc">${</span>measurement<span class="op">.</span><span class="at">count</span><span class="sc">}</span><span class="vs">&lt;/p&gt;</span></span>
-<span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a><span class="vs">&lt;/div&gt;</span></span>
-<span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a><span class="vs">`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1" data-startfrom="192" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 191;"><span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>viewof button <span class="op">=</span> <span class="fu">html</span><span class="vs">`&lt;button&gt;Measure Polarization&lt;/button&gt;`</span></span>
+<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>currentCount <span class="op">=</span> {</span>
+<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> count <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="kw">function</span>() {</span>
+<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="op">++</span>count<span class="op">;</span></span>
+<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>  }<span class="op">;</span></span>
+<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>measurement <span class="op">=</span> {</span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Only update when button is clicked</span></span>
+<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (button) {</span>
+<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Randomly decide if we measure H/V or V/H (50-50 chance)</span></span>
+<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> random <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>()<span class="op">;</span></span>
+<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> result <span class="op">=</span> random <span class="op">&lt;</span> <span class="fl">0.5</span> <span class="op">?</span> [<span class="st">'H'</span><span class="op">,</span> <span class="st">'V'</span>] <span class="op">:</span> [<span class="st">'V'</span><span class="op">,</span> <span class="st">'H'</span>]<span class="op">;</span></span>
+<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> {</span>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>      <span class="dt">signal</span><span class="op">:</span> result[<span class="dv">0</span>]<span class="op">,</span></span>
+<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>      <span class="dt">idler</span><span class="op">:</span> result[<span class="dv">1</span>]<span class="op">,</span></span>
+<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>      <span class="dt">count</span><span class="op">:</span> <span class="fu">currentCount</span>()</span>
+<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>    }<span class="op">;</span></span>
+<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> {<span class="dt">signal</span><span class="op">:</span> <span class="st">''</span><span class="op">,</span> <span class="dt">idler</span><span class="op">:</span> <span class="st">''</span><span class="op">,</span> <span class="dt">count</span><span class="op">:</span> <span class="dv">0</span>}<span class="op">;</span></span>
+<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a><span class="co">// Display the measurement results</span></span>
+<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`</span></span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a><span class="vs">&lt;div style="text-align: center; margin: 20px;"&gt;</span></span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;div style="display: flex; justify-content: space-around;"&gt;</span></span>
+<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;div style="border: 1px solid black; padding: 20px; margin: 10px;"&gt;</span></span>
+<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;h3&gt;Detector 1 (Signal)&lt;/h3&gt;</span></span>
+<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;p style="font-size: 24px;"&gt;</span><span class="sc">${</span>measurement<span class="op">.</span><span class="at">signal</span><span class="sc">}</span><span class="vs">&lt;/p&gt;</span></span>
+<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;/div&gt;</span></span>
+<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;div style="border: 1px solid black; padding: 20px; margin: 10px;"&gt;</span></span>
+<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;h3&gt;Detector 2 (Idler)&lt;/h3&gt;</span></span>
+<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;p style="font-size: 24px;"&gt;</span><span class="sc">${</span>measurement<span class="op">.</span><span class="at">idler</span><span class="sc">}</span><span class="vs">&lt;/p&gt;</span></span>
+<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;/div&gt;</span></span>
+<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;/div&gt;</span></span>
+<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;p&gt;Total measurements: </span><span class="sc">${</span>measurement<span class="op">.</span><span class="at">count</span><span class="sc">}</span><span class="vs">&lt;/p&gt;</span></span>
+<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a><span class="vs">&lt;/div&gt;</span></span>
+<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a><span class="vs">`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
@@ -1104,8 +1076,459 @@ Figure&nbsp;3— Experimental setup for measuring the coincidence counts of enta
 </div>
 </div>
 </div>
+</section>
+<section id="quantum-entanglement" class="level2">
+<h2 class="anchored" data-anchor-id="quantum-entanglement">Quantum Entanglement</h2>
+<p>Having seen how parametric downconversion can generate pairs of photons with correlated polarizations, we now turn to understanding the deeper nature of quantum entanglement—the phenomenon that makes these photon pairs so remarkable and useful for quantum information applications.</p>
+<p>Quantum entanglement is one of the most profound and counterintuitive features of quantum mechanics. Two particles are said to be <strong>entangled</strong> when their quantum state cannot be described independently — measuring one particle instantaneously determines the state of the other, regardless of the distance between them.</p>
+<section id="separable-vs.-entangled-states" class="level3">
+<h3 class="anchored" data-anchor-id="separable-vs.-entangled-states">Separable vs.&nbsp;Entangled States</h3>
+<p>Consider two photons, A and B, each of which can be polarized either horizontally (H) or vertically (V). In a <strong>separable</strong> (non-entangled) state, each photon has its own definite polarization. For example, “photon A is horizontally polarized and photon B is vertically polarized” is a separable state. Measuring photon A tells us nothing new about photon B — we already knew B was vertically polarized.</p>
+<p>An <strong>entangled</strong> state is fundamentally different. Consider a pair of photons prepared such that:</p>
+<ul>
+<li>There is a 50% probability of finding both photons horizontally polarized (H, H)</li>
+<li>There is a 50% probability of finding both photons vertically polarized (V, V)</li>
+<li>There is 0% probability of finding them with opposite polarizations</li>
+</ul>
+<p>This is a Bell state. Crucially, <em>neither photon has a definite polarization on its own</em> — the polarization is only defined for the pair. But if we measure photon A and find it horizontally polarized, we instantly know photon B is also horizontally polarized — even if the photons are light-years apart.</p>
+</section>
+<section id="the-epr-paradox-and-bells-theorem" class="level3">
+<h3 class="anchored" data-anchor-id="the-epr-paradox-and-bells-theorem">The EPR Paradox and Bell’s Theorem</h3>
+<p>In 1935, Einstein, Podolsky, and Rosen (EPR) argued that quantum mechanics must be incomplete. They reasoned that if measuring particle A instantly determines the state of distant particle B, then either:</p>
+<ol type="1">
+<li>Information travels faster than light (violating relativity), or</li>
+<li>Particle B’s property was predetermined all along by some “hidden variable”</li>
+</ol>
+<p>Einstein famously called entanglement “spooky action at a distance” and believed hidden variables must exist — that the photons must secretly “agree” on their polarizations when they are created, like a pair of gloves separated into two boxes.</p>
+<p>In 1964, John Bell proved a remarkable theorem: if hidden variables exist, then correlations between measurements on entangled particles must satisfy certain inequalities (Bell inequalities). Quantum mechanics predicts these inequalities can be <strong>violated</strong>.</p>
+<p>The key insight is to measure polarizations along <em>different</em> axes. If Alice measures her photon’s polarization along angle <span class="math inline">\(\theta_A\)</span> and Bob measures along angle <span class="math inline">\(\theta_B\)</span>, they can compute the correlation <span class="math inline">\(E(\theta_A, \theta_B)\)</span> between their results (+1 for same outcome, −1 for opposite). For four measurement angles, classical hidden variable theories predict:</p>
+<p><span class="math display">\[
+|E(\theta_A, \theta_B) - E(\theta_A, \theta_B')| + |E(\theta_A', \theta_B) + E(\theta_A', \theta_B')| \leq 2
+\]</span></p>
+<p>This is the CHSH inequality. Quantum mechanics predicts a maximum value of <span class="math inline">\(2\sqrt{2} \approx 2.83\)</span>, violating the inequality.</p>
+<p>Experiments have consistently confirmed the quantum prediction, ruling out local hidden variable theories and establishing entanglement as a genuine feature of nature. The 2022 Nobel Prize in Physics was awarded to Alain Aspect, John Clauser, and Anton Zeilinger for their pioneering Bell test experiments.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Mathematics of the CHSH Inequality
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<section id="setup-and-notation" class="level3">
+<h3 class="anchored" data-anchor-id="setup-and-notation">Setup and Notation</h3>
+<p>Consider two experimenters, Alice and Bob, who each receive one photon from an entangled pair. Alice can measure her photon’s polarization along one of two angles, <span class="math inline">\(\theta_A\)</span> or <span class="math inline">\(\theta_A'\)</span>, and Bob can measure along <span class="math inline">\(\theta_B\)</span> or <span class="math inline">\(\theta_B'\)</span>. Each measurement yields a result of <span class="math inline">\(+1\)</span> (e.g., horizontal polarization) or <span class="math inline">\(-1\)</span> (vertical polarization).</p>
+<p>We denote:</p>
+<ul>
+<li><span class="math inline">\(A = A(\theta_A)\)</span>: Alice’s measurement result at angle <span class="math inline">\(\theta_A\)</span></li>
+<li><span class="math inline">\(A' = A(\theta_A')\)</span>: Alice’s measurement result at angle <span class="math inline">\(\theta_A'\)</span></li>
+<li><span class="math inline">\(B = B(\theta_B)\)</span>: Bob’s measurement result at angle <span class="math inline">\(\theta_B\)</span></li>
+<li><span class="math inline">\(B' = B(\theta_B')\)</span>: Bob’s measurement result at angle <span class="math inline">\(\theta_B'\)</span></li>
+</ul>
+<p>The <strong>correlation</strong> between measurements is the expectation value of their product: <span class="math display">\[
+E(\theta_A, \theta_B) = \langle A \cdot B \rangle
+\]</span></p>
+</section>
+<section id="derivation-of-the-classical-bound" class="level3">
+<h3 class="anchored" data-anchor-id="derivation-of-the-classical-bound">Derivation of the Classical Bound</h3>
+<p>In a <strong>local hidden variable theory</strong>, the outcomes are predetermined by some hidden variable <span class="math inline">\(\lambda\)</span>. Given <span class="math inline">\(\lambda\)</span>, each measurement has a definite value <span class="math inline">\(A(\lambda), A'(\lambda), B(\lambda), B'(\lambda) \in \{-1, +1\}\)</span>.</p>
+<p>Consider the combination: <span class="math display">\[
+S(\lambda) = A(\lambda)B(\lambda) - A(\lambda)B'(\lambda) + A'(\lambda)B(\lambda) + A'(\lambda)B'(\lambda)
+\]</span></p>
+<p>We can factor this as: <span class="math display">\[
+S(\lambda) = A(\lambda)[B(\lambda) - B'(\lambda)] + A'(\lambda)[B(\lambda) + B'(\lambda)]
+\]</span></p>
+<p>Since <span class="math inline">\(B, B' \in \{-1, +1\}\)</span>, we have two cases:</p>
+<ul>
+<li>If <span class="math inline">\(B(\lambda) = B'(\lambda)\)</span>: then <span class="math inline">\(B - B' = 0\)</span> and <span class="math inline">\(B + B' = \pm 2\)</span>, so <span class="math inline">\(|S(\lambda)| = 2|A'| = 2\)</span></li>
+<li>If <span class="math inline">\(B(\lambda) = -B'(\lambda)\)</span>: then <span class="math inline">\(B - B' = \pm 2\)</span> and <span class="math inline">\(B + B' = 0\)</span>, so <span class="math inline">\(|S(\lambda)| = 2|A| = 2\)</span></li>
+</ul>
+<p>In either case, <span class="math inline">\(|S(\lambda)| = 2\)</span> for every value of <span class="math inline">\(\lambda\)</span>.</p>
+<p>Taking the expectation over all possible hidden variables: <span class="math display">\[
+|S| = |\langle S(\lambda) \rangle| \leq \langle |S(\lambda)| \rangle = 2
+\]</span></p>
+<p>This gives the <strong>CHSH inequality</strong>: <span class="math display">\[
+S = |E(\theta_A, \theta_B) - E(\theta_A, \theta_B') + E(\theta_A', \theta_B) + E(\theta_A', \theta_B')| \leq 2
+\]</span></p>
+</section>
+<section id="quantum-mechanical-prediction" class="level3">
+<h3 class="anchored" data-anchor-id="quantum-mechanical-prediction">Quantum Mechanical Prediction</h3>
+<p>For the Bell state <span class="math inline">\(|\psi\rangle = \frac{1}{\sqrt{2}}(|HV\rangle + |VH\rangle)\)</span>, the correlation when Alice measures at angle <span class="math inline">\(\theta_A\)</span> and Bob at angle <span class="math inline">\(\theta_B\)</span> is: <span class="math display">\[
+E(\theta_A, \theta_B) = -\cos[2(\theta_A - \theta_B)]
+\]</span></p>
+<p>To maximize the violation, choose the optimal angles:</p>
+<ul>
+<li><span class="math inline">\(\theta_A = 0°\)</span></li>
+<li><span class="math inline">\(\theta_A' = 45°\)</span></li>
+<li><span class="math inline">\(\theta_B = 22.5°\)</span></li>
+<li><span class="math inline">\(\theta_B' = 67.5°\)</span></li>
+</ul>
+<p>Computing each correlation: <span class="math display">\[
+\begin{aligned}
+E(0°, 22.5°) &amp;= -\cos(45°) = -\frac{1}{\sqrt{2}} \\
+E(0°, 67.5°) &amp;= -\cos(135°) = +\frac{1}{\sqrt{2}} \\
+E(45°, 22.5°) &amp;= -\cos(45°) = -\frac{1}{\sqrt{2}} \\
+E(45°, 67.5°) &amp;= -\cos(45°) = -\frac{1}{\sqrt{2}}
+\end{aligned}
+\]</span></p>
+<p>The CHSH parameter becomes: <span class="math display">\[
+S = \left| -\frac{1}{\sqrt{2}} - \frac{1}{\sqrt{2}} - \frac{1}{\sqrt{2}} - \frac{1}{\sqrt{2}} \right| = \frac{4}{\sqrt{2}} = 2\sqrt{2} \approx 2.83
+\]</span></p>
+<p>This <strong>violates</strong> the classical bound of 2, and is in fact the maximum possible quantum violation (the Tsirelson bound).</p>
+</section>
+<section id="physical-interpretation" class="level3">
+<h3 class="anchored" data-anchor-id="physical-interpretation">Physical Interpretation</h3>
+<p>The violation means that no theory where:</p>
+<ol type="1">
+<li>Measurement outcomes are predetermined (realism), and</li>
+<li>Information cannot travel faster than light (locality)</li>
+</ol>
+<p>can reproduce the predictions of quantum mechanics. Experiments consistently measure <span class="math inline">\(S \approx 2.7\)</span>–<span class="math inline">\(2.8\)</span>, confirming the quantum prediction and ruling out local hidden variable theories.</p>
+</section>
+<section id="the-hidden-variable-as-a-polarization-angle" class="level3">
+<h3 class="anchored" data-anchor-id="the-hidden-variable-as-a-polarization-angle">The Hidden Variable as a Polarization Angle</h3>
+<p>In local hidden variable theories, the hidden variable <span class="math inline">\(\lambda\)</span> plays the role of a <strong>pre-determined polarization angle</strong> for the entangled photon pair. This provides a concrete physical picture for what “hidden variable” means in the context of polarization experiments.</p>
+<p><strong>The classical picture:</strong> In Einstein’s preferred interpretation, when two photons are created in an entangled state, they would secretly “agree” on a common polarization direction <span class="math inline">\(\lambda\)</span> at the moment of creation—like a pair of gloves separated into two boxes that were always left and right from the start. For example:</p>
+<ul>
+<li>The photons are created with a definite (but unknown to us) polarization direction, say <span class="math inline">\(\lambda = 30°\)</span></li>
+<li>When Alice measures at angle <span class="math inline">\(\theta_A\)</span>, she gets <span class="math inline">\(+1\)</span> if the photon’s hidden polarization <span class="math inline">\(\lambda\)</span> is closer to <span class="math inline">\(\theta_A\)</span> than to <span class="math inline">\(\theta_A + 90°\)</span>, and <span class="math inline">\(-1\)</span> otherwise</li>
+<li>Bob’s measurement follows the same logic for his photon</li>
+</ul>
+<p>This is directly analogous to Malus’s law for polarized light, where the transmission probability depends on the angle between the incoming polarization and the polarizer axis.</p>
+<p><strong>Why this treatment is valid:</strong> The hidden variable <span class="math inline">\(\lambda\)</span> can be treated as a continuous angle parameter because:</p>
+<ol type="1">
+<li><strong>Classical realism</strong>: In a hidden variable theory, each photon pair has some definite pre-existing state characterized by <span class="math inline">\(\lambda\)</span></li>
+<li><strong>Statistical ensemble</strong>: Different photon pairs may have different values of <span class="math inline">\(\lambda\)</span>, distributed according to some probability distribution <span class="math inline">\(\rho(\lambda)\)</span></li>
+<li><strong>Natural interpretation</strong>: The most natural hidden variable for polarization experiments <em>is</em> an angle—the “true” polarization direction the photons carry with them</li>
+</ol>
+<p>The correlation then becomes an average over all possible hidden angles: <span class="math display">\[
+E(\theta_A, \theta_B) = \int A(\theta_A, \lambda) \cdot B(\theta_B, \lambda) \cdot \rho(\lambda) \, d\lambda
+\]</span> where <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are the measurement outcomes (<span class="math inline">\(\pm 1\)</span>) as functions of both the detector angle and the hidden angle <span class="math inline">\(\lambda\)</span>.</p>
+<p><strong>The crucial point:</strong> The CHSH derivation shows that <strong>regardless of what <span class="math inline">\(\lambda\)</span> is or how it’s distributed</strong>, the classical bound <span class="math inline">\(|S| \leq 2\)</span> always holds. This is because the algebraic identity <span class="math inline">\(|S(\lambda)| = 2\)</span> works for any single value of <span class="math inline">\(\lambda\)</span>—averaging over any distribution of hidden angles cannot exceed this bound.</p>
+<p>The quantum violation (<span class="math inline">\(S = 2\sqrt{2}\)</span>) therefore proves that the photons <em>cannot</em> be carrying a pre-determined polarization angle. Their polarization is genuinely undefined until measured, and the correlations arise from the entangled quantum state itself, not from any shared “hidden angle.”</p>
+</section>
+<section id="visualizations" class="level3">
+<h3 class="anchored" data-anchor-id="visualizations">Visualizations</h3>
+<div id="cell-fig-chsh-correlation" class="cell" data-execution_count="2">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>get_size(<span class="dv">10</span>, <span class="dv">7</span>))</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Angle difference in degrees</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>delta_theta <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">180</span>, <span class="dv">500</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Quantum correlation</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>E_quantum <span class="op">=</span> <span class="op">-</span>np.cos(<span class="dv">2</span> <span class="op">*</span> np.radians(delta_theta))</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>ax.plot(delta_theta, E_quantum, <span class="st">'b-'</span>, linewidth<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="st">'Quantum: $E = -</span><span class="ch">\\</span><span class="st">cos[2(</span><span class="ch">\\</span><span class="st">theta_A - </span><span class="ch">\\</span><span class="st">theta_B)]$'</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>ax.axhline(y<span class="op">=</span><span class="dv">0</span>, color<span class="op">=</span><span class="st">'gray'</span>, linestyle<span class="op">=</span><span class="st">'-'</span>, linewidth<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Mark the key angles used in CHSH</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>key_angles <span class="op">=</span> [<span class="fl">22.5</span>, <span class="dv">45</span>, <span class="fl">67.5</span>]</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> angle <span class="kw">in</span> key_angles:</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    E_val <span class="op">=</span> <span class="op">-</span>np.cos(<span class="dv">2</span> <span class="op">*</span> np.radians(angle))</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    ax.plot(angle, E_val, <span class="st">'ro'</span>, markersize<span class="op">=</span><span class="dv">8</span>)</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    ax.annotate(<span class="ss">f'</span><span class="sc">{</span>angle<span class="sc">}</span><span class="ss">°</span><span class="ch">\n</span><span class="ss">$E = </span><span class="sc">{</span>E_val<span class="sc">:.3f}</span><span class="ss">$'</span>, </span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>                xy<span class="op">=</span>(angle, E_val), xytext<span class="op">=</span>(angle<span class="op">+</span><span class="dv">8</span>, E_val<span class="op">+</span><span class="fl">0.15</span>),</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>                fontsize<span class="op">=</span><span class="dv">8</span>, ha<span class="op">=</span><span class="st">'left'</span>)</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Angle difference $|</span><span class="ch">\\</span><span class="st">theta_A - </span><span class="ch">\\</span><span class="st">theta_B|$ (degrees)'</span>)</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'Correlation $E(</span><span class="ch">\\</span><span class="st">theta_A, </span><span class="ch">\\</span><span class="st">theta_B)$'</span>)</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>ax.set_xlim(<span class="dv">0</span>, <span class="dv">180</span>)</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>ax.set_ylim(<span class="op">-</span><span class="fl">1.1</span>, <span class="fl">1.1</span>)</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>ax.set_xticks([<span class="dv">0</span>, <span class="fl">22.5</span>, <span class="dv">45</span>, <span class="fl">67.5</span>, <span class="dv">90</span>, <span class="fl">112.5</span>, <span class="dv">135</span>, <span class="fl">157.5</span>, <span class="dv">180</span>])</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>ax.legend(loc<span class="op">=</span><span class="st">'upper right'</span>)</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>ax.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div id="fig-chsh-correlation" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-chsh-correlation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="parametric_dc_files/figure-html/fig-chsh-correlation-output-1.png" width="574" height="395" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-chsh-correlation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4— Quantum correlation function for entangled photon pairs. The correlation <span class="math inline">\(E(\theta_A, \theta_B) = -\cos[2(\theta_A - \theta_B)]\)</span> depends only on the angle difference. Perfect correlation (+1) occurs when detectors are perpendicular (90°), perfect anti-correlation (−1) when aligned (0°).
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-fig-chsh-angles" class="cell" data-execution_count="3">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>get_size(<span class="dv">8</span>, <span class="dv">8</span>), subplot_kw<span class="op">=</span><span class="bu">dict</span>(projection<span class="op">=</span><span class="st">'polar'</span>))</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the angles (in radians for polar plot)</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>theta_A <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>theta_A_prime <span class="op">=</span> np.radians(<span class="dv">45</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>theta_B <span class="op">=</span> np.radians(<span class="fl">22.5</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>theta_B_prime <span class="op">=</span> np.radians(<span class="fl">67.5</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Draw measurement directions as arrows</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>arrow_length <span class="op">=</span> <span class="fl">1.0</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>colors_alice <span class="op">=</span> [<span class="st">'#1f77b4'</span>, <span class="st">'#1f77b4'</span>]  <span class="co"># Blue for Alice</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>colors_bob <span class="op">=</span> [<span class="st">'#d62728'</span>, <span class="st">'#d62728'</span>]    <span class="co"># Red for Bob</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Alice's angles</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>ax.annotate(<span class="st">''</span>, xy<span class="op">=</span>(theta_A, arrow_length), xytext<span class="op">=</span>(<span class="dv">0</span>, <span class="dv">0</span>),</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>            arrowprops<span class="op">=</span><span class="bu">dict</span>(arrowstyle<span class="op">=</span><span class="st">'-&gt;'</span>, color<span class="op">=</span>colors_alice[<span class="dv">0</span>], lw<span class="op">=</span><span class="fl">2.5</span>))</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>ax.annotate(<span class="st">''</span>, xy<span class="op">=</span>(theta_A_prime, arrow_length), xytext<span class="op">=</span>(<span class="dv">0</span>, <span class="dv">0</span>),</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>            arrowprops<span class="op">=</span><span class="bu">dict</span>(arrowstyle<span class="op">=</span><span class="st">'-&gt;'</span>, color<span class="op">=</span>colors_alice[<span class="dv">1</span>], lw<span class="op">=</span><span class="fl">2.5</span>, linestyle<span class="op">=</span><span class="st">'--'</span>))</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Bob's angles</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>ax.annotate(<span class="st">''</span>, xy<span class="op">=</span>(theta_B, arrow_length), xytext<span class="op">=</span>(<span class="dv">0</span>, <span class="dv">0</span>),</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>            arrowprops<span class="op">=</span><span class="bu">dict</span>(arrowstyle<span class="op">=</span><span class="st">'-&gt;'</span>, color<span class="op">=</span>colors_bob[<span class="dv">0</span>], lw<span class="op">=</span><span class="fl">2.5</span>))</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>ax.annotate(<span class="st">''</span>, xy<span class="op">=</span>(theta_B_prime, arrow_length), xytext<span class="op">=</span>(<span class="dv">0</span>, <span class="dv">0</span>),</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>            arrowprops<span class="op">=</span><span class="bu">dict</span>(arrowstyle<span class="op">=</span><span class="st">'-&gt;'</span>, color<span class="op">=</span>colors_bob[<span class="dv">1</span>], lw<span class="op">=</span><span class="fl">2.5</span>, linestyle<span class="op">=</span><span class="st">'--'</span>))</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Labels</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>label_offset <span class="op">=</span> <span class="fl">1.15</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>ax.text(theta_A, label_offset, <span class="st">'$</span><span class="ch">\\</span><span class="st">theta_A = 0°$'</span>, ha<span class="op">=</span><span class="st">'center'</span>, va<span class="op">=</span><span class="st">'bottom'</span>, </span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>        fontsize<span class="op">=</span><span class="dv">10</span>, color<span class="op">=</span>colors_alice[<span class="dv">0</span>], fontweight<span class="op">=</span><span class="st">'bold'</span>)</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>ax.text(theta_A_prime, label_offset, <span class="st">"$</span><span class="ch">\\</span><span class="st">theta_A' = 45°$"</span>, ha<span class="op">=</span><span class="st">'center'</span>, va<span class="op">=</span><span class="st">'bottom'</span>, </span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>        fontsize<span class="op">=</span><span class="dv">10</span>, color<span class="op">=</span>colors_alice[<span class="dv">1</span>], fontweight<span class="op">=</span><span class="st">'bold'</span>)</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>ax.text(theta_B, label_offset, <span class="st">'$</span><span class="ch">\\</span><span class="st">theta_B = 22.5°$'</span>, ha<span class="op">=</span><span class="st">'left'</span>, va<span class="op">=</span><span class="st">'bottom'</span>, </span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>        fontsize<span class="op">=</span><span class="dv">10</span>, color<span class="op">=</span>colors_bob[<span class="dv">0</span>], fontweight<span class="op">=</span><span class="st">'bold'</span>)</span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>ax.text(theta_B_prime, label_offset, <span class="st">"$</span><span class="ch">\\</span><span class="st">theta_B' = 67.5°$"</span>, ha<span class="op">=</span><span class="st">'left'</span>, va<span class="op">=</span><span class="st">'bottom'</span>, </span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>        fontsize<span class="op">=</span><span class="dv">10</span>, color<span class="op">=</span>colors_bob[<span class="dv">1</span>], fontweight<span class="op">=</span><span class="st">'bold'</span>)</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a><span class="co"># Add angle arcs to show the 22.5° spacing</span></span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>arc_angles <span class="op">=</span> np.linspace(<span class="dv">0</span>, np.radians(<span class="fl">22.5</span>), <span class="dv">50</span>)</span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>ax.plot(arc_angles, [<span class="fl">0.3</span>]<span class="op">*</span><span class="dv">50</span>, <span class="st">'g-'</span>, linewidth<span class="op">=</span><span class="fl">1.5</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>ax.text(np.radians(<span class="fl">11.25</span>), <span class="fl">0.38</span>, <span class="st">'22.5°'</span>, ha<span class="op">=</span><span class="st">'center'</span>, va<span class="op">=</span><span class="st">'bottom'</span>, fontsize<span class="op">=</span><span class="dv">8</span>, color<span class="op">=</span><span class="st">'green'</span>)</span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>arc_angles2 <span class="op">=</span> np.linspace(np.radians(<span class="fl">22.5</span>), np.radians(<span class="dv">45</span>), <span class="dv">50</span>)</span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>ax.plot(arc_angles2, [<span class="fl">0.3</span>]<span class="op">*</span><span class="dv">50</span>, <span class="st">'g-'</span>, linewidth<span class="op">=</span><span class="fl">1.5</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>ax.text(np.radians(<span class="fl">33.75</span>), <span class="fl">0.38</span>, <span class="st">'22.5°'</span>, ha<span class="op">=</span><span class="st">'center'</span>, va<span class="op">=</span><span class="st">'bottom'</span>, fontsize<span class="op">=</span><span class="dv">8</span>, color<span class="op">=</span><span class="st">'green'</span>)</span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>arc_angles3 <span class="op">=</span> np.linspace(np.radians(<span class="dv">45</span>), np.radians(<span class="fl">67.5</span>), <span class="dv">50</span>)</span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>ax.plot(arc_angles3, [<span class="fl">0.3</span>]<span class="op">*</span><span class="dv">50</span>, <span class="st">'g-'</span>, linewidth<span class="op">=</span><span class="fl">1.5</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>ax.text(np.radians(<span class="fl">56.25</span>), <span class="fl">0.38</span>, <span class="st">'22.5°'</span>, ha<span class="op">=</span><span class="st">'center'</span>, va<span class="op">=</span><span class="st">'bottom'</span>, fontsize<span class="op">=</span><span class="dv">8</span>, color<span class="op">=</span><span class="st">'green'</span>)</span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a><span class="co"># Legend</span></span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib.lines <span class="im">import</span> Line2D</span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>legend_elements <span class="op">=</span> [Line2D([<span class="dv">0</span>], [<span class="dv">0</span>], color<span class="op">=</span><span class="st">'#1f77b4'</span>, lw<span class="op">=</span><span class="fl">2.5</span>, label<span class="op">=</span><span class="st">"Alice's angles"</span>),</span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a>                   Line2D([<span class="dv">0</span>], [<span class="dv">0</span>], color<span class="op">=</span><span class="st">'#d62728'</span>, lw<span class="op">=</span><span class="fl">2.5</span>, label<span class="op">=</span><span class="st">"Bob's angles"</span>)]</span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>ax.legend(handles<span class="op">=</span>legend_elements, loc<span class="op">=</span><span class="st">'lower left'</span>, bbox_to_anchor<span class="op">=</span>(<span class="fl">0.0</span>, <span class="op">-</span><span class="fl">0.15</span>))</span>
+<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a>ax.set_ylim(<span class="dv">0</span>, <span class="fl">1.3</span>)</span>
+<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a>ax.set_rticks([])</span>
+<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a>ax.set_thetagrids([<span class="dv">0</span>, <span class="fl">22.5</span>, <span class="dv">45</span>, <span class="fl">67.5</span>, <span class="dv">90</span>, <span class="dv">135</span>, <span class="dv">180</span>, <span class="dv">225</span>, <span class="dv">270</span>, <span class="dv">315</span>])</span>
+<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a>ax.set_theta_zero_location(<span class="st">'E'</span>)</span>
+<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a>ax.set_theta_direction(<span class="dv">1</span>)</span>
+<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'CHSH Optimal Measurement Angles'</span>, pad<span class="op">=</span><span class="dv">15</span>)</span>
+<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div id="fig-chsh-angles" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-chsh-angles-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="parametric_dc_files/figure-html/fig-chsh-angles-output-1.png" width="455" height="447" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-chsh-angles-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5— Optimal measurement angles for the CHSH Bell test. Alice chooses between <span class="math inline">\(\theta_A = 0°\)</span> and <span class="math inline">\(\theta_A' = 45°\)</span>, while Bob chooses between <span class="math inline">\(\theta_B = 22.5°\)</span> and <span class="math inline">\(\theta_B' = 67.5°\)</span>. These angles are evenly spaced by 22.5° and maximize the quantum violation of the CHSH inequality.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-fig-chsh-violation" class="cell" data-execution_count="4">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>get_size(<span class="dv">10</span>, <span class="dv">7</span>))</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameter phi determines all angles: Alice at 0, phi; Bob at phi/2, 3phi/2</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>phi <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">90</span>, <span class="dv">500</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>phi_rad <span class="op">=</span> np.radians(phi)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate S for symmetric angle choice</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co"># E(0, phi/2), E(0, 3phi/2), E(phi, phi/2), E(phi, 3phi/2)</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> E_quantum(theta_diff):</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="op">-</span>np.cos(<span class="dv">2</span> <span class="op">*</span> theta_diff)</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="co"># For the standard symmetric configuration</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>S_quantum <span class="op">=</span> np.<span class="bu">abs</span>(</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    E_quantum(phi_rad<span class="op">/</span><span class="dv">2</span>) <span class="op">-</span>           <span class="co"># E(0, phi/2)</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    E_quantum(<span class="dv">3</span><span class="op">*</span>phi_rad<span class="op">/</span><span class="dv">2</span>) <span class="op">+</span>         <span class="co"># E(0, 3phi/2)</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    E_quantum(phi_rad<span class="op">/</span><span class="dv">2</span>) <span class="op">+</span>           <span class="co"># E(phi, phi/2)</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    E_quantum(phi_rad<span class="op">/</span><span class="dv">2</span>)             <span class="co"># E(phi, 3phi/2)</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Actually, let's use the standard CHSH with variable spacing delta</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Alice: 0, 2*delta; Bob: delta, 3*delta</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>delta <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">45</span>, <span class="dv">500</span>)</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>delta_rad <span class="op">=</span> np.radians(delta)</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>S_quantum <span class="op">=</span> np.<span class="bu">abs</span>(</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>    <span class="op">-</span>np.cos(<span class="dv">2</span><span class="op">*</span>delta_rad) <span class="op">-</span>           <span class="co"># E(0, delta) </span></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>    (<span class="op">-</span>np.cos(<span class="dv">2</span><span class="op">*</span><span class="dv">3</span><span class="op">*</span>delta_rad)) <span class="op">+</span>       <span class="co"># -E(0, 3*delta)</span></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>    (<span class="op">-</span>np.cos(<span class="dv">2</span><span class="op">*</span>delta_rad)) <span class="op">+</span>         <span class="co"># E(2*delta, delta)</span></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>    (<span class="op">-</span>np.cos(<span class="dv">2</span><span class="op">*</span>delta_rad))           <span class="co"># E(2*delta, 3*delta)</span></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a><span class="co"># Simpler: use standard parameterization</span></span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a><span class="co"># With angles 0, 2θ for Alice and θ, 3θ for Bob</span></span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>theta <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">45</span>, <span class="dv">500</span>)</span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>theta_rad <span class="op">=</span> np.radians(theta)</span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>E1 <span class="op">=</span> <span class="op">-</span>np.cos(<span class="dv">2</span> <span class="op">*</span> theta_rad)      <span class="co"># E(0, θ)</span></span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>E2 <span class="op">=</span> <span class="op">-</span>np.cos(<span class="dv">2</span> <span class="op">*</span> <span class="dv">3</span><span class="op">*</span>theta_rad)    <span class="co"># E(0, 3θ)  </span></span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a>E3 <span class="op">=</span> <span class="op">-</span>np.cos(<span class="dv">2</span> <span class="op">*</span> theta_rad)      <span class="co"># E(2θ, θ)</span></span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a>E4 <span class="op">=</span> <span class="op">-</span>np.cos(<span class="dv">2</span> <span class="op">*</span> theta_rad)      <span class="co"># E(2θ, 3θ)</span></span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a>S <span class="op">=</span> np.<span class="bu">abs</span>(E1 <span class="op">-</span> E2 <span class="op">+</span> E3 <span class="op">+</span> E4)</span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a>ax.plot(theta, S, <span class="st">'b-'</span>, linewidth<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="st">'Quantum prediction'</span>)</span>
+<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a>ax.axhline(y<span class="op">=</span><span class="dv">2</span>, color<span class="op">=</span><span class="st">'r'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, linewidth<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="st">'Classical bound ($S = 2$)'</span>)</span>
+<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a>ax.axhline(y<span class="op">=</span><span class="dv">2</span><span class="op">*</span>np.sqrt(<span class="dv">2</span>), color<span class="op">=</span><span class="st">'g'</span>, linestyle<span class="op">=</span><span class="st">':'</span>, linewidth<span class="op">=</span><span class="dv">2</span>, </span>
+<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a>           label<span class="op">=</span><span class="ss">f'Tsirelson bound ($S = 2</span><span class="ch">\\</span><span class="ss">sqrt</span><span class="ch">{{</span><span class="ss">2</span><span class="ch">}}</span><span class="ss"> </span><span class="ch">\\</span><span class="ss">approx </span><span class="sc">{</span><span class="dv">2</span><span class="op">*</span>np<span class="sc">.</span>sqrt(<span class="dv">2</span>)<span class="sc">:.2f}</span><span class="ss">$)'</span>)</span>
+<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a><span class="co"># Mark the maximum</span></span>
+<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a>max_idx <span class="op">=</span> np.argmax(S)</span>
+<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a>ax.plot(theta[max_idx], S[max_idx], <span class="st">'go'</span>, markersize<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a>ax.annotate(<span class="ss">f'Maximum at θ = </span><span class="sc">{</span>theta[max_idx]<span class="sc">:.1f}</span><span class="ss">°</span><span class="ch">\n</span><span class="ss">$S = 2</span><span class="ch">\\</span><span class="ss">sqrt</span><span class="ch">{{</span><span class="ss">2</span><span class="ch">}}</span><span class="ss">$'</span>, </span>
+<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a>            xy<span class="op">=</span>(theta[max_idx], S[max_idx]), xytext<span class="op">=</span>(theta[max_idx]<span class="op">+</span><span class="dv">5</span>, S[max_idx]<span class="op">-</span><span class="fl">0.15</span>),</span>
+<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a>            fontsize<span class="op">=</span><span class="dv">9</span>, ha<span class="op">=</span><span class="st">'left'</span>,</span>
+<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a>            arrowprops<span class="op">=</span><span class="bu">dict</span>(arrowstyle<span class="op">=</span><span class="st">'-&gt;'</span>, color<span class="op">=</span><span class="st">'green'</span>, lw<span class="op">=</span><span class="dv">1</span>))</span>
+<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a><span class="co"># Shade the classical region</span></span>
+<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a>ax.fill_between(theta, <span class="dv">0</span>, <span class="dv">2</span>, alpha<span class="op">=</span><span class="fl">0.2</span>, color<span class="op">=</span><span class="st">'red'</span>, label<span class="op">=</span><span class="st">'Classical region'</span>)</span>
+<span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a><span class="co"># Shade the quantum-only region</span></span>
+<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a>ax.fill_between(theta, <span class="dv">2</span>, S, where<span class="op">=</span>(S <span class="op">&gt;</span> <span class="dv">2</span>), alpha<span class="op">=</span><span class="fl">0.2</span>, color<span class="op">=</span><span class="st">'blue'</span>, label<span class="op">=</span><span class="st">'Quantum violation region'</span>)</span>
+<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Angle parameter θ (degrees)'</span>)</span>
+<span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'CHSH parameter $S$'</span>)</span>
+<span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a>ax.set_xlim(<span class="dv">0</span>, <span class="dv">45</span>)</span>
+<span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a>ax.set_ylim(<span class="dv">0</span>, <span class="dv">3</span>)</span>
+<span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a>ax.legend(loc<span class="op">=</span><span class="st">'lower right'</span>, fontsize<span class="op">=</span><span class="dv">8</span>)</span>
+<span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a>ax.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-69"><a href="#cb4-69" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb4-70"><a href="#cb4-70" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div id="fig-chsh-violation" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-chsh-violation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="parametric_dc_files/figure-html/fig-chsh-violation-output-1.png" width="577" height="396" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-chsh-violation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6— CHSH parameter <span class="math inline">\(S\)</span> as a function of angle <span class="math inline">\(\phi\)</span>, where Alice measures at <span class="math inline">\(0°\)</span> and <span class="math inline">\(\phi\)</span>, and Bob at <span class="math inline">\(\phi/2\)</span> and <span class="math inline">\(3\phi/2\)</span>. The classical bound is <span class="math inline">\(S \leq 2\)</span> (dashed line). The quantum prediction reaches a maximum of <span class="math inline">\(2\sqrt{2} \approx 2.83\)</span> at <span class="math inline">\(\phi = 45°\)</span>, clearly violating the classical bound.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-fig-chsh-measurement-outcomes" class="cell" data-execution_count="5">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>n_pairs <span class="op">=</span> <span class="dv">1000</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="dv">2</span>, figsize<span class="op">=</span>get_size(<span class="dv">10</span>, <span class="dv">8</span>))</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>axes <span class="op">=</span> axes.flatten()</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Measurement angle combinations</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>angle_pairs <span class="op">=</span> [</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">0</span>, <span class="fl">22.5</span>, <span class="st">"$</span><span class="ch">\\</span><span class="st">theta_A = 0°$, $</span><span class="ch">\\</span><span class="st">theta_B = 22.5°$"</span>),</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">0</span>, <span class="fl">67.5</span>, <span class="st">"$</span><span class="ch">\\</span><span class="st">theta_A = 0°$, $</span><span class="ch">\\</span><span class="st">theta_B' = 67.5°$"</span>),</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">45</span>, <span class="fl">22.5</span>, <span class="st">"$</span><span class="ch">\\</span><span class="st">theta_A' = 45°$, $</span><span class="ch">\\</span><span class="st">theta_B = 22.5°$"</span>),</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">45</span>, <span class="fl">67.5</span>, <span class="st">"$</span><span class="ch">\\</span><span class="st">theta_A' = 45°$, $</span><span class="ch">\\</span><span class="st">theta_B' = 67.5°$"</span>)</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> simulate_measurements(theta_A, theta_B, n):</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Simulate measurements on entangled |HV&gt; + |VH&gt; state"""</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Probability of same outcome</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>    delta <span class="op">=</span> np.radians(theta_A <span class="op">-</span> theta_B)</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># For |HV&gt; + |VH&gt; state:</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># P(same) = sin²(θ_A - θ_B), P(different) = cos²(θ_A - θ_B)</span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>    p_same <span class="op">=</span> np.sin(delta)<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>    outcomes_A <span class="op">=</span> []</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>    outcomes_B <span class="op">=</span> []</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(n):</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>        <span class="co"># First decide Alice's outcome randomly</span></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>        alice <span class="op">=</span> np.random.choice([<span class="dv">1</span>, <span class="op">-</span><span class="dv">1</span>])  <span class="co"># 1 = H, -1 = V</span></span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Bob's outcome correlated with Alice's</span></span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> np.random.random() <span class="op">&lt;</span> p_same:</span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>            bob <span class="op">=</span> alice  <span class="co"># Same as Alice</span></span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>            bob <span class="op">=</span> <span class="op">-</span>alice  <span class="co"># Opposite to Alice</span></span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>        outcomes_A.append(alice)</span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>        outcomes_B.append(bob)</span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.array(outcomes_A), np.array(outcomes_B)</span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> idx, (theta_A, theta_B, title) <span class="kw">in</span> <span class="bu">enumerate</span>(angle_pairs):</span>
+<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a>    ax <span class="op">=</span> axes[idx]</span>
+<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a>    A, B <span class="op">=</span> simulate_measurements(theta_A, theta_B, n_pairs)</span>
+<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Count outcomes</span></span>
+<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a>    HH <span class="op">=</span> np.<span class="bu">sum</span>((A <span class="op">==</span> <span class="dv">1</span>) <span class="op">&amp;</span> (B <span class="op">==</span> <span class="dv">1</span>))</span>
+<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a>    HV <span class="op">=</span> np.<span class="bu">sum</span>((A <span class="op">==</span> <span class="dv">1</span>) <span class="op">&amp;</span> (B <span class="op">==</span> <span class="op">-</span><span class="dv">1</span>))</span>
+<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a>    VH <span class="op">=</span> np.<span class="bu">sum</span>((A <span class="op">==</span> <span class="op">-</span><span class="dv">1</span>) <span class="op">&amp;</span> (B <span class="op">==</span> <span class="dv">1</span>))</span>
+<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a>    VV <span class="op">=</span> np.<span class="bu">sum</span>((A <span class="op">==</span> <span class="op">-</span><span class="dv">1</span>) <span class="op">&amp;</span> (B <span class="op">==</span> <span class="op">-</span><span class="dv">1</span>))</span>
+<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a>    outcomes <span class="op">=</span> [HH, HV, VH, VV]</span>
+<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a>    labels <span class="op">=</span> [<span class="st">'H,H'</span>, <span class="st">'H,V'</span>, <span class="st">'V,H'</span>, <span class="st">'V,V'</span>]</span>
+<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a>    colors <span class="op">=</span> [<span class="st">'#2ecc71'</span>, <span class="st">'#e74c3c'</span>, <span class="st">'#e74c3c'</span>, <span class="st">'#2ecc71'</span>]  <span class="co"># Green for correlated, red for anti</span></span>
+<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a>    bars <span class="op">=</span> ax.bar(labels, outcomes, color<span class="op">=</span>colors, edgecolor<span class="op">=</span><span class="st">'black'</span>, linewidth<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Calculate and display correlation</span></span>
+<span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a>    E <span class="op">=</span> (HH <span class="op">+</span> VV <span class="op">-</span> HV <span class="op">-</span> VH) <span class="op">/</span> n_pairs</span>
+<span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a>    ax.set_title(<span class="ss">f'</span><span class="sc">{</span>title<span class="sc">}</span><span class="ch">\n</span><span class="ss">$E = </span><span class="sc">{</span>E<span class="sc">:.3f}</span><span class="ss">$'</span>, fontsize<span class="op">=</span><span class="dv">9</span>)</span>
+<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a>    ax.set_ylabel(<span class="st">'Counts'</span>)</span>
+<span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a>    ax.set_ylim(<span class="dv">0</span>, n_pairs <span class="op">*</span> <span class="fl">0.7</span>)</span>
+<span id="cb5-63"><a href="#cb5-63" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-64"><a href="#cb5-64" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Add count labels on bars</span></span>
+<span id="cb5-65"><a href="#cb5-65" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> bar, count <span class="kw">in</span> <span class="bu">zip</span>(bars, outcomes):</span>
+<span id="cb5-66"><a href="#cb5-66" aria-hidden="true" tabindex="-1"></a>        ax.text(bar.get_x() <span class="op">+</span> bar.get_width()<span class="op">/</span><span class="dv">2</span>, bar.get_height() <span class="op">+</span> <span class="dv">10</span>, </span>
+<span id="cb5-67"><a href="#cb5-67" aria-hidden="true" tabindex="-1"></a>                <span class="bu">str</span>(count), ha<span class="op">=</span><span class="st">'center'</span>, va<span class="op">=</span><span class="st">'bottom'</span>, fontsize<span class="op">=</span><span class="dv">8</span>)</span>
+<span id="cb5-68"><a href="#cb5-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-69"><a href="#cb5-69" aria-hidden="true" tabindex="-1"></a>fig.suptitle(<span class="ss">f'Simulated CHSH Measurements (N = </span><span class="sc">{</span>n_pairs<span class="sc">}</span><span class="ss"> pairs per setting)'</span>, fontsize<span class="op">=</span><span class="dv">11</span>, y<span class="op">=</span><span class="fl">1.02</span>)</span>
+<span id="cb5-70"><a href="#cb5-70" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb5-71"><a href="#cb5-71" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div id="fig-chsh-measurement-outcomes" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-chsh-measurement-outcomes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="parametric_dc_files/figure-html/fig-chsh-measurement-outcomes-output-1.png" width="725" height="488" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-chsh-measurement-outcomes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7— Simulated measurement outcomes for a CHSH Bell test with 1000 entangled photon pairs. Each panel shows the joint detection events for one of the four measurement settings. The correlations clearly show the quantum signature — same-outcome events (HH, VV) dominate when <span class="math inline">\(|\theta_A - \theta_B| &lt; 45°\)</span>, while opposite outcomes become more likely as the angle difference increases.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</section>
+<section id="why-entanglement-matters" class="level3">
+<h3 class="anchored" data-anchor-id="why-entanglement-matters">Why Entanglement Matters</h3>
+<p>Entanglement is not just a philosophical curiosity — it is a practical resource for:</p>
+<ul>
+<li><strong>Quantum cryptography</strong>: The E91 protocol uses entangled photons to generate secure encryption keys. Any eavesdropping attempt disturbs the entanglement and is immediately detected.</li>
+<li><strong>Quantum teleportation</strong>: The quantum state of one particle can be transferred to another distant particle using entanglement and classical communication.</li>
+<li><strong>Quantum computing</strong>: Entanglement enables quantum computers to perform certain calculations exponentially faster than classical computers.</li>
+<li><strong>Tests of fundamental physics</strong>: Bell test experiments probe the foundations of quantum mechanics and the nature of reality.</li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -1526,6 +1949,9 @@ window._ojs.runtime.interpretFromScriptTags();
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="../quantum-mechanics/Qzeno.html" class="pagination-link" aria-label="Quantum Zeno Effect">
+        <span class="nav-page-text">Quantum Zeno Effect</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
