@@ -1,0 +1,1576 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.34">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Interferometers and other Coherence Applications – Experimental Physics 3 Course on Optics and Quantum Mechanics</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../wave-optics/Double Slit.html" rel="next">
+<link href="../wave-optics/Interference.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-9344fb9851b4da3cab95007ef9d770dc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://hypothes.is/embed.js"></script>
+<script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    document.body.classList.add('hypothesis-enabled');
+  });
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Experimental Physics 3 Course on Optics and Quantum Mechanics</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Wave Optics</li><li class="breadcrumb-item"><a href="../wave-optics/Interferometers.html">Lecture 9</a></li><li class="breadcrumb-item"><a href="../wave-optics/Interferometers.html">Interferometers</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../mona_logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Course Info</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-info/intructors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instructor</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-info/schedule.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Schedule</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-info/resources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ressourcen</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-info/assignments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Assignments</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-info/exam.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exam</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Geometrical Optics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 1</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/reflection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Reflection</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/refraction-total-internal-reflection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Refraction</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 2</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Optical Elements I.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optical Elements I - Mirrors</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 3</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Optical Elements II.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optical Elements II - Prims</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 4</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Optical Elements III.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optical Elements III - Lenses</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 5</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Eye.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optical Instruments- Eye</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Magnifying Glass.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optical Instruments- Magnifying Glass</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Lens Systems and Optical Instruments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lens Systems and Optical Instruments</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Microscope.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optical Instruments- Microscope</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 6</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Telescope.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optical Instruments- Telescope</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Imaging Errors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Imaging Errors</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Rainbow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Rainbow</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
+ <span class="menu-text">Wave Optics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 7</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Wave Optics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Wave Optics</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 8</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Interference.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Interference and Coherence</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="true">
+ <span class="menu-text">Lecture 9</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Interferometers.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Interferometers</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Double Slit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Double Slit Interference</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 10</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Thin Film Interference.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Thin Film Interference</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/MultiWave Interference.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Multi Wave Interference</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 11</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/FabryPerot.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fabry Perot Interferometer</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Diffraction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Diffraction</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 12</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Diffraction2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Diffraction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Fresnel Zones.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fresnel Zone Plate</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Diffraction Integral.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Diffraction Integral</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="true">
+ <span class="menu-text">Electromagnetic Optics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-16" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-17" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 13</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-17" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-17" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Electromagnetic Optics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Electromagnetic Optics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Polarization of EM Waves.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Polarization of EM Waves</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-18" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 14</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-18" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-18" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Energy Transport.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Energy Transport</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-19" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 15</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-19" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-19" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/EM Waves in Matter.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Waves in Matter</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Dispersion and Absorption.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Origin of Refractive Index</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-20" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 16</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-20" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-20" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Reflection and Refraction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Reflection and Refraction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Fresnel Equations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fresnel Equations</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-21" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 17</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-21" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-21" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Metals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Electromagnetic Waves in Metals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Anisotropic Materials.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Anisotropic Materials</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-22" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 18</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-22" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-22" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Optical Activity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optical Activity</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Dipole Radiation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dipole Radiation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-23" role="navigation" aria-expanded="true">
+ <span class="menu-text">Quantum Mechanics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-23" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-23" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-24" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 22</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-24" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-24" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Black_Body_Radiation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Black Body Radiation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-25" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 23</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-25" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-25" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Wave_character_of_particles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Wave Character of Particles</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Matter_waves.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Matter Waves</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-26" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 24</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-26" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-26" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Heisenbergs_uncertainty_relation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Heisenberg Uncertainty Principle</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-27" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 25</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-27" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-27" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Structure_of_atoms.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Structure of Atoms</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Schroedinger_equation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Schrödinger Equation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-28" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 26</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-28" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-28" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/potential_barrier.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Potential Barriers and Wells</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-29" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 27</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-29" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-29" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/harmonic_oscillator.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Harmonic Oscillator</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Spherical_potential.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Spherically Symmetric Problems</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-30" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 28</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-30" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-30" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/parametric_dc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Photon Entanglement</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-31" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 29</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-31" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-31" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Qzeno.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quantum Zeno Effect</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#michelson-interferometer" id="toc-michelson-interferometer" class="nav-link active" data-scroll-target="#michelson-interferometer">Michelson Interferometer</a>
+  <ul class="collapse">
+  <li><a href="#application-measuring-refractive-index-of-gases" id="toc-application-measuring-refractive-index-of-gases" class="nav-link" data-scroll-target="#application-measuring-refractive-index-of-gases">Application: Measuring Refractive Index of Gases</a></li>
+  <li><a href="#application-the-ligo-gravitational-wave-detector" id="toc-application-the-ligo-gravitational-wave-detector" class="nav-link" data-scroll-target="#application-the-ligo-gravitational-wave-detector">Application: The LIGO Gravitational Wave Detector</a></li>
+  </ul></li>
+  <li><a href="#mach-zehnder-interferometer" id="toc-mach-zehnder-interferometer" class="nav-link" data-scroll-target="#mach-zehnder-interferometer">Mach-Zehnder Interferometer</a>
+  <ul class="collapse">
+  <li><a href="#application-electro-optic-modulators-in-photonic-integrated-circuits" id="toc-application-electro-optic-modulators-in-photonic-integrated-circuits" class="nav-link" data-scroll-target="#application-electro-optic-modulators-in-photonic-integrated-circuits">Application: Electro-Optic Modulators in Photonic Integrated Circuits</a></li>
+  </ul></li>
+  <li><a href="#sagnac-interferometer" id="toc-sagnac-interferometer" class="nav-link" data-scroll-target="#sagnac-interferometer">Sagnac Interferometer</a>
+  <ul class="collapse">
+  <li><a href="#derivation-and-application-in-fiber-optic-gyroscopes" id="toc-derivation-and-application-in-fiber-optic-gyroscopes" class="nav-link" data-scroll-target="#derivation-and-application-in-fiber-optic-gyroscopes">Derivation and Application in Fiber-Optic Gyroscopes</a></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Wave Optics</li><li class="breadcrumb-item"><a href="../wave-optics/Interferometers.html">Lecture 9</a></li><li class="breadcrumb-item"><a href="../wave-optics/Interferometers.html">Interferometers</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Interferometers and other Coherence Applications</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Interferometry is fundamentally based on the principle that light waves accumulate phase as they propagate through space. The key to understanding how interferometers work lies in recognizing the relationship between the optical path length traveled by light and the phase it accumulates along that path. When a light wave travels through a medium with refractive index <span class="math inline">\(n\)</span> over a physical distance <span class="math inline">\(L\)</span>, it accumulates an optical path length (OPL) given by <span class="math inline">\(\text{OPL} = n \cdot L\)</span>. The phase acquired by the light wave is then directly proportional to this optical path length, expressed as <span class="math inline">\(\phi = \frac{2\pi}{\lambda} \text{OPL}\)</span>, where <span class="math inline">\(\lambda\)</span> is the wavelength of light in vacuum.</p>
+<p>This relationship has profound implications for interferometric measurements. When we split a beam of light into two paths and then recombine them, the resulting interference pattern depends on the phase difference between the two beams.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Fundamental Phase Difference Formula
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[\Delta \phi = \frac{2\pi}{\lambda}(n_1 L_1 - n_2 L_2)\]</span></p>
+<p>This is the cornerstone equation of interferometry. The phase difference <span class="math inline">\(\Delta \phi\)</span> between two light beams depends on the difference in their optical path lengths. Here, <span class="math inline">\(\lambda\)</span> is the wavelength of light, <span class="math inline">\(n_1\)</span> and <span class="math inline">\(n_2\)</span> are the refractive indices along each path, and <span class="math inline">\(L_1\)</span> and <span class="math inline">\(L_2\)</span> are the physical path lengths. This formula reveals two fundamental ways to create a phase difference:</p>
+<ol type="1">
+<li><strong>Change the physical path length</strong> (<span class="math inline">\(L\)</span>) - used in LIGO, precision metrology</li>
+<li><strong>Change the refractive index</strong> (<span class="math inline">\(n\)</span>) - used in gas sensing, electro-optic modulators</li>
+</ol>
+</div>
+</div>
+<p>From this expression, we can immediately see that there are two distinct ways to introduce a phase difference: we can either change the physical length of one path (varying <span class="math inline">\(L\)</span>), or we can change the refractive index along one path (varying <span class="math inline">\(n\)</span>). This duality is what makes interferometers incredibly versatile instruments, capable of measuring not only distances and mechanical vibrations but also changes in the optical properties of materials, gas composition, temperature, and even rotation.</p>
+<p>The interference that results from this phase difference manifests as alternating bright and dark fringes.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Interference Conditions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Constructive interference (bright fringes):</strong> <span class="math inline">\(\Delta \phi = 2\pi m\)</span> where <span class="math inline">\(m = 0, 1, 2, 3, ...\)</span></p>
+<p><strong>Destructive interference (dark fringes):</strong> <span class="math inline">\(\Delta \phi = \pi(2m + 1)\)</span> where <span class="math inline">\(m = 0, 1, 2, 3, ...\)</span></p>
+<p>These conditions determine when light waves add constructively (maximum intensity) or destructively (minimum intensity).</p>
+</div>
+</div>
+<p>By carefully observing how these interference patterns change, we can extract extremely precise measurements of whatever physical quantity is causing the phase shift.</p>
+<p>A critical requirement for all interferometric measurements is <strong>coherence</strong>—the light beams must maintain a stable phase relationship over the time and distance scales of the measurement. As discussed in the lecture on interference, coherence is characterized by the coherence length <span class="math inline">\(L_c = c\tau_c\)</span>, where <span class="math inline">\(\tau_c = 1/\Delta\nu\)</span> is the coherence time and <span class="math inline">\(\Delta\nu\)</span> is the spectral bandwidth of the light source. For an interferometer to produce stable interference fringes, the optical path difference between the interfering beams must be smaller than the coherence length. This is why modern interferometers almost universally employ lasers as light sources: a typical HeNe laser has a coherence length of tens of centimeters to meters, while a stabilized single-mode laser can have coherence lengths of kilometers. In contrast, white light from a thermal source has a coherence length of only a few micrometers, making it unsuitable for most interferometric applications (though it can be used for specialized techniques like white light interferometry for surface profiling).</p>
+<p>In the following sections, we will explore several important types of interferometers and examine how they exploit these principles for various scientific and technological applications.</p>
+<section id="michelson-interferometer" class="level2">
+<h2 class="anchored" data-anchor-id="michelson-interferometer">Michelson Interferometer</h2>
+<p>The Michelson interferometer is perhaps the most fundamental and historically significant optical interferometer. Its basic design elegantly demonstrates the core principles of interferometry while providing a platform for extraordinarily precise measurements. The interferometer consists of a coherent light source, typically a laser, that emits a beam directed toward a beam splitter positioned at 45 degrees to the incoming beam. This beam splitter divides the incident light into two beams of approximately equal intensity: one beam is reflected at 90 degrees toward a fixed mirror, while the other is transmitted straight through toward a movable mirror. After reflecting off their respective mirrors, both beams return to the beam splitter where they are recombined, with portions of each beam directed toward a detector or viewing screen where they interfere.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/michelson.png" class="img-fluid figure-img" style="width:30.0%"></p>
+<figcaption>Michelson Interferometer</figcaption>
+</figure>
+</div>
+<p>The key to understanding the Michelson interferometer lies in analyzing the optical path difference between the two arms. If we denote the distance from the beam splitter to the fixed mirror as <span class="math inline">\(L_1\)</span> and the distance to the movable mirror as <span class="math inline">\(L_2\)</span>, then the total optical path difference is <span class="math inline">\(\Delta L = 2(L_2 - L_1)\)</span>, where the factor of 2 accounts for the round trip each beam makes to its respective mirror and back. This path difference translates directly into a phase difference of <span class="math inline">\(\Delta \phi = \frac{4\pi(L_2 - L_1)}{\lambda}\)</span>. When <span class="math inline">\(L_1 = L_2\)</span>, the beams interfere constructively. As we move the movable mirror by a distance <span class="math inline">\(d\)</span>, we introduce a path difference of <span class="math inline">\(2d\)</span>, and each time this path difference changes by one wavelength, we observe one complete cycle of the interference pattern—from bright to dark and back to bright again.</p>
+<section id="application-measuring-refractive-index-of-gases" class="level3">
+<h3 class="anchored" data-anchor-id="application-measuring-refractive-index-of-gases">Application: Measuring Refractive Index of Gases</h3>
+<p>One of the most elegant applications of the Michelson interferometer is the measurement of the refractive index of gases. This technique demonstrates beautifully how interferometers can detect not just changes in geometric path length, but also changes in optical path length due to variations in the refractive index. To perform this measurement, we place a transparent gas cell of known length <span class="math inline">\(L\)</span> in one arm of the interferometer. Initially, when the cell is evacuated and contains only vacuum, the optical path through that arm is simply <span class="math inline">\(n_{\text{vacuum}} \cdot L = L\)</span> (since <span class="math inline">\(n_{\text{vacuum}} = 1\)</span>). When we introduce a gas into the cell, the refractive index changes from 1 to <span class="math inline">\(n_{\text{gas}}\)</span>, which slightly increases the optical path length in that arm to <span class="math inline">\(n_{\text{gas}} \cdot L\)</span>.</p>
+<p>The change in optical path length is <span class="math inline">\(\Delta(\text{OPL}) = (n_{\text{gas}} - 1)L\)</span>. Since the light makes a round trip through the cell, the total change in optical path length is <span class="math inline">\(2(n_{\text{gas}} - 1)L\)</span>. This change manifests as a shift in the interference pattern.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Gas Refractive Index Measurement Formula
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[n_{\text{gas}} = 1 + \frac{m\lambda}{2L}\]</span></p>
+<p>This formula allows us to determine the refractive index of a gas by counting fringe shifts. Here:</p>
+<ul>
+<li><span class="math inline">\(m\)</span> = number of bright fringes that pass by as the cell is filled</li>
+<li><span class="math inline">\(\lambda\)</span> = wavelength of light used</li>
+<li><span class="math inline">\(L\)</span> = length of the gas cell</li>
+</ul>
+<p><strong>How it works:</strong> Place a gas cell of length <span class="math inline">\(L\)</span> in one arm of the interferometer. As you fill it with gas, the refractive index changes from 1 (vacuum) to <span class="math inline">\(n_{\text{gas}}\)</span>, causing fringes to shift. Count the fringes to determine <span class="math inline">\(n_{\text{gas}}\)</span>.</p>
+</div>
+</div>
+<p>Specifically, if we count the number of bright fringes <span class="math inline">\(m\)</span> that pass by a reference point as we fill the cell with gas, we can relate this to the refractive index through the equation <span class="math inline">\(m = \frac{2(n_{\text{gas}} - 1)L}{\lambda}\)</span>, which can be rearranged to give the formula above.</p>
+<p>For example, if we use a HeNe laser with <span class="math inline">\(\lambda = 632.8\)</span> nm and a gas cell of length <span class="math inline">\(L = 10\)</span> cm, and we observe 20 fringes passing as we fill the cell with air at standard conditions, we can calculate that the refractive index of air is approximately <span class="math inline">\(n_{\text{air}} \approx 1.000063\)</span>. This technique is remarkably sensitive; even tiny changes in gas pressure, temperature, or composition can be detected by monitoring the interference pattern. This makes the Michelson interferometer valuable for applications ranging from gas sensing and environmental monitoring to quality control in industrial processes.</p>
+</section>
+<section id="application-the-ligo-gravitational-wave-detector" class="level3">
+<h3 class="anchored" data-anchor-id="application-the-ligo-gravitational-wave-detector">Application: The LIGO Gravitational Wave Detector</h3>
+<p>The extraordinary sensitivity of the Michelson interferometer to changes in path length reaches its ultimate expression in the Laser Interferometer Gravitational-Wave Observatory, or LIGO. This instrument represents one of the most ambitious and technically challenging scientific instruments ever constructed, designed to detect gravitational waves—ripples in the fabric of spacetime itself predicted by Einstein’s general theory of relativity. These waves are generated by some of the most violent events in the universe, such as the collision and merger of black holes or neutron stars, and they propagate through space at the speed of light, stretching and compressing spacetime as they pass.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/VIRGO.jpg" class="img-fluid figure-img" data-with="50%"></p>
+<figcaption>Virgo detector of LIGO</figcaption>
+</figure>
+</div>
+<p>LIGO consists of two large Michelson interferometers located at separate sites in the United States: one in Hanford, Washington, and the other in Livingston, Louisiana. Each interferometer has two perpendicular arms extending 4 kilometers in length. A powerful laser beam is split and sent down these arms, where it bounces back and forth many times in Fabry-Pérot cavities before returning to the beam splitter. Under normal conditions, the interferometer is carefully tuned so that the two beams interfere destructively when they recombine, meaning essentially no light reaches the photodetector—this is called the “dark fringe” operating point.</p>
+<p>When a gravitational wave passes through the detector, it causes one arm to stretch while simultaneously causing the other arm to compress. This differential change in length, though incredibly tiny, alters the optical path difference between the two arms and thus shifts the interference pattern away from the dark fringe. The detector then registers light, and the amount of light and how it varies with time encodes information about the gravitational wave. The sensitivity required is almost incomprehensible: LIGO must detect changes in arm length smaller than <span class="math inline">\(10^{-19}\)</span> meters, which is less than one-thousandth the diameter of a proton. To put this in perspective, this is equivalent to measuring the distance to the nearest star (4 light-years away) to an accuracy smaller than the width of a human hair.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+LIGO Phase Shift Formula
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[\Delta \phi = \frac{4\pi \Delta L}{\lambda}\]</span></p>
+<p>This formula describes the phase shift caused by a gravitational wave in LIGO. Here: - <span class="math inline">\(\Delta L\)</span> = change in arm length due to the gravitational wave - <span class="math inline">\(\lambda\)</span> = wavelength of the laser (1064 nm for LIGO) - The factor of 4 comes from: 2 (round trip in each arm) × 2 (differential effect between arms)</p>
+<p><strong>Why factor of 4?</strong> When a gravitational wave passes through: one arm increases by <span class="math inline">\(\Delta L\)</span> while the other decreases by <span class="math inline">\(\Delta L\)</span>. The light makes a round trip in each arm, so the total optical path difference is <span class="math inline">\(2 \cdot 2\Delta L = 4\Delta L\)</span>.</p>
+</div>
+</div>
+<p>The phase shift <span class="math inline">\(\Delta \phi\)</span> caused by a gravitational wave can be expressed as shown above. To understand this more carefully, consider that when a gravitational wave passes through the interferometer, it causes a time-varying strain in spacetime. If one arm increases in length by <span class="math inline">\(\Delta L\)</span>, the other decreases by approximately the same amount. The round-trip optical path difference between the arms becomes <span class="math inline">\(2 \cdot 2\Delta L = 4\Delta L\)</span>, leading to the phase shift formula given above.</p>
+<p>The extraordinary precision of LIGO’s measurements is achieved through a combination of advanced technologies including powerful stabilized lasers, ultra-high vacuum systems, sophisticated vibration isolation, and quantum noise reduction techniques. Since its first detection of gravitational waves in September 2015, LIGO has opened an entirely new window onto the universe, allowing us to observe cosmic events that are completely invisible to conventional telescopes. This remarkable achievement demonstrates how the simple principles of the Michelson interferometer, when pushed to their ultimate limits, can reveal phenomena at the very frontiers of physics.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+LIGO Technical Details
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>LIGO consists of two large interferometers located in the United States: one in Hanford, Washington, and the other in Livingston, Louisiana. These facilities are operated by the LIGO Scientific Collaboration (LSC), which includes scientists from various institutions around the world. Here is a link to the <a href="https://www.ligo.caltech.edu/">LIGO website</a> and a direct link to an <a href="https://www.ligo.caltech.edu/system/media_files/binaries/303/original/ligo-educators-guide.pdf?1455165573">overview document</a>.</p>
+<p>The interferometer design employs a Michelson interferometer configuration with 4-kilometer-long arms forming an “L” shape. Each arm contains a Fabry-Pérot cavity to increase the effective path length of the laser beams. These cavities are formed by highly reflective mirrors placed at the ends of the arms, and the laser beams bounce back and forth multiple times within the cavities, effectively increasing the arm length to several hundred kilometers. The laser system uses a high-power, stabilized laser operating at a wavelength of 1064 nm in the infrared. The laser power is typically around 200 watts, but the effective power in the interferometer arms is increased to several kilowatts using power recycling techniques.</p>
+<p>The mirrors and other optical components are suspended by a system of pendulums to isolate them from ground vibrations and other noise sources. The suspension system includes multiple stages of isolation, including active and passive damping mechanisms. The interferometer arms are housed in ultra-high vacuum tubes to eliminate air molecules that could scatter the laser beams and introduce noise, maintaining a pressure of around <span class="math inline">\(10^{-9}\)</span> torr.</p>
+<p>Gravitational waves are detected through their effect on the interference pattern. As a gravitational wave passes through the interferometer, it stretches and compresses the spacetime along the arms, causing tiny changes in the arm lengths. These changes cause a phase shift in the laser beams when they recombine at the beam splitter, resulting in a change in the interference pattern that is detected by photodetectors. LIGO is designed to detect changes in arm lengths as small as <span class="math inline">\(10^{-19}\)</span> meters through advanced noise reduction techniques.</p>
+<p>The data from the photodetectors are processed using advanced algorithms and computational techniques to filter out noise and extract potential gravitational wave signals. When a potential event is detected, the data are analyzed to determine the properties of the source, such as the masses and spins of merging black holes or neutron stars. Detection is confirmed by comparing data from both LIGO detectors and, if available, data from other gravitational wave observatories like Virgo in Europe.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="mach-zehnder-interferometer" class="level2">
+<h2 class="anchored" data-anchor-id="mach-zehnder-interferometer">Mach-Zehnder Interferometer</h2>
+<p>The Mach-Zehnder interferometer represents a different geometric configuration that offers distinct advantages for certain applications, particularly those involving the manipulation and modulation of light in optical systems. Unlike the Michelson interferometer where the two beams travel back and forth along the same paths, the Mach-Zehnder interferometer splits a beam into two separate paths that never retrace themselves, and the beams are recombined at a different location from where they were split. This architecture makes it particularly suitable for applications where you want to place samples or active devices in one or both paths without the complications of retroreflection.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/mach.png" class="img-fluid figure-img" style="width:30.0%"></p>
+<figcaption>Mach Zehnder Interferometer</figcaption>
+</figure>
+</div>
+<p>The interferometer consists of a coherent light source that emits a beam toward a first beam splitter, which divides the light into two beams of approximately equal intensity. These two beams propagate along separate paths, each encountering a mirror that redirects them toward a second beam splitter. At this second beam splitter, the two beams are recombined and directed toward two output ports. The relative phase between the two beams when they arrive at the second beam splitter determines the interference pattern and consequently how much light exits from each output port. If the two paths have exactly the same optical path length, the beams arrive in phase at the second beam splitter, and the interference is purely constructive at one output port and destructive at the other.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Mach-Zehnder Phase Difference
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[\Delta \phi = \frac{2\pi}{\lambda}(n_1 L_1 - n_2 L_2)\]</span></p>
+<p>Unlike the Michelson interferometer, the Mach-Zehnder uses non-retroreflecting paths (no factor of 2 from round trips). The phase difference depends on:</p>
+<ul>
+<li><span class="math inline">\(L_1, L_2\)</span> = physical path lengths of the two arms</li>
+<li><span class="math inline">\(n_1, n_2\)</span> = refractive indices along each arm</li>
+</ul>
+<p>By controlling either the path length or refractive index in one arm, we can switch light between output ports.</p>
+</div>
+</div>
+<p>By introducing changes to either the path length or the refractive index in one arm, we can control the phase difference and thereby switch the light between the two output ports. This controllability makes the Mach-Zehnder interferometer ideal for applications in optical communications, sensing, and information processing.</p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/machz_lecture_pat.png" class="img-fluid figure-img"></p>
+<figcaption>Mach Zehnder Interferometer with a Gaussian</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/machz_lecture_vortex.png" class="img-fluid figure-img"></p>
+<figcaption>Mach Zehnder Interferometer with a Bessel Beam</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<section id="application-electro-optic-modulators-in-photonic-integrated-circuits" class="level3">
+<h3 class="anchored" data-anchor-id="application-electro-optic-modulators-in-photonic-integrated-circuits">Application: Electro-Optic Modulators in Photonic Integrated Circuits</h3>
+<p>One of the most important modern applications of the Mach-Zehnder interferometer is in electro-optic phase modulators, particularly those implemented on photonic integrated circuits. These devices are essential components in fiber-optic communication systems, optical computing, and various sensing applications. The basic principle involves placing an electro-optic material—a material whose refractive index changes in response to an applied electric field—in one or both arms of the interferometer. When voltage is applied to electrodes positioned near the waveguides, the resulting electric field modulates the refractive index of the material through the Pockels effect, thereby changing the optical path length in that arm and introducing a phase shift.</p>
+<p>In a typical integrated Mach-Zehnder modulator fabricated on a <em>lithium niobate</em> substrate or <em>silicon photonic</em> platform, light enters the device and is split equally into two waveguide arms. Electrodes are patterned along one or both arms, and when a voltage <span class="math inline">\(V\)</span> is applied, it creates an electric field that changes the refractive index by an amount proportional to the applied field.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Electro-Optic Phase Modulation (Pockels Effect)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Refractive index change:</strong> <span class="math display">\[\Delta n = -\frac{1}{2}n^3 r E\]</span></p>
+<p><strong>Resulting phase shift:</strong> <span class="math display">\[\Delta \phi = \frac{2\pi}{\lambda} \Delta n \cdot L\]</span></p>
+<p>where:</p>
+<ul>
+<li><span class="math inline">\(n\)</span> = unperturbed refractive index</li>
+<li><span class="math inline">\(r\)</span> = Pockels coefficient (material property)</li>
+<li><span class="math inline">\(E\)</span> = applied electric field</li>
+<li><span class="math inline">\(L\)</span> = length of the modulator arm</li>
+<li><span class="math inline">\(\lambda\)</span> = wavelength of light</li>
+</ul>
+<p><strong>Key principle:</strong> Applying voltage changes the electric field <span class="math inline">\(E\)</span>, which changes the refractive index <span class="math inline">\(\Delta n\)</span> via the Pockels effect, which in turn changes the phase <span class="math inline">\(\Delta \phi\)</span>. This voltage-controlled phase shift enables high-speed optical modulation for telecommunications and photonic computing.</p>
+</div>
+</div>
+<p>When the beams recombine at the output, the interference pattern depends on this voltage-controlled phase shift. By varying the applied voltage, we can continuously tune the output intensity from maximum (constructive interference) to minimum (destructive interference) and back again. This allows us to encode electrical signals onto optical carriers, converting the electrical voltage signal into variations in optical intensity—a process essential for transmitting data through optical fibers. The speed at which these modulators can operate is determined by the response time of the electro-optic effect and the electrical bandwidth of the device, with state-of-the-art modulators achieving modulation rates exceeding 100 GHz.</p>
+<p>Beyond telecommunications, Mach-Zehnder modulators are now finding applications in emerging photonic computing systems. Arrays of interconnected Mach-Zehnder interferometers can be configured to perform matrix multiplication operations optically, which is a fundamental operation in neural networks and machine learning algorithms. In these systems, the phase shifters in each Mach-Zehnder element are programmed to represent the weights of the neural network, and the optical signals propagating through the network perform the computations at the speed of light with potentially much lower energy consumption than electronic processors.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/MZI-ONN.png" class="img-fluid figure-img"></p>
+<figcaption>Network of Mach Zehnder Interferometers forming an all optical neural network. Zhou, H. et al.&nbsp;Photonic matrix multiplication lights up photonic accelerator and beyond. Light: Sci. Appl. 11, 30 (2022).</figcaption>
+</figure>
+</div>
+<p>This image illustrates a sophisticated implementation where multiple Mach-Zehnder interferometers are arranged in a network to create an all-optical neural network processor. Each interferometer acts as a programmable element that can be tuned to implement specific mathematical operations, and the entire network performs complex computations by manipulating the phase and amplitude of light waves as they propagate through the structure. This represents a powerful demonstration of how the simple principle of interference can be scaled up and integrated to create advanced photonic systems with applications in artificial intelligence and high-speed information processing.</p>
+</section>
+</section>
+<section id="sagnac-interferometer" class="level2">
+<h2 class="anchored" data-anchor-id="sagnac-interferometer">Sagnac Interferometer</h2>
+<p>The Sagnac interferometer operates on a fundamentally different principle from the Michelson and Mach-Zehnder interferometers we have discussed so far. While those devices are sensitive to differences in path length or refractive index between two spatially separated paths, the Sagnac interferometer is specifically designed to detect rotation. This unique capability has made it the basis for highly accurate fiber-optic gyroscopes used in aircraft navigation, spacecraft attitude control, and autonomous vehicle systems.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/sagnac.png" class="img-fluid figure-img" style="width:30.0%"></p>
+<figcaption>Sagnac Interferometer</figcaption>
+</figure>
+</div>
+<p>In a Sagnac interferometer, a beam of light is split into two beams that travel around the same closed loop but in opposite directions—one clockwise and the other counterclockwise. These counter-propagating beams are then recombined after completing their journeys around the loop. In a non-rotating reference frame, both beams travel exactly the same path and accumulate the same phase, resulting in perfect constructive interference when they recombine. However, when the entire interferometer is rotating, something remarkable happens: the two beams experience different effective path lengths despite traveling along the same physical path. This is a consequence of the fact that, in the rotating frame of the interferometer, the point where the beams recombine is moving. From the perspective of the laboratory frame, the beam traveling in the direction of rotation has a slightly longer path to travel to reach the recombination point, while the beam traveling opposite to the rotation has a slightly shorter path.</p>
+<section id="derivation-and-application-in-fiber-optic-gyroscopes" class="level3">
+<h3 class="anchored" data-anchor-id="derivation-and-application-in-fiber-optic-gyroscopes">Derivation and Application in Fiber-Optic Gyroscopes</h3>
+<p>The phase shift induced by rotation can be derived by considering the time difference between the two counter-propagating beams. For an interferometer loop enclosing an area <span class="math inline">\(A\)</span> and rotating with angular velocity <span class="math inline">\(\Omega\)</span>, the time difference <span class="math inline">\(\Delta T\)</span> between the two beams can be shown to be <span class="math inline">\(\Delta T = \frac{4A\Omega}{c^2}\)</span>, where <span class="math inline">\(c\)</span> is the speed of light. This time difference directly translates into a phase shift.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Sagnac Effect: Rotation-Induced Phase Shift
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[\Delta \phi = \frac{8\pi A \Omega}{\lambda c}\]</span></p>
+<p>This fundamental formula for rotation sensing shows that the phase shift depends on: - <span class="math inline">\(A\)</span> = area enclosed by the light path - <span class="math inline">\(\Omega\)</span> = angular velocity of rotation - <span class="math inline">\(\lambda\)</span> = wavelength of light - <span class="math inline">\(c\)</span> = speed of light</p>
+<p><strong>Key insight:</strong> The phase shift is independent of the loop shape—only the enclosed area matters! A circular, square, or irregular loop with the same area will have the same sensitivity to rotation.</p>
+<p><strong>Practical implementation:</strong> In fiber-optic gyroscopes, the fiber is coiled <span class="math inline">\(N\)</span> times, giving total area <span class="math inline">\(A = N \cdot A_0\)</span>, which multiplies the sensitivity by <span class="math inline">\(N\)</span>.</p>
+</div>
+</div>
+<p>This remarkably simple formula shows that the phase shift is directly proportional to the angular velocity <span class="math inline">\(\Omega\)</span> and to the area <span class="math inline">\(A\)</span> enclosed by the light path, but is independent of the shape of that path. This is a profound result: whether the loop is circular, square, or any other shape, only the enclosed area matters for determining the sensitivity to rotation.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/sagnac_exp.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption>Sagnac interferometer made of a fibre rolled up on a cylinder taken from <a href="https://www.stabilock.com/holography--consulting/fiber-optic-sensors/sagnac-interferometer.html">here</a></figcaption>
+</figure>
+</div>
+<p>In practical fiber-optic gyroscopes, the light path is formed by winding many turns of optical fiber into a coil. If the fiber is wound into <span class="math inline">\(N\)</span> turns, each enclosing an area <span class="math inline">\(A_0\)</span>, then the total effective area is <span class="math inline">\(A = N \cdot A_0\)</span>, which greatly enhances the sensitivity of the device. Modern fiber-optic gyroscopes can use coils with hundreds or even thousands of turns, achieving extraordinary sensitivity to rotation rates. These devices have several advantages over mechanical gyroscopes: they have no moving parts, are immune to mechanical wear, can operate over a wide range of temperatures, and are relatively compact and lightweight.</p>
+<p>The sensitivity of a Sagnac gyroscope can be expressed as the minimum detectable rotation rate, which depends on the ability to measure small phase shifts. With modern photodetectors and signal processing techniques, phase shifts as small as microradians can be detected, corresponding to rotation rates of fractions of a degree per hour. This level of performance makes fiber-optic gyroscopes suitable for inertial navigation systems in commercial aircraft, military vehicles, and spacecraft, where they provide continuous information about the vehicle’s orientation and angular velocity without requiring any external reference.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Derivation Details
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>To derive the formula for the time difference <span class="math inline">\(\Delta T\)</span> between two counter-propagating beams in a Sagnac interferometer, we start by considering a loop of perimeter <span class="math inline">\(L\)</span> and area <span class="math inline">\(A\)</span>. The interferometer is rotating with an angular velocity <span class="math inline">\(\Omega\)</span>. Light travels in opposite directions around the loop, creating two counter-propagating beams.</p>
+<p>In a non-rotating frame, the time taken for light to travel around the loop is <span class="math inline">\(T = \frac{L}{c}\)</span>. When the interferometer rotates with angular velocity <span class="math inline">\(\Omega\)</span>, the effective path lengths for the two beams differ due to the rotation. For the beam traveling in the direction of rotation, the effective path length increases, while for the beam traveling opposite to the direction of rotation, the effective path length decreases.</p>
+<p>The relative velocity of light with respect to the rotating frame is <span class="math inline">\(c \pm v\)</span>, where <span class="math inline">\(v = \Omega R\)</span> is the tangential velocity at the perimeter of the loop. For small angular velocities, we can approximate the effect using the area <span class="math inline">\(A\)</span> and the angular velocity <span class="math inline">\(\Omega\)</span>.</p>
+<p>The time taken for the beam traveling in the direction of rotation is <span class="math inline">\(T_+ = \frac{L}{c - v}\)</span>, and the time taken for the beam traveling opposite to the direction of rotation is <span class="math inline">\(T_- = \frac{L}{c + v}\)</span>. For small <span class="math inline">\(v\)</span>, we can use the binomial expansion to approximate the times:</p>
+<p><span class="math display">\[
+T_+ \approx \frac{L}{c}\left(1 + \frac{v}{c}\right), \quad T_- \approx \frac{L}{c}\left(1 - \frac{v}{c}\right)
+\]</span></p>
+<p>The time difference between the two beams is:</p>
+<p><span class="math display">\[
+\Delta T = T_+ - T_- = \frac{L}{c}\left(1 + \frac{v}{c}\right) - \frac{L}{c}\left(1 - \frac{v}{c}\right) = \frac{2Lv}{c^2}
+\]</span></p>
+<p>The tangential velocity <span class="math inline">\(v\)</span> is related to the angular velocity <span class="math inline">\(\Omega\)</span> and the effective radius <span class="math inline">\(R\)</span> of the loop. For a general loop shape, we can relate the area and perimeter through the geometry of the loop. For a circular loop, <span class="math inline">\(A = \pi R^2\)</span> and <span class="math inline">\(L = 2\pi R\)</span>, giving <span class="math inline">\(R = \frac{L}{2\pi}\)</span> and thus <span class="math inline">\(v = \Omega \frac{L}{2\pi}\)</span>.</p>
+<p>Substituting this into the expression for <span class="math inline">\(\Delta T\)</span>:</p>
+<p><span class="math display">\[
+\Delta T = \frac{2L \cdot \Omega \frac{L}{2\pi}}{c^2} = \frac{L^2 \Omega}{\pi c^2}
+\]</span></p>
+<p>For a circular loop, <span class="math inline">\(L^2 = 4\pi A\)</span>, which gives:</p>
+<p><span class="math display">\[
+\Delta T = \frac{4\pi A \Omega}{\pi c^2} = \frac{4A\Omega}{c^2}
+\]</span></p>
+<p>This result, remarkably, holds for arbitrary loop shapes, not just circular ones, which can be proven using more general arguments from relativity theory.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>The three types of interferometers we have explored—Michelson, Mach-Zehnder, and Sagnac—illustrate the remarkable versatility of interferometric techniques. All of these devices rely on the fundamental relationship between optical path length and phase, exploiting the fact that light waves accumulate phase as they propagate and that this phase accumulation is sensitive to both the geometric path length and the refractive index of the medium through which the light travels. By carefully designing the geometry and choosing what physical quantities to vary, interferometers can be optimized to measure an extraordinary range of phenomena: from the refractive index of gases and the mechanical vibrations of mirrors to the passage of gravitational waves and the rotation of spacecraft. As technology continues to advance, particularly in photonic integration and quantum-enhanced measurements, interferometers will undoubtedly continue to play a central role in both fundamental scientific research and practical technological applications.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/fcichos\.github\.io\/Exp3\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../wave-optics/Interference.html" class="pagination-link" aria-label="Interference and Coherence">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Interference and Coherence</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../wave-optics/Double Slit.html" class="pagination-link" aria-label="Double Slit Interference">
+        <span class="nav-page-text">Double Slit Interference</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

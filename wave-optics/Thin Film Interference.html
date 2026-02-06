@@ -1,0 +1,1732 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.34">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Thin Film Interference – Experimental Physics 3 Course on Optics and Quantum Mechanics</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../wave-optics/MultiWave Interference.html" rel="next">
+<link href="../wave-optics/Double Slit.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-9344fb9851b4da3cab95007ef9d770dc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://hypothes.is/embed.js"></script>
+<script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    document.body.classList.add('hypothesis-enabled');
+  });
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Experimental Physics 3 Course on Optics and Quantum Mechanics</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Wave Optics</li><li class="breadcrumb-item"><a href="../wave-optics/Thin Film Interference.html">Lecture 10</a></li><li class="breadcrumb-item"><a href="../wave-optics/Thin Film Interference.html">Thin Film Interference</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../mona_logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Course Info</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-info/intructors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instructor</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-info/schedule.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Schedule</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-info/resources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ressourcen</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-info/assignments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Assignments</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-info/exam.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exam</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Geometrical Optics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 1</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/reflection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Reflection</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/refraction-total-internal-reflection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Refraction</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 2</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Optical Elements I.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optical Elements I - Mirrors</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 3</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Optical Elements II.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optical Elements II - Prims</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 4</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Optical Elements III.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optical Elements III - Lenses</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 5</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Eye.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optical Instruments- Eye</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Magnifying Glass.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optical Instruments- Magnifying Glass</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Lens Systems and Optical Instruments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lens Systems and Optical Instruments</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Microscope.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optical Instruments- Microscope</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 6</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Telescope.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optical Instruments- Telescope</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Imaging Errors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Imaging Errors</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../geometrical-optics/Rainbow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Rainbow</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
+ <span class="menu-text">Wave Optics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 7</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Wave Optics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Wave Optics</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 8</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Interference.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Interference and Coherence</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 9</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Interferometers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Interferometers</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Double Slit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Double Slit Interference</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="true">
+ <span class="menu-text">Lecture 10</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Thin Film Interference.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Thin Film Interference</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/MultiWave Interference.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Multi Wave Interference</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 11</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/FabryPerot.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fabry Perot Interferometer</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Diffraction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Diffraction</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 12</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Diffraction2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Diffraction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Fresnel Zones.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fresnel Zone Plate</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../wave-optics/Diffraction Integral.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Diffraction Integral</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="true">
+ <span class="menu-text">Electromagnetic Optics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-16" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-17" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 13</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-17" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-17" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Electromagnetic Optics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Electromagnetic Optics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Polarization of EM Waves.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Polarization of EM Waves</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-18" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 14</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-18" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-18" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Energy Transport.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Energy Transport</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-19" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 15</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-19" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-19" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/EM Waves in Matter.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Waves in Matter</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Dispersion and Absorption.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Origin of Refractive Index</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-20" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 16</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-20" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-20" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Reflection and Refraction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Reflection and Refraction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Fresnel Equations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fresnel Equations</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-21" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 17</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-21" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-21" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Metals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Electromagnetic Waves in Metals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Anisotropic Materials.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Anisotropic Materials</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-22" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 18</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-22" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-22" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Optical Activity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optical Activity</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../electromagnetic-waves/Dipole Radiation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dipole Radiation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-23" role="navigation" aria-expanded="true">
+ <span class="menu-text">Quantum Mechanics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-23" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-23" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-24" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 22</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-24" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-24" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Black_Body_Radiation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Black Body Radiation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-25" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 23</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-25" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-25" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Wave_character_of_particles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Wave Character of Particles</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Matter_waves.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Matter Waves</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-26" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 24</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-26" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-26" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Heisenbergs_uncertainty_relation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Heisenberg Uncertainty Principle</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-27" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 25</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-27" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-27" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Structure_of_atoms.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Structure of Atoms</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Schroedinger_equation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Schrödinger Equation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-28" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 26</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-28" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-28" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/potential_barrier.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Potential Barriers and Wells</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-29" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 27</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-29" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-29" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/harmonic_oscillator.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Harmonic Oscillator</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Spherical_potential.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Spherically Symmetric Problems</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-30" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 28</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-30" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-30" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/parametric_dc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Photon Entanglement</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-31" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 29</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-31" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-31" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantum-mechanics/Qzeno.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quantum Zeno Effect</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction-the-physics-of-thin-film-interference" id="toc-introduction-the-physics-of-thin-film-interference" class="nav-link active" data-scroll-target="#introduction-the-physics-of-thin-film-interference">Introduction: The Physics of Thin Film Interference</a></li>
+  <li><a href="#basic-principle-of-thin-film-interference" id="toc-basic-principle-of-thin-film-interference" class="nav-link" data-scroll-target="#basic-principle-of-thin-film-interference">Basic Principle of Thin Film Interference</a></li>
+  <li><a href="#normal-incidence-simplifying-the-analysis" id="toc-normal-incidence-simplifying-the-analysis" class="nav-link" data-scroll-target="#normal-incidence-simplifying-the-analysis">Normal Incidence: Simplifying the Analysis</a>
+  <ul class="collapse">
+  <li><a href="#fixed-wavelength-designing-optical-coatings" id="toc-fixed-wavelength-designing-optical-coatings" class="nav-link" data-scroll-target="#fixed-wavelength-designing-optical-coatings">Fixed Wavelength: Designing Optical Coatings</a></li>
+  <li><a href="#fixed-thickness-understanding-colored-films" id="toc-fixed-thickness-understanding-colored-films" class="nav-link" data-scroll-target="#fixed-thickness-understanding-colored-films">Fixed Thickness: Understanding Colored Films</a></li>
+  </ul></li>
+  <li><a href="#real-world-application-anti-reflection-coatings" id="toc-real-world-application-anti-reflection-coatings" class="nav-link" data-scroll-target="#real-world-application-anti-reflection-coatings">Real-World Application: Anti-Reflection Coatings</a>
+  <ul class="collapse">
+  <li><a href="#design-principles-of-anti-reflection-coatings" id="toc-design-principles-of-anti-reflection-coatings" class="nav-link" data-scroll-target="#design-principles-of-anti-reflection-coatings">Design Principles of Anti-Reflection Coatings</a></li>
+  <li><a href="#how-destructive-interference-eliminates-reflections" id="toc-how-destructive-interference-eliminates-reflections" class="nav-link" data-scroll-target="#how-destructive-interference-eliminates-reflections">How Destructive Interference Eliminates Reflections</a></li>
+  </ul></li>
+  <li><a href="#soap-films-and-bubbles-natures-interferometers" id="toc-soap-films-and-bubbles-natures-interferometers" class="nav-link" data-scroll-target="#soap-films-and-bubbles-natures-interferometers">Soap Films and Bubbles: Nature’s Interferometers</a></li>
+  <li><a href="#newton-rings-measuring-with-interference" id="toc-newton-rings-measuring-with-interference" class="nav-link" data-scroll-target="#newton-rings-measuring-with-interference">Newton Rings: Measuring with Interference</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Wave Optics</li><li class="breadcrumb-item"><a href="../wave-optics/Thin Film Interference.html">Lecture 10</a></li><li class="breadcrumb-item"><a href="../wave-optics/Thin Film Interference.html">Thin Film Interference</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Thin Film Interference</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction-the-physics-of-thin-film-interference" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-the-physics-of-thin-film-interference">Introduction: The Physics of Thin Film Interference</h2>
+<p>When light encounters a thin transparent film—whether it’s a soap bubble shimmering in the sunlight, an oil slick on wet pavement, or the specialized coating on your camera lens—something remarkable happens. The light doesn’t simply pass through or bounce off. Instead, it splits into multiple beams that reflect from both the front and back surfaces of the film, and these beams then interfere with each other. This interference can either enhance or suppress certain wavelengths, creating the vivid colors we observe in everyday life and enabling crucial technological applications in optics.</p>
+<p>The phenomenon of thin film interference occurs whenever light reflects from the two surfaces of a film whose thickness is comparable to the wavelength of light. Understanding this effect requires us to carefully track the optical path difference between light reflected from the front surface and light that travels through the film, reflects from the back surface, and emerges to travel in the same direction. As we’ll see, the thickness of the film, the angle at which light strikes it, and the refractive indices of the materials all play crucial roles in determining which colors are enhanced and which are suppressed.</p>
+</section>
+<section id="basic-principle-of-thin-film-interference" class="level2">
+<h2 class="anchored" data-anchor-id="basic-principle-of-thin-film-interference">Basic Principle of Thin Film Interference</h2>
+<p>The reflection and transmission of waves on a thin film can be regarded as an interference between multiple waves. Consider a light wave incident on a thin film as depicted below. A part of the wave is reflected at the first boundary (beam 1). Another part is transmitted through the first boundary, travels through the film, reflects at the second boundary, and is then transmitted back through the first boundary to travel in the same direction as beam 1 (beam 2). The lines and arrows in the figure denote the direction of the wavevector <span class="math inline">\(\vec{k}\)</span> of these partial waves.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/thin_film.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption>Interference on a thin film considering two partial waves.</figcaption>
+</figure>
+</div>
+<p>This picture of a single reflection at each interface is a simplification. In reality, multiple reflections occur at both interfaces, leading to an infinite number of partial waves. However, for interfaces with weak reflection coefficients—such as the air-glass interface where only about 4% of the light is reflected—the contribution of higher-order reflections becomes negligible. After two reflections, the amplitude is already reduced to approximately 0.16% of the incident wave. Therefore, considering just the first two partial waves provides an excellent approximation for most practical situations involving weak reflections.</p>
+<p>For the geometry shown in the figure above, we consider a medium with refractive index <span class="math inline">\(n_1\)</span> (typically air) surrounding a film with refractive index <span class="math inline">\(n_2\)</span>. To determine when the reflected waves interfere constructively or destructively, we must calculate the path difference <span class="math inline">\(\Delta s\)</span> between waves 1 and 2. This path difference consists of two contributions: the optical path that wave 2 travels inside the film, and the additional geometric path that wave 1 travels after its reflection. For light incident at angle <span class="math inline">\(\alpha\)</span> to the normal, and refracted to angle <span class="math inline">\(\beta\)</span> inside the film according to Snell’s law, the path difference can be expressed as:</p>
+<p><span class="math display">\[
+\Delta s=\frac{2n_2d}{\cos(\beta)}-2d\tan(\beta)\sin(\alpha)
+\]</span></p>
+<p>where <span class="math inline">\(d\)</span> is the thickness of the film. The first term represents the optical path inside the film traveled by wave 2, while the second term accounts for the additional geometric path of wave 1 after reflection (shown by the dotted line in the figure).</p>
+<p>Using Snell’s law, <span class="math inline">\(n_1\sin(\alpha) = n_2\sin(\beta)\)</span>, and setting <span class="math inline">\(n_1 = 1\)</span> (air) and <span class="math inline">\(n_2 = n\)</span> (film), we can apply some trigonometric identities to simplify this expression considerably:</p>
+<p><span class="math display">\[
+\Delta s =\frac{2nd}{\cos(\beta)}-\frac{2nd\sin^2(\beta)}{\cos(\beta)}=2n d \cos(\beta)=2d\sqrt{n^2-\sin^2(\alpha)}
+\]</span></p>
+<p>However, the optical path difference alone doesn’t tell the complete story. We must also account for phase changes that occur upon reflection at the boundaries. The total phase difference <span class="math inline">\(\Delta \phi\)</span> between the waves includes both the path difference and these interface effects:</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+General Phase Difference Formula for Thin Films
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[\Delta \phi=\frac{2\pi}{\lambda}\Delta s +\pi\]</span></p>
+<p>where:</p>
+<ul>
+<li><span class="math inline">\(\Delta s = 2d\sqrt{n^2-\sin^2(\alpha)}\)</span> is the optical path difference</li>
+<li><span class="math inline">\(\lambda\)</span> is the wavelength of light in vacuum</li>
+<li><span class="math inline">\(d\)</span> is the film thickness</li>
+<li><span class="math inline">\(n\)</span> is the refractive index of the film</li>
+<li><span class="math inline">\(\alpha\)</span> is the incident angle</li>
+<li>The additional <span class="math inline">\(\pi\)</span> term represents the phase jump at the first interface (when <span class="math inline">\(n_1 &lt; n_2\)</span>)</li>
+</ul>
+<p><strong>Key insight:</strong> The phase jump of <span class="math inline">\(\pi\)</span> occurs whenever light reflects from an optically denser medium (higher refractive index). No phase jump occurs when reflecting from a less dense medium.</p>
+</div>
+</div>
+<p>The additional <span class="math inline">\(\pi\)</span> term in the phase difference is crucial and arises from the reflection at the first interface where <span class="math inline">\(n_1 &lt; n_2\)</span>. This phase jump of <span class="math inline">\(\pi\)</span> radians (or half a wavelength in optical path) occurs whenever light reflects from an optically denser medium. No such phase jump occurs at the second interface where light in the film (<span class="math inline">\(n_2\)</span>) reflects from the surrounding medium (<span class="math inline">\(n_1 &lt; n_2\)</span>).</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Phase Jump at Boundaries
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Waves may experience phase jumps upon reflection, depending on the relative refractive indices of the two media. A light wave will experience a phase jump of <span class="math inline">\(\pi\)</span> when reflecting from a medium of higher refractive index. Conversely, no phase jump occurs when light reflects from a medium of lower refractive index. This phenomenon is analogous to a wave on a string: when the string is attached to a rigid wall (like going from a less dense to a more dense medium), the reflected wave is inverted. When the string end is free (like going from a denser to a less dense medium), the reflected wave is not inverted. The detailed physical reasons will be covered when we examine the <em>Fresnel formulas in electromagnetic optics</em>.</p>
+</div>
+</div>
+</section>
+<section id="normal-incidence-simplifying-the-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="normal-incidence-simplifying-the-analysis">Normal Incidence: Simplifying the Analysis</h2>
+<p>To develop intuition for thin film interference, let’s consider the simpler case of normal incidence where <span class="math inline">\(\alpha=0\)</span>. In this configuration, light strikes the film perpendicular to its surface, eliminating the angular dependence and simplifying the path difference to <span class="math inline">\(\Delta s = 2nd\)</span>. The phase difference then becomes:</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Phase Difference at Normal Incidence
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[\Delta \phi=\frac{2\pi}{\lambda}2dn+\pi = \frac{4\pi nd}{\lambda}+\pi\]</span></p>
+<p>This simplified formula applies when light hits the film perpendicular to its surface (<span class="math inline">\(\alpha = 0\)</span>).</p>
+<p><strong>For constructive interference:</strong> <span class="math inline">\(\Delta \phi = 2\pi m\)</span> where <span class="math inline">\(m = 1, 2, 3, ...\)</span></p>
+<p><strong>For destructive interference:</strong> <span class="math inline">\(\Delta \phi = \pi(2m-1)\)</span> where <span class="math inline">\(m = 1, 2, 3, ...\)</span></p>
+</div>
+</div>
+<p>When searching for constructive interference, the phase shift should correspond to an integer multiple of <span class="math inline">\(2\pi\)</span>, that is, <span class="math inline">\(\Delta \phi = 2\pi m\)</span> where <span class="math inline">\(m\)</span> is a positive integer. An interesting observation emerges from this equation: for a film thickness of <span class="math inline">\(d = 0\)</span>, we would have a residual phase shift of <span class="math inline">\(\pi\)</span>, meaning destructive interference. While a zero-thickness film is not physically meaningful, this tells us that very thin films will tend to suppress reflection rather than enhance it—a fact we’ll explore further when discussing Newton black films.</p>
+<p>There are two complementary ways to analyze thin film interference, each useful for different applications. We can either determine what film thickness produces constructive interference for a given wavelength (useful for designing optical coatings), or we can determine which wavelengths interfere constructively for a given film thickness (useful for understanding colored patterns in soap films and oil slicks). Let’s explore both approaches through concrete examples.</p>
+<section id="fixed-wavelength-designing-optical-coatings" class="level3">
+<h3 class="anchored" data-anchor-id="fixed-wavelength-designing-optical-coatings">Fixed Wavelength: Designing Optical Coatings</h3>
+<p>When we fix the wavelength <span class="math inline">\(\lambda\)</span> and solve for the film thickness that produces constructive interference, we obtain:</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Thickness for Constructive Interference
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[d=\frac{(2m-1)\lambda}{4n}\]</span></p>
+<p>where <span class="math inline">\(m = 1, 2, 3, ...\)</span> is the order of interference.</p>
+<p><strong>Minimum thickness for constructive interference:</strong> Setting <span class="math inline">\(m = 1\)</span> gives <span class="math inline">\(d = \frac{\lambda}{4n}\)</span>, known as a quarter-wave film.</p>
+<p><strong>Application:</strong> This formula is fundamental for designing anti-reflection coatings, dichroic mirrors, and optical filters. By choosing the appropriate thickness, we can selectively enhance or suppress specific wavelengths.</p>
+</div>
+</div>
+<p>This relationship tells us that constructive interference occurs at discrete thicknesses separated by <span class="math inline">\(\lambda/(2n)\)</span>. The thinnest film showing constructive interference has thickness <span class="math inline">\(d = \lambda/(4n)\)</span>, called a quarter-wave film. This principle is exploited in anti-reflection coatings on eyeglasses, camera lenses, and solar panels, where a carefully chosen film thickness minimizes reflections at a target wavelength (typically green light at 550 nm, where human eyes are most sensitive).</p>
+<p>When we observe thin films of varying thickness, such as a soap film stretched across a wire frame, regions of the same thickness appear as colored fringes. These interference fringes correspond to iso-thickness lines, providing a visual map of the film’s thickness variation. This property makes thin film interference useful for precision measurements in optical metrology and quality control.</p>
+</section>
+<section id="fixed-thickness-understanding-colored-films" class="level3">
+<h3 class="anchored" data-anchor-id="fixed-thickness-understanding-colored-films">Fixed Thickness: Understanding Colored Films</h3>
+<p>Now let’s consider the complementary situation: a film of fixed thickness <span class="math inline">\(d\)</span> illuminated by white light containing a mixture of wavelengths. In this case, only certain wavelengths will satisfy the condition for constructive interference:</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Wavelengths Showing Constructive Interference
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[\lambda_{max}=\frac{4nd}{2m-1}\]</span></p>
+<p>where <span class="math inline">\(m = 1, 2, 3, ...\)</span> determines which wavelengths are enhanced.</p>
+<p><strong>Key insight:</strong> For a given thickness <span class="math inline">\(d\)</span>, only discrete wavelengths satisfy constructive interference. The longest wavelength (corresponding to <span class="math inline">\(m = 1\)</span>) dominates the color we perceive.</p>
+<p><strong>Why thin films appear colored:</strong> When white light illuminates a thin film, only specific wavelengths are strongly reflected, while others are suppressed by destructive interference. This wavelength selectivity creates the vivid colors in soap bubbles, oil slicks, and butterfly wings.</p>
+</div>
+</div>
+<p>This equation explains why thin films appear colored when illuminated by white light. Unlike a pigment that absorbs certain wavelengths, a thin film selectively reflects certain wavelengths through constructive interference while suppressing others through destructive interference. The color we perceive depends primarily on the longest wavelength satisfying the constructive interference condition (corresponding to <span class="math inline">\(m = 1\)</span>), as our eyes are most sensitive to these visible wavelengths. Let’s examine several concrete examples to understand how film thickness determines color.</p>
+<section id="example-100-nm-water-film-green-reflection" class="level4">
+<h4 class="anchored" data-anchor-id="example-100-nm-water-film-green-reflection">Example: 100 nm Water Film — Green Reflection</h4>
+<p>Consider a thin water film with thickness <span class="math inline">\(d = 100\)</span> nm and refractive index <span class="math inline">\(n = 1.33\)</span> (typical for water). Applying our formula for the wavelengths that experience constructive interference:</p>
+<p><span class="math display">\[
+\lambda_{max}=\frac{4\cdot 100\, {\rm nm} \cdot 1.33}{2m-1} = \frac{532\, {\rm nm}}{2m-1}
+\]</span></p>
+<p>For different interference orders <span class="math inline">\(m\)</span>, we find:</p>
+<p>For <span class="math inline">\(m = 1\)</span>: <span class="math inline">\(\lambda_{max} = 532\)</span> nm (green light in the visible spectrum) For <span class="math inline">\(m = 2\)</span>: <span class="math inline">\(\lambda_{max} = 177\)</span> nm (deep ultraviolet, invisible to human eyes) For <span class="math inline">\(m = 3\)</span>: <span class="math inline">\(\lambda_{max} = 106\)</span> nm (extreme ultraviolet, invisible)</p>
+<p>This calculation reveals something important: the longest wavelength producing constructive interference is 532 nm, which falls squarely in the green region of the visible spectrum. The next longest wavelength at 177 nm is far into the ultraviolet and completely invisible to our eyes. Therefore, a 100 nm water film illuminated by white light will appear green in reflected light.</p>
+<p>The left plot in the figure below shows the intensity distribution across wavelengths, where you can see that the green maximum is quite broad. This means the color appears as a fairly pure green rather than a sharp spectral line. This is actually useful for practical applications: if you observe green light reflecting from a soap film, you can immediately estimate that the film thickness is approximately 100 nm! This simple observation demonstrates how thin film interference provides a non-invasive way to measure film thickness in real-time, a technique used in industrial coating processes and materials science research.</p>
+<div id="cell-fig-reflection" class="cell" data-execution_count="2">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Constants</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>n1 <span class="op">=</span> <span class="fl">1.0</span>    <span class="co"># refractive index of air</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>n2 <span class="op">=</span> <span class="fl">1.33</span>   <span class="co"># refractive index of water</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>n3 <span class="op">=</span> n1     <span class="co"># refractive index of bottom medium (air)</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calculate_reflection(wavelength, d):</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    k <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">/</span> wavelength</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    delta <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> n2 <span class="op">*</span> d <span class="op">*</span> k</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Phase shift at interfaces (π if n1 &lt; n2, 0 if n1 &gt; n2)</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    phi_12 <span class="op">=</span> np.pi <span class="cf">if</span> n1 <span class="op">&lt;</span> n2 <span class="cf">else</span> <span class="dv">0</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    phi_23 <span class="op">=</span> np.pi <span class="cf">if</span> n2 <span class="op">&lt;</span> n3 <span class="cf">else</span> <span class="dv">0</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    total_phase <span class="op">=</span> delta <span class="op">+</span> phi_12 <span class="op">+</span> phi_23</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    I <span class="op">=</span> <span class="dv">4</span><span class="op">*</span>np.cos(total_phase<span class="op">/</span><span class="dv">2</span>)<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> I</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>wavelengths <span class="op">=</span> np.linspace(<span class="dv">400</span>, <span class="dv">750</span>, <span class="dv">1000</span>)</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>R_100nm <span class="op">=</span> [calculate_reflection(w<span class="op">*</span><span class="fl">1e-9</span>, <span class="fl">100e-9</span>) <span class="cf">for</span> w <span class="kw">in</span> wavelengths]</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>R_10nm <span class="op">=</span> [calculate_reflection(w<span class="op">*</span><span class="fl">1e-9</span>, <span class="fl">10e-9</span>) <span class="cf">for</span> w <span class="kw">in</span> wavelengths]</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>fig, (ax1, ax2) <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>get_size(<span class="dv">10</span>, <span class="dv">5</span>),dpi<span class="op">=</span><span class="dv">150</span>)</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>ax1.plot(wavelengths, R_100nm, <span class="st">'b-'</span>)</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>ax1.set_title(<span class="st">'100 nm water film'</span>)</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>ax1.set_xlabel(<span class="st">'wavelength [nm]'</span>)</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>ax1.set_ylabel(<span class="st">'intensity '</span>)</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>ax1.set_ylim(<span class="dv">0</span>, <span class="dv">4</span>)</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>ax2.plot(wavelengths, R_10nm, <span class="st">'r-'</span>)</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>ax2.set_title(<span class="st">'10 nm water film'</span>)</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>ax2.set_xlabel(<span class="st">'wavelength [nm]'</span>)</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>ax2.set_ylabel(<span class="st">'intensity'</span>)</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>ax2.set_ylim(<span class="dv">0</span>, <span class="dv">4</span>)</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div id="fig-reflection" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-reflection-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Thin Film Interference_files/figure-html/fig-reflection-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="576" height="279">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-reflection-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1— Intensity of reflection for a 100 nm and a 10 nm film of water.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="newton-black-films-when-thin-films-disappear" class="level4">
+<h4 class="anchored" data-anchor-id="newton-black-films-when-thin-films-disappear">Newton Black Films: When Thin Films Disappear</h4>
+<p>A fascinating phenomenon occurs when the water film becomes extremely thin. We might ask: at what thickness does constructive interference no longer occur anywhere in the visible range? To answer this, we set the shortest visible wavelength <span class="math inline">\(\lambda_{max} = 400\)</span> nm (violet light) and calculate the minimum film thickness needed for first-order constructive interference (<span class="math inline">\(m = 1\)</span>):</p>
+<p><span class="math display">\[
+d=\frac{(2m-1)\lambda_{max}}{4n}=\frac{\lambda_{max}}{4n} \approx 75\, {\rm nm}
+\]</span></p>
+<p>This tells us that for water film thicknesses below approximately 75 nm, there is no constructive interference in the visible spectrum. The film still reflects some light, but no particular color is enhanced. As the film becomes even thinner, something remarkable happens: the reflected intensity decreases further due to destructive interference. At around 10 nm thickness, as shown on the right side of the figure above, the reflection is almost completely suppressed, and the film appears black.</p>
+<p>These ultra-thin films are called <strong>Newton black films</strong>, named after Isaac Newton who first studied them systematically. If you look carefully at soap bubbles, you’ll often see dark patches that look like holes in the bubble surface. These aren’t actually holes—the bubble membrane is still intact—but rather regions where the film has thinned to only a few tens of nanometers, causing the light to interfere destructively and creating almost no reflection. Just before a soap bubble bursts, these black regions typically expand rapidly as the film drains and thins. The appearance of Newton black films signals that the film has reached a thickness of only a few molecular layers, representing one of the thinnest stable liquid films that can exist.</p>
+</section>
+<section id="thick-films-multiple-colors-and-white-appearance" class="level4">
+<h4 class="anchored" data-anchor-id="thick-films-multiple-colors-and-white-appearance">Thick Films: Multiple Colors and White Appearance</h4>
+<p>As the film thickness increases to <span class="math inline">\(d = 1\)</span> μm or even <span class="math inline">\(d = 100\)</span> μm, the behavior changes dramatically. Now multiple wavelengths in the visible spectrum simultaneously satisfy the constructive interference condition for different values of <span class="math inline">\(m\)</span>. For example, with a 1 μm film, we might have red light interfering constructively at <span class="math inline">\(m = 3\)</span>, green at <span class="math inline">\(m = 4\)</span>, and blue at <span class="math inline">\(m = 5\)</span>. When multiple colors are reflected with comparable intensities, the human eye perceives this as mixed colors or even white light.</p>
+<p>This explains an important practical observation: thin films only appear vibrantly colored when their thickness is on the order of hundreds of nanometers. Thicker films, such as a glass microscope slide or a layer of plastic wrap, appear colorless in reflection despite technically exhibiting thin film interference. The interference fringes become so densely packed in wavelength space that our eyes cannot resolve the individual colors, and we perceive the average as white or colorless. The diagrams below illustrate this effect for 1 μm and 100 μm thick water films.</p>
+<div id="cell-fig-reflection2" class="cell" data-execution_count="3">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Constants</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>n1 <span class="op">=</span> <span class="fl">1.0</span>    <span class="co"># refractive index of air</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>n2 <span class="op">=</span> <span class="fl">1.33</span>   <span class="co"># refractive index of water</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>n3 <span class="op">=</span> n1     <span class="co"># refractive index of bottom medium (air)</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calculate_reflection(wavelength, d):</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    k <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">/</span> wavelength</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    delta <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> n2 <span class="op">*</span> d <span class="op">*</span> k</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Phase shift at interfaces (π if n1 &lt; n2, 0 if n1 &gt; n2)</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    phi_12 <span class="op">=</span> np.pi <span class="cf">if</span> n1 <span class="op">&lt;</span> n2 <span class="cf">else</span> <span class="dv">0</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    phi_23 <span class="op">=</span> np.pi <span class="cf">if</span> n2 <span class="op">&lt;</span> n3 <span class="cf">else</span> <span class="dv">0</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    total_phase <span class="op">=</span> delta <span class="op">+</span> phi_12 <span class="op">+</span> phi_23</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    I <span class="op">=</span> <span class="dv">4</span><span class="op">*</span>np.cos(total_phase<span class="op">/</span><span class="dv">2</span>)<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> I</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>wavelengths <span class="op">=</span> np.linspace(<span class="dv">400</span>, <span class="dv">750</span>, <span class="dv">10000</span>)</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>R_1mum <span class="op">=</span> [calculate_reflection(w<span class="op">*</span><span class="fl">1e-9</span>, <span class="fl">1e-6</span>) <span class="cf">for</span> w <span class="kw">in</span> wavelengths]</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>R_100mum <span class="op">=</span> [calculate_reflection(w<span class="op">*</span><span class="fl">1e-9</span>, <span class="fl">100e-6</span>) <span class="cf">for</span> w <span class="kw">in</span> wavelengths]</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>fig, (ax1, ax2) <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>get_size(<span class="dv">10</span>, <span class="dv">5</span>),dpi<span class="op">=</span><span class="dv">150</span>)</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>ax1.plot(wavelengths, R_1mum, <span class="st">'b-'</span>)</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>ax1.set_title(<span class="st">'1&nbsp;µm water film'</span>)</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>ax1.set_xlabel(<span class="st">'wavelength [nm]'</span>)</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>ax1.set_ylabel(<span class="st">'intensity '</span>)</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>ax1.set_ylim(<span class="dv">0</span>, <span class="dv">4</span>)</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>ax2.plot(wavelengths, R_100mum, <span class="st">'r-'</span>,lw<span class="op">=</span><span class="fl">0.1</span>)</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>ax2.set_title(<span class="st">'100 µm water film'</span>)</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>ax2.set_xlabel(<span class="st">'wavelength [nm]'</span>)</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>ax2.set_ylabel(<span class="st">'intensity'</span>)</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>ax2.set_ylim(<span class="dv">0</span>, <span class="dv">4</span>)</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div id="fig-reflection2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-reflection2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Thin Film Interference_files/figure-html/fig-reflection2-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="576" height="279">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-reflection2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2— Reflection from a 1µm (left) and a 100 µm (right)thin water film. Experimental demonstration of the reflection of white light by a thin soap film.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Haidinger Fringes
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The circular interference patterns observed on a plane-parallel film are called <strong>Haidinger fringes</strong>, named after Wilhelm von Haidinger who first described them in 1849. These fringes appear when collimated light passes through a transparent plate at near-normal incidence and are localized at infinity (or in the focal plane of a lens). They arise from multiple reflections between the parallel surfaces of the plate. Unlike Newton’s rings, which require curved surfaces and are localized near the surfaces creating them, Haidinger fringes occur with parallel surfaces. The pattern depends on the plate’s thickness, its refractive index, the angle of incidence, and the wavelength of light. These fringes are commonly observed when viewing a uniformly thick glass plate or mica sheet with a collimated light source and are used in optical testing and interferometry.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/haidinger.jpg" class="img-fluid figure-img"></p>
+<figcaption>Haidinger Fringes (c) Eugene Hecht, Optics</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="real-world-application-anti-reflection-coatings" class="level2">
+<h2 class="anchored" data-anchor-id="real-world-application-anti-reflection-coatings">Real-World Application: Anti-Reflection Coatings</h2>
+<p>One of the most important technological applications of thin film interference is the anti-reflection coating found on eyeglasses, camera lenses, solar panels, and telescope optics. Without such coatings, a typical glass surface reflects about 4% of incident light at each air-glass interface. For a lens system with multiple elements, these reflections accumulate, reducing image brightness, causing glare, and creating ghost images from internal reflections.</p>
+<section id="design-principles-of-anti-reflection-coatings" class="level3">
+<h3 class="anchored" data-anchor-id="design-principles-of-anti-reflection-coatings">Design Principles of Anti-Reflection Coatings</h3>
+<p>An anti-reflection coating works by exploiting destructive interference. A thin film with carefully chosen thickness and refractive index is deposited on the glass surface. The key design parameters are:</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Anti-Reflection Coating Design
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Refractive index:</strong> The coating material is chosen with <span class="math inline">\(n_{\text{coating}}\)</span> intermediate between air and glass: <span class="math display">\[n_{\text{air}} &lt; n_{\text{coating}} &lt; n_{\text{glass}}\]</span></p>
+<p>Typically: <span class="math inline">\(n_{\text{coating}} \approx 1.23\)</span> (magnesium fluoride is a common choice) for <span class="math inline">\(n_{\text{air}} = 1\)</span> and <span class="math inline">\(n_{\text{glass}} \approx 1.5\)</span></p>
+<p><strong>Coating thickness:</strong> Quarter-wave thickness for the target wavelength: <span class="math display">\[d = \frac{\lambda}{4n_{\text{coating}}}\]</span></p>
+<p>where <span class="math inline">\(\lambda\)</span> is typically around 550 nm (where the human eye is most sensitive).</p>
+</div>
+</div>
+</section>
+<section id="how-destructive-interference-eliminates-reflections" class="level3">
+<h3 class="anchored" data-anchor-id="how-destructive-interference-eliminates-reflections">How Destructive Interference Eliminates Reflections</h3>
+<p>With this quarter-wave design, the anti-reflection coating achieves destructive interference through careful phase management:</p>
+<ol type="1">
+<li><p>Light reflecting from the <strong>top surface</strong> (air-coating interface) undergoes a phase jump of <span class="math inline">\(\pi\)</span> (since <span class="math inline">\(n_{\text{air}} &lt; n_{\text{coating}}\)</span>)</p></li>
+<li><p>Light traveling through the coating and reflecting from the <strong>coating-glass interface</strong> accumulates:</p>
+<ul>
+<li>Optical path difference: <span class="math inline">\(2n_{\text{coating}}d = 2n_{\text{coating}} \cdot \frac{\lambda}{4n_{\text{coating}}} = \frac{\lambda}{2}\)</span> → phase change of <span class="math inline">\(\pi\)</span></li>
+<li>Phase jump at reflection: <span class="math inline">\(\pi\)</span> (since <span class="math inline">\(n_{\text{coating}} &lt; n_{\text{glass}}\)</span>)</li>
+</ul></li>
+<li><p><strong>Total phase difference:</strong> <span class="math display">\[\Delta \phi = \pi + \pi + \pi = 3\pi \equiv \pi \pmod{2\pi}\]</span></p></li>
+</ol>
+<p>This results in destructive interference and minimal reflection at the design wavelength.</p>
+<p>Modern multi-layer coatings use several layers of different materials to achieve anti-reflection over a broad wavelength range, essential for high-performance optical systems.</p>
+</section>
+</section>
+<section id="soap-films-and-bubbles-natures-interferometers" class="level2">
+<h2 class="anchored" data-anchor-id="soap-films-and-bubbles-natures-interferometers">Soap Films and Bubbles: Nature’s Interferometers</h2>
+<p>The most beautiful and accessible examples of thin film interference are soap bubbles and soap films. When you stretch a soap film across a wire frame or blow a soap bubble, you’re creating a dynamic interferometer that constantly changes as gravity pulls the liquid downward, making the film thinnest at the top and thickest at the bottom. The brilliant, swirling colors result from interference of light reflecting off the front and back surfaces of this thin soap membrane.</p>
+<div id="fig-soapfilm" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-soapfilm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="img/soap_film_lecture.png" class="img-fluid figure-img"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="img/soap_film_lecture1.png" class="img-fluid figure-img"></p>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-soapfilm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3— Experimental demonstration of the reflection of white light by a thin soap film.
+</figcaption>
+</figure>
+</div>
+<p>As white light illuminates the film, different regions of different thicknesses reflect different colors according to the constructive interference condition we derived earlier. The top of a vertical soap film, where it’s thinnest (often less than 100 nm), may appear black (Newton black film) or show blues and violets. Moving downward where the film is thicker, you’ll see greens, yellows, oranges, and reds in succession. The constantly shifting patterns arise because the film is never in equilibrium—it’s continuously draining under gravity, and convection currents create swirling flows that locally change the thickness.</p>
+<p>The soap film also demonstrates another important principle: the colors you observe depend on the viewing angle. Remember that our general formula for optical path difference includes the angle of incidence: <span class="math inline">\(\Delta s = 2d\sqrt{n^2-\sin^2(\alpha)}\)</span>. As you change your viewing angle relative to the film, the effective optical path through the film changes, and different wavelengths satisfy the constructive interference condition. This is why soap films and oil slicks shimmer with changing colors as you move your head—you’re actually changing the geometry of the interference condition.</p>
+</section>
+<section id="newton-rings-measuring-with-interference" class="level2">
+<h2 class="anchored" data-anchor-id="newton-rings-measuring-with-interference">Newton Rings: Measuring with Interference</h2>
+<p>Another classical demonstration of thin film interference produces a pattern known as Newton’s rings. This phenomenon occurs when a hemispherical or gently curved surface is placed in contact with a flat surface, as sketched in the image below. The air gap between the curved and flat surfaces varies gradually with distance from the contact point, creating a wedge-shaped thin film of air that produces circular interference fringes.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/newton_ring_sketch.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption>Newton Rings. Interference of waves from a spherical and a planar surface in close contact.</figcaption>
+</figure>
+</div>
+<p>When light is incident normal to the top surface, reflections occur at several interfaces, but the important reflections for interference are those at the bottom of the curved surface (reflecting from glass back into air) and at the top of the flat surface below (reflecting from glass, which is optically denser than air). The vertical air gap between these surfaces is <span class="math inline">\(d\)</span>. Refraction at the curved surface does deflect the beam slightly, but if we stay close to the axis of the spherical surface (where <span class="math inline">\(r \ll R\)</span>, with <span class="math inline">\(R\)</span> being the radius of curvature), we can neglect this effect and treat the problem in terms of the simple air gap thickness.</p>
+<p>The path length difference between a wave reflected at the curved surface and one reflected at the planar surface includes the round trip through the air gap plus any phase jumps. Since the reflection at the planar surface occurs when light in air encounters the denser glass, there is a phase jump of <span class="math inline">\(\pi\)</span>, equivalent to an additional path length of <span class="math inline">\(\lambda/2\)</span>:</p>
+<p><span class="math display">\[
+\Delta s=2d+\frac{\lambda}{2}
+\]</span></p>
+<p>This path difference determines where we observe bright and dark fringes. For destructive interference (dark rings), we require:</p>
+<p><span class="math display">\[
+\Delta s=\frac{2m+1}{2}\lambda=2d+\frac{\lambda}{2}
+\]</span></p>
+<p>which simplifies to <span class="math inline">\(2d = m\lambda\)</span> where <span class="math inline">\(m = 0, 1, 2, 3, ...\)</span> is an integer. Notice that at the center where the surfaces touch (<span class="math inline">\(d = 0\)</span>, corresponding to <span class="math inline">\(m = 0\)</span>), we observe a dark spot due to the <span class="math inline">\(\pi\)</span> phase jump at the lower interface. This central dark spot is a characteristic signature of Newton’s rings.</p>
+<p>To find the radial positions of these dark rings, we need to relate the air gap thickness <span class="math inline">\(d\)</span> to the radial distance <span class="math inline">\(r\)</span> from the contact point. From the geometry of a circle with radius <span class="math inline">\(R\)</span>, we have:</p>
+<p><span class="math display">\[
+r^2=d(2R-d)
+\]</span></p>
+<p>Since the air gap is very small compared to the radius of curvature (<span class="math inline">\(d \ll R\)</span>), the term <span class="math inline">\(d^2\)</span> becomes negligible compared to <span class="math inline">\(2Rd\)</span>, allowing us to simplify to <span class="math inline">\(r^2 \approx 2dR\)</span>, which gives:</p>
+<p><span class="math display">\[
+d=\frac{r^2}{2R}
+\]</span></p>
+<p>Combining this geometric relationship with the destructive interference condition <span class="math inline">\(2d = m\lambda\)</span>, we obtain:</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Newton Rings Formula
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[r_m=\sqrt{m\lambda R}\]</span></p>
+<p>This formula gives the radius of the <span class="math inline">\(m\)</span>-th dark ring, where:</p>
+<ul>
+<li><span class="math inline">\(m = 0, 1, 2, 3, ...\)</span> is the ring order (with <span class="math inline">\(m = 0\)</span> at the center)</li>
+<li><span class="math inline">\(\lambda\)</span> is the wavelength of light</li>
+<li><span class="math inline">\(R\)</span> is the radius of curvature of the spherical surface</li>
+</ul>
+<p><strong>Key insights:</strong> - The ring radius increases with the square root of the order number <span class="math inline">\(m\)</span>, so rings get closer together as you move outward - Each wavelength creates its own ring pattern with different radii - This relationship enables precise measurements: if you know <span class="math inline">\(\lambda\)</span>, you can measure <span class="math inline">\(R\)</span>; if you know <span class="math inline">\(R\)</span>, you can measure <span class="math inline">\(\lambda\)</span></p>
+<p><strong>Applications:</strong> Testing optical surfaces for flatness and measuring radius of curvature, quality control in lens manufacturing, precision measurements in optical metrology</p>
+</div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/newton_rings_lecture.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption>Observation of Newton Rings using white light in the lecture.</figcaption>
+</figure>
+</div>
+<p>When using white light, as shown in the experimental image above, each wavelength creates its own set of rings with slightly different radii according to the formula <span class="math inline">\(r_m \propto \sqrt{\lambda}\)</span>. Since red light has a longer wavelength than blue light, the red rings are slightly larger, creating the beautiful colored pattern we observe. Near the center, where the rings are widely spaced, we can distinguish individual colors. Further out, where the rings become more closely spaced, the colors from different wavelengths overlap more, and the pattern appears more washed out or white.</p>
+<p>Newton’s rings provide an extraordinarily precise method for optical measurements and quality control. By measuring the diameters of several rings and plotting <span class="math inline">\(r_m^2\)</span> versus <span class="math inline">\(m\)</span>, we obtain a straight line whose slope gives <span class="math inline">\(\lambda R\)</span>. If we know the wavelength of our light source, we can determine the radius of curvature <span class="math inline">\(R\)</span> of the spherical surface with high precision. Conversely, if we have a calibrated reference sphere with known <span class="math inline">\(R\)</span>, we can measure unknown wavelengths. The technique is also invaluable for testing optical surfaces: if a supposedly flat surface produces non-circular rings when placed against a reference flat, the distortion in the ring pattern directly reveals imperfections in the surface flatness. This makes Newton’s rings one of the most sensitive methods for detecting surface irregularities as small as a fraction of a wavelength, essential for manufacturing high-quality telescope mirrors, laser optics, and precision optical components.</p>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>Thin film interference demonstrates the wave nature of light through the vivid colors of soap bubbles, the practical utility of anti-reflection coatings, and the precision measurements enabled by Newton’s rings. By understanding how optical path differences and phase jumps combine to create constructive or destructive interference, we can both explain natural phenomena and engineer optical devices with specific properties. Whether designing a camera lens coating to minimize reflections, estimating the thickness of an oil slick on water, or testing the quality of a telescope mirror, the principles of thin film interference provide essential tools for modern optics and photonics. The same physics that creates the ephemeral beauty of a soap bubble also underpins billion-dollar industries in optical coatings, photovoltaics, and precision manufacturing.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/fcichos\.github\.io\/Exp3\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../wave-optics/Double Slit.html" class="pagination-link" aria-label="Double Slit Interference">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Double Slit Interference</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../wave-optics/MultiWave Interference.html" class="pagination-link" aria-label="Multi Wave Interference">
+        <span class="nav-page-text">Multi Wave Interference</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
